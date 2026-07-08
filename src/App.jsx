@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import {
-  analyzeNutritionLabel,
+  analyzeMeal,
+  createEmptyFoodItem,
   createEmptyNutritionFacts,
   MODE_LABELS,
   parseNutritionText,
@@ -47,7 +48,7 @@ export default function App() {
 
   const report = useMemo(() => {
     if (!captured) return null;
-    return analyzeNutritionLabel(profile, captured.facts, {
+    return analyzeMeal(profile, captured.foods, captured.facts, {
       ocrStatus: captured.ocrStatus,
       ocrText: captured.ocrText,
     });
@@ -124,6 +125,7 @@ export default function App() {
     const initialFacts = createEmptyNutritionFacts();
     setCaptured({
       photo,
+      foods: [createEmptyFoodItem()],
       facts: initialFacts,
       ocrStatus: 'checking',
       ocrText: '',
@@ -176,6 +178,37 @@ export default function App() {
     });
   }
 
+  function updateFood(id, next) {
+    setCaptured((current) => {
+      if (!current) return current;
+      return {
+        ...current,
+        foods: current.foods.map((food) => (food.id === id ? { ...food, ...next } : food)),
+      };
+    });
+  }
+
+  function addFood() {
+    setCaptured((current) => {
+      if (!current) return current;
+      return {
+        ...current,
+        foods: [...current.foods, createEmptyFoodItem()],
+      };
+    });
+  }
+
+  function removeFood(id) {
+    setCaptured((current) => {
+      if (!current) return current;
+      const nextFoods = current.foods.filter((food) => food.id !== id);
+      return {
+        ...current,
+        foods: nextFoods.length ? nextFoods : [createEmptyFoodItem()],
+      };
+    });
+  }
+
   function toggleMedical(value) {
     setProfile((current) => {
       if (value === '없음') return { ...current, medical: ['없음'] };
@@ -206,14 +239,14 @@ export default function App() {
             <div className="relative h-[min(72vw,440px)] w-[min(72vw,440px)] rounded-2xl border-2 border-white/85 shadow-[0_0_0_22px_rgba(255,255,255,0.05)]">
               <div className="absolute left-8 right-8 top-1/2 h-0.5 -translate-y-1/2 rounded-full bg-emerald-300/90 shadow-[0_0_24px_rgba(52,211,153,0.85)]" />
               <div className="absolute bottom-5 left-5 right-5 rounded-lg bg-black/45 px-3 py-2 text-center text-sm font-black text-white/90">
-                영양성분표를 이 안에 맞춰주세요
+                음식을 화면 안에 맞춰주세요
               </div>
             </div>
           </div>
 
           <header className="absolute left-4 right-4 top-5 z-10 flex items-start justify-between gap-3">
             <div className="rounded-full border border-white/20 bg-black/45 px-4 py-3 text-lg font-black shadow-xl backdrop-blur md:text-2xl">
-              {profile.mode === 'senior' ? '영양표를 비추고 큰 버튼을 눌러주세요' : '식품 영양표를 비추고 촬영하세요'}
+              {profile.mode === 'senior' ? '음식을 비추고 큰 버튼을 눌러주세요' : '오늘 식단을 비추고 촬영하세요'}
             </div>
             <button
               type="button"
@@ -248,6 +281,9 @@ export default function App() {
           modeLabel={modeLabel}
           report={report}
           saveState={saveState}
+          updateFood={updateFood}
+          addFood={addFood}
+          removeFood={removeFood}
           updateFacts={updateFacts}
           onBack={() => setCaptured(null)}
           onSave={handleSave}
@@ -267,7 +303,7 @@ export default function App() {
   );
 }
 
-function ReportView({ captured, modeLabel, report, saveState, updateFacts, onBack, onSave, onSpeak }) {
+function ReportView({ captured, modeLabel, report, saveState, updateFood, addFood, removeFood, updateFacts, onBack, onSave, onSpeak }) {
   const stampStyles = {
     green: 'border-emerald-500 text-emerald-600',
     yellow: 'border-amber-500 text-amber-600',
@@ -298,7 +334,7 @@ function ReportView({ captured, modeLabel, report, saveState, updateFacts, onBac
       <article className="mx-auto flex min-h-[calc(100vh-7rem)] w-full max-w-[900px] flex-col gap-6 rounded-md bg-[#fffdf8] p-5 shadow-2xl md:aspect-[210/297] md:p-10">
         <header className="flex items-start justify-between gap-4 border-b-4 border-slate-950 pb-5">
           <div>
-            <p className="text-xs font-black uppercase tracking-widest text-slate-500">KDRI 기반 영양성분표 분석</p>
+            <p className="text-xs font-black uppercase tracking-widest text-slate-500">KDRI 기반 음식·영양표 분석</p>
             <h1 className="mt-1 text-4xl font-black tracking-tight md:text-6xl">{modeLabel} A4 카드</h1>
           </div>
           <div className={`grid aspect-square w-28 rotate-[-8deg] place-items-center rounded-full border-[7px] text-center text-xl font-black leading-tight md:w-40 ${stampStyles[report.stamp]}`}>
@@ -306,14 +342,24 @@ function ReportView({ captured, modeLabel, report, saveState, updateFacts, onBac
           </div>
         </header>
 
-        <section className="grid gap-5 md:grid-cols-[0.9fr_1.1fr]">
-          <img src={captured.photo} alt="촬영된 영양성분표" className="h-72 w-full rounded-lg border border-slate-200 object-cover md:h-full" />
-          <div className="rounded-lg border border-slate-200 bg-white p-5">
-            <h2 className="text-2xl font-black">영양성분표 입력</h2>
-            <p className="mt-2 rounded-lg bg-slate-100 p-3 text-sm font-bold text-slate-600">
-              {statusText(captured.ocrStatus)}
-            </p>
-            <NutritionFactsForm facts={captured.facts} updateFacts={updateFacts} />
+        <section className="grid gap-5 md:grid-cols-[0.85fr_1.15fr]">
+          <img src={captured.photo} alt="촬영된 음식" className="h-72 w-full rounded-lg border border-slate-200 object-cover md:h-full" />
+          <div className="grid gap-4">
+            <div className="rounded-lg border-2 border-slate-950 bg-white p-5">
+              <h2 className="text-2xl font-black">음식 분석</h2>
+              <p className="mt-2 rounded-lg bg-emerald-50 p-3 text-sm font-bold text-emerald-800">
+                음식명과 양을 먼저 입력하면 식단 기준 영양 분석이 바로 계산됩니다.
+              </p>
+              <FoodItemsForm foods={captured.foods} updateFood={updateFood} addFood={addFood} removeFood={removeFood} />
+            </div>
+
+            <div className="rounded-lg border border-slate-200 bg-white p-5">
+              <h2 className="text-xl font-black">식품 영양표 함께 분석</h2>
+              <p className="mt-2 rounded-lg bg-slate-100 p-3 text-sm font-bold text-slate-600">
+                {statusText(captured.ocrStatus)}
+              </p>
+              <NutritionFactsForm facts={captured.facts} updateFacts={updateFacts} />
+            </div>
           </div>
         </section>
 
@@ -325,6 +371,11 @@ function ReportView({ captured, modeLabel, report, saveState, updateFacts, onBac
             <Metric label="단백질" value={formatMetric(report.totals.protein, 'g')} />
             <Metric label="나트륨" value={formatMetric(report.totals.sodium, 'mg')} />
           </dl>
+          {report.items.length ? (
+            <p className="mt-4 rounded-lg bg-slate-100 p-3 text-sm font-black text-slate-700">
+              분석 항목: {report.items.map((item) => `${item.name}${item.grams ? ` ${item.grams}g` : ''}`).join(', ')}
+            </p>
+          ) : null}
         </section>
 
         <section className="rounded-lg border border-slate-200 bg-white/80 p-5">
@@ -342,6 +393,59 @@ function ReportView({ captured, modeLabel, report, saveState, updateFacts, onBac
         </section>
       </article>
     </section>
+  );
+}
+
+function FoodItemsForm({ foods, updateFood, addFood, removeFood }) {
+  return (
+    <div className="mt-4 grid gap-3">
+      {foods.map((food, index) => (
+        <div key={food.id} className="grid gap-3 rounded-lg border border-slate-200 bg-slate-50 p-3">
+          <div className="flex items-center justify-between gap-3">
+            <strong className="text-sm font-black text-slate-600">음식 {index + 1}</strong>
+            {foods.length > 1 ? (
+              <button
+                type="button"
+                onClick={() => removeFood(food.id)}
+                className="h-8 rounded-full bg-slate-200 px-3 text-xs font-black text-slate-700"
+              >
+                삭제
+              </button>
+            ) : null}
+          </div>
+          <label className="grid gap-1 text-sm font-black">
+            음식명
+            <input
+              value={food.name}
+              onChange={(event) => updateFood(food.id, { name: event.target.value })}
+              className="h-12 rounded-lg border border-slate-200 bg-white px-3 text-base"
+              placeholder="예: 현미밥, 닭가슴살, 김치"
+            />
+          </label>
+          <label className="grid gap-1 text-sm font-black">
+            먹은 양
+            <div className="flex overflow-hidden rounded-lg border border-slate-200 bg-white">
+              <input
+                value={food.grams}
+                inputMode="decimal"
+                onChange={(event) => updateFood(food.id, { grams: event.target.value })}
+                className="h-12 min-w-0 flex-1 px-3 text-base outline-none"
+                placeholder="100"
+              />
+              <span className="grid w-14 place-items-center bg-slate-100 text-xs text-slate-500">g</span>
+            </div>
+          </label>
+        </div>
+      ))}
+
+      <button
+        type="button"
+        onClick={addFood}
+        className="h-12 rounded-lg border-2 border-dashed border-slate-300 bg-white font-black text-slate-700"
+      >
+        음식 추가
+      </button>
+    </div>
   );
 }
 
@@ -579,11 +683,11 @@ function drawFallbackGuide(canvas) {
   ctx.fillStyle = 'rgba(255,255,255,0.92)';
   ctx.font = '900 42px Pretendard, Segoe UI, sans-serif';
   ctx.textAlign = 'center';
-  ctx.fillText('영양성분표 촬영', 450, 500);
+  ctx.fillText('음식 촬영', 450, 500);
 
   ctx.font = '700 26px Pretendard, Segoe UI, sans-serif';
   ctx.fillStyle = 'rgba(255,255,255,0.72)';
-  ctx.fillText('카메라 권한을 허용하면 바로 촬영할 수 있습니다', 450, 555);
+  ctx.fillText('카메라 권한을 허용하면 식단을 바로 촬영할 수 있습니다', 450, 555);
 }
 
 function roundRect(ctx, x, y, width, height, radius) {
@@ -597,9 +701,9 @@ function roundRect(ctx, x, y, width, height, radius) {
 }
 
 function statusText(status) {
-  if (status === 'checking') return '촬영 완료. 사진 속 글자를 확인하는 중입니다.';
-  if (status === 'detected') return '사진에서 읽은 값이 일부 입력되었습니다. 숫자가 맞는지 확인해주세요.';
-  return '촬영 완료. 영양성분표 숫자를 입력하면 즉시 분석됩니다.';
+  if (status === 'checking') return '촬영 완료. 음식 분석을 먼저 입력하고, 영양표 글자도 함께 확인하는 중입니다.';
+  if (status === 'detected') return '영양표에서 읽은 값이 일부 입력되었습니다. 음식 분석과 함께 합산됩니다.';
+  return '포장식품이면 영양표 숫자도 입력해 함께 분석할 수 있습니다.';
 }
 
 function formatMetric(value, unit) {

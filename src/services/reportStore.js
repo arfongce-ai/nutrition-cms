@@ -13,6 +13,7 @@ export async function saveNutritionReport(report) {
     summary: report.items.map((item) => item.name).join(', '),
     message: report.messageText,
     profile: report.profile,
+    foods: report.foods,
     facts: report.facts,
     totals: report.totals,
     macroPercent: report.macroPercent,
