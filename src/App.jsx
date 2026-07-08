@@ -1,7 +1,12 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { analyzeMeal, MODE_LABELS, SCENARIOS } from './services/nutritionEngine';
+import {
+  analyzeNutritionLabel,
+  createEmptyNutritionFacts,
+  MODE_LABELS,
+  parseNutritionText,
+} from './services/nutritionEngine';
 
-const PROFILE_KEY = 'nutritionCameraProfile.v1';
+const PROFILE_KEY = 'nutritionCameraProfile.v2';
 
 const DEFAULT_PROFILE = {
   mode: 'adult',
@@ -11,7 +16,6 @@ const DEFAULT_PROFILE = {
   weight: 72,
   medical: ['없음'],
   sport: '없음',
-  scenario: 'balanced',
 };
 
 const modeOptions = [
@@ -29,13 +33,6 @@ const sportOptions = [
   { id: '지구력', label: '지구력', hint: '마라톤, 사이클, 수영' },
 ];
 
-const scenarioOptions = [
-  { id: 'balanced', label: '현미밥, 닭가슴살 샐러드, 김치' },
-  { id: 'highSodium', label: '흰쌀밥, 된장찌개, 배추김치' },
-  { id: 'sportsRecovery', label: '바나나, 웨이프로틴, 고구마' },
-  { id: 'dopingRisk', label: '해외 직구 부스터, 마황 한약' },
-];
-
 export default function App() {
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
@@ -45,11 +42,17 @@ export default function App() {
   const [cameraReady, setCameraReady] = useState(false);
   const [cameraError, setCameraError] = useState('');
   const [settingsOpen, setSettingsOpen] = useState(false);
-  const [report, setReport] = useState(null);
-  const [photo, setPhoto] = useState('');
+  const [captured, setCaptured] = useState(null);
   const [saveState, setSaveState] = useState('');
 
-  const items = useMemo(() => SCENARIOS[profile.scenario] || SCENARIOS.balanced, [profile.scenario]);
+  const report = useMemo(() => {
+    if (!captured) return null;
+    return analyzeNutritionLabel(profile, captured.facts, {
+      ocrStatus: captured.ocrStatus,
+      ocrText: captured.ocrText,
+    });
+  }, [captured, profile]);
+
   const modeLabel = MODE_LABELS[profile.mode];
 
   useEffect(() => {
@@ -60,20 +63,22 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    drawFallbackMeal(fallbackCanvasRef.current, profile, items);
-  }, [profile, items]);
+    if (!cameraReady) {
+      drawFallbackGuide(fallbackCanvasRef.current);
+    }
+  }, [cameraReady]);
 
   async function startCamera() {
     const localHostnames = ['localhost', '127.0.0.1'];
     const isLocalhost = localHostnames.includes(window.location.hostname);
 
     if (!window.isSecureContext && !isLocalhost) {
-      setCameraError('휴대폰 실제 카메라는 HTTPS 주소에서만 켜집니다. 지금은 샘플 화면으로 표시합니다.');
+      setCameraError('휴대폰 카메라는 HTTPS 주소에서만 켜집니다. Cloudflare Pages 주소로 열어주세요.');
       return;
     }
 
     if (!navigator.mediaDevices?.getUserMedia) {
-      setCameraError('이 브라우저에서는 카메라를 사용할 수 없어 샘플 화면으로 표시합니다.');
+      setCameraError('이 브라우저에서는 카메라를 사용할 수 없습니다. Chrome에서 다시 열어주세요.');
       return;
     }
 
@@ -86,9 +91,10 @@ export default function App() {
       if (videoRef.current) {
         videoRef.current.srcObject = stream;
         setCameraReady(true);
+        setCameraError('');
       }
     } catch {
-      setCameraError('카메라 권한이 없어서 샘플 화면으로 표시합니다.');
+      setCameraError('카메라 권한이 필요합니다. 브라우저 주소창의 카메라 권한을 허용해주세요.');
     }
   }
 
@@ -109,19 +115,40 @@ export default function App() {
       return canvas.toDataURL('image/jpeg', 0.9);
     }
 
-    drawFallbackMeal(fallbackCanvasRef.current, profile, items);
+    drawFallbackGuide(fallbackCanvasRef.current);
     return fallbackCanvasRef.current?.toDataURL('image/png') || '';
   }
 
-  function handleShoot() {
-    const captured = capturePhoto();
-    const analysis = analyzeMeal(profile, items);
-    setPhoto(captured);
-    setReport(analysis);
+  async function handleShoot() {
+    const photo = capturePhoto();
+    const initialFacts = createEmptyNutritionFacts();
+    setCaptured({
+      photo,
+      facts: initialFacts,
+      ocrStatus: 'checking',
+      ocrText: '',
+    });
     setSaveState('');
-    if (profile.mode === 'senior') {
-      window.setTimeout(() => speak(analysis.messageText), 350);
-    }
+
+    const detected = await readNutritionTextFromImage(photo);
+    setCaptured((current) => {
+      if (!current) return current;
+      if (!detected.text) {
+        return {
+          ...current,
+          ocrStatus: detected.status,
+        };
+      }
+      return {
+        ...current,
+        ocrStatus: 'detected',
+        ocrText: detected.text,
+        facts: {
+          ...current.facts,
+          ...parseNutritionText(detected.text),
+        },
+      };
+    });
   }
 
   async function handleSave() {
@@ -134,6 +161,19 @@ export default function App() {
 
   function updateProfile(next) {
     setProfile((current) => ({ ...current, ...next }));
+  }
+
+  function updateFacts(next) {
+    setCaptured((current) => {
+      if (!current) return current;
+      return {
+        ...current,
+        facts: {
+          ...current.facts,
+          ...next,
+        },
+      };
+    });
   }
 
   function toggleMedical(value) {
@@ -161,38 +201,29 @@ export default function App() {
           <canvas ref={fallbackCanvasRef} width="900" height="1200" className={`absolute inset-0 h-full w-full object-cover ${cameraReady ? 'hidden' : 'block'}`} />
           <canvas ref={canvasRef} className="hidden" />
 
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/10 to-black/80" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/5 to-black/80" />
           <div className="pointer-events-none absolute inset-0 grid place-items-center">
-            <div className="relative h-[min(68vw,430px)] w-[min(68vw,430px)] rounded-full border-2 border-white/80 shadow-[0_0_0_22px_rgba(255,255,255,0.05)]">
+            <div className="relative h-[min(72vw,440px)] w-[min(72vw,440px)] rounded-2xl border-2 border-white/85 shadow-[0_0_0_22px_rgba(255,255,255,0.05)]">
               <div className="absolute left-8 right-8 top-1/2 h-0.5 -translate-y-1/2 rounded-full bg-emerald-300/90 shadow-[0_0_24px_rgba(52,211,153,0.85)]" />
+              <div className="absolute bottom-5 left-5 right-5 rounded-lg bg-black/45 px-3 py-2 text-center text-sm font-black text-white/90">
+                영양성분표를 이 안에 맞춰주세요
+              </div>
             </div>
           </div>
 
           <header className="absolute left-4 right-4 top-5 z-10 flex items-start justify-between gap-3">
-            <div className="rounded-full border border-white/20 bg-black/40 px-4 py-3 text-lg font-black shadow-xl backdrop-blur md:text-2xl">
-              {profile.mode === 'senior' ? '음식을 비추고 큰 버튼을 눌러주세요' : '오늘 식단을 비추고 촬영하세요'}
+            <div className="rounded-full border border-white/20 bg-black/45 px-4 py-3 text-lg font-black shadow-xl backdrop-blur md:text-2xl">
+              {profile.mode === 'senior' ? '영양표를 비추고 큰 버튼을 눌러주세요' : '식품 영양표를 비추고 촬영하세요'}
             </div>
             <button
               type="button"
               onClick={() => setSettingsOpen(true)}
-              className="grid h-12 w-12 place-items-center rounded-full border border-white/20 bg-black/40 text-2xl shadow-xl backdrop-blur"
+              className="grid h-12 w-12 place-items-center rounded-full border border-white/20 bg-black/45 text-2xl shadow-xl backdrop-blur"
               aria-label="설정 열기"
             >
               ⚙
             </button>
           </header>
-
-          <div className="absolute inset-0 z-10 pointer-events-none">
-            {items.slice(0, 4).map((item, index) => (
-              <div
-                key={`${item.name}-${index}`}
-                className="absolute rounded-lg border-2 border-emerald-300/80 bg-slate-950/40 px-3 py-2 text-sm font-black shadow-xl backdrop-blur"
-                style={tagPosition(index)}
-              >
-                {item.emoji} {item.name}
-              </div>
-            ))}
-          </div>
 
           {cameraError ? (
             <div className="absolute bottom-36 left-4 right-4 z-10 rounded-lg border border-amber-400/30 bg-amber-500/15 px-4 py-3 text-center text-sm font-bold text-amber-100">
@@ -213,11 +244,12 @@ export default function App() {
         </section>
       ) : (
         <ReportView
-          report={report}
-          photo={photo}
+          captured={captured}
           modeLabel={modeLabel}
+          report={report}
           saveState={saveState}
-          onBack={() => setReport(null)}
+          updateFacts={updateFacts}
+          onBack={() => setCaptured(null)}
           onSave={handleSave}
           onSpeak={() => speak(report.messageText)}
         />
@@ -235,7 +267,7 @@ export default function App() {
   );
 }
 
-function ReportView({ report, photo, modeLabel, saveState, onBack, onSave, onSpeak }) {
+function ReportView({ captured, modeLabel, report, saveState, updateFacts, onBack, onSave, onSpeak }) {
   const stampStyles = {
     green: 'border-emerald-500 text-emerald-600',
     yellow: 'border-amber-500 text-amber-600',
@@ -266,8 +298,8 @@ function ReportView({ report, photo, modeLabel, saveState, onBack, onSave, onSpe
       <article className="mx-auto flex min-h-[calc(100vh-7rem)] w-full max-w-[900px] flex-col gap-6 rounded-md bg-[#fffdf8] p-5 shadow-2xl md:aspect-[210/297] md:p-10">
         <header className="flex items-start justify-between gap-4 border-b-4 border-slate-950 pb-5">
           <div>
-            <p className="text-xs font-black uppercase tracking-widest text-slate-500">KDRI 기반 식단 리포트</p>
-            <h1 className="mt-1 text-4xl font-black tracking-tight md:text-6xl">{modeLabel} A4 알림장</h1>
+            <p className="text-xs font-black uppercase tracking-widest text-slate-500">KDRI 기반 영양성분표 분석</p>
+            <h1 className="mt-1 text-4xl font-black tracking-tight md:text-6xl">{modeLabel} A4 카드</h1>
           </div>
           <div className={`grid aspect-square w-28 rotate-[-8deg] place-items-center rounded-full border-[7px] text-center text-xl font-black leading-tight md:w-40 ${stampStyles[report.stamp]}`}>
             {stampLabel}
@@ -275,21 +307,24 @@ function ReportView({ report, photo, modeLabel, saveState, onBack, onSave, onSpe
         </header>
 
         <section className="grid gap-5 md:grid-cols-[0.9fr_1.1fr]">
-          <img src={photo} alt="촬영된 식단" className="h-72 w-full rounded-lg border border-slate-200 object-cover md:h-full" />
+          <img src={captured.photo} alt="촬영된 영양성분표" className="h-72 w-full rounded-lg border border-slate-200 object-cover md:h-full" />
           <div className="rounded-lg border border-slate-200 bg-white p-5">
-            <h2 className="text-2xl font-black">분석된 항목</h2>
-            <p className="mt-3 text-xl font-black leading-relaxed">
-              {report.items.map((item) => `${item.emoji} ${item.name}`).join(' · ')}
+            <h2 className="text-2xl font-black">영양성분표 입력</h2>
+            <p className="mt-2 rounded-lg bg-slate-100 p-3 text-sm font-bold text-slate-600">
+              {statusText(captured.ocrStatus)}
             </p>
-            {report.profile.mode === 'adult' ? (
-              <dl className="mt-5 grid grid-cols-2 gap-3">
-                <Metric label="에너지" value={`${Math.round(report.totals.calories)} kcal`} />
-                <Metric label="탄단지" value={`${Math.round(report.totals.carb)} / ${Math.round(report.totals.protein)} / ${Math.round(report.totals.fat)}g`} />
-                <Metric label="나트륨" value={`${Math.round(report.totals.sodium)} mg`} />
-                <Metric label="류신" value={`${Math.round(report.totals.leucine)} mg`} />
-              </dl>
-            ) : null}
+            <NutritionFactsForm facts={captured.facts} updateFacts={updateFacts} />
           </div>
+        </section>
+
+        <section className="rounded-lg border border-slate-200 bg-white/80 p-5">
+          <h2 className="text-2xl font-black">분석 요약</h2>
+          <dl className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-4">
+            <Metric label="열량" value={formatMetric(report.totals.calories, 'kcal')} />
+            <Metric label="탄수화물" value={formatMetric(report.totals.carb, 'g')} />
+            <Metric label="단백질" value={formatMetric(report.totals.protein, 'g')} />
+            <Metric label="나트륨" value={formatMetric(report.totals.sodium, 'mg')} />
+          </dl>
         </section>
 
         <section className="rounded-lg border border-slate-200 bg-white/80 p-5">
@@ -307,6 +342,59 @@ function ReportView({ report, photo, modeLabel, saveState, onBack, onSave, onSpe
         </section>
       </article>
     </section>
+  );
+}
+
+function NutritionFactsForm({ facts, updateFacts }) {
+  return (
+    <div className="mt-4 grid gap-3">
+      <label className="grid gap-1 text-sm font-black">
+        식품명
+        <input
+          value={facts.foodName}
+          onChange={(event) => updateFacts({ foodName: event.target.value })}
+          className="h-11 rounded-lg border border-slate-200 px-3 text-base"
+          placeholder="예: 단백질바, 도시락, 음료"
+        />
+      </label>
+      <label className="grid gap-1 text-sm font-black">
+        1회 제공량
+        <input
+          value={facts.servingSize}
+          onChange={(event) => updateFacts({ servingSize: event.target.value })}
+          className="h-11 rounded-lg border border-slate-200 px-3 text-base"
+          placeholder="예: 1봉 50g"
+        />
+      </label>
+      <div className="grid grid-cols-2 gap-3">
+        <NumberFact label="열량" unit="kcal" value={facts.calories} onChange={(value) => updateFacts({ calories: value })} />
+        <NumberFact label="나트륨" unit="mg" value={facts.sodium} onChange={(value) => updateFacts({ sodium: value })} />
+        <NumberFact label="탄수화물" unit="g" value={facts.carb} onChange={(value) => updateFacts({ carb: value })} />
+        <NumberFact label="당류" unit="g" value={facts.sugar} onChange={(value) => updateFacts({ sugar: value })} />
+        <NumberFact label="단백질" unit="g" value={facts.protein} onChange={(value) => updateFacts({ protein: value })} />
+        <NumberFact label="지방" unit="g" value={facts.fat} onChange={(value) => updateFacts({ fat: value })} />
+        <NumberFact label="포화지방" unit="g" value={facts.saturatedFat} onChange={(value) => updateFacts({ saturatedFat: value })} />
+        <NumberFact label="트랜스지방" unit="g" value={facts.transFat} onChange={(value) => updateFacts({ transFat: value })} />
+      </div>
+    </div>
+  );
+}
+
+function NumberFact({ label, unit, value, onChange }) {
+  return (
+    <label className="grid gap-1 text-sm font-black">
+      {label}
+      <div className="flex overflow-hidden rounded-lg border border-slate-200 bg-white">
+        <input
+          value={value}
+          inputMode="decimal"
+          onChange={(event) => onChange(event.target.value)}
+          className="h-11 min-w-0 flex-1 px-3 text-base outline-none"
+          placeholder="0"
+        />
+        <span className="grid w-14 place-items-center bg-slate-100 text-xs text-slate-500">{unit}</span>
+      </div>
+    </label>
   );
 }
 
@@ -382,23 +470,6 @@ function SettingsSheet({ profile, updateProfile, toggleMedical, onClose }) {
             ))}
           </div>
         </SettingBlock>
-
-        <SettingBlock title="촬영 분석 샘플">
-          <div className="grid gap-2">
-            {scenarioOptions.map((option) => (
-              <label key={option.id} className="flex items-center gap-3 rounded-lg border border-slate-200 bg-white p-3 font-bold">
-                <input
-                  type="radio"
-                  name="scenario"
-                  checked={profile.scenario === option.id}
-                  onChange={() => updateProfile({ scenario: option.id })}
-                  className="h-5 w-5 accent-teal-700"
-                />
-                {option.label}
-              </label>
-            ))}
-          </div>
-        </SettingBlock>
       </div>
     </aside>
   );
@@ -464,49 +535,55 @@ function useStoredProfile() {
   return [profile, setProfile];
 }
 
-function drawFallbackMeal(canvas, profile, items) {
+async function readNutritionTextFromImage(photo) {
+  if (!photo || !('TextDetector' in window)) {
+    return { status: 'manual', text: '' };
+  }
+
+  try {
+    const image = await loadImage(photo);
+    const detector = new window.TextDetector();
+    const results = await detector.detect(image);
+    const text = results.map((item) => item.rawValue).filter(Boolean).join('\n');
+    return { status: text ? 'detected' : 'manual', text };
+  } catch {
+    return { status: 'manual', text: '' };
+  }
+}
+
+function loadImage(src) {
+  return new Promise((resolve, reject) => {
+    const image = new Image();
+    image.onload = () => resolve(image);
+    image.onerror = reject;
+    image.src = src;
+  });
+}
+
+function drawFallbackGuide(canvas) {
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
-  const palette = profile.mode === 'child' ? ['#ffd5de', '#fff0a6', '#bce6d5'] : ['#dfeee7', '#fff6d6', '#f2c6b6'];
-
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+
   const bg = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-  bg.addColorStop(0, '#1c2b2d');
-  bg.addColorStop(1, '#45535a');
+  bg.addColorStop(0, '#111827');
+  bg.addColorStop(1, '#334155');
   ctx.fillStyle = bg;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  ctx.fillStyle = 'rgba(255,255,255,0.16)';
-  roundRect(ctx, 90, 190, 720, 840, 42);
-  ctx.fill();
+  ctx.strokeStyle = 'rgba(255,255,255,0.82)';
+  ctx.lineWidth = 6;
+  roundRect(ctx, 130, 280, 640, 420, 34);
+  ctx.stroke();
 
-  ctx.fillStyle = '#f7fbf2';
-  ctx.beginPath();
-  ctx.ellipse(450, 620, 320, 248, 0, 0, Math.PI * 2);
-  ctx.fill();
-
-  items.slice(0, 4).forEach((item, index) => {
-    const [x, y, radius] = [
-      [332, 560, 145],
-      [532, 548, 135],
-      [430, 725, 128],
-      [575, 720, 108],
-    ][index] || [450, 620, 120];
-    ctx.fillStyle = palette[index % palette.length];
-    ctx.beginPath();
-    ctx.arc(x, y, radius, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.fillStyle = '#172026';
-    ctx.font = '700 72px Segoe UI Emoji, Apple Color Emoji, sans-serif';
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-    ctx.fillText(item.emoji.replace('⚠️', '⚠'), x, y - 10);
-  });
-
-  ctx.fillStyle = 'rgba(255,255,255,0.9)';
-  ctx.font = '900 46px Pretendard, Segoe UI, sans-serif';
+  ctx.fillStyle = 'rgba(255,255,255,0.92)';
+  ctx.font = '900 42px Pretendard, Segoe UI, sans-serif';
   ctx.textAlign = 'center';
-  ctx.fillText(`${MODE_LABELS[profile.mode]} 식단 촬영`, 450, 110);
+  ctx.fillText('영양성분표 촬영', 450, 500);
+
+  ctx.font = '700 26px Pretendard, Segoe UI, sans-serif';
+  ctx.fillStyle = 'rgba(255,255,255,0.72)';
+  ctx.fillText('카메라 권한을 허용하면 바로 촬영할 수 있습니다', 450, 555);
 }
 
 function roundRect(ctx, x, y, width, height, radius) {
@@ -519,13 +596,16 @@ function roundRect(ctx, x, y, width, height, radius) {
   ctx.closePath();
 }
 
-function tagPosition(index) {
-  return [
-    { left: '22%', top: '38%' },
-    { left: '54%', top: '45%' },
-    { left: '39%', top: '58%' },
-    { left: '61%', top: '34%' },
-  ][index] || { left: '42%', top: '50%' };
+function statusText(status) {
+  if (status === 'checking') return '촬영 완료. 사진 속 글자를 확인하는 중입니다.';
+  if (status === 'detected') return '사진에서 읽은 값이 일부 입력되었습니다. 숫자가 맞는지 확인해주세요.';
+  return '촬영 완료. 영양성분표 숫자를 입력하면 즉시 분석됩니다.';
+}
+
+function formatMetric(value, unit) {
+  const numeric = Number(value || 0);
+  if (!numeric) return '-';
+  return `${Math.round(numeric * 10) / 10} ${unit}`;
 }
 
 function speak(text) {

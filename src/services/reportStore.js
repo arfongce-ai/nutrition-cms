@@ -7,11 +7,13 @@ const LOCAL_REPORTS_KEY = 'nutritionReports.v1';
 export async function saveNutritionReport(report) {
   const payload = {
     createdAt: new Date().toISOString(),
+    analysisType: report.analysisType,
     mode: report.profile.mode,
     stamp: report.stamp,
     summary: report.items.map((item) => item.name).join(', '),
     message: report.messageText,
     profile: report.profile,
+    facts: report.facts,
     totals: report.totals,
     macroPercent: report.macroPercent,
     risk: report.risk,
