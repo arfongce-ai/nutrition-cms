@@ -1,0 +1,19 @@
+{
+  "name": "몸가짐 영양 CMS",
+  "short_name": "영양CMS",
+  "description": "Firebase 기반 식단 촬영 및 스포츠 영양 리포트 CMS",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
