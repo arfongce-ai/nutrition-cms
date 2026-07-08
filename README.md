@@ -45,9 +45,11 @@ firebase deploy --only firestore:rules
 - Framework preset: `Vite`
 - Build command: `npm run build`
 - Build output directory: `dist`
+- Deploy command가 필수로 보이면 `npx wrangler pages deploy dist --project-name nutrition-cms`
 - Environment variables: `.env`의 `VITE_FIREBASE_*` 값을 Cloudflare Pages 변수로 등록
 
 `public/_redirects`가 포함되어 있어 새로고침 시에도 앱이 유지됩니다.
+`wrangler.toml`에 Pages 프로젝트 이름과 출력 디렉터리가 들어 있어 Wrangler 배포에서도 같은 설정을 사용합니다.
 
 ## 검증
 
