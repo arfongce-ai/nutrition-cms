@@ -1,10 +1,12 @@
 {
   "name": "몸가짐 영양 CMS",
-  "short_name": "영양CMS",
-  "description": "Firebase 기반 식단 촬영 및 스포츠 영양 리포트 CMS",
+  "short_name": "몸가짐영양",
+  "description": "식품 영양성분표 촬영 및 맞춤 영양 리포트 앱",
+  "id": "/",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
   "orientation": "portrait",
   "background_color": "#0f172a",
   "theme_color": "#0f172a",
@@ -13,7 +15,27 @@
       "src": "/favicon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/maskable-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
-  ]
+  ],
+  "categories": ["health", "fitness", "food"],
+  "prefer_related_applications": false
 }
