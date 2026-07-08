@@ -8,6 +8,7 @@ import {
 } from './services/nutritionEngine';
 
 const PROFILE_KEY = 'nutritionCameraProfile.v2';
+const LIVE_KCAL_SCAN_INTERVAL_MS = 1800;
 
 const DEFAULT_PROFILE = {
   mode: 'adult',
@@ -39,11 +40,15 @@ export default function App() {
   const canvasRef = useRef(null);
   const fallbackCanvasRef = useRef(null);
   const streamRef = useRef(null);
+  const textDetectorRef = useRef(null);
+  const liveScanTimerRef = useRef(null);
+  const liveScanBusyRef = useRef(false);
   const [profile, setProfile] = useStoredProfile();
   const [cameraReady, setCameraReady] = useState(false);
   const [cameraError, setCameraError] = useState('');
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [captured, setCaptured] = useState(null);
+  const [liveScan, setLiveScan] = useState({ status: 'idle', facts: {}, text: '' });
   const [saveState, setSaveState] = useState('');
 
   const report = useMemo(() => {
@@ -60,7 +65,10 @@ export default function App() {
     document.documentElement.classList.add('dark');
     document.body.style.background = '#0f172a';
     startCamera();
-    return () => stopCamera();
+    return () => {
+      stopLiveKcalScan();
+      stopCamera();
+    };
   }, []);
 
   useEffect(() => {
@@ -68,6 +76,16 @@ export default function App() {
       drawFallbackGuide(fallbackCanvasRef.current);
     }
   }, [cameraReady]);
+
+  useEffect(() => {
+    if (!cameraReady || captured || settingsOpen || cameraError) {
+      stopLiveKcalScan();
+      return undefined;
+    }
+
+    startLiveKcalScan();
+    return () => stopLiveKcalScan();
+  }, [cameraReady, captured, settingsOpen, cameraError]);
 
   async function startCamera() {
     const localHostnames = ['localhost', '127.0.0.1'];
@@ -120,15 +138,81 @@ export default function App() {
     return fallbackCanvasRef.current?.toDataURL('image/png') || '';
   }
 
+  function stopLiveKcalScan() {
+    if (liveScanTimerRef.current) {
+      window.clearInterval(liveScanTimerRef.current);
+      liveScanTimerRef.current = null;
+    }
+    liveScanBusyRef.current = false;
+  }
+
+  function startLiveKcalScan() {
+    stopLiveKcalScan();
+
+    if (!('TextDetector' in window)) {
+      setLiveScan({ status: 'unsupported', facts: {}, text: '' });
+      return;
+    }
+
+    setLiveScan((current) => (current.status === 'detected' ? current : { status: 'scanning', facts: {}, text: '' }));
+    runLiveKcalScan();
+    liveScanTimerRef.current = window.setInterval(runLiveKcalScan, LIVE_KCAL_SCAN_INTERVAL_MS);
+  }
+
+  async function runLiveKcalScan() {
+    if (liveScanBusyRef.current || !cameraReady || captured || settingsOpen) return;
+
+    const canvas = drawLiveFrameForText();
+    if (!canvas) return;
+
+    liveScanBusyRef.current = true;
+    try {
+      const detected = await readNutritionTextFromCanvas(canvas, textDetectorRef);
+      if (!detected.text) {
+        setLiveScan((current) => (current.status === 'detected' ? current : { status: 'scanning', facts: {}, text: '' }));
+        return;
+      }
+
+      const facts = parseNutritionText(detected.text);
+      if (facts.calories) {
+        setLiveScan({ status: 'detected', facts, text: detected.text });
+        return;
+      }
+
+      setLiveScan((current) => (current.status === 'detected' ? current : { status: 'scanning', facts: {}, text: detected.text }));
+    } catch {
+      setLiveScan((current) => (current.status === 'detected' ? current : { status: 'scanning', facts: {}, text: '' }));
+    } finally {
+      liveScanBusyRef.current = false;
+    }
+  }
+
+  function drawLiveFrameForText() {
+    const canvas = canvasRef.current;
+    const video = videoRef.current;
+    if (!canvas || !video?.videoWidth || !video?.videoHeight) return null;
+
+    const maxWidth = 1200;
+    const scale = Math.min(1, maxWidth / video.videoWidth);
+    canvas.width = Math.max(1, Math.round(video.videoWidth * scale));
+    canvas.height = Math.max(1, Math.round(video.videoHeight * scale));
+    const ctx = canvas.getContext('2d', { willReadFrequently: true });
+    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+    return canvas;
+  }
+
   async function handleShoot() {
     const photo = capturePhoto();
-    const initialFacts = createEmptyNutritionFacts();
+    const initialFacts = {
+      ...createEmptyNutritionFacts(),
+      ...liveScan.facts,
+    };
     setCaptured({
       photo,
       foods: [createEmptyFoodItem()],
       facts: initialFacts,
-      ocrStatus: 'checking',
-      ocrText: '',
+      ocrStatus: liveScan.facts?.calories ? 'detected' : 'checking',
+      ocrText: liveScan.text || '',
     });
     setSaveState('');
 
@@ -138,7 +222,7 @@ export default function App() {
       if (!detected.text) {
         return {
           ...current,
-          ocrStatus: detected.status,
+          ocrStatus: current.facts.calories ? 'detected' : detected.status,
         };
       }
       return {
@@ -263,6 +347,8 @@ export default function App() {
               {cameraError}
             </div>
           ) : null}
+
+          {cameraReady && !cameraError ? <LiveKcalBadge liveScan={liveScan} /> : null}
 
           <div className="absolute bottom-8 left-0 right-0 z-10 flex justify-center">
             <button
@@ -394,6 +480,36 @@ function ReportView({ captured, modeLabel, report, saveState, updateFood, addFoo
       </article>
     </section>
   );
+}
+
+function LiveKcalBadge({ liveScan }) {
+  const calories = liveScan?.facts?.calories;
+
+  if (calories) {
+    return (
+      <div className="absolute left-4 top-24 z-10 rounded-full border border-emerald-300/40 bg-emerald-500/20 px-4 py-2 text-sm font-black text-emerald-50 shadow-xl backdrop-blur">
+        kcal 자동 인식: {calories} kcal
+      </div>
+    );
+  }
+
+  if (liveScan?.status === 'unsupported') {
+    return (
+      <div className="absolute left-4 top-24 z-10 rounded-full border border-white/15 bg-black/40 px-4 py-2 text-xs font-black text-white/80 shadow-xl backdrop-blur">
+        kcal 자동 인식 미지원 · 촬영 후 입력
+      </div>
+    );
+  }
+
+  if (liveScan?.status === 'scanning') {
+    return (
+      <div className="absolute left-4 top-24 z-10 rounded-full border border-white/15 bg-black/40 px-4 py-2 text-xs font-black text-white/80 shadow-xl backdrop-blur">
+        kcal 자동 인식 중
+      </div>
+    );
+  }
+
+  return null;
 }
 
 function FoodItemsForm({ foods, updateFood, addFood, removeFood }) {
@@ -648,6 +764,23 @@ async function readNutritionTextFromImage(photo) {
     const image = await loadImage(photo);
     const detector = new window.TextDetector();
     const results = await detector.detect(image);
+    const text = results.map((item) => item.rawValue).filter(Boolean).join('\n');
+    return { status: text ? 'detected' : 'manual', text };
+  } catch {
+    return { status: 'manual', text: '' };
+  }
+}
+
+async function readNutritionTextFromCanvas(canvas, detectorRef) {
+  if (!canvas || !('TextDetector' in window)) {
+    return { status: 'manual', text: '' };
+  }
+
+  try {
+    if (!detectorRef.current) {
+      detectorRef.current = new window.TextDetector();
+    }
+    const results = await detectorRef.current.detect(canvas);
     const text = results.map((item) => item.rawValue).filter(Boolean).join('\n');
     return { status: text ? 'detected' : 'manual', text };
   } catch {
