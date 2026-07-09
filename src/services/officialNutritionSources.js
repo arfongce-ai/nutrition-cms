@@ -41,6 +41,12 @@ export const OFFICIAL_NUTRITION_SOURCES = [
 ];
 
 export const SAFETY_REFERENCE_SOURCES = {
+  foodAdditives: {
+    brand: '식품안전나라',
+    category: '식품첨가물 및 표시사항',
+    sourceLabel: '식약처 식품안전나라 식품첨가물 및 표시사항 정보',
+    sourceUrl: 'https://www.foodsafetykorea.go.kr',
+  },
   foodAllergy: {
     brand: '식품안전나라',
     category: '식품 알레르기 표시 기준',

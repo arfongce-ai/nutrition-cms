@@ -609,6 +609,7 @@ function CoachReportCard({ report }) {
           body={`${formatMetric(report.totals.calories, 'kcal')} / 탄수화물 ${report.macroPercent.carb}%, 단백질 ${report.macroPercent.protein}%, 지방 ${report.macroPercent.fat}%`}
         />
         {report.sourceItems?.length ? <OfficialSourceList sources={report.sourceItems} /> : null}
+        {report.additives?.length ? <AdditiveNotice additives={report.additives} /> : null}
 
         <div className="rounded-lg border border-slate-200 bg-slate-50 p-4">
           <h3 className="text-lg font-black">🚦 맞춤형 식단 평가</h3>
@@ -664,8 +665,39 @@ function OfficialSourceList({ sources }) {
   );
 }
 
+function AdditiveNotice({ additives }) {
+  const visibleAdditives = additives.slice(0, 5);
+  const extraCount = additives.length - visibleAdditives.length;
+
+  return (
+    <div className="rounded-lg border border-amber-200 bg-amber-50 p-4">
+      <div className="flex items-start justify-between gap-3">
+        <div>
+          <h3 className="text-lg font-black text-amber-950">🧪 첨가물 확인</h3>
+          <p className="mt-1 text-sm font-bold leading-snug text-amber-900">
+            성분표·원재료명에서 감지된 후보입니다. 유해 판정이 아니라 표시사항 확인용입니다.
+          </p>
+        </div>
+        <span className="shrink-0 rounded-full bg-amber-200 px-3 py-1 text-xs font-black text-amber-950">주의</span>
+      </div>
+      <div className="mt-3 grid gap-2">
+        {visibleAdditives.map((item) => (
+          <div key={`${item.category}-${item.term}`} className="rounded-lg border border-amber-100 bg-white p-3">
+            <p className="text-sm font-black text-amber-950">
+              {item.category} · {item.term}
+            </p>
+            <p className="mt-1 text-xs font-bold leading-snug text-amber-800">{item.caution}</p>
+          </div>
+        ))}
+      </div>
+      {extraCount > 0 ? <p className="mt-2 text-xs font-black text-amber-900">외 {extraCount}개 후보가 더 있습니다.</p> : null}
+    </div>
+  );
+}
+
 function sourceTypeLabel(source) {
   if (source.type === 'official-value') return '공식값 적용';
+  if (source.type === 'safety-reference' && `${source.name} ${source.category}`.includes('첨가물')) return '식품첨가물 안전 확인';
   if (source.type === 'safety-reference') return '알레르기·도핑 안전 확인';
   return '공식 출처 확인';
 }

@@ -108,6 +108,59 @@ const SUPPLEMENT_REVIEW_TERMS = [
   '호미카',
 ];
 
+const ADDITIVE_RULES = [
+  {
+    category: '보존료',
+    terms: ['소르빈산', '소르빈산칼륨', '안식향산', '안식향산나트륨', '보존료'],
+    caution: '보관성을 높이는 첨가물 후보입니다. 가공식품 섭취 빈도와 총량을 확인하세요.',
+  },
+  {
+    category: '감미료',
+    terms: ['아스파탐', '수크랄로스', '아세설팜칼륨', '사카린', '스테비올배당체', '감미료'],
+    caution: '단맛을 내는 첨가물 후보입니다. 당뇨 관리 중이거나 아동은 섭취 빈도를 확인하세요.',
+  },
+  {
+    category: '착색료',
+    terms: ['타르색소', '식용색소', '착색료', '황색4호', '황색5호', '적색40호', '청색1호'],
+    caution: '색을 내는 첨가물 후보입니다. 민감 체질이나 아동은 제품 표시를 한 번 더 확인하세요.',
+  },
+  {
+    category: '향미증진제',
+    terms: ['L-글루탐산나트륨', '글루탐산나트륨', 'MSG', '향미증진제', "5'-리보뉴클레오티드이나트륨"],
+    caution: '맛을 강화하는 첨가물 후보입니다. 나트륨 관리가 필요하면 함께 확인하세요.',
+  },
+  {
+    category: '유화제/증점제',
+    terms: ['유화제', '증점제', '카라기난', '잔탄검', 'CMC', '카복시메틸셀룰로스'],
+    caution: '식감을 안정화하는 첨가물 후보입니다. 위장 민감도가 있으면 섭취 후 반응을 확인하세요.',
+  },
+  {
+    category: '산도조절제/인산염',
+    terms: ['산도조절제', '구연산', '인산염', '폴리인산나트륨', '피로인산나트륨'],
+    caution: '산도나 식감을 조절하는 첨가물 후보입니다. 신장질환이 있으면 인산염 표기를 확인하세요.',
+  },
+  {
+    category: '산화방지제',
+    terms: ['산화방지제', 'BHA', 'BHT', '토코페롤'],
+    caution: '품질 변화를 줄이는 첨가물 후보입니다. 제품 원재료명을 확인하세요.',
+  },
+  {
+    category: '발색제',
+    terms: ['아질산나트륨', '아질산염', '발색제'],
+    caution: '가공육 등에 쓰이는 발색제 후보입니다. 가공육 섭취 빈도를 줄이는 것이 좋습니다.',
+  },
+  {
+    category: '아황산류',
+    terms: ['아황산', '이산화황', '메타중아황산나트륨', '아황산류'],
+    caution: '알레르기 민감자에게 문제가 될 수 있는 표시 성분 후보입니다. 알레르기 이력이 있으면 주의하세요.',
+  },
+  {
+    category: '카페인',
+    terms: ['카페인', '고카페인'],
+    caution: '카페인 후보입니다. 아동, 임산부, 고혈압 관리 중인 사용자는 섭취량을 확인하세요.',
+  },
+];
+
 export function createEmptyFoodItem() {
   return {
     id: globalThis.crypto?.randomUUID?.() || `${Date.now()}-${Math.random().toString(16).slice(2)}`,
@@ -192,10 +245,12 @@ export function analyzeMeal(profile, foodItems, nutritionFacts, options = {}) {
   const items = labelItem ? [...foods, labelItem] : foods;
   const totals = sumItems(items);
   const macroPercent = createMacroPercent(totals);
-  const risk = evaluateRisk(normalizedProfile, items, facts, totals, macroPercent, options);
+  const safetyText = createSafetyText(items, facts, options);
+  const additives = detectAdditives(safetyText);
+  const risk = evaluateRisk(normalizedProfile, items, facts, totals, macroPercent, options, additives);
   const stamp = risk.red.length ? 'red' : risk.yellow.length ? 'yellow' : 'green';
-  const messageParagraphs = createMessage(normalizedProfile, foods, labelItem, facts, totals, macroPercent, risk, stamp, options);
-  const sourceItems = createSourceItems(items, facts, options);
+  const messageParagraphs = createMessage(normalizedProfile, foods, labelItem, facts, totals, macroPercent, risk, stamp, options, additives);
+  const sourceItems = createSourceItems(items, facts, options, additives);
 
   return {
     analysisType: 'meal-with-label',
@@ -206,6 +261,7 @@ export function analyzeMeal(profile, foodItems, nutritionFacts, options = {}) {
     totals,
     macroPercent,
     risk,
+    additives,
     sourceItems,
     stamp,
     stampText: createStampText(risk, stamp),
@@ -282,7 +338,7 @@ function createSourceFallback(name) {
   };
 }
 
-function createSourceItems(items, facts = {}, options = {}) {
+function createSourceItems(items, facts = {}, options = {}, additives = []) {
   const sources = items
     .filter((item) => item.sourceUrl)
     .map((item) => ({
@@ -296,14 +352,14 @@ function createSourceItems(items, facts = {}, options = {}) {
       type: item.official ? 'official-value' : 'official-source',
     }));
 
-  const safetySources = createSafetyReferenceItems(items, facts, options);
+  const safetySources = createSafetyReferenceItems(items, facts, options, additives);
   return [...sources, ...safetySources].filter(
     (source, index, allSources) => allSources.findIndex((item) => item.sourceUrl === source.sourceUrl && item.name === source.name) === index,
   );
 }
 
-function createSafetyReferenceItems(items, facts = {}, options = {}) {
-  const text = [
+function createSafetyText(items, facts = {}, options = {}) {
+  return [
     items.map((item) => item.name).join(' '),
     facts.foodName,
     facts.servingSize,
@@ -312,11 +368,41 @@ function createSafetyReferenceItems(items, facts = {}, options = {}) {
     .filter(Boolean)
     .join(' ')
     .toLowerCase();
+}
+
+function detectAdditives(text = '') {
+  const normalized = String(text || '').toLowerCase().replace(/\s+/g, '');
+  const detected = [];
+
+  ADDITIVE_RULES.forEach((rule) => {
+    rule.terms.forEach((term) => {
+      const normalizedTerm = String(term).toLowerCase().replace(/\s+/g, '');
+      if (normalizedTerm && normalized.includes(normalizedTerm)) {
+        detected.push({
+          category: rule.category,
+          term,
+          caution: rule.caution,
+        });
+      }
+    });
+  });
+
+  return detected.filter(
+    (item, index, allItems) => allItems.findIndex((other) => other.category === item.category && other.term === item.term) === index,
+  );
+}
+
+function createSafetyReferenceItems(items, facts = {}, options = {}, additives = []) {
+  const text = createSafetyText(items, facts, options);
 
   const references = [];
   const hasAllergenTerm = ALLERGEN_TERMS.some((term) => text.includes(term.toLowerCase()));
   const hasSupplementTerm = SUPPLEMENT_REVIEW_TERMS.some((term) => text.includes(term.toLowerCase()));
   const hasDopingRiskTerm = GUIDELINES.wadaKada.riskyTerms.some((term) => text.includes(term.toLowerCase()));
+
+  if (additives.length) {
+    references.push(createReferenceSource('foodAdditives', '식품첨가물 표시 확인'));
+  }
 
   if (hasAllergenTerm) {
     references.push(createReferenceSource('foodAllergy', '알레르기 성분 확인'));
@@ -396,7 +482,7 @@ function createMacroPercent(totals) {
   };
 }
 
-function evaluateRisk(profile, items, facts, totals, macroPercent, options) {
+function evaluateRisk(profile, items, facts, totals, macroPercent, options, additives = []) {
   const red = [];
   const yellow = [];
   const hasMedical = (term) => profile.medical.includes(term);
@@ -406,6 +492,11 @@ function evaluateRisk(profile, items, facts, totals, macroPercent, options) {
 
   if (!hasFood && !options.skipMissingFoodRisk) {
     yellow.push('음식명 확인 필요');
+  }
+
+  if (additives.length) {
+    const additiveNames = additives.slice(0, 3).map((item) => item.term).join(', ');
+    yellow.push(`식품첨가물 표시 확인 필요: ${additiveNames}`);
   }
 
   if (hasRiskyTerm) {
@@ -466,13 +557,13 @@ function createStampText(risk, stamp) {
   return '[참 잘했어요(초록)] 현재 입력된 음식 중심 분석이 목표와 안전 기준에 잘 맞습니다.';
 }
 
-function createMessage(profile, foods, labelItem, facts, totals, macroPercent, risk, stamp, options) {
+function createMessage(profile, foods, labelItem, facts, totals, macroPercent, risk, stamp, options, additives = []) {
   if (profile.mode === 'child') return createChildMessage(foods, labelItem, stamp);
   if (profile.mode === 'senior') return createSeniorMessage(profile, totals, stamp);
-  return createAdultMessage(profile, foods, labelItem, facts, totals, macroPercent, risk, options);
+  return createAdultMessage(profile, foods, labelItem, facts, totals, macroPercent, risk, options, additives);
 }
 
-function createAdultMessage(profile, foods, labelItem, facts, totals, macroPercent, risk, options) {
+function createAdultMessage(profile, foods, labelItem, facts, totals, macroPercent, risk, options, additives = []) {
   const weight = Math.max(Number(profile.weight || 70), 1);
   const sodiumRatio = Math.round((totals.sodium / GUIDELINES.kdri2025.sodiumCdrrMg) * 100);
   const hasEstimatedFood = foods.some((food) => food.estimated);
@@ -492,6 +583,11 @@ function createAdultMessage(profile, foods, labelItem, facts, totals, macroPerce
 
   if (labelItem) {
     paragraphs.push(`${facts.foodName || '포장식품'} 영양성분표도 함께 반영했습니다. 촬영 사진에서 글자가 자동 입력되지 않으면 숫자를 직접 고치면 리포트가 즉시 다시 계산됩니다.`);
+  }
+
+  if (additives.length) {
+    const additiveSummary = additives.slice(0, 4).map((item) => `${item.category}(${item.term})`).join(', ');
+    paragraphs.push(`성분표 또는 원재료명에서 ${additiveSummary} 후보가 감지되었습니다. 이는 유해 판정이 아니라 표시사항 확인용이며, 알레르기 이력, 고혈압/신장질환, 아동 섭취, 운동선수 보충제 사용 상황에서는 제품 라벨과 공식 정보를 한 번 더 확인하세요.`);
   }
 
   if (profile.sport === '근력파워') {
