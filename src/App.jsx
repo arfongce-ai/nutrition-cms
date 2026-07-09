@@ -7,6 +7,7 @@ import {
   MODE_LABELS,
   parseNutritionText,
 } from './services/nutritionEngine';
+import { findOfficialBrandFood } from './services/officialNutritionSources';
 
 const PROFILE_KEY = 'nutritionCameraProfile.v2';
 const LIVE_NUTRIENT_SCAN_INTERVAL_MS = 1800;
@@ -36,6 +37,21 @@ const foodCorrectionPresets = [
   { label: '맥도날드 빅맥', name: '맥도날드 빅맥', grams: '1' },
   { label: '버거킹 와퍼', name: '버거킹 와퍼', grams: '1' },
   { label: '써브웨이 BMT', name: '써브웨이 이탈리안비엠티', grams: '1' },
+];
+
+const textFoodEstimates = [
+  { keys: ['현미밥', '잡곡밥'], name: '현미밥', grams: '150', label: '밥류' },
+  { keys: ['흰쌀밥', '쌀밥', '공기밥', '밥'], name: '흰쌀밥', grams: '150', label: '밥류' },
+  { keys: ['김치', '배추김치', '깍두기'], name: '배추김치', grams: '50', label: '김치류' },
+  { keys: ['된장찌개', '김치찌개', '미역국', '국밥', '찌개'], name: '된장찌개', grams: '220', label: '국/찌개류' },
+  { keys: ['닭가슴살', '닭 가슴살', 'chicken breast'], name: '닭가슴살', grams: '120', label: '단백질 반찬' },
+  { keys: ['샐러드', 'salad', '채소'], name: '샐러드', grams: '160', label: '채소류' },
+  { keys: ['바나나', 'banana'], name: '바나나', grams: '150', label: '과일류' },
+  { keys: ['고구마', 'sweet potato'], name: '고구마', grams: '150', label: '탄수화물 식품' },
+  { keys: ['계란', '달걀', 'egg'], name: '계란', grams: '60', label: '계란류' },
+  { keys: ['두부', 'tofu'], name: '두부', grams: '120', label: '두부류' },
+  { keys: ['우유', 'milk'], name: '우유', grams: '200', label: '유제품' },
+  { keys: ['프로틴', '웨이', 'protein', 'whey'], name: '웨이 프로틴', grams: '50', label: '단백질 제품' },
 ];
 
 const DEFAULT_PROFILE = {
@@ -210,8 +226,8 @@ export default function App() {
 
     liveScanBusyRef.current = true;
     try {
-      const food = estimateFoodFromCanvas(canvas);
       const detected = await readNutritionTextFromCanvas(canvas, textDetectorRef);
+      const food = estimateFoodFromCanvas(canvas, detected.text);
       if (!detected.text) {
         setLiveScan((current) => ({
           status: food ? 'visual' : 'scanning',
@@ -283,7 +299,8 @@ export default function App() {
     });
     setSaveState('');
 
-    const [detected, visualEstimate] = await Promise.all([readNutritionTextFromImage(photo), estimateFoodFromPhoto(photo)]);
+    const detected = await readNutritionTextFromImage(photo);
+    const visualEstimate = await estimateFoodFromPhoto(photo, detected.text);
     setCaptured((current) => {
       if (!current) return current;
       const shouldApplyVisualEstimate = visualEstimate && (!current.foods.length || (current.foods.length === 1 && current.foods[0]?.estimated));
@@ -1212,25 +1229,25 @@ async function readNutritionTextFromCanvas(canvas, detectorRef) {
   }
 }
 
-async function estimateFoodFromPhoto(photo) {
+async function estimateFoodFromPhoto(photo, text = '') {
   if (!photo) return null;
 
   try {
     const image = await loadImage(photo);
     const sourceWidth = image.naturalWidth || image.width;
     const sourceHeight = image.naturalHeight || image.height;
-    return estimateFoodFromDrawable(image, sourceWidth, sourceHeight);
+    return estimateFoodFromDrawable(image, sourceWidth, sourceHeight, text);
   } catch {
     return null;
   }
 }
 
-function estimateFoodFromCanvas(sourceCanvas) {
+function estimateFoodFromCanvas(sourceCanvas, text = '') {
   if (!sourceCanvas?.width || !sourceCanvas?.height) return null;
-  return estimateFoodFromDrawable(sourceCanvas, sourceCanvas.width, sourceCanvas.height);
+  return estimateFoodFromDrawable(sourceCanvas, sourceCanvas.width, sourceCanvas.height, text);
 }
 
-function estimateFoodFromDrawable(source, sourceWidth, sourceHeight) {
+function estimateFoodFromDrawable(source, sourceWidth, sourceHeight, text = '') {
   const canvas = document.createElement('canvas');
   const size = 64;
   canvas.width = size;
@@ -1244,16 +1261,37 @@ function estimateFoodFromDrawable(source, sourceWidth, sourceHeight) {
 
   const pixels = ctx.getImageData(0, 0, size, size).data;
   const colorStats = createFoodColorStats(pixels);
-  return createFoodEstimateFromColor(colorStats);
+  const textEstimate = createFoodEstimateFromText(text);
+  const visualEstimate = createFoodEstimateFromColor(colorStats, Boolean(textEstimate));
+
+  if (textEstimate && visualEstimate && textEstimate.name !== visualEstimate.name) {
+    return {
+      ...textEstimate,
+      visualReason: `${textEstimate.visualReason} / 화면 형태 후보: ${visualEstimate.name}`,
+    };
+  }
+
+  return textEstimate || visualEstimate;
 }
 
 function createFoodColorStats(pixels) {
   const stats = { green: 0, yellow: 0, white: 0, brown: 0, total: 0 };
+  const gridSize = 8;
+  const cellSets = {
+    green: new Set(),
+    yellow: new Set(),
+    white: new Set(),
+    brown: new Set(),
+  };
 
   for (let index = 0; index < pixels.length; index += 4) {
     const r = pixels[index];
     const g = pixels[index + 1];
     const b = pixels[index + 2];
+    const pixelIndex = index / 4;
+    const x = pixelIndex % 64;
+    const y = Math.floor(pixelIndex / 64);
+    const cell = `${Math.floor(x / gridSize)}-${Math.floor(y / gridSize)}`;
     const brightness = (r + g + b) / 3;
     const max = Math.max(r, g, b);
     const min = Math.min(r, g, b);
@@ -1262,22 +1300,84 @@ function createFoodColorStats(pixels) {
     if (brightness < 45 || brightness > 245) continue;
     stats.total += 1;
 
-    if (g > r * 1.08 && g > b * 1.08 && brightness > 55) stats.green += 1;
-    if (r > 145 && g > 115 && b < 145 && saturation > 0.18) stats.yellow += 1;
-    if (brightness > 175 && saturation < 0.22) stats.white += 1;
-    if (r > 95 && g > 50 && b < 105 && r > g * 1.1 && saturation > 0.22) stats.brown += 1;
+    if (g > r * 1.08 && g > b * 1.08 && brightness > 55) {
+      stats.green += 1;
+      cellSets.green.add(cell);
+    }
+    if (r > 145 && g > 115 && b < 145 && saturation > 0.18) {
+      stats.yellow += 1;
+      cellSets.yellow.add(cell);
+    }
+    if (brightness > 175 && saturation < 0.22) {
+      stats.white += 1;
+      cellSets.white.add(cell);
+    }
+    if (r > 95 && g > 50 && b < 105 && r > g * 1.1 && saturation > 0.22) {
+      stats.brown += 1;
+      cellSets.brown.add(cell);
+    }
   }
 
-  return Object.fromEntries(Object.entries(stats).map(([key, value]) => [key, key === 'total' ? value : value / Math.max(stats.total, 1)]));
+  const total = Math.max(stats.total, 1);
+  return {
+    total: stats.total,
+    green: stats.green / total,
+    yellow: stats.yellow / total,
+    white: stats.white / total,
+    brown: stats.brown / total,
+    spread: {
+      green: cellSets.green.size / 64,
+      yellow: cellSets.yellow.size / 64,
+      white: cellSets.white.size / 64,
+      brown: cellSets.brown.size / 64,
+    },
+  };
 }
 
-function createFoodEstimateFromColor(stats) {
+function createFoodEstimateFromText(text) {
+  const normalized = normalizeRecognitionText(text);
+  if (!normalized) return null;
+
+  const officialFood = findOfficialBrandFood(text);
+  if (officialFood) {
+    const officialKey = officialFood.keys[0];
+    const officialName = normalizeRecognitionText(officialKey).includes(normalizeRecognitionText(officialFood.brand))
+      ? officialKey
+      : `${officialFood.brand} ${officialKey}`;
+    return createVisualEstimatedFood(
+      officialName,
+      '1',
+      `${officialFood.brand} 공식 제품명/브랜드 글자를 인식했어요`,
+    );
+  }
+
+  const hint = textFoodEstimates.find((entry) => entry.keys.some((key) => normalized.includes(normalizeRecognitionText(key))));
+  if (!hint) return null;
+
+  return createVisualEstimatedFood(hint.name, hint.grams, `글자에서 ${hint.label} 단서를 인식했어요`);
+}
+
+function createFoodEstimateFromColor(stats, hasTextSignal = false) {
   if (stats.total < 700) return null;
-  if (stats.green > 0.24) return createVisualEstimatedFood('샐러드', '180', '초록색 채소 비율이 높아요');
-  if (stats.yellow > 0.25) return createVisualEstimatedFood('바나나', '150', '노란색 과일 후보로 보여요');
-  if (stats.white > 0.34) return createVisualEstimatedFood('흰쌀밥', '150', '밝은 흰색 음식 후보로 보여요');
-  if (stats.brown > 0.28) return createVisualEstimatedFood('닭가슴살', '140', '갈색 단백질 반찬 후보로 보여요');
+  if (isCompactFoodShape(stats, 'green', hasTextSignal) && stats.green > 0.24) {
+    return createVisualEstimatedFood('샐러드', '180', '초록색 채소와 둥근 음식 형태가 함께 보여요');
+  }
+  if (isCompactFoodShape(stats, 'yellow', hasTextSignal) && stats.yellow > 0.25) {
+    return createVisualEstimatedFood('바나나', '150', '노란색 음식 형태가 화면 일부에 모여 보여요');
+  }
+  if (isCompactFoodShape(stats, 'white', hasTextSignal) && stats.white > 0.34) {
+    return createVisualEstimatedFood('흰쌀밥', '150', '밝은 흰색 음식 형태가 화면 일부에 모여 보여요');
+  }
+  if (isCompactFoodShape(stats, 'brown', hasTextSignal) && stats.brown > 0.28) {
+    return createVisualEstimatedFood('닭가슴살', '140', '갈색 단백질 반찬 형태가 화면 일부에 모여 보여요');
+  }
   return null;
+}
+
+function isCompactFoodShape(stats, key, hasTextSignal) {
+  const spread = stats.spread?.[key] || 0;
+  const maxSpread = hasTextSignal ? 0.72 : 0.46;
+  return spread >= 0.06 && spread <= maxSpread;
 }
 
 function createVisualEstimatedFood(name, grams, visualReason) {
@@ -1287,6 +1387,10 @@ function createVisualEstimatedFood(name, grams, visualReason) {
     grams,
     visualReason,
   };
+}
+
+function normalizeRecognitionText(value) {
+  return String(value || '').toLowerCase().replace(/[\s™®.&·ㆍ_-]/g, '');
 }
 
 function loadImage(src) {
