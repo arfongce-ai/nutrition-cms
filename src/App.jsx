@@ -214,9 +214,9 @@ export default function App() {
       const detected = await readNutritionTextFromCanvas(canvas, textDetectorRef);
       if (!detected.text) {
         setLiveScan((current) => ({
-          status: hasReadableNutritionFacts(current.facts) ? 'detected' : 'visual',
-          facts: current.facts || {},
-          text: current.text || '',
+          status: food ? 'visual' : 'scanning',
+          facts: food ? current.facts || {} : {},
+          text: food ? current.text || '' : '',
           food,
         }));
         return;
@@ -237,17 +237,17 @@ export default function App() {
       }
 
       setLiveScan((current) => ({
-        status: hasReadableNutritionFacts(current.facts) ? 'detected' : 'visual',
-        facts: current.facts || {},
-        text: detected.text || current.text || '',
+        status: food ? 'visual' : 'scanning',
+        facts: food ? current.facts || {} : {},
+        text: food ? detected.text || current.text || '' : '',
         food,
       }));
     } catch {
-      setLiveScan((current) => ({
-        status: hasReadableNutritionFacts(current.facts) ? 'detected' : 'visual',
-        facts: current.facts || {},
-        text: current.text || '',
-        food: current.food || createEstimatedFoodItem(),
+      setLiveScan(() => ({
+        status: 'scanning',
+        facts: {},
+        text: '',
+        food: null,
       }));
     } finally {
       liveScanBusyRef.current = false;
@@ -276,7 +276,7 @@ export default function App() {
     };
     setCaptured({
       photo,
-      foods: [liveScan.food || createEstimatedFoodItem()],
+      foods: liveScan.food ? [liveScan.food] : [],
       facts: initialFacts,
       ocrStatus: hasReadableNutritionFacts(liveScan.facts) ? 'detected' : 'checking',
       ocrText: liveScan.text || '',
@@ -286,7 +286,7 @@ export default function App() {
     const [detected, visualEstimate] = await Promise.all([readNutritionTextFromImage(photo), estimateFoodFromPhoto(photo)]);
     setCaptured((current) => {
       if (!current) return current;
-      const shouldApplyVisualEstimate = visualEstimate && current.foods.length === 1 && current.foods[0]?.estimated;
+      const shouldApplyVisualEstimate = visualEstimate && (!current.foods.length || (current.foods.length === 1 && current.foods[0]?.estimated));
       const nextFoods = shouldApplyVisualEstimate ? [visualEstimate] : current.foods;
 
       return {
@@ -1213,7 +1213,7 @@ async function readNutritionTextFromCanvas(canvas, detectorRef) {
 }
 
 async function estimateFoodFromPhoto(photo) {
-  if (!photo) return createEstimatedFoodItem();
+  if (!photo) return null;
 
   try {
     const image = await loadImage(photo);
@@ -1221,12 +1221,12 @@ async function estimateFoodFromPhoto(photo) {
     const sourceHeight = image.naturalHeight || image.height;
     return estimateFoodFromDrawable(image, sourceWidth, sourceHeight);
   } catch {
-    return createEstimatedFoodItem();
+    return null;
   }
 }
 
 function estimateFoodFromCanvas(sourceCanvas) {
-  if (!sourceCanvas?.width || !sourceCanvas?.height) return createEstimatedFoodItem();
+  if (!sourceCanvas?.width || !sourceCanvas?.height) return null;
   return estimateFoodFromDrawable(sourceCanvas, sourceCanvas.width, sourceCanvas.height);
 }
 
@@ -1272,11 +1272,12 @@ function createFoodColorStats(pixels) {
 }
 
 function createFoodEstimateFromColor(stats) {
-  if (stats.green > 0.18) return createVisualEstimatedFood('샐러드', '180', '초록색 채소 비율이 높아요');
-  if (stats.yellow > 0.12) return createVisualEstimatedFood('바나나', '150', '노란색 과일 후보로 보여요');
-  if (stats.white > 0.22) return createVisualEstimatedFood('흰쌀밥', '150', '밝은 흰색 음식 후보로 보여요');
-  if (stats.brown > 0.16) return createVisualEstimatedFood('닭가슴살', '140', '갈색 단백질 반찬 후보로 보여요');
-  return createVisualEstimatedFood('일반 식사', '250', '대표 식사값으로 먼저 계산했어요');
+  if (stats.total < 700) return null;
+  if (stats.green > 0.24) return createVisualEstimatedFood('샐러드', '180', '초록색 채소 비율이 높아요');
+  if (stats.yellow > 0.25) return createVisualEstimatedFood('바나나', '150', '노란색 과일 후보로 보여요');
+  if (stats.white > 0.34) return createVisualEstimatedFood('흰쌀밥', '150', '밝은 흰색 음식 후보로 보여요');
+  if (stats.brown > 0.28) return createVisualEstimatedFood('닭가슴살', '140', '갈색 단백질 반찬 후보로 보여요');
+  return null;
 }
 
 function createVisualEstimatedFood(name, grams, visualReason) {
