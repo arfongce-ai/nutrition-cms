@@ -32,6 +32,10 @@ const foodCorrectionPresets = [
   { label: '바나나/과일', name: '바나나', grams: '150' },
   { label: '고구마', name: '고구마', grams: '150' },
   { label: '단백질 제품', name: '웨이 프로틴', grams: '50' },
+  { label: '스타벅스 아메리카노', name: '스타벅스 카페 아메리카노', grams: '1' },
+  { label: '맥도날드 빅맥', name: '맥도날드 빅맥', grams: '1' },
+  { label: '버거킹 와퍼', name: '버거킹 와퍼', grams: '1' },
+  { label: '써브웨이 BMT', name: '써브웨이 이탈리안비엠티', grams: '1' },
 ];
 
 const DEFAULT_PROFILE = {
@@ -578,12 +582,13 @@ function CoachReportCard({ report }) {
       <div className="mt-5 grid gap-4">
         <ReportLine
           title="🍽️ 인식 음식 및 중량"
-          body={report.items.length ? report.items.map((item) => `${item.name}${item.grams ? ` ${item.grams}g` : ''}`).join(', ') : '촬영 음식 250g 기준 자동 추정'}
+          body={report.items.length ? report.items.map(formatReportItemLabel).join(', ') : '촬영 음식 250g 기준 자동 추정'}
         />
         <ReportLine
           title="📊 칼로리 및 주요 영양소"
           body={`${formatMetric(report.totals.calories, 'kcal')} / 탄수화물 ${report.macroPercent.carb}%, 단백질 ${report.macroPercent.protein}%, 지방 ${report.macroPercent.fat}%`}
         />
+        {report.sourceItems?.length ? <OfficialSourceList sources={report.sourceItems} /> : null}
 
         <div className="rounded-lg border border-slate-200 bg-slate-50 p-4">
           <h3 className="text-lg font-black">🚦 맞춤형 식단 평가</h3>
@@ -605,6 +610,33 @@ function ReportLine({ title, body, strong = false }) {
     <div className="rounded-lg border border-slate-200 bg-slate-50 p-4">
       <h3 className="text-lg font-black">{title}</h3>
       <p className={`mt-2 leading-relaxed ${strong ? 'text-xl font-black text-teal-800' : 'font-bold text-slate-700'}`}>{body}</p>
+    </div>
+  );
+}
+
+function formatReportItemLabel(item) {
+  if (item.serving) return `${item.name} (${item.serving})`;
+  return `${item.name}${item.grams ? ` ${item.grams}g` : ''}`;
+}
+
+function OfficialSourceList({ sources }) {
+  return (
+    <div className="rounded-lg border border-teal-200 bg-teal-50 p-4">
+      <h3 className="text-lg font-black">🔎 공식 영양성분표 참고</h3>
+      <div className="mt-3 grid gap-2">
+        {sources.map((source) => (
+          <a
+            key={`${source.name}-${source.sourceUrl}`}
+            href={source.sourceUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="rounded-lg border border-teal-100 bg-white p-3 text-sm font-black text-teal-800"
+          >
+            {source.official ? '공식값 적용' : '공식 출처 확인'} · {source.name}
+            {source.serving ? ` · ${source.serving}` : ''} · {source.sourceLabel}
+          </a>
+        ))}
+      </div>
     </div>
   );
 }

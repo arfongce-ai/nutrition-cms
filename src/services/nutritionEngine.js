@@ -1,3 +1,5 @@
+import { findOfficialBrandFood, findOfficialNutritionSources } from './officialNutritionSources.js';
+
 export const MODE_LABELS = {
   adult: '성인',
   child: '아동',
@@ -131,6 +133,7 @@ export function analyzeMeal(profile, foodItems, nutritionFacts, options = {}) {
   const risk = evaluateRisk(normalizedProfile, items, facts, totals, macroPercent, options);
   const stamp = risk.red.length ? 'red' : risk.yellow.length ? 'yellow' : 'green';
   const messageParagraphs = createMessage(normalizedProfile, foods, labelItem, facts, totals, macroPercent, risk, stamp, options);
+  const sourceItems = createSourceItems(items);
 
   return {
     analysisType: 'meal-with-label',
@@ -141,6 +144,7 @@ export function analyzeMeal(profile, foodItems, nutritionFacts, options = {}) {
     totals,
     macroPercent,
     risk,
+    sourceItems,
     stamp,
     stampText: createStampText(risk, stamp),
     messageParagraphs,
@@ -154,7 +158,7 @@ function normalizeFoods(foodItems) {
     .map((item) => {
       const grams = Math.max(toNumber(item.grams) || 100, 1);
       const base = findFood(item.name);
-      const multiplier = grams / 100;
+      const multiplier = base.perServing ? 1 : grams / 100;
       return {
         id: item.id,
         type: '음식',
@@ -163,6 +167,11 @@ function normalizeFoods(foodItems) {
         estimated: Boolean(item.estimated),
         emoji: base.emoji,
         matched: base.matched,
+        official: Boolean(base.official),
+        brand: base.brand || '',
+        serving: base.serving || '',
+        sourceLabel: base.sourceLabel || '',
+        sourceUrl: base.sourceUrl || '',
         calories: round(base.calories * multiplier),
         carb: round(base.carb * multiplier),
         protein: round(base.protein * multiplier),
@@ -179,11 +188,15 @@ function normalizeFoods(foodItems) {
 
 function findFood(name) {
   const normalized = String(name || '').toLowerCase().replace(/\s/g, '');
+  const official = findOfficialBrandFood(name);
+  if (official) return { ...official, matched: true, official: true, perServing: true };
+
   const found = FOOD_DATABASE.find((entry) => entry.keys.some((key) => normalized.includes(key.toLowerCase().replace(/\s/g, ''))));
-  if (found) return { ...found, matched: true };
+  if (found) return { ...found, matched: true, ...createSourceFallback(name) };
   return {
     emoji: '음식',
     matched: false,
+    ...createSourceFallback(name),
     calories: 120,
     carb: 12,
     protein: 6,
@@ -193,6 +206,31 @@ function findFood(name) {
     fiber: 1,
     leucine: 300,
   };
+}
+
+function createSourceFallback(name) {
+  const source = findOfficialNutritionSources(name)[0];
+  if (!source) return {};
+  return {
+    brand: source.brand,
+    sourceLabel: `${source.brand} 공식 메뉴/영양성분표`,
+    sourceUrl: source.url,
+  };
+}
+
+function createSourceItems(items) {
+  const sources = items
+    .filter((item) => item.sourceUrl)
+    .map((item) => ({
+      name: item.name,
+      brand: item.brand || '',
+      sourceLabel: item.sourceLabel || '공식 메뉴/영양성분표',
+      sourceUrl: item.sourceUrl,
+      official: Boolean(item.official),
+      serving: item.serving || '',
+    }));
+
+  return sources.filter((source, index) => sources.findIndex((item) => item.sourceUrl === source.sourceUrl && item.name === source.name) === index);
 }
 
 function createLabelItem(facts) {

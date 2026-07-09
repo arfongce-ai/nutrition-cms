@@ -18,6 +18,7 @@ export async function saveNutritionReport(report) {
     totals: report.totals,
     macroPercent: report.macroPercent,
     risk: report.risk,
+    sourceItems: report.sourceItems,
   };
 
   saveLocalReport(payload);
