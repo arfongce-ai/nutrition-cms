@@ -79,8 +79,9 @@ export default function App() {
   }, [captured, profile]);
 
   const liveReport = useMemo(() => {
-    if (captured || !hasReadableNutritionFacts(liveScan.facts)) return null;
-    return analyzeMeal(profile, [], liveScan.facts, {
+    const liveFoods = liveScan.food ? [liveScan.food] : [];
+    if (captured || (!liveFoods.length && !hasReadableNutritionFacts(liveScan.facts))) return null;
+    return analyzeMeal(profile, liveFoods, liveScan.facts, {
       ocrStatus: liveScan.status,
       ocrText: liveScan.text,
       skipMissingFoodRisk: true,
@@ -177,12 +178,7 @@ export default function App() {
   function startLiveNutrientScan() {
     stopLiveNutrientScan();
 
-    if (!('TextDetector' in window)) {
-      setLiveScan({ status: 'unsupported', facts: {}, text: '' });
-      return;
-    }
-
-    setLiveScan((current) => (current.status === 'detected' ? current : { status: 'scanning', facts: {}, text: '' }));
+    setLiveScan((current) => ({ ...current, status: current.status === 'detected' ? 'detected' : 'scanning' }));
     runLiveNutrientScan();
     liveScanTimerRef.current = window.setInterval(runLiveNutrientScan, LIVE_NUTRIENT_SCAN_INTERVAL_MS);
   }
@@ -195,9 +191,15 @@ export default function App() {
 
     liveScanBusyRef.current = true;
     try {
+      const food = estimateFoodFromCanvas(canvas);
       const detected = await readNutritionTextFromCanvas(canvas, textDetectorRef);
       if (!detected.text) {
-        setLiveScan((current) => (current.status === 'detected' ? current : { status: 'scanning', facts: {}, text: '' }));
+        setLiveScan((current) => ({
+          status: hasReadableNutritionFacts(current.facts) ? 'detected' : 'visual',
+          facts: current.facts || {},
+          text: current.text || '',
+          food,
+        }));
         return;
       }
 
@@ -210,13 +212,24 @@ export default function App() {
             ...facts,
           },
           text: detected.text || current.text,
+          food,
         }));
         return;
       }
 
-      setLiveScan((current) => (current.status === 'detected' ? current : { status: 'scanning', facts: {}, text: detected.text }));
+      setLiveScan((current) => ({
+        status: hasReadableNutritionFacts(current.facts) ? 'detected' : 'visual',
+        facts: current.facts || {},
+        text: detected.text || current.text || '',
+        food,
+      }));
     } catch {
-      setLiveScan((current) => (current.status === 'detected' ? current : { status: 'scanning', facts: {}, text: '' }));
+      setLiveScan((current) => ({
+        status: hasReadableNutritionFacts(current.facts) ? 'detected' : 'visual',
+        facts: current.facts || {},
+        text: current.text || '',
+        food: current.food || createEstimatedFoodItem(),
+      }));
     } finally {
       liveScanBusyRef.current = false;
     }
@@ -244,7 +257,7 @@ export default function App() {
     };
     setCaptured({
       photo,
-      foods: [createEstimatedFoodItem()],
+      foods: [liveScan.food || createEstimatedFoodItem()],
       facts: initialFacts,
       ocrStatus: hasReadableNutritionFacts(liveScan.facts) ? 'detected' : 'checking',
       ocrText: liveScan.text || '',
@@ -532,10 +545,10 @@ function LiveNutritionBadge({ liveScan }) {
     );
   }
 
-  if (liveScan?.status === 'unsupported') {
+  if (liveScan?.food) {
     return (
       <div className="absolute left-4 top-24 z-10 rounded-full border border-white/15 bg-black/40 px-4 py-2 text-xs font-black text-white/80 shadow-xl backdrop-blur">
-        영양표 자동 인식 미지원 · 촬영 후 입력
+        음식 후보 분석 중 · 영양표는 보조 인식
       </div>
     );
   }
@@ -543,7 +556,7 @@ function LiveNutritionBadge({ liveScan }) {
   if (liveScan?.status === 'scanning') {
     return (
       <div className="absolute left-4 top-24 z-10 rounded-full border border-white/15 bg-black/40 px-4 py-2 text-xs font-black text-white/80 shadow-xl backdrop-blur">
-        영양표 자동 인식 중
+        음식 후보 분석 중
       </div>
     );
   }
@@ -558,11 +571,11 @@ function LiveAnalysisPanel({ liveReport, liveScan }) {
         <div className="flex items-center justify-between gap-3">
           <strong className="text-base font-black">실시간 자동 분석</strong>
           <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-black text-white/75">
-            {liveScan?.status === 'unsupported' ? '미지원' : '대기'}
+            분석 중
           </span>
         </div>
         <p className="mt-2 text-sm font-bold text-white/75">
-          영양표 숫자가 보이면 촬영 전에도 열량과 주요 성분을 바로 분석합니다.
+          음식을 화면 안에 맞추면 후보 음식과 예상 kcal를 바로 추정합니다.
         </p>
       </div>
     );
@@ -574,7 +587,9 @@ function LiveAnalysisPanel({ liveReport, liveScan }) {
     red: { label: '조심', className: 'bg-red-400 text-red-950' },
   }[liveReport.stamp];
 
-  const primaryRisk = liveReport.risk.red[0] || liveReport.risk.yellow[0] || '현재 보이는 영양표 기준으로 큰 위험 신호는 없습니다.';
+  const primaryRisk = liveScan?.food?.visualReason
+    ? `실시간 후보: ${liveScan.food.name} · ${liveScan.food.visualReason}`
+    : liveReport.risk.red[0] || liveReport.risk.yellow[0] || '현재 화면 기준으로 큰 위험 신호는 없습니다.';
 
   return (
     <div className="absolute bottom-36 left-4 right-4 z-10 rounded-2xl border border-white/15 bg-black/55 p-4 text-white shadow-2xl backdrop-blur md:left-auto md:w-[420px]">
@@ -906,25 +921,34 @@ async function estimateFoodFromPhoto(photo) {
 
   try {
     const image = await loadImage(photo);
-    const canvas = document.createElement('canvas');
-    const size = 64;
-    canvas.width = size;
-    canvas.height = size;
-    const ctx = canvas.getContext('2d', { willReadFrequently: true });
     const sourceWidth = image.naturalWidth || image.width;
     const sourceHeight = image.naturalHeight || image.height;
-    const cropSize = Math.floor(Math.min(sourceWidth, sourceHeight) * 0.76);
-    const sourceX = Math.floor((sourceWidth - cropSize) / 2);
-    const sourceY = Math.floor((sourceHeight - cropSize) / 2);
-
-    ctx.drawImage(image, sourceX, sourceY, cropSize, cropSize, 0, 0, size, size);
-
-    const pixels = ctx.getImageData(0, 0, size, size).data;
-    const colorStats = createFoodColorStats(pixels);
-    return createFoodEstimateFromColor(colorStats);
+    return estimateFoodFromDrawable(image, sourceWidth, sourceHeight);
   } catch {
     return createEstimatedFoodItem();
   }
+}
+
+function estimateFoodFromCanvas(sourceCanvas) {
+  if (!sourceCanvas?.width || !sourceCanvas?.height) return createEstimatedFoodItem();
+  return estimateFoodFromDrawable(sourceCanvas, sourceCanvas.width, sourceCanvas.height);
+}
+
+function estimateFoodFromDrawable(source, sourceWidth, sourceHeight) {
+  const canvas = document.createElement('canvas');
+  const size = 64;
+  canvas.width = size;
+  canvas.height = size;
+  const ctx = canvas.getContext('2d', { willReadFrequently: true });
+  const cropSize = Math.floor(Math.min(sourceWidth, sourceHeight) * 0.76);
+  const sourceX = Math.floor((sourceWidth - cropSize) / 2);
+  const sourceY = Math.floor((sourceHeight - cropSize) / 2);
+
+  ctx.drawImage(source, sourceX, sourceY, cropSize, cropSize, 0, 0, size, size);
+
+  const pixels = ctx.getImageData(0, 0, size, size).data;
+  const colorStats = createFoodColorStats(pixels);
+  return createFoodEstimateFromColor(colorStats);
 }
 
 function createFoodColorStats(pixels) {
