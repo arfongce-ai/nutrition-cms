@@ -20,6 +20,15 @@ const nutritionFactFields = [
   { key: 'sodium', label: '나트륨', unit: 'mg' },
 ];
 
+const foodCorrectionPresets = [
+  { label: '밥/반찬', name: '흰쌀밥', grams: '150' },
+  { label: '닭가슴살 샐러드', name: '닭가슴살 샐러드', grams: '250' },
+  { label: '바나나/과일', name: '바나나', grams: '150' },
+  { label: '김치/반찬', name: '배추김치', grams: '60' },
+  { label: '고구마', name: '고구마', grams: '150' },
+  { label: '단백질 제품', name: '웨이 프로틴', grams: '50' },
+];
+
 const DEFAULT_PROFILE = {
   mode: 'adult',
   age: 32,
@@ -242,23 +251,23 @@ export default function App() {
     });
     setSaveState('');
 
-    const detected = await readNutritionTextFromImage(photo);
+    const [detected, visualEstimate] = await Promise.all([readNutritionTextFromImage(photo), estimateFoodFromPhoto(photo)]);
     setCaptured((current) => {
       if (!current) return current;
-      if (!detected.text) {
-        return {
-          ...current,
-          ocrStatus: hasReadableNutritionFacts(current.facts) ? 'detected' : detected.status,
-        };
-      }
+      const shouldApplyVisualEstimate = visualEstimate && current.foods.length === 1 && current.foods[0]?.estimated;
+      const nextFoods = shouldApplyVisualEstimate ? [visualEstimate] : current.foods;
+
       return {
         ...current,
-        ocrStatus: 'detected',
-        ocrText: detected.text,
-        facts: {
-          ...current.facts,
-          ...parseNutritionText(detected.text),
-        },
+        foods: nextFoods,
+        ocrStatus: detected.text ? 'detected' : hasReadableNutritionFacts(current.facts) ? 'detected' : detected.status,
+        ocrText: detected.text || current.ocrText,
+        facts: detected.text
+          ? {
+              ...current.facts,
+              ...parseNutritionText(detected.text),
+            }
+          : current.facts,
       };
     });
   }
@@ -614,11 +623,30 @@ function FoodItemsForm({ foods, updateFood, addFood, removeFood }) {
               ) : null}
             </div>
           </div>
+          {food.estimated ? (
+            <div className="grid gap-2 rounded-lg border border-emerald-100 bg-emerald-50 p-3">
+              <p className="text-sm font-black text-emerald-800">
+                {food.visualReason ? `사진 후보: ${food.visualReason}` : '자동 추정값으로 먼저 계산했습니다.'}
+              </p>
+              <div className="grid grid-cols-2 gap-2">
+                {foodCorrectionPresets.map((preset) => (
+                  <button
+                    key={preset.label}
+                    type="button"
+                    onClick={() => updateFood(food.id, { name: preset.name, grams: preset.grams, estimated: false, visualReason: '' })}
+                    className="min-h-10 rounded-lg border border-emerald-200 bg-white px-2 text-xs font-black text-slate-800"
+                  >
+                    {preset.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+          ) : null}
           <label className="grid gap-1 text-sm font-black">
             음식명
             <input
               value={food.name}
-              onChange={(event) => updateFood(food.id, { name: event.target.value })}
+              onChange={(event) => updateFood(food.id, { name: event.target.value, estimated: false, visualReason: '' })}
               className="h-12 rounded-lg border border-slate-200 bg-white px-3 text-base"
               placeholder="예: 현미밥, 닭가슴살, 김치"
             />
@@ -629,7 +657,7 @@ function FoodItemsForm({ foods, updateFood, addFood, removeFood }) {
               <input
                 value={food.grams}
                 inputMode="decimal"
-                onChange={(event) => updateFood(food.id, { grams: event.target.value })}
+                onChange={(event) => updateFood(food.id, { grams: event.target.value, estimated: false, visualReason: '' })}
                 className="h-12 min-w-0 flex-1 px-3 text-base outline-none"
                 placeholder="100"
               />
@@ -871,6 +899,73 @@ async function readNutritionTextFromCanvas(canvas, detectorRef) {
   } catch {
     return { status: 'manual', text: '' };
   }
+}
+
+async function estimateFoodFromPhoto(photo) {
+  if (!photo) return createEstimatedFoodItem();
+
+  try {
+    const image = await loadImage(photo);
+    const canvas = document.createElement('canvas');
+    const size = 64;
+    canvas.width = size;
+    canvas.height = size;
+    const ctx = canvas.getContext('2d', { willReadFrequently: true });
+    const sourceWidth = image.naturalWidth || image.width;
+    const sourceHeight = image.naturalHeight || image.height;
+    const cropSize = Math.floor(Math.min(sourceWidth, sourceHeight) * 0.76);
+    const sourceX = Math.floor((sourceWidth - cropSize) / 2);
+    const sourceY = Math.floor((sourceHeight - cropSize) / 2);
+
+    ctx.drawImage(image, sourceX, sourceY, cropSize, cropSize, 0, 0, size, size);
+
+    const pixels = ctx.getImageData(0, 0, size, size).data;
+    const colorStats = createFoodColorStats(pixels);
+    return createFoodEstimateFromColor(colorStats);
+  } catch {
+    return createEstimatedFoodItem();
+  }
+}
+
+function createFoodColorStats(pixels) {
+  const stats = { green: 0, yellow: 0, white: 0, brown: 0, total: 0 };
+
+  for (let index = 0; index < pixels.length; index += 4) {
+    const r = pixels[index];
+    const g = pixels[index + 1];
+    const b = pixels[index + 2];
+    const brightness = (r + g + b) / 3;
+    const max = Math.max(r, g, b);
+    const min = Math.min(r, g, b);
+    const saturation = max ? (max - min) / max : 0;
+
+    if (brightness < 45 || brightness > 245) continue;
+    stats.total += 1;
+
+    if (g > r * 1.08 && g > b * 1.08 && brightness > 55) stats.green += 1;
+    if (r > 145 && g > 115 && b < 145 && saturation > 0.18) stats.yellow += 1;
+    if (brightness > 175 && saturation < 0.22) stats.white += 1;
+    if (r > 95 && g > 50 && b < 105 && r > g * 1.1 && saturation > 0.22) stats.brown += 1;
+  }
+
+  return Object.fromEntries(Object.entries(stats).map(([key, value]) => [key, key === 'total' ? value : value / Math.max(stats.total, 1)]));
+}
+
+function createFoodEstimateFromColor(stats) {
+  if (stats.green > 0.18) return createVisualEstimatedFood('샐러드', '180', '초록색 채소 비율이 높아요');
+  if (stats.yellow > 0.12) return createVisualEstimatedFood('바나나', '150', '노란색 과일 후보로 보여요');
+  if (stats.white > 0.22) return createVisualEstimatedFood('흰쌀밥', '150', '밝은 흰색 음식 후보로 보여요');
+  if (stats.brown > 0.16) return createVisualEstimatedFood('닭가슴살', '140', '갈색 단백질 반찬 후보로 보여요');
+  return createVisualEstimatedFood('일반 식사', '250', '대표 식사값으로 먼저 계산했어요');
+}
+
+function createVisualEstimatedFood(name, grams, visualReason) {
+  return {
+    ...createEstimatedFoodItem(),
+    name,
+    grams,
+    visualReason,
+  };
 }
 
 function loadImage(src) {
