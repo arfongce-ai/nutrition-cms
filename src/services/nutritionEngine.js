@@ -141,12 +141,12 @@ export function createEmptyNutritionFacts() {
 }
 
 export function parseNutritionText(text) {
-  const source = String(text || '').replaceAll(',', '');
+  const source = normalizeNutritionOcrText(text);
   return compactFacts({
     foodName: extractFoodName(source),
     calories: extractNumber(source, [
       /(?:열량|칼로리|kcal|calories?)\D{0,12}(\d+(?:\.\d+)?)/i,
-      /(\d+(?:\.\d+)?)\s*kcal/i,
+      /(\d+(?:\.\d+)?)\s*(?:kcal|㎉|칼로리)/i,
     ]),
     carb: extractNumber(source, [/(?:탄수화물|carbohydrate|carbs?)\D{0,12}(\d+(?:\.\d+)?)/i]),
     sugar: extractNumber(source, [/(?:당류|당|sugars?)\D{0,12}(\d+(?:\.\d+)?)/i]),
@@ -156,6 +156,18 @@ export function parseNutritionText(text) {
     transFat: extractNumber(source, [/(?:트랜스지방|trans fat)\D{0,12}(\d+(?:\.\d+)?)/i]),
     sodium: extractNumber(source, [/(?:나트륨|sodium)\D{0,12}(\d+(?:\.\d+)?)/i]),
   });
+}
+
+function normalizeNutritionOcrText(text) {
+  return String(text || '')
+    .replaceAll(',', '')
+    .replace(/[㎉]/g, 'kcal')
+    .replace(/[㎎]/g, 'mg')
+    .replace(/[㎏]/g, 'kg')
+    .replace(/[０-９]/g, (value) => String.fromCharCode(value.charCodeAt(0) - 0xfee0))
+    .replace(/kca[il1]/gi, 'kcal')
+    .replace(/m9/gi, 'mg')
+    .replace(/(\d)\s*[lI]\s*(?=\d)/g, '$11');
 }
 
 export function getBmiStatus(heightCm, weightKg) {

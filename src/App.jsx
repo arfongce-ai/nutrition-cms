@@ -230,7 +230,7 @@ export default function App() {
       const food = estimateFoodFromCanvas(canvas, detected.text);
       if (!detected.text) {
         setLiveScan((current) => ({
-          status: food ? 'visual' : 'scanning',
+          status: detected.status === 'unsupported' ? 'unsupported' : food ? 'visual' : 'scanning',
           facts: food ? current.facts || {} : {},
           text: food ? current.text || '' : '',
           food,
@@ -704,16 +704,19 @@ function LiveNutritionBadge({ liveScan }) {
 
 function LiveAnalysisPanel({ liveReport, liveScan }) {
   if (!liveReport) {
+    const unsupported = liveScan?.status === 'unsupported';
     return (
       <div className="absolute left-4 right-4 top-4 z-10 rounded-2xl border border-white/15 bg-black/45 p-3 text-white shadow-2xl backdrop-blur md:left-auto md:right-4 md:w-[360px]">
         <div className="flex items-center justify-between gap-3">
           <strong className="text-sm font-black">실시간 자동 분석</strong>
-          <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-black text-white/75">
-            분석 중
+          <span className={`rounded-full px-3 py-1 text-xs font-black ${unsupported ? 'bg-amber-300 text-amber-950' : 'bg-white/10 text-white/75'}`}>
+            {unsupported ? '제한' : '분석 중'}
           </span>
         </div>
         <p className="mt-1 text-xs font-bold text-white/75">
-          음식은 바로 추정하고, 성분표 숫자가 보이면 kcal와 주요 성분도 함께 반영합니다.
+          {unsupported
+            ? '이 브라우저에서는 성분표 자동 문자 인식이 제한됩니다. 촬영 후 숫자를 직접 입력할 수 있습니다.'
+            : '성분표를 원 안에 크게 맞추면 확대·대비 보정 후 kcal와 주요 성분을 읽습니다.'}
         </p>
         <p className="mt-2 border-t border-white/10 pt-2 text-[11px] font-black text-amber-100/90">
           정확하지 않을 수 있으니 참고하세요.
@@ -1204,14 +1207,14 @@ function useStoredProfile() {
 
 async function readNutritionTextFromImage(photo) {
   if (!photo || !('TextDetector' in window)) {
-    return { status: 'manual', text: '' };
+    return { status: 'unsupported', text: '' };
   }
 
   try {
     const image = await loadImage(photo);
     const detector = new window.TextDetector();
-    const results = await detector.detect(image);
-    const text = results.map((item) => item.rawValue).filter(Boolean).join('\n');
+    const candidates = createOcrCandidateCanvases(image, image.naturalWidth || image.width, image.naturalHeight || image.height);
+    const text = await detectBestText(detector, candidates);
     return { status: text ? 'detected' : 'manual', text };
   } catch {
     return { status: 'manual', text: '' };
@@ -1220,19 +1223,133 @@ async function readNutritionTextFromImage(photo) {
 
 async function readNutritionTextFromCanvas(canvas, detectorRef) {
   if (!canvas || !('TextDetector' in window)) {
-    return { status: 'manual', text: '' };
+    return { status: 'unsupported', text: '' };
   }
 
   try {
     if (!detectorRef.current) {
       detectorRef.current = new window.TextDetector();
     }
-    const results = await detectorRef.current.detect(canvas);
-    const text = results.map((item) => item.rawValue).filter(Boolean).join('\n');
+    const candidates = createOcrCandidateCanvases(canvas, canvas.width, canvas.height);
+    const text = await detectBestText(detectorRef.current, candidates);
     return { status: text ? 'detected' : 'manual', text };
   } catch {
     return { status: 'manual', text: '' };
   }
+}
+
+async function detectBestText(detector, candidates) {
+  const lines = [];
+
+  for (const candidate of candidates) {
+    try {
+      const results = await detector.detect(candidate);
+      results
+        .map((item) => item.rawValue)
+        .filter(Boolean)
+        .forEach((line) => lines.push(line));
+    } catch {
+      // Some devices reject a preprocessed canvas. Keep trying the next candidate.
+    }
+  }
+
+  return uniqueOcrLines(lines).join('\n');
+}
+
+function uniqueOcrLines(lines) {
+  const seen = new Set();
+  return lines
+    .map((line) => String(line || '').trim())
+    .filter(Boolean)
+    .filter((line) => {
+      const key = line.replace(/\s/g, '').toLowerCase();
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+}
+
+function createOcrCandidateCanvases(source, sourceWidth, sourceHeight) {
+  const candidates = [];
+  const safeWidth = Math.max(1, sourceWidth || 1);
+  const safeHeight = Math.max(1, sourceHeight || 1);
+
+  candidates.push(drawScaledCanvas(source, safeWidth, safeHeight, 1600));
+
+  const cropSize = Math.floor(Math.min(safeWidth, safeHeight) * 0.82);
+  const cropX = Math.floor((safeWidth - cropSize) / 2);
+  const cropY = Math.floor((safeHeight - cropSize) / 2);
+  const centerCrop = drawCroppedCanvas(source, cropX, cropY, cropSize, cropSize, 1700, 1700);
+  candidates.push(centerCrop);
+  candidates.push(createContrastCanvas(centerCrop, { grayscale: true, contrast: 1.45, brightness: 10 }));
+  candidates.push(createContrastCanvas(centerCrop, { grayscale: true, contrast: 1.85, brightness: 24, threshold: 146 }));
+
+  const labelWidth = Math.floor(safeWidth * 0.9);
+  const labelHeight = Math.floor(safeHeight * 0.45);
+  const labelX = Math.floor((safeWidth - labelWidth) / 2);
+  const labelY = Math.floor(safeHeight * 0.27);
+  const centerBand = drawCroppedCanvas(source, labelX, labelY, labelWidth, labelHeight, 1800, 900);
+  candidates.push(centerBand);
+  candidates.push(createContrastCanvas(centerBand, { grayscale: true, contrast: 1.65, brightness: 18 }));
+
+  return candidates;
+}
+
+function drawScaledCanvas(source, sourceWidth, sourceHeight, maxSide) {
+  const scale = Math.min(maxSide / Math.max(sourceWidth, sourceHeight), 2.4);
+  const width = Math.max(1, Math.round(sourceWidth * scale));
+  const height = Math.max(1, Math.round(sourceHeight * scale));
+  const canvas = document.createElement('canvas');
+  canvas.width = width;
+  canvas.height = height;
+  const ctx = canvas.getContext('2d', { willReadFrequently: true });
+  ctx.imageSmoothingEnabled = true;
+  ctx.imageSmoothingQuality = 'high';
+  ctx.drawImage(source, 0, 0, sourceWidth, sourceHeight, 0, 0, width, height);
+  return canvas;
+}
+
+function drawCroppedCanvas(source, x, y, width, height, targetWidth, targetHeight) {
+  const canvas = document.createElement('canvas');
+  canvas.width = Math.max(1, targetWidth);
+  canvas.height = Math.max(1, targetHeight);
+  const ctx = canvas.getContext('2d', { willReadFrequently: true });
+  ctx.imageSmoothingEnabled = true;
+  ctx.imageSmoothingQuality = 'high';
+  ctx.drawImage(source, x, y, width, height, 0, 0, canvas.width, canvas.height);
+  return canvas;
+}
+
+function createContrastCanvas(sourceCanvas, options = {}) {
+  const canvas = document.createElement('canvas');
+  canvas.width = sourceCanvas.width;
+  canvas.height = sourceCanvas.height;
+  const ctx = canvas.getContext('2d', { willReadFrequently: true });
+  ctx.drawImage(sourceCanvas, 0, 0);
+
+  const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  const data = imageData.data;
+  const contrast = options.contrast || 1;
+  const brightness = options.brightness || 0;
+  const threshold = options.threshold;
+
+  for (let index = 0; index < data.length; index += 4) {
+    const r = data[index];
+    const g = data[index + 1];
+    const b = data[index + 2];
+    const gray = Math.round(0.299 * r + 0.587 * g + 0.114 * b);
+    let value = options.grayscale ? gray : (r + g + b) / 3;
+    value = Math.max(0, Math.min(255, (value - 128) * contrast + 128 + brightness));
+    if (threshold != null) {
+      value = value > threshold ? 255 : 0;
+    }
+    data[index] = value;
+    data[index + 1] = value;
+    data[index + 2] = value;
+  }
+
+  ctx.putImageData(imageData, 0, 0);
+  return canvas;
 }
 
 async function estimateFoodFromPhoto(photo, text = '') {
