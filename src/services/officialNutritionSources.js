@@ -23,7 +23,55 @@ export const OFFICIAL_NUTRITION_SOURCES = [
   { brand: 'VIPS', aliases: ['vips', '빕스'], category: '패밀리 레스토랑', url: 'https://www.ivips.co.kr:444/menu/menuList.asp' },
   { brand: '애슐리퀸즈', aliases: ['애슐리', 'ashley'], category: '패밀리 레스토랑', url: 'https://www.myashley.co.kr/Menu/AshleyMenu/Menu01.aspx' },
   { brand: '매드포갈릭', aliases: ['매드포갈릭', 'madforgarlic'], category: '패밀리 레스토랑', url: 'https://www.madforgarlic.com/menu' },
+  { brand: '복순도가', aliases: ['복순도가', 'boksoondoga'], category: '울산 전통주', url: 'https://www.boksoon.com' },
+  { brand: '트레비어', aliases: ['트레비어', 'trevier'], category: '울산 수제맥주', url: 'http://trevier.co.kr' },
+  { brand: '소월당', aliases: ['소월당', 'sowoldang', '울산 배빵'], category: '울산 식음료/베이커리', url: 'http://sowoldang.com' },
+  { brand: '해월당', aliases: ['해월당', 'haewoldang'], category: '울산 베이커리', url: 'http://haewoldang.com' },
+  { brand: '홉스피제리아', aliases: ['홉스피제리아', 'hops pizzeria', 'hopspizzeria'], category: '울산 외식 프랜차이즈', url: 'http://www.hopspizzeria.com' },
+  { brand: '바른치킨', aliases: ['바른치킨', 'barunchicken'], category: '치킨 프랜차이즈', url: 'https://www.barunchicken.com' },
+  { brand: '마이프로틴', aliases: ['마이프로틴', 'myprotein'], category: '보충제/단백질', url: 'https://www.myprotein.co.kr' },
+  { brand: '셀렉스', aliases: ['셀렉스', 'selex'], category: '보충제/단백질', url: 'https://www.selexmall.com' },
+  { brand: '칼로바이', aliases: ['칼로바이', 'calobye'], category: '보충제/단백질', url: 'https://www.calobye.com' },
+  { brand: '뉴트리디데이', aliases: ['뉴트리디데이', 'nutridday'], category: '건강기능식품', url: 'https://www.nutridday.com' },
+  { brand: '스포맥스', aliases: ['스포맥스', 'spomax'], category: '보충제/스포츠영양', url: 'https://www.spomax.kr' },
+  { brand: '프로틴업', aliases: ['프로틴업', 'intake', 'shopintake'], category: '보충제/단백질', url: 'https://www.shopintake.com' },
+  { brand: '대상웰라이프', aliases: ['대상웰라이프', 'daesang wellife'], category: '건강기능식품', url: 'https://www.daesangwellife.com' },
+  { brand: '정관장', aliases: ['정관장', 'kgc'], category: '홍삼/건강기능식품', url: 'https://www.kgc.co.kr' },
+  { brand: '옴니허브', aliases: ['옴니허브', 'omniherb'], category: '한약재/허브', url: 'https://www.omniherb.com' },
 ];
+
+export const SAFETY_REFERENCE_SOURCES = {
+  foodAllergy: {
+    brand: '식품안전나라',
+    category: '식품 알레르기 표시 기준',
+    sourceLabel: '식약처 식품안전나라 알레르기 유발물질 표시 기준',
+    sourceUrl: 'https://www.foodsafetykorea.go.kr',
+  },
+  schoolMealAllergy: {
+    brand: '농림축산식품부',
+    category: '학교급식/단체급식 알레르기 정보',
+    sourceLabel: '농림축산식품부 학교급식 및 알레르기 교육 자료',
+    sourceUrl: 'https://www.mafra.go.kr',
+  },
+  healthAllergy: {
+    brand: '질병관리청',
+    category: '알레르기 질환 정보',
+    sourceLabel: '질병관리청 국가건강정보포털 알레르기 질환 정보',
+    sourceUrl: 'https://health.kdca.go.kr',
+  },
+  medication: {
+    brand: '의약품안전나라',
+    category: '약물/첨가제 확인',
+    sourceLabel: '식약처 의약품안전나라 의약품 첨부문서 검색',
+    sourceUrl: 'https://nedrug.mfds.go.kr',
+  },
+  kada: {
+    brand: 'KADA',
+    category: '도핑 금지약물 확인',
+    sourceLabel: '한국도핑방지위원회 금지약물 검색서비스',
+    sourceUrl: 'https://www.kada-ad.or.kr',
+  },
+};
 
 export const OFFICIAL_BRAND_FOODS = [
   {
@@ -140,6 +188,10 @@ export function findOfficialNutritionSources(name) {
   return OFFICIAL_NUTRITION_SOURCES.filter((entry) =>
     entry.aliases.some((alias) => normalized.includes(normalizeKeyword(alias))),
   );
+}
+
+export function getSafetyReferenceSource(key) {
+  return SAFETY_REFERENCE_SOURCES[key] || null;
 }
 
 function normalizeKeyword(value) {

@@ -1,4 +1,4 @@
-import { findOfficialBrandFood, findOfficialNutritionSources } from './officialNutritionSources.js';
+import { findOfficialBrandFood, findOfficialNutritionSources, getSafetyReferenceSource } from './officialNutritionSources.js';
 
 export const MODE_LABELS = {
   adult: '성인',
@@ -56,6 +56,56 @@ const FOOD_DATABASE = [
   { keys: ['고구마'], emoji: '고구마', calories: 128, carb: 30, protein: 1.4, fat: 0.2, sodium: 36, sugar: 6.4, fiber: 3, leucine: 80 },
   { keys: ['우유'], emoji: '우유', calories: 61, carb: 4.8, protein: 3.2, fat: 3.3, sodium: 43, sugar: 5.1, fiber: 0, leucine: 320 },
   { keys: ['웨이', '프로틴', '단백질'], emoji: '보충제', calories: 400, carb: 12, protein: 75, fat: 6, sodium: 420, sugar: 6, fiber: 0, leucine: 7800 },
+];
+
+const ALLERGEN_TERMS = [
+  '난류',
+  '계란',
+  '달걀',
+  '우유',
+  '메밀',
+  '땅콩',
+  '대두',
+  '밀',
+  '고등어',
+  '게',
+  '새우',
+  '돼지고기',
+  '복숭아',
+  '토마토',
+  '아황산',
+  '호두',
+  '닭고기',
+  '쇠고기',
+  '소고기',
+  '오징어',
+  '조개',
+  '굴',
+  '전복',
+  '홍합',
+  '잣',
+];
+
+const SUPPLEMENT_REVIEW_TERMS = [
+  '보충제',
+  '프로틴',
+  '웨이',
+  '부스터',
+  '크레아틴',
+  'bcaa',
+  'eaa',
+  '마이프로틴',
+  '셀렉스',
+  '칼로바이',
+  '스포맥스',
+  '정관장',
+  '홍삼',
+  '한약',
+  '한약재',
+  '마황',
+  '반하',
+  '보두',
+  '호미카',
 ];
 
 export function createEmptyFoodItem() {
@@ -133,7 +183,7 @@ export function analyzeMeal(profile, foodItems, nutritionFacts, options = {}) {
   const risk = evaluateRisk(normalizedProfile, items, facts, totals, macroPercent, options);
   const stamp = risk.red.length ? 'red' : risk.yellow.length ? 'yellow' : 'green';
   const messageParagraphs = createMessage(normalizedProfile, foods, labelItem, facts, totals, macroPercent, risk, stamp, options);
-  const sourceItems = createSourceItems(items);
+  const sourceItems = createSourceItems(items, facts, options);
 
   return {
     analysisType: 'meal-with-label',
@@ -169,6 +219,7 @@ function normalizeFoods(foodItems) {
         matched: base.matched,
         official: Boolean(base.official),
         brand: base.brand || '',
+        category: base.category || '',
         serving: base.serving || '',
         sourceLabel: base.sourceLabel || '',
         sourceUrl: base.sourceUrl || '',
@@ -213,24 +264,73 @@ function createSourceFallback(name) {
   if (!source) return {};
   return {
     brand: source.brand,
+    category: source.category,
     sourceLabel: `${source.brand} 공식 메뉴/영양성분표`,
     sourceUrl: source.url,
   };
 }
 
-function createSourceItems(items) {
+function createSourceItems(items, facts = {}, options = {}) {
   const sources = items
     .filter((item) => item.sourceUrl)
     .map((item) => ({
       name: item.name,
       brand: item.brand || '',
+      category: item.category || '',
       sourceLabel: item.sourceLabel || '공식 메뉴/영양성분표',
       sourceUrl: item.sourceUrl,
       official: Boolean(item.official),
       serving: item.serving || '',
+      type: item.official ? 'official-value' : 'official-source',
     }));
 
-  return sources.filter((source, index) => sources.findIndex((item) => item.sourceUrl === source.sourceUrl && item.name === source.name) === index);
+  const safetySources = createSafetyReferenceItems(items, facts, options);
+  return [...sources, ...safetySources].filter(
+    (source, index, allSources) => allSources.findIndex((item) => item.sourceUrl === source.sourceUrl && item.name === source.name) === index,
+  );
+}
+
+function createSafetyReferenceItems(items, facts = {}, options = {}) {
+  const text = [
+    items.map((item) => item.name).join(' '),
+    facts.foodName,
+    facts.servingSize,
+    options.ocrText,
+  ]
+    .filter(Boolean)
+    .join(' ')
+    .toLowerCase();
+
+  const references = [];
+  const hasAllergenTerm = ALLERGEN_TERMS.some((term) => text.includes(term.toLowerCase()));
+  const hasSupplementTerm = SUPPLEMENT_REVIEW_TERMS.some((term) => text.includes(term.toLowerCase()));
+  const hasDopingRiskTerm = GUIDELINES.wadaKada.riskyTerms.some((term) => text.includes(term.toLowerCase()));
+
+  if (hasAllergenTerm) {
+    references.push(createReferenceSource('foodAllergy', '알레르기 성분 확인'));
+  }
+
+  if (hasSupplementTerm || hasDopingRiskTerm) {
+    references.push(createReferenceSource('kada', hasDopingRiskTerm ? '도핑 위험 성분 확인' : '보충제 도핑 안전 확인'));
+    references.push(createReferenceSource('medication', '약물·첨가제 성분 확인'));
+  }
+
+  return references.filter(Boolean);
+}
+
+function createReferenceSource(key, name) {
+  const source = getSafetyReferenceSource(key);
+  if (!source) return null;
+  return {
+    name,
+    brand: source.brand,
+    category: source.category,
+    sourceLabel: source.sourceLabel,
+    sourceUrl: source.sourceUrl,
+    official: false,
+    serving: '',
+    type: 'safety-reference',
+  };
 }
 
 function createLabelItem(facts) {

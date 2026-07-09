@@ -622,7 +622,7 @@ function formatReportItemLabel(item) {
 function OfficialSourceList({ sources }) {
   return (
     <div className="rounded-lg border border-teal-200 bg-teal-50 p-4">
-      <h3 className="text-lg font-black">🔎 공식 영양성분표 참고</h3>
+      <h3 className="text-lg font-black">🔎 공식 출처 및 안전 확인</h3>
       <div className="mt-3 grid gap-2">
         {sources.map((source) => (
           <a
@@ -632,13 +632,22 @@ function OfficialSourceList({ sources }) {
             rel="noreferrer"
             className="rounded-lg border border-teal-100 bg-white p-3 text-sm font-black text-teal-800"
           >
-            {source.official ? '공식값 적용' : '공식 출처 확인'} · {source.name}
-            {source.serving ? ` · ${source.serving}` : ''} · {source.sourceLabel}
+            <span className="block text-xs text-teal-600">{sourceTypeLabel(source)}</span>
+            <span>
+              {source.name}
+              {source.serving ? ` · ${source.serving}` : ''} · {source.sourceLabel}
+            </span>
           </a>
         ))}
       </div>
     </div>
   );
+}
+
+function sourceTypeLabel(source) {
+  if (source.type === 'official-value') return '공식값 적용';
+  if (source.type === 'safety-reference') return '알레르기·도핑 안전 확인';
+  return '공식 출처 확인';
 }
 
 function TrafficLine({ color, label, text }) {
