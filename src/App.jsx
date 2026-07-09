@@ -71,6 +71,8 @@ export default function App() {
   const [cameraReady, setCameraReady] = useState(false);
   const [cameraError, setCameraError] = useState('');
   const [settingsOpen, setSettingsOpen] = useState(false);
+  const [diaryOpen, setDiaryOpen] = useState(false);
+  const [savedReports, setSavedReports] = useState([]);
   const [captured, setCaptured] = useState(null);
   const [liveScan, setLiveScan] = useState({ status: 'idle', facts: {}, text: '' });
   const [saveState, setSaveState] = useState('');
@@ -312,9 +314,22 @@ export default function App() {
   async function handleSave() {
     if (!report) return;
     setSaveState('저장 중');
-    const { saveNutritionReport } = await import('./services/reportStore');
+    const { saveNutritionReport, readLocalReports } = await import('./services/reportStore');
     const result = await saveNutritionReport(report);
+    setSavedReports(readLocalReports());
     setSaveState(result.storage === 'firebase' ? 'Firebase 저장됨' : '기기 저장됨');
+  }
+
+  async function loadSavedReports() {
+    const { readLocalReports } = await import('./services/reportStore');
+    const reports = readLocalReports();
+    setSavedReports(reports);
+    return reports;
+  }
+
+  async function openDiary() {
+    await loadSavedReports();
+    setDiaryOpen(true);
   }
 
   function updateProfile(next) {
@@ -404,14 +419,24 @@ export default function App() {
             <div className="rounded-full border border-white/20 bg-black/45 px-4 py-3 text-lg font-black shadow-xl backdrop-blur md:text-2xl">
               음식 및 성분표를 촬영하세요
             </div>
-            <button
-              type="button"
-              onClick={() => setSettingsOpen(true)}
-              className="grid h-12 w-12 place-items-center rounded-full border border-white/20 bg-black/45 text-2xl shadow-xl backdrop-blur"
-              aria-label="설정 열기"
-            >
-              ⚙
-            </button>
+            <div className="flex shrink-0 gap-2">
+              <button
+                type="button"
+                onClick={openDiary}
+                className="grid h-12 w-12 place-items-center rounded-full border border-white/20 bg-black/45 text-2xl shadow-xl backdrop-blur"
+                aria-label="오늘 기록 열기"
+              >
+                ⌂
+              </button>
+              <button
+                type="button"
+                onClick={() => setSettingsOpen(true)}
+                className="grid h-12 w-12 place-items-center rounded-full border border-white/20 bg-black/45 text-2xl shadow-xl backdrop-blur"
+                aria-label="설정 열기"
+              >
+                ⚙
+              </button>
+            </div>
           </header>
 
           {cameraError ? (
@@ -456,6 +481,14 @@ export default function App() {
           updateProfile={updateProfile}
           toggleMedical={toggleMedical}
           onClose={() => setSettingsOpen(false)}
+        />
+      ) : null}
+      {diaryOpen ? (
+        <DiarySheet
+          profile={profile}
+          reports={savedReports}
+          onRefresh={loadSavedReports}
+          onClose={() => setDiaryOpen(false)}
         />
       ) : null}
     </main>
@@ -790,6 +823,83 @@ function NumberFact({ label, unit, value, onChange }) {
         <span className="grid w-14 place-items-center bg-slate-100 text-xs text-slate-500">{unit}</span>
       </div>
     </label>
+  );
+}
+
+function DiarySheet({ profile, reports, onRefresh, onClose }) {
+  const todayReports = reports.filter(isTodayReport);
+  const totals = sumSavedReportTotals(todayReports);
+  const dailyGoal = estimateDailyCalorieGoal(profile);
+  const remainingCalories = Math.max(0, dailyGoal - Math.round(totals.calories));
+  const progress = Math.min(100, Math.round((totals.calories / Math.max(dailyGoal, 1)) * 100));
+
+  return (
+    <aside className="fixed inset-0 z-30 bg-slate-950/70 backdrop-blur">
+      <div className="absolute inset-x-0 bottom-0 max-h-[92vh] overflow-y-auto rounded-t-3xl bg-slate-50 p-5 text-slate-950 shadow-2xl md:left-auto md:right-6 md:top-6 md:w-[560px] md:rounded-2xl">
+        <header className="mb-5 flex items-center justify-between gap-3">
+          <div>
+            <p className="text-sm font-black text-teal-700">오늘 저장된 식단</p>
+            <h2 className="text-3xl font-black">기록 홈</h2>
+          </div>
+          <div className="flex gap-2">
+            <button type="button" onClick={onRefresh} className="h-11 rounded-full bg-white px-4 font-black shadow">
+              새로고침
+            </button>
+            <button type="button" onClick={onClose} className="h-11 rounded-full bg-slate-950 px-5 font-black text-white">
+              닫기
+            </button>
+          </div>
+        </header>
+
+        <section className="rounded-lg border border-slate-200 bg-white p-4">
+          <div className="flex items-end justify-between gap-4">
+            <div>
+              <p className="text-sm font-black text-slate-500">오늘 섭취</p>
+              <strong className="text-4xl font-black">{formatMetric(totals.calories, 'kcal')}</strong>
+            </div>
+            <div className="text-right">
+              <p className="text-sm font-black text-slate-500">남은 열량</p>
+              <strong className="text-2xl font-black text-teal-700">{formatMetric(remainingCalories, 'kcal')}</strong>
+            </div>
+          </div>
+          <div className="mt-4 h-3 overflow-hidden rounded-full bg-slate-100">
+            <div className="h-full rounded-full bg-teal-600" style={{ width: `${progress}%` }} />
+          </div>
+          <div className="mt-4 grid grid-cols-3 gap-2">
+            <Metric label="단백질" value={formatMetric(totals.protein, 'g')} />
+            <Metric label="당류" value={formatMetric(totals.sugar, 'g')} />
+            <Metric label="나트륨" value={formatMetric(totals.sodium, 'mg')} />
+          </div>
+        </section>
+
+        <section className="mt-4 grid gap-3">
+          {todayReports.length ? (
+            todayReports.map((report) => (
+              <article key={`${report.createdAt}-${report.summary}`} className="rounded-lg border border-slate-200 bg-white p-4">
+                <div className="flex items-start justify-between gap-3">
+                  <div>
+                    <p className="text-xs font-black text-slate-500">{formatSavedReportTime(report.createdAt)}</p>
+                    <h3 className="mt-1 text-lg font-black">{report.summary || '촬영 식단'}</h3>
+                  </div>
+                  <span className={`rounded-full px-3 py-1 text-xs font-black ${stampPillClass(report.stamp)}`}>
+                    {report.stamp === 'red' ? '조심' : report.stamp === 'yellow' ? '주의' : '좋음'}
+                  </span>
+                </div>
+                <div className="mt-3 grid grid-cols-3 gap-2">
+                  <Metric label="열량" value={formatMetric(report.totals?.calories, 'kcal')} />
+                  <Metric label="탄수" value={formatMetric(report.totals?.carb, 'g')} />
+                  <Metric label="지방" value={formatMetric(report.totals?.fat, 'g')} />
+                </div>
+              </article>
+            ))
+          ) : (
+            <div className="rounded-lg border border-dashed border-slate-300 bg-white p-6 text-center font-black text-slate-500">
+              아직 저장된 식단이 없습니다. 촬영 후 저장을 누르면 여기에 쌓입니다.
+            </div>
+          )}
+        </section>
+      </div>
+    </aside>
   );
 }
 
@@ -1141,6 +1251,55 @@ function statusText(status) {
   if (status === 'checking') return '음식은 자동 분석 중입니다. 성분표 숫자가 보이면 함께 반영합니다.';
   if (status === 'detected') return '성분표에서 읽은 값이 일부 입력되었습니다. 음식 분석과 함께 합산됩니다.';
   return '자동 인식이 안 되면 성분표 숫자를 직접 입력해 음식 분석과 함께 계산할 수 있습니다.';
+}
+
+function isTodayReport(report) {
+  const date = new Date(report.createdAt);
+  const today = new Date();
+  return (
+    date.getFullYear() === today.getFullYear() &&
+    date.getMonth() === today.getMonth() &&
+    date.getDate() === today.getDate()
+  );
+}
+
+function sumSavedReportTotals(reports) {
+  return reports.reduce(
+    (acc, report) => {
+      const totals = report.totals || {};
+      acc.calories += Number(totals.calories || 0);
+      acc.carb += Number(totals.carb || 0);
+      acc.protein += Number(totals.protein || 0);
+      acc.fat += Number(totals.fat || 0);
+      acc.sodium += Number(totals.sodium || 0);
+      acc.sugar += Number(totals.sugar || 0);
+      return acc;
+    },
+    { calories: 0, carb: 0, protein: 0, fat: 0, sodium: 0, sugar: 0 },
+  );
+}
+
+function estimateDailyCalorieGoal(profile) {
+  const weight = Number(profile.weight || DEFAULT_PROFILE.weight);
+  const height = Number(profile.height || DEFAULT_PROFILE.height);
+  const age = Number(profile.age || DEFAULT_PROFILE.age);
+  const sexOffset = profile.gender === '여성' ? -161 : 5;
+  const activity = profile.sport && profile.sport !== '없음' ? 1.55 : 1.35;
+  const bmr = 10 * weight + 6.25 * height - 5 * age + sexOffset;
+  const target = profile.mode === 'adult' ? bmr * activity - 300 : bmr * activity;
+  return Math.max(1200, Math.round(target / 50) * 50);
+}
+
+function formatSavedReportTime(value) {
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return '오늘';
+  return new Intl.DateTimeFormat('ko-KR', { hour: '2-digit', minute: '2-digit' }).format(date);
+}
+
+function stampPillClass(stamp) {
+  if (stamp === 'red') return 'bg-red-100 text-red-700';
+  if (stamp === 'yellow') return 'bg-amber-100 text-amber-700';
+  return 'bg-emerald-100 text-emerald-700';
 }
 
 function hasReadableNutritionFacts(facts) {

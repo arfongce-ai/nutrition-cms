@@ -48,7 +48,7 @@ function saveLocalReport(payload) {
   localStorage.setItem(LOCAL_REPORTS_KEY, JSON.stringify(reports.slice(0, 50)));
 }
 
-function readLocalReports() {
+export function readLocalReports() {
   try {
     const parsed = JSON.parse(localStorage.getItem(LOCAL_REPORTS_KEY) || '[]');
     return Array.isArray(parsed) ? parsed : [];
