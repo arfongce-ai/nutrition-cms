@@ -8,7 +8,16 @@ import {
 } from './services/nutritionEngine';
 
 const PROFILE_KEY = 'nutritionCameraProfile.v2';
-const LIVE_KCAL_SCAN_INTERVAL_MS = 1800;
+const LIVE_NUTRIENT_SCAN_INTERVAL_MS = 1800;
+
+const nutritionFactFields = [
+  { key: 'calories', label: '열량', unit: 'kcal' },
+  { key: 'carb', label: '탄수', unit: 'g' },
+  { key: 'protein', label: '단백질', unit: 'g' },
+  { key: 'fat', label: '지방', unit: 'g' },
+  { key: 'sugar', label: '당류', unit: 'g' },
+  { key: 'sodium', label: '나트륨', unit: 'mg' },
+];
 
 const DEFAULT_PROFILE = {
   mode: 'adult',
@@ -66,7 +75,7 @@ export default function App() {
     document.body.style.background = '#0f172a';
     startCamera();
     return () => {
-      stopLiveKcalScan();
+      stopLiveNutrientScan();
       stopCamera();
     };
   }, []);
@@ -79,12 +88,12 @@ export default function App() {
 
   useEffect(() => {
     if (!cameraReady || captured || settingsOpen || cameraError) {
-      stopLiveKcalScan();
+      stopLiveNutrientScan();
       return undefined;
     }
 
-    startLiveKcalScan();
-    return () => stopLiveKcalScan();
+    startLiveNutrientScan();
+    return () => stopLiveNutrientScan();
   }, [cameraReady, captured, settingsOpen, cameraError]);
 
   async function startCamera() {
@@ -138,7 +147,7 @@ export default function App() {
     return fallbackCanvasRef.current?.toDataURL('image/png') || '';
   }
 
-  function stopLiveKcalScan() {
+  function stopLiveNutrientScan() {
     if (liveScanTimerRef.current) {
       window.clearInterval(liveScanTimerRef.current);
       liveScanTimerRef.current = null;
@@ -146,8 +155,8 @@ export default function App() {
     liveScanBusyRef.current = false;
   }
 
-  function startLiveKcalScan() {
-    stopLiveKcalScan();
+  function startLiveNutrientScan() {
+    stopLiveNutrientScan();
 
     if (!('TextDetector' in window)) {
       setLiveScan({ status: 'unsupported', facts: {}, text: '' });
@@ -155,11 +164,11 @@ export default function App() {
     }
 
     setLiveScan((current) => (current.status === 'detected' ? current : { status: 'scanning', facts: {}, text: '' }));
-    runLiveKcalScan();
-    liveScanTimerRef.current = window.setInterval(runLiveKcalScan, LIVE_KCAL_SCAN_INTERVAL_MS);
+    runLiveNutrientScan();
+    liveScanTimerRef.current = window.setInterval(runLiveNutrientScan, LIVE_NUTRIENT_SCAN_INTERVAL_MS);
   }
 
-  async function runLiveKcalScan() {
+  async function runLiveNutrientScan() {
     if (liveScanBusyRef.current || !cameraReady || captured || settingsOpen) return;
 
     const canvas = drawLiveFrameForText();
@@ -174,8 +183,15 @@ export default function App() {
       }
 
       const facts = parseNutritionText(detected.text);
-      if (facts.calories) {
-        setLiveScan({ status: 'detected', facts, text: detected.text });
+      if (hasReadableNutritionFacts(facts)) {
+        setLiveScan((current) => ({
+          status: 'detected',
+          facts: {
+            ...current.facts,
+            ...facts,
+          },
+          text: detected.text || current.text,
+        }));
         return;
       }
 
@@ -211,7 +227,7 @@ export default function App() {
       photo,
       foods: [createEmptyFoodItem()],
       facts: initialFacts,
-      ocrStatus: liveScan.facts?.calories ? 'detected' : 'checking',
+      ocrStatus: hasReadableNutritionFacts(liveScan.facts) ? 'detected' : 'checking',
       ocrText: liveScan.text || '',
     });
     setSaveState('');
@@ -222,7 +238,7 @@ export default function App() {
       if (!detected.text) {
         return {
           ...current,
-          ocrStatus: current.facts.calories ? 'detected' : detected.status,
+          ocrStatus: hasReadableNutritionFacts(current.facts) ? 'detected' : detected.status,
         };
       }
       return {
@@ -348,7 +364,7 @@ export default function App() {
             </div>
           ) : null}
 
-          {cameraReady && !cameraError ? <LiveKcalBadge liveScan={liveScan} /> : null}
+          {cameraReady && !cameraError ? <LiveNutritionBadge liveScan={liveScan} /> : null}
 
           <div className="absolute bottom-8 left-0 right-0 z-10 flex justify-center">
             <button
@@ -482,13 +498,16 @@ function ReportView({ captured, modeLabel, report, saveState, updateFood, addFoo
   );
 }
 
-function LiveKcalBadge({ liveScan }) {
-  const calories = liveScan?.facts?.calories;
+function LiveNutritionBadge({ liveScan }) {
+  const detectedFacts = getDetectedFactLabels(liveScan?.facts);
 
-  if (calories) {
+  if (detectedFacts.length) {
+    const preview = detectedFacts.slice(0, 3).join(' · ');
+    const extraCount = detectedFacts.length - 3;
     return (
-      <div className="absolute left-4 top-24 z-10 rounded-full border border-emerald-300/40 bg-emerald-500/20 px-4 py-2 text-sm font-black text-emerald-50 shadow-xl backdrop-blur">
-        kcal 자동 인식: {calories} kcal
+      <div className="absolute left-4 right-4 top-24 z-10 rounded-2xl border border-emerald-300/40 bg-emerald-500/20 px-4 py-3 text-sm font-black text-emerald-50 shadow-xl backdrop-blur md:right-auto md:max-w-[520px]">
+        영양표 자동 인식: {preview}
+        {extraCount > 0 ? ` 외 ${extraCount}개` : ''}
       </div>
     );
   }
@@ -496,7 +515,7 @@ function LiveKcalBadge({ liveScan }) {
   if (liveScan?.status === 'unsupported') {
     return (
       <div className="absolute left-4 top-24 z-10 rounded-full border border-white/15 bg-black/40 px-4 py-2 text-xs font-black text-white/80 shadow-xl backdrop-blur">
-        kcal 자동 인식 미지원 · 촬영 후 입력
+        영양표 자동 인식 미지원 · 촬영 후 입력
       </div>
     );
   }
@@ -504,7 +523,7 @@ function LiveKcalBadge({ liveScan }) {
   if (liveScan?.status === 'scanning') {
     return (
       <div className="absolute left-4 top-24 z-10 rounded-full border border-white/15 bg-black/40 px-4 py-2 text-xs font-black text-white/80 shadow-xl backdrop-blur">
-        kcal 자동 인식 중
+        영양표 자동 인식 중
       </div>
     );
   }
@@ -837,6 +856,20 @@ function statusText(status) {
   if (status === 'checking') return '촬영 완료. 음식 분석을 먼저 입력하고, 영양표 글자도 함께 확인하는 중입니다.';
   if (status === 'detected') return '영양표에서 읽은 값이 일부 입력되었습니다. 음식 분석과 함께 합산됩니다.';
   return '포장식품이면 영양표 숫자도 입력해 함께 분석할 수 있습니다.';
+}
+
+function hasReadableNutritionFacts(facts) {
+  return nutritionFactFields.some((field) => hasFactValue(facts, field.key));
+}
+
+function getDetectedFactLabels(facts) {
+  return nutritionFactFields
+    .filter((field) => hasFactValue(facts, field.key))
+    .map((field) => `${field.label} ${facts[field.key]} ${field.unit}`);
+}
+
+function hasFactValue(facts, key) {
+  return String(facts?.[key] ?? '').trim() !== '';
 }
 
 function formatMetric(value, unit) {
