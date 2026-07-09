@@ -244,7 +244,7 @@ function evaluateRisk(profile, items, facts, totals, macroPercent, options) {
   const hasRiskyTerm = GUIDELINES.wadaKada.riskyTerms.some((term) => labelText.includes(term.toLowerCase()));
   const hasFood = items.some((item) => item.type === '음식');
 
-  if (!hasFood) {
+  if (!hasFood && !options.skipMissingFoodRisk) {
     yellow.push('음식명 확인 필요');
   }
 

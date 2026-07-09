@@ -68,6 +68,15 @@ export default function App() {
     });
   }, [captured, profile]);
 
+  const liveReport = useMemo(() => {
+    if (captured || !hasReadableNutritionFacts(liveScan.facts)) return null;
+    return analyzeMeal(profile, [], liveScan.facts, {
+      ocrStatus: liveScan.status,
+      ocrText: liveScan.text,
+      skipMissingFoodRisk: true,
+    });
+  }, [captured, liveScan, profile]);
+
   const modeLabel = MODE_LABELS[profile.mode];
 
   useEffect(() => {
@@ -365,6 +374,7 @@ export default function App() {
           ) : null}
 
           {cameraReady && !cameraError ? <LiveNutritionBadge liveScan={liveScan} /> : null}
+          {cameraReady && !cameraError ? <LiveAnalysisPanel liveReport={liveReport} liveScan={liveScan} /> : null}
 
           <div className="absolute bottom-8 left-0 right-0 z-10 flex justify-center">
             <button
@@ -529,6 +539,56 @@ function LiveNutritionBadge({ liveScan }) {
   }
 
   return null;
+}
+
+function LiveAnalysisPanel({ liveReport, liveScan }) {
+  if (!liveReport) {
+    return (
+      <div className="absolute bottom-36 left-4 right-4 z-10 rounded-2xl border border-white/15 bg-black/45 p-4 text-white shadow-2xl backdrop-blur md:left-auto md:w-[420px]">
+        <div className="flex items-center justify-between gap-3">
+          <strong className="text-base font-black">실시간 자동 분석</strong>
+          <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-black text-white/75">
+            {liveScan?.status === 'unsupported' ? '미지원' : '대기'}
+          </span>
+        </div>
+        <p className="mt-2 text-sm font-bold text-white/75">
+          영양표 숫자가 보이면 촬영 전에도 열량과 주요 성분을 바로 분석합니다.
+        </p>
+      </div>
+    );
+  }
+
+  const stamp = {
+    green: { label: '좋음', className: 'bg-emerald-400 text-emerald-950' },
+    yellow: { label: '주의', className: 'bg-amber-300 text-amber-950' },
+    red: { label: '조심', className: 'bg-red-400 text-red-950' },
+  }[liveReport.stamp];
+
+  const primaryRisk = liveReport.risk.red[0] || liveReport.risk.yellow[0] || '현재 보이는 영양표 기준으로 큰 위험 신호는 없습니다.';
+
+  return (
+    <div className="absolute bottom-36 left-4 right-4 z-10 rounded-2xl border border-white/15 bg-black/55 p-4 text-white shadow-2xl backdrop-blur md:left-auto md:w-[420px]">
+      <div className="flex items-center justify-between gap-3">
+        <strong className="text-base font-black">실시간 자동 분석</strong>
+        <span className={`rounded-full px-3 py-1 text-xs font-black ${stamp.className}`}>{stamp.label}</span>
+      </div>
+      <div className="mt-3 grid grid-cols-3 gap-2">
+        <LiveMetric label="열량" value={formatMetric(liveReport.totals.calories, 'kcal')} />
+        <LiveMetric label="당류" value={formatMetric(liveReport.totals.sugar, 'g')} />
+        <LiveMetric label="나트륨" value={formatMetric(liveReport.totals.sodium, 'mg')} />
+      </div>
+      <p className="mt-3 text-sm font-bold leading-snug text-white/85">{primaryRisk}</p>
+    </div>
+  );
+}
+
+function LiveMetric({ label, value }) {
+  return (
+    <div className="rounded-xl bg-white/10 p-2">
+      <div className="text-[11px] font-black text-white/60">{label}</div>
+      <div className="mt-0.5 text-sm font-black">{value}</div>
+    </div>
+  );
 }
 
 function FoodItemsForm({ foods, updateFood, addFood, removeFood }) {
