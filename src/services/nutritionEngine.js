@@ -56,6 +56,7 @@ const FOOD_DATABASE = [
   { keys: ['고구마'], emoji: '고구마', calories: 128, carb: 30, protein: 1.4, fat: 0.2, sodium: 36, sugar: 6.4, fiber: 3, leucine: 80 },
   { keys: ['우유'], emoji: '우유', calories: 61, carb: 4.8, protein: 3.2, fat: 3.3, sodium: 43, sugar: 5.1, fiber: 0, leucine: 320 },
   { keys: ['웨이', '프로틴', '단백질'], emoji: '보충제', calories: 400, carb: 12, protein: 75, fat: 6, sodium: 420, sugar: 6, fiber: 0, leucine: 7800 },
+  { keys: ['나쵸', '나초', 'nacho', '타코', 'taco', '스낵', '과자', '칩', 'chip', 'snack'], emoji: '스낵', calories: 518, carb: 63, protein: 6.5, fat: 27, saturatedFat: 10.8, transFat: 0, sodium: 500, sugar: 5.4, fiber: 4, leucine: 420 },
 ];
 
 const ALLERGEN_TERMS = [
@@ -198,29 +199,33 @@ export function parseNutritionText(text) {
   return compactFacts({
     foodName: extractFoodName(source),
     calories: extractNumber(source, [
-      /(?:열량|칼로리|kcal|calories?)\D{0,12}(\d+(?:\.\d+)?)/i,
+      /(?:열량|칼로리|calories?)\D{0,20}(\d+(?:\.\d+)?)/i,
       /(\d+(?:\.\d+)?)\s*(?:kcal|㎉|칼로리)/i,
     ]),
-    carb: extractNumber(source, [/(?:탄수화물|carbohydrate|carbs?)\D{0,12}(\d+(?:\.\d+)?)/i]),
-    sugar: extractNumber(source, [/(?:당류|당|sugars?)\D{0,12}(\d+(?:\.\d+)?)/i]),
-    protein: extractNumber(source, [/(?:단백질|protein)\D{0,12}(\d+(?:\.\d+)?)/i]),
-    fat: extractNumber(source, [/(?:지방|총지방|total fat|fat)\D{0,12}(\d+(?:\.\d+)?)/i]),
-    saturatedFat: extractNumber(source, [/(?:포화지방|saturated fat)\D{0,12}(\d+(?:\.\d+)?)/i]),
-    transFat: extractNumber(source, [/(?:트랜스지방|trans fat)\D{0,12}(\d+(?:\.\d+)?)/i]),
-    sodium: extractNumber(source, [/(?:나트륨|sodium)\D{0,12}(\d+(?:\.\d+)?)/i]),
+    carb: extractNumber(source, [/(?:탄수화물|탄수|carbohydrate|carbs?)\D{0,20}(\d+(?:\.\d+)?)/i]),
+    sugar: extractNumber(source, [/(?:당류|당|sugars?)\D{0,20}(\d+(?:\.\d+)?)/i]),
+    protein: extractNumber(source, [/(?:단백질|protein)\D{0,20}(\d+(?:\.\d+)?)/i]),
+    fat: extractNumber(source, [/(?:총지방|지방|total fat|fat)\D{0,20}(\d+(?:\.\d+)?)/i]),
+    saturatedFat: extractNumber(source, [/(?:포화지방|saturated fat)\D{0,20}(\d+(?:\.\d+)?)/i]),
+    transFat: extractNumber(source, [/(?:트랜스지방|trans fat)\D{0,20}(\d+(?:\.\d+)?)/i]),
+    sodium: extractNumber(source, [/(?:나트륨|sodium)\D{0,20}(\d+(?:\.\d+)?)/i]),
   });
 }
 
 function normalizeNutritionOcrText(text) {
   return String(text || '')
     .replaceAll(',', '')
+    .replace(/([가-힣A-Za-z])\s+(\d)/g, '$1 $2')
+    .replace(/(\d)\s*(kcal|mg|g|%)/gi, '$1 $2')
+    .replace(/([가-힣])\s*[:：]\s*/g, '$1 ')
     .replace(/[㎉]/g, 'kcal')
     .replace(/[㎎]/g, 'mg')
     .replace(/[㎏]/g, 'kg')
     .replace(/[０-９]/g, (value) => String.fromCharCode(value.charCodeAt(0) - 0xfee0))
     .replace(/kca[il1]/gi, 'kcal')
     .replace(/m9/gi, 'mg')
-    .replace(/(\d)\s*[lI]\s*(?=\d)/g, '$11');
+    .replace(/(\d)\s*[lI]\s*(?=\d)/g, '$11')
+    .replace(/(\d)\s*\|\s*(?=\d)/g, '$11');
 }
 
 export function getBmiStatus(heightCm, weightKg) {

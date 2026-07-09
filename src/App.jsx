@@ -53,6 +53,8 @@ const textFoodEstimates = [
   { keys: ['두부', 'tofu'], name: '두부', grams: '120', label: '두부류' },
   { keys: ['우유', 'milk'], name: '우유', grams: '200', label: '유제품' },
   { keys: ['프로틴', '웨이', 'protein', 'whey'], name: '웨이 프로틴', grams: '50', label: '단백질 제품' },
+  { keys: ['나쵸', '나초', 'nacho', 'taco', '타코', '도도한나쵸'], name: '나쵸 스낵', grams: '92', label: '포장 스낵' },
+  { keys: ['과자', '스낵', '칩', 'chip', 'snack'], name: '스낵 과자', grams: '80', label: '포장 스낵' },
 ];
 
 const DEFAULT_PROFILE = {
@@ -294,6 +296,8 @@ export default function App() {
     setSaveState('');
 
     const detected = await readNutritionTextFromImage(photo);
+    const parsedFacts = detected.text ? parseNutritionText(detected.text) : {};
+    const hasParsedFacts = hasReadableNutritionFacts(parsedFacts);
     const visualEstimate = await estimateFoodFromPhoto(photo, detected.text);
     setCaptured((current) => {
       if (!current) return current;
@@ -303,12 +307,12 @@ export default function App() {
       return {
         ...current,
         foods: nextFoods,
-        ocrStatus: detected.text ? 'detected' : hasReadableNutritionFacts(current.facts) ? 'detected' : detected.status,
+        ocrStatus: hasParsedFacts ? 'detected' : detected.text ? 'text-detected' : hasReadableNutritionFacts(current.facts) ? 'detected' : detected.status,
         ocrText: detected.text || current.ocrText,
         facts: detected.text
           ? {
               ...current.facts,
-              ...parseNutritionText(detected.text),
+              ...parsedFacts,
             }
           : current.facts,
       };
@@ -1274,8 +1278,12 @@ function drawZoomedVideoFrame(canvas, video, zoom = 1, maxWidth = 0) {
 }
 
 async function readNutritionTextFromImage(photo) {
-  if (!photo || !('TextDetector' in window)) {
-    return { status: 'unsupported', text: '' };
+  if (!photo) {
+    return { status: 'manual', text: '' };
+  }
+
+  if (!('TextDetector' in window)) {
+    return readTextWithTesseract(photo);
   }
 
   try {
@@ -1283,9 +1291,18 @@ async function readNutritionTextFromImage(photo) {
     const detector = new window.TextDetector();
     const candidates = createOcrCandidateCanvases(image, image.naturalWidth || image.width, image.naturalHeight || image.height);
     const text = await detectBestText(detector, candidates);
-    return { status: text ? 'detected' : 'manual', text };
+    if (text && hasReadableNutritionFacts(parseNutritionText(text))) {
+      return { status: 'detected', text };
+    }
+
+    const precise = await readTextWithTesseract(photo, candidates);
+    const mergedText = uniqueOcrLines([text, precise.text]).join('\n');
+    return {
+      status: hasReadableNutritionFacts(parseNutritionText(mergedText)) ? 'detected' : mergedText ? 'text-detected' : precise.status,
+      text: mergedText,
+    };
   } catch {
-    return { status: 'manual', text: '' };
+    return readTextWithTesseract(photo);
   }
 }
 
@@ -1303,6 +1320,27 @@ async function readNutritionTextFromCanvas(canvas, detectorRef) {
     return { status: text ? 'detected' : 'manual', text };
   } catch {
     return { status: 'manual', text: '' };
+  }
+}
+
+async function readTextWithTesseract(photo, candidates = []) {
+  try {
+    const { default: Tesseract } = await import('tesseract.js');
+    const ocrTargets = candidates.length ? [candidates[0], candidates[1], candidates[2]].filter(Boolean) : [photo];
+    const lines = [];
+
+    for (const target of ocrTargets) {
+      const result = await Tesseract.recognize(target, 'kor+eng', {
+        logger: () => {},
+      });
+      if (result?.data?.text) lines.push(result.data.text);
+      if (hasReadableNutritionFacts(parseNutritionText(lines.join('\n')))) break;
+    }
+
+    const text = uniqueOcrLines(lines).join('\n');
+    return { status: text ? 'text-detected' : 'manual', text };
+  } catch {
+    return { status: 'unsupported', text: '' };
   }
 }
 
@@ -1550,6 +1588,9 @@ function createFoodEstimateFromText(text) {
 
 function createFoodEstimateFromColor(stats, hasTextSignal = false) {
   if (stats.total < 700) return null;
+  if (isPackagedSnackShape(stats, hasTextSignal)) {
+    return createVisualEstimatedFood('스낵 과자', '80', '포장 스낵처럼 보이는 색상·로고·봉지 형태 후보가 보여요');
+  }
   if (isCompactFoodShape(stats, 'green', hasTextSignal) && stats.green > 0.24) {
     return createVisualEstimatedFood('샐러드', '180', '초록색 채소와 둥근 음식 형태가 함께 보여요');
   }
@@ -1563,6 +1604,14 @@ function createFoodEstimateFromColor(stats, hasTextSignal = false) {
     return createVisualEstimatedFood('닭가슴살', '140', '갈색 단백질 반찬 형태가 화면 일부에 모여 보여요');
   }
   return null;
+}
+
+function isPackagedSnackShape(stats, hasTextSignal) {
+  const colorMix = stats.green + stats.yellow + stats.white;
+  const spreadMix = (stats.spread?.green || 0) + (stats.spread?.yellow || 0) + (stats.spread?.white || 0);
+  const yellowMinimum = hasTextSignal ? 0.05 : 0.08;
+  const greenMinimum = hasTextSignal ? 0.03 : 0.05;
+  return stats.yellow >= yellowMinimum && stats.green >= greenMinimum && colorMix >= 0.24 && spreadMix >= 0.16;
 }
 
 function isCompactFoodShape(stats, key, hasTextSignal) {
@@ -1631,8 +1680,10 @@ function roundRect(ctx, x, y, width, height, radius) {
 }
 
 function statusText(status) {
-  if (status === 'checking') return '음식은 자동 분석 중입니다. 성분표 숫자가 보이면 함께 반영합니다.';
+  if (status === 'checking') return '정밀 분석 중입니다. 시간이 조금 걸려도 제품명과 성분표 숫자를 끝까지 확인합니다.';
   if (status === 'detected') return '성분표에서 읽은 값이 일부 입력되었습니다. 음식 분석과 함께 합산됩니다.';
+  if (status === 'text-detected') return '제품명 또는 원재료명은 읽었지만, 성분표 숫자는 확인이 필요합니다. 숫자를 크게 다시 촬영하거나 아래 칸을 보정하세요.';
+  if (status === 'unsupported') return '이 브라우저의 기본 OCR이 제한되어 보조 OCR을 시도했습니다. 숫자가 비어 있으면 성분표를 더 크게 다시 촬영하세요.';
   return '자동 인식이 안 되면 성분표 숫자를 직접 입력해 음식 분석과 함께 계산할 수 있습니다.';
 }
 

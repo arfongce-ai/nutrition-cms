@@ -38,6 +38,7 @@ export const OFFICIAL_NUTRITION_SOURCES = [
   { brand: '대상웰라이프', aliases: ['대상웰라이프', 'daesang wellife'], category: '건강기능식품', url: 'https://www.daesangwellife.com' },
   { brand: '정관장', aliases: ['정관장', 'kgc'], category: '홍삼/건강기능식품', url: 'https://www.kgc.co.kr' },
   { brand: '옴니허브', aliases: ['옴니허브', 'omniherb'], category: '한약재/허브', url: 'https://www.omniherb.com' },
+  { brand: '오리온', aliases: ['오리온', 'orion', '도도한', '나쵸', '나초', 'nacho'], category: '가공식품/스낵', url: 'https://www.orionworld.com' },
 ];
 
 export const SAFETY_REFERENCE_SOURCES = {
