@@ -419,27 +419,9 @@ export default function App() {
             </div>
           </div>
 
-          <header className="absolute left-4 right-4 top-5 z-10 flex items-start justify-between gap-3">
+          <header className="absolute left-4 right-4 top-5 z-10 flex items-start">
             <div className="rounded-full border border-white/20 bg-black/45 px-4 py-3 text-lg font-black shadow-xl backdrop-blur md:text-2xl">
               음식 및 성분표를 촬영하세요
-            </div>
-            <div className="flex shrink-0 gap-2">
-              <button
-                type="button"
-                onClick={openDiary}
-                className="grid h-12 w-12 place-items-center rounded-full border border-white/20 bg-black/45 text-2xl shadow-xl backdrop-blur"
-                aria-label="오늘 기록 열기"
-              >
-                ⌂
-              </button>
-              <button
-                type="button"
-                onClick={() => setSettingsOpen(true)}
-                className="grid h-12 w-12 place-items-center rounded-full border border-white/20 bg-black/45 text-2xl shadow-xl backdrop-blur"
-                aria-label="설정 열기"
-              >
-                ⚙
-              </button>
             </div>
           </header>
 
@@ -452,7 +434,15 @@ export default function App() {
           {cameraReady && !cameraError ? <LiveNutritionBadge liveScan={liveScan} /> : null}
           {cameraReady && !cameraError ? <LiveAnalysisPanel liveReport={liveReport} liveScan={liveScan} /> : null}
 
-          <div className="absolute bottom-8 left-0 right-0 z-10 flex justify-center">
+          <div className="absolute bottom-8 left-0 right-0 z-10 flex items-center justify-center gap-7">
+            <button
+              type="button"
+              onClick={openDiary}
+              className="grid h-16 w-16 place-items-center rounded-full border border-white/25 bg-black/45 text-3xl font-black shadow-2xl backdrop-blur"
+              aria-label="오늘 기록 열기"
+            >
+              ⌂
+            </button>
             <button
               type="button"
               onClick={handleShoot}
@@ -460,6 +450,14 @@ export default function App() {
               aria-label="촬영"
             >
               <span className="block h-16 w-16 rounded-full bg-red-500 shadow-inner" />
+            </button>
+            <button
+              type="button"
+              onClick={() => setSettingsOpen(true)}
+              className="grid h-16 w-16 place-items-center rounded-full border border-white/25 bg-black/45 text-3xl shadow-2xl backdrop-blur"
+              aria-label="설정 열기"
+            >
+              ⚙
             </button>
           </div>
         </section>
