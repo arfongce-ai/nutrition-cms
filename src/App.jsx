@@ -715,6 +715,9 @@ function LiveAnalysisPanel({ liveReport, liveScan }) {
         <p className="mt-1 text-xs font-bold text-white/75">
           음식은 바로 추정하고, 성분표 숫자가 보이면 kcal와 주요 성분도 함께 반영합니다.
         </p>
+        <p className="mt-2 border-t border-white/10 pt-2 text-[11px] font-black text-amber-100/90">
+          정확하지 않을 수 있으니 참고하세요.
+        </p>
       </div>
     );
   }
@@ -741,6 +744,9 @@ function LiveAnalysisPanel({ liveReport, liveScan }) {
         <LiveMetric label="나트륨" value={formatMetric(liveReport.totals.sodium, 'mg')} />
       </div>
       <p className="mt-2 text-xs font-bold leading-snug text-white/85">{primaryRisk}</p>
+      <p className="mt-2 border-t border-white/10 pt-2 text-[11px] font-black text-amber-100/90">
+        정확하지 않을 수 있으니 참고하세요.
+      </p>
     </div>
   );
 }
