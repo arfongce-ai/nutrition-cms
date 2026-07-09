@@ -498,36 +498,72 @@ function ReportView({ captured, modeLabel, report, saveState, updateFood, addFoo
           </div>
         </section>
 
-        <section className="rounded-lg border border-slate-200 bg-white/80 p-5">
-          <h2 className="text-2xl font-black">분석 요약</h2>
-          <dl className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-4">
-            <Metric label="열량" value={formatMetric(report.totals.calories, 'kcal')} />
-            <Metric label="탄수화물" value={formatMetric(report.totals.carb, 'g')} />
-            <Metric label="단백질" value={formatMetric(report.totals.protein, 'g')} />
-            <Metric label="나트륨" value={formatMetric(report.totals.sodium, 'mg')} />
-          </dl>
-          {report.items.length ? (
-            <p className="mt-4 rounded-lg bg-slate-100 p-3 text-sm font-black text-slate-700">
-              분석 항목: {report.items.map((item) => `${item.name}${item.grams ? ` ${item.grams}g` : ''}`).join(', ')}
-            </p>
-          ) : null}
-        </section>
-
-        <section className="rounded-lg border border-slate-200 bg-white/80 p-5">
-          <h2 className="text-2xl font-black">오늘의 건강 및 안전 도장</h2>
-          <p className="mt-3 text-2xl font-black leading-snug">{report.stampText}</p>
-        </section>
-
-        <section className="rounded-lg border border-slate-200 bg-white/80 p-5">
-          <h2 className="text-2xl font-black">맞춤 알림장 한마디</h2>
-          <div className={`mt-4 grid gap-3 font-bold leading-relaxed ${report.profile.mode === 'senior' ? 'text-3xl' : 'text-xl'}`}>
-            {report.messageParagraphs.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
-          </div>
-        </section>
+        <CoachReportCard report={report} />
       </article>
     </section>
+  );
+}
+
+function CoachReportCard({ report }) {
+  const traffic = createTrafficFeedback(report);
+  const coachLine = createCoachLine(report);
+
+  return (
+    <section className="rounded-lg border-2 border-slate-950 bg-white p-5">
+      <div className="flex items-start justify-between gap-3">
+        <div>
+          <p className="text-xs font-black uppercase tracking-widest text-teal-700">3단계 AI 메디-스포츠 영양 분석</p>
+          <h2 className="mt-1 text-3xl font-black">A4 리포트 카드</h2>
+        </div>
+        <span className="rounded-full bg-slate-950 px-4 py-2 text-sm font-black text-white">{traffic.badge}</span>
+      </div>
+
+      <div className="mt-5 grid gap-4">
+        <ReportLine
+          title="🍽️ 인식 음식 및 중량"
+          body={report.items.length ? report.items.map((item) => `${item.name}${item.grams ? ` ${item.grams}g` : ''}`).join(', ') : '촬영 음식 250g 기준 자동 추정'}
+        />
+        <ReportLine
+          title="📊 칼로리 및 주요 영양소"
+          body={`${formatMetric(report.totals.calories, 'kcal')} / 탄수화물 ${report.macroPercent.carb}%, 단백질 ${report.macroPercent.protein}%, 지방 ${report.macroPercent.fat}%`}
+        />
+
+        <div className="rounded-lg border border-slate-200 bg-slate-50 p-4">
+          <h3 className="text-lg font-black">🚦 맞춤형 식단 평가</h3>
+          <div className="mt-3 grid gap-2">
+            <TrafficLine color="green" label="초록 (안전/적절)" text={traffic.green} />
+            <TrafficLine color="yellow" label="노랑 (주의/모니터링)" text={traffic.yellow} />
+            <TrafficLine color="red" label="빨강 (경고/제한)" text={traffic.red} />
+          </div>
+        </div>
+
+        <ReportLine title="💡 코치의 한 줄 처방" body={coachLine} strong />
+      </div>
+    </section>
+  );
+}
+
+function ReportLine({ title, body, strong = false }) {
+  return (
+    <div className="rounded-lg border border-slate-200 bg-slate-50 p-4">
+      <h3 className="text-lg font-black">{title}</h3>
+      <p className={`mt-2 leading-relaxed ${strong ? 'text-xl font-black text-teal-800' : 'font-bold text-slate-700'}`}>{body}</p>
+    </div>
+  );
+}
+
+function TrafficLine({ color, label, text }) {
+  const styles = {
+    green: 'border-emerald-200 bg-emerald-50 text-emerald-800',
+    yellow: 'border-amber-200 bg-amber-50 text-amber-800',
+    red: 'border-red-200 bg-red-50 text-red-800',
+  };
+
+  return (
+    <div className={`rounded-lg border p-3 ${styles[color]}`}>
+      <strong className="block text-sm">{label}</strong>
+      <span className="mt-1 block text-sm font-bold leading-snug">{text}</span>
+    </div>
   );
 }
 
@@ -830,6 +866,58 @@ function Metric({ label, value }) {
       <dd className="mt-1 text-lg font-black">{value}</dd>
     </div>
   );
+}
+
+function createTrafficFeedback(report) {
+  const green = [];
+  const hasFood = report.foods.length > 0;
+
+  if (hasFood) green.push('촬영 음식과 추정 중량을 기준으로 총열량과 탄·단·지 비율을 계산했습니다.');
+  if (report.totals.protein > 15) green.push('단백질 섭취가 포함되어 근육 유지와 회복에 도움이 됩니다.');
+  if (report.totals.sodium < 900) green.push('현재 추정 나트륨은 한 끼 기준에서 과도하지 않습니다.');
+  if (!green.length) green.push('촬영값을 기준으로 식단 평가를 시작할 수 있습니다.');
+
+  return {
+    badge: report.stamp === 'red' ? '빨강 경고' : report.stamp === 'yellow' ? '노랑 주의' : '초록 적절',
+    green: green.slice(0, 2).join(' '),
+    yellow: report.risk.yellow.length ? report.risk.yellow.join(', ') : '현재 큰 주의 항목은 없습니다. 후보 음식이 다르면 버튼으로 보정하세요.',
+    red: report.risk.red.length ? report.risk.red.join(', ') : '기저질환 관련 즉시 제한 경고는 감지되지 않았습니다.',
+  };
+}
+
+function createCoachLine(report) {
+  const medical = report.profile.medical || [];
+  const has = (keyword) => medical.some((item) => String(item).includes(keyword));
+
+  if (report.risk.red.length) {
+    return `${report.risk.red[0]} 항목을 먼저 줄이고, 섭취 전 음식명과 양을 한 번 더 확인하세요.`;
+  }
+
+  if (has('고혈압') || report.totals.sodium >= 900) {
+    return '다음 식사에서는 국물과 김치류를 줄이고 물을 충분히 마셔 나트륨 부담을 낮추세요.';
+  }
+
+  if (has('당뇨') || report.totals.sugar >= 15) {
+    return '다음 식사는 단 음료보다 단백질 반찬과 채소를 먼저 선택해 혈당 부담을 줄이세요.';
+  }
+
+  if (report.profile.sport === '근력파워') {
+    return '운동 후 2시간 안에는 단백질 반찬과 탄수화물을 함께 보충해 회복을 이어가세요.';
+  }
+
+  if (report.profile.sport === '지구력') {
+    return '장시간 운동 전후에는 탄수화물과 수분을 함께 보충해 에너지 고갈을 막으세요.';
+  }
+
+  if (report.profile.sport === '팀스포츠') {
+    return '반복적인 움직임을 위해 다음 식사에는 밥, 과일, 수분을 함께 챙기세요.';
+  }
+
+  if (report.macroPercent.protein < 10 && report.totals.calories > 0) {
+    return '다음 식사에는 계란, 두부, 닭가슴살 같은 단백질 반찬을 하나 추가하세요.';
+  }
+
+  return '현재 식사는 자동 추정 기준으로 무난합니다. 다음 식사에는 채소와 단백질을 함께 유지하세요.';
 }
 
 function SettingBlock({ title, children }) {
