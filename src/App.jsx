@@ -11,6 +11,7 @@ import { findOfficialBrandFood } from './services/officialNutritionSources';
 
 const PROFILE_KEY = 'nutritionCameraProfile.v2';
 const LIVE_NUTRIENT_SCAN_INTERVAL_MS = 1800;
+const FOOD_FOCUS_CROP_RATIO = 0.58;
 
 const nutritionFactFields = [
   { key: 'calories', label: '열량', unit: 'kcal' },
@@ -96,6 +97,7 @@ export default function App() {
   const [captured, setCaptured] = useState(null);
   const [liveScan, setLiveScan] = useState({ status: 'idle', facts: {}, text: '' });
   const [saveState, setSaveState] = useState('');
+  const [cameraZoom, setCameraZoom] = useState(1);
 
   const report = useMemo(() => {
     if (!captured) return null;
@@ -191,10 +193,7 @@ export default function App() {
     if (!canvas) return '';
 
     if (cameraReady && video?.videoWidth && video?.videoHeight) {
-      canvas.width = video.videoWidth;
-      canvas.height = video.videoHeight;
-      const ctx = canvas.getContext('2d');
-      ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+      drawZoomedVideoFrame(canvas, video, cameraZoom);
       return canvas.toDataURL('image/jpeg', 0.9);
     }
 
@@ -275,12 +274,7 @@ export default function App() {
     const video = videoRef.current;
     if (!canvas || !video?.videoWidth || !video?.videoHeight) return null;
 
-    const maxWidth = 1200;
-    const scale = Math.min(1, maxWidth / video.videoWidth);
-    canvas.width = Math.max(1, Math.round(video.videoWidth * scale));
-    canvas.height = Math.max(1, Math.round(video.videoHeight * scale));
-    const ctx = canvas.getContext('2d', { willReadFrequently: true });
-    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+    drawZoomedVideoFrame(canvas, video, cameraZoom, 1200);
     return canvas;
   }
 
@@ -420,6 +414,7 @@ export default function App() {
           <video
             ref={videoRef}
             className={`absolute inset-0 h-full w-full object-cover ${cameraReady ? 'block' : 'hidden'}`}
+            style={{ transform: `scale(${cameraZoom})` }}
             autoPlay
             playsInline
             muted
@@ -429,11 +424,11 @@ export default function App() {
 
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/5 to-black/80" />
           <div className="pointer-events-none absolute inset-0 grid place-items-center">
-            <div className="relative h-[min(74vw,430px)] w-[min(74vw,430px)] rounded-full border-2 border-white/85 shadow-[0_0_0_22px_rgba(255,255,255,0.05)]">
+            <div className="relative h-[min(58vw,340px)] w-[min(58vw,340px)] rounded-full border-2 border-white/85 shadow-[0_0_0_18px_rgba(255,255,255,0.05)] md:h-[min(46vw,390px)] md:w-[min(46vw,390px)]">
               <div className="absolute left-[22%] right-[22%] top-1/2 h-0.5 -translate-y-1/2 rounded-full bg-emerald-300/90 shadow-[0_0_24px_rgba(52,211,153,0.85)]" />
               {showCapturePrompt ? (
                 <div className="absolute -bottom-14 left-1/2 w-max max-w-[82vw] -translate-x-1/2 rounded-full bg-black/45 px-4 py-2 text-center text-sm font-black text-white/90">
-                  음식·성분표를 원 안에 맞춰주세요
+                  가까이 대고 가운데에 맞춰주세요
                 </div>
               ) : null}
             </div>
@@ -455,6 +450,7 @@ export default function App() {
 
           {cameraReady && !cameraError ? <LiveNutritionBadge liveScan={liveScan} /> : null}
           {cameraReady && !cameraError ? <LiveAnalysisPanel liveReport={liveReport} liveScan={liveScan} /> : null}
+          {cameraReady && !cameraError ? <ZoomControl zoom={cameraZoom} onChange={setCameraZoom} /> : null}
 
           <div className="absolute bottom-8 left-0 right-0 z-10 flex items-center justify-center gap-7">
             <button
@@ -713,6 +709,27 @@ function TrafficLine({ color, label, text }) {
     <div className={`rounded-lg border p-3 ${styles[color]}`}>
       <strong className="block text-sm">{label}</strong>
       <span className="mt-1 block text-sm font-bold leading-snug">{text}</span>
+    </div>
+  );
+}
+
+function ZoomControl({ zoom, onChange }) {
+  return (
+    <div className="absolute bottom-[8.5rem] left-4 right-4 z-10 rounded-full border border-white/15 bg-black/45 px-4 py-3 shadow-2xl backdrop-blur md:left-1/2 md:right-auto md:w-[420px] md:-translate-x-1/2">
+      <div className="flex items-center gap-3">
+        <span className="shrink-0 text-sm font-black text-white">배율</span>
+        <input
+          type="range"
+          min="1"
+          max="2.5"
+          step="0.1"
+          value={zoom}
+          onChange={(event) => onChange(Number(event.target.value))}
+          className="h-8 min-w-0 flex-1 accent-emerald-300"
+          aria-label="카메라 배율 조정"
+        />
+        <span className="w-12 shrink-0 text-right text-sm font-black text-emerald-100">{Number(zoom).toFixed(1)}x</span>
+      </div>
     </div>
   );
 }
@@ -1110,11 +1127,12 @@ function UserGuideAccordion({ open, onToggle }) {
         <div className="mt-3 rounded-xl border border-teal-100 bg-teal-50 p-4 text-sm font-bold leading-relaxed text-slate-800">
           <ol className="grid gap-2">
             <li>1. 앱을 열면 로그인 없이 바로 카메라가 켜집니다.</li>
-            <li>2. 음식이나 식품 영양성분표를 둥근 테두리 안에 맞춥니다.</li>
-            <li>3. 가운데 안내가 깜빡이면 분석 준비 중입니다. 음식 후보가 잡히면 안내가 사라집니다.</li>
-            <li>4. 위쪽의 실시간 자동 분석 카드에서 예상 열량, 당류, 나트륨을 먼저 확인합니다.</li>
-            <li>5. 가운데 빨간 촬영 버튼을 누르면 A4 리포트 카드가 만들어집니다.</li>
-            <li>6. 음식명이나 양이 다르면 결과 화면에서 수정한 뒤 저장합니다.</li>
+            <li>2. 음식이나 식품 영양성분표를 둥근 테두리 가운데에 맞춥니다.</li>
+            <li>3. 너무 멀면 배율 슬라이더를 올려 가까이 보이게 조정합니다.</li>
+            <li>4. 가운데 안내가 깜빡이면 분석 준비 중입니다. 음식 후보가 잡히면 안내가 사라집니다.</li>
+            <li>5. 위쪽의 실시간 자동 분석 카드에서 예상 열량, 당류, 나트륨을 먼저 확인합니다.</li>
+            <li>6. 가운데 빨간 촬영 버튼을 누르면 A4 리포트 카드가 만들어집니다.</li>
+            <li>7. 음식명이나 양이 다르면 결과 화면에서 수정한 뒤 저장합니다.</li>
           </ol>
           <p className="mt-3 rounded-lg bg-white p-3 text-xs text-slate-600">
             한식처럼 여러 음식이 함께 있을 때는 자동 추정 후 밥, 국, 김치, 반찬을 필요하면 직접 보정하면 정확도가 올라갑니다.
@@ -1235,6 +1253,24 @@ function useStoredProfile() {
   }
 
   return [profile, setProfile];
+}
+
+function drawZoomedVideoFrame(canvas, video, zoom = 1, maxWidth = 0) {
+  const sourceWidth = video.videoWidth;
+  const sourceHeight = video.videoHeight;
+  const safeZoom = Math.min(Math.max(Number(zoom) || 1, 1), 2.5);
+  const cropWidth = Math.max(1, Math.floor(sourceWidth / safeZoom));
+  const cropHeight = Math.max(1, Math.floor(sourceHeight / safeZoom));
+  const sourceX = Math.floor((sourceWidth - cropWidth) / 2);
+  const sourceY = Math.floor((sourceHeight - cropHeight) / 2);
+  const scale = maxWidth ? Math.min(1, maxWidth / cropWidth) : 1;
+
+  canvas.width = Math.max(1, Math.round(cropWidth * scale));
+  canvas.height = Math.max(1, Math.round(cropHeight * scale));
+  const ctx = canvas.getContext('2d', { willReadFrequently: true });
+  ctx.imageSmoothingEnabled = true;
+  ctx.imageSmoothingQuality = 'high';
+  ctx.drawImage(video, sourceX, sourceY, cropWidth, cropHeight, 0, 0, canvas.width, canvas.height);
 }
 
 async function readNutritionTextFromImage(photo) {
@@ -1408,7 +1444,7 @@ function estimateFoodFromDrawable(source, sourceWidth, sourceHeight, text = '') 
   canvas.width = size;
   canvas.height = size;
   const ctx = canvas.getContext('2d', { willReadFrequently: true });
-  const cropSize = Math.floor(Math.min(sourceWidth, sourceHeight) * 0.76);
+  const cropSize = Math.floor(Math.min(sourceWidth, sourceHeight) * FOOD_FOCUS_CROP_RATIO);
   const sourceX = Math.floor((sourceWidth - cropSize) / 2);
   const sourceY = Math.floor((sourceHeight - cropSize) / 2);
 
