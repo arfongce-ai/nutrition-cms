@@ -100,6 +100,7 @@ export default function App() {
   }, [captured, liveScan, profile]);
 
   const modeLabel = MODE_LABELS[profile.mode];
+  const showCapturePrompt = cameraReady && !cameraError && !liveReport;
 
   useEffect(() => {
     document.documentElement.classList.add('dark');
@@ -413,17 +414,21 @@ export default function App() {
           <div className="pointer-events-none absolute inset-0 grid place-items-center">
             <div className="relative h-[min(74vw,430px)] w-[min(74vw,430px)] rounded-full border-2 border-white/85 shadow-[0_0_0_22px_rgba(255,255,255,0.05)]">
               <div className="absolute left-[22%] right-[22%] top-1/2 h-0.5 -translate-y-1/2 rounded-full bg-emerald-300/90 shadow-[0_0_24px_rgba(52,211,153,0.85)]" />
-              <div className="absolute -bottom-14 left-1/2 w-max max-w-[82vw] -translate-x-1/2 rounded-full bg-black/45 px-4 py-2 text-center text-sm font-black text-white/90">
-                음식·성분표를 원 안에 맞춰주세요
-              </div>
+              {showCapturePrompt ? (
+                <div className="absolute -bottom-14 left-1/2 w-max max-w-[82vw] -translate-x-1/2 rounded-full bg-black/45 px-4 py-2 text-center text-sm font-black text-white/90">
+                  음식·성분표를 원 안에 맞춰주세요
+                </div>
+              ) : null}
             </div>
           </div>
 
-          <header className="absolute left-4 right-4 top-5 z-10 flex items-start">
-            <div className="rounded-full border border-white/20 bg-black/45 px-4 py-3 text-lg font-black shadow-xl backdrop-blur md:text-2xl">
+          {showCapturePrompt ? (
+            <div className="pointer-events-none absolute inset-x-4 top-1/2 z-10 flex -translate-y-1/2 justify-center">
+              <div className="max-w-[88vw] animate-pulse rounded-full border border-white/20 bg-black/55 px-5 py-3 text-center text-lg font-black shadow-2xl backdrop-blur md:text-2xl">
               음식 및 성분표를 촬영하세요
+              </div>
             </div>
-          </header>
+          ) : null}
 
           {cameraError ? (
             <div className="absolute bottom-36 left-4 right-4 z-10 rounded-lg border border-amber-400/30 bg-amber-500/15 px-4 py-3 text-center text-sm font-bold text-amber-100">
@@ -670,7 +675,7 @@ function LiveNutritionBadge({ liveScan }) {
     const preview = detectedFacts.slice(0, 3).join(' · ');
     const extraCount = detectedFacts.length - 3;
     return (
-      <div className="absolute left-4 right-4 top-[6.7rem] z-10 rounded-full border border-emerald-300/40 bg-emerald-500/20 px-4 py-2 text-xs font-black text-emerald-50 shadow-xl backdrop-blur md:right-auto md:max-w-[520px]">
+      <div className="absolute left-4 right-4 top-[9.5rem] z-10 rounded-full border border-emerald-300/40 bg-emerald-500/20 px-4 py-2 text-xs font-black text-emerald-50 shadow-xl backdrop-blur md:right-auto md:max-w-[520px]">
         영양표 자동 인식: {preview}
         {extraCount > 0 ? ` 외 ${extraCount}개` : ''}
       </div>
@@ -683,7 +688,7 @@ function LiveNutritionBadge({ liveScan }) {
 function LiveAnalysisPanel({ liveReport, liveScan }) {
   if (!liveReport) {
     return (
-      <div className="absolute left-4 right-4 top-36 z-10 rounded-2xl border border-white/15 bg-black/45 p-3 text-white shadow-2xl backdrop-blur md:left-auto md:right-4 md:w-[360px]">
+      <div className="absolute left-4 right-4 top-4 z-10 rounded-2xl border border-white/15 bg-black/45 p-3 text-white shadow-2xl backdrop-blur md:left-auto md:right-4 md:w-[360px]">
         <div className="flex items-center justify-between gap-3">
           <strong className="text-sm font-black">실시간 자동 분석</strong>
           <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-black text-white/75">
@@ -708,7 +713,7 @@ function LiveAnalysisPanel({ liveReport, liveScan }) {
     : liveReport.risk.red[0] || liveReport.risk.yellow[0] || '현재 화면 기준으로 큰 위험 신호는 없습니다.';
 
   return (
-    <div className="absolute left-4 right-4 top-36 z-10 rounded-2xl border border-white/15 bg-black/55 p-3 text-white shadow-2xl backdrop-blur md:left-auto md:right-4 md:w-[360px]">
+    <div className="absolute left-4 right-4 top-4 z-10 rounded-2xl border border-white/15 bg-black/55 p-3 text-white shadow-2xl backdrop-blur md:left-auto md:right-4 md:w-[360px]">
       <div className="flex items-center justify-between gap-3">
         <strong className="text-sm font-black">실시간 자동 분석</strong>
         <span className={`rounded-full px-3 py-1 text-xs font-black ${stamp.className}`}>{stamp.label}</span>
