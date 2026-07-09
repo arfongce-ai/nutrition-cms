@@ -21,10 +21,15 @@ const nutritionFactFields = [
 ];
 
 const foodCorrectionPresets = [
-  { label: '밥/반찬', name: '흰쌀밥', grams: '150' },
-  { label: '닭가슴살 샐러드', name: '닭가슴살 샐러드', grams: '250' },
+  { label: '밥 반 공기', name: '흰쌀밥', grams: '105' },
+  { label: '밥 한 공기', name: '흰쌀밥', grams: '210' },
+  { label: '국/찌개 조금', name: '된장찌개', grams: '180' },
+  { label: '국/찌개 보통', name: '된장찌개', grams: '300' },
+  { label: '김치 조금', name: '배추김치', grams: '30' },
+  { label: '김치 보통', name: '배추김치', grams: '60' },
+  { label: '고기반찬', name: '닭가슴살', grams: '120' },
+  { label: '채소/나물', name: '샐러드', grams: '100' },
   { label: '바나나/과일', name: '바나나', grams: '150' },
-  { label: '김치/반찬', name: '배추김치', grams: '60' },
   { label: '고구마', name: '고구마', grams: '150' },
   { label: '단백질 제품', name: '웨이 프로틴', grams: '50' },
 ];
@@ -115,6 +120,13 @@ export default function App() {
     startLiveNutrientScan();
     return () => stopLiveNutrientScan();
   }, [cameraReady, captured, settingsOpen, cameraError]);
+
+  useEffect(() => {
+    if (!captured && videoRef.current && streamRef.current && !videoRef.current.srcObject) {
+      videoRef.current.srcObject = streamRef.current;
+      setCameraReady(true);
+    }
+  }, [captured]);
 
   async function startCamera() {
     const localHostnames = ['localhost', '127.0.0.1'];
@@ -285,6 +297,18 @@ export default function App() {
     });
   }
 
+  function handleRetake() {
+    setCaptured(null);
+    setSaveState('');
+    setLiveScan({ status: 'scanning', facts: {}, text: '', food: null });
+
+    const hasLiveTrack = streamRef.current?.getVideoTracks?.().some((track) => track.readyState === 'live');
+    if (!hasLiveTrack) {
+      setCameraReady(false);
+      startCamera();
+    }
+  }
+
   async function handleSave() {
     if (!report) return;
     setSaveState('저장 중');
@@ -368,17 +392,17 @@ export default function App() {
 
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/5 to-black/80" />
           <div className="pointer-events-none absolute inset-0 grid place-items-center">
-            <div className="relative h-[min(72vw,440px)] w-[min(72vw,440px)] rounded-2xl border-2 border-white/85 shadow-[0_0_0_22px_rgba(255,255,255,0.05)]">
-              <div className="absolute left-8 right-8 top-1/2 h-0.5 -translate-y-1/2 rounded-full bg-emerald-300/90 shadow-[0_0_24px_rgba(52,211,153,0.85)]" />
-              <div className="absolute bottom-5 left-5 right-5 rounded-lg bg-black/45 px-3 py-2 text-center text-sm font-black text-white/90">
-                음식을 화면 안에 맞춰주세요
+            <div className="relative h-[min(74vw,430px)] w-[min(74vw,430px)] rounded-full border-2 border-white/85 shadow-[0_0_0_22px_rgba(255,255,255,0.05)]">
+              <div className="absolute left-[22%] right-[22%] top-1/2 h-0.5 -translate-y-1/2 rounded-full bg-emerald-300/90 shadow-[0_0_24px_rgba(52,211,153,0.85)]" />
+              <div className="absolute -bottom-14 left-1/2 w-max max-w-[82vw] -translate-x-1/2 rounded-full bg-black/45 px-4 py-2 text-center text-sm font-black text-white/90">
+                음식·성분표를 원 안에 맞춰주세요
               </div>
             </div>
           </div>
 
           <header className="absolute left-4 right-4 top-5 z-10 flex items-start justify-between gap-3">
             <div className="rounded-full border border-white/20 bg-black/45 px-4 py-3 text-lg font-black shadow-xl backdrop-blur md:text-2xl">
-              {profile.mode === 'senior' ? '음식을 비추고 큰 버튼을 눌러주세요' : '오늘 식단을 비추고 촬영하세요'}
+              음식 및 성분표를 촬영하세요
             </div>
             <button
               type="button"
@@ -420,7 +444,7 @@ export default function App() {
           addFood={addFood}
           removeFood={removeFood}
           updateFacts={updateFacts}
-          onBack={() => setCaptured(null)}
+          onBack={handleRetake}
           onSave={handleSave}
           onSpeak={() => speak(report.messageText)}
         />
@@ -574,25 +598,9 @@ function LiveNutritionBadge({ liveScan }) {
     const preview = detectedFacts.slice(0, 3).join(' · ');
     const extraCount = detectedFacts.length - 3;
     return (
-      <div className="absolute left-4 right-4 top-24 z-10 rounded-2xl border border-emerald-300/40 bg-emerald-500/20 px-4 py-3 text-sm font-black text-emerald-50 shadow-xl backdrop-blur md:right-auto md:max-w-[520px]">
+      <div className="absolute left-4 right-4 top-[6.7rem] z-10 rounded-full border border-emerald-300/40 bg-emerald-500/20 px-4 py-2 text-xs font-black text-emerald-50 shadow-xl backdrop-blur md:right-auto md:max-w-[520px]">
         영양표 자동 인식: {preview}
         {extraCount > 0 ? ` 외 ${extraCount}개` : ''}
-      </div>
-    );
-  }
-
-  if (liveScan?.food) {
-    return (
-      <div className="absolute left-4 top-24 z-10 rounded-full border border-white/15 bg-black/40 px-4 py-2 text-xs font-black text-white/80 shadow-xl backdrop-blur">
-        음식 후보 분석 중 · 영양표는 보조 인식
-      </div>
-    );
-  }
-
-  if (liveScan?.status === 'scanning') {
-    return (
-      <div className="absolute left-4 top-24 z-10 rounded-full border border-white/15 bg-black/40 px-4 py-2 text-xs font-black text-white/80 shadow-xl backdrop-blur">
-        음식 후보 분석 중
       </div>
     );
   }
@@ -603,15 +611,15 @@ function LiveNutritionBadge({ liveScan }) {
 function LiveAnalysisPanel({ liveReport, liveScan }) {
   if (!liveReport) {
     return (
-      <div className="absolute bottom-36 left-4 right-4 z-10 rounded-2xl border border-white/15 bg-black/45 p-4 text-white shadow-2xl backdrop-blur md:left-auto md:w-[420px]">
+      <div className="absolute left-4 right-4 top-36 z-10 rounded-2xl border border-white/15 bg-black/45 p-3 text-white shadow-2xl backdrop-blur md:left-auto md:right-4 md:w-[360px]">
         <div className="flex items-center justify-between gap-3">
-          <strong className="text-base font-black">실시간 자동 분석</strong>
+          <strong className="text-sm font-black">실시간 자동 분석</strong>
           <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-black text-white/75">
             분석 중
           </span>
         </div>
-        <p className="mt-2 text-sm font-bold text-white/75">
-          음식을 화면 안에 맞추면 후보 음식과 예상 kcal를 바로 추정합니다.
+        <p className="mt-1 text-xs font-bold text-white/75">
+          음식은 바로 추정하고, 성분표 숫자가 보이면 kcal와 주요 성분도 함께 반영합니다.
         </p>
       </div>
     );
@@ -628,17 +636,17 @@ function LiveAnalysisPanel({ liveReport, liveScan }) {
     : liveReport.risk.red[0] || liveReport.risk.yellow[0] || '현재 화면 기준으로 큰 위험 신호는 없습니다.';
 
   return (
-    <div className="absolute bottom-36 left-4 right-4 z-10 rounded-2xl border border-white/15 bg-black/55 p-4 text-white shadow-2xl backdrop-blur md:left-auto md:w-[420px]">
+    <div className="absolute left-4 right-4 top-36 z-10 rounded-2xl border border-white/15 bg-black/55 p-3 text-white shadow-2xl backdrop-blur md:left-auto md:right-4 md:w-[360px]">
       <div className="flex items-center justify-between gap-3">
-        <strong className="text-base font-black">실시간 자동 분석</strong>
+        <strong className="text-sm font-black">실시간 자동 분석</strong>
         <span className={`rounded-full px-3 py-1 text-xs font-black ${stamp.className}`}>{stamp.label}</span>
       </div>
-      <div className="mt-3 grid grid-cols-3 gap-2">
+      <div className="mt-2 grid grid-cols-3 gap-2">
         <LiveMetric label="열량" value={formatMetric(liveReport.totals.calories, 'kcal')} />
         <LiveMetric label="당류" value={formatMetric(liveReport.totals.sugar, 'g')} />
         <LiveMetric label="나트륨" value={formatMetric(liveReport.totals.sodium, 'mg')} />
       </div>
-      <p className="mt-3 text-sm font-bold leading-snug text-white/85">{primaryRisk}</p>
+      <p className="mt-2 text-xs font-bold leading-snug text-white/85">{primaryRisk}</p>
     </div>
   );
 }
@@ -732,6 +740,9 @@ function FoodItemsForm({ foods, updateFood, addFood, removeFood }) {
 function NutritionFactsForm({ facts, updateFacts }) {
   return (
     <div className="mt-4 grid gap-3">
+      <p className="rounded-lg bg-teal-50 p-3 text-sm font-black text-teal-800">
+        성분표 사진을 찍으면 가능한 숫자는 자동 반영됩니다. 자동 인식이 안 되면 kcal, 탄수화물, 단백질, 지방, 나트륨 숫자만 입력해도 음식 분석과 함께 계산됩니다.
+      </p>
       <label className="grid gap-1 text-sm font-black">
         식품명
         <input
@@ -1102,13 +1113,14 @@ function drawFallbackGuide(canvas) {
 
   ctx.strokeStyle = 'rgba(255,255,255,0.82)';
   ctx.lineWidth = 6;
-  roundRect(ctx, 130, 280, 640, 420, 34);
+  ctx.beginPath();
+  ctx.arc(450, 500, 245, 0, Math.PI * 2);
   ctx.stroke();
 
   ctx.fillStyle = 'rgba(255,255,255,0.92)';
   ctx.font = '900 42px Pretendard, Segoe UI, sans-serif';
   ctx.textAlign = 'center';
-  ctx.fillText('음식 촬영', 450, 500);
+  ctx.fillText('음식 및 성분표 촬영', 450, 500);
 
   ctx.font = '700 26px Pretendard, Segoe UI, sans-serif';
   ctx.fillStyle = 'rgba(255,255,255,0.72)';
@@ -1126,9 +1138,9 @@ function roundRect(ctx, x, y, width, height, radius) {
 }
 
 function statusText(status) {
-  if (status === 'checking') return '촬영 완료. 음식은 자동 추정으로 분석했고, 영양표 글자도 함께 확인하는 중입니다.';
-  if (status === 'detected') return '영양표에서 읽은 값이 일부 입력되었습니다. 음식 분석과 함께 합산됩니다.';
-  return '포장식품이면 영양표 숫자도 입력해 함께 분석할 수 있습니다.';
+  if (status === 'checking') return '음식은 자동 분석 중입니다. 성분표 숫자가 보이면 함께 반영합니다.';
+  if (status === 'detected') return '성분표에서 읽은 값이 일부 입력되었습니다. 음식 분석과 함께 합산됩니다.';
+  return '자동 인식이 안 되면 성분표 숫자를 직접 입력해 음식 분석과 함께 계산할 수 있습니다.';
 }
 
 function hasReadableNutritionFacts(facts) {
