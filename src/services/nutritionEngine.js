@@ -64,6 +64,15 @@ export function createEmptyFoodItem() {
   };
 }
 
+export function createEstimatedFoodItem() {
+  return {
+    id: globalThis.crypto?.randomUUID?.() || `${Date.now()}-${Math.random().toString(16).slice(2)}`,
+    name: '촬영 음식',
+    grams: '250',
+    estimated: true,
+  };
+}
+
 export function createEmptyNutritionFacts() {
   return {
     foodName: '',
@@ -151,6 +160,7 @@ function normalizeFoods(foodItems) {
         type: '음식',
         name: item.name.trim(),
         grams,
+        estimated: Boolean(item.estimated),
         emoji: base.emoji,
         matched: base.matched,
         calories: round(base.calories * multiplier),
@@ -315,12 +325,15 @@ function createMessage(profile, foods, labelItem, facts, totals, macroPercent, r
 function createAdultMessage(profile, foods, labelItem, facts, totals, macroPercent, risk, options) {
   const weight = Math.max(Number(profile.weight || 70), 1);
   const sodiumRatio = Math.round((totals.sodium / GUIDELINES.kdri2025.sodiumCdrrMg) * 100);
+  const hasEstimatedFood = foods.some((food) => food.estimated);
   const paragraphs = [];
 
   if (!foods.length) {
     paragraphs.push('사진 촬영은 완료되었습니다. 음식명을 먼저 입력하면 음식 기준 영양 추정이 바로 시작됩니다. 포장식품이면 아래 영양성분표 숫자도 함께 입력해 더 정확하게 보정하세요.');
   } else if (risk.red.length) {
     paragraphs.push(`안전 필터에서 ${risk.red.join(', ')}이 감지되었습니다. 보충제, 한약, 해외 직구 제품은 KADA 금지약물검색 서비스 또는 Global DRO 확인 전까지 섭취를 보류하세요.`);
+  } else if (hasEstimatedFood) {
+    paragraphs.push(`사진 속 음식을 자동 추정값으로 먼저 분석했습니다. 현재는 촬영 음식 ${foods[0]?.grams || 250}g 기준의 임시 계산이며, 정확도를 높이고 싶을 때만 음식명과 양을 수정하세요. 현재 탄수화물 ${macroPercent.carb}%, 단백질 ${macroPercent.protein}%, 지방 ${macroPercent.fat}%로 2025 KDRI 성인 AMDR 범위와 비교했습니다.`);
   } else {
     paragraphs.push(`음식 분석 기준으로 현재 탄수화물 ${macroPercent.carb}%, 단백질 ${macroPercent.protein}%, 지방 ${macroPercent.fat}%입니다. 2025 KDRI 성인 AMDR인 탄수화물 50~65%, 단백질 10~20%, 지방 15~30%와 비교했습니다.`);
   }

@@ -3,6 +3,7 @@ import {
   analyzeMeal,
   createEmptyFoodItem,
   createEmptyNutritionFacts,
+  createEstimatedFoodItem,
   MODE_LABELS,
   parseNutritionText,
 } from './services/nutritionEngine';
@@ -234,7 +235,7 @@ export default function App() {
     };
     setCaptured({
       photo,
-      foods: [createEmptyFoodItem()],
+      foods: [createEstimatedFoodItem()],
       facts: initialFacts,
       ocrStatus: hasReadableNutritionFacts(liveScan.facts) ? 'detected' : 'checking',
       ocrText: liveScan.text || '',
@@ -460,7 +461,7 @@ function ReportView({ captured, modeLabel, report, saveState, updateFood, addFoo
             <div className="rounded-lg border-2 border-slate-950 bg-white p-5">
               <h2 className="text-2xl font-black">음식 분석</h2>
               <p className="mt-2 rounded-lg bg-emerald-50 p-3 text-sm font-bold text-emerald-800">
-                음식명과 양을 먼저 입력하면 식단 기준 영양 분석이 바로 계산됩니다.
+                사진만 찍어도 자동 추정값으로 바로 분석합니다. 정확도를 높이고 싶을 때만 음식명과 양을 수정하세요.
               </p>
               <FoodItemsForm foods={captured.foods} updateFood={updateFood} addFood={addFood} removeFood={removeFood} />
             </div>
@@ -598,15 +599,20 @@ function FoodItemsForm({ foods, updateFood, addFood, removeFood }) {
         <div key={food.id} className="grid gap-3 rounded-lg border border-slate-200 bg-slate-50 p-3">
           <div className="flex items-center justify-between gap-3">
             <strong className="text-sm font-black text-slate-600">음식 {index + 1}</strong>
-            {foods.length > 1 ? (
-              <button
-                type="button"
-                onClick={() => removeFood(food.id)}
-                className="h-8 rounded-full bg-slate-200 px-3 text-xs font-black text-slate-700"
-              >
-                삭제
-              </button>
-            ) : null}
+            <div className="flex items-center gap-2">
+              {food.estimated ? (
+                <span className="rounded-full bg-emerald-100 px-3 py-1 text-xs font-black text-emerald-700">자동 추정</span>
+              ) : null}
+              {foods.length > 1 ? (
+                <button
+                  type="button"
+                  onClick={() => removeFood(food.id)}
+                  className="h-8 rounded-full bg-slate-200 px-3 text-xs font-black text-slate-700"
+                >
+                  삭제
+                </button>
+              ) : null}
+            </div>
           </div>
           <label className="grid gap-1 text-sm font-black">
             음식명
@@ -913,7 +919,7 @@ function roundRect(ctx, x, y, width, height, radius) {
 }
 
 function statusText(status) {
-  if (status === 'checking') return '촬영 완료. 음식 분석을 먼저 입력하고, 영양표 글자도 함께 확인하는 중입니다.';
+  if (status === 'checking') return '촬영 완료. 음식은 자동 추정으로 분석했고, 영양표 글자도 함께 확인하는 중입니다.';
   if (status === 'detected') return '영양표에서 읽은 값이 일부 입력되었습니다. 음식 분석과 함께 합산됩니다.';
   return '포장식품이면 영양표 숫자도 입력해 함께 분석할 수 있습니다.';
 }
