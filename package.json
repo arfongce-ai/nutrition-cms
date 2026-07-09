@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "check": "vite build"
+    "check": "vite build",
+    "db:update": "node scripts/update-official-product-db.mjs",
+    "db:validate": "node scripts/update-official-product-db.mjs --validate-only"
   },
   "dependencies": {
     "firebase": "^10.12.0",

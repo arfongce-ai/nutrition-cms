@@ -8,6 +8,7 @@ import {
   parseNutritionText,
 } from './services/nutritionEngine';
 import { findOfficialBrandFood } from './services/officialNutritionSources';
+import { findOfficialProductFood } from './services/officialProductDatabase';
 
 const PROFILE_KEY = 'nutritionCameraProfile.v2';
 const LIVE_NUTRIENT_SCAN_INTERVAL_MS = 1800;
@@ -1567,7 +1568,7 @@ function createFoodEstimateFromText(text) {
   const normalized = normalizeRecognitionText(text);
   if (!normalized) return null;
 
-  const officialFood = findOfficialBrandFood(text);
+  const officialFood = findOfficialProductFood(text) || findOfficialBrandFood(text);
   if (officialFood) {
     const officialKey = officialFood.keys[0];
     const officialName = normalizeRecognitionText(officialKey).includes(normalizeRecognitionText(officialFood.brand))

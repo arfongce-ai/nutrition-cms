@@ -1,0 +1,2200 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-07-09",
+  "sources": [
+    {
+      "brand": "59쌀피자",
+      "category": "4. 치킨 및 피자 (20곳)",
+      "url": "https://www.59pizza.co.kr",
+      "aliases": [
+        "59쌀피자"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "가성비커피",
+      "category": "1. 커피 및 음료 전문점 (30곳)",
+      "url": "https://gasungbicoffee.com",
+      "aliases": [
+        "가성비커피"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "감탄떡볶이",
+      "category": "3. 분식 (떡볶이, 김밥, 만두)",
+      "url": "http://gamtan.co.kr/menu/menu1.php",
+      "aliases": [
+        "감탄떡볶이"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "갓덴스시",
+      "category": "2. 중식 및 일식 (짜장, 우동, 돈까스, 초밥)",
+      "url": "http://www.gaddensushi.co.kr/menu/menu1.php",
+      "aliases": [
+        "갓덴스시"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "경방신약",
+      "category": "2. 한약 기반 식품 및 제조·판매 업체 (10곳)",
+      "url": "https://www.kbpharm.co.kr",
+      "aliases": [
+        "경방신약"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "계절밥상",
+      "category": "4. 양식 및 패밀리 레스토랑 / 이탈리안",
+      "url": "http://www.seasonstable.co.kr/menu/menu.asp",
+      "aliases": [
+        "계절밥상"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "고래식당",
+      "category": "1. 한식 (죽, 도시락, 밥집, 고기류)",
+      "url": "http://goraeshiktang.co.kr/menu/menu1.php",
+      "aliases": [
+        "고래식당"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "고려은단",
+      "category": "1. 스포츠 보충제 및 단백질·영양제 제조 판매 업체 (15곳)",
+      "url": "https://www.koreaeundan.com",
+      "aliases": [
+        "고려은단"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "고봉민김밥인",
+      "category": "3. 분식 (떡볶이, 김밥, 만두)",
+      "url": "http://kobongmin.com/menu/menu1.php",
+      "aliases": [
+        "고봉민김밥인"
+      ],
+      "sourceKind": "official_menu_or_nutrition"
+    },
+    {
+      "brand": "공차",
+      "category": "1. 커피 및 음료 전문점 (30곳)",
+      "url": "https://www.gong-cha.co.kr",
+      "aliases": [
+        "공차"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "광동제약",
+      "category": "3. 양약 및 일반·전문 의약품 제약업체 (15곳)",
+      "url": "https://www.ekdp.com",
+      "aliases": [
+        "광동제약"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "교동짬뽕",
+      "category": "1. 한식 (죽, 도시락, 밥집, 고기류)",
+      "url": "http://www.gyodongjb.com/menu/menu1.php",
+      "aliases": [
+        "교동짬뽕"
+      ],
+      "sourceKind": "official_menu_or_nutrition"
+    },
+    {
+      "brand": "교촌치킨",
+      "category": "4. 치킨 및 피자 (20곳)",
+      "url": "https://www.kyochon.com",
+      "aliases": [
+        "교촌치킨"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "구이가",
+      "category": "1. 한식 (죽, 도시락, 밥집, 고기류)",
+      "url": "http://www.92ga.co.kr/menu/menu1.php",
+      "aliases": [
+        "구이가"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "국대떡볶이",
+      "category": "5. 한식·중식·일식 및 일반 외식 (20곳)",
+      "url": "https://www.kukdae.co.kr",
+      "aliases": [
+        "국대떡볶이"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "국대떡볶이",
+      "category": "3. 분식 (떡볶이, 김밥, 만두)",
+      "url": "http://www.kukdae.co.kr/menu/menu1.php",
+      "aliases": [
+        "국대떡볶이"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "국산보충제 가이너마트",
+      "category": "1. 스포츠 보충제 및 단백질·영양제 제조 판매 업체 (15곳)",
+      "url": "https://www.gainermart.co.kr",
+      "aliases": [
+        "국산보충제 가이너마트"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "국수나무",
+      "category": "2. 중식 및 일식 (짜장, 우동, 돈까스, 초밥)",
+      "url": "http://www.namutree.co.kr/menu/menu1.php",
+      "aliases": [
+        "국수나무"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "굽네치킨",
+      "category": "4. 치킨 및 피자 (20곳)",
+      "url": "https://www.goobne.co.kr",
+      "aliases": [
+        "굽네치킨"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "금화왕돈까스",
+      "category": "2. 중식 및 일식 (짜장, 우동, 돈까스, 초밥)",
+      "url": "http://geumhwakingtonkatsu.com/menu/menu1.php",
+      "aliases": [
+        "금화왕돈까스"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "김가네",
+      "category": "3. 분식 (떡볶이, 김밥, 만두)",
+      "url": "http://gimgane.co.kr/menu/menu1.php",
+      "aliases": [
+        "김가네"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "나뚜루",
+      "category": "2. 베이커리 및 디저트 (15곳)",
+      "url": "https://www.natuur.co.kr",
+      "aliases": [
+        "나뚜루"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "네네치킨",
+      "category": "4. 치킨 및 피자 (20곳)",
+      "url": "https://nenechicken.com",
+      "aliases": [
+        "네네치킨"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "노브랜드 버거",
+      "category": "3. 패스트푸드 및 버거 (15곳)",
+      "url": "https://www.shinsegaefood.com/nobrandburger",
+      "aliases": [
+        "노브랜드 버거"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "놀부부대찌개",
+      "category": "5. 한식·중식·일식 및 일반 외식 (20곳)",
+      "url": "https://www.nolboo.co.kr",
+      "aliases": [
+        "놀부부대찌개"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "놀부부대찌개",
+      "category": "1. 한식 (죽, 도시락, 밥집, 고기류)",
+      "url": "http://www.nolboo.co.kr/brand/budae/menu.html",
+      "aliases": [
+        "놀부부대찌개"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "뉴욕버거",
+      "category": "3. 패스트푸드 및 버거 (15곳)",
+      "url": "https://www.newyorkburger.co.kr",
+      "aliases": [
+        "뉴욕버거"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "뉴트리디데이",
+      "category": "1. 스포츠 보충제 및 단백질·영양제 제조 판매 업체 (15곳)",
+      "url": "https://www.nutridday.com",
+      "aliases": [
+        "뉴트리디데이"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "뉴트리원",
+      "category": "1. 스포츠 보충제 및 단백질·영양제 제조 판매 업체 (15곳)",
+      "url": "https://www.nutrione.co.kr",
+      "aliases": [
+        "뉴트리원"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "다이닝원",
+      "category": "4. 양식 및 패밀리 레스토랑 / 이탈리안",
+      "url": "http://diningone.co.kr/menu/menu1.php",
+      "aliases": [
+        "다이닝원"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "달콤커피",
+      "category": "1. 커피 및 음료 전문점 (30곳)",
+      "url": "https://www.dalkomm.com",
+      "aliases": [
+        "달콤커피"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "담소소사골순대육개장",
+      "category": "1. 한식 (죽, 도시락, 밥집, 고기류)",
+      "url": "http://www.damso-story.com/menu/menu1.php",
+      "aliases": [
+        "담소소사골순대육개장"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "대상웰라이프",
+      "category": "1. 스포츠 보충제 및 단백질·영양제 제조 판매 업체 (15곳)",
+      "url": "https://www.daesangwellife.com",
+      "aliases": [
+        "대상웰라이프"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "대웅제약",
+      "category": "3. 양약 및 일반·전문 의약품 제약업체 (15곳)",
+      "url": "https://www.daewoong.co.kr",
+      "aliases": [
+        "대웅제약"
+      ],
+      "sourceKind": "official_menu_or_nutrition"
+    },
+    {
+      "brand": "댄싱컵",
+      "category": "1. 커피 및 음료 전문점 (30곳)",
+      "url": "https://www.dancingcup.com",
+      "aliases": [
+        "댄싱컵"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "더벤티",
+      "category": "1. 커피 및 음료 전문점 (30곳)",
+      "url": "https://www.theventi.co.kr",
+      "aliases": [
+        "더벤티"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "더플레이스",
+      "category": "4. 양식 및 패밀리 레스토랑 / 이탈리안",
+      "url": "https://www.italiantheplace.co.kr:444/menu/menu.asp",
+      "aliases": [
+        "더플레이스"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "던킨",
+      "category": "2. 베이커리 및 디저트 (15곳)",
+      "url": "https://www.dunkinchips.co.kr",
+      "aliases": [
+        "던킨"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "도미노피자",
+      "category": "4. 치킨 및 피자 (20곳)",
+      "url": "https://web.dominos.co.kr",
+      "aliases": [
+        "도미노피자"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "돈까스클럽",
+      "category": "2. 중식 및 일식 (짜장, 우동, 돈까스, 초밥)",
+      "url": "http://www.tonkatsuclub.co.kr/menu/menu1.php",
+      "aliases": [
+        "돈까스클럽"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "동국제약",
+      "category": "3. 양약 및 일반·전문 의약품 제약업체 (15곳)",
+      "url": "https://www.dkpharm.co.kr",
+      "aliases": [
+        "동국제약"
+      ],
+      "sourceKind": "official_menu_or_nutrition"
+    },
+    {
+      "brand": "동대문엽기떡볶이",
+      "category": "5. 한식·중식·일식 및 일반 외식 (20곳)",
+      "url": "https://www.yupdduk.com",
+      "aliases": [
+        "동대문엽기떡볶이"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "동대문엽기떡볶이",
+      "category": "3. 분식 (떡볶이, 김밥, 만두)",
+      "url": "https://www.yupdduk.com/menu/menu.asp",
+      "aliases": [
+        "동대문엽기떡볶이"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "동아제약",
+      "category": "3. 양약 및 일반·전문 의약품 제약업체 (15곳)",
+      "url": "https://www.donga-otc.com",
+      "aliases": [
+        "동아제약"
+      ],
+      "sourceKind": "official_menu_or_nutrition"
+    },
+    {
+      "brand": "동화약품",
+      "category": "3. 양약 및 일반·전문 의약품 제약업체 (15곳)",
+      "url": "https://www.dongwha.co.kr",
+      "aliases": [
+        "동화약품"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "두끼",
+      "category": "3. 분식 (떡볶이, 김밥, 만두)",
+      "url": "http://dookki.co.kr/menu/menu1.php",
+      "aliases": [
+        "두끼"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "드롭탑",
+      "category": "1. 커피 및 음료 전문점 (30곳)",
+      "url": "https://www.cafedroptop.com",
+      "aliases": [
+        "드롭탑"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "뚜레쥬르",
+      "category": "2. 베이커리 및 디저트 (15곳)",
+      "url": "https://www.trouslesjours.co.kr",
+      "aliases": [
+        "뚜레쥬르"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "라그릴리아",
+      "category": "4. 양식 및 패밀리 레스토랑 / 이탈리안",
+      "url": "https://lagrillia.spc.co.kr/menu/menu_list.jsp",
+      "aliases": [
+        "라그릴리아"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "라라코스트",
+      "category": "4. 양식 및 패밀리 레스토랑 / 이탈리안",
+      "url": "http://raracost.com/menu/menu1.php",
+      "aliases": [
+        "라라코스트"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "라화쿵부",
+      "category": "2. 중식 및 일식 (짜장, 우동, 돈까스, 초밥)",
+      "url": "http://lahuakungfu.com/menu/menu1.php",
+      "aliases": [
+        "라화쿵부"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "락토핏 / 종근당건강",
+      "category": "1. 스포츠 보충제 및 단백질·영양제 제조 판매 업체 (15곳)",
+      "url": "https://www.ckdhc.com",
+      "aliases": [
+        "락토핏",
+        "종근당건강",
+        "락토핏 / 종근당건강"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "로니로티",
+      "category": "4. 양식 및 패밀리 레스토랑 / 이탈리안",
+      "url": "http://lonnierottie.com/menu/menu1.php",
+      "aliases": [
+        "로니로티"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "로티보이",
+      "category": "2. 베이커리 및 디저트 (15곳)",
+      "url": "https://www.rotiboykorea.com",
+      "aliases": [
+        "로티보이"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "롤링파스타",
+      "category": "4. 양식 및 패밀리 레스토랑 / 이탈리안",
+      "url": "https://rolling-pasta.com/menu/",
+      "aliases": [
+        "롤링파스타"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "롯데리아",
+      "category": "3. 패스트푸드 및 버거 (15곳)",
+      "url": "https://www.lotteria.com",
+      "aliases": [
+        "롯데리아"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "리치몬드 레스토랑",
+      "category": "4. 양식 및 패밀리 레스토랑 / 이탈리안",
+      "url": "http://richmond.co.kr/menu/menu1.php",
+      "aliases": [
+        "리치몬드 레스토랑"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "마녀김밥",
+      "category": "3. 분식 (떡볶이, 김밥, 만두)",
+      "url": "http://witchgimbap.co.kr/menu/menu1.php",
+      "aliases": [
+        "마녀김밥"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "마라탕전문 피치",
+      "category": "2. 중식 및 일식 (짜장, 우동, 돈까스, 초밥)",
+      "url": "http://pichimarabang.com/menu/menu1.php",
+      "aliases": [
+        "마라탕전문 피치"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "마이프로틴",
+      "category": "1. 스포츠 보충제 및 단백질·영양제 제조 판매 업체 (15곳)",
+      "url": "https://www.myprotein.co.kr",
+      "aliases": [
+        "마이프로틴"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "마포갈매기",
+      "category": "1. 한식 (죽, 도시락, 밥집, 고기류)",
+      "url": "http://www.mapo92.com/menu/menu1.php",
+      "aliases": [
+        "마포갈매기"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "맘스터치",
+      "category": "3. 패스트푸드 및 버거 (15곳)",
+      "url": "https://momstouch.co.kr",
+      "aliases": [
+        "맘스터치"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "매드포갈릭",
+      "category": "4. 양식 및 패밀리 레스토랑 / 이탈리안",
+      "url": "https://www.madforgarlic.com/menu",
+      "aliases": [
+        "매드포갈릭"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "매머드커피",
+      "category": "1. 커피 및 음료 전문점 (30곳)",
+      "url": "https://www.mmthcoffee.com",
+      "aliases": [
+        "매머드커피"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "맥도날드",
+      "category": "3. 패스트푸드 및 버거 (15곳)",
+      "url": "https://www.mcdonalds.co.kr",
+      "aliases": [
+        "맥도날드",
+        "mcdonald",
+        "bigmac",
+        "빅맥"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "메가MGC커피",
+      "category": "1. 커피 및 음료 전문점 (30곳)",
+      "url": "https://www.mega-mgccoffee.com",
+      "aliases": [
+        "메가MGC커피"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "멘무샤",
+      "category": "2. 중식 및 일식 (짜장, 우동, 돈까스, 초밥)",
+      "url": "http://www.menmusha.co.kr/menu/menu1.php",
+      "aliases": [
+        "멘무샤"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "명인만두",
+      "category": "3. 분식 (떡볶이, 김밥, 만두)",
+      "url": "http://mi-mandoo.co.kr/menu/menu1.php",
+      "aliases": [
+        "명인만두"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "모스버거",
+      "category": "3. 패스트푸드 및 버거 (15곳)",
+      "url": "https://www.mosburger.co.kr",
+      "aliases": [
+        "모스버거"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "못난이꽈배기",
+      "category": "2. 베이커리 및 디저트 (15곳)",
+      "url": "https://www.motnanicorp.com",
+      "aliases": [
+        "못난이꽈배기"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "무공돈까스",
+      "category": "2. 중식 및 일식 (짜장, 우동, 돈까스, 초밥)",
+      "url": "http://mugongdon.com/menu/menu1.php",
+      "aliases": [
+        "무공돈까스"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "미소야",
+      "category": "5. 한식·중식·일식 및 일반 외식 (20곳)",
+      "url": "https://www.misoya.co.kr",
+      "aliases": [
+        "미소야"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "미소야",
+      "category": "2. 중식 및 일식 (짜장, 우동, 돈까스, 초밥)",
+      "url": "http://www.misoya.co.kr/menu/menu_01.php",
+      "aliases": [
+        "미소야"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "미스터피자",
+      "category": "4. 치킨 및 피자 (20곳)",
+      "url": "https://www.mrpizza.co.kr",
+      "aliases": [
+        "미스터피자"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "미즈컨테이너",
+      "category": "4. 양식 및 패밀리 레스토랑 / 이탈리안",
+      "url": "http://miescontainer.com/menu/menu1.php",
+      "aliases": [
+        "미즈컨테이너"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "바나프레소",
+      "category": "1. 커피 및 음료 전문점 (30곳)",
+      "url": "https://www.banapresso.com",
+      "aliases": [
+        "바나프레소"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "바르다김선생",
+      "category": "3. 분식 (떡볶이, 김밥, 만두)",
+      "url": "http://www.teacherkim.co.kr/menu/menu1.php",
+      "aliases": [
+        "바르다김선생"
+      ],
+      "sourceKind": "official_menu_or_nutrition"
+    },
+    {
+      "brand": "바른치킨버거",
+      "category": "3. 패스트푸드 및 버거 (15곳)",
+      "url": "https://www.barunchicken.com",
+      "aliases": [
+        "바른치킨버거"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "박가부대",
+      "category": "1. 한식 (죽, 도시락, 밥집, 고기류)",
+      "url": "https://wonandwon.co.kr/brands/parkga/menu_list.asp",
+      "aliases": [
+        "박가부대"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "반올림피자",
+      "category": "4. 치킨 및 피자 (20곳)",
+      "url": "https://handmadepizza.co.kr",
+      "aliases": [
+        "반올림피자"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "배스킨라빈스",
+      "category": "2. 베이커리 및 디저트 (15곳)",
+      "url": "https://www.baskinrobbins.co.kr",
+      "aliases": [
+        "배스킨라빈스"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "백미당",
+      "category": "2. 베이커리 및 디저트 (15곳)",
+      "url": "https://1964baekmidang.com",
+      "aliases": [
+        "백미당"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "백암순대",
+      "category": "1. 한식 (죽, 도시락, 밥집, 고기류)",
+      "url": "http://www.baegamsundae.com/menu/menu1.php",
+      "aliases": [
+        "백암순대"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "버거킹",
+      "category": "3. 패스트푸드 및 버거 (15곳)",
+      "url": "https://www.burgerking.co.kr",
+      "aliases": [
+        "버거킹",
+        "burgerking",
+        "whopper",
+        "와퍼"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "보노보노",
+      "category": "2. 중식 및 일식 (짜장, 우동, 돈까스, 초밥)",
+      "url": "https://www.shinsegaefood.com/bonobono/menu/menu.sf",
+      "aliases": [
+        "보노보노"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "보령",
+      "category": "3. 양약 및 일반·전문 의약품 제약업체 (15곳)",
+      "url": "https://www.boryung.co.kr",
+      "aliases": [
+        "보령"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "보배반점",
+      "category": "1. 한식 (죽, 도시락, 밥집, 고기류)",
+      "url": "http://bobaejung.co.kr/menu/menu1.php",
+      "aliases": [
+        "보배반점"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "보용만두",
+      "category": "3. 분식 (떡볶이, 김밥, 만두)",
+      "url": "http://boyongmandoo.co.kr/menu/menu1.php",
+      "aliases": [
+        "보용만두"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "본죽 / 본죽&비빔밥",
+      "category": "1. 한식 (죽, 도시락, 밥집, 고기류)",
+      "url": "https://www.bonif.co.kr/menu/list?brdCd=BF101",
+      "aliases": [
+        "본죽",
+        "본죽비빔밥",
+        "bonif",
+        "본죽&비빔밥",
+        "본죽 / 본죽&비빔밥"
+      ],
+      "sourceKind": "official_menu_or_nutrition"
+    },
+    {
+      "brand": "북창동순두부",
+      "category": "1. 한식 (죽, 도시락, 밥집, 고기류)",
+      "url": "http://www.dkore.co.kr/menu/menu1.php",
+      "aliases": [
+        "북창동순두부"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "북촌손만두",
+      "category": "3. 분식 (떡볶이, 김밥, 만두)",
+      "url": "http://mandoo.so/menu/menu1.php",
+      "aliases": [
+        "북촌손만두"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "브레댄코",
+      "category": "2. 베이커리 및 디저트 (15곳)",
+      "url": "https://www.breadnco.kr",
+      "aliases": [
+        "브레댄코"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "블루샥",
+      "category": "1. 커피 및 음료 전문점 (30곳)",
+      "url": "https://bluesharkcoffee.com",
+      "aliases": [
+        "블루샥"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "비타민마을",
+      "category": "1. 스포츠 보충제 및 단백질·영양제 제조 판매 업체 (15곳)",
+      "url": "https://www.vitaminvillage.co.kr",
+      "aliases": [
+        "비타민마을"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "빕스",
+      "category": "5. 한식·중식·일식 및 일반 외식 (20곳)",
+      "url": "https://www.ivips.co.kr",
+      "aliases": [
+        "빕스"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "빕스",
+      "category": "4. 양식 및 패밀리 레스토랑 / 이탈리안",
+      "url": "https://www.ivips.co.kr:444/menu/menuList.asp",
+      "aliases": [
+        "빕스"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "빽다방",
+      "category": "1. 커피 및 음료 전문점 (30곳)",
+      "url": "https://paiksofficially.com",
+      "aliases": [
+        "빽다방"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "삼진제약",
+      "category": "3. 양약 및 일반·전문 의약품 제약업체 (15곳)",
+      "url": "https://www.samjinpharm.co.kr",
+      "aliases": [
+        "삼진제약"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "삼첩분식",
+      "category": "3. 분식 (떡볶이, 김밥, 만두)",
+      "url": "http://samcheop.com/menu/menu1.php",
+      "aliases": [
+        "삼첩분식"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "새마을식당",
+      "category": "5. 한식·중식·일식 및 일반 외식 (20곳)",
+      "url": "https://newmaul.com",
+      "aliases": [
+        "새마을식당"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "새마을식당",
+      "category": "1. 한식 (죽, 도시락, 밥집, 고기류)",
+      "url": "https://newmaul.com/menu/",
+      "aliases": [
+        "새마을식당"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "서가앤쿡",
+      "category": "5. 한식·중식·일식 및 일반 외식 (20곳)",
+      "url": "https://www.seogaandcook.com",
+      "aliases": [
+        "서가앤쿡"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "서가앤쿡",
+      "category": "4. 양식 및 패밀리 레스토랑 / 이탈리안",
+      "url": "http://www.seogaandcook.com/menu/menu1.php",
+      "aliases": [
+        "서가앤쿡"
+      ],
+      "sourceKind": "official_menu_or_nutrition"
+    },
+    {
+      "brand": "서가원김밥",
+      "category": "3. 분식 (떡볶이, 김밥, 만두)",
+      "url": "http://seogawon.com/menu/menu1.php",
+      "aliases": [
+        "서가원김밥"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "설빙",
+      "category": "2. 베이커리 및 디저트 (15곳)",
+      "url": "https://sulbing.com",
+      "aliases": [
+        "설빙"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "셀렉스",
+      "category": "1. 스포츠 보충제 및 단백질·영양제 제조 판매 업체 (15곳)",
+      "url": "https://www.selexmall.com",
+      "aliases": [
+        "셀렉스"
+      ],
+      "sourceKind": "official_shop_or_smartstore"
+    },
+    {
+      "brand": "소림마라",
+      "category": "2. 중식 및 일식 (짜장, 우동, 돈까스, 초밥)",
+      "url": "http://sorimmara.co.kr/menu/menu1.php",
+      "aliases": [
+        "소림마라"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "수가성순두부",
+      "category": "1. 한식 (죽, 도시락, 밥집, 고기류)",
+      "url": "http://www.sukasung.com/menu/menu1.php",
+      "aliases": [
+        "수가성순두부"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "순남시래기",
+      "category": "1. 한식 (죽, 도시락, 밥집, 고기류)",
+      "url": "http://soonnam.com/menu/menu1.php",
+      "aliases": [
+        "순남시래기"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "쉐이크쉑",
+      "category": "3. 패스트푸드 및 버거 (15곳)",
+      "url": "https://shakeshack.kr",
+      "aliases": [
+        "쉐이크쉑"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "스무디킹",
+      "category": "1. 커피 및 음료 전문점 (30곳)",
+      "url": "https://www.smoothieking.co.kr",
+      "aliases": [
+        "스무디킹"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "스시로",
+      "category": "2. 중식 및 일식 (짜장, 우동, 돈까스, 초밥)",
+      "url": "http://www.sushiro.co.kr/menu/menu1.php",
+      "aliases": [
+        "스시로"
+      ],
+      "sourceKind": "official_menu_or_nutrition"
+    },
+    {
+      "brand": "스타벅스",
+      "category": "커피 및 음료",
+      "url": "https://www.starbucks.co.kr/menu/drink_list.do",
+      "aliases": [
+        "스타벅스",
+        "starbucks"
+      ],
+      "sourceKind": "official_menu_or_nutrition"
+    },
+    {
+      "brand": "스타벅스",
+      "category": "1. 커피 및 음료 전문점 (30곳)",
+      "url": "https://www.starbucks.co.kr",
+      "aliases": [
+        "스타벅스"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "스파게티스토리",
+      "category": "4. 양식 및 패밀리 레스토랑 / 이탈리안",
+      "url": "http://spaghettistory.co.kr/menu/menu1.php",
+      "aliases": [
+        "스파게티스토리"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "스포맥스",
+      "category": "1. 스포츠 보충제 및 단백질·영양제 제조 판매 업체 (15곳)",
+      "url": "https://www.spomax.kr",
+      "aliases": [
+        "스포맥스"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "신선설농탕",
+      "category": "1. 한식 (죽, 도시락, 밥집, 고기류)",
+      "url": "http://www.kood.co.kr/kood/shinsun/menu/menu.html",
+      "aliases": [
+        "신선설농탕"
+      ],
+      "sourceKind": "official_menu_or_nutrition"
+    },
+    {
+      "brand": "신전떡볶이",
+      "category": "5. 한식·중식·일식 및 일반 외식 (20곳)",
+      "url": "https://sinjeon.co.kr",
+      "aliases": [
+        "신전떡볶이"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "신전떡볶이",
+      "category": "3. 분식 (떡볶이, 김밥, 만두)",
+      "url": "http://sinjeon.co.kr/menu/menu1.php",
+      "aliases": [
+        "신전떡볶이"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "신참떡볶이",
+      "category": "3. 분식 (떡볶이, 김밥, 만두)",
+      "url": "http://sincham.co.kr/menu/menu1.php",
+      "aliases": [
+        "신참떡볶이"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "신풍제약",
+      "category": "3. 양약 및 일반·전문 의약품 제약업체 (15곳)",
+      "url": "https://www.shinpoong.co.kr",
+      "aliases": [
+        "신풍제약"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "써브웨이",
+      "category": "패스트푸드 및 샌드위치",
+      "url": "https://www.subway.co.kr/menuList/sandwich",
+      "aliases": [
+        "써브웨이",
+        "서브웨이",
+        "subway",
+        "bmt"
+      ],
+      "sourceKind": "official_menu_or_nutrition"
+    },
+    {
+      "brand": "써브웨이",
+      "category": "3. 패스트푸드 및 버거 (15곳)",
+      "url": "https://www.subway.co.kr",
+      "aliases": [
+        "써브웨이"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "쑝쑝돈까스",
+      "category": "2. 중식 및 일식 (짜장, 우동, 돈까스, 초밥)",
+      "url": "http://ssongssong.co.kr/menu/menu1.php",
+      "aliases": [
+        "쑝쑝돈까스"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "아마스빈",
+      "category": "1. 커피 및 음료 전문점 (30곳)",
+      "url": "https://www.amasvin.com",
+      "aliases": [
+        "아마스빈"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "아비꼬",
+      "category": "2. 중식 및 일식 (짜장, 우동, 돈까스, 초밥)",
+      "url": "http://abiko.kr/menu/menu1.php",
+      "aliases": [
+        "아비꼬"
+      ],
+      "sourceKind": "official_menu_or_nutrition"
+    },
+    {
+      "brand": "아웃백 스테이크하우스",
+      "category": "5. 한식·중식·일식 및 일반 외식 (20곳)",
+      "url": "https://www.outback.co.kr",
+      "aliases": [
+        "아웃백 스테이크하우스"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "아웃백 스테이크하우스",
+      "category": "4. 양식 및 패밀리 레스토랑 / 이탈리안",
+      "url": "https://www.outback.co.kr/menu/menuList.do?menuIdx=45",
+      "aliases": [
+        "아웃백 스테이크하우스"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "아티제",
+      "category": "2. 베이커리 및 디저트 (15곳)",
+      "url": "https://www.cafeartisee.com",
+      "aliases": [
+        "아티제"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "안국건강",
+      "category": "1. 스포츠 보충제 및 단백질·영양제 제조 판매 업체 (15곳)",
+      "url": "https://www.shopagh.com",
+      "aliases": [
+        "안국건강"
+      ],
+      "sourceKind": "official_shop_or_smartstore"
+    },
+    {
+      "brand": "애슐리퀸즈",
+      "category": "5. 한식·중식·일식 및 일반 외식 (20곳)",
+      "url": "https://www.myashley.co.kr",
+      "aliases": [
+        "애슐리퀸즈"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "애슐리퀸즈",
+      "category": "4. 양식 및 패밀리 레스토랑 / 이탈리안",
+      "url": "https://www.myashley.co.kr/Menu/AshleyMenu/Menu01.aspx",
+      "aliases": [
+        "애슐리퀸즈"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "얌샘김밥",
+      "category": "3. 분식 (떡볶이, 김밥, 만두)",
+      "url": "http://yamsem.co.kr/menu/menu1.php",
+      "aliases": [
+        "얌샘김밥"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "에이치키친",
+      "category": "4. 양식 및 패밀리 레스토랑 / 이탈리안",
+      "url": "https://www.hdgreenfood.com/brand/hkitchen.do",
+      "aliases": [
+        "에이치키친"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "엔제리너스",
+      "category": "1. 커피 및 음료 전문점 (30곳)",
+      "url": "https://www.angelinus.com",
+      "aliases": [
+        "엔제리너스"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "역전우동0410",
+      "category": "5. 한식·중식·일식 및 일반 외식 (20곳)",
+      "url": "https://udon0410.com",
+      "aliases": [
+        "역전우동0410"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "역전우동0410",
+      "category": "2. 중식 및 일식 (짜장, 우동, 돈까스, 초밥)",
+      "url": "https://udon0410.com/menu/",
+      "aliases": [
+        "역전우동0410"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "연안식당",
+      "category": "1. 한식 (죽, 도시락, 밥집, 고기류)",
+      "url": "http://yeonanshiktang.co.kr/menu/menu1.php",
+      "aliases": [
+        "연안식당"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "오리온",
+      "category": "가공식품/스낵",
+      "url": "https://www.orionworld.com",
+      "aliases": [
+        "오리온",
+        "orion",
+        "도도한",
+        "나쵸",
+        "나초",
+        "nacho"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "오봉도시락",
+      "category": "5. 한식·중식·일식 및 일반 외식 (20곳)",
+      "url": "https://www.obongdosirak.co.kr",
+      "aliases": [
+        "오봉도시락"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "오봉도시락",
+      "category": "1. 한식 (죽, 도시락, 밥집, 고기류)",
+      "url": "http://www.obongdosirak.co.kr/new/menu/all.html",
+      "aliases": [
+        "오봉도시락"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "올반",
+      "category": "4. 양식 및 패밀리 레스토랑 / 이탈리안",
+      "url": "https://www.shinsegaefood.com/olbaan/menu/menu.sf",
+      "aliases": [
+        "올반"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "옴니허브",
+      "category": "2. 한약 기반 식품 및 제조·판매 업체 (10곳)",
+      "url": "https://www.omniherb.com",
+      "aliases": [
+        "옴니허브"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "와플대학",
+      "category": "2. 베이커리 및 디저트 (15곳)",
+      "url": "https://waffleuniversity.com",
+      "aliases": [
+        "와플대학"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "와플몽",
+      "category": "2. 베이커리 및 디저트 (15곳)",
+      "url": "https://wafflemong.com",
+      "aliases": [
+        "와플몽"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "용우동",
+      "category": "2. 중식 및 일식 (짜장, 우동, 돈까스, 초밥)",
+      "url": "http://yongwoodong.co.kr/menu/menu1.php",
+      "aliases": [
+        "용우동"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "우리할매떡볶이",
+      "category": "3. 분식 (떡볶이, 김밥, 만두)",
+      "url": "http://wehalmae.co.kr/menu/menu1.php",
+      "aliases": [
+        "우리할매떡볶이"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "원할머니보쌈·족발",
+      "category": "5. 한식·중식·일식 및 일반 외식 (20곳)",
+      "url": "https://wonandwon.co.kr",
+      "aliases": [
+        "원할머니보쌈",
+        "족발",
+        "원할머니보쌈·족발"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "원할머니보쌈·족발",
+      "category": "1. 한식 (죽, 도시락, 밥집, 고기류)",
+      "url": "https://wonandwon.co.kr/brands/won/menu_list.asp",
+      "aliases": [
+        "원할머니보쌈",
+        "족발",
+        "원할머니보쌈·족발"
+      ],
+      "sourceKind": "official_menu_or_nutrition"
+    },
+    {
+      "brand": "유한양행",
+      "category": "3. 양약 및 일반·전문 의약품 제약업체 (15곳)",
+      "url": "https://www.yuhan.co.kr",
+      "aliases": [
+        "유한양행"
+      ],
+      "sourceKind": "official_menu_or_nutrition"
+    },
+    {
+      "brand": "육대장",
+      "category": "1. 한식 (죽, 도시락, 밥집, 고기류)",
+      "url": "http://www.yukdaejang.com/menu/menu1.php",
+      "aliases": [
+        "육대장"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "응급실국물떡볶이",
+      "category": "3. 분식 (떡볶이, 김밥, 만두)",
+      "url": "http://eungsill.co.kr/menu/menu1.php",
+      "aliases": [
+        "응급실국물떡볶이"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "이디야커피",
+      "category": "1. 커피 및 음료 전문점 (30곳)",
+      "url": "https://www.ediya.com",
+      "aliases": [
+        "이디야커피"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "이바돔감자탕",
+      "category": "5. 한식·중식·일식 및 일반 외식 (20곳)",
+      "url": "https://www.ebadom.com",
+      "aliases": [
+        "이바돔감자탕"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "이바돔감자탕",
+      "category": "1. 한식 (죽, 도시락, 밥집, 고기류)",
+      "url": "http://www.ebadom.com/menu/menu_01.php",
+      "aliases": [
+        "이바돔감자탕"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "이오카츠",
+      "category": "2. 중식 및 일식 (짜장, 우동, 돈까스, 초밥)",
+      "url": "http://25katsu.com/menu/menu1.php",
+      "aliases": [
+        "이오카츠"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "이차돌",
+      "category": "1. 한식 (죽, 도시락, 밥집, 고기류)",
+      "url": "http://2chadol.com/menu/menu1.php",
+      "aliases": [
+        "이차돌"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "이화수전통육개장",
+      "category": "1. 한식 (죽, 도시락, 밥집, 고기류)",
+      "url": "http://ihwasu.com/menu/menu1.php",
+      "aliases": [
+        "이화수전통육개장"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "익수제약",
+      "category": "2. 한약 기반 식품 및 제조·판매 업체 (10곳)",
+      "url": "https://www.iksu.co.kr",
+      "aliases": [
+        "익수제약"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "일동제약",
+      "category": "3. 양약 및 일반·전문 의약품 제약업체 (15곳)",
+      "url": "https://www.ildong.com",
+      "aliases": [
+        "일동제약"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "자담치킨",
+      "category": "4. 치킨 및 피자 (20곳)",
+      "url": "https://ejadam.co.kr",
+      "aliases": [
+        "자담치킨"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "정성한줄",
+      "category": "3. 분식 (떡볶이, 김밥, 만두)",
+      "url": "http://hanjul.co.kr/menu/menu1.php",
+      "aliases": [
+        "정성한줄"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "제일약품",
+      "category": "3. 양약 및 일반·전문 의약품 제약업체 (15곳)",
+      "url": "https://www.jeilpharm.co.kr",
+      "aliases": [
+        "제일약품"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "조선갈비탕",
+      "category": "1. 한식 (죽, 도시락, 밥집, 고기류)",
+      "url": "http://www.chosungalbitang.com/menu/menu1.php",
+      "aliases": [
+        "조선갈비탕"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "종근당",
+      "category": "3. 양약 및 일반·전문 의약품 제약업체 (15곳)",
+      "url": "https://www.ckdpharm.com",
+      "aliases": [
+        "종근당"
+      ],
+      "sourceKind": "official_menu_or_nutrition"
+    },
+    {
+      "brand": "죠스떡볶이",
+      "category": "3. 분식 (떡볶이, 김밥, 만두)",
+      "url": "http://jawsfood.co.kr/menu/menu1.php",
+      "aliases": [
+        "죠스떡볶이"
+      ],
+      "sourceKind": "official_menu_or_nutrition"
+    },
+    {
+      "brand": "쥬씨",
+      "category": "1. 커피 및 음료 전문점 (30곳)",
+      "url": "https://www.juicycafe.co.kr",
+      "aliases": [
+        "쥬씨"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "짚신매운갈비찜",
+      "category": "1. 한식 (죽, 도시락, 밥집, 고기류)",
+      "url": "http://www.zipsinfood.co.kr/menu/menu1.php",
+      "aliases": [
+        "짚신매운갈비찜"
+      ],
+      "sourceKind": "official_menu_or_nutrition"
+    },
+    {
+      "brand": "차오름",
+      "category": "1. 커피 및 음료 전문점 (30곳)",
+      "url": "https://www.teaorme.com",
+      "aliases": [
+        "차오름"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "창화당",
+      "category": "3. 분식 (떡볶이, 김밥, 만두)",
+      "url": "http://changhwadang.com/menu/menu1.php",
+      "aliases": [
+        "창화당"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "채선당",
+      "category": "5. 한식·중식·일식 및 일반 외식 (20곳)",
+      "url": "https://www.chaesundang.co.kr",
+      "aliases": [
+        "채선당"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "채선당",
+      "category": "1. 한식 (죽, 도시락, 밥집, 고기류)",
+      "url": "http://www.chaesundang.co.kr/menu/menu_list.asp",
+      "aliases": [
+        "채선당"
+      ],
+      "sourceKind": "official_menu_or_nutrition"
+    },
+    {
+      "brand": "처갓집양념치킨",
+      "category": "4. 치킨 및 피자 (20곳)",
+      "url": "https://www.cheogajip.co.kr",
+      "aliases": [
+        "처갓집양념치킨"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "천호엔케어",
+      "category": "2. 한약 기반 식품 및 제조·판매 업체 (10곳)",
+      "url": "https://www.chunho.net",
+      "aliases": [
+        "천호엔케어"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "청년다방",
+      "category": "5. 한식·중식·일식 및 일반 외식 (20곳)",
+      "url": "https://www.youngdabang.com",
+      "aliases": [
+        "청년다방"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "청년다방",
+      "category": "3. 분식 (떡볶이, 김밥, 만두)",
+      "url": "http://www.youngdabang.com/menu/menu1.php",
+      "aliases": [
+        "청년다방"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "청년피자",
+      "category": "4. 치킨 및 피자 (20곳)",
+      "url": "https://youngmanpizza.co.kr",
+      "aliases": [
+        "청년피자"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "청담동마녀김밥",
+      "category": "3. 분식 (떡볶이, 김밥, 만두)",
+      "url": "http://witchkimbap.co.kr/menu/menu1.php",
+      "aliases": [
+        "청담동마녀김밥"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "카페051",
+      "category": "1. 커피 및 음료 전문점 (30곳)",
+      "url": "https://www.cafe051.com",
+      "aliases": [
+        "카페051"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "칸지우동",
+      "category": "2. 중식 및 일식 (짜장, 우동, 돈까스, 초밥)",
+      "url": "http://kanjiudon.com/menu/menu1.php",
+      "aliases": [
+        "칸지우동"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "칼로바이",
+      "category": "1. 스포츠 보충제 및 단백질·영양제 제조 판매 업체 (15곳)",
+      "url": "https://www.calobye.com",
+      "aliases": [
+        "칼로바이"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "커피빈",
+      "category": "1. 커피 및 음료 전문점 (30곳)",
+      "url": "https://www.coffeebeankorea.com",
+      "aliases": [
+        "커피빈"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "컴포즈커피",
+      "category": "1. 커피 및 음료 전문점 (30곳)",
+      "url": "https://composecoffee.com",
+      "aliases": [
+        "컴포즈커피"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "코코이찌방야",
+      "category": "2. 중식 및 일식 (짜장, 우동, 돈까스, 초밥)",
+      "url": "http://www.kokoichibanya.co.kr/menu/menu1.php",
+      "aliases": [
+        "코코이찌방야"
+      ],
+      "sourceKind": "official_menu_or_nutrition"
+    },
+    {
+      "brand": "쿠우쿠우",
+      "category": "4. 양식 및 패밀리 레스토랑 / 이탈리안",
+      "url": "http://www.qooqoo.co.kr/menu/menu1.php",
+      "aliases": [
+        "쿠우쿠우"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "퀴즈노스",
+      "category": "3. 패스트푸드 및 버거 (15곳)",
+      "url": "https://www.quiznos.co.kr",
+      "aliases": [
+        "퀴즈노스"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "크리스피 크림 도넛",
+      "category": "2. 베이커리 및 디저트 (15곳)",
+      "url": "https://www.krispykreme.co.kr",
+      "aliases": [
+        "크리스피 크림 도넛"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "큰맘할매순대국",
+      "category": "1. 한식 (죽, 도시락, 밥집, 고기류)",
+      "url": "http://www.bhc.co.kr/meat/menu/menu.asp",
+      "aliases": [
+        "큰맘할매순대국"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "탐앤탐스",
+      "category": "1. 커피 및 음료 전문점 (30곳)",
+      "url": "https://www.tomntoms.com",
+      "aliases": [
+        "탐앤탐스"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "탕화쿵푸마라탕",
+      "category": "2. 중식 및 일식 (짜장, 우동, 돈까스, 초밥)",
+      "url": "http://tanghwakhungfu.com/menu/menu1.php",
+      "aliases": [
+        "탕화쿵푸마라탕"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "태로떡볶이",
+      "category": "3. 분식 (떡볶이, 김밥, 만두)",
+      "url": "http://taerofood.co.kr/menu/menu1.php",
+      "aliases": [
+        "태로떡볶이"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "텐퍼센트커피",
+      "category": "1. 커피 및 음료 전문점 (30곳)",
+      "url": "https://www.tenpercentcoffee.com",
+      "aliases": [
+        "텐퍼센트커피"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "토마토도시락",
+      "category": "5. 한식·중식·일식 및 일반 외식 (20곳)",
+      "url": "https://www.tomatodosirak.co.kr",
+      "aliases": [
+        "토마토도시락"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "토마토도시락",
+      "category": "1. 한식 (죽, 도시락, 밥집, 고기류)",
+      "url": "http://www.tomatodosirak.co.kr/bbs/board.php?bo_table=menu1",
+      "aliases": [
+        "토마토도시락"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "토프레소",
+      "category": "1. 커피 및 음료 전문점 (30곳)",
+      "url": "https://www.topresso.com",
+      "aliases": [
+        "토프레소"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "투썸플레이스",
+      "category": "1. 커피 및 음료 전문점 (30곳)",
+      "url": "https://www.twosome.co.kr",
+      "aliases": [
+        "투썸플레이스"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "파리바게뜨",
+      "category": "2. 베이커리 및 디저트 (15곳)",
+      "url": "https://www.paris.co.kr",
+      "aliases": [
+        "파리바게뜨"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "파스쿠찌",
+      "category": "1. 커피 및 음료 전문점 (30곳)",
+      "url": "https://www.caffe-pascucci.co.kr",
+      "aliases": [
+        "파스쿠찌"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "파파이스",
+      "category": "3. 패스트푸드 및 버거 (15곳)",
+      "url": "https://www.popeyes.co.kr",
+      "aliases": [
+        "파파이스"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "파파존스",
+      "category": "4. 치킨 및 피자 (20곳)",
+      "url": "https://pizzapapajohns.co.kr",
+      "aliases": [
+        "파파존스"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "팔공티",
+      "category": "1. 커피 및 음료 전문점 (30곳)",
+      "url": "https://www.80tea.com",
+      "aliases": [
+        "팔공티"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "페리카나",
+      "category": "4. 치킨 및 피자 (20곳)",
+      "url": "https://pelicana.co.kr",
+      "aliases": [
+        "페리카나"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "폴 바셋",
+      "category": "1. 커피 및 음료 전문점 (30곳)",
+      "url": "https://www.baristapaulbassett.co.kr",
+      "aliases": [
+        "폴 바셋"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "푸라닭",
+      "category": "4. 치킨 및 피자 (20곳)",
+      "url": "https://puradakchicken.com",
+      "aliases": [
+        "푸라닭"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "프랭크버거",
+      "category": "3. 패스트푸드 및 버거 (15곳)",
+      "url": "https://frankburger.co.kr",
+      "aliases": [
+        "프랭크버거"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "프로틴업",
+      "category": "1. 스포츠 보충제 및 단백질·영양제 제조 판매 업체 (15곳)",
+      "url": "https://www.shopintake.com",
+      "aliases": [
+        "프로틴업"
+      ],
+      "sourceKind": "official_shop_or_smartstore"
+    },
+    {
+      "brand": "피자나라치킨공주",
+      "category": "4. 치킨 및 피자 (20곳)",
+      "url": "https://pncg.co.kr",
+      "aliases": [
+        "피자나라치킨공주"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "피자마루",
+      "category": "4. 치킨 및 피자 (20곳)",
+      "url": "https://www.pizzamaru.co.kr",
+      "aliases": [
+        "피자마루"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "피자몰",
+      "category": "4. 양식 및 패밀리 레스토랑 / 이탈리안",
+      "url": "http://pizzamall.elandmalls.com/menu/menu_list.action",
+      "aliases": [
+        "피자몰"
+      ],
+      "sourceKind": "official_shop_or_smartstore"
+    },
+    {
+      "brand": "피자스쿨",
+      "category": "4. 치킨 및 피자 (20곳)",
+      "url": "https://pizzaschool.net",
+      "aliases": [
+        "피자스쿨"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "피자헛",
+      "category": "4. 치킨 및 피자 (20곳)",
+      "url": "https://www.pizzahut.co.kr",
+      "aliases": [
+        "피자헛"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "하남돼지집",
+      "category": "1. 한식 (죽, 도시락, 밥집, 고기류)",
+      "url": "http://www.hanampig.co.kr/menu/menu_01.html",
+      "aliases": [
+        "하남돼지집"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "하루엔소쿠",
+      "category": "2. 중식 및 일식 (짜장, 우동, 돈까스, 초밥)",
+      "url": "http://haruensoku.co.kr/menu/menu1.php",
+      "aliases": [
+        "하루엔소쿠"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "하삼동커피",
+      "category": "1. 커피 및 음료 전문점 (30곳)",
+      "url": "https://www.hasamdong.co.kr",
+      "aliases": [
+        "하삼동커피"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "하코야",
+      "category": "2. 중식 및 일식 (짜장, 우동, 돈까스, 초밥)",
+      "url": "http://www.hakoya.co.kr/menu/menu1.php",
+      "aliases": [
+        "하코야"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "한국신약",
+      "category": "2. 한약 기반 식품 및 제조·판매 업체 (10곳)",
+      "url": "https://www.hanyark.co.kr",
+      "aliases": [
+        "한국신약"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "한미약품",
+      "category": "3. 양약 및 일반·전문 의약품 제약업체 (15곳)",
+      "url": "https://www.hanmi.co.kr",
+      "aliases": [
+        "한미약품"
+      ],
+      "sourceKind": "official_menu_or_nutrition"
+    },
+    {
+      "brand": "한솥도시락",
+      "category": "5. 한식·중식·일식 및 일반 외식 (20곳)",
+      "url": "https://www.hansen.co.kr",
+      "aliases": [
+        "한솥도시락"
+      ],
+      "sourceKind": "official_menu_or_nutrition"
+    },
+    {
+      "brand": "한솥도시락",
+      "category": "1. 한식 (죽, 도시락, 밥집, 고기류)",
+      "url": "https://www.hansot.co.kr/menu/menu_list",
+      "aliases": [
+        "한솥도시락"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "한촌설렁탕",
+      "category": "1. 한식 (죽, 도시락, 밥집, 고기류)",
+      "url": "http://hanchon.kr/menu/menu1.php",
+      "aliases": [
+        "한촌설렁탕"
+      ],
+      "sourceKind": "official_menu_or_nutrition"
+    },
+    {
+      "brand": "한풍제약",
+      "category": "2. 한약 기반 식품 및 제조·판매 업체 (10곳)",
+      "url": "https://www.hanpoong.co.kr",
+      "aliases": [
+        "한풍제약"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "할리스",
+      "category": "1. 커피 및 음료 전문점 (30곳)",
+      "url": "https://www.hollys.co.kr",
+      "aliases": [
+        "할리스"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "할머니가래떡볶이",
+      "category": "3. 분식 (떡볶이, 김밥, 만두)",
+      "url": "http://halmiga.co.kr/menu/menu1.php",
+      "aliases": [
+        "할머니가래떡볶이"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "함소아제약",
+      "category": "2. 한약 기반 식품 및 제조·판매 업체 (10곳)",
+      "url": "https://www.hamsoapharm.com",
+      "aliases": [
+        "함소아제약"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "핵밥",
+      "category": "2. 중식 및 일식 (짜장, 우동, 돈까스, 초밥)",
+      "url": "http://hecbap.com/menu/menu1.php",
+      "aliases": [
+        "핵밥"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "호치킨",
+      "category": "4. 치킨 및 피자 (20곳)",
+      "url": "https://hochicken.co.kr",
+      "aliases": [
+        "호치킨"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "홍대개미",
+      "category": "2. 중식 및 일식 (짜장, 우동, 돈까스, 초밥)",
+      "url": "http://hdgaemi.com/menu/menu1.php",
+      "aliases": [
+        "홍대개미"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "홍루이젠",
+      "category": "2. 베이커리 및 디저트 (15곳)",
+      "url": "https://www.hungruichen.co.kr",
+      "aliases": [
+        "홍루이젠"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "홍콩반점0410",
+      "category": "5. 한식·중식·일식 및 일반 외식 (20곳)",
+      "url": "https://zzambbong.com",
+      "aliases": [
+        "홍콩반점0410"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "홍콩반점0410",
+      "category": "2. 중식 및 일식 (짜장, 우동, 돈까스, 초밥)",
+      "url": "https://zzambbong.com/menu/",
+      "aliases": [
+        "홍콩반점0410"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "휴럼",
+      "category": "2. 한약 기반 식품 및 제조·판매 업체 (10곳)",
+      "url": "https://www.hurum.co.kr",
+      "aliases": [
+        "휴럼"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "힘난다버거",
+      "category": "3. 패스트푸드 및 버거 (15곳)",
+      "url": "https://himnandaburger.com",
+      "aliases": [
+        "힘난다버거"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "BBQ 치킨",
+      "category": "4. 치킨 및 피자 (20곳)",
+      "url": "https://www.bbq.co.kr",
+      "aliases": [
+        "BBQ 치킨"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "bhc 치킨",
+      "category": "4. 치킨 및 피자 (20곳)",
+      "url": "https://www.bhc.co.kr",
+      "aliases": [
+        "bhc 치킨"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "GC녹십자",
+      "category": "3. 양약 및 일반·전문 의약품 제약업체 (15곳)",
+      "url": "https://www.greencross.com",
+      "aliases": [
+        "GC녹십자"
+      ],
+      "sourceKind": "official_menu_or_nutrition"
+    },
+    {
+      "brand": "GNM자연의품격",
+      "category": "1. 스포츠 보충제 및 단백질·영양제 제조 판매 업체 (15곳)",
+      "url": "http://gnmlife.com",
+      "aliases": [
+        "GNM자연의품격"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "GRN+",
+      "category": "1. 스포츠 보충제 및 단백질·영양제 제조 판매 업체 (15곳)",
+      "url": "https://www.tgrn.co.kr",
+      "aliases": [
+        "GRN+"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "JW중외제약",
+      "category": "3. 양약 및 일반·전문 의약품 제약업체 (15곳)",
+      "url": "https://www.jw-pharma.co.kr",
+      "aliases": [
+        "JW중외제약"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "KFC",
+      "category": "3. 패스트푸드 및 버거 (15곳)",
+      "url": "https://www.kfckorea.com",
+      "aliases": [
+        "KFC"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "KGC인삼공사",
+      "category": "2. 한약 기반 식품 및 제조·판매 업체 (10곳)",
+      "url": "https://www.kgc.co.kr",
+      "aliases": [
+        "KGC인삼공사"
+      ],
+      "sourceKind": "official_homepage"
+    },
+    {
+      "brand": "TGI 프라이데이스",
+      "category": "4. 양식 및 패밀리 레스토랑 / 이탈리안",
+      "url": "http://www.tgif.co.kr/menu/menu_list.asp",
+      "aliases": [
+        "TGI 프라이데이스"
+      ],
+      "sourceKind": "official_homepage"
+    }
+  ]
+}

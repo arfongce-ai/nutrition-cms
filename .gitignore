@@ -1,4 +1,7 @@
-data/
+data/*
+!data/
+!data/official-products.json
+!data/official-product-sources.json
 *.log
 node_modules/
 dist/

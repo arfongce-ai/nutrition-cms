@@ -1,4 +1,5 @@
 import { findOfficialBrandFood, findOfficialNutritionSources, getSafetyReferenceSource } from './officialNutritionSources.js';
+import { findOfficialProductFood, findOfficialProductSources } from './officialProductDatabase.js';
 
 export const MODE_LABELS = {
   adult: '성인',
@@ -312,6 +313,9 @@ function normalizeFoods(foodItems) {
 
 function findFood(name) {
   const normalized = String(name || '').toLowerCase().replace(/\s/g, '');
+  const officialProduct = findOfficialProductFood(name);
+  if (officialProduct) return { ...officialProduct, matched: true, official: true, perServing: true };
+
   const official = findOfficialBrandFood(name);
   if (official) return { ...official, matched: true, official: true, perServing: true };
 
@@ -333,6 +337,16 @@ function findFood(name) {
 }
 
 function createSourceFallback(name) {
+  const officialProductSource = findOfficialProductSources(name)[0];
+  if (officialProductSource) {
+    return {
+      brand: officialProductSource.brand,
+      category: officialProductSource.category,
+      sourceLabel: `${officialProductSource.brand} 공식 제품/메뉴 영양정보 확인`,
+      sourceUrl: officialProductSource.url,
+    };
+  }
+
   const source = findOfficialNutritionSources(name)[0];
   if (!source) return {};
   return {

@@ -1,0 +1,314 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-07-09",
+  "updatePolicy": {
+    "reviewCycle": "quarterly",
+    "sourcePriority": [
+      "official_product_page",
+      "official_nutrition_pdf",
+      "official_menu_page",
+      "verified_label_photo",
+      "manual_review"
+    ],
+    "notes": "Product-level values are used only when a product name, brand name, barcode, or nutrition label text matches this database. If a product is not listed, OCR values and the official source catalog are used instead."
+  },
+  "products": [
+    {
+      "id": "orion-dodohan-nacho-mexican-taco-92g",
+      "brand": "오리온",
+      "productName": "도도한 나쵸 멕시칸 타코",
+      "aliases": [
+        "도도한 나쵸",
+        "도도한 나초",
+        "나쵸 멕시칸 타코",
+        "나초 멕시칸 타코",
+        "nacho",
+        "mexican taco"
+      ],
+      "category": "가공식품/스낵",
+      "servingSize": "총 내용량 92 g",
+      "servingGram": 92,
+      "sourceType": "verified_label_photo",
+      "sourceLabel": "제품 포장 영양정보 기준",
+      "sourceUrl": "https://www.orionworld.com",
+      "verifiedAt": "2026-07-09",
+      "allergens": [
+        "밀",
+        "대두",
+        "우유 가능성 확인 필요"
+      ],
+      "additiveWatch": [
+        "향료",
+        "산도조절제",
+        "유화제",
+        "감미료 또는 착색료 표시 확인 필요"
+      ],
+      "nutrients": {
+        "calories": 477,
+        "carb": 57,
+        "sugar": 5,
+        "protein": 6,
+        "fat": 25,
+        "saturatedFat": 10,
+        "transFat": 0,
+        "sodium": 460,
+        "fiber": 4,
+        "leucine": 390
+      }
+    },
+    {
+      "id": "starbucks-cafe-americano-tall",
+      "brand": "스타벅스",
+      "productName": "카페 아메리카노 Tall",
+      "aliases": [
+        "스타벅스 아메리카노",
+        "카페 아메리카노",
+        "americano tall",
+        "starbucks americano"
+      ],
+      "category": "커피/음료",
+      "servingSize": "Tall 355 ml",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "스타벅스 공식 메뉴 영양정보",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/drink_list.do",
+      "verifiedAt": "2026-07-09",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 10,
+        "carb": 2,
+        "sugar": 0,
+        "protein": 1,
+        "fat": 0,
+        "saturatedFat": 0,
+        "transFat": 0,
+        "sodium": 5,
+        "fiber": 0,
+        "leucine": 0
+      }
+    },
+    {
+      "id": "starbucks-cafe-latte-tall",
+      "brand": "스타벅스",
+      "productName": "카페 라떼 Tall",
+      "aliases": [
+        "스타벅스 라떼",
+        "카페 라떼",
+        "cafe latte tall",
+        "starbucks latte"
+      ],
+      "category": "커피/음료",
+      "servingSize": "Tall 355 ml",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "스타벅스 공식 메뉴 영양정보",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/drink_list.do",
+      "verifiedAt": "2026-07-09",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 110,
+        "carb": 10,
+        "sugar": 8,
+        "protein": 6,
+        "fat": 5,
+        "saturatedFat": 4.6,
+        "transFat": 0,
+        "sodium": 70,
+        "fiber": 0,
+        "leucine": 420
+      }
+    },
+    {
+      "id": "mcdonalds-bigmac",
+      "brand": "맥도날드",
+      "productName": "빅맥",
+      "aliases": [
+        "맥도날드 빅맥",
+        "big mac",
+        "bigmac"
+      ],
+      "category": "패스트푸드/버거",
+      "servingSize": "버거 1개",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "맥도날드 공식 메뉴 영양정보",
+      "sourceUrl": "https://www.mcdonalds.co.kr",
+      "verifiedAt": "2026-07-09",
+      "allergens": [
+        "밀",
+        "대두",
+        "우유",
+        "쇠고기"
+      ],
+      "additiveWatch": [
+        "소스류 나트륨",
+        "가공치즈"
+      ],
+      "nutrients": {
+        "calories": 583,
+        "carb": 47,
+        "sugar": 8,
+        "protein": 27,
+        "fat": 32,
+        "saturatedFat": 11,
+        "transFat": 0.5,
+        "sodium": 902,
+        "fiber": 3,
+        "leucine": 2100
+      }
+    },
+    {
+      "id": "burgerking-whopper",
+      "brand": "버거킹",
+      "productName": "와퍼",
+      "aliases": [
+        "버거킹 와퍼",
+        "whopper"
+      ],
+      "category": "패스트푸드/버거",
+      "servingSize": "버거 1개",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "버거킹 공식 메뉴 영양정보",
+      "sourceUrl": "https://www.burgerking.co.kr",
+      "verifiedAt": "2026-07-09",
+      "allergens": [
+        "밀",
+        "대두",
+        "우유",
+        "쇠고기"
+      ],
+      "additiveWatch": [
+        "소스류 나트륨"
+      ],
+      "nutrients": {
+        "calories": 619,
+        "carb": 48,
+        "sugar": 10,
+        "protein": 29,
+        "fat": 34,
+        "saturatedFat": 12,
+        "transFat": 0.5,
+        "sodium": 809,
+        "fiber": 3,
+        "leucine": 2300
+      }
+    },
+    {
+      "id": "subway-italian-bmt-15cm",
+      "brand": "써브웨이",
+      "productName": "이탈리안 비엠티 15cm",
+      "aliases": [
+        "써브웨이 이탈리안 비엠티",
+        "서브웨이 이탈리안 비엠티",
+        "italian bmt",
+        "italianbmt"
+      ],
+      "category": "패스트푸드/샌드위치",
+      "servingSize": "15 cm 샌드위치 1개",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "써브웨이 공식 메뉴 영양정보",
+      "sourceUrl": "https://www.subway.co.kr/menuList/sandwich",
+      "verifiedAt": "2026-07-09",
+      "allergens": [
+        "밀",
+        "대두",
+        "우유",
+        "돼지고기"
+      ],
+      "additiveWatch": [
+        "가공육 나트륨",
+        "발색제 표시 확인 필요"
+      ],
+      "nutrients": {
+        "calories": 388,
+        "carb": 46,
+        "sugar": 8,
+        "protein": 21,
+        "fat": 16,
+        "saturatedFat": 5,
+        "transFat": 0,
+        "sodium": 1064,
+        "fiber": 4,
+        "leucine": 1600
+      }
+    },
+    {
+      "id": "subway-roasted-chicken-15cm",
+      "brand": "써브웨이",
+      "productName": "로스트 치킨 15cm",
+      "aliases": [
+        "써브웨이 로스트 치킨",
+        "서브웨이 로스트 치킨",
+        "roasted chicken",
+        "roastedchicken"
+      ],
+      "category": "패스트푸드/샌드위치",
+      "servingSize": "15 cm 샌드위치 1개",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "써브웨이 공식 메뉴 영양정보",
+      "sourceUrl": "https://www.subway.co.kr/menuList/sandwich",
+      "verifiedAt": "2026-07-09",
+      "allergens": [
+        "밀",
+        "대두",
+        "우유",
+        "닭고기"
+      ],
+      "additiveWatch": [
+        "소스 선택 시 당류/나트륨 증가"
+      ],
+      "nutrients": {
+        "calories": 300,
+        "carb": 47,
+        "sugar": 8,
+        "protein": 26,
+        "fat": 5,
+        "saturatedFat": 1.5,
+        "transFat": 0,
+        "sodium": 605,
+        "fiber": 4,
+        "leucine": 2100
+      }
+    },
+    {
+      "id": "bonif-beef-vegetable-porridge",
+      "brand": "본죽",
+      "productName": "쇠고기야채죽",
+      "aliases": [
+        "본죽 쇠고기야채죽",
+        "소고기야채죽",
+        "beef vegetable porridge"
+      ],
+      "category": "한식/죽",
+      "servingSize": "1그릇",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "본죽 공식 메뉴 영양정보",
+      "sourceUrl": "https://www.bonif.co.kr/menu/list?brdCd=BF101",
+      "verifiedAt": "2026-07-09",
+      "allergens": [
+        "쇠고기",
+        "대두 가능성 확인 필요"
+      ],
+      "additiveWatch": [
+        "나트륨"
+      ],
+      "nutrients": {
+        "calories": 650,
+        "carb": 106,
+        "sugar": 6,
+        "protein": 23,
+        "fat": 13,
+        "saturatedFat": 4,
+        "transFat": 0,
+        "sodium": 1280,
+        "fiber": 5,
+        "leucine": 1700
+      }
+    }
+  ]
+}

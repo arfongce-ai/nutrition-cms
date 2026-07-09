@@ -1,0 +1,44 @@
+name: Quarterly Official Nutrition DB Review
+
+on:
+  schedule:
+    - cron: '0 3 1 1,4,7,10 *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  review-official-nutrition-db:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run quarterly DB review
+        run: npm run db:update -- --quarterly
+
+      - name: Validate production build
+        run: npm run build
+
+      - name: Open quarterly review pull request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: Quarterly official nutrition DB review
+          title: Quarterly official nutrition DB review
+          body: |
+            This automated PR refreshes the official nutrition database review date and validates the app build.
+
+            Product nutrition values still require source-level verification before they are marked as official values.
+          branch: codex/quarterly-official-nutrition-db
+          delete-branch: true
