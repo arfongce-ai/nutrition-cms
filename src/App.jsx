@@ -948,6 +948,8 @@ function DiarySheet({ profile, reports, onRefresh, onClose }) {
 }
 
 function SettingsSheet({ profile, updateProfile, toggleMedical, onClose }) {
+  const [guideOpen, setGuideOpen] = useState(false);
+
   return (
     <aside className="fixed inset-0 z-30 bg-slate-950/70 backdrop-blur">
       <div className="absolute inset-x-0 bottom-0 max-h-[92vh] overflow-y-auto rounded-t-3xl bg-slate-50 p-5 text-slate-950 shadow-2xl md:left-auto md:right-6 md:top-6 md:w-[520px] md:rounded-2xl">
@@ -960,6 +962,8 @@ function SettingsSheet({ profile, updateProfile, toggleMedical, onClose }) {
             완료
           </button>
         </header>
+
+        <UserGuideAccordion open={guideOpen} onToggle={() => setGuideOpen((current) => !current)} />
 
         <SettingBlock title="사용자 모드">
           <div className="grid grid-cols-3 gap-2">
@@ -1021,6 +1025,45 @@ function SettingsSheet({ profile, updateProfile, toggleMedical, onClose }) {
         </SettingBlock>
       </div>
     </aside>
+  );
+}
+
+function UserGuideAccordion({ open, onToggle }) {
+  return (
+    <section className="mb-5 border-b border-slate-200 pb-5">
+      <button
+        type="button"
+        onClick={onToggle}
+        className="flex w-full items-center justify-between gap-3 rounded-xl border border-slate-200 bg-white p-4 text-left shadow-sm"
+        aria-expanded={open}
+      >
+        <span>
+          <strong className="block text-xl font-black">사용설명서</strong>
+          <span className="mt-1 block text-sm font-bold text-slate-500">
+            처음 사용하는 순서를 접었다 폈다 볼 수 있습니다.
+          </span>
+        </span>
+        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-slate-950 text-xl font-black text-white">
+          {open ? '−' : '+'}
+        </span>
+      </button>
+
+      {open ? (
+        <div className="mt-3 rounded-xl border border-teal-100 bg-teal-50 p-4 text-sm font-bold leading-relaxed text-slate-800">
+          <ol className="grid gap-2">
+            <li>1. 앱을 열면 로그인 없이 바로 카메라가 켜집니다.</li>
+            <li>2. 음식이나 식품 영양성분표를 둥근 테두리 안에 맞춥니다.</li>
+            <li>3. 가운데 안내가 깜빡이면 분석 준비 중입니다. 음식 후보가 잡히면 안내가 사라집니다.</li>
+            <li>4. 위쪽의 실시간 자동 분석 카드에서 예상 열량, 당류, 나트륨을 먼저 확인합니다.</li>
+            <li>5. 가운데 빨간 촬영 버튼을 누르면 A4 리포트 카드가 만들어집니다.</li>
+            <li>6. 음식명이나 양이 다르면 결과 화면에서 수정한 뒤 저장합니다.</li>
+          </ol>
+          <p className="mt-3 rounded-lg bg-white p-3 text-xs text-slate-600">
+            한식처럼 여러 음식이 함께 있을 때는 자동 추정 후 밥, 국, 김치, 반찬을 필요하면 직접 보정하면 정확도가 올라갑니다.
+          </p>
+        </div>
+      ) : null}
+    </section>
   );
 }
 
