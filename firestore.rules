@@ -7,5 +7,11 @@ service cloud.firestore {
         && request.resource.data.uid == request.auth.uid;
       allow read, update, delete: if false;
     }
+
+    match /meals_history/{mealId} {
+      allow create, update: if request.auth != null
+        && request.resource.data.uid == request.auth.uid;
+      allow read, delete: if false;
+    }
   }
 }
