@@ -190,18 +190,13 @@ export default function App() {
     streamRef.current?.getTracks().forEach((track) => track.stop());
   }
 
-  function capturePhoto() {
+  function capturePureCameraFrame() {
     const canvas = canvasRef.current;
-    const video = videoRef.current;
-    if (!canvas) return '';
+    const video = videoRef.current || document.getElementById('camera-video');
+    if (!canvas || !cameraReady || !video?.videoWidth || !video?.videoHeight) return '';
 
-    if (cameraReady && video?.videoWidth && video?.videoHeight) {
-      drawZoomedVideoFrame(canvas, video, cameraZoom);
-      return canvas.toDataURL('image/jpeg', 0.9);
-    }
-
-    drawFallbackGuide(fallbackCanvasRef.current);
-    return fallbackCanvasRef.current?.toDataURL('image/png') || '';
+    drawZoomedVideoFrame(canvas, video, cameraZoom);
+    return canvas.toDataURL('image/jpeg', 0.85);
   }
 
   function stopLiveNutrientScan() {
@@ -282,7 +277,9 @@ export default function App() {
   }
 
   async function handleShoot() {
-    const photo = capturePhoto();
+    const photo = capturePureCameraFrame();
+    if (!photo) return;
+
     const initialFacts = {
       ...createEmptyNutritionFacts(),
       ...liveScan.facts,
@@ -417,6 +414,7 @@ export default function App() {
       {!report ? (
         <section className="relative min-h-screen bg-slate-950">
           <video
+            id="camera-video"
             ref={videoRef}
             className={`absolute inset-0 h-full w-full object-cover ${cameraReady ? 'block' : 'hidden'}`}
             style={{ transform: `scale(${cameraZoom})` }}
