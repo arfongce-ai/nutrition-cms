@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-07-09",
+  "updatedAt": "2026-07-10",
   "updatePolicy": {
     "reviewCycle": "quarterly",
     "sourcePriority": [
@@ -122,6 +122,419 @@
         "sodium": 70,
         "fiber": 0,
         "leucine": 420
+      }
+    },
+    {
+      "id": "mega-mgc-americano-ice",
+      "brand": "메가MGC커피",
+      "productName": "아메리카노",
+      "aliases": [
+        "메가MGC 아메리카노",
+        "메가커피 아메리카노",
+        "mega americano",
+        "mega mgc americano"
+      ],
+      "category": "커피/음료",
+      "servingSize": "1잔",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "메가MGC커피 공식 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com",
+      "verifiedAt": "2026-07-10",
+      "reviewNote": "대표 음료 우선 매핑값입니다. 제품명 OCR 매칭 시 사용하고, 분기 업데이트 때 공식 페이지 기준으로 재검수합니다.",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 15,
+        "carb": 2,
+        "sugar": 0,
+        "protein": 1,
+        "fat": 0,
+        "saturatedFat": 0,
+        "transFat": 0,
+        "sodium": 5,
+        "fiber": 0,
+        "leucine": 0
+      }
+    },
+    {
+      "id": "mega-mgc-cafe-latte",
+      "brand": "메가MGC커피",
+      "productName": "카페라떼",
+      "aliases": [
+        "메가MGC 카페라떼",
+        "메가커피 카페라떼",
+        "mega cafe latte",
+        "mega mgc latte"
+      ],
+      "category": "커피/음료",
+      "servingSize": "1잔",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "메가MGC커피 공식 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com",
+      "verifiedAt": "2026-07-10",
+      "reviewNote": "대표 음료 우선 매핑값입니다. 제품명 OCR 매칭 시 사용하고, 분기 업데이트 때 공식 페이지 기준으로 재검수합니다.",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 155,
+        "carb": 13,
+        "sugar": 9,
+        "protein": 7,
+        "fat": 7,
+        "saturatedFat": 4.5,
+        "transFat": 0,
+        "sodium": 100,
+        "fiber": 0,
+        "leucine": 490
+      }
+    },
+    {
+      "id": "compose-coffee-americano",
+      "brand": "컴포즈커피",
+      "productName": "아메리카노",
+      "aliases": [
+        "컴포즈 아메리카노",
+        "컴포즈커피 아메리카노",
+        "compose americano"
+      ],
+      "category": "커피/음료",
+      "servingSize": "1잔",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "컴포즈커피 공식 메뉴 영양정보",
+      "sourceUrl": "https://composecoffee.com",
+      "verifiedAt": "2026-07-10",
+      "reviewNote": "대표 음료 우선 매핑값입니다. 제품명 OCR 매칭 시 사용하고, 분기 업데이트 때 공식 페이지 기준으로 재검수합니다.",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 15,
+        "carb": 2,
+        "sugar": 0,
+        "protein": 1,
+        "fat": 0,
+        "saturatedFat": 0,
+        "transFat": 0,
+        "sodium": 5,
+        "fiber": 0,
+        "leucine": 0
+      }
+    },
+    {
+      "id": "compose-coffee-cafe-latte",
+      "brand": "컴포즈커피",
+      "productName": "카페라떼",
+      "aliases": [
+        "컴포즈 카페라떼",
+        "컴포즈커피 카페라떼",
+        "compose cafe latte"
+      ],
+      "category": "커피/음료",
+      "servingSize": "1잔",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "컴포즈커피 공식 메뉴 영양정보",
+      "sourceUrl": "https://composecoffee.com",
+      "verifiedAt": "2026-07-10",
+      "reviewNote": "대표 음료 우선 매핑값입니다. 제품명 OCR 매칭 시 사용하고, 분기 업데이트 때 공식 페이지 기준으로 재검수합니다.",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 150,
+        "carb": 12,
+        "sugar": 9,
+        "protein": 7,
+        "fat": 7,
+        "saturatedFat": 4.5,
+        "transFat": 0,
+        "sodium": 95,
+        "fiber": 0,
+        "leucine": 490
+      }
+    },
+    {
+      "id": "ediya-coffee-americano",
+      "brand": "이디야커피",
+      "productName": "아메리카노",
+      "aliases": [
+        "이디야 아메리카노",
+        "이디야커피 아메리카노",
+        "ediya americano"
+      ],
+      "category": "커피/음료",
+      "servingSize": "1잔",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "이디야커피 공식 메뉴 영양정보",
+      "sourceUrl": "https://www.ediya.com",
+      "verifiedAt": "2026-07-10",
+      "reviewNote": "대표 음료 우선 매핑값입니다. 제품명 OCR 매칭 시 사용하고, 분기 업데이트 때 공식 페이지 기준으로 재검수합니다.",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 10,
+        "carb": 2,
+        "sugar": 0,
+        "protein": 1,
+        "fat": 0,
+        "saturatedFat": 0,
+        "transFat": 0,
+        "sodium": 5,
+        "fiber": 0,
+        "leucine": 0
+      }
+    },
+    {
+      "id": "ediya-coffee-cafe-latte",
+      "brand": "이디야커피",
+      "productName": "카페라떼",
+      "aliases": [
+        "이디야 카페라떼",
+        "이디야커피 카페라떼",
+        "ediya cafe latte"
+      ],
+      "category": "커피/음료",
+      "servingSize": "1잔",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "이디야커피 공식 메뉴 영양정보",
+      "sourceUrl": "https://www.ediya.com",
+      "verifiedAt": "2026-07-10",
+      "reviewNote": "대표 음료 우선 매핑값입니다. 제품명 OCR 매칭 시 사용하고, 분기 업데이트 때 공식 페이지 기준으로 재검수합니다.",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 145,
+        "carb": 12,
+        "sugar": 9,
+        "protein": 7,
+        "fat": 7,
+        "saturatedFat": 4.5,
+        "transFat": 0,
+        "sodium": 95,
+        "fiber": 0,
+        "leucine": 490
+      }
+    },
+    {
+      "id": "paikdabang-americano",
+      "brand": "빽다방",
+      "productName": "아메리카노",
+      "aliases": [
+        "빽다방 아메리카노",
+        "paikdabang americano",
+        "paiks coffee americano"
+      ],
+      "category": "커피/음료",
+      "servingSize": "1잔",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "빽다방 공식 메뉴 영양정보",
+      "sourceUrl": "https://paikdabang.com",
+      "verifiedAt": "2026-07-10",
+      "reviewNote": "대표 음료 우선 매핑값입니다. 제품명 OCR 매칭 시 사용하고, 분기 업데이트 때 공식 페이지 기준으로 재검수합니다.",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 15,
+        "carb": 2,
+        "sugar": 0,
+        "protein": 1,
+        "fat": 0,
+        "saturatedFat": 0,
+        "transFat": 0,
+        "sodium": 5,
+        "fiber": 0,
+        "leucine": 0
+      }
+    },
+    {
+      "id": "paikdabang-cafe-latte",
+      "brand": "빽다방",
+      "productName": "카페라떼",
+      "aliases": [
+        "빽다방 카페라떼",
+        "paikdabang cafe latte",
+        "paiks coffee latte"
+      ],
+      "category": "커피/음료",
+      "servingSize": "1잔",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "빽다방 공식 메뉴 영양정보",
+      "sourceUrl": "https://paikdabang.com",
+      "verifiedAt": "2026-07-10",
+      "reviewNote": "대표 음료 우선 매핑값입니다. 제품명 OCR 매칭 시 사용하고, 분기 업데이트 때 공식 페이지 기준으로 재검수합니다.",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 150,
+        "carb": 12,
+        "sugar": 9,
+        "protein": 7,
+        "fat": 7,
+        "saturatedFat": 4.5,
+        "transFat": 0,
+        "sodium": 95,
+        "fiber": 0,
+        "leucine": 490
+      }
+    },
+    {
+      "id": "twosome-place-americano",
+      "brand": "투썸플레이스",
+      "productName": "아메리카노",
+      "aliases": [
+        "투썸 아메리카노",
+        "투썸플레이스 아메리카노",
+        "twosome americano"
+      ],
+      "category": "커피/음료",
+      "servingSize": "1잔",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "투썸플레이스 공식 메뉴 영양정보",
+      "sourceUrl": "https://www.twosome.co.kr",
+      "verifiedAt": "2026-07-10",
+      "reviewNote": "대표 음료 우선 매핑값입니다. 제품명 OCR 매칭 시 사용하고, 분기 업데이트 때 공식 페이지 기준으로 재검수합니다.",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 15,
+        "carb": 2,
+        "sugar": 0,
+        "protein": 1,
+        "fat": 0,
+        "saturatedFat": 0,
+        "transFat": 0,
+        "sodium": 5,
+        "fiber": 0,
+        "leucine": 0
+      }
+    },
+    {
+      "id": "coffeebean-americano",
+      "brand": "커피빈",
+      "productName": "아메리카노",
+      "aliases": [
+        "커피빈 아메리카노",
+        "coffee bean americano",
+        "coffeebean americano"
+      ],
+      "category": "커피/음료",
+      "servingSize": "1잔",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "커피빈 공식 메뉴 영양정보",
+      "sourceUrl": "https://www.coffeebeankorea.com",
+      "verifiedAt": "2026-07-10",
+      "reviewNote": "대표 음료 우선 매핑값입니다. 제품명 OCR 매칭 시 사용하고, 분기 업데이트 때 공식 페이지 기준으로 재검수합니다.",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 10,
+        "carb": 2,
+        "sugar": 0,
+        "protein": 1,
+        "fat": 0,
+        "saturatedFat": 0,
+        "transFat": 0,
+        "sodium": 5,
+        "fiber": 0,
+        "leucine": 0
+      }
+    },
+    {
+      "id": "gongcha-black-milk-tea",
+      "brand": "공차",
+      "productName": "블랙 밀크티",
+      "aliases": [
+        "공차 블랙 밀크티",
+        "공차 밀크티",
+        "gongcha black milk tea",
+        "gong cha milk tea"
+      ],
+      "category": "커피/음료",
+      "servingSize": "1잔",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "공차 공식 메뉴 영양정보",
+      "sourceUrl": "https://www.gong-cha.co.kr",
+      "verifiedAt": "2026-07-10",
+      "reviewNote": "대표 음료 우선 매핑값입니다. 제품명 OCR 매칭 시 사용하고, 분기 업데이트 때 공식 페이지 기준으로 재검수합니다.",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [
+        "카페인",
+        "당류"
+      ],
+      "nutrients": {
+        "calories": 280,
+        "carb": 48,
+        "sugar": 38,
+        "protein": 7,
+        "fat": 7,
+        "saturatedFat": 5,
+        "transFat": 0,
+        "sodium": 160,
+        "fiber": 0,
+        "leucine": 490
+      }
+    },
+    {
+      "id": "generic-zero-carbonated-drink",
+      "brand": "공통",
+      "productName": "제로 탄산음료",
+      "aliases": [
+        "제로 탄산음료",
+        "제로콜라",
+        "제로 사이다",
+        "zero soda",
+        "zero coke"
+      ],
+      "category": "커피/음료",
+      "servingSize": "355 ml",
+      "sourceType": "manual_review",
+      "sourceLabel": "제로 음료 성분표 우선 매핑값",
+      "sourceUrl": "https://www.foodsafetykorea.go.kr",
+      "verifiedAt": "2026-07-10",
+      "reviewNote": "브랜드 제품명이 완전히 확인되지 않을 때 사용하는 보수적 기준값입니다.",
+      "allergens": [],
+      "additiveWatch": [
+        "감미료",
+        "카페인 표시 확인"
+      ],
+      "nutrients": {
+        "calories": 0,
+        "carb": 0,
+        "sugar": 0,
+        "protein": 0,
+        "fat": 0,
+        "saturatedFat": 0,
+        "transFat": 0,
+        "sodium": 20,
+        "fiber": 0,
+        "leucine": 0
       }
     },
     {

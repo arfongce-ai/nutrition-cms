@@ -9,8 +9,17 @@ export function findOfficialProductFood(text) {
   if (!normalized) return null;
 
   const product = PRODUCT_RECORDS.find((entry) => {
-    const terms = [entry.brand, entry.productName, ...(entry.aliases || [])];
-    return terms.some((term) => normalized.includes(normalizeSearchText(term)));
+    const brand = normalizeSearchText(entry.brand);
+    const hasBrand = brand && normalized.includes(brand);
+    const productName = normalizeSearchText(entry.productName);
+    if (hasBrand && productName && normalized.includes(productName)) return true;
+
+    return (entry.aliases || []).some((term) => {
+      const alias = normalizeSearchText(term);
+      if (!alias || !normalized.includes(alias)) return false;
+      const aliasHasBrand = brand && alias.includes(brand);
+      return hasBrand || aliasHasBrand || !isGenericBeverageName(alias);
+    });
   });
 
   if (!product) return null;
@@ -80,4 +89,15 @@ function normalizeSearchText(value) {
     .toLowerCase()
     .normalize('NFKC')
     .replace(/[^0-9a-z가-힣]/g, '');
+}
+
+function isGenericBeverageName(value) {
+  return [
+    '아메리카노',
+    '카페아메리카노',
+    '카페라떼',
+    '라떼',
+    '밀크티',
+    '블랙밀크티',
+  ].includes(value);
 }

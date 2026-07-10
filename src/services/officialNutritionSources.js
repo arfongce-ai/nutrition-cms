@@ -4,9 +4,17 @@ export const OFFICIAL_NUTRITION_SOURCES = [
   { brand: '메가MGC커피', aliases: ['메가커피', '메가mgc', 'mega'], category: '커피/음료', url: 'https://www.mega-mgccoffee.com' },
   { brand: '컴포즈커피', aliases: ['컴포즈', 'compose'], category: '커피/음료', url: 'https://composecoffee.com' },
   { brand: '이디야커피', aliases: ['이디야', 'ediya'], category: '커피/음료', url: 'https://www.ediya.com' },
+  { brand: '빽다방', aliases: ['빽다방', 'paikdabang', 'paiks coffee'], category: '커피/음료', url: 'https://paikdabang.com' },
   { brand: '더벤티', aliases: ['더벤티', 'theventi'], category: '커피/음료', url: 'https://www.theventi.co.kr' },
   { brand: '공차', aliases: ['공차', 'gongcha'], category: '커피/음료', url: 'https://www.gong-cha.co.kr' },
   { brand: '스무디킹', aliases: ['스무디킹', 'smoothieking'], category: '커피/음료', url: 'https://www.smoothieking.co.kr' },
+  { brand: '커피빈', aliases: ['커피빈', 'coffeebean', 'coffee bean'], category: '커피/음료', url: 'https://www.coffeebeankorea.com' },
+  { brand: '매머드커피', aliases: ['매머드커피', '매머드', 'mammoth'], category: '커피/음료', url: 'https://mmthcoffee.com' },
+  { brand: '텐퍼센트커피', aliases: ['텐퍼센트커피', '텐퍼센트', 'tenpercent'], category: '커피/음료', url: 'https://www.tenpercent.co.kr' },
+  { brand: '카페051', aliases: ['카페051', 'cafe051'], category: '커피/음료', url: 'https://cafe051.com' },
+  { brand: '하삼동커피', aliases: ['하삼동커피', '하삼동', 'hasamdong'], category: '커피/음료', url: 'https://www.hasamdong-coffee.com' },
+  { brand: '달콤커피', aliases: ['달콤커피', '달콤', 'dal.komm', 'dalkomm'], category: '커피/음료', url: 'https://www.dalkomm.com' },
+  { brand: '쥬씨', aliases: ['쥬씨', 'juicy'], category: '커피/음료', url: 'https://www.no1juicy.com' },
   { brand: '파리바게뜨', aliases: ['파리바게뜨', '파리바게트', 'paris baguette'], category: '베이커리/디저트', url: 'https://www.paris.co.kr' },
   { brand: '배스킨라빈스', aliases: ['배스킨', '베스킨', 'baskin'], category: '베이커리/디저트', url: 'https://www.baskinrobbins.co.kr' },
   { brand: '맥도날드', aliases: ['맥도날드', '맥날', 'mcdonald'], category: '패스트푸드/버거', url: 'https://www.mcdonalds.co.kr' },
@@ -187,7 +195,15 @@ export const OFFICIAL_BRAND_FOODS = [
 
 export function findOfficialBrandFood(name) {
   const normalized = normalizeKeyword(name);
-  return OFFICIAL_BRAND_FOODS.find((entry) => entry.keys.some((key) => normalized.includes(normalizeKeyword(key))));
+  return OFFICIAL_BRAND_FOODS.find((entry) => {
+    const brand = normalizeKeyword(entry.brand);
+    const hasBrand = brand && normalized.includes(brand);
+    return entry.keys.some((key) => {
+      const normalizedKey = normalizeKeyword(key);
+      if (!normalized.includes(normalizedKey)) return false;
+      return hasBrand || normalizedKey.includes(brand) || !isGenericBeverageKey(normalizedKey);
+    });
+  });
 }
 
 export function findOfficialNutritionSources(name) {
@@ -203,4 +219,8 @@ export function getSafetyReferenceSource(key) {
 
 function normalizeKeyword(value) {
   return String(value || '').toLowerCase().replace(/[\s™®.&·ㆍ_-]/g, '');
+}
+
+function isGenericBeverageKey(value) {
+  return ['아메리카노', '카페아메리카노', '카페라떼', '라떼', '라떼tall', '아메리카노tall'].includes(value);
 }

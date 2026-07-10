@@ -7,8 +7,8 @@ import {
   MODE_LABELS,
   parseNutritionText,
 } from './services/nutritionEngine';
-import { findOfficialBrandFood } from './services/officialNutritionSources';
-import { findOfficialProductFood } from './services/officialProductDatabase';
+import { findOfficialBrandFood, findOfficialNutritionSources } from './services/officialNutritionSources';
+import { findOfficialProductFood, findOfficialProductSources } from './services/officialProductDatabase';
 
 const PROFILE_KEY = 'nutritionCameraProfile.v2';
 const CAMERA_PERMISSION_KEY = 'nutritionCameraPermission.v1';
@@ -43,6 +43,15 @@ const foodCorrectionPresets = [
   { label: '견과류 한 줌', name: '견과류', grams: '25' },
   { label: '단백질 제품', name: '웨이 프로틴', grams: '50' },
   { label: '스타벅스 아메리카노', name: '스타벅스 카페 아메리카노', grams: '1' },
+  { label: '스타벅스 카페라떼', name: '스타벅스 카페 라떼', grams: '1' },
+  { label: '메가MGC 아메리카노', name: '메가MGC커피 아메리카노', grams: '1' },
+  { label: '메가MGC 카페라떼', name: '메가MGC커피 카페라떼', grams: '1' },
+  { label: '컴포즈 아메리카노', name: '컴포즈커피 아메리카노', grams: '1' },
+  { label: '컴포즈 카페라떼', name: '컴포즈커피 카페라떼', grams: '1' },
+  { label: '이디야 아메리카노', name: '이디야커피 아메리카노', grams: '1' },
+  { label: '빽다방 아메리카노', name: '빽다방 아메리카노', grams: '1' },
+  { label: '공차 밀크티', name: '공차 블랙 밀크티', grams: '1' },
+  { label: '제로 탄산음료', name: '제로 탄산음료', grams: '355' },
   { label: '맥도날드 빅맥', name: '맥도날드 빅맥', grams: '1' },
   { label: '버거킹 와퍼', name: '버거킹 와퍼', grams: '1' },
   { label: '써브웨이 BMT', name: '써브웨이 이탈리안비엠티', grams: '1' },
@@ -63,6 +72,13 @@ const textFoodEstimates = [
   { keys: ['견과류', '아몬드', '호두', '캐슈넛', 'nuts', 'almond', 'walnut'], name: '견과류', grams: '25', label: '견과류' },
   { keys: ['두부', 'tofu'], name: '두부', grams: '120', label: '두부류' },
   { keys: ['우유', 'milk'], name: '우유', grams: '200', label: '유제품' },
+  { keys: ['아메리카노', 'americano', 'blackcoffee', '블랙커피'], name: '아메리카노', grams: '355', label: '커피 음료' },
+  { keys: ['카페라떼', '카페 라떼', '라떼', 'latte', 'cafelatte'], name: '카페라떼', grams: '355', label: '우유가 들어간 커피' },
+  { keys: ['밀크티', 'milk tea', 'milktea', '버블티', '공차'], name: '밀크티', grams: '473', label: '차 음료' },
+  { keys: ['스무디', 'smoothie', '프라페', 'frappe'], name: '스무디', grams: '450', label: '당류가 높은 음료' },
+  { keys: ['에이드', 'ade', '주스', '쥬스', 'juice'], name: '과일음료', grams: '450', label: '과일·에이드 음료' },
+  { keys: ['제로', 'zero', '제로콜라', '제로사이다'], name: '제로 탄산음료', grams: '355', label: '제로 음료' },
+  { keys: ['콜라', '사이다', '탄산음료', 'coke', 'cola', 'soda'], name: '탄산음료', grams: '355', label: '탄산음료' },
   { keys: ['프로틴', '웨이', 'protein', 'whey'], name: '웨이 프로틴', grams: '50', label: '단백질 제품' },
   { keys: ['나쵸', '나초', 'nacho', 'taco', '타코', '도도한나쵸'], name: '나쵸 스낵', grams: '92', label: '포장 스낵' },
   { keys: ['과자', '스낵', '칩', 'chip', 'snack'], name: '스낵 과자', grams: '80', label: '포장 스낵' },
@@ -1643,6 +1659,9 @@ function scoreVisualEstimate(stats, estimate, candidate) {
   const textBonus = estimate.confidence === '높음' ? 20 : estimate.confidence === '보통' ? 10 : 0;
   const name = estimate.name;
 
+  if (['아메리카노', '카페라떼', '밀크티', '스무디', '과일음료', '탄산음료', '제로 탄산음료'].includes(name)) {
+    return (stats.liquid || 0) * 210 + (stats.spread?.liquid || 0) * 90 + centerBonus + textBonus + 14;
+  }
   if (name === '방울토마토') {
     return (stats.red + stats.orange) * 180 + (stats.components?.warm?.totalCells || 0) * 2 + centerBonus + textBonus;
   }
@@ -1667,7 +1686,7 @@ function clampNumber(value, min, max) {
 }
 
 function createFoodColorStats(pixels) {
-  const stats = { green: 0, yellow: 0, white: 0, brown: 0, red: 0, orange: 0, total: 0 };
+  const stats = { green: 0, yellow: 0, white: 0, brown: 0, red: 0, orange: 0, black: 0, cream: 0, total: 0 };
   const gridSize = 8;
   const cellSets = {
     green: new Set(),
@@ -1676,6 +1695,8 @@ function createFoodColorStats(pixels) {
     brown: new Set(),
     red: new Set(),
     orange: new Set(),
+    black: new Set(),
+    cream: new Set(),
   };
 
   for (let index = 0; index < pixels.length; index += 4) {
@@ -1691,7 +1712,7 @@ function createFoodColorStats(pixels) {
     const min = Math.min(r, g, b);
     const saturation = max ? (max - min) / max : 0;
 
-    if (brightness < 45 || brightness > 245) continue;
+    if (brightness < 25 || brightness > 245) continue;
     stats.total += 1;
 
     if (r > 130 && r > g * 1.22 && r > b * 1.22 && saturation > 0.24) {
@@ -1714,6 +1735,14 @@ function createFoodColorStats(pixels) {
       stats.white += 1;
       cellSets.white.add(cell);
     }
+    if (brightness >= 45 && brightness < 100 && saturation < 0.5) {
+      stats.black += 1;
+      cellSets.black.add(cell);
+    }
+    if (brightness > 125 && brightness <= 220 && r >= g * 0.9 && g >= b * 0.82 && saturation >= 0.08 && saturation < 0.35) {
+      stats.cream += 1;
+      cellSets.cream.add(cell);
+    }
     if (r > 95 && g > 50 && b < 105 && r > g * 1.1 && saturation > 0.22) {
       stats.brown += 1;
       cellSets.brown.add(cell);
@@ -1729,6 +1758,9 @@ function createFoodColorStats(pixels) {
     brown: stats.brown / total,
     red: stats.red / total,
     orange: stats.orange / total,
+    black: stats.black / total,
+    cream: stats.cream / total,
+    liquid: (stats.black + stats.brown + stats.cream + stats.yellow + stats.orange + stats.red) / total,
     spread: {
       green: cellSets.green.size / 64,
       yellow: cellSets.yellow.size / 64,
@@ -1736,6 +1768,9 @@ function createFoodColorStats(pixels) {
       brown: cellSets.brown.size / 64,
       red: cellSets.red.size / 64,
       orange: cellSets.orange.size / 64,
+      black: cellSets.black.size / 64,
+      cream: cellSets.cream.size / 64,
+      liquid: mergeCellSets(cellSets.black, cellSets.brown, cellSets.cream, cellSets.yellow, cellSets.orange, cellSets.red).size / 64,
       warm: mergeCellSets(cellSets.red, cellSets.orange, cellSets.yellow).size / 64,
     },
     components: {
@@ -1745,6 +1780,9 @@ function createFoodColorStats(pixels) {
       brown: createGridComponents(cellSets.brown),
       red: createGridComponents(cellSets.red),
       orange: createGridComponents(cellSets.orange),
+      black: createGridComponents(cellSets.black),
+      cream: createGridComponents(cellSets.cream),
+      liquid: createGridComponents(mergeCellSets(cellSets.black, cellSets.brown, cellSets.cream, cellSets.yellow, cellSets.orange, cellSets.red)),
       warm: createGridComponents(mergeCellSets(cellSets.red, cellSets.orange, cellSets.yellow)),
     },
   };
@@ -1820,7 +1858,12 @@ function createFoodEstimateFromText(text) {
   const textPortion = createTextPortionEstimate(hint, text);
   if (textPortion) return textPortion;
 
-  return createVisualEstimatedFood(hint.name, hint.grams, `글자에서 ${hint.label} 단서를 인식했어요`);
+  const sourceBrand = findOfficialProductSources(text)[0]?.brand || findOfficialNutritionSources(text)[0]?.brand || '';
+  const sourceAwareName = sourceBrand && !normalizeRecognitionText(hint.name).includes(normalizeRecognitionText(sourceBrand))
+    ? `${sourceBrand} ${hint.name}`
+    : hint.name;
+
+  return createVisualEstimatedFood(sourceAwareName, hint.grams, `글자에서 ${sourceBrand ? `${sourceBrand} ` : ''}${hint.label} 단서를 인식했어요`);
 }
 
 function createTextPortionEstimate(hint, text = '') {
@@ -1871,6 +1914,9 @@ function escapeRegExp(value) {
 function createFoodEstimateFromColor(stats, text = '') {
   if (stats.total < 450) return null;
   const hasTextSignal = Boolean(String(text || '').trim());
+  const beverageEstimate = createBeverageEstimateFromShape(stats, text);
+  if (beverageEstimate) return beverageEstimate;
+
   const simplePortion = createSimplePortionEstimate(stats, text);
   if (simplePortion) return simplePortion;
 
@@ -1892,8 +1938,108 @@ function createFoodEstimateFromColor(stats, text = '') {
   return null;
 }
 
+function createBeverageEstimateFromShape(stats, text = '') {
+  const normalized = normalizeRecognitionText(text);
+  const drinkText = hasDrinkTextSignal(text);
+  const cupLike = hasCupLikeShape(stats);
+  const solidFoodLike =
+    (stats.components?.green?.largest || 0) >= 18 ||
+    (stats.components?.warm?.largest || 0) >= 22 ||
+    (stats.components?.white?.largest || 0) >= 30;
+  const darkLiquid = stats.black + stats.brown * 0.8;
+  const milkLiquid = stats.cream + stats.white * 0.35;
+  const coloredLiquid = stats.red + stats.orange + stats.yellow * 0.7;
+  const liquidSpread = stats.spread?.liquid || 0;
+  const liquidCells = stats.components?.liquid?.totalCells || 0;
+
+  if (!drinkText && (!cupLike || solidFoodLike || liquidSpread < 0.12 || liquidCells < 6)) return null;
+
+  if (normalized.includes('제로') || normalized.includes('zero')) {
+    return createPortionEstimatedFood(
+      '제로 탄산음료',
+      '355',
+      '제품명 글자에서 제로 음료 단서를 인식했어요',
+      { unitLabel: '잔', sizeLabel: '보통', confidence: '보통' },
+    );
+  }
+
+  if (normalized.includes('밀크티') || normalized.includes('milktea') || normalized.includes('공차') || normalized.includes('버블티')) {
+    return createPortionEstimatedFood(
+      '밀크티',
+      '473',
+      '브랜드/제품명 글자와 컵 안의 밝은 음료 색을 함께 인식했어요',
+      { unitLabel: '잔', sizeLabel: '보통', confidence: drinkText ? '높음' : '보통' },
+    );
+  }
+
+  if (normalized.includes('라떼') || normalized.includes('latte')) {
+    return createPortionEstimatedFood(
+      '카페라떼',
+      '355',
+      '컵과 내용물을 분리해 우유가 들어간 커피 후보로 봤어요',
+      { unitLabel: '잔', sizeLabel: '보통', confidence: drinkText ? '높음' : '보통' },
+    );
+  }
+
+  if (normalized.includes('스무디') || normalized.includes('smoothie') || normalized.includes('프라페') || normalized.includes('frappe')) {
+    return createPortionEstimatedFood(
+      '스무디',
+      '450',
+      '제품명 글자와 컵 안 색을 함께 보고 당류가 높은 음료 후보로 봤어요',
+      { unitLabel: '잔', sizeLabel: '보통', confidence: drinkText ? '높음' : '보통' },
+    );
+  }
+
+  if (normalized.includes('에이드') || normalized.includes('ade') || normalized.includes('주스') || normalized.includes('쥬스') || normalized.includes('juice')) {
+    return createPortionEstimatedFood(
+      '과일음료',
+      '450',
+      '제품명 글자와 컵 안 색을 함께 보고 과일·에이드 음료 후보로 봤어요',
+      { unitLabel: '잔', sizeLabel: '보통', confidence: drinkText ? '높음' : '보통' },
+    );
+  }
+
+  if (normalized.includes('콜라') || normalized.includes('사이다') || normalized.includes('cola') || normalized.includes('coke') || normalized.includes('soda')) {
+    return createPortionEstimatedFood(
+      '탄산음료',
+      '355',
+      '제품명 글자에서 탄산음료 단서를 인식했어요',
+      { unitLabel: '잔', sizeLabel: '보통', confidence: drinkText ? '높음' : '보통' },
+    );
+  }
+
+  if (normalized.includes('아메리카노') || normalized.includes('americano') || normalized.includes('블랙커피') || darkLiquid >= 0.12) {
+    return createPortionEstimatedFood(
+      '아메리카노',
+      '355',
+      '컵은 제외하고 어두운 커피색 내용물만 음료 후보로 분리했어요',
+      { unitLabel: '잔', sizeLabel: '보통', confidence: drinkText ? '높음' : '보통' },
+    );
+  }
+
+  if (milkLiquid >= 0.16 && (drinkText || cupLike)) {
+    return createPortionEstimatedFood(
+      '카페라떼',
+      '355',
+      '컵은 제외하고 밝은 우유색 내용물만 음료 후보로 분리했어요',
+      { unitLabel: '잔', sizeLabel: '보통', confidence: drinkText ? '보통' : '낮음' },
+    );
+  }
+
+  if (coloredLiquid >= 0.12 && (drinkText || cupLike)) {
+    return createPortionEstimatedFood(
+      '과일음료',
+      '450',
+      '컵은 제외하고 색이 있는 액체 내용물만 음료 후보로 분리했어요',
+      { unitLabel: '잔', sizeLabel: '보통', confidence: drinkText ? '보통' : '낮음' },
+    );
+  }
+
+  return null;
+}
+
 function createSimplePortionEstimate(stats, text = '') {
-  if (hasPackagedFoodTextSignal(text) || hasCookedDishTextSignal(text)) return null;
+  if (hasPackagedFoodTextSignal(text) || hasCookedDishTextSignal(text) || hasDrinkTextSignal(text) || hasCupLikeShape(stats)) return null;
 
   const warmRatio = stats.red + stats.orange + stats.yellow * 0.35;
   const warmComponents = stats.components?.warm || {};
@@ -2022,6 +2168,66 @@ function hasPackagedFoodTextSignal(text) {
     'orion',
   ];
   return packagedTerms.some((term) => normalized.includes(normalizeRecognitionText(term)));
+}
+
+function hasDrinkTextSignal(text) {
+  const normalized = normalizeRecognitionText(text);
+  if (!normalized) return false;
+  const drinkTerms = [
+    '커피',
+    '카페',
+    '아메리카노',
+    '라떼',
+    '밀크티',
+    '버블티',
+    '스무디',
+    '프라페',
+    '에이드',
+    '주스',
+    '쥬스',
+    '음료',
+    '콜라',
+    '사이다',
+    '제로',
+    'coffee',
+    'americano',
+    'latte',
+    'milktea',
+    'smoothie',
+    'frappe',
+    'juice',
+    'ade',
+    'cola',
+    'coke',
+    'soda',
+    'starbucks',
+    '스타벅스',
+    '메가mgc',
+    '메가커피',
+    '컴포즈',
+    '이디야',
+    '빽다방',
+    '공차',
+    '투썸',
+    '커피빈',
+    '더벤티',
+    '매머드',
+    '카페051',
+    '텐퍼센트',
+    '하삼동',
+    '달콤커피',
+    '쥬씨',
+  ];
+  return drinkTerms.some((term) => normalized.includes(normalizeRecognitionText(term)));
+}
+
+function hasCupLikeShape(stats) {
+  const broadRim = stats.white >= 0.08 && (stats.spread?.white || 0) >= 0.1;
+  const visibleLiquid = stats.liquid >= 0.11 && (stats.spread?.liquid || 0) >= 0.12;
+  const limitedVegetableFood = stats.green < 0.18 && (stats.components?.green?.largest || 0) < 18;
+  const limitedWarmSolidFood = stats.red + stats.orange < 0.24 && (stats.components?.warm?.largest || 0) < 24;
+  const notRiceDominant = !(stats.white > 0.42 && (stats.components?.white?.largest || 0) >= 30 && stats.black < 0.04 && stats.brown < 0.04);
+  return broadRim && visibleLiquid && limitedVegetableFood && limitedWarmSolidFood && notRiceDominant;
 }
 
 function hasCookedDishTextSignal(text) {

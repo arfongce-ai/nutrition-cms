@@ -75,6 +75,13 @@ const FOOD_DATABASE = [
   { keys: ['우유'], emoji: '우유', calories: 61, carb: 4.8, protein: 3.2, fat: 3.3, sodium: 43, sugar: 5.1, fiber: 0, leucine: 320 },
   { keys: ['요거트', '요구르트', 'yogurt', 'yoghurt'], emoji: '요거트', calories: 63, carb: 7, protein: 3.5, fat: 2.5, sodium: 46, sugar: 6.5, fiber: 0, leucine: 310 },
   { keys: ['견과류', '아몬드', '호두', '캐슈넛', 'nuts', 'almond', 'walnut'], emoji: '견과', calories: 607, carb: 20, protein: 20, fat: 54, saturatedFat: 5, transFat: 0, sodium: 8, sugar: 4.5, fiber: 8, leucine: 1400 },
+  { keys: ['아메리카노', '블랙커피', '커피', 'americano', 'blackcoffee'], emoji: '커피', calories: 3, carb: 0.5, protein: 0.2, fat: 0, sodium: 1.5, sugar: 0, fiber: 0, leucine: 0 },
+  { keys: ['카페라떼', '카페 라떼', '라떼', 'latte', 'cafelatte'], emoji: '커피', calories: 42, carb: 3.5, protein: 2, fat: 2, saturatedFat: 1.3, transFat: 0, sodium: 28, sugar: 2.6, fiber: 0, leucine: 140 },
+  { keys: ['밀크티', '버블티', 'milk tea', 'milktea'], emoji: '음료', calories: 59, carb: 10, protein: 1.5, fat: 1.5, saturatedFat: 1.1, transFat: 0, sodium: 34, sugar: 8, fiber: 0, leucine: 105 },
+  { keys: ['스무디', '프라페', 'smoothie', 'frappe'], emoji: '음료', calories: 56, carb: 12, protein: 0.7, fat: 0.6, saturatedFat: 0.3, transFat: 0, sodium: 24, sugar: 10, fiber: 0.4, leucine: 35 },
+  { keys: ['과일음료', '에이드', '주스', '쥬스', 'juice', 'ade'], emoji: '음료', calories: 45, carb: 11, protein: 0.2, fat: 0, sodium: 8, sugar: 10, fiber: 0.2, leucine: 5 },
+  { keys: ['제로 탄산음료', '제로콜라', '제로사이다', 'zero soda', 'zero coke'], emoji: '음료', calories: 0, carb: 0, protein: 0, fat: 0, sodium: 6, sugar: 0, fiber: 0, leucine: 0 },
+  { keys: ['탄산음료', '콜라', '사이다', 'cola', 'coke', 'soda'], emoji: '음료', calories: 40, carb: 10.5, protein: 0, fat: 0, sodium: 6, sugar: 10.5, fiber: 0, leucine: 0 },
   { keys: ['웨이', '프로틴', '단백질'], emoji: '보충제', calories: 400, carb: 12, protein: 75, fat: 6, sodium: 420, sugar: 6, fiber: 0, leucine: 7800 },
   { keys: ['나쵸', '나초', 'nacho', '타코', 'taco', '스낵', '과자', '칩', 'chip', 'snack'], emoji: '스낵', calories: 518, carb: 63, protein: 6.5, fat: 27, saturatedFat: 10.8, transFat: 0, sodium: 500, sugar: 5.4, fiber: 4, leucine: 420 },
 ];
