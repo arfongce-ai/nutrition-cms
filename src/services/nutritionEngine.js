@@ -15,7 +15,25 @@ export const SYSTEM_PROMPT = `
    - 보건복지부 2025 KDRI (한국인 영양소 섭취기준)
    - 대한비만학회 KSSO 가이드라인
 5. [출력 포맷 규격화]: 분석 결과는 반드시 사용자의 칼로리, 탄단지, 나트륨(mg)이 포함된 정제된 JSON 형태로 반환하십시오.
+6. [성분 미확인 시 예외 처리]: 정확한 영양 성분을 신뢰 가능한 DB에서 찾을 수 없으면 수치를 지어내지 말고 isPendingInfo: true로 표시하십시오. 이때 calories, carbohydrates, protein, fat, sodium은 모두 0으로 처리합니다.
 `;
+
+export const STRICT_ANALYSIS_RULES = {
+  pendingPolicy: '신뢰 가능한 DB 값을 찾지 못하면 isPendingInfo true로 표시하고 영양값은 모두 0으로 처리합니다.',
+  requiredJsonShape: {
+    foodName: '',
+    isPendingInfo: true,
+    servingSizeGrams: 0,
+    nutrients: {
+      calories: 0,
+      carbohydrates: 0,
+      protein: 0,
+      fat: 0,
+      sodium: 0,
+    },
+  },
+  evidenceBase: ['2025 KDRI', 'KSSO'],
+};
 
 export const MODE_LABELS = {
   adult: '성인',
@@ -328,6 +346,7 @@ function normalizeFoods(foodItems) {
         serving: base.serving || '',
         sourceLabel: base.sourceLabel || '',
         sourceUrl: base.sourceUrl || '',
+        isPendingInfo: Boolean(base.isPendingInfo),
         calories: round(base.calories * multiplier),
         carb: round(base.carb * multiplier),
         protein: round(base.protein * multiplier),
@@ -355,15 +374,18 @@ function findFood(name) {
   return {
     emoji: '음식',
     matched: false,
+    isPendingInfo: true,
     ...createSourceFallback(name),
-    calories: 120,
-    carb: 12,
-    protein: 6,
-    fat: 4,
-    sodium: 120,
-    sugar: 2,
-    fiber: 1,
-    leucine: 300,
+    calories: 0,
+    carb: 0,
+    protein: 0,
+    fat: 0,
+    saturatedFat: 0,
+    transFat: 0,
+    sodium: 0,
+    sugar: 0,
+    fiber: 0,
+    leucine: 0,
   };
 }
 
@@ -538,10 +560,16 @@ function evaluateRisk(profile, items, facts, totals, macroPercent, options, addi
   const hasMedical = (term) => profile.medical.includes(term);
   const labelText = `${items.map((item) => item.name).join(' ')} ${facts.servingSize || ''} ${options.ocrText || ''}`.toLowerCase();
   const hasRiskyTerm = GUIDELINES.wadaKada.riskyTerms.some((term) => labelText.includes(term.toLowerCase()));
+  const pendingItems = items.filter((item) => item.isPendingInfo);
   const hasFood = items.some((item) => item.type === '음식');
 
   if (!hasFood && !options.skipMissingFoodRisk) {
     yellow.push('음식명 확인 필요');
+  }
+
+  if (pendingItems.length) {
+    const pendingNames = pendingItems.slice(0, 3).map((item) => item.name).join(', ');
+    yellow.push(`영양성분 확인 필요: ${pendingNames}`);
   }
 
   if (additives.length) {
@@ -617,12 +645,16 @@ function createAdultMessage(profile, foods, labelItem, facts, totals, macroPerce
   const weight = Math.max(Number(profile.weight || 70), 1);
   const sodiumRatio = Math.round((totals.sodium / GUIDELINES.kdri2025.sodiumCdrrMg) * 100);
   const hasEstimatedFood = foods.some((food) => food.estimated);
+  const pendingFoods = foods.filter((food) => food.isPendingInfo);
   const paragraphs = [];
 
   if (!foods.length) {
     paragraphs.push('사진 촬영은 완료되었습니다. 음식명을 먼저 입력하면 음식 기준 영양 추정이 바로 시작됩니다. 포장식품이면 아래 영양성분표 숫자도 함께 입력해 더 정확하게 보정하세요.');
   } else if (risk.red.length) {
     paragraphs.push(`안전 필터에서 ${risk.red.join(', ')}이 감지되었습니다. 보충제, 한약, 해외 직구 제품은 KADA 금지약물검색 서비스 또는 Global DRO 확인 전까지 섭취를 보류하세요.`);
+  } else if (pendingFoods.length) {
+    const pendingNames = pendingFoods.map((food) => food.name).join(', ');
+    paragraphs.push(`${pendingNames}은 현재 데이터베이스에서 신뢰 가능한 영양성분을 찾지 못했습니다. 임의로 칼로리와 탄단지, 나트륨 수치를 만들지 않고 0으로 표시했습니다. 제품 성분표를 가까이 촬영하거나 음식명과 제공량을 보정하면 다시 계산됩니다.`);
   } else if (hasEstimatedFood) {
     paragraphs.push(`사진 속 음식을 자동 추정값으로 먼저 분석했습니다. 현재는 촬영 음식 ${foods[0]?.grams || 250}g 기준의 임시 계산이며, 정확도를 높이고 싶을 때만 음식명과 양을 수정하세요. 현재 탄수화물 ${macroPercent.carb}%, 단백질 ${macroPercent.protein}%, 지방 ${macroPercent.fat}%로 2025 KDRI 성인 AMDR 범위와 비교했습니다.`);
   } else {

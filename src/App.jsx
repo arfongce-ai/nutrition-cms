@@ -696,6 +696,9 @@ function CoachReportCard({ report }) {
           title="📊 칼로리 및 주요 영양소"
           body={`${formatMetric(report.totals.calories, 'kcal')} / 탄수화물 ${report.macroPercent.carb}%, 단백질 ${report.macroPercent.protein}%, 지방 ${report.macroPercent.fat}%`}
         />
+        {report.items.some((item) => item.isPendingInfo) ? (
+          <PendingInfoNotice items={report.items.filter((item) => item.isPendingInfo)} />
+        ) : null}
         {report.sourceItems?.length ? <OfficialSourceList sources={report.sourceItems} /> : null}
         {report.additives?.length ? <AdditiveNotice additives={report.additives} /> : null}
 
@@ -724,6 +727,7 @@ function ReportLine({ title, body, strong = false }) {
 }
 
 function formatReportItemLabel(item) {
+  if (item.isPendingInfo) return `${item.name} (영양성분 확인 필요)`;
   if (item.serving) return `${item.name} (${item.serving})`;
   const portion = [
     item.quantity ? `약 ${item.quantity}${item.unitLabel || '개'}` : '',
@@ -732,6 +736,25 @@ function formatReportItemLabel(item) {
   ].filter(Boolean);
   const portionText = portion.length ? ` (${portion.join(' · ')})` : '';
   return `${item.name}${item.grams ? ` ${item.grams}g` : ''}${portionText}`;
+}
+
+function PendingInfoNotice({ items }) {
+  const names = items.map((item) => item.name).join(', ');
+
+  return (
+    <div className="rounded-lg border border-amber-200 bg-amber-50 p-4">
+      <div className="flex items-start justify-between gap-3">
+        <div>
+          <h3 className="text-lg font-black text-amber-950">영양성분 확인 필요</h3>
+          <p className="mt-1 text-sm font-bold leading-snug text-amber-900">
+            {names}은 공식 DB에서 신뢰 가능한 값을 찾지 못해 열량, 탄수화물, 단백질, 지방, 나트륨을 0으로 처리했습니다.
+            제품 성분표를 가까이 촬영하거나 음식명과 제공량을 보정하면 다시 계산됩니다.
+          </p>
+        </div>
+        <span className="shrink-0 rounded-full bg-amber-200 px-3 py-1 text-xs font-black text-amber-950">확인</span>
+      </div>
+    </div>
+  );
 }
 
 function OfficialSourceList({ sources }) {
