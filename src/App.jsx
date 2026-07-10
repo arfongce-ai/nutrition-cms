@@ -26,6 +26,9 @@ const nutritionFactFields = [
 const foodCorrectionPresets = [
   { label: '밥 반 공기', name: '흰쌀밥', grams: '105' },
   { label: '밥 한 공기', name: '흰쌀밥', grams: '210' },
+  { label: '방울토마토 8개', name: '방울토마토', grams: '140' },
+  { label: '삶은 계란 1개', name: '계란', grams: '50' },
+  { label: '삶은 계란 2개', name: '계란', grams: '100' },
   { label: '국/찌개 조금', name: '된장찌개', grams: '180' },
   { label: '국/찌개 보통', name: '된장찌개', grams: '300' },
   { label: '김치 조금', name: '배추김치', grams: '30' },
@@ -34,6 +37,8 @@ const foodCorrectionPresets = [
   { label: '채소/나물', name: '샐러드', grams: '100' },
   { label: '바나나/과일', name: '바나나', grams: '150' },
   { label: '고구마', name: '고구마', grams: '150' },
+  { label: '요거트 1컵', name: '요거트', grams: '150' },
+  { label: '견과류 한 줌', name: '견과류', grams: '25' },
   { label: '단백질 제품', name: '웨이 프로틴', grams: '50' },
   { label: '스타벅스 아메리카노', name: '스타벅스 카페 아메리카노', grams: '1' },
   { label: '맥도날드 빅맥', name: '맥도날드 빅맥', grams: '1' },
@@ -48,9 +53,12 @@ const textFoodEstimates = [
   { keys: ['된장찌개', '김치찌개', '미역국', '국밥', '찌개'], name: '된장찌개', grams: '220', label: '국/찌개류' },
   { keys: ['닭가슴살', '닭 가슴살', 'chicken breast'], name: '닭가슴살', grams: '120', label: '단백질 반찬' },
   { keys: ['샐러드', 'salad', '채소'], name: '샐러드', grams: '160', label: '채소류' },
+  { keys: ['방울토마토', '토마토', 'cherry tomato', 'tomato'], name: '방울토마토', grams: '140', label: '단순 과일·채소' },
   { keys: ['바나나', 'banana'], name: '바나나', grams: '150', label: '과일류' },
   { keys: ['고구마', 'sweet potato'], name: '고구마', grams: '150', label: '탄수화물 식품' },
   { keys: ['계란', '달걀', 'egg'], name: '계란', grams: '60', label: '계란류' },
+  { keys: ['요거트', '요구르트', 'yogurt', 'yoghurt'], name: '요거트', grams: '150', label: '유제품' },
+  { keys: ['견과류', '아몬드', '호두', '캐슈넛', 'nuts', 'almond', 'walnut'], name: '견과류', grams: '25', label: '견과류' },
   { keys: ['두부', 'tofu'], name: '두부', grams: '120', label: '두부류' },
   { keys: ['우유', 'milk'], name: '우유', grams: '200', label: '유제품' },
   { keys: ['프로틴', '웨이', 'protein', 'whey'], name: '웨이 프로틴', grams: '50', label: '단백질 제품' },
@@ -636,7 +644,13 @@ function ReportLine({ title, body, strong = false }) {
 
 function formatReportItemLabel(item) {
   if (item.serving) return `${item.name} (${item.serving})`;
-  return `${item.name}${item.grams ? ` ${item.grams}g` : ''}`;
+  const portion = [
+    item.quantity ? `약 ${item.quantity}${item.unitLabel || '개'}` : '',
+    item.sizeLabel ? `${item.sizeLabel} 크기` : '',
+    item.confidence ? `신뢰도 ${item.confidence}` : '',
+  ].filter(Boolean);
+  const portionText = portion.length ? ` (${portion.join(' · ')})` : '';
+  return `${item.name}${item.grams ? ` ${item.grams}g` : ''}${portionText}`;
 }
 
 function OfficialSourceList({ sources }) {
@@ -842,6 +856,13 @@ function FoodItemsForm({ foods, updateFood, addFood, removeFood }) {
               <p className="text-sm font-black text-emerald-800">
                 {food.visualReason ? `사진 후보: ${food.visualReason}` : '자동 추정값으로 먼저 계산했습니다.'}
               </p>
+              {food.quantity || food.sizeLabel || food.confidence ? (
+                <div className="flex flex-wrap gap-2 text-xs font-black">
+                  {food.quantity ? <span className="rounded-full bg-white px-3 py-1 text-emerald-800">수량 약 {food.quantity}{food.unitLabel || '개'}</span> : null}
+                  {food.sizeLabel ? <span className="rounded-full bg-white px-3 py-1 text-emerald-800">크기 {food.sizeLabel}</span> : null}
+                  {food.confidence ? <span className="rounded-full bg-white px-3 py-1 text-amber-700">신뢰도 {food.confidence}</span> : null}
+                </div>
+              ) : null}
               <div className="grid grid-cols-2 gap-2">
                 {foodCorrectionPresets.map((preset) => (
                   <button
@@ -1503,13 +1524,15 @@ function estimateFoodFromDrawable(source, sourceWidth, sourceHeight, text = '') 
 }
 
 function createFoodColorStats(pixels) {
-  const stats = { green: 0, yellow: 0, white: 0, brown: 0, total: 0 };
+  const stats = { green: 0, yellow: 0, white: 0, brown: 0, red: 0, orange: 0, total: 0 };
   const gridSize = 8;
   const cellSets = {
     green: new Set(),
     yellow: new Set(),
     white: new Set(),
     brown: new Set(),
+    red: new Set(),
+    orange: new Set(),
   };
 
   for (let index = 0; index < pixels.length; index += 4) {
@@ -1528,6 +1551,14 @@ function createFoodColorStats(pixels) {
     if (brightness < 45 || brightness > 245) continue;
     stats.total += 1;
 
+    if (r > 130 && r > g * 1.22 && r > b * 1.22 && saturation > 0.24) {
+      stats.red += 1;
+      cellSets.red.add(cell);
+    }
+    if (r > 135 && g > 65 && g < r * 0.92 && b < 120 && saturation > 0.22) {
+      stats.orange += 1;
+      cellSets.orange.add(cell);
+    }
     if (g > r * 1.08 && g > b * 1.08 && brightness > 55) {
       stats.green += 1;
       cellSets.green.add(cell);
@@ -1553,12 +1584,73 @@ function createFoodColorStats(pixels) {
     yellow: stats.yellow / total,
     white: stats.white / total,
     brown: stats.brown / total,
+    red: stats.red / total,
+    orange: stats.orange / total,
     spread: {
       green: cellSets.green.size / 64,
       yellow: cellSets.yellow.size / 64,
       white: cellSets.white.size / 64,
       brown: cellSets.brown.size / 64,
+      red: cellSets.red.size / 64,
+      orange: cellSets.orange.size / 64,
+      warm: mergeCellSets(cellSets.red, cellSets.orange, cellSets.yellow).size / 64,
     },
+    components: {
+      green: createGridComponents(cellSets.green),
+      yellow: createGridComponents(cellSets.yellow),
+      white: createGridComponents(cellSets.white),
+      brown: createGridComponents(cellSets.brown),
+      red: createGridComponents(cellSets.red),
+      orange: createGridComponents(cellSets.orange),
+      warm: createGridComponents(mergeCellSets(cellSets.red, cellSets.orange, cellSets.yellow)),
+    },
+  };
+}
+
+function mergeCellSets(...sets) {
+  const merged = new Set();
+  sets.forEach((set) => set.forEach((cell) => merged.add(cell)));
+  return merged;
+}
+
+function createGridComponents(cellSet) {
+  const cells = new Set(cellSet);
+  const components = [];
+  const directions = [
+    [1, 0],
+    [-1, 0],
+    [0, 1],
+    [0, -1],
+  ];
+
+  cells.forEach((start) => {
+    if (!cells.has(start)) return;
+    const stack = [start];
+    cells.delete(start);
+    let size = 0;
+
+    while (stack.length) {
+      const current = stack.pop();
+      size += 1;
+      const [x, y] = current.split('-').map(Number);
+      directions.forEach(([dx, dy]) => {
+        const next = `${x + dx}-${y + dy}`;
+        if (cells.has(next)) {
+          cells.delete(next);
+          stack.push(next);
+        }
+      });
+    }
+
+    components.push(size);
+  });
+
+  const largest = Math.max(0, ...components);
+  return {
+    count: components.length,
+    largest,
+    average: components.length ? components.reduce((sum, value) => sum + value, 0) / components.length : 0,
+    totalCells: components.reduce((sum, value) => sum + value, 0),
   };
 }
 
@@ -1582,12 +1674,63 @@ function createFoodEstimateFromText(text) {
   const hint = textFoodEstimates.find((entry) => entry.keys.some((key) => normalized.includes(normalizeRecognitionText(key))));
   if (!hint) return null;
 
+  const textPortion = createTextPortionEstimate(hint, text);
+  if (textPortion) return textPortion;
+
   return createVisualEstimatedFood(hint.name, hint.grams, `글자에서 ${hint.label} 단서를 인식했어요`);
+}
+
+function createTextPortionEstimate(hint, text = '') {
+  const portionMap = {
+    방울토마토: { unitGram: 18, unitLabel: '개', max: 40 },
+    계란: { unitGram: 50, unitLabel: '개', max: 10 },
+    고구마: { unitGram: 140, unitLabel: '개', max: 8 },
+    바나나: { unitGram: 120, unitLabel: '개', max: 8 },
+    요거트: { unitGram: 150, unitLabel: '컵', max: 5 },
+    견과류: { unitGram: 25, unitLabel: '줌', max: 5 },
+  };
+  const portion = portionMap[hint.name];
+  if (!portion) return null;
+
+  const quantity = extractQuantityNearFoodText(text, hint.keys, portion.max);
+  if (!quantity) return null;
+
+  return createPortionEstimatedFood(
+    hint.name,
+    String(quantity * portion.unitGram),
+    `글자에서 ${hint.label}와 수량 ${quantity}${portion.unitLabel} 단서를 인식했어요`,
+    { quantity, unitLabel: portion.unitLabel, sizeLabel: '보통', confidence: '높음' },
+  );
+}
+
+function extractQuantityNearFoodText(text = '', keys = [], max = 20) {
+  const source = String(text || '').replace(/\s+/g, ' ');
+  for (const key of keys) {
+    const escapedKey = escapeRegExp(key);
+    const patterns = [
+      new RegExp(`${escapedKey}\\s*(\\d{1,2})(?!\\d)\\s*(개|알|컵|줌|봉|팩)`, 'i'),
+      new RegExp(`(\\d{1,2})(?!\\d)\\s*(개|알|컵|줌|봉|팩)\\s*${escapedKey}`, 'i'),
+    ];
+
+    for (const pattern of patterns) {
+      const match = source.match(pattern);
+      const value = Number(match?.[1]);
+      if (Number.isFinite(value) && value >= 1 && value <= max) return value;
+    }
+  }
+  return 0;
+}
+
+function escapeRegExp(value) {
+  return String(value).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
 function createFoodEstimateFromColor(stats, text = '') {
   if (stats.total < 700) return null;
   const hasTextSignal = Boolean(String(text || '').trim());
+  const simplePortion = createSimplePortionEstimate(stats, text);
+  if (simplePortion) return simplePortion;
+
   if (isPackagedSnackShape(stats, text)) {
     return createVisualEstimatedFood('스낵 과자', '80', '포장 스낵처럼 보이는 색상·로고·봉지 형태 후보가 보여요');
   }
@@ -1604,6 +1747,105 @@ function createFoodEstimateFromColor(stats, text = '') {
     return createVisualEstimatedFood('닭가슴살', '140', '갈색 단백질 반찬 형태가 화면 일부에 모여 보여요');
   }
   return null;
+}
+
+function createSimplePortionEstimate(stats, text = '') {
+  if (hasPackagedFoodTextSignal(text) || hasCookedDishTextSignal(text)) return null;
+
+  const warmRatio = stats.red + stats.orange + stats.yellow * 0.35;
+  const warmComponents = stats.components?.warm || {};
+  if (
+    warmRatio >= 0.055 &&
+    stats.red + stats.orange >= 0.045 &&
+    warmComponents.totalCells >= 3 &&
+    (warmComponents.count >= 2 || warmRatio <= 0.18) &&
+    (stats.spread?.warm || 0) <= 0.46
+  ) {
+    const count = estimateItemCount(warmComponents, warmRatio, 0.045, 1, 14);
+    const size = estimateSizeLabel(warmRatio / Math.max(count, 1), [0.028, 0.062]);
+    const grams = estimatePortionGrams(count, 18, size);
+    return createPortionEstimatedFood(
+      '방울토마토',
+      grams,
+      `붉은색 둥근 덩어리 ${count}개 후보를 감지했어요`,
+      { quantity: count, sizeLabel: size.label, confidence: confidenceLabel(count >= 2 ? 0.76 : 0.62) },
+    );
+  }
+
+  const whiteYellowRatio = stats.white + stats.yellow * 0.7;
+  const whiteComponents = stats.components?.white || {};
+  if (stats.white >= 0.18 && stats.yellow >= 0.015 && whiteComponents.totalCells >= 4 && (stats.green + stats.brown) < 0.22) {
+    const count = estimateItemCount(whiteComponents, whiteYellowRatio, 0.16, 1, 4);
+    const size = estimateSizeLabel(whiteYellowRatio / Math.max(count, 1), [0.11, 0.22]);
+    const grams = estimatePortionGrams(count, 50, size);
+    return createPortionEstimatedFood(
+      '계란',
+      grams,
+      `흰색과 노른자색 형태로 계란 ${count}개 후보를 감지했어요`,
+      { quantity: count, sizeLabel: size.label, confidence: confidenceLabel(0.68) },
+    );
+  }
+
+  const orangeBrownRatio = stats.orange + stats.brown * 0.75;
+  const orangeBrownComponents = createMergedComponentStats(stats.components?.orange, stats.components?.brown);
+  const orangeBrownSpread = (stats.spread?.orange || 0) + (stats.spread?.brown || 0);
+  if (orangeBrownRatio >= 0.12 && orangeBrownComponents.count <= 3 && orangeBrownSpread <= 0.38 && stats.green < 0.12 && stats.red < 0.08) {
+    const count = estimateItemCount(orangeBrownComponents, orangeBrownRatio, 0.22, 1, 3);
+    const size = estimateSizeLabel(orangeBrownRatio / Math.max(count, 1), [0.14, 0.28]);
+    const grams = estimatePortionGrams(count, 140, size);
+    return createPortionEstimatedFood(
+      '고구마',
+      grams,
+      `갈색·주황색 긴 음식 형태로 고구마 ${count}개 후보를 감지했어요`,
+      { quantity: count, sizeLabel: size.label, confidence: confidenceLabel(0.64) },
+    );
+  }
+
+  const brownComponents = stats.components?.brown || {};
+  if (stats.brown >= 0.075 && brownComponents.count >= 3 && brownComponents.largest <= 12 && (stats.spread?.brown || 0) <= 0.38 && stats.green < 0.18 && stats.white < 0.38) {
+    const handfuls = Math.max(1, Math.min(2, Math.round(stats.brown / 0.16)));
+    const grams = handfuls * 25;
+    return createPortionEstimatedFood(
+      '견과류',
+      grams,
+      `작은 갈색 조각이 여러 개 보여 견과류 ${handfuls}줌 후보로 계산했어요`,
+      { quantity: handfuls, unitLabel: '줌', sizeLabel: handfuls > 1 ? '많음' : '보통', confidence: confidenceLabel(0.6) },
+    );
+  }
+
+  return null;
+}
+
+function createMergedComponentStats(...componentStats) {
+  const stats = componentStats.filter(Boolean);
+  return {
+    count: stats.reduce((sum, item) => sum + Number(item.count || 0), 0),
+    largest: Math.max(0, ...stats.map((item) => Number(item.largest || 0))),
+    average: stats.length ? stats.reduce((sum, item) => sum + Number(item.average || 0), 0) / stats.length : 0,
+    totalCells: stats.reduce((sum, item) => sum + Number(item.totalCells || 0), 0),
+  };
+}
+
+function estimateItemCount(components, ratio, ratioPerItem, min, max) {
+  const byArea = Math.round(ratio / ratioPerItem);
+  const byComponent = Math.max(components.count || 0, components.largest >= 9 ? Math.round((components.totalCells || 0) / 7) : 0);
+  return Math.min(max, Math.max(min, byArea, byComponent || 1));
+}
+
+function estimateSizeLabel(areaPerItem, thresholds) {
+  if (areaPerItem < thresholds[0]) return { label: '작음', multiplier: 0.8 };
+  if (areaPerItem > thresholds[1]) return { label: '큼', multiplier: 1.2 };
+  return { label: '보통', multiplier: 1 };
+}
+
+function estimatePortionGrams(count, unitGram, size) {
+  return String(Math.max(1, Math.round(count * unitGram * size.multiplier)));
+}
+
+function confidenceLabel(score) {
+  if (score >= 0.75) return '높음';
+  if (score >= 0.58) return '보통';
+  return '낮음';
 }
 
 function isPackagedSnackShape(stats, text = '') {
@@ -1674,6 +1916,16 @@ function createVisualEstimatedFood(name, grams, visualReason) {
     name,
     grams,
     visualReason,
+  };
+}
+
+function createPortionEstimatedFood(name, grams, visualReason, metadata = {}) {
+  return {
+    ...createVisualEstimatedFood(name, grams, visualReason),
+    quantity: metadata.quantity || '',
+    unitLabel: metadata.unitLabel || '개',
+    sizeLabel: metadata.sizeLabel || '',
+    confidence: metadata.confidence || '',
   };
 }
 
