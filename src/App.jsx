@@ -1492,7 +1492,7 @@ function estimateFoodFromDrawable(source, sourceWidth, sourceHeight, text = '') 
   const pixels = ctx.getImageData(0, 0, size, size).data;
   const colorStats = createFoodColorStats(pixels);
   const textEstimate = createFoodEstimateFromText(text);
-  const visualEstimate = createFoodEstimateFromColor(colorStats, Boolean(textEstimate));
+  const visualEstimate = createFoodEstimateFromColor(colorStats, text);
 
   if (textEstimate && visualEstimate && textEstimate.name !== visualEstimate.name) {
     return {
@@ -1587,9 +1587,10 @@ function createFoodEstimateFromText(text) {
   return createVisualEstimatedFood(hint.name, hint.grams, `글자에서 ${hint.label} 단서를 인식했어요`);
 }
 
-function createFoodEstimateFromColor(stats, hasTextSignal = false) {
+function createFoodEstimateFromColor(stats, text = '') {
   if (stats.total < 700) return null;
-  if (isPackagedSnackShape(stats, hasTextSignal)) {
+  const hasTextSignal = Boolean(String(text || '').trim());
+  if (isPackagedSnackShape(stats, text)) {
     return createVisualEstimatedFood('스낵 과자', '80', '포장 스낵처럼 보이는 색상·로고·봉지 형태 후보가 보여요');
   }
   if (isCompactFoodShape(stats, 'green', hasTextSignal) && stats.green > 0.24) {
@@ -1607,12 +1608,60 @@ function createFoodEstimateFromColor(stats, hasTextSignal = false) {
   return null;
 }
 
-function isPackagedSnackShape(stats, hasTextSignal) {
+function isPackagedSnackShape(stats, text = '') {
+  if (!hasPackagedFoodTextSignal(text) || hasCookedDishTextSignal(text)) return false;
   const colorMix = stats.green + stats.yellow + stats.white;
   const spreadMix = (stats.spread?.green || 0) + (stats.spread?.yellow || 0) + (stats.spread?.white || 0);
-  const yellowMinimum = hasTextSignal ? 0.05 : 0.08;
-  const greenMinimum = hasTextSignal ? 0.03 : 0.05;
+  const yellowMinimum = 0.04;
+  const greenMinimum = 0.02;
   return stats.yellow >= yellowMinimum && stats.green >= greenMinimum && colorMix >= 0.24 && spreadMix >= 0.16;
+}
+
+function hasPackagedFoodTextSignal(text) {
+  const normalized = normalizeRecognitionText(text);
+  if (!normalized) return false;
+  const packagedTerms = [
+    '영양정보',
+    '영양성분',
+    '총내용량',
+    '나트륨',
+    '탄수화물',
+    '당류',
+    '단백질',
+    '포화지방',
+    '트랜스지방',
+    'kcal',
+    '나쵸',
+    '나초',
+    'nacho',
+    'chip',
+    'snack',
+    'orion',
+  ];
+  return packagedTerms.some((term) => normalized.includes(normalizeRecognitionText(term)));
+}
+
+function hasCookedDishTextSignal(text) {
+  const normalized = normalizeRecognitionText(text);
+  if (!normalized) return false;
+  const cookedTerms = [
+    '찌개',
+    '된장국',
+    '된장',
+    '시래기국',
+    '시래기',
+    '국물',
+    '국밥',
+    '감자탕',
+    '설렁탕',
+    '갈비탕',
+    '반찬',
+    '밥',
+    'bowl',
+    'soup',
+    'stew',
+  ];
+  return cookedTerms.some((term) => normalized.includes(normalizeRecognitionText(term)));
 }
 
 function isCompactFoodShape(stats, key, hasTextSignal) {
