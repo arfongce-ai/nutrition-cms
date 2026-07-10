@@ -2,16 +2,73 @@ rules_version = '2';
 
 service cloud.firestore {
   match /databases/{database}/documents {
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return isSignedIn()
+        && exists(/databases/$(database)/documents/roles/$(request.auth.uid))
+        && get(/databases/$(database)/documents/roles/$(request.auth.uid)).data.role == 'admin';
+    }
+
+    match /roles/{uid} {
+      allow read: if isSignedIn();
+      allow write: if false;
+    }
+
+    match /members/{id} { allow read, write: if isSignedIn(); }
+    match /trainers/{id} { allow read, write: if isSignedIn(); }
+    match /schedules/{id} { allow read, write: if isSignedIn(); }
+    match /notices/{id} { allow read, write: if isSignedIn(); }
+    match /payments/{id} { allow read, write: if isSignedIn(); }
+    match /body/{id} { allow read, write: if isSignedIn(); }
+    match /ai/{id} { allow read, write: if isSignedIn(); }
+    match /gait_reports/{id} { allow read, write: if isSignedIn(); }
+    match /posture_reports/{id} { allow read, write: if isSignedIn(); }
+    match /rom_reports/{id} { allow read, write: if isSignedIn(); }
+    match /users/{userId}/reports/{reportId} { allow read, write: if isSignedIn(); }
+
+    match /expenses/{id} { allow read, write: if isAdmin(); }
+    match /promos/{id} {
+      allow read: if isSignedIn();
+      allow write: if isAdmin();
+    }
+    match /settleOverrides/{id} {
+      allow read: if isSignedIn();
+      allow write: if isAdmin();
+    }
+    match /settings/{id} {
+      allow read: if isSignedIn();
+      allow write: if isAdmin();
+    }
+
+    match /meta/{id} {
+      allow read, write: if isSignedIn();
+    }
+
+    match /deletions/{id} {
+      allow read, create: if isSignedIn();
+      allow update, delete: if false;
+    }
+
     match /nutritionReports/{reportId} {
-      allow create: if request.auth != null
+      allow create: if isSignedIn()
         && request.resource.data.uid == request.auth.uid;
       allow read, update, delete: if false;
     }
 
     match /meals_history/{mealId} {
-      allow create, update: if request.auth != null
+      allow create: if isSignedIn()
+        && request.resource.data.uid == request.auth.uid;
+      allow update: if isSignedIn()
+        && resource.data.uid == request.auth.uid
         && request.resource.data.uid == request.auth.uid;
       allow read, delete: if false;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
     }
   }
 }
