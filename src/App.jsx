@@ -11,6 +11,7 @@ import { findOfficialBrandFood } from './services/officialNutritionSources';
 import { findOfficialProductFood } from './services/officialProductDatabase';
 
 const PROFILE_KEY = 'nutritionCameraProfile.v2';
+const CAMERA_PERMISSION_KEY = 'nutritionCameraPermission.v1';
 const LIVE_NUTRIENT_SCAN_INTERVAL_MS = 1800;
 const FOOD_FOCUS_CROP_RATIO = 0.58;
 const LIVE_SCAN_HOLD_FRAMES = 2;
@@ -100,6 +101,7 @@ export default function App() {
   const textDetectorRef = useRef(null);
   const liveScanTimerRef = useRef(null);
   const liveScanBusyRef = useRef(false);
+  const cameraStartingRef = useRef(false);
   const [profile, setProfile] = useStoredProfile();
   const [cameraReady, setCameraReady] = useState(false);
   const [cameraError, setCameraError] = useState('');
@@ -165,9 +167,22 @@ export default function App() {
     }
   }, [captured]);
 
-  async function startCamera() {
+  async function startCamera(options = {}) {
     const localHostnames = ['localhost', '127.0.0.1'];
     const isLocalhost = localHostnames.includes(window.location.hostname);
+    const userRequested = Boolean(options.userRequested);
+    const hasLiveTrack = streamRef.current?.getVideoTracks?.().some((track) => track.readyState === 'live');
+
+    if (hasLiveTrack) {
+      if (videoRef.current && videoRef.current.srcObject !== streamRef.current) {
+        videoRef.current.srcObject = streamRef.current;
+      }
+      setCameraReady(true);
+      setCameraError('');
+      return;
+    }
+
+    if (cameraStartingRef.current) return;
 
     if (!window.isSecureContext && !isLocalhost) {
       setCameraError('휴대폰 카메라는 HTTPS 주소에서만 켜집니다. Cloudflare Pages 주소로 열어주세요.');
@@ -179,24 +194,41 @@ export default function App() {
       return;
     }
 
+    const permissionState = await getCameraPermissionState();
+    const previousPermission = localStorage.getItem(CAMERA_PERMISSION_KEY);
+    const shouldAvoidAutoPrompt = permissionState === 'prompt' && previousPermission === 'asked' && !userRequested;
+    if (shouldAvoidAutoPrompt) {
+      setCameraError('카메라 권한 확인이 다시 필요합니다. 아래 버튼을 한 번 눌러 카메라를 다시 켜주세요.');
+      return;
+    }
+
+    cameraStartingRef.current = true;
+    localStorage.setItem(CAMERA_PERMISSION_KEY, 'asked');
+
     try {
       const stream = await navigator.mediaDevices.getUserMedia({
         video: { facingMode: { ideal: 'environment' }, width: { ideal: 1280 }, height: { ideal: 1920 } },
         audio: false,
       });
       streamRef.current = stream;
+      localStorage.setItem(CAMERA_PERMISSION_KEY, 'granted');
       if (videoRef.current) {
         videoRef.current.srcObject = stream;
         setCameraReady(true);
         setCameraError('');
       }
     } catch {
+      localStorage.setItem(CAMERA_PERMISSION_KEY, 'asked');
       setCameraError('카메라 권한이 필요합니다. 브라우저 주소창의 카메라 권한을 허용해주세요.');
+    } finally {
+      cameraStartingRef.current = false;
     }
   }
 
   function stopCamera() {
     streamRef.current?.getTracks().forEach((track) => track.stop());
+    streamRef.current = null;
+    cameraStartingRef.current = false;
   }
 
   function capturePureCameraFrame() {
@@ -359,7 +391,7 @@ export default function App() {
     const hasLiveTrack = streamRef.current?.getVideoTracks?.().some((track) => track.readyState === 'live');
     if (!hasLiveTrack) {
       setCameraReady(false);
-      startCamera();
+      startCamera({ userRequested: true });
     }
   }
 
@@ -482,6 +514,13 @@ export default function App() {
           {cameraError ? (
             <div className="absolute bottom-36 left-4 right-4 z-10 rounded-lg border border-amber-400/30 bg-amber-500/15 px-4 py-3 text-center text-sm font-bold text-amber-100">
               {cameraError}
+              <button
+                type="button"
+                onClick={() => startCamera({ userRequested: true })}
+                className="mt-3 h-11 w-full rounded-full bg-amber-300 px-4 text-sm font-black text-amber-950"
+              >
+                카메라 다시 켜기
+              </button>
             </div>
           ) : null}
 
@@ -1303,6 +1342,16 @@ function useStoredProfile() {
   }
 
   return [profile, setProfile];
+}
+
+async function getCameraPermissionState() {
+  try {
+    if (!navigator.permissions?.query) return 'unknown';
+    const status = await navigator.permissions.query({ name: 'camera' });
+    return status.state || 'unknown';
+  } catch {
+    return 'unknown';
+  }
 }
 
 function drawZoomedVideoFrame(canvas, video, zoom = 1, maxWidth = 0) {
