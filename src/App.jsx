@@ -13,6 +13,7 @@ import { findOfficialProductFood } from './services/officialProductDatabase';
 const PROFILE_KEY = 'nutritionCameraProfile.v2';
 const LIVE_NUTRIENT_SCAN_INTERVAL_MS = 1800;
 const FOOD_FOCUS_CROP_RATIO = 0.58;
+const LIVE_SCAN_HOLD_FRAMES = 2;
 
 const nutritionFactFields = [
   { key: 'calories', label: '열량', unit: 'kcal' },
@@ -234,35 +235,30 @@ export default function App() {
       const detected = await readNutritionTextFromCanvas(canvas, textDetectorRef);
       const food = estimateFoodFromCanvas(canvas, detected.text);
       if (!detected.text) {
-        setLiveScan((current) => ({
-          status: detected.status === 'unsupported' ? 'unsupported' : food ? 'visual' : 'scanning',
-          facts: food ? current.facts || {} : {},
-          text: food ? current.text || '' : '',
-          food,
-        }));
+        setLiveScan((current) => mergeLiveFoodScan(current, food, detected.status));
         return;
       }
 
       const facts = parseNutritionText(detected.text);
       if (hasReadableNutritionFacts(facts)) {
-        setLiveScan((current) => ({
-          status: 'detected',
-          facts: {
-            ...current.facts,
-            ...facts,
-          },
-          text: detected.text || current.text,
-          food,
-        }));
+        setLiveScan((current) => {
+          const canHoldPrevious = current.food && (current.missCount || 0) < LIVE_SCAN_HOLD_FRAMES;
+          const heldFood = food || (canHoldPrevious ? current.food : null);
+          return {
+            status: 'detected',
+            facts: {
+              ...current.facts,
+              ...facts,
+            },
+            text: detected.text || current.text,
+            food: heldFood,
+            missCount: food ? 0 : heldFood ? (current.missCount || 0) + 1 : 0,
+          };
+        });
         return;
       }
 
-      setLiveScan((current) => ({
-        status: food ? 'visual' : 'scanning',
-        facts: food ? current.facts || {} : {},
-        text: food ? detected.text || current.text || '' : '',
-        food,
-      }));
+      setLiveScan((current) => mergeLiveFoodScan(current, food, 'scanning', detected.text));
     } catch {
       setLiveScan(() => ({
         status: 'scanning',
@@ -282,6 +278,36 @@ export default function App() {
 
     drawZoomedVideoFrame(canvas, video, cameraZoom, 1200);
     return canvas;
+  }
+
+  function mergeLiveFoodScan(current, food, status = 'scanning', text = '') {
+    if (food) {
+      return {
+        status: 'visual',
+        facts: current.facts || {},
+        text: text || current.text || '',
+        food,
+        missCount: 0,
+      };
+    }
+
+    const canHoldPrevious = current.food && (current.missCount || 0) < LIVE_SCAN_HOLD_FRAMES;
+    if (canHoldPrevious) {
+      return {
+        ...current,
+        status: current.status === 'detected' ? 'detected' : 'visual',
+        text: text || current.text || '',
+        missCount: (current.missCount || 0) + 1,
+      };
+    }
+
+    return {
+      status: status === 'unsupported' ? 'unsupported' : 'scanning',
+      facts: {},
+      text: '',
+      food: null,
+      missCount: 0,
+    };
   }
 
   async function handleShoot() {
@@ -1497,21 +1523,8 @@ function estimateFoodFromCanvas(sourceCanvas, text = '') {
 }
 
 function estimateFoodFromDrawable(source, sourceWidth, sourceHeight, text = '') {
-  const canvas = document.createElement('canvas');
-  const size = 64;
-  canvas.width = size;
-  canvas.height = size;
-  const ctx = canvas.getContext('2d', { willReadFrequently: true });
-  const cropSize = Math.floor(Math.min(sourceWidth, sourceHeight) * FOOD_FOCUS_CROP_RATIO);
-  const sourceX = Math.floor((sourceWidth - cropSize) / 2);
-  const sourceY = Math.floor((sourceHeight - cropSize) / 2);
-
-  ctx.drawImage(source, sourceX, sourceY, cropSize, cropSize, 0, 0, size, size);
-
-  const pixels = ctx.getImageData(0, 0, size, size).data;
-  const colorStats = createFoodColorStats(pixels);
   const textEstimate = createFoodEstimateFromText(text);
-  const visualEstimate = createFoodEstimateFromColor(colorStats, text);
+  const visualEstimate = createBestVisualFoodEstimate(source, sourceWidth, sourceHeight, text);
 
   if (textEstimate && visualEstimate && textEstimate.name !== visualEstimate.name) {
     return {
@@ -1521,6 +1534,87 @@ function estimateFoodFromDrawable(source, sourceWidth, sourceHeight, text = '') 
   }
 
   return textEstimate || visualEstimate;
+}
+
+function createBestVisualFoodEstimate(source, sourceWidth, sourceHeight, text = '') {
+  const candidates = createFoodCropCandidates(sourceWidth, sourceHeight);
+  const estimates = candidates
+    .map((candidate) => {
+      const stats = createFoodColorStatsFromCrop(source, sourceWidth, sourceHeight, candidate);
+      const estimate = createFoodEstimateFromColor(stats, text);
+      if (!estimate) return null;
+
+      return {
+        estimate: {
+          ...estimate,
+          visualReason: `${estimate.visualReason} (${candidate.label} 영역)`,
+        },
+        score: scoreVisualEstimate(stats, estimate, candidate),
+      };
+    })
+    .filter(Boolean)
+    .sort((a, b) => b.score - a.score);
+
+  return estimates[0]?.estimate || null;
+}
+
+function createFoodCropCandidates(sourceWidth, sourceHeight) {
+  const minSide = Math.min(sourceWidth, sourceHeight);
+  const shortFrame = minSide < 600;
+  return [
+    { ratio: FOOD_FOCUS_CROP_RATIO, xBias: 0, yBias: 0, label: '중앙' },
+    { ratio: shortFrame ? 0.82 : 0.74, xBias: 0, yBias: 0, label: '넓은 중앙' },
+    { ratio: 0.52, xBias: -0.22, yBias: 0, label: '왼쪽' },
+    { ratio: 0.52, xBias: 0.22, yBias: 0, label: '오른쪽' },
+    { ratio: 0.52, xBias: 0, yBias: -0.2, label: '위쪽' },
+    { ratio: 0.52, xBias: 0, yBias: 0.2, label: '아래쪽' },
+  ];
+}
+
+function createFoodColorStatsFromCrop(source, sourceWidth, sourceHeight, candidate) {
+  const canvas = document.createElement('canvas');
+  const size = 64;
+  canvas.width = size;
+  canvas.height = size;
+  const ctx = canvas.getContext('2d', { willReadFrequently: true });
+  const cropSize = Math.floor(Math.min(sourceWidth, sourceHeight) * candidate.ratio);
+  const centerX = sourceWidth / 2 + cropSize * candidate.xBias;
+  const centerY = sourceHeight / 2 + cropSize * candidate.yBias;
+  const sourceX = clampNumber(Math.floor(centerX - cropSize / 2), 0, Math.max(0, sourceWidth - cropSize));
+  const sourceY = clampNumber(Math.floor(centerY - cropSize / 2), 0, Math.max(0, sourceHeight - cropSize));
+
+  ctx.drawImage(source, sourceX, sourceY, cropSize, cropSize, 0, 0, size, size);
+
+  const pixels = ctx.getImageData(0, 0, size, size).data;
+  return createFoodColorStats(pixels);
+}
+
+function scoreVisualEstimate(stats, estimate, candidate) {
+  const centerBonus = candidate.xBias === 0 && candidate.yBias === 0 ? 6 : 0;
+  const textBonus = estimate.confidence === '높음' ? 20 : estimate.confidence === '보통' ? 10 : 0;
+  const name = estimate.name;
+
+  if (name === '방울토마토') {
+    return (stats.red + stats.orange) * 180 + (stats.components?.warm?.totalCells || 0) * 2 + centerBonus + textBonus;
+  }
+  if (name === '계란') {
+    return stats.white * 145 + stats.yellow * 80 + (stats.components?.white?.totalCells || 0) * 1.6 + centerBonus + textBonus;
+  }
+  if (name === '고구마') {
+    return (stats.orange + stats.brown) * 150 + (stats.components?.orange?.largest || 0) * 2 + centerBonus + textBonus;
+  }
+  if (name === '견과류') {
+    return stats.brown * 160 + (stats.components?.brown?.count || 0) * 4 + centerBonus + textBonus;
+  }
+  if (name === '샐러드') return stats.green * 120 + centerBonus + textBonus;
+  if (name === '바나나') return stats.yellow * 120 + centerBonus + textBonus;
+  if (name === '흰쌀밥') return stats.white * 100 + centerBonus + textBonus;
+  if (name === '닭가슴살') return stats.brown * 110 + centerBonus + textBonus;
+  return centerBonus + textBonus;
+}
+
+function clampNumber(value, min, max) {
+  return Math.min(max, Math.max(min, value));
 }
 
 function createFoodColorStats(pixels) {
@@ -1726,7 +1820,7 @@ function escapeRegExp(value) {
 }
 
 function createFoodEstimateFromColor(stats, text = '') {
-  if (stats.total < 700) return null;
+  if (stats.total < 450) return null;
   const hasTextSignal = Boolean(String(text || '').trim());
   const simplePortion = createSimplePortionEstimate(stats, text);
   if (simplePortion) return simplePortion;
@@ -1755,11 +1849,11 @@ function createSimplePortionEstimate(stats, text = '') {
   const warmRatio = stats.red + stats.orange + stats.yellow * 0.35;
   const warmComponents = stats.components?.warm || {};
   if (
-    warmRatio >= 0.055 &&
-    stats.red + stats.orange >= 0.045 &&
+    warmRatio >= 0.045 &&
+    stats.red + stats.orange >= 0.035 &&
     warmComponents.totalCells >= 3 &&
-    (warmComponents.count >= 2 || warmRatio <= 0.18) &&
-    (stats.spread?.warm || 0) <= 0.46
+    (warmComponents.count >= 2 || warmRatio <= 0.2) &&
+    (stats.spread?.warm || 0) <= 0.5
   ) {
     const count = estimateItemCount(warmComponents, warmRatio, 0.045, 1, 14);
     const size = estimateSizeLabel(warmRatio / Math.max(count, 1), [0.028, 0.062]);
@@ -1774,7 +1868,7 @@ function createSimplePortionEstimate(stats, text = '') {
 
   const whiteYellowRatio = stats.white + stats.yellow * 0.7;
   const whiteComponents = stats.components?.white || {};
-  if (stats.white >= 0.18 && stats.yellow >= 0.015 && whiteComponents.totalCells >= 4 && (stats.green + stats.brown) < 0.22) {
+  if (stats.white >= 0.16 && stats.yellow >= 0.01 && whiteComponents.totalCells >= 4 && (stats.green + stats.brown) < 0.25) {
     const count = estimateItemCount(whiteComponents, whiteYellowRatio, 0.16, 1, 4);
     const size = estimateSizeLabel(whiteYellowRatio / Math.max(count, 1), [0.11, 0.22]);
     const grams = estimatePortionGrams(count, 50, size);
@@ -1789,7 +1883,7 @@ function createSimplePortionEstimate(stats, text = '') {
   const orangeBrownRatio = stats.orange + stats.brown * 0.75;
   const orangeBrownComponents = createMergedComponentStats(stats.components?.orange, stats.components?.brown);
   const orangeBrownSpread = (stats.spread?.orange || 0) + (stats.spread?.brown || 0);
-  if (orangeBrownRatio >= 0.12 && orangeBrownComponents.count <= 3 && orangeBrownSpread <= 0.38 && stats.green < 0.12 && stats.red < 0.08) {
+  if (orangeBrownRatio >= 0.1 && orangeBrownComponents.count <= 4 && orangeBrownSpread <= 0.42 && stats.green < 0.14 && stats.red < 0.09) {
     const count = estimateItemCount(orangeBrownComponents, orangeBrownRatio, 0.22, 1, 3);
     const size = estimateSizeLabel(orangeBrownRatio / Math.max(count, 1), [0.14, 0.28]);
     const grams = estimatePortionGrams(count, 140, size);
@@ -1802,7 +1896,7 @@ function createSimplePortionEstimate(stats, text = '') {
   }
 
   const brownComponents = stats.components?.brown || {};
-  if (stats.brown >= 0.075 && brownComponents.count >= 3 && brownComponents.largest <= 12 && (stats.spread?.brown || 0) <= 0.38 && stats.green < 0.18 && stats.white < 0.38) {
+  if (stats.brown >= 0.06 && brownComponents.count >= 3 && brownComponents.largest <= 14 && (stats.spread?.brown || 0) <= 0.42 && stats.green < 0.2 && stats.white < 0.4) {
     const handfuls = Math.max(1, Math.min(2, Math.round(stats.brown / 0.16)));
     const grams = handfuls * 25;
     return createPortionEstimatedFood(
