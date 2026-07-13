@@ -5,8 +5,8 @@ import { auth, db, firebaseEnabled } from '../firebase';
 const LOCAL_REPORTS_KEY = 'nutritionReports.v1';
 const MEALS_COLLECTION = 'meals_history';
 
-export async function saveNutritionReport(report) {
-  const payload = buildMealHistoryPayload(report);
+export async function saveNutritionReport(report, options = {}) {
+  const payload = buildMealHistoryPayload(report, options.imageUrl || '');
 
   saveLocalReport(payload);
 
@@ -18,8 +18,10 @@ export async function saveNutritionReport(report) {
     if (auth && !auth.currentUser) {
       await signInAnonymously(auth);
     }
+    const { imageUrl, ...cloudPayload } = payload;
     await setDoc(doc(db, MEALS_COLLECTION, payload.mealId), {
-      ...payload,
+      ...cloudPayload,
+      imageUrl: '',
       createdAt: serverTimestamp(),
       updatedAt: serverTimestamp(),
       uid: auth?.currentUser?.uid || null,
@@ -69,7 +71,7 @@ export async function updatePendingMealIngredients(mealId, verifiedNutrients, it
   }
 }
 
-function buildMealHistoryPayload(report) {
+function buildMealHistoryPayload(report, imageUrl = '') {
   const items = report.items.map(toMealHistoryItem);
   const hasPendingInfo = items.some((item) => item.isPendingInfo);
   const createdAt = new Date().toISOString();
@@ -79,7 +81,7 @@ function buildMealHistoryPayload(report) {
     mealId: `meal_${createdAt.replace(/\D/g, '').slice(0, 14)}_${Math.random().toString(36).slice(2, 8)}`,
     createdAt,
     updatedAt: createdAt,
-    imageUrl: '',
+    imageUrl,
     status: hasPendingInfo ? 'PENDING' : 'COMPLETED',
     analysisType: report.analysisType,
     mode: report.profile.mode,
@@ -196,7 +198,26 @@ function sumHistoryItems(items) {
 function saveLocalReport(payload) {
   const reports = readLocalReports();
   reports.unshift(payload);
-  localStorage.setItem(LOCAL_REPORTS_KEY, JSON.stringify(reports.slice(0, 50)));
+  const limitedReports = reports.slice(0, 50);
+  if (tryWriteLocalReports(limitedReports)) return;
+
+  const keepRecentPhotos = limitedReports.map((report, index) => (index < 8 ? report : { ...report, imageUrl: '' }));
+  if (tryWriteLocalReports(keepRecentPhotos)) return;
+
+  const newestPhotoOnly = limitedReports.map((report, index) => (index === 0 ? report : { ...report, imageUrl: '' }));
+  if (tryWriteLocalReports(newestPhotoOnly)) return;
+
+  tryWriteLocalReports(limitedReports.map((report) => ({ ...report, imageUrl: '' })));
+}
+
+function tryWriteLocalReports(reports) {
+  try {
+    localStorage.setItem(LOCAL_REPORTS_KEY, JSON.stringify(reports));
+    return true;
+  } catch (error) {
+    console.warn('[reportStore] Local photo storage limit reached.', error);
+    return false;
+  }
 }
 
 export function readLocalReports() {

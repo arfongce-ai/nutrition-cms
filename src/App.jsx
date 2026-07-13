@@ -442,8 +442,14 @@ export default function App() {
       return;
     }
     setSaveState('저장 중');
+    let overlayPhoto = '';
+    try {
+      overlayPhoto = await createMealOverlayPhoto(captured.photo, report);
+    } catch (error) {
+      console.warn('Meal overlay photo creation failed', error);
+    }
     const { saveNutritionReport, readLocalReports } = await import('./services/reportStore');
-    const result = await saveNutritionReport(report);
+    const result = await saveNutritionReport(report, { imageUrl: overlayPhoto });
     setSavedReports(readLocalReports());
     setSaveState(result.storage === 'firebase' ? 'Firebase 저장됨' : '기기 저장됨');
   }
@@ -1274,6 +1280,60 @@ function createQuantityUpdate(food, value) {
   return matched ? { quantity: String(quantity), grams: String(quantity * matched.grams), estimated: false } : { quantity: String(quantity) };
 }
 
+async function createMealOverlayPhoto(photo, report) {
+  if (!photo) return '';
+
+  const image = await loadImage(photo);
+  const sourceWidth = image.naturalWidth || image.width;
+  const sourceHeight = image.naturalHeight || image.height;
+  const scale = Math.min(1, 720 / Math.max(sourceWidth, 1));
+  const canvas = document.createElement('canvas');
+  canvas.width = Math.max(320, Math.round(sourceWidth * scale));
+  canvas.height = Math.max(240, Math.round(sourceHeight * scale));
+  const ctx = canvas.getContext('2d', { alpha: false });
+  ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+
+  const unit = canvas.width / 720;
+  const padding = Math.max(16, Math.round(24 * unit));
+  const overlayHeight = Math.min(canvas.height * 0.43, Math.max(150, Math.round(210 * unit)));
+  const overlayTop = canvas.height - overlayHeight;
+  ctx.fillStyle = 'rgba(15, 23, 42, 0.88)';
+  ctx.fillRect(0, overlayTop, canvas.width, overlayHeight);
+
+  const timestamp = new Intl.DateTimeFormat('ko-KR', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+  }).format(new Date());
+  const foods = report.foods || [];
+  const fruitCount = foods.reduce((total, food) => total + (isFruitFood(food) ? Number(food.quantity || 0) : 0), 0);
+  const foodNames = foods.map((food) => food.name).filter(Boolean).join(', ');
+  const summary = foodNames.length > 38 ? `${foodNames.slice(0, 38)}…` : foodNames || '촬영 식단';
+
+  ctx.textBaseline = 'top';
+  ctx.fillStyle = '#5eead4';
+  ctx.font = `700 ${Math.max(13, Math.round(16 * unit))}px Arial, sans-serif`;
+  ctx.fillText('몸가짐 실시간 칼로리 측정', padding, overlayTop + padding);
+
+  ctx.fillStyle = '#ffffff';
+  ctx.font = `900 ${Math.max(30, Math.round(46 * unit))}px Arial, sans-serif`;
+  ctx.fillText(`${Math.round(Number(report.totals?.calories || 0))} kcal`, padding, overlayTop + padding + Math.max(24, Math.round(28 * unit)));
+
+  ctx.fillStyle = '#e2e8f0';
+  ctx.font = `700 ${Math.max(12, Math.round(15 * unit))}px Arial, sans-serif`;
+  const detailY = overlayTop + padding + Math.max(72, Math.round(84 * unit));
+  ctx.fillText(`음식·반찬 ${foods.length}가지${fruitCount ? ` · 과일 ${fruitCount}개` : ''}`, padding, detailY);
+  ctx.fillText(summary, padding, detailY + Math.max(22, Math.round(25 * unit)));
+
+  ctx.fillStyle = '#94a3b8';
+  ctx.font = `600 ${Math.max(11, Math.round(13 * unit))}px Arial, sans-serif`;
+  ctx.fillText(timestamp, padding, canvas.height - padding - Math.max(12, Math.round(13 * unit)));
+
+  return canvas.toDataURL('image/jpeg', 0.72);
+}
+
 function QuickFoodPresetSelect({ foodId, onApply, compact = false }) {
   function handleChange(event) {
     const preset = foodCorrectionPresets[Number(event.target.value)];
@@ -1820,6 +1880,13 @@ function DiarySheet({ profile, reports, onRefresh, onClose }) {
           {todayReports.length ? (
             todayReports.map((report) => (
               <article key={`${report.createdAt}-${report.summary}`} className="rounded-lg border border-slate-200 bg-white p-4">
+                {report.imageUrl ? (
+                  <img
+                    src={report.imageUrl}
+                    alt={`${report.summary || '촬영 식단'} 기록 사진`}
+                    className="mb-4 aspect-[4/3] w-full rounded-lg bg-slate-100 object-cover"
+                  />
+                ) : null}
                 <div className="flex items-start justify-between gap-3">
                   <div>
                     <p className="text-xs font-black text-slate-500">{formatSavedReportTime(report.createdAt)}</p>
