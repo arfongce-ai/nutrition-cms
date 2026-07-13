@@ -99,7 +99,7 @@ const FOOD_DATABASE = [
   { keys: ['스무디', '프라페', 'smoothie', 'frappe'], emoji: '음료', calories: 56, carb: 12, protein: 0.7, fat: 0.6, saturatedFat: 0.3, transFat: 0, sodium: 24, sugar: 10, fiber: 0.4, leucine: 35 },
   { keys: ['과일음료', '에이드', '주스', '쥬스', 'juice', 'ade'], emoji: '음료', calories: 45, carb: 11, protein: 0.2, fat: 0, sodium: 8, sugar: 10, fiber: 0.2, leucine: 5 },
   { keys: ['제로 탄산음료', '제로콜라', '제로사이다', 'zero soda', 'zero coke'], emoji: '음료', calories: 0, carb: 0, protein: 0, fat: 0, sodium: 6, sugar: 0, fiber: 0, leucine: 0 },
-  { keys: ['탄산음료', '콜라', '사이다', 'cola', 'coke', 'soda'], emoji: '음료', calories: 40, carb: 10.5, protein: 0, fat: 0, sodium: 6, sugar: 10.5, fiber: 0, leucine: 0 },
+  { keys: ['탄산음료', '콜라', '사이다', '스프라이트', 'cola', 'coke', 'soda', 'sprite'], emoji: '음료', calories: 40, carb: 10.5, protein: 0, fat: 0, sodium: 6, sugar: 10.5, fiber: 0, leucine: 0 },
   { keys: ['웨이', '프로틴', '단백질'], emoji: '보충제', calories: 400, carb: 12, protein: 75, fat: 6, sodium: 420, sugar: 6, fiber: 0, leucine: 7800 },
   { keys: ['나쵸', '나초', 'nacho', '타코', 'taco', '스낵', '과자', '칩', 'chip', 'snack'], emoji: '스낵', calories: 518, carb: 63, protein: 6.5, fat: 27, saturatedFat: 10.8, transFat: 0, sodium: 500, sugar: 5.4, fiber: 4, leucine: 420 },
 ];
@@ -241,20 +241,22 @@ export function createEmptyNutritionFacts() {
 
 export function parseNutritionText(text) {
   const source = normalizeNutritionOcrText(text);
-  return compactFacts({
+  const parsed = {
     foodName: extractFoodName(source),
-    calories: extractNumber(source, [
+    calories: extractNutritionValue(source, ['열량', '칼로리', 'calories', 'calorie'], ['kcal', '㎉']) || extractNumber(source, [
       /(?:열량|칼로리|calories?)\D{0,20}(\d+(?:\.\d+)?)/i,
       /(\d+(?:\.\d+)?)\s*(?:kcal|㎉|칼로리)/i,
     ]),
-    carb: extractNumber(source, [/(?:탄수화물|탄수|carbohydrate|carbs?)\D{0,20}(\d+(?:\.\d+)?)/i]),
-    sugar: extractNumber(source, [/(?:당류|당|sugars?)\D{0,20}(\d+(?:\.\d+)?)/i]),
-    protein: extractNumber(source, [/(?:단백질|protein)\D{0,20}(\d+(?:\.\d+)?)/i]),
-    fat: extractNumber(source, [/(?:총지방|지방|total fat|fat)\D{0,20}(\d+(?:\.\d+)?)/i]),
-    saturatedFat: extractNumber(source, [/(?:포화지방|saturated fat)\D{0,20}(\d+(?:\.\d+)?)/i]),
-    transFat: extractNumber(source, [/(?:트랜스지방|trans fat)\D{0,20}(\d+(?:\.\d+)?)/i]),
-    sodium: extractNumber(source, [/(?:나트륨|sodium)\D{0,20}(\d+(?:\.\d+)?)/i]),
-  });
+    carb: extractNutritionValue(source, ['탄수화물', '탄수', 'carbohydrate', 'carbs'], ['g']) || extractNumber(source, [/(?:탄수화물|탄수|carbohydrate|carbs?)\D{0,20}(\d+(?:\.\d+)?)/i]),
+    sugar: extractNutritionValue(source, ['당류', '당', 'sugars', 'sugar'], ['g']) || extractNumber(source, [/(?:당류|당|sugars?)\D{0,20}(\d+(?:\.\d+)?)/i]),
+    protein: extractNutritionValue(source, ['단백질', 'protein'], ['g']) || extractNumber(source, [/(?:단백질|protein)\D{0,20}(\d+(?:\.\d+)?)/i]),
+    fat: extractNutritionValue(source, ['총지방', '지방', 'total fat', 'fat'], ['g']) || extractNumber(source, [/(?:총지방|지방|total fat|fat)\D{0,20}(\d+(?:\.\d+)?)/i]),
+    saturatedFat: extractNutritionValue(source, ['포화지방', 'saturated fat'], ['g']) || extractNumber(source, [/(?:포화지방|saturated fat)\D{0,20}(\d+(?:\.\d+)?)/i]),
+    transFat: extractNutritionValue(source, ['트랜스지방', 'trans fat'], ['g']) || extractNumber(source, [/(?:트랜스지방|trans fat)\D{0,20}(\d+(?:\.\d+)?)/i]),
+    sodium: extractNutritionValue(source, ['나트륨', 'sodium'], ['mg']) || extractNumber(source, [/(?:나트륨|sodium)\D{0,20}(\d+(?:\.\d+)?)/i]),
+  };
+
+  return compactFacts(sanitizeNutritionFacts(parsed));
 }
 
 function normalizeNutritionOcrText(text) {
@@ -271,6 +273,50 @@ function normalizeNutritionOcrText(text) {
     .replace(/m9/gi, 'mg')
     .replace(/(\d)\s*[lI]\s*(?=\d)/g, '$11')
     .replace(/(\d)\s*\|\s*(?=\d)/g, '$11');
+}
+
+function extractNutritionValue(text, labels, units = []) {
+  const source = String(text || '').normalize('NFKC');
+  const unitPattern = units.length ? `(?:${units.map(escapeRegExp).join('|')})?` : '';
+
+  for (const label of labels) {
+    const looseLabel = String(label)
+      .split('')
+      .map((letter) => escapeRegExp(letter))
+      .join('\\s*');
+    const pattern = new RegExp(`${looseLabel}[\\s:：\\-·.]*.{0,24}?(\\d+(?:\\.\\d+)?)\\s*${unitPattern}`, 'i');
+    const match = source.match(pattern);
+    if (match?.[1]) return match[1];
+  }
+
+  return '';
+}
+
+function sanitizeNutritionFacts(facts) {
+  const limits = {
+    calories: 1600,
+    carb: 300,
+    sugar: 250,
+    protein: 250,
+    fat: 250,
+    saturatedFat: 120,
+    transFat: 50,
+    sodium: 7000,
+  };
+
+  return Object.fromEntries(
+    Object.entries(facts).filter(([key, value]) => {
+      if (key === 'foodName') return Boolean(String(value || '').trim());
+      if (value === '' || value == null) return false;
+      const numeric = Number(String(value).replace(/[^\d.]/g, ''));
+      if (!Number.isFinite(numeric)) return false;
+      return numeric >= 0 && numeric <= (limits[key] || 10000);
+    }),
+  );
+}
+
+function escapeRegExp(value) {
+  return String(value).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
 export function getBmiStatus(heightCm, weightKg) {
@@ -297,7 +343,9 @@ export function analyzeMeal(profile, foodItems, nutritionFacts, options = {}) {
   const macroPercent = createMacroPercent(totals);
   const safetyText = createSafetyText(items, facts, options);
   const additives = detectAdditives(safetyText);
-  const risk = evaluateRisk(normalizedProfile, items, facts, totals, macroPercent, options, additives);
+  const glycemic = evaluateGlycemicImpact(normalizedProfile, items, facts, totals, macroPercent, options);
+  const risk = evaluateRisk(normalizedProfile, items, facts, totals, macroPercent, options, additives, glycemic);
+  const dietScore = createDietScore(items, totals, macroPercent, risk, glycemic);
   const stamp = risk.red.length ? 'red' : risk.yellow.length ? 'yellow' : 'green';
   const messageParagraphs = createMessage(normalizedProfile, foods, labelItem, facts, totals, macroPercent, risk, stamp, options, additives);
   const sourceItems = createSourceItems(items, facts, options, additives);
@@ -311,6 +359,8 @@ export function analyzeMeal(profile, foodItems, nutritionFacts, options = {}) {
     totals,
     macroPercent,
     risk,
+    glycemic,
+    dietScore,
     additives,
     sourceItems,
     stamp,
@@ -325,8 +375,10 @@ function normalizeFoods(foodItems) {
     .filter((item) => String(item.name || '').trim())
     .map((item) => {
       const grams = Math.max(toNumber(item.grams) || 100, 1);
-      const base = findFood(item.name);
-      const multiplier = base.perServing ? 1 : grams / 100;
+      const attachedFood = createAttachedFoodBase(item);
+      const base = attachedFood || findFood(item.name);
+      const basisGrams = Math.max(toNumber(item.nutrientBasisGrams) || 100, 1);
+      const multiplier = base.perServing ? 1 : attachedFood ? grams / basisGrams : grams / 100;
       return {
         id: item.id,
         type: '음식',
@@ -337,15 +389,17 @@ function normalizeFoods(foodItems) {
         unitLabel: item.unitLabel || '',
         sizeLabel: item.sizeLabel || '',
         confidence: item.confidence || '',
+        confidenceScore: item.confidenceScore || 0,
+        recognitionSource: item.recognitionSource || '',
         visualReason: item.visualReason || '',
         emoji: base.emoji,
         matched: base.matched,
-        official: Boolean(base.official),
-        brand: base.brand || '',
-        category: base.category || '',
-        serving: base.serving || '',
-        sourceLabel: base.sourceLabel || '',
-        sourceUrl: base.sourceUrl || '',
+        official: Boolean(base.official || item.sourceLabel),
+        brand: item.brand || base.brand || '',
+        category: item.category || base.category || '',
+        serving: item.serving || base.serving || '',
+        sourceLabel: item.sourceLabel || base.sourceLabel || '',
+        sourceUrl: item.sourceUrl || base.sourceUrl || '',
         isPendingInfo: Boolean(base.isPendingInfo),
         calories: round(base.calories * multiplier),
         carb: round(base.carb * multiplier),
@@ -359,6 +413,34 @@ function normalizeFoods(foodItems) {
         leucine: round(base.leucine * multiplier),
       };
     });
+}
+
+function createAttachedFoodBase(item) {
+  const nutrients = item?.nutrients || null;
+  if (!nutrients) return null;
+  const hasValue = ['calories', 'carb', 'protein', 'fat', 'sodium', 'sugar'].some((key) => toNumber(nutrients[key]) > 0);
+  if (!hasValue) return null;
+
+  return {
+    emoji: '공공DB',
+    matched: true,
+    official: true,
+    brand: item.brand || '',
+    category: item.category || '공공 식품영양 DB',
+    serving: item.serving || '',
+    sourceLabel: item.sourceLabel || '식품영양성분 공공 DB',
+    sourceUrl: item.sourceUrl || '',
+    calories: toNumber(nutrients.calories),
+    carb: toNumber(nutrients.carb),
+    protein: toNumber(nutrients.protein),
+    fat: toNumber(nutrients.fat),
+    saturatedFat: toNumber(nutrients.saturatedFat),
+    transFat: toNumber(nutrients.transFat),
+    sodium: toNumber(nutrients.sodium),
+    sugar: toNumber(nutrients.sugar),
+    fiber: toNumber(nutrients.fiber),
+    leucine: toNumber(nutrients.leucine),
+  };
 }
 
 function findFood(name) {
@@ -554,14 +636,107 @@ function createMacroPercent(totals) {
   };
 }
 
-function evaluateRisk(profile, items, facts, totals, macroPercent, options, additives = []) {
+function evaluateGlycemicImpact(profile, items, facts, totals, macroPercent, options = {}) {
+  const text = createSafetyText(items, facts, options);
+  const factors = [];
+  const hasDiabetes = profile.medical.includes('당뇨');
+  const highGlycemicTerms = ['흰쌀밥', '공기밥', '떡볶이', '떡', '라면', '국수', '우동', '빵', '스무디', '프라페', '주스', '쥬스', '에이드', '콜라', '사이다', '스프라이트', '탄산음료', '밀크티'];
+  const moderateGlycemicTerms = ['현미밥', '잡곡밥', '고구마', '바나나', '요거트'];
+  const hasHighGlycemicFood = highGlycemicTerms.some((term) => text.includes(term.toLowerCase()));
+  const hasModerateGlycemicFood = moderateGlycemicTerms.some((term) => text.includes(term.toLowerCase()));
+  const carbLoad = round(totals.carb);
+  let score = 0;
+
+  if (totals.sugar >= 18) {
+    score += 2;
+    factors.push(`당류 ${Math.round(totals.sugar)}g`);
+  } else if (totals.sugar >= 10) {
+    score += 1;
+    factors.push(`당류 ${Math.round(totals.sugar)}g`);
+  }
+
+  if (carbLoad >= 85) {
+    score += 2;
+    factors.push(`탄수화물 ${Math.round(carbLoad)}g`);
+  } else if (carbLoad >= 55) {
+    score += 1;
+    factors.push(`탄수화물 ${Math.round(carbLoad)}g`);
+  }
+
+  if (macroPercent.carb >= 66 && totals.calories > 0) {
+    score += 1;
+    factors.push(`탄수 비율 ${macroPercent.carb}%`);
+  }
+
+  if (hasHighGlycemicFood) {
+    score += 2;
+    factors.push('빠르게 흡수되는 탄수화물 메뉴');
+  } else if (hasModerateGlycemicFood) {
+    score += 1;
+    factors.push('탄수화물 중심 메뉴');
+  }
+
+  if (totals.protein >= 20 && totals.fiber >= 4) {
+    score -= 1;
+    factors.push('단백질·식이섬유 완충');
+  }
+
+  if (hasDiabetes) score += 1;
+
+  const level = score >= 4 ? 'high' : score >= 2 ? 'medium' : 'low';
+  const label = level === 'high' ? '높음' : level === 'medium' ? '보통' : '낮음';
+  const advice =
+    level === 'high'
+      ? '밥·면·음료 양을 줄이고 단백질/채소를 먼저 먹는 순서가 유리합니다.'
+      : level === 'medium'
+        ? '탄수화물 양과 당류를 확인하고 식후 가벼운 활동을 더하면 좋습니다.'
+        : '현재 입력값 기준 혈당 부담은 크지 않습니다.';
+
+  return {
+    level,
+    label,
+    carbLoad,
+    sugar: round(totals.sugar),
+    factors: unique(factors).slice(0, 4),
+    advice,
+  };
+}
+
+function createDietScore(items, totals, macroPercent, risk, glycemic) {
+  const hasFood = items.length > 0;
+  let score = hasFood ? 92 : 70;
+  const pendingCount = items.filter((item) => item.isPendingInfo).length;
+
+  score -= risk.red.length * 18;
+  score -= risk.yellow.length * 7;
+  score -= pendingCount * 10;
+
+  if (totals.calories >= 850) score -= 8;
+  if (totals.sodium >= 1200) score -= 10;
+  else if (totals.sodium >= 900) score -= 5;
+  if (totals.sugar >= 18) score -= 8;
+  else if (totals.sugar >= 12) score -= 4;
+  if (macroPercent.protein < 10 && totals.calories > 0) score -= 5;
+  if (glycemic.level === 'high') score -= 8;
+  else if (glycemic.level === 'medium') score -= 4;
+  if (totals.protein >= 20) score += 3;
+  if (totals.fiber >= 4) score += 3;
+
+  const value = Math.max(0, Math.min(100, Math.round(score)));
+  return {
+    value,
+    label: value >= 85 ? '좋음' : value >= 70 ? '보통' : value >= 55 ? '주의' : '조심',
+  };
+}
+
+function evaluateRisk(profile, items, facts, totals, macroPercent, options, additives = [], glycemic = null) {
   const red = [];
   const yellow = [];
   const hasMedical = (term) => profile.medical.includes(term);
   const labelText = `${items.map((item) => item.name).join(' ')} ${facts.servingSize || ''} ${options.ocrText || ''}`.toLowerCase();
   const hasRiskyTerm = GUIDELINES.wadaKada.riskyTerms.some((term) => labelText.includes(term.toLowerCase()));
   const pendingItems = items.filter((item) => item.isPendingInfo);
-  const hasFood = items.some((item) => item.type === '음식');
+  const hasFood = items.some((item) => item.type === '음식' || item.type === '영양성분표');
 
   if (!hasFood && !options.skipMissingFoodRisk) {
     yellow.push('음식명 확인 필요');
@@ -591,6 +766,14 @@ function evaluateRisk(profile, items, facts, totals, macroPercent, options, addi
     red.push('혈당 관리에 부담이 될 수 있는 당류');
   } else if (totals.sugar >= 15) {
     yellow.push('당류가 높은 식사');
+  }
+
+  if (glycemic?.level === 'high' && hasMedical('당뇨')) {
+    red.push('혈당 상승 부담이 큰 탄수화물 조합');
+  } else if (glycemic?.level === 'high') {
+    yellow.push('혈당 변동 주의');
+  } else if (glycemic?.level === 'medium' && hasMedical('당뇨')) {
+    yellow.push('혈당 관리 식사 순서 확인 필요');
   }
 
   if (hasMedical('만성신장질환') && (totals.protein >= 30 || totals.sodium >= 1000)) {

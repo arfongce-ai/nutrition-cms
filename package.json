@@ -9,9 +9,14 @@
     "preview": "vite preview",
     "check": "vite build",
     "db:update": "node scripts/update-official-product-db.mjs",
-    "db:validate": "node scripts/update-official-product-db.mjs --validate-only"
+    "db:validate": "node scripts/update-official-product-db.mjs --validate-only",
+    "db:import:starbucks": "node scripts/import-official-menu-db.mjs --brand starbucks --merge",
+    "db:export:d1": "node scripts/export-official-products-d1-seed.mjs",
+    "db:import:public-foods": "node scripts/import-public-nutrition-xlsx.mjs",
+    "db:apply:d1": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/apply-public-foods-d1.ps1"
   },
   "dependencies": {
+    "exceljs": "^4.4.0",
     "firebase": "^10.12.0",
     "react": "^18.3.0",
     "react-dom": "^18.3.0",

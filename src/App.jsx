@@ -7,14 +7,18 @@ import {
   MODE_LABELS,
   parseNutritionText,
 } from './services/nutritionEngine';
-import { findOfficialBrandFood, findOfficialNutritionSources } from './services/officialNutritionSources';
-import { findOfficialProductFood, findOfficialProductSources } from './services/officialProductDatabase';
+import { OFFICIAL_BRAND_FOODS, findOfficialBrandFood, findOfficialNutritionSources } from './services/officialNutritionSources';
+import { findOfficialProductFood, findOfficialProductSources, searchOfficialProductFoods } from './services/officialProductDatabase';
 
 const PROFILE_KEY = 'nutritionCameraProfile.v2';
 const CAMERA_PERMISSION_KEY = 'nutritionCameraPermission.v1';
 const LIVE_NUTRIENT_SCAN_INTERVAL_MS = 1800;
 const FOOD_FOCUS_CROP_RATIO = 0.58;
 const LIVE_SCAN_HOLD_FRAMES = 2;
+const CAPTURE_JPEG_QUALITY = 0.94;
+const LIVE_OCR_FRAME_MAX_WIDTH = 1400;
+const MIN_TRUSTED_CAMERA_ESTIMATE_SCORE = 0.7;
+const MIN_TEXT_CAMERA_ESTIMATE_SCORE = 0.78;
 
 const nutritionFactFields = [
   { key: 'calories', label: '열량', unit: 'kcal' },
@@ -52,6 +56,7 @@ const foodCorrectionPresets = [
   { label: '빽다방 아메리카노', name: '빽다방 아메리카노', grams: '1' },
   { label: '공차 밀크티', name: '공차 블랙 밀크티', grams: '1' },
   { label: '제로 탄산음료', name: '제로 탄산음료', grams: '355' },
+  { label: '스프라이트/사이다', name: '탄산음료', grams: '355' },
   { label: '맥도날드 빅맥', name: '맥도날드 빅맥', grams: '1' },
   { label: '버거킹 와퍼', name: '버거킹 와퍼', grams: '1' },
   { label: '써브웨이 BMT', name: '써브웨이 이탈리안비엠티', grams: '1' },
@@ -78,10 +83,25 @@ const textFoodEstimates = [
   { keys: ['스무디', 'smoothie', '프라페', 'frappe'], name: '스무디', grams: '450', label: '당류가 높은 음료' },
   { keys: ['에이드', 'ade', '주스', '쥬스', 'juice'], name: '과일음료', grams: '450', label: '과일·에이드 음료' },
   { keys: ['제로', 'zero', '제로콜라', '제로사이다'], name: '제로 탄산음료', grams: '355', label: '제로 음료' },
-  { keys: ['콜라', '사이다', '탄산음료', 'coke', 'cola', 'soda'], name: '탄산음료', grams: '355', label: '탄산음료' },
+  { keys: ['콜라', '사이다', '스프라이트', 'sprite', '탄산음료', 'coke', 'cola', 'soda'], name: '탄산음료', grams: '355', label: '탄산음료' },
   { keys: ['프로틴', '웨이', 'protein', 'whey'], name: '웨이 프로틴', grams: '50', label: '단백질 제품' },
   { keys: ['나쵸', '나초', 'nacho', 'taco', '타코', '도도한나쵸'], name: '나쵸 스낵', grams: '92', label: '포장 스낵' },
   { keys: ['과자', '스낵', '칩', 'chip', 'snack'], name: '스낵 과자', grams: '80', label: '포장 스낵' },
+];
+
+const koreanFoodSearchCatalog = [
+  { name: '흰쌀밥', aliases: ['쌀밥', '공기밥', '밥'], grams: '210', category: '한식 칼로리 DB', calories: 326, carb: 71.4, protein: 5.7, fat: 0.6, sodium: 4, sugar: 0.2, glycemicTag: '높음' },
+  { name: '현미밥', aliases: ['잡곡밥'], grams: '210', category: '한식 칼로리 DB', calories: 347, carb: 73.5, protein: 7.4, fat: 2.5, sodium: 11, sugar: 1.1, glycemicTag: '보통' },
+  { name: '배추김치', aliases: ['김치', '깍두기'], grams: '50', category: '한식 칼로리 DB', calories: 16, carb: 2.5, protein: 0.9, fat: 0.2, sodium: 320, sugar: 1, glycemicTag: '낮음' },
+  { name: '된장찌개', aliases: ['김치찌개', '찌개', '국'], grams: '220', category: '한식 칼로리 DB', calories: 231, carb: 17.6, protein: 16.5, fat: 9.9, sodium: 1595, sugar: 4.4, glycemicTag: '낮음' },
+  { name: '닭가슴살', aliases: ['닭 가슴살', 'chicken breast'], grams: '120', category: '단백질 DB', calories: 198, carb: 0, protein: 37.2, fat: 4.3, sodium: 89, sugar: 0, glycemicTag: '낮음' },
+  { name: '계란', aliases: ['달걀', '삶은 계란'], grams: '60', category: '단백질 DB', calories: 86, carb: 0.4, protein: 7.6, fat: 5.7, sodium: 85, sugar: 0.2, glycemicTag: '낮음' },
+  { name: '두부', aliases: ['tofu'], grams: '120', category: '단백질 DB', calories: 101, carb: 3, protein: 11.2, fat: 5, sodium: 8, sugar: 0.7, glycemicTag: '낮음' },
+  { name: '고구마', aliases: ['sweet potato'], grams: '150', category: '탄수화물 DB', calories: 192, carb: 45, protein: 2.1, fat: 0.3, sodium: 54, sugar: 9.6, glycemicTag: '보통' },
+  { name: '바나나', aliases: ['banana'], grams: '150', category: '과일 DB', calories: 134, carb: 34.5, protein: 1.7, fat: 0.5, sodium: 2, sugar: 18, glycemicTag: '보통' },
+  { name: '샐러드', aliases: ['채소', 'salad'], grams: '160', category: '채소 DB', calories: 56, carb: 11.2, protein: 2.9, fat: 0.5, sodium: 56, sugar: 4, glycemicTag: '낮음' },
+  { name: '스무디', aliases: ['프라페', 'smoothie', 'frappe'], grams: '450', category: '음료 DB', calories: 252, carb: 54, protein: 3.2, fat: 2.7, sodium: 108, sugar: 45, glycemicTag: '높음' },
+  { name: '탄산음료', aliases: ['콜라', '사이다', '스프라이트', 'sprite', 'cola', 'soda'], grams: '355', category: '음료 DB', calories: 142, carb: 37.3, protein: 0, fat: 0, sodium: 21, sugar: 37.3, glycemicTag: '높음' },
 ];
 
 const DEFAULT_PROFILE = {
@@ -253,7 +273,7 @@ export default function App() {
     if (!canvas || !cameraReady || !video?.videoWidth || !video?.videoHeight) return '';
 
     drawZoomedVideoFrame(canvas, video, cameraZoom);
-    return canvas.toDataURL('image/jpeg', 0.85);
+    return canvas.toDataURL('image/jpeg', CAPTURE_JPEG_QUALITY);
   }
 
   function stopLiveNutrientScan() {
@@ -324,7 +344,7 @@ export default function App() {
     const video = videoRef.current;
     if (!canvas || !video?.videoWidth || !video?.videoHeight) return null;
 
-    drawZoomedVideoFrame(canvas, video, cameraZoom, 1200);
+    drawZoomedVideoFrame(canvas, video, cameraZoom, LIVE_OCR_FRAME_MAX_WIDTH);
     return canvas;
   }
 
@@ -413,6 +433,10 @@ export default function App() {
 
   async function handleSave() {
     if (!report) return;
+    if (isAnalysisUnavailable(report)) {
+      setSaveState('분석 안됨');
+      return;
+    }
     setSaveState('저장 중');
     const { saveNutritionReport, readLocalReports } = await import('./services/reportStore');
     const result = await saveNutritionReport(report);
@@ -478,6 +502,85 @@ export default function App() {
         foods: nextFoods.length ? nextFoods : [createEmptyFoodItem()],
       };
     });
+  }
+
+  function applyFoodCandidate(candidate) {
+    setCaptured((current) => {
+      if (!current) return current;
+      const nextFood = {
+        ...createEmptyFoodItem(),
+        name: candidate.name,
+        grams: candidate.grams || '100',
+        estimated: false,
+        visualReason: '',
+        nutrients: candidate.nutrients || null,
+        nutrientBasisGrams: candidate.grams || '100',
+        brand: candidate.brand || '',
+        category: candidate.category || '',
+        serving: candidate.serving || '',
+        sourceLabel: candidate.sourceLabel || '',
+        sourceUrl: candidate.sourceUrl || '',
+      };
+      const shouldReplace = !current.foods.length || (current.foods.length === 1 && current.foods[0]?.estimated);
+      return {
+        ...current,
+        foods: shouldReplace ? [nextFood] : [...current.foods, nextFood],
+      };
+    });
+  }
+
+  function applyNutritionFactsCandidate(candidate) {
+    if (!candidate?.nutrients) return;
+    setCaptured((current) => {
+      if (!current) return current;
+      return {
+        ...current,
+        ocrStatus: 'detected',
+        foods: current.foods.filter((food) => !food.estimated),
+        facts: {
+          ...current.facts,
+          foodName: candidate.name || current.facts.foodName,
+          servingSize: candidate.serving || `${candidate.grams || 100}g`,
+          calories: String(candidate.nutrients.calories ?? ''),
+          carb: String(candidate.nutrients.carb ?? ''),
+          sugar: String(candidate.nutrients.sugar ?? ''),
+          protein: String(candidate.nutrients.protein ?? ''),
+          fat: String(candidate.nutrients.fat ?? ''),
+          saturatedFat: String(candidate.nutrients.saturatedFat ?? ''),
+          transFat: String(candidate.nutrients.transFat ?? ''),
+          sodium: String(candidate.nutrients.sodium ?? ''),
+        },
+      };
+    });
+  }
+
+  async function uploadNutritionLabel(file) {
+    if (!file) return { ok: false, message: '파일을 선택하지 않았습니다.' };
+
+    const photo = await readFileAsDataUrl(file);
+    setCaptured((current) => (current ? { ...current, ocrStatus: 'checking' } : current));
+
+    const detected = await readNutritionTextFromImage(photo);
+    const parsedFacts = detected.text ? parseNutritionText(detected.text) : {};
+    const hasParsedFacts = hasReadableNutritionFacts(parsedFacts);
+
+    setCaptured((current) => {
+      if (!current) return current;
+      return {
+        ...current,
+        ocrStatus: hasParsedFacts ? 'detected' : detected.text ? 'text-detected' : detected.status,
+        ocrText: uniqueOcrLines([current.ocrText, detected.text]).join('\n'),
+        facts: {
+          ...current.facts,
+          ...parsedFacts,
+        },
+      };
+    });
+
+    return {
+      ok: hasParsedFacts,
+      message: hasParsedFacts ? '성분표 숫자를 반영했습니다.' : '글자는 읽었지만 숫자 보정이 더 필요합니다.',
+    };
   }
 
   function toggleMedical(value) {
@@ -581,6 +684,9 @@ export default function App() {
           addFood={addFood}
           removeFood={removeFood}
           updateFacts={updateFacts}
+          applyFoodCandidate={applyFoodCandidate}
+          applyNutritionFactsCandidate={applyNutritionFactsCandidate}
+          uploadNutritionLabel={uploadNutritionLabel}
           onBack={handleRetake}
           onSave={handleSave}
           onSpeak={() => speak(report.messageText)}
@@ -607,7 +713,22 @@ export default function App() {
   );
 }
 
-function ReportView({ captured, modeLabel, report, saveState, updateFood, addFood, removeFood, updateFacts, onBack, onSave, onSpeak }) {
+function ReportView({
+  captured,
+  modeLabel,
+  report,
+  saveState,
+  updateFood,
+  addFood,
+  removeFood,
+  updateFacts,
+  applyFoodCandidate,
+  applyNutritionFactsCandidate,
+  uploadNutritionLabel,
+  onBack,
+  onSave,
+  onSpeak,
+}) {
   const stampStyles = {
     green: 'border-emerald-500 text-emerald-600',
     yellow: 'border-amber-500 text-amber-600',
@@ -618,6 +739,8 @@ function ReportView({ captured, modeLabel, report, saveState, updateFood, addFoo
     yellow: '생각해요',
     red: '조심해요',
   }[report.stamp];
+  const needsRecognitionHelp = shouldShowRecognitionHelp(captured, report);
+  const analysisUnavailable = isAnalysisUnavailable(report);
 
   return (
     <section className="min-h-screen overflow-y-auto bg-slate-200 px-3 py-20 text-slate-950">
@@ -629,8 +752,13 @@ function ReportView({ captured, modeLabel, report, saveState, updateFood, addFoo
           <button type="button" onClick={onSpeak} className="h-12 rounded-full bg-white px-4 font-black shadow-lg">
             음성
           </button>
-          <button type="button" onClick={onSave} className="h-12 rounded-full bg-slate-950 px-5 font-black text-white shadow-lg">
-            {saveState || '저장'}
+          <button
+            type="button"
+            onClick={onSave}
+            disabled={analysisUnavailable}
+            className={`h-12 rounded-full px-5 font-black shadow-lg ${analysisUnavailable ? 'bg-slate-300 text-slate-500' : 'bg-slate-950 text-white'}`}
+          >
+            {analysisUnavailable ? '저장 불가' : saveState || '저장'}
           </button>
         </div>
       </div>
@@ -642,9 +770,11 @@ function ReportView({ captured, modeLabel, report, saveState, updateFood, addFoo
             <h1 className="mt-1 text-4xl font-black tracking-tight md:text-6xl">{modeLabel} A4 카드</h1>
           </div>
           <div className={`grid aspect-square w-28 rotate-[-8deg] place-items-center rounded-full border-[7px] text-center text-xl font-black leading-tight md:w-40 ${stampStyles[report.stamp]}`}>
-            {stampLabel}
+            {analysisUnavailable ? '분석 안됨' : stampLabel}
           </div>
         </header>
+
+        {needsRecognitionHelp ? <RecognitionIssueNotice /> : null}
 
         <section className="grid gap-5 md:grid-cols-[0.85fr_1.15fr]">
           <img src={captured.photo} alt="촬영된 음식" className="h-72 w-full rounded-lg border border-slate-200 object-cover md:h-full" />
@@ -652,7 +782,7 @@ function ReportView({ captured, modeLabel, report, saveState, updateFood, addFoo
             <div className="rounded-lg border-2 border-slate-950 bg-white p-5">
               <h2 className="text-2xl font-black">음식 분석</h2>
               <p className="mt-2 rounded-lg bg-emerald-50 p-3 text-sm font-bold text-emerald-800">
-                사진만 찍어도 자동 추정값으로 바로 분석합니다. 정확도를 높이고 싶을 때만 음식명과 양을 수정하세요.
+                사진만으로 음식명과 중량을 확정하지 않습니다. 음식명 검색 또는 빠른 보정으로 확인한 값만 계산에 반영합니다.
               </p>
               <FoodItemsForm foods={captured.foods} updateFood={updateFood} addFood={addFood} removeFood={removeFood} />
             </div>
@@ -662,6 +792,12 @@ function ReportView({ captured, modeLabel, report, saveState, updateFood, addFoo
               <p className="mt-2 rounded-lg bg-slate-100 p-3 text-sm font-bold text-slate-600">
                 {statusText(captured.ocrStatus)}
               </p>
+              <NutritionLookupPanel
+                captured={captured}
+                onApplyFood={applyFoodCandidate}
+                onApplyFacts={applyNutritionFactsCandidate}
+                onUploadLabel={uploadNutritionLabel}
+              />
               <NutritionFactsForm facts={captured.facts} updateFacts={updateFacts} />
             </div>
           </div>
@@ -676,6 +812,7 @@ function ReportView({ captured, modeLabel, report, saveState, updateFood, addFoo
 function CoachReportCard({ report }) {
   const traffic = createTrafficFeedback(report);
   const coachLine = createCoachLine(report);
+  const analysisUnavailable = isAnalysisUnavailable(report);
 
   return (
     <section className="rounded-lg border-2 border-slate-950 bg-white p-5">
@@ -684,18 +821,28 @@ function CoachReportCard({ report }) {
           <p className="text-xs font-black uppercase tracking-widest text-teal-700">3단계 AI 메디-스포츠 영양 분석</p>
           <h2 className="mt-1 text-3xl font-black">A4 리포트 카드</h2>
         </div>
-        <span className="rounded-full bg-slate-950 px-4 py-2 text-sm font-black text-white">{traffic.badge}</span>
+        <span className="rounded-full bg-slate-950 px-4 py-2 text-sm font-black text-white">
+          {analysisUnavailable ? '분석 안됨' : traffic.badge}
+        </span>
       </div>
 
       <div className="mt-5 grid gap-4">
         <ReportLine
           title="🍽️ 인식 음식 및 중량"
-          body={report.items.length ? report.items.map(formatReportItemLabel).join(', ') : '촬영 음식 250g 기준 자동 추정'}
+          body={analysisUnavailable ? '분석이 안됩니다' : report.items.length ? report.items.map(formatReportItemLabel).join(', ') : '촬영 음식 250g 기준 자동 추정'}
         />
         <ReportLine
           title="📊 칼로리 및 주요 영양소"
-          body={`${formatMetric(report.totals.calories, 'kcal')} / 탄수화물 ${report.macroPercent.carb}%, 단백질 ${report.macroPercent.protein}%, 지방 ${report.macroPercent.fat}%`}
+          body={
+            analysisUnavailable
+              ? '분석이 안됩니다'
+              : `${formatMetric(report.totals.calories, 'kcal')} / 탄수화물 ${report.macroPercent.carb}%, 단백질 ${report.macroPercent.protein}%, 지방 ${report.macroPercent.fat}%`
+          }
         />
+        <div className="grid gap-3 md:grid-cols-2">
+          <ReportLine title="🏅 식단 점수" body={analysisUnavailable ? '분석이 안됩니다' : `${report.dietScore?.value ?? 0}점 · ${report.dietScore?.label || '보류'}`} />
+          {analysisUnavailable ? <ReportLine title="🩸 혈당 관리" body="분석이 안됩니다" /> : <GlycemicReportCard glycemic={report.glycemic} />}
+        </div>
         {report.items.some((item) => item.isPendingInfo) ? (
           <PendingInfoNotice items={report.items.filter((item) => item.isPendingInfo)} />
         ) : null}
@@ -717,11 +864,46 @@ function CoachReportCard({ report }) {
   );
 }
 
+function RecognitionIssueNotice() {
+  return (
+    <div className="rounded-lg border-2 border-red-300 bg-red-50 p-4 text-red-950">
+      <h2 className="text-xl font-black">분석이 안됩니다</h2>
+      <p className="mt-1 text-sm font-bold leading-snug">
+        현재 사진에서는 제품명이나 영양성분표 숫자를 충분히 읽지 못했습니다. 제품 포장은 앞면 제품명 또는 뒷면 영양성분표를 화면의 절반 이상으로 크게 촬영하거나,
+        아래 검색/업로드에서 공식값을 적용하세요.
+      </p>
+    </div>
+  );
+}
+
 function ReportLine({ title, body, strong = false }) {
   return (
     <div className="rounded-lg border border-slate-200 bg-slate-50 p-4">
       <h3 className="text-lg font-black">{title}</h3>
       <p className={`mt-2 leading-relaxed ${strong ? 'text-xl font-black text-teal-800' : 'font-bold text-slate-700'}`}>{body}</p>
+    </div>
+  );
+}
+
+function GlycemicReportCard({ glycemic }) {
+  const level = glycemic?.level || 'low';
+  const styles = {
+    low: 'border-emerald-200 bg-emerald-50 text-emerald-800',
+    medium: 'border-amber-200 bg-amber-50 text-amber-800',
+    high: 'border-red-200 bg-red-50 text-red-800',
+  };
+
+  return (
+    <div className={`rounded-lg border p-4 ${styles[level]}`}>
+      <div className="flex items-start justify-between gap-3">
+        <h3 className="text-lg font-black">🩸 혈당 관리</h3>
+        <span className="rounded-full bg-white/70 px-3 py-1 text-xs font-black">{glycemic?.label || '낮음'}</span>
+      </div>
+      <p className="mt-2 text-sm font-black">
+        탄수 {formatMetric(glycemic?.carbLoad, 'g')} · 당류 {formatMetric(glycemic?.sugar, 'g')}
+      </p>
+      {glycemic?.factors?.length ? <p className="mt-1 text-xs font-bold leading-snug">{glycemic.factors.join(' · ')}</p> : null}
+      <p className="mt-2 text-sm font-bold leading-snug">{glycemic?.advice || '현재 입력값 기준 혈당 부담은 크지 않습니다.'}</p>
     </div>
   );
 }
@@ -733,6 +915,7 @@ function formatReportItemLabel(item) {
     item.quantity ? `약 ${item.quantity}${item.unitLabel || '개'}` : '',
     item.sizeLabel ? `${item.sizeLabel} 크기` : '',
     item.confidence ? `신뢰도 ${item.confidence}` : '',
+    item.confidenceScore ? `자동 ${Math.round(Number(item.confidenceScore) * 100)}%` : '',
   ].filter(Boolean);
   const portionText = portion.length ? ` (${portion.join(' · ')})` : '';
   return `${item.name}${item.grams ? ` ${item.grams}g` : ''}${portionText}`;
@@ -956,29 +1139,19 @@ function FoodItemsForm({ foods, updateFood, addFood, removeFood }) {
             </div>
           </div>
           {food.estimated ? (
-            <div className="grid gap-2 rounded-lg border border-emerald-100 bg-emerald-50 p-3">
-              <p className="text-sm font-black text-emerald-800">
-                {food.visualReason ? `사진 후보: ${food.visualReason}` : '자동 추정값으로 먼저 계산했습니다.'}
+            <div className="grid gap-2 rounded-lg border border-amber-200 bg-amber-50 p-3">
+              <p className="text-sm font-black text-amber-900">
+                {food.visualReason ? `사진 후보: ${food.visualReason}` : '사진만으로는 확정하지 않습니다.'}
               </p>
               {food.quantity || food.sizeLabel || food.confidence ? (
                 <div className="flex flex-wrap gap-2 text-xs font-black">
                   {food.quantity ? <span className="rounded-full bg-white px-3 py-1 text-emerald-800">수량 약 {food.quantity}{food.unitLabel || '개'}</span> : null}
                   {food.sizeLabel ? <span className="rounded-full bg-white px-3 py-1 text-emerald-800">크기 {food.sizeLabel}</span> : null}
                   {food.confidence ? <span className="rounded-full bg-white px-3 py-1 text-amber-700">신뢰도 {food.confidence}</span> : null}
+                  {food.confidenceScore ? <span className="rounded-full bg-white px-3 py-1 text-slate-700">자동 신뢰 {Math.round(Number(food.confidenceScore) * 100)}%</span> : null}
                 </div>
               ) : null}
-              <div className="grid grid-cols-2 gap-2">
-                {foodCorrectionPresets.map((preset) => (
-                  <button
-                    key={preset.label}
-                    type="button"
-                    onClick={() => updateFood(food.id, { name: preset.name, grams: preset.grams, estimated: false, visualReason: '' })}
-                    className="min-h-10 rounded-lg border border-emerald-200 bg-white px-2 text-xs font-black text-slate-800"
-                  >
-                    {preset.label}
-                  </button>
-                ))}
-              </div>
+              <QuickFoodPresetSelect foodId={food.id} onApply={updateFood} />
             </div>
           ) : null}
           <label className="grid gap-1 text-sm font-black">
@@ -1003,6 +1176,7 @@ function FoodItemsForm({ foods, updateFood, addFood, removeFood }) {
               <span className="grid w-14 place-items-center bg-slate-100 text-xs text-slate-500">g</span>
             </div>
           </label>
+          {!food.estimated ? <QuickFoodPresetSelect foodId={food.id} onApply={updateFood} compact /> : null}
         </div>
       ))}
 
@@ -1014,6 +1188,33 @@ function FoodItemsForm({ foods, updateFood, addFood, removeFood }) {
         음식 추가
       </button>
     </div>
+  );
+}
+
+function QuickFoodPresetSelect({ foodId, onApply, compact = false }) {
+  function handleChange(event) {
+    const preset = foodCorrectionPresets[Number(event.target.value)];
+    if (!preset) return;
+    onApply(foodId, { name: preset.name, grams: preset.grams, estimated: false, visualReason: '', confidence: '', quantity: '', sizeLabel: '' });
+    event.target.value = '';
+  }
+
+  return (
+    <label className={`grid gap-1 text-sm font-black ${compact ? 'mt-1' : ''}`}>
+      빠른 보정
+      <select
+        defaultValue=""
+        onChange={handleChange}
+        className="h-11 rounded-lg border border-slate-200 bg-white px-3 text-sm font-black text-slate-700"
+      >
+        <option value="">음식/제품 후보 선택</option>
+        {foodCorrectionPresets.map((preset, index) => (
+          <option key={`${preset.label}-${preset.name}`} value={index}>
+            {preset.label}
+          </option>
+        ))}
+      </select>
+    </label>
   );
 }
 
@@ -1053,6 +1254,419 @@ function NutritionFactsForm({ facts, updateFacts }) {
       </div>
     </div>
   );
+}
+
+function NutritionLookupPanel({ captured, onApplyFood, onApplyFacts, onUploadLabel }) {
+  const initialQuery = captured.facts.foodName || captured.foods[0]?.name || '';
+  const [query, setQuery] = useState(initialQuery);
+  const [uploadStatus, setUploadStatus] = useState('');
+  const [remoteStatus, setRemoteStatus] = useState('');
+  const [remoteSearch, setRemoteSearch] = useState({ query: '', candidates: [] });
+  const localCandidates = useMemo(() => createNutritionSearchCandidates(query), [query]);
+  const remoteCandidates = remoteSearch.query === query.trim() ? remoteSearch.candidates : [];
+  const candidates = useMemo(() => uniqueCandidates([...localCandidates, ...remoteCandidates]).slice(0, 10), [localCandidates, remoteCandidates]);
+  const sourceLinks = useMemo(() => createOfficialSearchLinks(query, candidates), [query, candidates]);
+
+  async function handleUpload(event) {
+    const file = event.target.files?.[0];
+    if (!file) return;
+
+    setUploadStatus('성분표 읽는 중');
+    const result = await onUploadLabel(file);
+    setUploadStatus(result.message);
+    event.target.value = '';
+  }
+
+  async function handleRemoteSearch() {
+    const searchTerm = query.trim();
+    if (!searchTerm) {
+      setRemoteStatus('검색어를 입력하세요');
+      return;
+    }
+
+    setRemoteStatus('공식 DB 검색 중');
+    try {
+      const response = await fetch(`/api/nutrition-search?q=${encodeURIComponent(searchTerm)}&limit=8`);
+      const payload = await response.json().catch(() => ({}));
+      if (!response.ok || !payload.ok) {
+        setRemoteSearch({ query: searchTerm, candidates: [] });
+        setRemoteStatus(payload.message || '서버 검색을 사용할 수 없습니다');
+        return;
+      }
+
+      const nextCandidates = (payload.candidates || []).map(normalizeRemoteCandidate).filter(Boolean);
+      setRemoteSearch({ query: searchTerm, candidates: nextCandidates });
+      setRemoteStatus(nextCandidates.length ? `공식 후보 ${nextCandidates.length}개` : '공식 후보 없음');
+    } catch {
+      setRemoteSearch({ query: searchTerm, candidates: [] });
+      setRemoteStatus('서버 검색을 사용할 수 없습니다');
+    }
+  }
+
+  return (
+    <div className="mt-4 grid gap-3 rounded-lg border border-slate-200 bg-slate-50 p-3">
+      <div className="grid gap-2">
+        <label className="grid gap-1 text-sm font-black">
+          제품·외식 메뉴 검색
+          <input
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+            className="h-11 rounded-lg border border-slate-200 bg-white px-3 text-base"
+            placeholder="예: 스타벅스 라떼, 빅맥, 현미밥"
+          />
+        </label>
+        <div className="flex flex-wrap gap-2">
+          <button
+            type="button"
+            onClick={handleRemoteSearch}
+            className="h-10 rounded-lg bg-teal-700 px-4 text-sm font-black text-white"
+          >
+            웹에서 찾기
+          </button>
+          <label className="grid h-10 cursor-pointer place-items-center rounded-lg bg-slate-950 px-4 text-sm font-black text-white">
+            성분표 업로드
+            <input type="file" accept="image/*" className="hidden" onChange={handleUpload} />
+          </label>
+          {remoteStatus ? (
+            <span className="grid min-h-10 place-items-center rounded-lg bg-white px-3 text-xs font-black text-slate-600">{remoteStatus}</span>
+          ) : null}
+          {uploadStatus ? (
+            <span className="grid min-h-10 place-items-center rounded-lg bg-white px-3 text-xs font-black text-slate-600">{uploadStatus}</span>
+          ) : null}
+        </div>
+      </div>
+
+      <div className="grid gap-2">
+        {candidates.length ? (
+          candidates.map((candidate) => (
+            <div key={candidate.id} className="rounded-lg border border-slate-200 bg-white p-3">
+              <div className="flex items-start justify-between gap-3">
+                <div>
+                  <p className="text-sm font-black text-slate-950">{candidate.name}</p>
+                  <p className="mt-0.5 text-xs font-bold text-slate-500">
+                    {candidate.category}
+                    {candidate.serving ? ` · ${candidate.serving}` : candidate.grams ? ` · ${candidate.grams}g` : ''}
+                  </p>
+                  {candidate.meta?.standardDate || candidate.meta?.sourceFile ? (
+                    <p className="mt-1 text-[11px] font-black text-teal-700">
+                      {candidate.meta?.standardDate ? `DB 기준일 ${candidate.meta.standardDate}` : '공공 DB'}
+                      {candidate.meta?.sourceFile ? ` · ${candidate.meta.sourceFile}` : ''}
+                    </p>
+                  ) : null}
+                </div>
+                {candidate.glycemicTag ? (
+                  <span className="shrink-0 rounded-full bg-amber-100 px-2 py-1 text-[11px] font-black text-amber-800">혈당 {candidate.glycemicTag}</span>
+                ) : null}
+              </div>
+
+              {candidate.nutrients ? (
+                <div className="mt-2 grid grid-cols-4 gap-1 text-center text-[11px] font-black text-slate-600">
+                  <CandidateMetric label="kcal" value={candidate.nutrients.calories} />
+                  <CandidateMetric label="탄수" value={candidate.nutrients.carb} />
+                  <CandidateMetric label="단백" value={candidate.nutrients.protein} />
+                  <CandidateMetric label="지방" value={candidate.nutrients.fat} />
+                </div>
+              ) : null}
+
+              <div className="mt-3 flex flex-wrap gap-2">
+                <button
+                  type="button"
+                  onClick={() => onApplyFood(candidate)}
+                  className="h-9 rounded-lg bg-emerald-600 px-3 text-xs font-black text-white"
+                >
+                  음식 기록 적용
+                </button>
+                {candidate.nutrients ? (
+                  <button
+                    type="button"
+                    onClick={() => onApplyFacts(candidate)}
+                    className="h-9 rounded-lg border border-slate-300 bg-white px-3 text-xs font-black text-slate-700"
+                  >
+                    성분표 적용
+                  </button>
+                ) : null}
+                {candidate.sourceUrl ? (
+                  <a
+                    href={candidate.sourceUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="grid h-9 place-items-center rounded-lg border border-teal-200 bg-teal-50 px-3 text-xs font-black text-teal-800"
+                  >
+                    공식 페이지
+                  </a>
+                ) : null}
+              </div>
+            </div>
+          ))
+        ) : (
+          <p className="rounded-lg bg-white p-3 text-sm font-black text-slate-500">일치 결과 없음</p>
+        )}
+      </div>
+
+      {sourceLinks.length ? (
+        <div className="flex flex-wrap gap-2">
+          {sourceLinks.map((link) => (
+            <a
+              key={`${link.label}-${link.url}`}
+              href={link.url}
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-full border border-teal-200 bg-white px-3 py-2 text-xs font-black text-teal-800"
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
+function CandidateMetric({ label, value }) {
+  return (
+    <span className="rounded-md bg-slate-100 px-1.5 py-1">
+      {label} {formatCompactNumber(value)}
+    </span>
+  );
+}
+
+function createNutritionSearchCandidates(query) {
+  const normalized = normalizeLookupText(query);
+  const productMatches = searchOfficialProductFoods(query, 5).map((entry) => toOfficialCandidate(entry, 'official-product'));
+  const brandMatches = searchOfficialBrandFoodCandidates(query, 5).map((entry) => toOfficialCandidate(entry, 'official-menu'));
+  const localMatches = searchLocalFoodCandidates(query, 8);
+  const presetMatches = searchPresetFoodCandidates(query, 6);
+
+  const candidates = normalized
+    ? [...productMatches, ...brandMatches, ...localMatches, ...presetMatches]
+    : koreanFoodSearchCatalog.slice(0, 6).map(toLocalFoodCandidate);
+
+  return uniqueCandidates(candidates).slice(0, 8);
+}
+
+function searchOfficialBrandFoodCandidates(query, limit = 5) {
+  const normalized = normalizeLookupText(query);
+  if (!normalized) return [];
+
+  return OFFICIAL_BRAND_FOODS.map((entry) => ({
+    entry,
+    score: scoreOfficialBrandFood(entry, normalized),
+  }))
+    .filter((item) => item.score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, limit)
+    .map((item) => item.entry);
+}
+
+function scoreOfficialBrandFood(entry, normalized) {
+  const brand = normalizeLookupText(entry.brand);
+  const terms = [entry.brand, ...(entry.keys || [])].map(normalizeLookupText).filter(Boolean);
+  let score = 0;
+
+  if (brand && normalized.includes(brand)) score += 8;
+  terms.forEach((term) => {
+    if (normalized.includes(term)) score += term.length >= 4 ? 8 : 4;
+    if (term.includes(normalized)) score += normalized.length >= 3 ? 6 : 2;
+  });
+
+  return score;
+}
+
+function searchLocalFoodCandidates(query, limit = 8) {
+  const normalized = normalizeLookupText(query);
+  if (!normalized) return [];
+
+  return koreanFoodSearchCatalog
+    .map((item) => ({
+      item,
+      score: scoreSearchTerms([item.name, ...(item.aliases || []), item.category], normalized),
+    }))
+    .filter((item) => item.score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, limit)
+    .map((item) => toLocalFoodCandidate(item.item));
+}
+
+function searchPresetFoodCandidates(query, limit = 6) {
+  const normalized = normalizeLookupText(query);
+  if (!normalized) return [];
+
+  const presetCandidates = foodCorrectionPresets.map((preset) => ({
+    id: `preset-${preset.label}`,
+    name: preset.name,
+    grams: preset.grams,
+    category: '빠른 기록 후보',
+    sourceLabel: preset.label,
+  }));
+  const textCandidates = textFoodEstimates.map((item) => ({
+    id: `estimate-${item.name}`,
+    name: item.name,
+    grams: item.grams,
+    category: `${item.label} DB 후보`,
+    sourceLabel: item.label,
+  }));
+
+  return [...presetCandidates, ...textCandidates]
+    .map((candidate) => ({
+      candidate,
+      score: scoreSearchTerms([candidate.name, candidate.category, candidate.sourceLabel], normalized),
+    }))
+    .filter((item) => item.score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, limit)
+    .map((item) => item.candidate);
+}
+
+function toOfficialCandidate(entry, kind) {
+  const name = createOfficialCandidateName(entry);
+  return {
+    id: `${kind}-${name}-${entry.sourceUrl || ''}`,
+    kind,
+    name,
+    grams: '1',
+    serving: entry.serving || '',
+    brand: entry.brand || '',
+    category: entry.category || (kind === 'official-product' ? '공식 제품 DB' : '외식 공식 메뉴'),
+    sourceLabel: entry.sourceLabel || '공식 영양정보',
+    sourceUrl: entry.sourceUrl || '',
+    nutrients: extractCandidateNutrients(entry),
+  };
+}
+
+function toLocalFoodCandidate(item) {
+  return {
+    id: `local-${item.name}`,
+    kind: 'korean-food-db',
+    name: item.name,
+    grams: item.grams,
+    category: item.category,
+    sourceLabel: '한식 칼로리 DB',
+    glycemicTag: item.glycemicTag,
+    nutrients: extractCandidateNutrients(item),
+  };
+}
+
+function normalizeRemoteCandidate(candidate) {
+  if (!candidate?.name) return null;
+  return {
+    id: candidate.id || `server-${candidate.name}-${candidate.sourceUrl || ''}`,
+    kind: candidate.kind || 'server-official-db',
+    name: candidate.name,
+    grams: candidate.grams || '1',
+    serving: candidate.serving || '',
+    brand: candidate.brand || '',
+    category: candidate.category || '공식 메뉴 DB',
+    sourceLabel: candidate.sourceLabel || '공식 영양정보',
+    sourceUrl: candidate.sourceUrl || '',
+    nutrients: extractCandidateNutrients(candidate.nutrients || {}),
+    meta: candidate.meta || null,
+  };
+}
+
+function createOfficialCandidateName(entry) {
+  const primary = entry.keys?.[0] || entry.name || '공식 메뉴';
+  const brand = entry.brand || '';
+  const normalizedPrimary = normalizeLookupText(primary);
+  const normalizedBrand = normalizeLookupText(brand);
+  if (brand && normalizedBrand && !normalizedPrimary.includes(normalizedBrand)) return `${brand} ${primary}`;
+  return primary;
+}
+
+function extractCandidateNutrients(source) {
+  return {
+    calories: numberOrEmpty(source.calories),
+    carb: numberOrEmpty(source.carb),
+    sugar: numberOrEmpty(source.sugar),
+    protein: numberOrEmpty(source.protein),
+    fat: numberOrEmpty(source.fat),
+    saturatedFat: numberOrEmpty(source.saturatedFat),
+    transFat: numberOrEmpty(source.transFat),
+    sodium: numberOrEmpty(source.sodium),
+    fiber: numberOrEmpty(source.fiber),
+    leucine: numberOrEmpty(source.leucine),
+    caffeine: numberOrEmpty(source.caffeine),
+  };
+}
+
+function createOfficialSearchLinks(query, candidates = []) {
+  const searchTerm = String(query || candidates[0]?.name || '').trim();
+  const sourceLinks = [
+    ...findOfficialProductSources(searchTerm),
+    ...findOfficialNutritionSources(searchTerm),
+    ...candidates
+      .filter((candidate) => candidate.sourceUrl)
+      .map((candidate) => ({
+        brand: candidate.brand || candidate.name,
+        category: candidate.category,
+        url: candidate.sourceUrl,
+      })),
+  ].map((source) => ({
+    label: source.brand ? `${source.brand} 공식` : '공식 페이지',
+    url: source.url,
+  }));
+
+  const searchLinks = searchTerm
+    ? [
+        { label: '네이버 성분표', url: createSearchUrl('naver', `${searchTerm} 영양성분표`) },
+        { label: '구글 칼로리', url: createSearchUrl('google', `${searchTerm} calories nutrition`) },
+      ]
+    : [];
+
+  return uniqueLinks([...sourceLinks, ...searchLinks]).slice(0, 5);
+}
+
+function scoreSearchTerms(terms, normalized) {
+  return terms
+    .map(normalizeLookupText)
+    .filter(Boolean)
+    .reduce((score, term) => {
+      if (normalized.includes(term)) return score + (term.length >= 4 ? 8 : 4);
+      if (term.includes(normalized)) return score + (normalized.length >= 3 ? 6 : 2);
+      return score;
+    }, 0);
+}
+
+function uniqueCandidates(candidates) {
+  const seen = new Set();
+  return candidates.filter((candidate) => {
+    const key = `${normalizeLookupText(candidate.name)}-${candidate.kind || ''}`;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
+function uniqueLinks(links) {
+  const seen = new Set();
+  return links.filter((link) => {
+    if (!link.url || seen.has(link.url)) return false;
+    seen.add(link.url);
+    return true;
+  });
+}
+
+function createSearchUrl(provider, query) {
+  const encoded = encodeURIComponent(query);
+  if (provider === 'naver') return `https://search.naver.com/search.naver?query=${encoded}`;
+  return `https://www.google.com/search?q=${encoded}`;
+}
+
+function normalizeLookupText(value) {
+  return String(value || '')
+    .toLowerCase()
+    .normalize('NFKC')
+    .replace(/[^0-9a-z가-힣]/g, '');
+}
+
+function numberOrEmpty(value) {
+  const parsed = Number(value);
+  return Number.isFinite(parsed) ? parsed : '';
+}
+
+function formatCompactNumber(value) {
+  const parsed = Number(value);
+  if (!Number.isFinite(parsed) || parsed === 0) return '0';
+  return Number.isInteger(parsed) ? String(parsed) : String(Math.round(parsed * 10) / 10);
 }
 
 function NumberFact({ label, unit, value, onChange }) {
@@ -1283,16 +1897,18 @@ function Metric({ label, value }) {
 function createTrafficFeedback(report) {
   const green = [];
   const hasFood = report.foods.length > 0;
+  const hasTrustedItem = !isAnalysisUnavailable(report);
 
-  if (hasFood) green.push('촬영 음식과 추정 중량을 기준으로 총열량과 탄·단·지 비율을 계산했습니다.');
-  if (report.totals.protein > 15) green.push('단백질 섭취가 포함되어 근육 유지와 회복에 도움이 됩니다.');
-  if (report.totals.sodium < 900) green.push('현재 추정 나트륨은 한 끼 기준에서 과도하지 않습니다.');
+  if (!hasTrustedItem) green.push('분석이 안됩니다.');
+  if (hasFood && hasTrustedItem) green.push('촬영 음식과 추정 중량을 기준으로 총열량과 탄·단·지 비율을 계산했습니다.');
+  if (hasTrustedItem && report.totals.protein > 15) green.push('단백질 섭취가 포함되어 근육 유지와 회복에 도움이 됩니다.');
+  if (hasTrustedItem && report.totals.sodium < 900) green.push('현재 추정 나트륨은 한 끼 기준에서 과도하지 않습니다.');
   if (!green.length) green.push('촬영값을 기준으로 식단 평가를 시작할 수 있습니다.');
 
   return {
     badge: report.stamp === 'red' ? '빨강 경고' : report.stamp === 'yellow' ? '노랑 주의' : '초록 적절',
     green: green.slice(0, 2).join(' '),
-    yellow: report.risk.yellow.length ? report.risk.yellow.join(', ') : '현재 큰 주의 항목은 없습니다. 후보 음식이 다르면 버튼으로 보정하세요.',
+    yellow: report.risk.yellow.length ? report.risk.yellow.join(', ') : hasTrustedItem ? '현재 큰 주의 항목은 없습니다. 후보 음식이 다르면 버튼으로 보정하세요.' : '제품명 또는 성분표 확인이 필요합니다.',
     red: report.risk.red.length ? report.risk.red.join(', ') : '기저질환 관련 즉시 제한 경고는 감지되지 않았습니다.',
   };
 }
@@ -1300,6 +1916,14 @@ function createTrafficFeedback(report) {
 function createCoachLine(report) {
   const medical = report.profile.medical || [];
   const has = (keyword) => medical.some((item) => String(item).includes(keyword));
+
+  if (isAnalysisUnavailable(report)) {
+    return '분석이 안됩니다. 제품명을 검색하거나 성분표 사진을 업로드하면 칼로리와 탄단지가 다시 계산됩니다.';
+  }
+
+  if (report.items.some((item) => item.isPendingInfo)) {
+    return '신뢰 가능한 영양값을 찾지 못한 항목이 있습니다. 제품명 검색, 공식 페이지 확인, 성분표 업로드 중 하나로 먼저 보정하세요.';
+  }
 
   if (report.risk.red.length) {
     return `${report.risk.red[0]} 항목을 먼저 줄이고, 섭취 전 음식명과 양을 한 번 더 확인하세요.`;
@@ -1330,6 +1954,25 @@ function createCoachLine(report) {
   }
 
   return '현재 식사는 자동 추정 기준으로 무난합니다. 다음 식사에는 채소와 단백질을 함께 유지하세요.';
+}
+
+function shouldShowRecognitionHelp(captured, report) {
+  const hasFacts = hasReadableNutritionFacts(captured?.facts);
+  const hasFoodName = (captured?.foods || []).some((food) => String(food.name || '').trim());
+  const hasTrustedItem = !isAnalysisUnavailable(report);
+  return !hasTrustedItem && (!hasFacts || !hasFoodName);
+}
+
+function isAnalysisUnavailable(report) {
+  return !report.items.some(hasTrustedReportItem);
+}
+
+function hasTrustedReportItem(item) {
+  if (!item || item.isPendingInfo) return false;
+  const values = ['calories', 'carb', 'protein', 'fat', 'sugar', 'sodium'].map((key) => Number(item[key] || 0));
+  const positiveCount = values.filter((value) => Number.isFinite(value) && value > 0).length;
+  if (item.official || item.matched) return positiveCount > 0;
+  return positiveCount >= 2;
 }
 
 function SettingBlock({ title, children }) {
@@ -1460,12 +2103,13 @@ async function readNutritionTextFromCanvas(canvas, detectorRef) {
 async function readTextWithTesseract(photo, candidates = []) {
   try {
     const { default: Tesseract } = await import('tesseract.js');
-    const ocrTargets = candidates.length ? [candidates[0], candidates[1], candidates[2]].filter(Boolean) : [photo];
+    const ocrTargets = candidates.length ? candidates.slice(0, 6).filter(Boolean) : [photo];
     const lines = [];
 
     for (const target of ocrTargets) {
       const result = await Tesseract.recognize(target, 'kor+eng', {
         logger: () => {},
+        preserve_interword_spaces: '1',
       });
       if (result?.data?.text) lines.push(result.data.text);
       if (hasReadableNutritionFacts(parseNutritionText(lines.join('\n')))) break;
@@ -1523,6 +2167,14 @@ function createOcrCandidateCanvases(source, sourceWidth, sourceHeight) {
   candidates.push(centerCrop);
   candidates.push(createContrastCanvas(centerCrop, { grayscale: true, contrast: 1.45, brightness: 10 }));
   candidates.push(createContrastCanvas(centerCrop, { grayscale: true, contrast: 1.85, brightness: 24, threshold: 146 }));
+
+  const verticalLabelWidth = Math.floor(safeWidth * 0.62);
+  const verticalLabelHeight = Math.floor(safeHeight * 0.86);
+  const verticalLabelX = Math.floor((safeWidth - verticalLabelWidth) / 2);
+  const verticalLabelY = Math.floor((safeHeight - verticalLabelHeight) / 2);
+  const verticalLabel = drawCroppedCanvas(source, verticalLabelX, verticalLabelY, verticalLabelWidth, verticalLabelHeight, 1200, 1800);
+  candidates.push(verticalLabel);
+  candidates.push(createContrastCanvas(verticalLabel, { grayscale: true, contrast: 1.55, brightness: 16 }));
 
   const labelWidth = Math.floor(safeWidth * 0.9);
   const labelHeight = Math.floor(safeHeight * 0.45);
@@ -1615,13 +2267,23 @@ function estimateFoodFromDrawable(source, sourceWidth, sourceHeight, text = '') 
   const visualEstimate = createBestVisualFoodEstimate(source, sourceWidth, sourceHeight, text);
 
   if (textEstimate && visualEstimate && textEstimate.name !== visualEstimate.name) {
-    return {
+    return keepTrustedCameraEstimate({
       ...textEstimate,
       visualReason: `${textEstimate.visualReason} / 화면 형태 후보: ${visualEstimate.name}`,
-    };
+      confidenceScore: Math.max(Number(textEstimate.confidenceScore || 0) - 0.04, MIN_TEXT_CAMERA_ESTIMATE_SCORE),
+    });
   }
 
-  return textEstimate || visualEstimate;
+  return keepTrustedCameraEstimate(textEstimate || visualEstimate);
+}
+
+function keepTrustedCameraEstimate(estimate) {
+  if (!estimate) return null;
+  const score = Number(estimate.confidenceScore || 0);
+  const source = estimate.recognitionSource || '';
+  const minimum = source.includes('text') || source.includes('official') ? MIN_TEXT_CAMERA_ESTIMATE_SCORE : MIN_TRUSTED_CAMERA_ESTIMATE_SCORE;
+  if (score >= minimum) return estimate;
+  return null;
 }
 
 function createBestVisualFoodEstimate(source, sourceWidth, sourceHeight, text = '') {
@@ -1872,6 +2534,7 @@ function createFoodEstimateFromText(text) {
       officialName,
       '1',
       `${officialFood.brand} 공식 제품명/브랜드 글자를 인식했어요`,
+      { recognitionSource: 'official-text', confidenceScore: 0.94 },
     );
   }
 
@@ -1886,7 +2549,10 @@ function createFoodEstimateFromText(text) {
     ? `${sourceBrand} ${hint.name}`
     : hint.name;
 
-  return createVisualEstimatedFood(sourceAwareName, hint.grams, `글자에서 ${sourceBrand ? `${sourceBrand} ` : ''}${hint.label} 단서를 인식했어요`);
+  return createVisualEstimatedFood(sourceAwareName, hint.grams, `글자에서 ${sourceBrand ? `${sourceBrand} ` : ''}${hint.label} 단서를 인식했어요`, {
+    recognitionSource: sourceBrand ? 'official-text' : 'ocr-text',
+    confidenceScore: sourceBrand ? 0.88 : 0.82,
+  });
 }
 
 function createTextPortionEstimate(hint, text = '') {
@@ -1908,7 +2574,7 @@ function createTextPortionEstimate(hint, text = '') {
     hint.name,
     String(quantity * portion.unitGram),
     `글자에서 ${hint.label}와 수량 ${quantity}${portion.unitLabel} 단서를 인식했어요`,
-    { quantity, unitLabel: portion.unitLabel, sizeLabel: '보통', confidence: '높음' },
+    { quantity, unitLabel: portion.unitLabel, sizeLabel: '보통', confidence: '높음', recognitionSource: 'ocr-text', confidenceScore: 0.9 },
   );
 }
 
@@ -1936,27 +2602,43 @@ function escapeRegExp(value) {
 
 function createFoodEstimateFromColor(stats, text = '') {
   if (stats.total < 450) return null;
-  const hasTextSignal = Boolean(String(text || '').trim());
+  const hasKnownFoodText = hasKnownFoodTextSignal(text);
   const beverageEstimate = createBeverageEstimateFromShape(stats, text);
   if (beverageEstimate) return beverageEstimate;
+  if (!hasKnownFoodText) return null;
 
   const simplePortion = createSimplePortionEstimate(stats, text);
   if (simplePortion) return simplePortion;
 
   if (isPackagedSnackShape(stats, text)) {
-    return createVisualEstimatedFood('스낵 과자', '80', '포장 스낵처럼 보이는 색상·로고·봉지 형태 후보가 보여요');
+    return createVisualEstimatedFood('스낵 과자', '80', '포장 스낵처럼 보이는 색상·로고·봉지 형태 후보가 보여요', {
+      recognitionSource: 'visual-shape',
+      confidenceScore: 0.72,
+    });
   }
-  if (isCompactFoodShape(stats, 'green', hasTextSignal) && stats.green > 0.24) {
-    return createVisualEstimatedFood('샐러드', '180', '초록색 채소와 둥근 음식 형태가 함께 보여요');
+  if (isCompactFoodShape(stats, 'green', hasKnownFoodText) && stats.green > 0.24) {
+    return createVisualEstimatedFood('샐러드', '180', '초록색 채소와 둥근 음식 형태가 함께 보여요', {
+      recognitionSource: 'visual-shape',
+      confidenceScore: 0.74,
+    });
   }
-  if (isCompactFoodShape(stats, 'yellow', hasTextSignal) && stats.yellow > 0.25) {
-    return createVisualEstimatedFood('바나나', '150', '노란색 음식 형태가 화면 일부에 모여 보여요');
+  if (isCompactFoodShape(stats, 'yellow', hasKnownFoodText) && stats.yellow > 0.25) {
+    return createVisualEstimatedFood('바나나', '150', '노란색 음식 형태가 화면 일부에 모여 보여요', {
+      recognitionSource: 'visual-shape',
+      confidenceScore: 0.73,
+    });
   }
-  if (isCompactFoodShape(stats, 'white', hasTextSignal) && stats.white > 0.34) {
-    return createVisualEstimatedFood('흰쌀밥', '150', '밝은 흰색 음식 형태가 화면 일부에 모여 보여요');
+  if (isCompactFoodShape(stats, 'white', hasKnownFoodText) && stats.white > 0.34) {
+    return createVisualEstimatedFood('흰쌀밥', '150', '밝은 흰색 음식 형태가 화면 일부에 모여 보여요', {
+      recognitionSource: 'visual-shape',
+      confidenceScore: 0.71,
+    });
   }
-  if (isCompactFoodShape(stats, 'brown', hasTextSignal) && stats.brown > 0.28) {
-    return createVisualEstimatedFood('닭가슴살', '140', '갈색 단백질 반찬 형태가 화면 일부에 모여 보여요');
+  if (isCompactFoodShape(stats, 'brown', hasKnownFoodText) && stats.brown > 0.28) {
+    return createVisualEstimatedFood('닭가슴살', '140', '갈색 단백질 반찬 형태가 화면 일부에 모여 보여요', {
+      recognitionSource: 'visual-shape',
+      confidenceScore: 0.71,
+    });
   }
   return null;
 }
@@ -1982,7 +2664,7 @@ function createBeverageEstimateFromShape(stats, text = '') {
       '제로 탄산음료',
       '355',
       '제품명 글자에서 제로 음료 단서를 인식했어요',
-      { unitLabel: '잔', sizeLabel: '보통', confidence: '보통' },
+      { unitLabel: '잔', sizeLabel: '보통', confidence: '보통', recognitionSource: 'ocr-text', confidenceScore: 0.88 },
     );
   }
 
@@ -1991,7 +2673,7 @@ function createBeverageEstimateFromShape(stats, text = '') {
       '밀크티',
       '473',
       '브랜드/제품명 글자와 컵 안의 밝은 음료 색을 함께 인식했어요',
-      { unitLabel: '잔', sizeLabel: '보통', confidence: drinkText ? '높음' : '보통' },
+      { unitLabel: '잔', sizeLabel: '보통', confidence: drinkText ? '높음' : '보통', recognitionSource: drinkText ? 'ocr-text' : 'visual-drink', confidenceScore: drinkText ? 0.86 : 0.58 },
     );
   }
 
@@ -2000,7 +2682,7 @@ function createBeverageEstimateFromShape(stats, text = '') {
       '카페라떼',
       '355',
       '컵과 내용물을 분리해 우유가 들어간 커피 후보로 봤어요',
-      { unitLabel: '잔', sizeLabel: '보통', confidence: drinkText ? '높음' : '보통' },
+      { unitLabel: '잔', sizeLabel: '보통', confidence: drinkText ? '높음' : '보통', recognitionSource: drinkText ? 'ocr-text' : 'visual-drink', confidenceScore: drinkText ? 0.86 : 0.58 },
     );
   }
 
@@ -2009,7 +2691,7 @@ function createBeverageEstimateFromShape(stats, text = '') {
       '스무디',
       '450',
       '제품명 글자와 컵 안 색을 함께 보고 당류가 높은 음료 후보로 봤어요',
-      { unitLabel: '잔', sizeLabel: '보통', confidence: drinkText ? '높음' : '보통' },
+      { unitLabel: '잔', sizeLabel: '보통', confidence: drinkText ? '높음' : '보통', recognitionSource: drinkText ? 'ocr-text' : 'visual-drink', confidenceScore: drinkText ? 0.86 : 0.58 },
     );
   }
 
@@ -2018,16 +2700,16 @@ function createBeverageEstimateFromShape(stats, text = '') {
       '과일음료',
       '450',
       '제품명 글자와 컵 안 색을 함께 보고 과일·에이드 음료 후보로 봤어요',
-      { unitLabel: '잔', sizeLabel: '보통', confidence: drinkText ? '높음' : '보통' },
+      { unitLabel: '잔', sizeLabel: '보통', confidence: drinkText ? '높음' : '보통', recognitionSource: drinkText ? 'ocr-text' : 'visual-drink', confidenceScore: drinkText ? 0.86 : 0.58 },
     );
   }
 
-  if (normalized.includes('콜라') || normalized.includes('사이다') || normalized.includes('cola') || normalized.includes('coke') || normalized.includes('soda')) {
+  if (normalized.includes('콜라') || normalized.includes('사이다') || normalized.includes('스프라이트') || normalized.includes('sprite') || normalized.includes('cola') || normalized.includes('coke') || normalized.includes('soda')) {
     return createPortionEstimatedFood(
       '탄산음료',
       '355',
       '제품명 글자에서 탄산음료 단서를 인식했어요',
-      { unitLabel: '잔', sizeLabel: '보통', confidence: drinkText ? '높음' : '보통' },
+      { unitLabel: '잔', sizeLabel: '보통', confidence: drinkText ? '높음' : '보통', recognitionSource: drinkText ? 'ocr-text' : 'visual-drink', confidenceScore: drinkText ? 0.9 : 0.58 },
     );
   }
 
@@ -2036,7 +2718,7 @@ function createBeverageEstimateFromShape(stats, text = '') {
       '아메리카노',
       '355',
       '컵은 제외하고 어두운 커피색 내용물만 음료 후보로 분리했어요',
-      { unitLabel: '잔', sizeLabel: '보통', confidence: drinkText ? '높음' : '보통' },
+      { unitLabel: '잔', sizeLabel: '보통', confidence: drinkText ? '높음' : '보통', recognitionSource: drinkText ? 'ocr-text' : 'visual-drink', confidenceScore: drinkText ? 0.82 : 0.58 },
     );
   }
 
@@ -2045,7 +2727,7 @@ function createBeverageEstimateFromShape(stats, text = '') {
       '카페라떼',
       '355',
       '컵은 제외하고 밝은 우유색 내용물만 음료 후보로 분리했어요',
-      { unitLabel: '잔', sizeLabel: '보통', confidence: drinkText ? '보통' : '낮음' },
+      { unitLabel: '잔', sizeLabel: '보통', confidence: drinkText ? '보통' : '낮음', recognitionSource: drinkText ? 'ocr-text' : 'visual-drink', confidenceScore: drinkText ? 0.78 : 0.52 },
     );
   }
 
@@ -2054,7 +2736,7 @@ function createBeverageEstimateFromShape(stats, text = '') {
       '과일음료',
       '450',
       '컵은 제외하고 색이 있는 액체 내용물만 음료 후보로 분리했어요',
-      { unitLabel: '잔', sizeLabel: '보통', confidence: drinkText ? '보통' : '낮음' },
+      { unitLabel: '잔', sizeLabel: '보통', confidence: drinkText ? '보통' : '낮음', recognitionSource: drinkText ? 'ocr-text' : 'visual-drink', confidenceScore: drinkText ? 0.78 : 0.52 },
     );
   }
 
@@ -2080,7 +2762,13 @@ function createSimplePortionEstimate(stats, text = '') {
       '방울토마토',
       grams,
       `붉은색 둥근 덩어리 ${count}개 후보를 감지했어요`,
-      { quantity: count, sizeLabel: size.label, confidence: confidenceLabel(count >= 2 ? 0.76 : 0.62) },
+      {
+        quantity: count,
+        sizeLabel: size.label,
+        confidence: confidenceLabel(count >= 2 ? 0.76 : 0.62),
+        recognitionSource: 'visual-portion',
+        confidenceScore: count >= 2 ? 0.76 : 0.62,
+      },
     );
   }
 
@@ -2094,7 +2782,7 @@ function createSimplePortionEstimate(stats, text = '') {
       '계란',
       grams,
       `흰색과 노른자색 형태로 계란 ${count}개 후보를 감지했어요`,
-      { quantity: count, sizeLabel: size.label, confidence: confidenceLabel(0.68) },
+      { quantity: count, sizeLabel: size.label, confidence: confidenceLabel(0.68), recognitionSource: 'visual-portion', confidenceScore: 0.68 },
     );
   }
 
@@ -2109,7 +2797,7 @@ function createSimplePortionEstimate(stats, text = '') {
       '고구마',
       grams,
       `갈색·주황색 긴 음식 형태로 고구마 ${count}개 후보를 감지했어요`,
-      { quantity: count, sizeLabel: size.label, confidence: confidenceLabel(0.64) },
+      { quantity: count, sizeLabel: size.label, confidence: confidenceLabel(0.64), recognitionSource: 'visual-portion', confidenceScore: 0.64 },
     );
   }
 
@@ -2121,7 +2809,14 @@ function createSimplePortionEstimate(stats, text = '') {
       '견과류',
       grams,
       `작은 갈색 조각이 여러 개 보여 견과류 ${handfuls}줌 후보로 계산했어요`,
-      { quantity: handfuls, unitLabel: '줌', sizeLabel: handfuls > 1 ? '많음' : '보통', confidence: confidenceLabel(0.6) },
+      {
+        quantity: handfuls,
+        unitLabel: '줌',
+        sizeLabel: handfuls > 1 ? '많음' : '보통',
+        confidence: confidenceLabel(0.6),
+        recognitionSource: 'visual-portion',
+        confidenceScore: 0.6,
+      },
     );
   }
 
@@ -2211,6 +2906,7 @@ function hasDrinkTextSignal(text) {
     '음료',
     '콜라',
     '사이다',
+    '스프라이트',
     '제로',
     'coffee',
     'americano',
@@ -2223,6 +2919,7 @@ function hasDrinkTextSignal(text) {
     'cola',
     'coke',
     'soda',
+    'sprite',
     'starbucks',
     '스타벅스',
     '메가mgc',
@@ -2242,6 +2939,12 @@ function hasDrinkTextSignal(text) {
     '쥬씨',
   ];
   return drinkTerms.some((term) => normalized.includes(normalizeRecognitionText(term)));
+}
+
+function hasKnownFoodTextSignal(text) {
+  const normalized = normalizeRecognitionText(text);
+  if (!normalized) return false;
+  return textFoodEstimates.some((entry) => entry.keys.some((key) => normalized.includes(normalizeRecognitionText(key))));
 }
 
 function hasCupLikeShape(stats) {
@@ -2282,12 +2985,14 @@ function isCompactFoodShape(stats, key, hasTextSignal) {
   return spread >= 0.06 && spread <= maxSpread;
 }
 
-function createVisualEstimatedFood(name, grams, visualReason) {
+function createVisualEstimatedFood(name, grams, visualReason, metadata = {}) {
   return {
     ...createEstimatedFoodItem(),
     name,
     grams,
     visualReason,
+    recognitionSource: metadata.recognitionSource || 'visual-shape',
+    confidenceScore: metadata.confidenceScore || 0,
   };
 }
 
@@ -2298,6 +3003,8 @@ function createPortionEstimatedFood(name, grams, visualReason, metadata = {}) {
     unitLabel: metadata.unitLabel || '개',
     sizeLabel: metadata.sizeLabel || '',
     confidence: metadata.confidence || '',
+    recognitionSource: metadata.recognitionSource || 'visual-portion',
+    confidenceScore: metadata.confidenceScore || 0,
   };
 }
 
@@ -2311,6 +3018,15 @@ function loadImage(src) {
     image.onload = () => resolve(image);
     image.onerror = reject;
     image.src = src;
+  });
+}
+
+function readFileAsDataUrl(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(String(reader.result || ''));
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
   });
 }
 
@@ -2409,7 +3125,8 @@ function stampPillClass(stamp) {
 }
 
 function hasReadableNutritionFacts(facts) {
-  return nutritionFactFields.some((field) => hasFactValue(facts, field.key));
+  const coreKeys = ['calories', 'carb', 'protein', 'fat', 'sugar', 'sodium'];
+  return coreKeys.filter((key) => hasFactValue(facts, key)).length >= 2;
 }
 
 function getDetectedFactLabels(facts) {

@@ -92,6 +92,8 @@ function buildMealHistoryPayload(report) {
     items,
     totals: report.totals,
     macroPercent: report.macroPercent,
+    dietScore: report.dietScore,
+    glycemic: report.glycemic,
     risk: report.risk,
     sourceItems: report.sourceItems,
     pendingItems: items.filter((item) => item.isPendingInfo).map((item) => item.foodName),

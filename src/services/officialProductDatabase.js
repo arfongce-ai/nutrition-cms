@@ -26,6 +26,20 @@ export function findOfficialProductFood(text) {
   return toFoodEntry(product);
 }
 
+export function searchOfficialProductFoods(text, limit = 6) {
+  const normalized = normalizeSearchText(text);
+  if (!normalized) return [];
+
+  return PRODUCT_RECORDS.map((product) => ({
+    product,
+    score: scoreProductMatch(product, normalized),
+  }))
+    .filter((item) => item.score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, limit)
+    .map((item) => toFoodEntry(item.product));
+}
+
 export function findOfficialProductSources(text) {
   const normalized = normalizeSearchText(text);
   if (!normalized) return [];
@@ -67,6 +81,7 @@ function toFoodEntry(product) {
     sugar: numberValue(nutrients.sugar),
     fiber: numberValue(nutrients.fiber),
     leucine: numberValue(nutrients.leucine),
+    caffeine: numberValue(nutrients.caffeine),
   };
 }
 
@@ -89,6 +104,29 @@ function normalizeSearchText(value) {
     .toLowerCase()
     .normalize('NFKC')
     .replace(/[^0-9a-z가-힣]/g, '');
+}
+
+function scoreProductMatch(product, normalized) {
+  const brand = normalizeSearchText(product.brand);
+  const productName = normalizeSearchText(product.productName);
+  const aliases = (product.aliases || []).map(normalizeSearchText).filter(Boolean);
+  const terms = [brand, productName, ...aliases].filter(Boolean);
+  let score = 0;
+
+  if (brand && normalized.includes(brand)) score += 8;
+  if (productName && normalized.includes(productName)) score += 14;
+  if (productName && productName.includes(normalized)) score += 10;
+
+  aliases.forEach((alias) => {
+    if (normalized.includes(alias)) score += alias.length >= 4 ? 8 : 4;
+    if (alias.includes(normalized)) score += normalized.length >= 3 ? 6 : 2;
+  });
+
+  if (!score && normalized.length >= 2) {
+    score = terms.some((term) => term.includes(normalized) || normalized.includes(term)) ? 2 : 0;
+  }
+
+  return score;
 }
 
 function isGenericBeverageName(value) {

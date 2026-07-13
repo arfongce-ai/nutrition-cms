@@ -1,2 +1,8 @@
 name = "nutrition-cms"
+account_id = "d9d063c1493cda83199f2cf987a79a27"
 pages_build_output_dir = "dist"
+
+[[d1_databases]]
+binding = "NUTRITION_DB"
+database_name = "nutrition-cms-db"
+database_id = "37fe650f-60d0-4c2c-84d0-53d989837fd4"
