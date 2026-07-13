@@ -1,6 +1,9 @@
 name = "nutrition-cms"
 pages_build_output_dir = "dist"
 
+[ai]
+binding = "AI"
+
 [[d1_databases]]
 binding = "NUTRITION_DB"
 database_name = "nutrition-cms-db"
