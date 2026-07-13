@@ -120,6 +120,8 @@ function createRecognitionPrompt() {
     'estimatedGrams는 한 개 무게가 아니라 화면에 보이는 해당 음식 전체의 섭취 가능 중량 합계로 추정하세요. 총 칼로리 계산에 우선 사용됩니다.',
     'quantity를 판단할 수 없으면 0, 낱개는 unitLabel을 "개", 조각은 "조각", 그릇은 "그릇", 컵은 "컵"으로 기록하세요.',
     'foodType은 meal, sideDish, fruit, drink 중 하나로 분류하세요. 밥·면 등 주식은 meal, 반찬·국·찌개는 sideDish입니다.',
+    '피자는 토핑 종류와 조각 수가 보이면 이름과 quantity에 반영하고, 확실하지 않은 브랜드나 메뉴명은 추측하지 마세요.',
+    'confidence는 사진에서 직접 확인 가능한 근거만으로 보수적으로 부여하고, 비슷해 보인다는 이유만으로 0.85 이상을 주지 마세요.',
     '제품 글자가 선명하면 제품명과 브랜드를 사용하고, 손·식기·테이블·배경은 제외하세요.',
     '확실하지 않으면 foods를 빈 배열로 반환하세요. 설명이나 분석 과정은 출력하지 마세요.',
     '반드시 JSON만 반환하세요: {"foods":[{"name":"한국어 음식명","brand":"브랜드 또는 빈 문자열","confidence":0부터1,"estimatedGrams":숫자,"quantity":숫자,"unitLabel":"개","foodType":"fruit"}],"reason":"짧은 근거"}',

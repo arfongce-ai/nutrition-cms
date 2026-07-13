@@ -16,6 +16,8 @@ const LIVE_NUTRIENT_SCAN_INTERVAL_MS = 1800;
 const FOOD_FOCUS_CROP_RATIO = 0.58;
 const LIVE_SCAN_HOLD_FRAMES = 2;
 const CAPTURE_JPEG_QUALITY = 0.94;
+const CAMERA_BURST_FRAME_COUNT = 3;
+const MIN_AUTO_CONFIRM_VISION_SCORE = 0.85;
 const LIVE_OCR_FRAME_MAX_WIDTH = 1400;
 const MIN_TRUSTED_CAMERA_ESTIMATE_SCORE = 0.7;
 const MIN_TEXT_CAMERA_ESTIMATE_SCORE = 0.78;
@@ -276,6 +278,20 @@ export default function App() {
     return canvas.toDataURL('image/jpeg', CAPTURE_JPEG_QUALITY);
   }
 
+  async function captureBestCameraFrame() {
+    const frames = [];
+    for (let index = 0; index < CAMERA_BURST_FRAME_COUNT; index += 1) {
+      const photo = capturePureCameraFrame();
+      if (photo) frames.push(photo);
+      if (index < CAMERA_BURST_FRAME_COUNT - 1) await waitForCameraFrame();
+    }
+    if (frames.length < 2) return frames[0] || '';
+
+    const scores = await Promise.all(frames.map(scoreCapturedPhotoQuality));
+    const bestIndex = scores.reduce((best, score, index) => (score > scores[best] ? index : best), 0);
+    return frames[bestIndex];
+  }
+
   function stopLiveNutrientScan() {
     if (liveScanTimerRef.current) {
       window.clearInterval(liveScanTimerRef.current);
@@ -379,7 +395,7 @@ export default function App() {
   }
 
   async function handleShoot() {
-    const photo = capturePureCameraFrame();
+    const photo = await captureBestCameraFrame();
     if (!photo) return;
 
     const initialFacts = {
@@ -752,7 +768,8 @@ function ReportView({
   const needsRecognitionHelp = shouldShowRecognitionHelp(captured, report);
   const analysisPending = captured.analysisStatus === 'analyzing';
   const analysisUnavailable = !analysisPending && isAnalysisUnavailable(report);
-  const saveDisabled = analysisPending || analysisUnavailable;
+  const needsFoodConfirmation = captured.foods.some((food) => food.requiresConfirmation);
+  const saveDisabled = analysisPending || analysisUnavailable || needsFoodConfirmation;
 
   return (
     <section className="min-h-screen overflow-y-auto bg-slate-200 px-3 py-20 text-slate-950">
@@ -770,7 +787,7 @@ function ReportView({
             disabled={saveDisabled}
             className={`h-12 rounded-full px-5 font-black shadow-lg ${saveDisabled ? 'bg-slate-300 text-slate-500' : 'bg-slate-950 text-white'}`}
           >
-            {analysisPending ? '분석 중' : analysisUnavailable ? '저장 불가' : saveState || '저장'}
+            {analysisPending ? '분석 중' : analysisUnavailable ? '저장 불가' : needsFoodConfirmation ? '음식 확인 필요' : saveState || '저장'}
           </button>
         </div>
       </div>
@@ -1185,6 +1202,15 @@ function FoodItemsForm({ foods, updateFood, addFood, removeFood }) {
                   {food.confidenceScore ? <span className="rounded-full bg-white px-3 py-1 text-slate-700">자동 신뢰 {Math.round(Number(food.confidenceScore) * 100)}%</span> : null}
                 </div>
               ) : null}
+              {food.requiresConfirmation ? (
+                <button
+                  type="button"
+                  onClick={() => updateFood(food.id, { requiresConfirmation: false, estimated: false, visualReason: '' })}
+                  className="h-11 rounded-lg bg-amber-900 px-4 text-sm font-black text-white"
+                >
+                  이 음식이 맞아요
+                </button>
+              ) : null}
               <QuickFoodPresetSelect foodId={food.id} onApply={updateFood} />
             </div>
           ) : null}
@@ -1192,7 +1218,7 @@ function FoodItemsForm({ foods, updateFood, addFood, removeFood }) {
             음식명
             <input
               value={food.name}
-              onChange={(event) => updateFood(food.id, { name: event.target.value, estimated: false, visualReason: '' })}
+              onChange={(event) => updateFood(food.id, { name: event.target.value, estimated: false, visualReason: '', requiresConfirmation: false })}
               className="h-12 rounded-lg border border-slate-200 bg-white px-3 text-base"
               placeholder="예: 현미밥, 닭가슴살, 김치"
             />
@@ -1338,7 +1364,7 @@ function QuickFoodPresetSelect({ foodId, onApply, compact = false }) {
   function handleChange(event) {
     const preset = foodCorrectionPresets[Number(event.target.value)];
     if (!preset) return;
-    onApply(foodId, { name: preset.name, grams: preset.grams, estimated: false, visualReason: '', confidence: '', quantity: '', sizeLabel: '' });
+    onApply(foodId, { name: preset.name, grams: preset.grams, estimated: false, visualReason: '', confidence: '', quantity: '', sizeLabel: '', requiresConfirmation: false });
     event.target.value = '';
   }
 
@@ -2426,15 +2452,15 @@ async function createVisionFoodItem(recognition, provider) {
   const normalizedName = normalizeLookupText(recognition.name);
   const candidate =
     candidates.find((item) => normalizeLookupText(item.name) === normalizedName) ||
-    candidates.find((item) => normalizeLookupText(item.name).includes(normalizedName) || normalizedName.includes(normalizeLookupText(item.name))) ||
-    candidates[0];
+    candidates.find((item) => normalizedName.length >= 3 && (normalizeLookupText(item.name).includes(normalizedName) || normalizedName.includes(normalizeLookupText(item.name))));
 
   const grams = String(Math.round(Number(recognition.estimatedGrams || candidate?.grams || 100)) || 100);
   return {
     ...createEmptyFoodItem(),
     name: candidate?.name || recognition.name,
     grams,
-    estimated: !candidate?.nutrients,
+    estimated: Number(recognition.confidence) < MIN_AUTO_CONFIRM_VISION_SCORE || !candidate?.nutrients,
+    requiresConfirmation: Number(recognition.confidence) < MIN_AUTO_CONFIRM_VISION_SCORE,
     visualReason: `AI 비전 ${Math.round(Number(recognition.confidence) * 100)}%`,
     confidenceScore: Number(recognition.confidence),
     recognitionSource: provider || 'ai-vision',
@@ -3228,6 +3254,45 @@ function createPortionEstimatedFood(name, grams, visualReason, metadata = {}) {
 
 function normalizeRecognitionText(value) {
   return String(value || '').toLowerCase().replace(/[\s™®.&·ㆍ_-]/g, '');
+}
+
+function waitForCameraFrame() {
+  return new Promise((resolve) => {
+    window.requestAnimationFrame(() => window.setTimeout(resolve, 45));
+  });
+}
+
+async function scoreCapturedPhotoQuality(photo) {
+  const image = await loadImage(photo);
+  const canvas = document.createElement('canvas');
+  canvas.width = 120;
+  canvas.height = Math.max(80, Math.round((120 * (image.naturalHeight || image.height)) / Math.max(image.naturalWidth || image.width, 1)));
+  const ctx = canvas.getContext('2d', { willReadFrequently: true });
+  ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+  const { data } = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  const luminance = new Float32Array(canvas.width * canvas.height);
+  let brightnessTotal = 0;
+
+  for (let pixel = 0, offset = 0; offset < data.length; pixel += 1, offset += 4) {
+    const value = 0.299 * data[offset] + 0.587 * data[offset + 1] + 0.114 * data[offset + 2];
+    luminance[pixel] = value;
+    brightnessTotal += value;
+  }
+
+  let edgeTotal = 0;
+  let edgeCount = 0;
+  for (let y = 1; y < canvas.height; y += 2) {
+    for (let x = 1; x < canvas.width; x += 2) {
+      const index = y * canvas.width + x;
+      edgeTotal += Math.abs(luminance[index] - luminance[index - 1]);
+      edgeTotal += Math.abs(luminance[index] - luminance[index - canvas.width]);
+      edgeCount += 2;
+    }
+  }
+
+  const averageBrightness = brightnessTotal / Math.max(luminance.length, 1);
+  const exposurePenalty = averageBrightness < 45 ? 45 - averageBrightness : averageBrightness > 220 ? averageBrightness - 220 : 0;
+  return edgeTotal / Math.max(edgeCount, 1) - exposurePenalty * 0.4;
 }
 
 function loadImage(src) {
