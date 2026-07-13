@@ -2,6 +2,7 @@ data/*
 !data/
 !data/official-products.json
 !data/official-product-sources.json
+!data/brand-source-candidates.json
 *.log
 node_modules/
 dist/

@@ -2,6 +2,16 @@
 
 이 앱은 음식 사진 분석을 먼저 수행하고, 제품명·브랜드명·성분표 OCR 문자가 보이면 공식 제품 DB를 우선 조회합니다.
 
+## 브랜드 출처 후보 가져오기
+
+브랜드 목록·영양 딥링크 CSV는 검증 전 공식 분석 근거로 사용하지 않고 별도 후보 레지스트리로 가져옵니다.
+
+```powershell
+npm run db:import:brand-candidates -- "C:\path\to\brand-sources.csv"
+```
+
+결과는 `data/brand-source-candidates.json`에 `verificationStatus: "unverified"` 상태로 저장됩니다. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인한 항목만 `official-product-sources.json` 또는 D1 `brands` 테이블로 승격합니다.
+
 ## 적용 순서
 
 1. 촬영 이미지에서 음식 후보와 성분표 문자를 읽습니다.

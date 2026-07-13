@@ -13,6 +13,7 @@
     "db:import:starbucks": "node scripts/import-official-menu-db.mjs --brand starbucks --merge",
     "db:export:d1": "node scripts/export-official-products-d1-seed.mjs",
     "db:import:public-foods": "node scripts/import-public-nutrition-xlsx.mjs",
+    "db:import:brand-candidates": "node scripts/import-brand-source-candidates.mjs",
     "db:apply:d1": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/apply-public-foods-d1.ps1"
   },
   "dependencies": {

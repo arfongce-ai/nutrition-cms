@@ -1,0 +1,1507 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-07-13",
+  "reviewPolicy": "후보 URL은 공식 페이지와 영양성분 존재 여부를 직접 확인한 뒤에만 공식 출처 또는 D1 brands 테이블로 승격합니다.",
+  "candidates": [
+    {
+      "number": 1,
+      "category": "패스트푸드",
+      "brand": "롯데리아",
+      "aliases": [
+        "롯데리아"
+      ],
+      "listUrl": "https://www.lotteria.com/menu",
+      "nutritionUrl": "https://www.lotteria.com/menu/nutrition",
+      "parsingHint": "모든 버거와 디저트의 9대 영양성분이 단일 테이블(Grid)에 로드되어 통째로 파싱하기 가장 용이함.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 2,
+      "category": "패스트푸드",
+      "brand": "버거킹",
+      "aliases": [
+        "버거킹"
+      ],
+      "listUrl": "https://www.burgerking.co.kr/#/menu",
+      "nutritionUrl": "https://www.burgerking.co.kr/#/nutrition",
+      "parsingHint": "SPA(싱글페이지) 구조로 해시 라우팅을 사용하여 모바일 규격 전 메뉴 성분표를 동적 렌더링함.",
+      "extractionHint": "DYNAMIC",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 3,
+      "category": "패스트푸드",
+      "brand": "KFC 코리아",
+      "aliases": [
+        "KFC 코리아"
+      ],
+      "listUrl": "https://www.kfckorea.com/menu",
+      "nutritionUrl": "https://www.kfckorea.com/menu/nutrition",
+      "parsingHint": "카테고리별 탭 클릭 시 AJAX 통신으로 칼로리, 나트륨, 알레르기 유발물질 데이터를 JSON으로 반환.",
+      "extractionHint": "OFFICIAL_JSON",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 4,
+      "category": "패스트푸드",
+      "brand": "맥도날드",
+      "aliases": [
+        "맥도날드"
+      ],
+      "listUrl": "https://www.mcdonalds.co.kr/kor/menu",
+      "nutritionUrl": "https://www.mcdonalds.co.kr/kor/menu/nutrition.do",
+      "parsingHint": "일괄 조회 페이지 외에 개별 상세 페이지(detail.do?meId=17) 하단에도 정적 HTML 표가 존재.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 5,
+      "category": "패스트푸드",
+      "brand": "맘스터치",
+      "aliases": [
+        "맘스터치"
+      ],
+      "listUrl": "https://www.momstouch.co.kr/menu",
+      "nutritionUrl": "https://www.momstouch.co.kr/menu/nutrition.php",
+      "parsingHint": "텍스트 및 테이블 구조로 되어 있어 스크래핑이 간단하며, 신메뉴 업데이트가 잦아 주기적 갱신 필요.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 6,
+      "category": "패스트푸드",
+      "brand": "노브랜드버거",
+      "aliases": [
+        "노브랜드버거"
+      ],
+      "listUrl": "https://www.shinsegaefood.com/nbb",
+      "nutritionUrl": "https://www.shinsegaefood.com/nbb/menu/nutrition",
+      "parsingHint": "신세계푸드 허브 DB를 공유하며, 깔끔한 그리드 형태의 CSS 셀렉터로 칼로리 수치 추출 가능.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 7,
+      "category": "패스트푸드",
+      "brand": "프랭크버거",
+      "aliases": [
+        "프랭크버거"
+      ],
+      "listUrl": "http://www.frankburger.co.kr/menu",
+      "nutritionUrl": "http://www.frankburger.co.kr/menu/nutrition_table",
+      "parsingHint": "정통 수제버거 포맷. 패티 중량별 칼로리와 지방 수치가 텍스트 테이블 형태로 명시됨.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 8,
+      "category": "패스트푸드",
+      "brand": "파파이스",
+      "aliases": [
+        "파파이스"
+      ],
+      "listUrl": "https://www.popeyes.co.kr/menu",
+      "nutritionUrl": "https://www.popeyes.co.kr/menu/nutrition",
+      "parsingHint": "국내 재론칭 이후 글로벌 가이드라인에 맞춘 영양성분 및 단백질/당류 지표 데이터 제공.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 9,
+      "category": "패스트푸드",
+      "brand": "모스버거",
+      "aliases": [
+        "모스버거"
+      ],
+      "listUrl": "http://www.moskorea.kr/menu",
+      "nutritionUrl": "http://www.moskorea.kr/menu/nutrition",
+      "parsingHint": "메론소다 및 버거 번을 라이스로 변경했을 때의 세부 칼로리 변동 수치가 매핑되어 있음.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 10,
+      "category": "패스트푸드",
+      "brand": "쉐이크쉑",
+      "aliases": [
+        "쉐이크쉑"
+      ],
+      "listUrl": "https://www.shakeshack.kr/menu",
+      "nutritionUrl": "https://www.shakeshack.kr/menu/nutrition_guide.pdf",
+      "parsingHint": "SPC 운영 라인업. 수시로 변하는 영양성분표를 고화질 PDF 뷰어로 다운로드하게끔 딥링크 제공.",
+      "extractionHint": "PDF",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 11,
+      "category": "패스트푸드",
+      "brand": "고든램지버거",
+      "aliases": [
+        "고든램지버거"
+      ],
+      "listUrl": "https://gordonramsayrestaurants.com",
+      "nutritionUrl": "https://gordonramsayrestaurants.com/menu/nutrition",
+      "parsingHint": "프리미엄 버거 라인업. 하이엔드 쉐이크 및 10만원대 버거의 고칼로리/고지방 영양성분 명시.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 12,
+      "category": "패스트푸드",
+      "brand": "슈퍼두퍼",
+      "aliases": [
+        "슈퍼두퍼"
+      ],
+      "listUrl": "https://www.superduper.co.kr/menu",
+      "nutritionUrl": "https://www.superduper.co.kr/menu/nutrition",
+      "parsingHint": "bhc 그룹 운영. 샌프란시스코 감성 수제버거의 육즙 패티 기반 칼로리 및 나트륨 표 렌더링.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 13,
+      "category": "패스트푸드",
+      "brand": "바스버거",
+      "aliases": [
+        "바스버거"
+      ],
+      "listUrl": "http://www.basburger.co.kr/menu",
+      "nutritionUrl": "http://www.basburger.co.kr/menu/guidebook",
+      "parsingHint": "수제버거 프랜차이즈. 무제한 제공되는 제임스감(감자칩)과 버거의 영양성분을 PDF/웹뷰로 노출.",
+      "extractionHint": "PDF",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 14,
+      "category": "패스트푸드",
+      "brand": "다운타우너",
+      "aliases": [
+        "다운타우너"
+      ],
+      "listUrl": "https://downtowner.co.kr/menu",
+      "nutritionUrl": "https://downtowner.co.kr/menu/nutrition_info",
+      "parsingHint": "GFFG 라인업. 아보카도 버거 등 시그니처 메뉴의 지방, 탄수화물 지표 추출 가능.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 15,
+      "category": "패스트푸드",
+      "brand": "기브미버거",
+      "aliases": [
+        "기브미버거"
+      ],
+      "listUrl": "http://givemeburger.co.kr/menu",
+      "nutritionUrl": "http://givemeburger.co.kr/menu/nutrition",
+      "parsingHint": "로컬 수제버거 프랜차이즈 확장 모델. 기본 버거류의 영양 밸런스 데이터 제공.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 16,
+      "category": "커피/카페",
+      "brand": "컴포즈커피",
+      "aliases": [
+        "컴포즈커피"
+      ],
+      "listUrl": "https://composecoffee.com/menu_list",
+      "nutritionUrl": "https://composecoffee.com/menu_view?item_srl=312980",
+      "parsingHint": "item_srl 파라미터 번호 변경 시 메뉴별 칼로리, 나트륨, 당류 팝업이 뜨는 구조로 API 파싱 최적화.",
+      "extractionHint": "OFFICIAL_JSON",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 17,
+      "category": "커피/카페",
+      "brand": "메가MGC커피",
+      "aliases": [
+        "메가MGC커피"
+      ],
+      "listUrl": "https://www.megacoffee.me/menu",
+      "nutritionUrl": "https://www.megacoffee.me/menu/menu_view.php?idx=257",
+      "parsingHint": "idx=코드값 구조. 중량, 열량, 포화지방, 당류, 나트륨, 단백질, 카페인 수치가 직접 렌더링됨.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 18,
+      "category": "커피/카페",
+      "brand": "이디야커피",
+      "aliases": [
+        "이디야커피"
+      ],
+      "listUrl": "https://www.ediya.com/contents/drink.html",
+      "nutritionUrl": "https://www.ediya.com/contents/drink.html?clicked_id=141",
+      "parsingHint": "clicked_id 파라미터를 통해 우측 레이어 팝업에 고유 영양성분표를 호출하는 구조.",
+      "extractionHint": "DYNAMIC",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 19,
+      "category": "커피/카페",
+      "brand": "스타벅스코리아",
+      "aliases": [
+        "스타벅스코리아"
+      ],
+      "listUrl": "https://www.starbucks.co.kr/menu",
+      "nutritionUrl": "https://www.starbucks.co.kr/menu/drink_list.do",
+      "parsingHint": "'영양성분 보기' 활성화 시 모든 음료의 kcal, 나트륨, 당류, 단백질, 카페인이 대형 테이블로 로드.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 20,
+      "category": "커피/카페",
+      "brand": "빽다방",
+      "aliases": [
+        "빽다방"
+      ],
+      "listUrl": "https://paikdabang.com/menu",
+      "nutritionUrl": "https://paikdabang.com/menu/menu_coffee",
+      "parsingHint": "커피, 빽스치노 등 카테고리별 이미지 마우스 오버(or 터치) 시 칼로리와 당류 레이어가 표출됨.",
+      "extractionHint": "DYNAMIC",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 21,
+      "category": "커피/카페",
+      "brand": "투썸플레이스",
+      "aliases": [
+        "투썸플레이스"
+      ],
+      "listUrl": "https://www.twosome.co.kr/menu",
+      "nutritionUrl": "https://www.twosome.co.kr/menu/nutrition",
+      "parsingHint": "조각 케이크 및 음료 라인업의 당류와 포화지방 수치가 정밀하게 격자형 데이터로 분리 제공.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 22,
+      "category": "커피/카페",
+      "brand": "파스쿠찌",
+      "aliases": [
+        "파스쿠찌"
+      ],
+      "listUrl": "https://www.caffe-pascucci.co.kr/menu",
+      "nutritionUrl": "https://www.caffe-pascucci.co.kr/menu/nutrition",
+      "parsingHint": "SPC 커피 라인업. 그라니따 등 고당류 음료의 칼로리 및 카페인 함량 정밀 조회 가능.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 23,
+      "category": "커피/카페",
+      "brand": "할리스",
+      "aliases": [
+        "할리스"
+      ],
+      "listUrl": "https://www.hollys.co.kr/menu",
+      "nutritionUrl": "https://www.hollys.co.kr/menu/nutritionInfo",
+      "parsingHint": "베이커리 및 식사 대용 샌드위치 메뉴가 많아 단백질, 탄수화물 매핑 비중이 높은 타겟.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 24,
+      "category": "커피/카페",
+      "brand": "엔제리너스",
+      "aliases": [
+        "엔제리너스"
+      ],
+      "listUrl": "https://www.angelinus.com/menu",
+      "nutritionUrl": "https://www.angelinus.com/menu/nutrition",
+      "parsingHint": "롯데 GRS 계열. 반미 샌드위치 시리즈와 에스프레소 음료의 칼로리/나트륨 수치 통합 제공.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 25,
+      "category": "커피/카페",
+      "brand": "커피빈코리아",
+      "aliases": [
+        "커피빈코리아"
+      ],
+      "listUrl": "https://www.coffeebeankorea.com/menu",
+      "nutritionUrl": "https://www.coffeebeankorea.com/menu/nutrition",
+      "parsingHint": "헤이즐넛 아메리카노 등 파우더 기반 음료의 세부 칼로리 및 탄단지 밸런스 데이터 수집 가능.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 26,
+      "category": "커피/카페",
+      "brand": "탐앤탐스",
+      "aliases": [
+        "탐앤탐스"
+      ],
+      "listUrl": "https://www.tomntoms.com/menu",
+      "nutritionUrl": "https://www.tomntoms.com/menu/nutrition",
+      "parsingHint": "프레즐(Pretzels) 베이커리 메뉴의 고탄수화물 및 나트륨 함량 데이터를 크롤링하기 적합.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 27,
+      "category": "커피/카페",
+      "brand": "풀바셋",
+      "aliases": [
+        "풀바셋"
+      ],
+      "listUrl": "https://www.baristapaulbassett.co.kr",
+      "nutritionUrl": "https://www.baristapaulbassett.co.kr/menu/nutrition",
+      "parsingHint": "매일유업 상하목장 아이스크림 및 라떼 계열의 포화지방/지방 수치 정밀 파싱 경로.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 28,
+      "category": "커피/카페",
+      "brand": "드롭탑",
+      "aliases": [
+        "드롭탑"
+      ],
+      "listUrl": "https://www.cafedroptop.com/menu",
+      "nutritionUrl": "https://www.cafedroptop.com/menu/nutrition",
+      "parsingHint": "휴게소 및 로드숍 특화 음료들의 칼로리 스펙트럼 정보 확인 가능.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 29,
+      "category": "커피/카페",
+      "brand": "커피베이",
+      "aliases": [
+        "커피베이"
+      ],
+      "listUrl": "http://www.coffeebay.com/menu",
+      "nutritionUrl": "http://www.coffeebay.com/menu/nutrition",
+      "parsingHint": "중저가 프랜차이즈. 시즌 메뉴 및 에이드류의 당류 지표 추적에 용이.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 30,
+      "category": "커피/카페",
+      "brand": "더벤티",
+      "aliases": [
+        "더벤티"
+      ],
+      "listUrl": "https://www.theventi.co.kr/menu",
+      "nutritionUrl": "https://www.theventi.co.kr/menu/nutrition",
+      "parsingHint": "대용량 음료(벤티 사이즈) 기준의 고칼로리, 당류, 나트륨 폭탄 메뉴 필터링용 필수 DB.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 31,
+      "category": "커피/카페",
+      "brand": "매머드커피",
+      "aliases": [
+        "매머드커피"
+      ],
+      "listUrl": "https://www.mmthcoffee.com/menu",
+      "nutritionUrl": "https://www.mmthcoffee.com/menu/nutrition",
+      "parsingHint": "매머드 익스프레스 포함, L 사이즈 음료들의 칼로리 및 다량의 카페인 함량 수치 제공.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 32,
+      "category": "커피/카페",
+      "brand": "바나프레소",
+      "aliases": [
+        "바나프레소"
+      ],
+      "listUrl": "https://www.banapresso.com/menu",
+      "nutritionUrl": "https://www.banapresso.com/menu/nutrition",
+      "parsingHint": "IT 기반 카페. 키오스크 연동 DB가 웹뷰 형태로 노출되어 당류 및 칼로리 파싱 속도 빠름.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 33,
+      "category": "커피/카페",
+      "brand": "달콤커피",
+      "aliases": [
+        "달콤커피"
+      ],
+      "listUrl": "http://www.dalkomm.com/menu",
+      "nutritionUrl": "http://www.dalkomm.com/menu/nutrition",
+      "parsingHint": "플랫카드로 구성된 메뉴판 레이아웃 내에 칼로리와 알레르기 유발 인자 내장.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 34,
+      "category": "커피/카페",
+      "brand": "공차 코리아",
+      "aliases": [
+        "공차 코리아"
+      ],
+      "listUrl": "https://www.gong-cha.co.kr/menu",
+      "nutritionUrl": "https://www.gong-cha.co.kr/menu/nutrition",
+      "parsingHint": "밀크티의 펄(타피오카) 추가 전/후 칼로리와 당류(당도 선택별) 가이드 지표 수집 가능.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 35,
+      "category": "커피/카페",
+      "brand": "아마스빈",
+      "aliases": [
+        "아마스빈"
+      ],
+      "listUrl": "http://www.amasvin.com/menu",
+      "nutritionUrl": "http://www.amasvin.com/menu/nutrition_chart",
+      "parsingHint": "버블티 전문점. 요거트 및 하동녹차 계열 음료의 베이스 영양 성분 텍스트 렌더링.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 36,
+      "category": "커피/카페",
+      "brand": "팔공티",
+      "aliases": [
+        "팔공티"
+      ],
+      "listUrl": "http://palgongtea.co.kr/menu",
+      "nutritionUrl": "http://palgongtea.co.kr/menu/nutrition",
+      "parsingHint": "가성비 밀크티 라인업의 당류 및 칼로리 수치 비교 매핑용 타겟 주소.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 37,
+      "category": "커피/카페",
+      "brand": "설빙",
+      "aliases": [
+        "설빙"
+      ],
+      "listUrl": "https://sulbing.com/menu",
+      "nutritionUrl": "https://sulbing.com/menu/nutrition",
+      "parsingHint": "인절미설빙 등 대형 빙수류의 탄수화물, 당류, 칼로리(평균 800~1000kcal) 추적 필수 DB.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 38,
+      "category": "커피/카페",
+      "brand": "요거프레소",
+      "aliases": [
+        "요거프레소"
+      ],
+      "listUrl": "http://www.yogerpresso.co.kr/menu",
+      "nutritionUrl": "http://www.yogerpresso.co.kr/menu/nutrition",
+      "parsingHint": "메리딸기 등 요거트 아이스크림 믹스 기반의 당류 및 지방 성분 파싱 테이블 제공.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 39,
+      "category": "커피/카페",
+      "brand": "쥬씨",
+      "aliases": [
+        "쥬씨"
+      ],
+      "listUrl": "http://www.juicyjuice.co.kr/menu",
+      "nutritionUrl": "http://www.juicyjuice.co.kr/menu/nutrition",
+      "parsingHint": "생과일주스의 과당 및 시럽 추가에 따른 당류(g) 수치 데이터 확보 경로.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 40,
+      "category": "커피/카페",
+      "brand": "스무디킹",
+      "aliases": [
+        "스무디킹"
+      ],
+      "listUrl": "https://www.smoothieking.co.kr/menu",
+      "nutritionUrl": "https://www.smoothieking.co.kr/menu/nutrition",
+      "parsingHint": "기능성 파우더(인핸서)가 첨가된 스포츠 영양/다이어트용 음료의 탄단지 수치 정밀 명시.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 41,
+      "category": "커피/카페",
+      "brand": "떼루와",
+      "aliases": [
+        "떼루와"
+      ],
+      "listUrl": "http://www.teruwa.co.kr/menu",
+      "nutritionUrl": "http://www.teruwa.co.kr/menu/nutrition",
+      "parsingHint": "초저가 생과일 및 파니니 메뉴의 칼로리 수치 텍스트 매핑 주소.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 42,
+      "category": "커피/카페",
+      "brand": "차오름",
+      "aliases": [
+        "차오름"
+      ],
+      "listUrl": "http://www.chaorum.co.kr/menu",
+      "nutritionUrl": "http://www.chaorum.co.kr/menu/nutrition",
+      "parsingHint": "전통차 및 곡물 음료 기반의 탄수화물 및 당류 스펙트럼 수집.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 43,
+      "category": "커피/카페",
+      "brand": "빈스빈스",
+      "aliases": [
+        "빈스빈스"
+      ],
+      "listUrl": "http://www.beansbins.com/menu",
+      "nutritionUrl": "http://www.beansbins.com/menu/nutrition",
+      "parsingHint": "와플(Waffle) 전문 카페. 생크림 및 아이스크림 토핑 와플의 고지방/고탄수 DB.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 44,
+      "category": "커피/카페",
+      "brand": "고하우스",
+      "aliases": [
+        "고하우스"
+      ],
+      "listUrl": "http://gohouse.co.kr/menu",
+      "nutritionUrl": "http://gohouse.co.kr/menu/nutrition",
+      "parsingHint": "수제 디저트 공방 기반 프랜차이즈의 메뉴별 칼로리 지표 안내.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 45,
+      "category": "커피/카페",
+      "brand": "커피에반하다",
+      "aliases": [
+        "커피에반하다"
+      ],
+      "listUrl": "http://www.coffeebanada.com/menu",
+      "nutritionUrl": "http://www.coffeebanada.com/menu/nutrition",
+      "parsingHint": "무인 스마트 카페 라인업 음료의 기본 열량 및 카페인 데이터 연동.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 46,
+      "category": "베이커리",
+      "brand": "파리바게뜨",
+      "aliases": [
+        "파리바게뜨"
+      ],
+      "listUrl": "https://www.paris.co.kr/product",
+      "nutritionUrl": "https://www.paris.co.kr/product/nutrition",
+      "parsingHint": "국내 최대 베이커리. 식빵, 조리빵, 케이크의 중량 대비 탄단지, 나트륨 수치 완전 공개.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 47,
+      "category": "베이커리",
+      "brand": "뚜레쥬르",
+      "aliases": [
+        "뚜레쥬르"
+      ],
+      "listUrl": "https://www.tlj.co.kr/product",
+      "nutritionUrl": "https://www.tlj.co.kr/product/nutrition",
+      "parsingHint": "CJ푸드빌 운영. 개별 제품 이미지 클릭 시 팝업 또는 상세 하단에 9대 영양소 완벽 매핑.",
+      "extractionHint": "DYNAMIC",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 48,
+      "category": "도넛",
+      "brand": "던킨",
+      "aliases": [
+        "던킨"
+      ],
+      "listUrl": "https://www.dunkindonuts.co.kr/menu",
+      "nutritionUrl": "https://www.dunkindonuts.co.kr/menu/nutrition",
+      "parsingHint": "글레이즈드 등 도넛류의 개당 당류 및 포화지방 수치 크롤링을 위한 고유 테이블 제공.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 49,
+      "category": "도넛",
+      "brand": "크리스피크림도넛",
+      "aliases": [
+        "크리스피크림도넛"
+      ],
+      "listUrl": "https://www.krispykreme.co.kr/menu",
+      "nutritionUrl": "https://www.krispykreme.co.kr/menu/nutrition",
+      "parsingHint": "롯데 GRS 운영. 오리지널 글레이즈드의 높은 당류(g) 및 열량 지표 실시간 확인 가능.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 50,
+      "category": "아이스크림",
+      "brand": "배스킨라빈스",
+      "aliases": [
+        "배스킨라빈스"
+      ],
+      "listUrl": "https://www.baskinrobbins.co.kr/menu",
+      "nutritionUrl": "https://www.baskinrobbins.co.kr/menu/nutrition",
+      "parsingHint": "싱글 레귤러(115g) 기준 아이스크림 유지방, 당류, 칼로리 데이터가 테이블 그리드로 노출.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 51,
+      "category": "아이스크림",
+      "brand": "나뚜루",
+      "aliases": [
+        "나뚜루"
+      ],
+      "listUrl": "https://www.natturu.co.kr/product",
+      "nutritionUrl": "https://www.natturu.co.kr/product/nutrition",
+      "parsingHint": "롯데웰푸드 프리미엄 아이스크림 녹차 및 바닐라 믹스의 정밀 영양성분 제공.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 52,
+      "category": "베이커리",
+      "brand": "홍두당",
+      "aliases": [
+        "홍두당"
+      ],
+      "listUrl": "http://www.daegubakery.com/product",
+      "nutritionUrl": "http://www.daegubakery.com/product/nutrition",
+      "parsingHint": "대구 근대골목단팥빵. 팥앙금 및 크림빵의 탄수화물, 당류 함량 텍스트 파싱 경로.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 53,
+      "category": "베이커리",
+      "brand": "삼송빵집",
+      "aliases": [
+        "삼송빵집"
+      ],
+      "listUrl": "http://www.ssbnc.kr/menu",
+      "nutritionUrl": "http://www.ssbnc.kr/menu/nutrition",
+      "parsingHint": "시그니처 통옥수수빵(마약빵)의 옥수수/마요네즈 베이스 고지방, 탄수화물 수치 기재.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 54,
+      "category": "베이커리",
+      "brand": "못난이꽈배기",
+      "aliases": [
+        "못난이꽈배기"
+      ],
+      "listUrl": "http://motnanidoughnut.com/menu",
+      "nutritionUrl": "http://motnanidoughnut.com/menu/nutrition",
+      "parsingHint": "찹쌀 꽈배기 및 팥도넛의 유기농 밀가루/튀김유 기준 칼로리 수치 매핑.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 55,
+      "category": "베이커리",
+      "brand": "송사부수제쌀고로케",
+      "aliases": [
+        "송사부수제쌀고로케"
+      ],
+      "listUrl": "http://www.songsabu.com/menu",
+      "nutritionUrl": "http://www.songsabu.com/menu/nutrition",
+      "parsingHint": "고로케 튀김빵 특유의 고지방, 탄수화물, 나트륨 성분이 메뉴 그리드 내 내장됨.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 56,
+      "category": "디저트",
+      "brand": "스트릿츄러스",
+      "aliases": [
+        "스트릿츄러스"
+      ],
+      "listUrl": "http://streetchurros.com/menu",
+      "nutritionUrl": "http://streetchurros.com/menu/nutrition",
+      "parsingHint": "곡물 츄러스 반죽 및 시나몬 슈가 토핑의 칼로리, 당류 지표 파싱 가능.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 57,
+      "category": "베이커리",
+      "brand": "앤티앤스 프레즐",
+      "aliases": [
+        "앤티앤스 프레즐"
+      ],
+      "listUrl": "http://auntieannes.co.kr/menu",
+      "nutritionUrl": "http://auntieannes.co.kr/menu/nutrition_table",
+      "parsingHint": "스틱 프레즐 및 크림치즈 필링 제품의 정밀 탄단지/나트륨 텍스트 테이블 노출.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 58,
+      "category": "베이커리",
+      "brand": "로티보이",
+      "aliases": [
+        "로티보이"
+      ],
+      "listUrl": "http://rotiboykorea.com/menu",
+      "nutritionUrl": "http://rotiboykorea.com/menu/nutrition",
+      "parsingHint": "모카번 버터 필링 중심의 포화지방 및 칼로리 수치 확인용 기본 주소.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 59,
+      "category": "디저트",
+      "brand": "블레스롤",
+      "aliases": [
+        "블레스롤"
+      ],
+      "listUrl": "http://www.blessroll.com/menu",
+      "nutritionUrl": "http://www.blessroll.com/menu/nutrition",
+      "parsingHint": "롤케이크 및 무지개 케이크 크림 베이스의 포화지방/당류 데이터 수집.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 60,
+      "category": "디저트",
+      "brand": "타르타르",
+      "aliases": [
+        "타르타르"
+      ],
+      "listUrl": "http://www.tarrtarr.com/menu",
+      "nutritionUrl": "http://www.tarrtarr.com/menu/nutrition",
+      "parsingHint": "에그타르트 및 과일 타르트지의 버터/탄수화물 정밀 영양성분 렌더링 주소.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 61,
+      "category": "피자",
+      "brand": "도미노피자",
+      "aliases": [
+        "도미노피자"
+      ],
+      "listUrl": "https://web.dominos.co.kr/menu",
+      "nutritionUrl": "https://web.dominos.co.kr/menu/nutrition",
+      "parsingHint": "오리지널/나폴리/씬 도우별, 피자 1조각(L/M) 기준 탄단지, 나트륨 수치 완전 세분화.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 62,
+      "category": "피자",
+      "brand": "피자헛",
+      "aliases": [
+        "피자헛"
+      ],
+      "listUrl": "https://www.pizzahut.co.kr/menu",
+      "nutritionUrl": "https://www.pizzahut.co.kr/menu/nutrition",
+      "parsingHint": "치즈 크러스트 엣지 추가 시 추가되는 지방/나트륨 변동치까지 정밀 테이블로 노출.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 63,
+      "category": "피자",
+      "brand": "미스터피자",
+      "aliases": [
+        "미스터피자"
+      ],
+      "listUrl": "http://www.mrpizza.co.kr/menu",
+      "nutritionUrl": "http://www.mrpizza.co.kr/menu/nutrition",
+      "parsingHint": "클래식 및 프리미엄 피자 라인업의 조각당 열량과 나트륨 수치 크롤링 최적화.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 64,
+      "category": "피자",
+      "brand": "파파존스",
+      "aliases": [
+        "파파존스"
+      ],
+      "listUrl": "https://pji.co.kr/menu",
+      "nutritionUrl": "https://pji.co.kr/menu/nutrition.jsp",
+      "parsingHint": "미식가 스타일 고염도 피자의 대표격. 나트륨(mg) 수치와 포화지방 매핑의 핵심 DB.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 65,
+      "category": "피자",
+      "brand": "피자스쿨",
+      "aliases": [
+        "피자스쿨"
+      ],
+      "listUrl": "http://pizzaschool.net/menu",
+      "nutritionUrl": "http://pizzaschool.net/menu/nutrition_table",
+      "parsingHint": "가성비 피자의 대명사. 고구마피자, 포테이토피자의 조각당 칼로리 텍스트 표 제공.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 66,
+      "category": "피자",
+      "brand": "피자마루",
+      "aliases": [
+        "피자마루"
+      ],
+      "listUrl": "http://www.pizzamaru.co.kr/menu",
+      "nutritionUrl": "http://www.pizzamaru.co.kr/menu/nutrition",
+      "parsingHint": "그린티 웰빙 도우 기반 피자류의 탄수화물 및 지방 영양 밸런스 데이터 수집 경로.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 67,
+      "category": "피자",
+      "brand": "59쌀피자",
+      "aliases": [
+        "59쌀피자"
+      ],
+      "listUrl": "http://www.59pizza.co.kr/menu",
+      "nutritionUrl": "http://www.59pizza.co.kr/menu/nutrition",
+      "parsingHint": "쌀도우 피자 및 오긋피자 세트의 칼로리 지표 파싱을 위한 기본 HTML 표 위치.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 68,
+      "category": "피자",
+      "brand": "반올림피자",
+      "aliases": [
+        "반올림피자"
+      ],
+      "listUrl": "https://handmadepizza.co.kr/menu",
+      "nutritionUrl": "https://handmadepizza.co.kr/menu/nutrition",
+      "parsingHint": "수제 고구마무스 및 특제 소스의 당류/지방 함량 지표 정밀 확인 가능.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 69,
+      "category": "피자",
+      "brand": "청년피자",
+      "aliases": [
+        "청년피자"
+      ],
+      "listUrl": "http://youngmanpizza.co.kr/menu",
+      "nutritionUrl": "http://youngmanpizza.co.kr/menu/nutrition",
+      "parsingHint": "토핑 종류별 칼로리 스펙트럼 데이터가 깔끔한 그리드 구조로 매핑됨.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 70,
+      "category": "피자",
+      "brand": "피자알볼로",
+      "aliases": [
+        "피자알볼로"
+      ],
+      "listUrl": "https://www.pizzaalvolo.co.kr/menu",
+      "nutritionUrl": "https://www.pizzaalvolo.co.kr/menu/nutrition",
+      "parsingHint": "흑미 도우 피자 세부 스펙. 타 브랜드 대비 정밀한 단백질, 식이섬유 지표 포함.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 71,
+      "category": "피자",
+      "brand": "빽보이피자",
+      "aliases": [
+        "빽보이피자"
+      ],
+      "listUrl": "https://paikboy.com/menu",
+      "nutritionUrl": "https://paikboy.com/menu/nutrition",
+      "parsingHint": "더본코리아 피자 라인업. 직관적인 단일 페이지 테이블 구조로 나트륨/칼로리 파싱 용이.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 72,
+      "category": "피자/치킨",
+      "brand": "피자나라치킨공주",
+      "aliases": [
+        "피자나라치킨공주"
+      ],
+      "listUrl": "http://www.pncg.co.kr/menu",
+      "nutritionUrl": "http://www.pncg.co.kr/menu/nutrition",
+      "parsingHint": "피자치킨 세트 메뉴 소비 시 합산되는 고칼로리, 고지방 시뮬레이션용 필수 DB.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 73,
+      "category": "피자",
+      "brand": "유로코피자",
+      "aliases": [
+        "유로코피자"
+      ],
+      "listUrl": "http://eurokopizza.lnch.co.kr",
+      "nutritionUrl": "http://eurokopizza.lnch.co.kr/menu/nutrition",
+      "parsingHint": "독특한 토핑 피자류의 열량, 단백질, 지방 데이터 텍스트 리스트 제공.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 74,
+      "category": "피자",
+      "brand": "자가제빵선명희피자",
+      "aliases": [
+        "자가제빵선명희피자"
+      ],
+      "listUrl": "http://sunmyunghipizza.co.kr/menu",
+      "nutritionUrl": "http://sunmyunghipizza.co.kr/menu/nutrition",
+      "parsingHint": "진도산 흑미 가공 도우 피자 메뉴별 칼로리 및 영양정보 노출.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 75,
+      "category": "피자",
+      "brand": "노모어피자",
+      "aliases": [
+        "노모어피자"
+      ],
+      "listUrl": "http://nomorepizza.co.kr/menu",
+      "nutritionUrl": "http://nomorepizza.co.kr/menu/nutrition",
+      "parsingHint": "트렌디한 소금우유 도우 피자 조각당 칼로리 및 포화지방 데이터 확인 주소.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 76,
+      "category": "치킨",
+      "brand": "교촌치킨",
+      "aliases": [
+        "교촌치킨"
+      ],
+      "listUrl": "https://www.kyochon.com/menu",
+      "nutritionUrl": "https://www.kyochon.com/menu/nutrition.aspx",
+      "parsingHint": "허니/레드/오리지널 치킨 100g당 기준 칼로리, 가당 소스의 당류, 나트륨 완전 세분화.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 77,
+      "category": "치킨",
+      "brand": "bhc치킨",
+      "aliases": [
+        "bhc치킨"
+      ],
+      "listUrl": "https://www.bhc.co.kr/menu",
+      "nutritionUrl": "https://www.bhc.co.kr/menu/nutrition.asp",
+      "parsingHint": "뿌링클, 맛초킹 등 시그니처 시즈닝 치킨의 높은 나트륨(mg) 및 당류 데이터 추출 최적화.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 78,
+      "category": "치킨",
+      "brand": "BBQ",
+      "aliases": [
+        "BBQ"
+      ],
+      "listUrl": "https://www.bbq.co.kr/menu",
+      "nutritionUrl": "https://www.bbq.co.kr/menu/nutrition",
+      "parsingHint": "황금올리브 치킨 튀김옷의 포화지방 및 단백질 중량 매핑용 고유 페이지.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 79,
+      "category": "치킨",
+      "brand": "굽네치킨",
+      "aliases": [
+        "굽네치킨"
+      ],
+      "listUrl": "https://www.goobne.co.kr/menu",
+      "nutritionUrl": "https://www.goobne.co.kr/menu/nutrition",
+      "parsingHint": "오븐 구이 방식 치킨. 프라이드 대비 낮은 지방/칼로리(다이어터 선호) 비교 매핑 핵심 DB.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 80,
+      "category": "치킨",
+      "brand": "푸라닭치킨",
+      "aliases": [
+        "푸라닭치킨"
+      ],
+      "listUrl": "https://puradakchicken.com/menu",
+      "nutritionUrl": "https://puradakchicken.com/menu/nutrition",
+      "parsingHint": "오븐-후라이드 공법 치킨 및 블랙알리오 소스의 당류/나트륨 정밀 수치 테이블 뷰.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 81,
+      "category": "치킨",
+      "brand": "네네치킨",
+      "aliases": [
+        "네네치킨"
+      ],
+      "listUrl": "https://nenechicken.com/menu",
+      "nutritionUrl": "https://nenechicken.com/menu/nutrition",
+      "parsingHint": "스노윙 치킨 시즈닝 분말 및 배터 믹스 기반 칼로리/나트륨 수치 제공.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 82,
+      "category": "치킨",
+      "brand": "처갓집양념치킨",
+      "aliases": [
+        "처갓집양념치킨"
+      ],
+      "listUrl": "http://www.cheogajip.co.kr/menu",
+      "nutritionUrl": "http://www.cheogajip.co.kr/menu/nutrition",
+      "parsingHint": "슈프림양념치킨의 화이트소스/양념소스 결합형 고당류, 고지방 지표 수집 경로.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 83,
+      "category": "치킨",
+      "brand": "페리카나",
+      "aliases": [
+        "페리카나"
+      ],
+      "listUrl": "https://pelicana.co.kr/menu",
+      "nutritionUrl": "https://pelicana.co.kr/menu/nutrition_info",
+      "parsingHint": "원조 양념치킨 반죽 및 소스 칼로리, 나트륨 가이드 텍스트 데이터 명시.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 84,
+      "category": "치킨",
+      "brand": "자담치킨",
+      "aliases": [
+        "자담치킨"
+      ],
+      "listUrl": "https://ejadam.co.kr/menu",
+      "nutritionUrl": "https://ejadam.co.kr/menu/nutrition",
+      "parsingHint": "동물복지 원료육 프라이드 및 맵슐랭 치킨의 정밀 영양성분 매핑용 주소.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 85,
+      "category": "치킨",
+      "brand": "노랑통닭",
+      "aliases": [
+        "노랑통닭"
+      ],
+      "listUrl": "https://norangtongdak.co.kr/menu",
+      "nutritionUrl": "https://norangtongdak.co.kr/menu/nutrition",
+      "parsingHint": "가마솥 튀김 프라이드치킨 100g당 칼로리 및 나트륨(mg) 텍스트 표 제공.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 86,
+      "category": "샌드위치",
+      "brand": "써브웨이",
+      "aliases": [
+        "써브웨이"
+      ],
+      "listUrl": "https://www.subway.co.kr/menu",
+      "nutritionUrl": "https://www.subway.co.kr/nutritionBar",
+      "parsingHint": "샌드위치 베이스(15cm) 칼로리, 소스/치즈 제외 단백질, 탄수화물 지표 테이블 뷰 완벽 구축.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 87,
+      "category": "샐러드",
+      "brand": "샐러디",
+      "aliases": [
+        "샐러디"
+      ],
+      "listUrl": "https://salady.com/menu",
+      "nutritionUrl": "https://salady.com/menu/nutrition",
+      "parsingHint": "salady_nutrition_chart.pdf 파일 및 웹 표 제공. 웜볼, 샐러디, 드레싱별 탄단지 완벽 분리 파싱 타겟.",
+      "extractionHint": "PDF",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 88,
+      "category": "샐러드",
+      "brand": "포케올데이",
+      "aliases": [
+        "포케올데이"
+      ],
+      "listUrl": "https://pokeallday.co.kr/menu",
+      "nutritionUrl": "https://pokeallday.co.kr/menu/nutrition",
+      "parsingHint": "포케 베이스(현미밥/메밀면/야채) 및 연어/오리 토ppings 정밀 칼로리/탄단지 가이드 명시.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 89,
+      "category": "샌드위치",
+      "brand": "퀴즈노스",
+      "aliases": [
+        "퀴즈노스"
+      ],
+      "listUrl": "http://www.quiznos.co.kr/menu",
+      "nutritionUrl": "http://www.quiznos.co.kr/menu/nutrition",
+      "parsingHint": "오븐 베이크드 샌드위치 사이즈별(R/M/L) 정밀 열량, 단백질, 지방, 나트륨 데이터 노출.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 90,
+      "category": "샐러드",
+      "brand": "슬로우캘리",
+      "aliases": [
+        "슬로우캘리"
+      ],
+      "listUrl": "http://slowcali.co.kr/menu",
+      "nutritionUrl": "http://slowcali.co.kr/menu/nutrition",
+      "parsingHint": "하와이안 포케 전문. 참치/연어 스파이시 소스 및 현미밥 베이스 탄단지 정밀 매핑 가능.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 91,
+      "category": "샐러드",
+      "brand": "잇샐러드",
+      "aliases": [
+        "잇샐러드"
+      ],
+      "listUrl": "https://itsalad.me/menu",
+      "nutritionUrl": "https://itsalad.me/menu/nutrition",
+      "parsingHint": "찹샐러드 형태. 스푼으로 먹는 고식이섬유, 저칼로리 메뉴별 세부 탄단지 데이터 수집.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 92,
+      "category": "샐러드",
+      "brand": "보울룸",
+      "aliases": [
+        "보울룸"
+      ],
+      "listUrl": "http://bowlroom.co.kr/menu",
+      "nutritionUrl": "http://bowlroom.co.kr/menu/nutrition",
+      "parsingHint": "샐러드 보울 전문 프랜차이즈. 커스텀 포케 조합별 칼로리 계산 엔진 연동용 DB.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 93,
+      "category": "샐러드",
+      "brand": "밸런스포케",
+      "aliases": [
+        "밸런스포케"
+      ],
+      "listUrl": "http://balancepoke.com/menu",
+      "nutritionUrl": "http://balancepoke.com/menu/nutrition",
+      "parsingHint": "차돌박이포케, 수비드닭가슴살포케 등 단백질(g) 매핑 비중이 높은 고효율 타겟 주소.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 94,
+      "category": "샌드위치",
+      "brand": "홍루이젠",
+      "aliases": [
+        "홍루이젠"
+      ],
+      "listUrl": "http://hungruichen.co.kr/menu",
+      "nutritionUrl": "http://hungruichen.co.kr/menu/nutrition",
+      "parsingHint": "대만식 햄치즈 샌드위치 및 가당 연유 버터 크림의 개당 칼로리, 당류 함량 표 제공.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 95,
+      "category": "샌드위치",
+      "brand": "에그드랍",
+      "aliases": [
+        "에그드랍"
+      ],
+      "listUrl": "http://eggdrop.co.kr/menu",
+      "nutritionUrl": "http://eggdrop.co.kr/menu/nutrition_table",
+      "parsingHint": "스크램블 에그 및 브리오슈 번 기반 고지방, 고단백 샌드위치 메뉴 영양성분 명시.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 96,
+      "category": "카페/베이커리",
+      "brand": "파스쿠찌 파니니",
+      "aliases": [
+        "파스쿠찌 파니니"
+      ],
+      "listUrl": "https://caffe-pascucci.co.kr",
+      "nutritionUrl": "https://caffe-pascucci.co.kr/menu/nutrition_baker",
+      "parsingHint": "베이커리 전용 탭. 샌드위치, 파니니류의 탄단지 및 고나트륨 수치 정적 그리드 추출.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 97,
+      "category": "베이커리",
+      "brand": "파리바게뜨샌드위치",
+      "aliases": [
+        "파리바게뜨샌드위치"
+      ],
+      "listUrl": "https://paris.co.kr/product",
+      "nutritionUrl": "https://paris.co.kr/product/sandwich_nutrition",
+      "parsingHint": "런치 샌드위치 및 샐러드 랩 계열 고칼로리/지방/단백질 텍스트 그리드 파싱 타겟 주소.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 98,
+      "category": "샌드위치",
+      "brand": "에그슬럿",
+      "aliases": [
+        "에그슬럿"
+      ],
+      "listUrl": "https://www.eggslut.co.kr/menu",
+      "nutritionUrl": "https://www.eggslut.co.kr/menu/nutrition",
+      "parsingHint": "SPC 고급 라인업. 브리오슈 번 및 달걀 요리 정밀 영양 데이터 추출 경로.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 99,
+      "category": "샐러드",
+      "brand": "크리스피프레시",
+      "aliases": [
+        "크리스피프레시"
+      ],
+      "listUrl": "https://www.crispyfresh.co.kr",
+      "nutritionUrl": "https://www.crispyfresh.co.kr/menu/nutrition",
+      "parsingHint": "동원홈푸드 프리미엄 샐러드 라인업. 흙 묻지 않은 수경재배 채소 및 아보카도 기반 탄단지 완벽 매핑 가동.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    },
+    {
+      "number": 100,
+      "category": "건강음료",
+      "brand": "주스솔루션",
+      "aliases": [
+        "주스솔루션"
+      ],
+      "listUrl": "http://juicesolution.co.kr",
+      "nutritionUrl": "http://juicesolution.co.kr/menu/nutrition",
+      "parsingHint": "CJ푸드빌 건강 주스 라인업. 원재료 비타민/칼로리 지표 수집 최적화 주소.",
+      "extractionHint": "STATIC_OR_MANUAL",
+      "verificationStatus": "unverified",
+      "verifiedAt": null,
+      "verificationNote": "사용자 제공 후보. 공식 사이트 접근, 실제 영양성분 존재, 이용조건을 확인하기 전에는 분석 근거로 사용하지 않음."
+    }
+  ]
+}
