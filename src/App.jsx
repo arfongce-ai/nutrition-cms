@@ -9,6 +9,7 @@ import {
 } from './services/nutritionEngine';
 import { OFFICIAL_BRAND_FOODS, findOfficialBrandFood, findOfficialNutritionSources } from './services/officialNutritionSources';
 import { findOfficialProductFood, findOfficialProductSources, searchOfficialProductFoods } from './services/officialProductDatabase';
+import { recordRecognitionCorrection, recordRecognitionObservation } from './services/recognitionLearningStore';
 
 const PROFILE_KEY = 'nutritionCameraProfile.v2';
 const CAMERA_PERMISSION_KEY = 'nutritionCameraPermission.v1';
@@ -18,6 +19,9 @@ const LIVE_SCAN_HOLD_FRAMES = 2;
 const CAPTURE_JPEG_QUALITY = 0.94;
 const CAMERA_BURST_FRAME_COUNT = 3;
 const MIN_AUTO_CONFIRM_VISION_SCORE = 0.85;
+const NUTRITION_SEARCH_CACHE_TTL_MS = 30 * 60 * 1000;
+
+const nutritionSearchCache = new Map();
 const LIVE_OCR_FRAME_MAX_WIDTH = 1400;
 const MIN_TRUSTED_CAMERA_ESTIMATE_SCORE = 0.7;
 const MIN_TEXT_CAMERA_ESTIMATE_SCORE = 0.78;
@@ -412,11 +416,16 @@ export default function App() {
     });
     setSaveState('');
 
-    const [detected, visionFoods] = await Promise.all([readNutritionTextFromImage(photo), recognizeFoodsWithVision(photo)]);
+    const canSkipVision = isTrustedLocalRecognition(liveScan.food, liveScan.facts);
+    const [detected, visionFoods] = await Promise.all([
+      readNutritionTextFromImage(photo),
+      canSkipVision ? Promise.resolve([]) : recognizeFoodsWithVision(photo),
+    ]);
     const parsedFacts = detected.text ? parseNutritionText(detected.text) : {};
     const hasParsedFacts = hasReadableNutritionFacts(parsedFacts);
     const fallbackEstimate = visionFoods.length ? null : await estimateFoodFromPhoto(photo, detected.text);
     const visualEstimates = visionFoods.length ? visionFoods : fallbackEstimate ? [fallbackEstimate] : [];
+    recordRecognitionObservation(visualEstimates);
     setCaptured((current) => {
       if (!current) return current;
       const shouldApplyVisualEstimate = visualEstimates.length && (!current.foods.length || (current.foods.length === 1 && current.foods[0]?.estimated));
@@ -1219,6 +1228,7 @@ function FoodItemsForm({ foods, updateFood, addFood, removeFood }) {
             <input
               value={food.name}
               onChange={(event) => updateFood(food.id, { name: event.target.value, estimated: false, visualReason: '', requiresConfirmation: false })}
+              onBlur={() => recordRecognitionCorrection({ ...food, name: food.recognizedName || food.name }, food.name)}
               className="h-12 rounded-lg border border-slate-200 bg-white px-3 text-base"
               placeholder="예: 현미밥, 닭가슴살, 김치"
             />
@@ -2441,13 +2451,9 @@ async function recognizeFoodsWithVision(photo) {
 
 async function createVisionFoodItem(recognition, provider) {
   const query = [recognition.brand, recognition.name].filter(Boolean).join(' ');
-  let searchResponse = await fetch(`/api/nutrition-search?q=${encodeURIComponent(query)}&limit=8`);
-  let searchResult = searchResponse.ok ? await searchResponse.json() : null;
-  let candidates = Array.isArray(searchResult?.candidates) ? searchResult.candidates : [];
+  let candidates = await searchNutritionCandidatesCached(query);
   if (!candidates.length && recognition.brand) {
-    searchResponse = await fetch(`/api/nutrition-search?q=${encodeURIComponent(recognition.name)}&limit=8`);
-    searchResult = searchResponse.ok ? await searchResponse.json() : null;
-    candidates = Array.isArray(searchResult?.candidates) ? searchResult.candidates : [];
+    candidates = await searchNutritionCandidatesCached(recognition.name);
   }
   const normalizedName = normalizeLookupText(recognition.name);
   const candidate =
@@ -2458,6 +2464,7 @@ async function createVisionFoodItem(recognition, provider) {
   return {
     ...createEmptyFoodItem(),
     name: candidate?.name || recognition.name,
+    recognizedName: candidate?.name || recognition.name,
     grams,
     estimated: Number(recognition.confidence) < MIN_AUTO_CONFIRM_VISION_SCORE || !candidate?.nutrients,
     requiresConfirmation: Number(recognition.confidence) < MIN_AUTO_CONFIRM_VISION_SCORE,
@@ -2475,6 +2482,26 @@ async function createVisionFoodItem(recognition, provider) {
     sourceLabel: candidate?.sourceLabel || '',
     sourceUrl: candidate?.sourceUrl || '',
   };
+}
+
+async function searchNutritionCandidatesCached(query) {
+  const key = normalizeLookupText(query);
+  const cached = nutritionSearchCache.get(key);
+  if (cached && Date.now() - cached.createdAt < NUTRITION_SEARCH_CACHE_TTL_MS) return cached.candidates;
+
+  const response = await fetch(`/api/nutrition-search?q=${encodeURIComponent(query)}&limit=8`);
+  const result = response.ok ? await response.json() : null;
+  const candidates = Array.isArray(result?.candidates) ? result.candidates : [];
+  nutritionSearchCache.set(key, { createdAt: Date.now(), candidates });
+  return candidates;
+}
+
+function isTrustedLocalRecognition(food, facts) {
+  if (hasReadableNutritionFacts(facts) && String(facts?.foodName || '').trim()) return true;
+  if (!food) return false;
+  const score = Number(food.confidenceScore || 0);
+  const source = String(food.recognitionSource || '');
+  return score >= 0.92 && (source.includes('official') || source.includes('ocr-text'));
 }
 
 async function prepareVisionImage(photo) {
@@ -3233,6 +3260,7 @@ function createVisualEstimatedFood(name, grams, visualReason, metadata = {}) {
   return {
     ...createEstimatedFoodItem(),
     name,
+    recognizedName: name,
     grams,
     visualReason,
     recognitionSource: metadata.recognitionSource || 'visual-shape',

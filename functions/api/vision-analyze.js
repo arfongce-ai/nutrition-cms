@@ -42,7 +42,7 @@ export async function onRequestPost({ request, env }) {
             ],
           },
         ],
-        max_completion_tokens: 1200,
+        max_completion_tokens: 700,
         reasoning_effort: 'low',
         temperature: 0.1,
         response_format: { type: 'json_object' },
@@ -66,7 +66,7 @@ export async function onRequestPost({ request, env }) {
     },
     body: JSON.stringify({
       model: env.OPENAI_VISION_MODEL || 'gpt-4o-mini',
-      max_output_tokens: 350,
+      max_output_tokens: 450,
       input: [
         {
           role: 'user',
