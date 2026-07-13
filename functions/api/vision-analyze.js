@@ -31,7 +31,7 @@ export async function onRequestPost({ request, env }) {
 
   if (env.AI) {
     try {
-      const result = await env.AI.run('@cf/meta/llama-3.2-11b-vision-instruct', {
+      const result = await env.AI.run('@cf/moonshotai/kimi-k2.7-code', {
         messages: [
           { role: 'system', content: '당신은 음식 사진 판별기입니다. 반드시 요청한 JSON 형식만 반환합니다.' },
           { role: 'user', content: createRecognitionPrompt() },
