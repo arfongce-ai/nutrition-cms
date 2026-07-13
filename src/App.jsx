@@ -390,6 +390,7 @@ export default function App() {
       photo,
       foods: liveScan.food ? [liveScan.food] : [],
       facts: initialFacts,
+      analysisStatus: 'analyzing',
       ocrStatus: hasReadableNutritionFacts(liveScan.facts) ? 'detected' : 'checking',
       ocrText: liveScan.text || '',
     });
@@ -403,10 +404,12 @@ export default function App() {
       if (!current) return current;
       const shouldApplyVisualEstimate = visualEstimate && (!current.foods.length || (current.foods.length === 1 && current.foods[0]?.estimated));
       const nextFoods = shouldApplyVisualEstimate ? [visualEstimate] : current.foods;
+      const hasAnalysisResult = nextFoods.some((food) => String(food?.name || '').trim()) || hasParsedFacts || hasReadableNutritionFacts(current.facts);
 
       return {
         ...current,
         foods: nextFoods,
+        analysisStatus: hasAnalysisResult ? 'complete' : 'failed',
         ocrStatus: hasParsedFacts ? 'detected' : detected.text ? 'text-detected' : hasReadableNutritionFacts(current.facts) ? 'detected' : detected.status,
         ocrText: detected.text || current.ocrText,
         facts: detected.text
@@ -740,7 +743,9 @@ function ReportView({
     red: '조심해요',
   }[report.stamp];
   const needsRecognitionHelp = shouldShowRecognitionHelp(captured, report);
-  const analysisUnavailable = isAnalysisUnavailable(report);
+  const analysisPending = captured.analysisStatus === 'analyzing';
+  const analysisUnavailable = !analysisPending && isAnalysisUnavailable(report);
+  const saveDisabled = analysisPending || analysisUnavailable;
 
   return (
     <section className="min-h-screen overflow-y-auto bg-slate-200 px-3 py-20 text-slate-950">
@@ -755,10 +760,10 @@ function ReportView({
           <button
             type="button"
             onClick={onSave}
-            disabled={analysisUnavailable}
-            className={`h-12 rounded-full px-5 font-black shadow-lg ${analysisUnavailable ? 'bg-slate-300 text-slate-500' : 'bg-slate-950 text-white'}`}
+            disabled={saveDisabled}
+            className={`h-12 rounded-full px-5 font-black shadow-lg ${saveDisabled ? 'bg-slate-300 text-slate-500' : 'bg-slate-950 text-white'}`}
           >
-            {analysisUnavailable ? '저장 불가' : saveState || '저장'}
+            {analysisPending ? '분석 중' : analysisUnavailable ? '저장 불가' : saveState || '저장'}
           </button>
         </div>
       </div>
@@ -770,11 +775,11 @@ function ReportView({
             <h1 className="mt-1 text-4xl font-black tracking-tight md:text-6xl">{modeLabel} A4 카드</h1>
           </div>
           <div className={`grid aspect-square w-28 rotate-[-8deg] place-items-center rounded-full border-[7px] text-center text-xl font-black leading-tight md:w-40 ${stampStyles[report.stamp]}`}>
-            {analysisUnavailable ? '분석 안됨' : stampLabel}
+            {analysisPending ? '분석 중' : analysisUnavailable ? '분석 안됨' : stampLabel}
           </div>
         </header>
 
-        {needsRecognitionHelp ? <RecognitionIssueNotice /> : null}
+        {analysisPending ? <AnalysisPendingNotice /> : needsRecognitionHelp ? <RecognitionIssueNotice /> : null}
 
         <section className="grid gap-5 md:grid-cols-[0.85fr_1.15fr]">
           <img src={captured.photo} alt="촬영된 음식" className="h-72 w-full rounded-lg border border-slate-200 object-cover md:h-full" />
@@ -782,7 +787,7 @@ function ReportView({
             <div className="rounded-lg border-2 border-slate-950 bg-white p-5">
               <h2 className="text-2xl font-black">음식 분석</h2>
               <p className="mt-2 rounded-lg bg-emerald-50 p-3 text-sm font-bold text-emerald-800">
-                사진만으로 음식명과 중량을 확정하지 않습니다. 음식명 검색 또는 빠른 보정으로 확인한 값만 계산에 반영합니다.
+                촬영한 사진에서 음식명과 중량을 인식하고, 영양 DB와 비교해 칼로리를 자동 계산합니다.
               </p>
               <FoodItemsForm foods={captured.foods} updateFood={updateFood} addFood={addFood} removeFood={removeFood} />
             </div>
@@ -803,13 +808,13 @@ function ReportView({
           </div>
         </section>
 
-        <CoachReportCard report={report} />
+        <CoachReportCard report={report} analysisPending={analysisPending} />
       </article>
     </section>
   );
 }
 
-function CoachReportCard({ report }) {
+function CoachReportCard({ report, analysisPending = false }) {
   const traffic = createTrafficFeedback(report);
   const coachLine = createCoachLine(report);
   const analysisUnavailable = isAnalysisUnavailable(report);
@@ -822,26 +827,28 @@ function CoachReportCard({ report }) {
           <h2 className="mt-1 text-3xl font-black">A4 리포트 카드</h2>
         </div>
         <span className="rounded-full bg-slate-950 px-4 py-2 text-sm font-black text-white">
-          {analysisUnavailable ? '분석 안됨' : traffic.badge}
+          {analysisPending ? '분석 중' : analysisUnavailable ? '분석 안됨' : traffic.badge}
         </span>
       </div>
 
       <div className="mt-5 grid gap-4">
         <ReportLine
           title="🍽️ 인식 음식 및 중량"
-          body={analysisUnavailable ? '분석이 안됩니다' : report.items.length ? report.items.map(formatReportItemLabel).join(', ') : '촬영 음식 250g 기준 자동 추정'}
+          body={analysisPending ? '사진에서 음식명과 중량을 확인하고 있습니다' : analysisUnavailable ? '분석이 안됩니다' : report.items.length ? report.items.map(formatReportItemLabel).join(', ') : '촬영 음식 250g 기준 자동 추정'}
         />
         <ReportLine
           title="📊 칼로리 및 주요 영양소"
           body={
-            analysisUnavailable
+            analysisPending
+              ? '음식 DB와 비교해 칼로리를 계산하고 있습니다'
+              : analysisUnavailable
               ? '분석이 안됩니다'
               : `${formatMetric(report.totals.calories, 'kcal')} / 탄수화물 ${report.macroPercent.carb}%, 단백질 ${report.macroPercent.protein}%, 지방 ${report.macroPercent.fat}%`
           }
         />
         <div className="grid gap-3 md:grid-cols-2">
-          <ReportLine title="🏅 식단 점수" body={analysisUnavailable ? '분석이 안됩니다' : `${report.dietScore?.value ?? 0}점 · ${report.dietScore?.label || '보류'}`} />
-          {analysisUnavailable ? <ReportLine title="🩸 혈당 관리" body="분석이 안됩니다" /> : <GlycemicReportCard glycemic={report.glycemic} />}
+          <ReportLine title="🏅 식단 점수" body={analysisPending ? '칼로리 계산 후 평가합니다' : analysisUnavailable ? '분석이 안됩니다' : `${report.dietScore?.value ?? 0}점 · ${report.dietScore?.label || '보류'}`} />
+          {analysisPending ? <ReportLine title="🩸 혈당 관리" body="음식 분석 후 평가합니다" /> : analysisUnavailable ? <ReportLine title="🩸 혈당 관리" body="분석이 안됩니다" /> : <GlycemicReportCard glycemic={report.glycemic} />}
         </div>
         {report.items.some((item) => item.isPendingInfo) ? (
           <PendingInfoNotice items={report.items.filter((item) => item.isPendingInfo)} />
@@ -849,18 +856,30 @@ function CoachReportCard({ report }) {
         {report.sourceItems?.length ? <OfficialSourceList sources={report.sourceItems} /> : null}
         {report.additives?.length ? <AdditiveNotice additives={report.additives} /> : null}
 
-        <div className="rounded-lg border border-slate-200 bg-slate-50 p-4">
+        {!analysisPending ? <div className="rounded-lg border border-slate-200 bg-slate-50 p-4">
           <h3 className="text-lg font-black">🚦 맞춤형 식단 평가</h3>
           <div className="mt-3 grid gap-2">
             <TrafficLine color="green" label="초록 (안전/적절)" text={traffic.green} />
             <TrafficLine color="yellow" label="노랑 (주의/모니터링)" text={traffic.yellow} />
             <TrafficLine color="red" label="빨강 (경고/제한)" text={traffic.red} />
           </div>
-        </div>
+        </div> : null}
 
-        <ReportLine title="💡 코치의 한 줄 처방" body={coachLine} strong />
+        <ReportLine title="💡 코치의 한 줄 처방" body={analysisPending ? '촬영 결과를 계산하고 있습니다. 잠시만 기다려 주세요.' : coachLine} strong />
       </div>
     </section>
+  );
+}
+
+function AnalysisPendingNotice() {
+  return (
+    <div className="flex items-center gap-4 rounded-lg border-2 border-teal-300 bg-teal-50 p-4 text-teal-950" role="status" aria-live="polite">
+      <span className="h-7 w-7 shrink-0 animate-spin rounded-full border-4 border-teal-200 border-t-teal-700" aria-hidden="true" />
+      <div>
+        <h2 className="text-xl font-black">사진 분석 중</h2>
+        <p className="mt-1 text-sm font-bold leading-snug">음식명과 촬영량을 확인한 뒤 영양 DB와 비교해 칼로리를 자동 계산합니다.</p>
+      </div>
+    </div>
   );
 }
 
