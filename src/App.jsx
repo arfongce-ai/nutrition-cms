@@ -395,10 +395,10 @@ export default function App() {
     });
     setSaveState('');
 
-    const detected = await readNutritionTextFromImage(photo);
+    const [detected, visionEstimate] = await Promise.all([readNutritionTextFromImage(photo), recognizeFoodWithVision(photo)]);
     const parsedFacts = detected.text ? parseNutritionText(detected.text) : {};
     const hasParsedFacts = hasReadableNutritionFacts(parsedFacts);
-    const visualEstimate = await estimateFoodFromPhoto(photo, detected.text);
+    const visualEstimate = visionEstimate || (await estimateFoodFromPhoto(photo, detected.text));
     setCaptured((current) => {
       if (!current) return current;
       const shouldApplyVisualEstimate = visualEstimate && (!current.foods.length || (current.foods.length === 1 && current.foods[0]?.estimated));
@@ -2242,6 +2242,64 @@ function createContrastCanvas(sourceCanvas, options = {}) {
 
   ctx.putImageData(imageData, 0, 0);
   return canvas;
+}
+
+async function recognizeFoodWithVision(photo) {
+  try {
+    const image = await prepareVisionImage(photo);
+    const response = await fetch('/api/vision-analyze', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ image }),
+    });
+    if (!response.ok) return null;
+
+    const result = await response.json();
+    const recognition = result?.foods?.[0];
+    if (!recognition?.name || Number(recognition.confidence || 0) < 0.72) return null;
+
+    const query = [recognition.brand, recognition.name].filter(Boolean).join(' ');
+    const searchResponse = await fetch(`/api/nutrition-search?q=${encodeURIComponent(query)}&limit=8`);
+    const searchResult = searchResponse.ok ? await searchResponse.json() : null;
+    const candidates = Array.isArray(searchResult?.candidates) ? searchResult.candidates : [];
+    const normalizedName = normalizeLookupText(recognition.name);
+    const candidate =
+      candidates.find((item) => normalizeLookupText(item.name) === normalizedName) ||
+      candidates.find((item) => normalizeLookupText(item.name).includes(normalizedName) || normalizedName.includes(normalizeLookupText(item.name))) ||
+      candidates[0];
+
+    const grams = String(Math.round(Number(recognition.estimatedGrams || candidate?.grams || 100)) || 100);
+    return {
+      ...createEmptyFoodItem(),
+      name: candidate?.name || recognition.name,
+      grams,
+      estimated: !candidate?.nutrients,
+      visualReason: `AI 비전 ${Math.round(Number(recognition.confidence) * 100)}%`,
+      confidenceScore: Number(recognition.confidence),
+      recognitionSource: 'openai-vision',
+      nutrients: candidate?.nutrients || null,
+      nutrientBasisGrams: candidate?.grams || grams,
+      brand: candidate?.brand || recognition.brand || '',
+      category: candidate?.category || '',
+      serving: candidate?.serving || '',
+      sourceLabel: candidate?.sourceLabel || '',
+      sourceUrl: candidate?.sourceUrl || '',
+    };
+  } catch (error) {
+    console.warn('Vision recognition unavailable', error);
+    return null;
+  }
+}
+
+async function prepareVisionImage(photo) {
+  const image = await loadImage(photo);
+  const maxSide = 1024;
+  const scale = Math.min(1, maxSide / Math.max(image.naturalWidth || image.width, image.naturalHeight || image.height));
+  const canvas = document.createElement('canvas');
+  canvas.width = Math.max(1, Math.round((image.naturalWidth || image.width) * scale));
+  canvas.height = Math.max(1, Math.round((image.naturalHeight || image.height) * scale));
+  canvas.getContext('2d', { alpha: false }).drawImage(image, 0, 0, canvas.width, canvas.height);
+  return canvas.toDataURL('image/jpeg', 0.78);
 }
 
 async function estimateFoodFromPhoto(photo, text = '') {
