@@ -10,7 +10,7 @@ export function onRequestOptions() {
 }
 
 export async function onRequestPost({ request, env }) {
-  if (!env.OPENAI_API_KEY) {
+  if (!env.AI && !env.OPENAI_API_KEY) {
     return json({ ok: false, code: 'vision_not_configured', message: '비전 분석 키가 설정되지 않았습니다.' }, 503);
   }
 
@@ -26,7 +26,31 @@ export async function onRequestPost({ request, env }) {
     return json({ ok: false, message: '지원하지 않거나 너무 큰 이미지입니다.' }, 400);
   }
 
-  const response = await fetch('https://api.openai.com/v1/responses', {
+  let outputText = '';
+  let provider = '';
+
+  if (env.AI) {
+    try {
+      const result = await env.AI.run('@cf/meta/llama-3.2-11b-vision-instruct', {
+        messages: [
+          { role: 'system', content: '당신은 음식 사진 판별기입니다. 반드시 요청한 JSON 형식만 반환합니다.' },
+          { role: 'user', content: createRecognitionPrompt() },
+        ],
+        image,
+        max_tokens: 350,
+      });
+      outputText = String(result?.response || result?.result || result?.description || '');
+      provider = 'cloudflare-workers-ai';
+    } catch (error) {
+      console.error('Cloudflare Workers AI vision failed', error);
+      if (!env.OPENAI_API_KEY) {
+        return json({ ok: false, code: 'vision_provider_error', message: 'Cloudflare 비전 분석에 실패했습니다.' }, 502);
+      }
+    }
+  }
+
+  if (!outputText && env.OPENAI_API_KEY) {
+    const response = await fetch('https://api.openai.com/v1/responses', {
     method: 'POST',
     headers: {
       authorization: `Bearer ${env.OPENAI_API_KEY}`,
@@ -41,29 +65,26 @@ export async function onRequestPost({ request, env }) {
           content: [
             {
               type: 'input_text',
-              text: [
-                '사진에서 실제로 보이는 음식과 음료만 식별하세요.',
-                '포장 글자가 보이면 제품명과 브랜드를 우선 사용하세요.',
-                '손, 식기, 테이블, 배경은 음식으로 판단하지 마세요.',
-                '확실하지 않으면 foods를 빈 배열로 반환하세요.',
-                '반드시 JSON만 반환하세요: {"foods":[{"name":"한국어 음식명","brand":"브랜드 또는 빈 문자열","confidence":0부터1,"estimatedGrams":숫자}],"reason":"짧은 근거"}',
-              ].join('\n'),
+              text: createRecognitionPrompt(),
             },
             { type: 'input_image', image_url: image, detail: 'low' },
           ],
         },
       ],
     }),
-  });
+    });
 
-  if (!response.ok) {
-    const errorText = await response.text();
-    console.error('OpenAI vision request failed', response.status, errorText.slice(0, 500));
-    return json({ ok: false, code: 'vision_provider_error', message: '비전 분석 요청에 실패했습니다.' }, 502);
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error('OpenAI vision request failed', response.status, errorText.slice(0, 500));
+      return json({ ok: false, code: 'vision_provider_error', message: '비전 분석 요청에 실패했습니다.' }, 502);
+    }
+
+    const payload = await response.json();
+    outputText = extractOutputText(payload);
+    provider = 'openai';
   }
 
-  const payload = await response.json();
-  const outputText = extractOutputText(payload);
   const parsed = parseJsonObject(outputText);
   const foods = Array.isArray(parsed?.foods)
     ? parsed.foods
@@ -77,7 +98,17 @@ export async function onRequestPost({ request, env }) {
         .slice(0, 4)
     : [];
 
-  return json({ ok: true, foods, reason: String(parsed?.reason || '').slice(0, 200) });
+  return json({ ok: true, provider, foods, reason: String(parsed?.reason || '').slice(0, 200) });
+}
+
+function createRecognitionPrompt() {
+  return [
+    '사진에서 실제로 보이는 음식과 음료만 식별하세요.',
+    '포장 글자가 보이면 제품명과 브랜드를 우선 사용하세요.',
+    '손, 식기, 테이블, 배경은 음식으로 판단하지 마세요.',
+    '확실하지 않으면 foods를 빈 배열로 반환하세요.',
+    '반드시 JSON만 반환하세요: {"foods":[{"name":"한국어 음식명","brand":"브랜드 또는 빈 문자열","confidence":0부터1,"estimatedGrams":숫자}],"reason":"짧은 근거"}',
+  ].join('\n');
 }
 
 function extractOutputText(payload) {
