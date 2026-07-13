@@ -1,5 +1,4 @@
 name = "nutrition-cms"
-account_id = "d9d063c1493cda83199f2cf987a79a27"
 pages_build_output_dir = "dist"
 
 [[d1_databases]]

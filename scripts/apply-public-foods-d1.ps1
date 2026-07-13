@@ -6,6 +6,10 @@ param(
 
 $ErrorActionPreference = "Stop"
 
+if (-not $env:CLOUDFLARE_ACCOUNT_ID) {
+  $env:CLOUDFLARE_ACCOUNT_ID = "d9d063c1493cda83199f2cf987a79a27"
+}
+
 if (-not $env:CLOUDFLARE_API_TOKEN) {
   throw "CLOUDFLARE_API_TOKEN 환경변수가 필요합니다. Cloudflare API 토큰을 설정한 뒤 다시 실행하세요."
 }
