@@ -32,7 +32,7 @@ export async function onRequestPost({ request, env }) {
 
   if (env.AI) {
     try {
-      const result = await env.AI.run('@cf/moonshotai/kimi-k2.7-code', {
+      const result = await env.AI.run('@cf/google/gemma-4-26b-a4b-it', {
         messages: [
           { role: 'system', content: '당신은 음식 사진 판별기입니다. 반드시 요청한 JSON 형식만 반환합니다.' },
           {
@@ -43,7 +43,7 @@ export async function onRequestPost({ request, env }) {
             ],
           },
         ],
-        max_completion_tokens: 350,
+        max_completion_tokens: 500,
         reasoning_effort: 'low',
         temperature: 0.1,
         response_format: { type: 'json_object' },
