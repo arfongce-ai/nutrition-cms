@@ -43,7 +43,7 @@ export async function onRequestPost({ request, env }) {
             ],
           },
         ],
-        max_completion_tokens: 500,
+        max_completion_tokens: 1200,
         reasoning_effort: 'low',
         temperature: 0.1,
         response_format: { type: 'json_object' },
@@ -118,10 +118,9 @@ export async function onRequestPost({ request, env }) {
 
 function createRecognitionPrompt() {
   return [
-    '사진에서 실제로 보이는 음식과 음료만 식별하세요.',
-    '포장 글자가 보이면 제품명과 브랜드를 우선 사용하세요.',
-    '손, 식기, 테이블, 배경은 음식으로 판단하지 마세요.',
-    '확실하지 않으면 foods를 빈 배열로 반환하세요.',
+    '사진의 전경에서 실제로 보이는 주된 음식 또는 음료만 식별하세요.',
+    '제품 글자가 선명하면 제품명과 브랜드를 사용하고, 손·식기·테이블·배경은 제외하세요.',
+    '확실하지 않으면 foods를 빈 배열로 반환하세요. 설명이나 분석 과정은 출력하지 마세요.',
     '반드시 JSON만 반환하세요: {"foods":[{"name":"한국어 음식명","brand":"브랜드 또는 빈 문자열","confidence":0부터1,"estimatedGrams":숫자}],"reason":"짧은 근거"}',
   ].join('\n');
 }
