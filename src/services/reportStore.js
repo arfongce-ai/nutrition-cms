@@ -112,6 +112,9 @@ function toMealHistoryItem(item) {
     sourceUrl: item.sourceUrl || '',
     brand: item.brand || '',
     category: item.category || '',
+    quantity: Number(item.quantity || 0) || 0,
+    unitLabel: item.unitLabel || '',
+    foodType: item.foodType || '',
   };
 }
 

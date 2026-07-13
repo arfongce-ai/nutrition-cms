@@ -396,14 +396,15 @@ export default function App() {
     });
     setSaveState('');
 
-    const [detected, visionEstimate] = await Promise.all([readNutritionTextFromImage(photo), recognizeFoodWithVision(photo)]);
+    const [detected, visionFoods] = await Promise.all([readNutritionTextFromImage(photo), recognizeFoodsWithVision(photo)]);
     const parsedFacts = detected.text ? parseNutritionText(detected.text) : {};
     const hasParsedFacts = hasReadableNutritionFacts(parsedFacts);
-    const visualEstimate = visionEstimate || (await estimateFoodFromPhoto(photo, detected.text));
+    const fallbackEstimate = visionFoods.length ? null : await estimateFoodFromPhoto(photo, detected.text);
+    const visualEstimates = visionFoods.length ? visionFoods : fallbackEstimate ? [fallbackEstimate] : [];
     setCaptured((current) => {
       if (!current) return current;
-      const shouldApplyVisualEstimate = visualEstimate && (!current.foods.length || (current.foods.length === 1 && current.foods[0]?.estimated));
-      const nextFoods = shouldApplyVisualEstimate ? [visualEstimate] : current.foods;
+      const shouldApplyVisualEstimate = visualEstimates.length && (!current.foods.length || (current.foods.length === 1 && current.foods[0]?.estimated));
+      const nextFoods = shouldApplyVisualEstimate ? visualEstimates : current.foods;
       const hasAnalysisResult = nextFoods.some((food) => String(food?.name || '').trim()) || hasParsedFacts || hasReadableNutritionFacts(current.facts);
 
       return {
@@ -833,18 +834,19 @@ function CoachReportCard({ report, analysisPending = false }) {
 
       <div className="mt-5 grid gap-4">
         <ReportLine
-          title="🍽️ 인식 음식 및 중량"
-          body={analysisPending ? '사진에서 음식명과 중량을 확인하고 있습니다' : analysisUnavailable ? '분석이 안됩니다' : report.items.length ? report.items.map(formatReportItemLabel).join(', ') : '촬영 음식 250g 기준 자동 추정'}
-        />
-        <ReportLine
-          title="📊 칼로리 및 주요 영양소"
+          title="총 칼로리"
           body={
             analysisPending
               ? '음식 DB와 비교해 칼로리를 계산하고 있습니다'
               : analysisUnavailable
               ? '분석이 안됩니다'
-              : `${formatMetric(report.totals.calories, 'kcal')} / 탄수화물 ${report.macroPercent.carb}%, 단백질 ${report.macroPercent.protein}%, 지방 ${report.macroPercent.fat}%`
+              : `${formatMetric(report.totals.calories, 'kcal')} · 탄수화물 ${report.macroPercent.carb}% · 단백질 ${report.macroPercent.protein}% · 지방 ${report.macroPercent.fat}%`
           }
+          strong
+        />
+        <ReportLine
+          title="인식 음식·반찬 및 수량"
+          body={analysisPending ? '사진에서 음식명과 중량을 확인하고 있습니다' : analysisUnavailable ? '분석이 안됩니다' : report.items.length ? report.items.map(formatReportItemLabel).join(', ') : '촬영 음식 250g 기준 자동 추정'}
         />
         <div className="grid gap-3 md:grid-cols-2">
           <ReportLine title="🏅 식단 점수" body={analysisPending ? '칼로리 계산 후 평가합니다' : analysisUnavailable ? '분석이 안됩니다' : `${report.dietScore?.value ?? 0}점 · ${report.dietScore?.label || '보류'}`} />
@@ -1136,8 +1138,15 @@ function LiveMetric({ label, value }) {
 }
 
 function FoodItemsForm({ foods, updateFood, addFood, removeFood }) {
+  const namedFoodCount = foods.filter((food) => String(food.name || '').trim()).length;
+  const fruitCount = foods.reduce((total, food) => total + (isFruitFood(food) ? Number(food.quantity || 0) : 0), 0);
+
   return (
     <div className="mt-4 grid gap-3">
+      <div className="flex flex-wrap items-center gap-2 rounded-lg bg-teal-50 px-3 py-2 text-sm font-black text-teal-900">
+        <span>음식·반찬 {namedFoodCount}가지</span>
+        {fruitCount > 0 ? <span className="rounded-full bg-white px-3 py-1 text-emerald-800">과일 {fruitCount}개</span> : null}
+      </div>
       {foods.map((food, index) => (
         <div key={food.id} className="grid gap-3 rounded-lg border border-slate-200 bg-slate-50 p-3">
           <div className="flex items-center justify-between gap-3">
@@ -1195,6 +1204,32 @@ function FoodItemsForm({ foods, updateFood, addFood, removeFood }) {
               <span className="grid w-14 place-items-center bg-slate-100 text-xs text-slate-500">g</span>
             </div>
           </label>
+          <div className="grid grid-cols-[minmax(0,1fr)_7rem] gap-2">
+            <label className="grid gap-1 text-sm font-black">
+              개수·수량
+              <input
+                value={food.quantity || ''}
+                type="number"
+                inputMode="numeric"
+                min="0"
+                max="100"
+                step="1"
+                onChange={(event) => updateFood(food.id, createQuantityUpdate(food, event.target.value))}
+                className="h-12 min-w-0 rounded-lg border border-slate-200 bg-white px-3 text-base"
+                placeholder="예: 3"
+              />
+            </label>
+            <label className="grid gap-1 text-sm font-black">
+              단위
+              <select
+                value={food.unitLabel || '개'}
+                onChange={(event) => updateFood(food.id, { unitLabel: event.target.value })}
+                className="h-12 rounded-lg border border-slate-200 bg-white px-3 text-base"
+              >
+                {['개', '가지', '조각', '그릇', '컵', '접시', '줌'].map((unit) => <option key={unit}>{unit}</option>)}
+              </select>
+            </label>
+          </div>
           {!food.estimated ? <QuickFoodPresetSelect foodId={food.id} onApply={updateFood} compact /> : null}
         </div>
       ))}
@@ -1208,6 +1243,35 @@ function FoodItemsForm({ foods, updateFood, addFood, removeFood }) {
       </button>
     </div>
   );
+}
+
+function isFruitFood(food) {
+  if (food?.foodType === 'fruit') return true;
+  const text = `${food?.name || ''} ${food?.category || ''}`.toLowerCase().replace(/\s+/g, '');
+  return ['과일', '바나나', '사과', '배', '귤', '오렌지', '포도', '딸기', '수박', '참외', '키위', '복숭아', '토마토'].some((term) => text.includes(term));
+}
+
+function createQuantityUpdate(food, value) {
+  const quantity = Math.max(0, Math.min(100, Math.round(Number(value || 0))));
+  if (!quantity || (food.unitLabel && food.unitLabel !== '개')) return { quantity: value };
+
+  const normalizedName = String(food.name || '').toLowerCase().replace(/\s+/g, '');
+  const unitWeights = [
+    { keys: ['방울토마토'], grams: 15 },
+    { keys: ['바나나'], grams: 100 },
+    { keys: ['사과'], grams: 250 },
+    { keys: ['귤', '만다린'], grams: 80 },
+    { keys: ['오렌지'], grams: 200 },
+    { keys: ['딸기'], grams: 20 },
+    { keys: ['포도'], grams: 8 },
+    { keys: ['키위'], grams: 100 },
+    { keys: ['복숭아'], grams: 250 },
+    { keys: ['토마토'], grams: 180 },
+    { keys: ['계란', '달걀'], grams: 50 },
+    { keys: ['고구마'], grams: 150 },
+  ];
+  const matched = unitWeights.find((item) => item.keys.some((key) => normalizedName.includes(key)));
+  return matched ? { quantity: String(quantity), grams: String(quantity * matched.grams), estimated: false } : { quantity: String(quantity) };
 }
 
 function QuickFoodPresetSelect({ foodId, onApply, compact = false }) {
@@ -2263,7 +2327,7 @@ function createContrastCanvas(sourceCanvas, options = {}) {
   return canvas;
 }
 
-async function recognizeFoodWithVision(photo) {
+async function recognizeFoodsWithVision(photo) {
   try {
     const image = await prepareVisionImage(photo);
     const response = await fetch('/api/vision-analyze', {
@@ -2271,48 +2335,55 @@ async function recognizeFoodWithVision(photo) {
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify({ image }),
     });
-    if (!response.ok) return null;
+    if (!response.ok) return [];
 
     const result = await response.json();
-    const recognition = result?.foods?.[0];
-    if (!recognition?.name || Number(recognition.confidence || 0) < 0.72) return null;
-
-    const query = [recognition.brand, recognition.name].filter(Boolean).join(' ');
-    let searchResponse = await fetch(`/api/nutrition-search?q=${encodeURIComponent(query)}&limit=8`);
-    let searchResult = searchResponse.ok ? await searchResponse.json() : null;
-    let candidates = Array.isArray(searchResult?.candidates) ? searchResult.candidates : [];
-    if (!candidates.length && recognition.brand) {
-      searchResponse = await fetch(`/api/nutrition-search?q=${encodeURIComponent(recognition.name)}&limit=8`);
-      searchResult = searchResponse.ok ? await searchResponse.json() : null;
-      candidates = Array.isArray(searchResult?.candidates) ? searchResult.candidates : [];
-    }
-    const normalizedName = normalizeLookupText(recognition.name);
-    const candidate =
-      candidates.find((item) => normalizeLookupText(item.name) === normalizedName) ||
-      candidates.find((item) => normalizeLookupText(item.name).includes(normalizedName) || normalizedName.includes(normalizeLookupText(item.name))) ||
-      candidates[0];
-
-    const grams = String(Math.round(Number(recognition.estimatedGrams || candidate?.grams || 100)) || 100);
-    return {
-      ...createEmptyFoodItem(),
-      name: candidate?.name || recognition.name,
-      grams,
-      estimated: !candidate?.nutrients,
-      visualReason: `AI 비전 ${Math.round(Number(recognition.confidence) * 100)}%`,
-      confidenceScore: Number(recognition.confidence),
-      recognitionSource: result?.provider || 'ai-vision',
-      nutrients: candidate?.nutrients || null,
-      nutrientBasisGrams: candidate?.grams || grams,
-      brand: candidate?.brand || recognition.brand || '',
-      category: candidate?.category || '',
-      serving: candidate?.serving || '',
-      sourceLabel: candidate?.sourceLabel || '',
-      sourceUrl: candidate?.sourceUrl || '',
-    };
+    const recognitions = (Array.isArray(result?.foods) ? result.foods : []).filter(
+      (recognition) => recognition?.name && Number(recognition.confidence || 0) >= 0.72,
+    );
+    return await Promise.all(recognitions.map((recognition) => createVisionFoodItem(recognition, result?.provider)));
   } catch (error) {
     console.warn('Vision recognition unavailable', error);
-    return null;
+    return [];
   }
+}
+
+async function createVisionFoodItem(recognition, provider) {
+  const query = [recognition.brand, recognition.name].filter(Boolean).join(' ');
+  let searchResponse = await fetch(`/api/nutrition-search?q=${encodeURIComponent(query)}&limit=8`);
+  let searchResult = searchResponse.ok ? await searchResponse.json() : null;
+  let candidates = Array.isArray(searchResult?.candidates) ? searchResult.candidates : [];
+  if (!candidates.length && recognition.brand) {
+    searchResponse = await fetch(`/api/nutrition-search?q=${encodeURIComponent(recognition.name)}&limit=8`);
+    searchResult = searchResponse.ok ? await searchResponse.json() : null;
+    candidates = Array.isArray(searchResult?.candidates) ? searchResult.candidates : [];
+  }
+  const normalizedName = normalizeLookupText(recognition.name);
+  const candidate =
+    candidates.find((item) => normalizeLookupText(item.name) === normalizedName) ||
+    candidates.find((item) => normalizeLookupText(item.name).includes(normalizedName) || normalizedName.includes(normalizeLookupText(item.name))) ||
+    candidates[0];
+
+  const grams = String(Math.round(Number(recognition.estimatedGrams || candidate?.grams || 100)) || 100);
+  return {
+    ...createEmptyFoodItem(),
+    name: candidate?.name || recognition.name,
+    grams,
+    estimated: !candidate?.nutrients,
+    visualReason: `AI 비전 ${Math.round(Number(recognition.confidence) * 100)}%`,
+    confidenceScore: Number(recognition.confidence),
+    recognitionSource: provider || 'ai-vision',
+    quantity: Number(recognition.quantity || 0) || '',
+    unitLabel: recognition.unitLabel || (Number(recognition.quantity || 0) ? '개' : ''),
+    foodType: recognition.foodType || '',
+    nutrients: candidate?.nutrients || null,
+    nutrientBasisGrams: candidate?.grams || grams,
+    brand: candidate?.brand || recognition.brand || '',
+    category: candidate?.category || '',
+    serving: candidate?.serving || '',
+    sourceLabel: candidate?.sourceLabel || '',
+    sourceUrl: candidate?.sourceUrl || '',
+  };
 }
 
 async function prepareVisionImage(photo) {

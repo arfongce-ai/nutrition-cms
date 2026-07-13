@@ -387,6 +387,7 @@ function normalizeFoods(foodItems) {
         estimated: Boolean(item.estimated),
         quantity: item.quantity || '',
         unitLabel: item.unitLabel || '',
+        foodType: item.foodType || '',
         sizeLabel: item.sizeLabel || '',
         confidence: item.confidence || '',
         confidenceScore: item.confidenceScore || 0,

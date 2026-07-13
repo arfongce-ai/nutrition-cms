@@ -1,6 +1,6 @@
 {
-  "name": "몸가짐 영양 CMS",
-  "short_name": "몸가짐영양",
+  "name": "몸가짐 실시간 칼로리 측정",
+  "short_name": "실시간 칼로리",
   "description": "식품 영양성분표 촬영 및 맞춤 영양 리포트 앱",
   "id": "/",
   "start_url": "/",

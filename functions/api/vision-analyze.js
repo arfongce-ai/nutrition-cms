@@ -101,9 +101,12 @@ export async function onRequestPost({ request, env }) {
           brand: String(food?.brand || '').trim(),
           confidence: clamp(Number(food?.confidence || 0), 0, 1),
           estimatedGrams: clamp(Number(food?.estimatedGrams || 0), 0, 5000),
+          quantity: clamp(Math.round(Number(food?.quantity || 0)), 0, 100),
+          unitLabel: normalizeUnitLabel(food?.unitLabel),
+          foodType: normalizeFoodType(food?.foodType),
         }))
         .filter((food) => food.name && food.confidence >= 0.72)
-        .slice(0, 4)
+        .slice(0, 8)
     : [];
 
   return json({ ok: true, provider, foods, reason: String(parsed?.reason || '').slice(0, 200) });
@@ -111,11 +114,26 @@ export async function onRequestPost({ request, env }) {
 
 function createRecognitionPrompt() {
   return [
-    '사진의 전경에서 실제로 보이는 주된 음식 또는 음료만 식별하세요.',
+    '사진의 전경에서 실제로 보이는 음식, 반찬, 과일 또는 음료를 빠짐없이 각각 식별하세요.',
+    '한식 한 상처럼 여러 그릇이나 반찬이 있으면 서로 다른 음식을 foods 배열의 별도 항목으로 최대 8가지까지 반환하세요.',
+    '같은 종류의 과일이나 달걀처럼 낱개로 셀 수 있으면 한 항목으로 묶고 보이는 개수를 quantity에 정수로 기록하세요.',
+    'estimatedGrams는 한 개 무게가 아니라 화면에 보이는 해당 음식 전체의 섭취 가능 중량 합계로 추정하세요. 총 칼로리 계산에 우선 사용됩니다.',
+    'quantity를 판단할 수 없으면 0, 낱개는 unitLabel을 "개", 조각은 "조각", 그릇은 "그릇", 컵은 "컵"으로 기록하세요.',
+    'foodType은 meal, sideDish, fruit, drink 중 하나로 분류하세요. 밥·면 등 주식은 meal, 반찬·국·찌개는 sideDish입니다.',
     '제품 글자가 선명하면 제품명과 브랜드를 사용하고, 손·식기·테이블·배경은 제외하세요.',
     '확실하지 않으면 foods를 빈 배열로 반환하세요. 설명이나 분석 과정은 출력하지 마세요.',
-    '반드시 JSON만 반환하세요: {"foods":[{"name":"한국어 음식명","brand":"브랜드 또는 빈 문자열","confidence":0부터1,"estimatedGrams":숫자}],"reason":"짧은 근거"}',
+    '반드시 JSON만 반환하세요: {"foods":[{"name":"한국어 음식명","brand":"브랜드 또는 빈 문자열","confidence":0부터1,"estimatedGrams":숫자,"quantity":숫자,"unitLabel":"개","foodType":"fruit"}],"reason":"짧은 근거"}',
   ].join('\n');
+}
+
+function normalizeUnitLabel(value) {
+  const unit = String(value || '').trim();
+  return ['개', '조각', '그릇', '컵', '접시', '줌'].includes(unit) ? unit : '';
+}
+
+function normalizeFoodType(value) {
+  const type = String(value || '').trim();
+  return ['meal', 'sideDish', 'fruit', 'drink'].includes(type) ? type : '';
 }
 
 function extractOutputText(payload) {
