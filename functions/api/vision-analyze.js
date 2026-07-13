@@ -34,12 +34,20 @@ export async function onRequestPost({ request, env }) {
       const result = await env.AI.run('@cf/moonshotai/kimi-k2.7-code', {
         messages: [
           { role: 'system', content: '당신은 음식 사진 판별기입니다. 반드시 요청한 JSON 형식만 반환합니다.' },
-          { role: 'user', content: createRecognitionPrompt() },
+          {
+            role: 'user',
+            content: [
+              { type: 'text', text: createRecognitionPrompt() },
+              { type: 'image_url', image_url: { url: image } },
+            ],
+          },
         ],
-        image,
-        max_tokens: 350,
+        max_completion_tokens: 350,
+        reasoning_effort: 'low',
+        temperature: 0.1,
+        response_format: { type: 'json_object' },
       });
-      outputText = String(result?.response || result?.result || result?.description || '');
+      outputText = extractWorkersAiText(result);
       provider = 'cloudflare-workers-ai';
     } catch (error) {
       console.error('Cloudflare Workers AI vision failed', error);
@@ -117,6 +125,15 @@ function extractOutputText(payload) {
     .filter((item) => item?.type === 'output_text')
     .map((item) => item?.text || '')
     .join('\n');
+}
+
+function extractWorkersAiText(payload) {
+  const content = payload?.choices?.[0]?.message?.content;
+  if (typeof content === 'string') return content;
+  if (Array.isArray(content)) {
+    return content.map((item) => item?.text || item?.content || '').join('\n');
+  }
+  return String(payload?.response || payload?.result || payload?.description || payload?.output_text || '');
 }
 
 function parseJsonObject(text) {

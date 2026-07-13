@@ -2259,9 +2259,14 @@ async function recognizeFoodWithVision(photo) {
     if (!recognition?.name || Number(recognition.confidence || 0) < 0.72) return null;
 
     const query = [recognition.brand, recognition.name].filter(Boolean).join(' ');
-    const searchResponse = await fetch(`/api/nutrition-search?q=${encodeURIComponent(query)}&limit=8`);
-    const searchResult = searchResponse.ok ? await searchResponse.json() : null;
-    const candidates = Array.isArray(searchResult?.candidates) ? searchResult.candidates : [];
+    let searchResponse = await fetch(`/api/nutrition-search?q=${encodeURIComponent(query)}&limit=8`);
+    let searchResult = searchResponse.ok ? await searchResponse.json() : null;
+    let candidates = Array.isArray(searchResult?.candidates) ? searchResult.candidates : [];
+    if (!candidates.length && recognition.brand) {
+      searchResponse = await fetch(`/api/nutrition-search?q=${encodeURIComponent(recognition.name)}&limit=8`);
+      searchResult = searchResponse.ok ? await searchResponse.json() : null;
+      candidates = Array.isArray(searchResult?.candidates) ? searchResult.candidates : [];
+    }
     const normalizedName = normalizeLookupText(recognition.name);
     const candidate =
       candidates.find((item) => normalizeLookupText(item.name) === normalizedName) ||
@@ -2276,7 +2281,7 @@ async function recognizeFoodWithVision(photo) {
       estimated: !candidate?.nutrients,
       visualReason: `AI 비전 ${Math.round(Number(recognition.confidence) * 100)}%`,
       confidenceScore: Number(recognition.confidence),
-      recognitionSource: 'openai-vision',
+      recognitionSource: result?.provider || 'ai-vision',
       nutrients: candidate?.nutrients || null,
       nutrientBasisGrams: candidate?.grams || grams,
       brand: candidate?.brand || recognition.brand || '',
