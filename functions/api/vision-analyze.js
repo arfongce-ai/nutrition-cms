@@ -28,7 +28,6 @@ export async function onRequestPost({ request, env }) {
 
   let outputText = '';
   let provider = '';
-  let diagnostic = null;
 
   if (env.AI) {
     try {
@@ -49,12 +48,6 @@ export async function onRequestPost({ request, env }) {
         response_format: { type: 'json_object' },
       });
       outputText = extractWorkersAiText(result);
-      if (body?.debug === true) {
-        diagnostic = {
-          keys: result && typeof result === 'object' ? Object.keys(result) : [],
-          preview: JSON.stringify(result).slice(0, 1500),
-        };
-      }
       provider = 'cloudflare-workers-ai';
     } catch (error) {
       console.error('Cloudflare Workers AI vision failed', error);
@@ -113,7 +106,7 @@ export async function onRequestPost({ request, env }) {
         .slice(0, 4)
     : [];
 
-  return json({ ok: true, provider, foods, reason: String(parsed?.reason || '').slice(0, 200), ...(diagnostic ? { diagnostic } : {}) });
+  return json({ ok: true, provider, foods, reason: String(parsed?.reason || '').slice(0, 200) });
 }
 
 function createRecognitionPrompt() {
