@@ -13,9 +13,12 @@ import { recordRecognitionCorrection, recordRecognitionObservation } from './ser
 
 const PROFILE_KEY = 'nutritionCameraProfile.v2';
 const CAMERA_PERMISSION_KEY = 'nutritionCameraPermission.v1';
-const LIVE_NUTRIENT_SCAN_INTERVAL_MS = 1800;
+const LIVE_NUTRIENT_SCAN_INTERVAL_MS = 900;
+const LIVE_OCR_EVERY_FRAMES = 2;
 const FOOD_FOCUS_CROP_RATIO = 0.58;
-const LIVE_SCAN_HOLD_FRAMES = 2;
+const LIVE_SCAN_HOLD_FRAMES = 5;
+const LIVE_SCAN_SWITCH_FRAMES = 2;
+const LIVE_SCAN_SMOOTHING_WEIGHT = 0.38;
 const CAPTURE_JPEG_QUALITY = 0.94;
 const CAMERA_BURST_FRAME_COUNT = 3;
 const MIN_AUTO_CONFIRM_VISION_SCORE = 0.85;
@@ -143,6 +146,7 @@ export default function App() {
   const textDetectorRef = useRef(null);
   const liveScanTimerRef = useRef(null);
   const liveScanBusyRef = useRef(false);
+  const liveScanFrameRef = useRef(0);
   const cameraStartingRef = useRef(false);
   const [profile, setProfile] = useStoredProfile();
   const [cameraReady, setCameraReady] = useState(false);
@@ -306,6 +310,7 @@ export default function App() {
 
   function startLiveNutrientScan() {
     stopLiveNutrientScan();
+    liveScanFrameRef.current = 0;
 
     setLiveScan((current) => ({ ...current, status: current.status === 'detected' ? 'detected' : 'scanning' }));
     runLiveNutrientScan();
@@ -313,14 +318,18 @@ export default function App() {
   }
 
   async function runLiveNutrientScan() {
-    if (liveScanBusyRef.current || !cameraReady || captured || settingsOpen) return;
+    if (liveScanBusyRef.current || !cameraReady || captured || settingsOpen || document.visibilityState === 'hidden') return;
 
     const canvas = drawLiveFrameForText();
     if (!canvas) return;
 
     liveScanBusyRef.current = true;
     try {
-      const detected = await readNutritionTextFromCanvas(canvas, textDetectorRef);
+      liveScanFrameRef.current += 1;
+      const shouldReadText = liveScanFrameRef.current === 1 || liveScanFrameRef.current % LIVE_OCR_EVERY_FRAMES === 0;
+      const detected = shouldReadText
+        ? await readNutritionTextFromCanvas(canvas, textDetectorRef)
+        : { status: 'visual', text: '' };
       const food = estimateFoodFromCanvas(canvas, detected.text);
       if (!detected.text) {
         setLiveScan((current) => mergeLiveFoodScan(current, food, detected.status));
@@ -330,17 +339,15 @@ export default function App() {
       const facts = parseNutritionText(detected.text);
       if (hasReadableNutritionFacts(facts)) {
         setLiveScan((current) => {
-          const canHoldPrevious = current.food && (current.missCount || 0) < LIVE_SCAN_HOLD_FRAMES;
-          const heldFood = food || (canHoldPrevious ? current.food : null);
+          const merged = mergeLiveFoodScan(current, food, 'detected', detected.text);
           return {
+            ...merged,
             status: 'detected',
             facts: {
               ...current.facts,
               ...facts,
             },
             text: detected.text || current.text,
-            food: heldFood,
-            missCount: food ? 0 : heldFood ? (current.missCount || 0) + 1 : 0,
           };
         });
         return;
@@ -348,12 +355,7 @@ export default function App() {
 
       setLiveScan((current) => mergeLiveFoodScan(current, food, 'scanning', detected.text));
     } catch {
-      setLiveScan(() => ({
-        status: 'scanning',
-        facts: {},
-        text: '',
-        food: null,
-      }));
+      setLiveScan((current) => mergeLiveFoodScan(current, null, 'scanning'));
     } finally {
       liveScanBusyRef.current = false;
     }
@@ -370,12 +372,35 @@ export default function App() {
 
   function mergeLiveFoodScan(current, food, status = 'scanning', text = '') {
     if (food) {
+      const currentKey = normalizeRecognitionText(current.food?.name || '');
+      const nextKey = normalizeRecognitionText(food.name || '');
+      const isSameFood = Boolean(current.food && currentKey && currentKey === nextKey);
+
+      if (current.food && !isSameFood) {
+        const candidateFrames = current.candidateName === nextKey ? (current.candidateFrames || 0) + 1 : 1;
+        if (candidateFrames < LIVE_SCAN_SWITCH_FRAMES) {
+          return {
+            ...current,
+            status: current.status === 'detected' ? 'detected' : 'visual',
+            text: text || current.text || '',
+            missCount: 0,
+            candidateName: nextKey,
+            candidateFrames,
+          };
+        }
+      }
+
+      const sampleCount = isSameFood ? Math.min((current.sampleCount || 1) + 1, 12) : 1;
+      const stabilizedFood = isSameFood ? smoothLiveFoodEstimate(current.food, food) : food;
       return {
-        status: 'visual',
+        status: status === 'detected' ? 'detected' : 'visual',
         facts: current.facts || {},
         text: text || current.text || '',
-        food,
+        food: stabilizedFood,
         missCount: 0,
+        sampleCount,
+        candidateName: '',
+        candidateFrames: 0,
       };
     }
 
@@ -395,6 +420,29 @@ export default function App() {
       text: '',
       food: null,
       missCount: 0,
+      sampleCount: 0,
+      candidateName: '',
+      candidateFrames: 0,
+    };
+  }
+
+  function smoothLiveFoodEstimate(previous, next) {
+    const previousGrams = Number(previous?.grams || 0);
+    const nextGrams = Number(next?.grams || 0);
+    const previousConfidence = Number(previous?.confidenceScore || 0);
+    const nextConfidence = Number(next?.confidenceScore || 0);
+    const grams = previousGrams > 0 && nextGrams > 0
+      ? Math.round(previousGrams * (1 - LIVE_SCAN_SMOOTHING_WEIGHT) + nextGrams * LIVE_SCAN_SMOOTHING_WEIGHT)
+      : nextGrams || previousGrams;
+    const confidenceScore = previousConfidence > 0 && nextConfidence > 0
+      ? previousConfidence * (1 - LIVE_SCAN_SMOOTHING_WEIGHT) + nextConfidence * LIVE_SCAN_SMOOTHING_WEIGHT
+      : nextConfidence || previousConfidence;
+
+    return {
+      ...previous,
+      ...next,
+      grams,
+      confidenceScore: Number(confidenceScore.toFixed(3)),
     };
   }
 
@@ -1134,7 +1182,7 @@ function LiveNutritionBadge({ liveScan }) {
     const preview = detectedFacts.slice(0, 3).join(' · ');
     const extraCount = detectedFacts.length - 3;
     return (
-      <div className="absolute left-4 right-4 top-[9.5rem] z-10 rounded-full border border-emerald-300/40 bg-emerald-500/20 px-4 py-2 text-xs font-black text-emerald-50 shadow-xl backdrop-blur md:right-auto md:max-w-[520px]">
+      <div className="absolute left-4 right-4 top-[21.5rem] z-10 rounded-full border border-emerald-300/40 bg-emerald-500/20 px-4 py-2 text-xs font-black text-emerald-50 shadow-xl backdrop-blur md:right-auto md:max-w-[520px]">
         영양표 자동 인식: {preview}
         {extraCount > 0 ? ` 외 ${extraCount}개` : ''}
       </div>
@@ -1148,20 +1196,21 @@ function LiveAnalysisPanel({ liveReport, liveScan }) {
   if (!liveReport) {
     const unsupported = liveScan?.status === 'unsupported';
     return (
-      <div className="absolute left-4 right-4 top-4 z-10 rounded-2xl border border-white/15 bg-black/45 p-3 text-white shadow-2xl backdrop-blur md:left-auto md:right-4 md:w-[360px]">
+      <div className="absolute left-4 right-4 top-4 z-10 rounded-2xl border border-white/15 bg-black/55 p-4 text-white shadow-2xl backdrop-blur md:left-auto md:right-4 md:w-[380px]" role="status" aria-live="polite">
         <div className="flex items-center justify-between gap-3">
-          <strong className="text-sm font-black">실시간 자동 분석</strong>
+          <strong className="text-sm font-black">실시간 칼로리 측정</strong>
           <span className={`rounded-full px-3 py-1 text-xs font-black ${unsupported ? 'bg-amber-300 text-amber-950' : 'bg-white/10 text-white/75'}`}>
             {unsupported ? '제한' : '분석 중'}
           </span>
         </div>
-        <p className="mt-1 text-xs font-bold text-white/75">
+        <div className="mt-2 flex items-end gap-2">
+          <strong className="text-4xl font-black tracking-tight">--</strong>
+          <span className="pb-1 text-lg font-black text-emerald-200">kcal</span>
+        </div>
+        <p className="mt-2 text-xs font-bold leading-relaxed text-white/75">
           {unsupported
-            ? '이 브라우저에서는 성분표 자동 문자 인식이 제한됩니다. 촬영 후 숫자를 직접 입력할 수 있습니다.'
-            : '성분표를 원 안에 크게 맞추면 확대·대비 보정 후 kcal와 주요 성분을 읽습니다.'}
-        </p>
-        <p className="mt-2 border-t border-white/10 pt-2 text-[11px] font-black text-amber-100/90">
-          정확하지 않을 수 있으니 참고하세요.
+            ? '음식을 원 안에 맞추면 외형으로 우선 계산합니다. 성분표 문자는 촬영 후 직접 보완할 수 있습니다.'
+            : '음식이나 성분표를 원 안에 크게 맞추세요. 약 1초마다 열량을 다시 계산하고 여러 화면을 누적해 값을 안정화합니다.'}
         </p>
       </div>
     );
@@ -1176,24 +1225,64 @@ function LiveAnalysisPanel({ liveReport, liveScan }) {
   const primaryRisk = liveScan?.food?.visualReason
     ? `실시간 후보: ${liveScan.food.name} · ${liveScan.food.visualReason}`
     : liveReport.risk.red[0] || liveReport.risk.yellow[0] || '현재 화면 기준으로 큰 위험 신호는 없습니다.';
+  const estimate = createLiveCalorieEstimate(liveReport, liveScan);
 
   return (
-    <div className="absolute left-4 right-4 top-4 z-10 rounded-2xl border border-white/15 bg-black/55 p-3 text-white shadow-2xl backdrop-blur md:left-auto md:right-4 md:w-[360px]">
+    <div className="absolute left-4 right-4 top-4 z-10 rounded-2xl border border-white/15 bg-black/60 p-4 text-white shadow-2xl backdrop-blur md:left-auto md:right-4 md:w-[380px]" role="status" aria-live="polite">
       <div className="flex items-center justify-between gap-3">
-        <strong className="text-sm font-black">실시간 자동 분석</strong>
+        <div>
+          <strong className="block text-sm font-black">실시간 칼로리 측정</strong>
+          <span className="text-[11px] font-bold text-white/60">{estimate.sourceLabel}</span>
+        </div>
         <span className={`rounded-full px-3 py-1 text-xs font-black ${stamp.className}`}>{stamp.label}</span>
       </div>
-      <div className="mt-2 grid grid-cols-3 gap-2">
-        <LiveMetric label="열량" value={formatMetric(liveReport.totals.calories, 'kcal')} />
+      <div className="mt-2 rounded-2xl border border-emerald-300/25 bg-emerald-300/10 p-3">
+        <div className="flex items-end gap-2">
+          <strong className="text-4xl font-black tracking-tight text-emerald-100">{estimate.calories}</strong>
+          <span className="pb-1 text-lg font-black text-emerald-200">kcal</span>
+        </div>
+        <div className="mt-1 flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-xs font-black">
+          <span className="text-white/90">예상 범위 {estimate.low}–{estimate.high} kcal</span>
+          <span className="text-emerald-200">신뢰도 {estimate.confidencePercent}%</span>
+        </div>
+        <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-white/10" aria-hidden="true">
+          <div className="h-full rounded-full bg-emerald-300 transition-all duration-500" style={{ width: `${estimate.confidencePercent}%` }} />
+        </div>
+        <p className="mt-2 text-xs font-black text-white/85">{estimate.foodLabel}</p>
+      </div>
+      <div className="mt-2 grid grid-cols-2 gap-2">
         <LiveMetric label="당류" value={formatMetric(liveReport.totals.sugar, 'g')} />
         <LiveMetric label="나트륨" value={formatMetric(liveReport.totals.sodium, 'mg')} />
       </div>
-      <p className="mt-2 text-xs font-bold leading-snug text-white/85">{primaryRisk}</p>
+      <p className="mt-2 max-h-10 overflow-hidden text-xs font-bold leading-snug text-white/80">{primaryRisk}</p>
       <p className="mt-2 border-t border-white/10 pt-2 text-[11px] font-black text-amber-100/90">
-        정확하지 않을 수 있으니 참고하세요.
+        사진 기반 추정 범위입니다. 저장 전 음식과 양을 확인하세요.
       </p>
     </div>
   );
+}
+
+function createLiveCalorieEstimate(liveReport, liveScan) {
+  const calories = Math.max(0, Math.round(Number(liveReport?.totals?.calories || 0)));
+  const hasNutritionFacts = hasReadableNutritionFacts(liveScan?.facts);
+  const sampleCount = Math.max(1, Number(liveScan?.sampleCount || 1));
+  const rawConfidence = hasNutritionFacts ? 0.96 : Number(liveScan?.food?.confidenceScore || 0.55);
+  const confidence = Math.min(0.98, Math.max(0.35, rawConfidence));
+  let uncertainty = hasNutritionFacts ? 0.05 : confidence >= 0.9 ? 0.12 : confidence >= 0.8 ? 0.18 : confidence >= 0.7 ? 0.25 : 0.35;
+  if (!hasNutritionFacts && sampleCount < 3) uncertainty += 0.08;
+
+  const roundRange = (value) => Math.max(0, Math.round(value / 5) * 5);
+  const grams = Math.round(Number(liveScan?.food?.grams || 0));
+  const foodName = String(liveScan?.food?.name || '').trim();
+
+  return {
+    calories,
+    low: roundRange(calories * (1 - uncertainty)),
+    high: roundRange(calories * (1 + uncertainty)),
+    confidencePercent: Math.round(confidence * 100),
+    sourceLabel: hasNutritionFacts ? '성분표 기반 계산' : sampleCount >= 4 ? '다중 화면 안정화 완료' : `화면 누적 보정 ${sampleCount}/4`,
+    foodLabel: foodName ? `${foodName}${grams > 0 ? ` · 약 ${grams} g` : ''}` : '성분표에서 열량을 계산했습니다.',
+  };
 }
 
 function LiveMetric({ label, value }) {
