@@ -1,4 +1,4 @@
-name = "nutrition-cms"
+name = "momgagym-nutrition"
 pages_build_output_dir = "dist"
 
 [ai]
