@@ -833,9 +833,9 @@ function ReportView({
         <header className="flex items-start justify-between gap-4 border-b-4 border-slate-950 pb-5">
           <div>
             <p className="text-xs font-black uppercase tracking-widest text-slate-500">KDRI 기반 음식·영양표 분석</p>
-            <h1 className="mt-1 text-4xl font-black tracking-tight md:text-6xl">{modeLabel} A4 카드</h1>
+            <h1 className="mt-1 text-2xl font-black tracking-tight sm:text-4xl md:text-6xl">{modeLabel} 결과리포트</h1>
           </div>
-          <div className={`grid aspect-square w-28 rotate-[-8deg] place-items-center rounded-full border-[7px] text-center text-xl font-black leading-tight md:w-40 ${stampStyles[report.stamp]}`}>
+          <div className={`grid aspect-square w-24 shrink-0 rotate-[-8deg] place-items-center rounded-full border-[5px] text-center text-base font-black leading-tight md:w-40 md:border-[7px] md:text-xl ${stampStyles[report.stamp]}`}>
             {analysisPending ? '분석 중' : analysisUnavailable ? '분석 안됨' : stampLabel}
           </div>
         </header>
@@ -879,15 +879,20 @@ function CoachReportCard({ report, analysisPending = false }) {
   const traffic = createTrafficFeedback(report);
   const coachLine = createCoachLine(report);
   const analysisUnavailable = isAnalysisUnavailable(report);
+  const badgeStyles = {
+    green: 'border-emerald-200 bg-emerald-100 text-emerald-800',
+    yellow: 'border-amber-200 bg-amber-100 text-amber-900',
+    red: 'border-red-200 bg-red-100 text-red-800',
+  }[report.stamp];
 
   return (
     <section className="rounded-lg border-2 border-slate-950 bg-white p-5">
       <div className="flex items-start justify-between gap-3">
-        <div>
+        <div className="min-w-0">
           <p className="text-xs font-black uppercase tracking-widest text-teal-700">3단계 AI 메디-스포츠 영양 분석</p>
-          <h2 className="mt-1 text-3xl font-black">A4 리포트 카드</h2>
+          <h2 className="mt-1 text-2xl font-black sm:text-3xl">실시간 분석 평가</h2>
         </div>
-        <span className="rounded-full bg-slate-950 px-4 py-2 text-sm font-black text-white">
+        <span className={`shrink-0 whitespace-nowrap rounded-full border px-3 py-2 text-sm font-black sm:px-4 ${analysisPending || analysisUnavailable ? 'border-slate-800 bg-slate-950 text-white' : badgeStyles}`}>
           {analysisPending ? '분석 중' : analysisUnavailable ? '분석 안됨' : traffic.badge}
         </span>
       </div>
@@ -1479,14 +1484,18 @@ function NutritionFactsForm({ facts, updateFacts }) {
 
 function NutritionLookupPanel({ captured, onApplyFood, onApplyFacts, onUploadLabel }) {
   const initialQuery = captured.facts.foodName || captured.foods[0]?.name || '';
+  const [open, setOpen] = useState(false);
   const [query, setQuery] = useState(initialQuery);
+  const [submittedQuery, setSubmittedQuery] = useState('');
   const [uploadStatus, setUploadStatus] = useState('');
   const [remoteStatus, setRemoteStatus] = useState('');
+  const [searching, setSearching] = useState(false);
   const [remoteSearch, setRemoteSearch] = useState({ query: '', candidates: [] });
-  const localCandidates = useMemo(() => createNutritionSearchCandidates(query), [query]);
-  const remoteCandidates = remoteSearch.query === query.trim() ? remoteSearch.candidates : [];
+  const activeQuery = submittedQuery && submittedQuery === query.trim() ? submittedQuery : '';
+  const localCandidates = useMemo(() => (activeQuery ? createNutritionSearchCandidates(activeQuery) : []), [activeQuery]);
+  const remoteCandidates = remoteSearch.query === activeQuery ? remoteSearch.candidates : [];
   const candidates = useMemo(() => uniqueCandidates([...localCandidates, ...remoteCandidates]).slice(0, 10), [localCandidates, remoteCandidates]);
-  const sourceLinks = useMemo(() => createOfficialSearchLinks(query, candidates), [query, candidates]);
+  const sourceLinks = useMemo(() => (activeQuery ? createOfficialSearchLinks(activeQuery, candidates) : []), [activeQuery, candidates]);
 
   async function handleUpload(event) {
     const file = event.target.files?.[0];
@@ -1498,13 +1507,17 @@ function NutritionLookupPanel({ captured, onApplyFood, onApplyFacts, onUploadLab
     event.target.value = '';
   }
 
-  async function handleRemoteSearch() {
+  async function handleRemoteSearch(event) {
+    event?.preventDefault();
     const searchTerm = query.trim();
     if (!searchTerm) {
+      setSubmittedQuery('');
       setRemoteStatus('검색어를 입력하세요');
       return;
     }
 
+    setSubmittedQuery(searchTerm);
+    setSearching(true);
     setRemoteStatus('공식 DB 검색 중');
     try {
       const response = await fetch(`/api/nutrition-search?q=${encodeURIComponent(searchTerm)}&limit=8`);
@@ -1521,43 +1534,66 @@ function NutritionLookupPanel({ captured, onApplyFood, onApplyFacts, onUploadLab
     } catch {
       setRemoteSearch({ query: searchTerm, candidates: [] });
       setRemoteStatus('서버 검색을 사용할 수 없습니다');
+    } finally {
+      setSearching(false);
     }
   }
 
   return (
-    <div className="mt-4 grid gap-3 rounded-lg border border-slate-200 bg-slate-50 p-3">
-      <div className="grid gap-2">
-        <label className="grid gap-1 text-sm font-black">
-          제품·외식 메뉴 검색
-          <input
-            value={query}
-            onChange={(event) => setQuery(event.target.value)}
-            className="h-11 rounded-lg border border-slate-200 bg-white px-3 text-base"
-            placeholder="예: 스타벅스 라떼, 빅맥, 현미밥"
-          />
-        </label>
-        <div className="flex flex-wrap gap-2">
-          <button
-            type="button"
-            onClick={handleRemoteSearch}
-            className="h-10 rounded-lg bg-teal-700 px-4 text-sm font-black text-white"
-          >
-            웹에서 찾기
-          </button>
-          <label className="grid h-10 cursor-pointer place-items-center rounded-lg bg-slate-950 px-4 text-sm font-black text-white">
-            성분표 업로드
-            <input type="file" accept="image/*" className="hidden" onChange={handleUpload} />
-          </label>
-          {remoteStatus ? (
-            <span className="grid min-h-10 place-items-center rounded-lg bg-white px-3 text-xs font-black text-slate-600">{remoteStatus}</span>
-          ) : null}
-          {uploadStatus ? (
-            <span className="grid min-h-10 place-items-center rounded-lg bg-white px-3 text-xs font-black text-slate-600">{uploadStatus}</span>
-          ) : null}
-        </div>
-      </div>
+    <div className="mt-4 overflow-hidden rounded-lg border border-slate-200 bg-slate-50">
+      <button
+        type="button"
+        onClick={() => setOpen((current) => !current)}
+        className="flex min-h-14 w-full items-center justify-between gap-3 bg-white px-4 py-3 text-left"
+        aria-expanded={open}
+        aria-controls="nutrition-lookup-content"
+      >
+        <span>
+          <strong className="block text-base font-black text-slate-950">제품·외식 메뉴 검색</strong>
+          <span className="mt-0.5 block text-xs font-bold text-slate-500">필요할 때 열어 공식 영양정보를 찾아보세요.</span>
+        </span>
+        <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-slate-950 text-lg font-black text-white" aria-hidden="true">
+          {open ? '−' : '+'}
+        </span>
+      </button>
 
-      <div className="grid gap-2">
+      {open ? <div id="nutrition-lookup-content" className="grid gap-3 border-t border-slate-200 p-3">
+        <form className="grid gap-2" onSubmit={handleRemoteSearch}>
+          <label className="grid gap-1 text-sm font-black">
+            검색어
+            <input
+              value={query}
+              onChange={(event) => {
+                setQuery(event.target.value);
+                setSubmittedQuery('');
+                setRemoteStatus('');
+              }}
+              className="h-11 rounded-lg border border-slate-200 bg-white px-3 text-base"
+              placeholder="예: 스타벅스 라떼, 빅맥, 현미밥"
+            />
+          </label>
+          <div className="flex flex-wrap gap-2">
+            <button
+              type="submit"
+              disabled={searching}
+              className="h-10 rounded-lg bg-teal-700 px-4 text-sm font-black text-white disabled:opacity-60"
+            >
+              {searching ? '검색 중' : '검색'}
+            </button>
+            <label className="grid h-10 cursor-pointer place-items-center rounded-lg bg-slate-950 px-4 text-sm font-black text-white">
+              성분표 업로드
+              <input type="file" accept="image/*" className="hidden" onChange={handleUpload} />
+            </label>
+            {remoteStatus ? (
+              <span className="grid min-h-10 place-items-center rounded-lg bg-white px-3 text-xs font-black text-slate-600" role="status">{remoteStatus}</span>
+            ) : null}
+            {uploadStatus ? (
+              <span className="grid min-h-10 place-items-center rounded-lg bg-white px-3 text-xs font-black text-slate-600" role="status">{uploadStatus}</span>
+            ) : null}
+          </div>
+        </form>
+
+      {activeQuery ? <div className="grid gap-2">
         {candidates.length ? (
           candidates.map((candidate) => (
             <div key={candidate.id} className="rounded-lg border border-slate-200 bg-white p-3">
@@ -1622,7 +1658,7 @@ function NutritionLookupPanel({ captured, onApplyFood, onApplyFacts, onUploadLab
         ) : (
           <p className="rounded-lg bg-white p-3 text-sm font-black text-slate-500">일치 결과 없음</p>
         )}
-      </div>
+      </div> : null}
 
       {sourceLinks.length ? (
         <div className="flex flex-wrap gap-2">
@@ -1639,6 +1675,7 @@ function NutritionLookupPanel({ captured, onApplyFood, onApplyFacts, onUploadLab
           ))}
         </div>
       ) : null}
+      </div> : null}
     </div>
   );
 }
