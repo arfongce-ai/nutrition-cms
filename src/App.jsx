@@ -461,22 +461,31 @@ export default function App() {
   }
 
   async function handleSave() {
-    if (!report) return;
+    if (!report || saveState === '저장 중' || saveState.includes('저장됨')) return;
     if (isAnalysisUnavailable(report)) {
       setSaveState('분석 안됨');
       return;
     }
-    setSaveState('저장 중');
-    let overlayPhoto = '';
     try {
-      overlayPhoto = await createMealOverlayPhoto(captured.photo, report);
+      setSaveState('저장 중');
+      let overlayPhoto = '';
+      try {
+        overlayPhoto = await createMealOverlayPhoto(captured.photo, report);
+      } catch (error) {
+        console.warn('Meal overlay photo creation failed', error);
+      }
+      const { saveNutritionReport, readLocalReports } = await import('./services/reportStore');
+      const result = await saveNutritionReport(report, { imageUrl: overlayPhoto });
+      setSavedReports(readLocalReports());
+      if (!result.saved) {
+        setSaveState('저장 공간 부족 · 다시 시도');
+        return;
+      }
+      setSaveState(result.storage === 'firebase' ? 'Firebase 저장됨' : '기기 저장됨');
     } catch (error) {
-      console.warn('Meal overlay photo creation failed', error);
+      console.warn('Nutrition report save failed', error);
+      setSaveState('저장 실패 · 다시 시도');
     }
-    const { saveNutritionReport, readLocalReports } = await import('./services/reportStore');
-    const result = await saveNutritionReport(report, { imageUrl: overlayPhoto });
-    setSavedReports(readLocalReports());
-    setSaveState(result.storage === 'firebase' ? 'Firebase 저장됨' : '기기 저장됨');
   }
 
   async function loadSavedReports() {
@@ -496,6 +505,7 @@ export default function App() {
   }
 
   function updateFacts(next) {
+    setSaveState('');
     setCaptured((current) => {
       if (!current) return current;
       return {
@@ -509,6 +519,7 @@ export default function App() {
   }
 
   function updateFood(id, next) {
+    setSaveState('');
     setCaptured((current) => {
       if (!current) return current;
       return {
@@ -519,6 +530,7 @@ export default function App() {
   }
 
   function addFood() {
+    setSaveState('');
     setCaptured((current) => {
       if (!current) return current;
       return {
@@ -529,6 +541,7 @@ export default function App() {
   }
 
   function removeFood(id) {
+    setSaveState('');
     setCaptured((current) => {
       if (!current) return current;
       const nextFoods = current.foods.filter((food) => food.id !== id);
@@ -540,21 +553,26 @@ export default function App() {
   }
 
   function applyFoodCandidate(candidate) {
+    setSaveState('');
     setCaptured((current) => {
       if (!current) return current;
+      const servingDetails = createServingDetails(candidate.serving, candidate.servingAmount, candidate.servingUnit);
       const nextFood = {
         ...createEmptyFoodItem(),
         name: candidate.name,
-        grams: candidate.grams || '100',
+        grams: candidate.perServing ? String(servingDetails.amount) : candidate.grams || '100',
         estimated: false,
         visualReason: '',
         nutrients: candidate.nutrients || null,
-        nutrientBasisGrams: candidate.grams || '100',
+        nutrientBasisGrams: candidate.perServing ? String(servingDetails.amount) : candidate.grams || '100',
         brand: candidate.brand || '',
         category: candidate.category || '',
         serving: candidate.serving || '',
         sourceLabel: candidate.sourceLabel || '',
         sourceUrl: candidate.sourceUrl || '',
+        perServing: Boolean(candidate.perServing),
+        servingAmount: candidate.perServing ? servingDetails.amount : 0,
+        servingUnit: candidate.perServing ? servingDetails.unit : 'g',
       };
       const shouldReplace = !current.foods.length || (current.foods.length === 1 && current.foods[0]?.estimated);
       return {
@@ -566,16 +584,18 @@ export default function App() {
 
   function applyNutritionFactsCandidate(candidate) {
     if (!candidate?.nutrients) return;
+    setSaveState('');
     setCaptured((current) => {
       if (!current) return current;
+      const candidateKey = normalizeLookupText(candidate.name);
       return {
         ...current,
         ocrStatus: 'detected',
-        foods: current.foods.filter((food) => !food.estimated),
+        foods: current.foods.filter((food) => !food.estimated && normalizeLookupText(food.name) !== candidateKey),
         facts: {
           ...current.facts,
           foodName: candidate.name || current.facts.foodName,
-          servingSize: candidate.serving || `${candidate.grams || 100}g`,
+          servingSize: candidate.serving || formatServingAmount(candidate.grams || 100, candidate.servingUnit || 'g'),
           calories: String(candidate.nutrients.calories ?? ''),
           carb: String(candidate.nutrients.carb ?? ''),
           sugar: String(candidate.nutrients.sugar ?? ''),
@@ -666,7 +686,7 @@ export default function App() {
           ) : null}
 
           {cameraError ? (
-            <div className="absolute bottom-36 left-4 right-4 z-10 rounded-lg border border-amber-400/30 bg-amber-500/15 px-4 py-3 text-center text-sm font-bold text-amber-100">
+            <div id="camera-status" role="alert" className="absolute bottom-36 left-4 right-4 z-10 rounded-lg border border-amber-400/30 bg-amber-500/15 px-4 py-3 text-center text-sm font-bold text-amber-100 backdrop-blur">
               {cameraError}
               <button
                 type="button"
@@ -686,26 +706,30 @@ export default function App() {
             <button
               type="button"
               onClick={openDiary}
-              className="grid h-16 w-16 place-items-center rounded-full border border-white/25 bg-black/45 text-3xl font-black shadow-2xl backdrop-blur"
+              className="flex h-16 min-w-16 flex-col items-center justify-center rounded-2xl border border-white/25 bg-black/45 px-3 font-black shadow-2xl backdrop-blur transition active:scale-95"
               aria-label="오늘 기록 열기"
             >
-              ⌂
+              <span className="text-2xl leading-none" aria-hidden="true">⌂</span>
+              <span className="mt-1 text-[11px]">기록</span>
             </button>
             <button
               type="button"
               onClick={handleShoot}
-              className="grid h-24 w-24 place-items-center rounded-full border-[7px] border-white bg-white/15 shadow-2xl"
+              disabled={!cameraReady || Boolean(cameraError)}
+              className={`grid h-24 w-24 place-items-center rounded-full border-[7px] shadow-2xl transition ${cameraReady && !cameraError ? 'border-white bg-white/15 active:scale-95' : 'cursor-not-allowed border-white/40 bg-white/5 opacity-50'}`}
               aria-label="촬영"
+              aria-describedby={cameraError ? 'camera-status' : undefined}
             >
               <span className="block h-16 w-16 rounded-full bg-red-500 shadow-inner" />
             </button>
             <button
               type="button"
               onClick={() => setSettingsOpen(true)}
-              className="grid h-16 w-16 place-items-center rounded-full border border-white/25 bg-black/45 text-3xl shadow-2xl backdrop-blur"
+              className="flex h-16 min-w-16 flex-col items-center justify-center rounded-2xl border border-white/25 bg-black/45 px-3 font-black shadow-2xl backdrop-blur transition active:scale-95"
               aria-label="설정 열기"
             >
-              ⚙
+              <span className="text-2xl leading-none" aria-hidden="true">⚙</span>
+              <span className="mt-1 text-[11px]">설정</span>
             </button>
           </div>
         </section>
@@ -778,7 +802,9 @@ function ReportView({
   const analysisPending = captured.analysisStatus === 'analyzing';
   const analysisUnavailable = !analysisPending && isAnalysisUnavailable(report);
   const needsFoodConfirmation = captured.foods.some((food) => food.requiresConfirmation);
-  const saveDisabled = analysisPending || analysisUnavailable || needsFoodConfirmation;
+  const saveComplete = saveState.includes('저장됨');
+  const saveBusy = saveState === '저장 중';
+  const saveDisabled = analysisPending || analysisUnavailable || needsFoodConfirmation || saveBusy || saveComplete;
 
   return (
     <section className="min-h-screen overflow-y-auto bg-slate-200 px-3 py-20 text-slate-950">
@@ -800,6 +826,8 @@ function ReportView({
           </button>
         </div>
       </div>
+
+      <div className="sr-only" role="status" aria-live="polite">{saveState}</div>
 
       <article className="mx-auto flex min-h-[calc(100vh-7rem)] w-full max-w-[900px] flex-col gap-6 rounded-md bg-[#fffdf8] p-5 shadow-2xl md:aspect-[210/297] md:p-10">
         <header className="flex items-start justify-between gap-4 border-b-4 border-slate-950 pb-5">
@@ -963,7 +991,10 @@ function GlycemicReportCard({ glycemic }) {
 
 function formatReportItemLabel(item) {
   if (item.isPendingInfo) return `${item.name} (영양성분 확인 필요)`;
-  if (item.serving) return `${item.name} (${item.serving})`;
+  if (item.serving) {
+    const consumed = item.perServing ? ` · 섭취 ${formatServingAmount(item.grams, item.servingUnit || '회')}` : '';
+    return `${item.name} (${item.serving}${consumed})`;
+  }
   const portion = [
     item.quantity ? `약 ${item.quantity}${item.unitLabel || '개'}` : '',
     item.sizeLabel ? `${item.sizeLabel} 크기` : '',
@@ -1234,17 +1265,28 @@ function FoodItemsForm({ foods, updateFood, addFood, removeFood }) {
             />
           </label>
           <label className="grid gap-1 text-sm font-black">
-            먹은 양
+            {food.perServing ? '실제 섭취량' : '먹은 양'}
             <div className="flex overflow-hidden rounded-lg border border-slate-200 bg-white">
               <input
                 value={food.grams}
+                type="number"
                 inputMode="decimal"
+                min={food.perServing ? String(getServingInputStep(food.servingUnit)) : '1'}
+                max={food.perServing ? String(getServingInputMax(food.servingAmount, food.servingUnit)) : '5000'}
+                step={food.perServing ? String(getServingInputStep(food.servingUnit)) : '1'}
                 onChange={(event) => updateFood(food.id, { grams: event.target.value, estimated: false, visualReason: '' })}
                 className="h-12 min-w-0 flex-1 px-3 text-base outline-none"
-                placeholder="100"
+                placeholder={food.perServing ? String(food.servingAmount || 1) : '100'}
               />
-              <span className="grid w-14 place-items-center bg-slate-100 text-xs text-slate-500">g</span>
+              <span className="grid w-14 place-items-center bg-slate-100 text-xs text-slate-500">{food.perServing ? food.servingUnit || '회' : 'g'}</span>
             </div>
+            {food.perServing && food.serving ? (
+              <span className="text-xs font-bold text-slate-500">
+                1회 기준: {food.serving}
+                {food.nutrients ? ` · ${formatCompactNumber(food.nutrients.calories)} kcal` : ''}
+                {food.nutrients ? ` · 현재 적용 ${formatCompactNumber(calculateAppliedFoodCalories(food))} kcal` : ''}
+              </span>
+            ) : null}
           </label>
           <div className="grid grid-cols-[minmax(0,1fr)_7rem] gap-2">
             <label className="grid gap-1 text-sm font-black">
@@ -1540,7 +1582,7 @@ function NutritionLookupPanel({ captured, onApplyFood, onApplyFacts, onUploadLab
 
               {candidate.nutrients ? (
                 <div className="mt-2 grid grid-cols-4 gap-1 text-center text-[11px] font-black text-slate-600">
-                  <CandidateMetric label="kcal" value={candidate.nutrients.calories} />
+                  <CandidateMetric label={candidate.perServing ? '1회 kcal' : 'kcal'} value={candidate.nutrients.calories} />
                   <CandidateMetric label="탄수" value={candidate.nutrients.carb} />
                   <CandidateMetric label="단백" value={candidate.nutrients.protein} />
                   <CandidateMetric label="지방" value={candidate.nutrients.fat} />
@@ -1553,7 +1595,7 @@ function NutritionLookupPanel({ captured, onApplyFood, onApplyFacts, onUploadLab
                   onClick={() => onApplyFood(candidate)}
                   className="h-9 rounded-lg bg-emerald-600 px-3 text-xs font-black text-white"
                 >
-                  음식 기록 적용
+                  식단에 추가
                 </button>
                 {candidate.nutrients ? (
                   <button
@@ -1561,7 +1603,7 @@ function NutritionLookupPanel({ captured, onApplyFood, onApplyFacts, onUploadLab
                     onClick={() => onApplyFacts(candidate)}
                     className="h-9 rounded-lg border border-slate-300 bg-white px-3 text-xs font-black text-slate-700"
                   >
-                    성분표 적용
+                    성분표로 대체
                   </button>
                 ) : null}
                 {candidate.sourceUrl ? (
@@ -1698,17 +1740,21 @@ function searchPresetFoodCandidates(query, limit = 6) {
 
 function toOfficialCandidate(entry, kind) {
   const name = createOfficialCandidateName(entry);
+  const servingDetails = createServingDetails(entry.serving);
   return {
     id: `${kind}-${name}-${entry.sourceUrl || ''}`,
     kind,
     name,
-    grams: '1',
+    grams: String(servingDetails.amount),
     serving: entry.serving || '',
     brand: entry.brand || '',
     category: entry.category || (kind === 'official-product' ? '공식 제품 DB' : '외식 공식 메뉴'),
     sourceLabel: entry.sourceLabel || '공식 영양정보',
     sourceUrl: entry.sourceUrl || '',
     nutrients: extractCandidateNutrients(entry),
+    perServing: true,
+    servingAmount: servingDetails.amount,
+    servingUnit: servingDetails.unit,
   };
 }
 
@@ -1727,11 +1773,12 @@ function toLocalFoodCandidate(item) {
 
 function normalizeRemoteCandidate(candidate) {
   if (!candidate?.name) return null;
+  const servingDetails = createServingDetails(candidate.serving, candidate.servingAmount, candidate.servingUnit);
   return {
     id: candidate.id || `server-${candidate.name}-${candidate.sourceUrl || ''}`,
     kind: candidate.kind || 'server-official-db',
     name: candidate.name,
-    grams: candidate.grams || '1',
+    grams: candidate.perServing ? String(servingDetails.amount) : candidate.grams || '100',
     serving: candidate.serving || '',
     brand: candidate.brand || '',
     category: candidate.category || '공식 메뉴 DB',
@@ -1739,7 +1786,53 @@ function normalizeRemoteCandidate(candidate) {
     sourceUrl: candidate.sourceUrl || '',
     nutrients: extractCandidateNutrients(candidate.nutrients || {}),
     meta: candidate.meta || null,
+    perServing: Boolean(candidate.perServing),
+    servingAmount: servingDetails.amount,
+    servingUnit: servingDetails.unit,
   };
+}
+
+function createServingDetails(label = '', explicitAmount = 0, explicitUnit = '') {
+  const amount = Number(explicitAmount);
+  if (Number.isFinite(amount) && amount > 0 && explicitUnit) {
+    return { amount, unit: normalizeServingUnit(explicitUnit) };
+  }
+
+  const matches = [...String(label || '').matchAll(/(\d+(?:\.\d+)?)\s*(kg|g|ml|mL|l|L|개|잔|봉|팩|병|캔|컵|그릇|조각|인분|회)/gi)];
+  const match = matches[matches.length - 1];
+  if (!match) return { amount: 1, unit: '회' };
+  return { amount: Number(match[1]) || 1, unit: normalizeServingUnit(match[2]) };
+}
+
+function normalizeServingUnit(unit) {
+  const normalized = String(unit || '').trim().toLowerCase();
+  if (normalized === 'ml') return 'mL';
+  if (normalized === 'l') return 'L';
+  if (normalized === 'kg') return 'kg';
+  if (normalized === 'g') return 'g';
+  return unit || '회';
+}
+
+function formatServingAmount(amount, unit) {
+  return `${formatCompactNumber(amount)} ${normalizeServingUnit(unit)}`;
+}
+
+function getServingInputStep(unit) {
+  return ['개', '잔', '봉', '팩', '병', '캔', '컵', '그릇', '조각', '인분'].includes(unit) ? 0.5 : unit === '회' ? 0.25 : 1;
+}
+
+function getServingInputMax(amount, unit) {
+  const basis = Math.max(Number(amount) || 1, 1);
+  if (['g', 'mL'].includes(unit)) return Math.max(5000, basis * 20);
+  if (['kg', 'L'].includes(unit)) return Math.max(20, basis * 20);
+  return Math.max(100, basis * 20);
+}
+
+function calculateAppliedFoodCalories(food) {
+  const calories = Number(food?.nutrients?.calories || 0);
+  const consumedAmount = Number(food?.grams || 0);
+  const basisAmount = Math.max(Number(food?.servingAmount || food?.nutrientBasisGrams || 1), 0.01);
+  return Math.round((calories * consumedAmount * 10) / basisAmount) / 10;
 }
 
 function createOfficialCandidateName(entry) {
@@ -1855,7 +1948,10 @@ function NumberFact({ label, unit, value, onChange }) {
       <div className="flex overflow-hidden rounded-lg border border-slate-200 bg-white">
         <input
           value={value}
+          type="number"
           inputMode="decimal"
+          min="0"
+          step="any"
           onChange={(event) => onChange(event.target.value)}
           className="h-11 min-w-0 flex-1 px-3 text-base outline-none"
           placeholder="0"
@@ -1866,26 +1962,56 @@ function NumberFact({ label, unit, value, onChange }) {
   );
 }
 
+function useSheetDialog(onClose) {
+  const closeButtonRef = useRef(null);
+  const onCloseRef = useRef(onClose);
+  onCloseRef.current = onClose;
+
+  useEffect(() => {
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    closeButtonRef.current?.focus();
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') onCloseRef.current();
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
+
+  return closeButtonRef;
+}
+
 function DiarySheet({ profile, reports, onRefresh, onClose }) {
+  const closeButtonRef = useSheetDialog(onClose);
   const todayReports = reports.filter(isTodayReport);
   const totals = sumSavedReportTotals(todayReports);
   const dailyGoal = estimateDailyCalorieGoal(profile);
-  const remainingCalories = Math.max(0, dailyGoal - Math.round(totals.calories));
+  const calorieBalance = dailyGoal - Math.round(totals.calories);
+  const remainingCalories = Math.abs(calorieBalance);
   const progress = Math.min(100, Math.round((totals.calories / Math.max(dailyGoal, 1)) * 100));
 
   return (
-    <aside className="fixed inset-0 z-30 bg-slate-950/70 backdrop-blur">
+    <aside
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="diary-title"
+      onMouseDown={(event) => event.target === event.currentTarget && onClose()}
+      className="fixed inset-0 z-30 bg-slate-950/70 backdrop-blur"
+    >
       <div className="absolute inset-x-0 bottom-0 max-h-[92vh] overflow-y-auto rounded-t-3xl bg-slate-50 p-5 text-slate-950 shadow-2xl md:left-auto md:right-6 md:top-6 md:w-[560px] md:rounded-2xl">
         <header className="mb-5 flex items-center justify-between gap-3">
           <div>
             <p className="text-sm font-black text-teal-700">오늘 저장된 식단</p>
-            <h2 className="text-3xl font-black">기록 홈</h2>
+            <h2 id="diary-title" className="text-3xl font-black">기록 홈</h2>
           </div>
           <div className="flex gap-2">
             <button type="button" onClick={onRefresh} className="h-11 rounded-full bg-white px-4 font-black shadow">
               새로고침
             </button>
-            <button type="button" onClick={onClose} className="h-11 rounded-full bg-slate-950 px-5 font-black text-white">
+            <button ref={closeButtonRef} type="button" onClick={onClose} className="h-11 rounded-full bg-slate-950 px-5 font-black text-white">
               닫기
             </button>
           </div>
@@ -1898,8 +2024,8 @@ function DiarySheet({ profile, reports, onRefresh, onClose }) {
               <strong className="text-4xl font-black">{formatMetric(totals.calories, 'kcal')}</strong>
             </div>
             <div className="text-right">
-              <p className="text-sm font-black text-slate-500">남은 열량</p>
-              <strong className="text-2xl font-black text-teal-700">{formatMetric(remainingCalories, 'kcal')}</strong>
+              <p className="text-sm font-black text-slate-500">{calorieBalance >= 0 ? '남은 열량' : '초과 열량'}</p>
+              <strong className={`text-2xl font-black ${calorieBalance >= 0 ? 'text-teal-700' : 'text-red-600'}`}>{formatMetric(remainingCalories, 'kcal')}</strong>
             </div>
           </div>
           <div className="mt-4 h-3 overflow-hidden rounded-full bg-slate-100">
@@ -1952,16 +2078,23 @@ function DiarySheet({ profile, reports, onRefresh, onClose }) {
 
 function SettingsSheet({ profile, updateProfile, toggleMedical, onClose }) {
   const [guideOpen, setGuideOpen] = useState(false);
+  const closeButtonRef = useSheetDialog(onClose);
 
   return (
-    <aside className="fixed inset-0 z-30 bg-slate-950/70 backdrop-blur">
+    <aside
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="settings-title"
+      onMouseDown={(event) => event.target === event.currentTarget && onClose()}
+      className="fixed inset-0 z-30 bg-slate-950/70 backdrop-blur"
+    >
       <div className="absolute inset-x-0 bottom-0 max-h-[92vh] overflow-y-auto rounded-t-3xl bg-slate-50 p-5 text-slate-950 shadow-2xl md:left-auto md:right-6 md:top-6 md:w-[520px] md:rounded-2xl">
         <header className="mb-5 flex items-center justify-between">
           <div>
             <p className="text-sm font-black text-teal-700">카메라 분석 설정</p>
-            <h2 className="text-3xl font-black">설정</h2>
+            <h2 id="settings-title" className="text-3xl font-black">설정</h2>
           </div>
-          <button type="button" onClick={onClose} className="h-11 rounded-full bg-slate-950 px-5 font-black text-white">
+          <button ref={closeButtonRef} type="button" onClick={onClose} className="h-11 rounded-full bg-slate-950 px-5 font-black text-white">
             완료
           </button>
         </header>
@@ -1975,6 +2108,7 @@ function SettingsSheet({ profile, updateProfile, toggleMedical, onClose }) {
                 key={option.id}
                 type="button"
                 onClick={() => updateProfile({ mode: option.id })}
+                aria-pressed={profile.mode === option.id}
                 className={`h-14 rounded-lg border font-black ${profile.mode === option.id ? 'border-slate-950 bg-slate-950 text-white' : 'border-slate-200 bg-white'}`}
               >
                 {option.label}
@@ -2003,6 +2137,7 @@ function SettingsSheet({ profile, updateProfile, toggleMedical, onClose }) {
                 key={option}
                 type="button"
                 onClick={() => toggleMedical(option)}
+                aria-pressed={profile.medical.includes(option)}
                 className={`min-h-12 rounded-lg border px-3 font-black ${profile.medical.includes(option) ? 'border-teal-700 bg-teal-700 text-white' : 'border-slate-200 bg-white'}`}
               >
                 {option === '없음' ? '건강해요' : option}
@@ -2018,6 +2153,7 @@ function SettingsSheet({ profile, updateProfile, toggleMedical, onClose }) {
                 key={option.id}
                 type="button"
                 onClick={() => updateProfile({ sport: option.id })}
+                aria-pressed={profile.sport === option.id}
                 className={`rounded-lg border p-4 text-left ${profile.sport === option.id ? 'border-slate-950 bg-slate-950 text-white' : 'border-slate-200 bg-white'}`}
               >
                 <strong className="block text-lg">{option.label}</strong>
@@ -2072,8 +2208,8 @@ function UserGuideAccordion({ open, onToggle }) {
 function Metric({ label, value }) {
   return (
     <div className="rounded-lg bg-slate-100 p-3">
-      <dt className="text-xs font-black text-slate-500">{label}</dt>
-      <dd className="mt-1 text-lg font-black">{value}</dd>
+      <p className="text-xs font-black text-slate-500">{label}</p>
+      <p className="mt-1 text-lg font-black">{value}</p>
     </div>
   );
 }
@@ -2193,7 +2329,7 @@ function RangeField({ label, value, min, max, unit, onChange }) {
 function useStoredProfile() {
   const [profile, setProfileState] = useState(() => {
     try {
-      return { ...DEFAULT_PROFILE, ...JSON.parse(localStorage.getItem(PROFILE_KEY) || '{}') };
+      return normalizeStoredProfile(JSON.parse(localStorage.getItem(PROFILE_KEY) || '{}'));
     } catch {
       return DEFAULT_PROFILE;
     }
@@ -2202,12 +2338,36 @@ function useStoredProfile() {
   function setProfile(updater) {
     setProfileState((current) => {
       const next = typeof updater === 'function' ? updater(current) : updater;
-      localStorage.setItem(PROFILE_KEY, JSON.stringify(next));
-      return next;
+      const normalized = normalizeStoredProfile(next);
+      try {
+        localStorage.setItem(PROFILE_KEY, JSON.stringify(normalized));
+      } catch {
+        // Storage can be unavailable in private browsing; keep the in-memory profile usable.
+      }
+      return normalized;
     });
   }
 
   return [profile, setProfile];
+}
+
+function normalizeStoredProfile(value = {}) {
+  const source = value && typeof value === 'object' && !Array.isArray(value) ? value : {};
+  const mode = modeOptions.some((option) => option.id === source.mode) ? source.mode : DEFAULT_PROFILE.mode;
+  const gender = ['남성', '여성'].includes(source.gender) ? source.gender : DEFAULT_PROFILE.gender;
+  const sport = sportOptions.some((option) => option.id === source.sport) ? source.sport : DEFAULT_PROFILE.sport;
+  const medical = Array.isArray(source.medical)
+    ? source.medical.filter((item) => medicalOptions.includes(item))
+    : DEFAULT_PROFILE.medical;
+  return {
+    mode,
+    age: clampNumber(Number(source.age) || DEFAULT_PROFILE.age, 6, 90),
+    gender,
+    height: clampNumber(Number(source.height) || DEFAULT_PROFILE.height, 110, 210),
+    weight: clampNumber(Number(source.weight) || DEFAULT_PROFILE.weight, 20, 150),
+    medical: medical.length ? medical : ['없음'],
+    sport,
+  };
 }
 
 async function getCameraPermissionState() {
@@ -3451,8 +3611,9 @@ function hasFactValue(facts, key) {
 }
 
 function formatMetric(value, unit) {
-  const numeric = Number(value || 0);
-  if (!numeric) return '-';
+  if (value == null || value === '') return '-';
+  const numeric = Number(value);
+  if (!Number.isFinite(numeric)) return '-';
   return `${Math.round(numeric * 10) / 10} ${unit}`;
 }
 

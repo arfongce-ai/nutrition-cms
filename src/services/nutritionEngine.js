@@ -212,6 +212,7 @@ export function createEmptyFoodItem() {
     id: globalThis.crypto?.randomUUID?.() || `${Date.now()}-${Math.random().toString(16).slice(2)}`,
     name: '',
     grams: '100',
+    perServing: false,
   };
 }
 
@@ -374,11 +375,12 @@ function normalizeFoods(foodItems) {
   return (foodItems || [])
     .filter((item) => String(item.name || '').trim())
     .map((item) => {
-      const grams = Math.max(toNumber(item.grams) || 100, 1);
+      const defaultAmount = item.perServing ? toNumber(item.servingAmount) || 1 : 100;
+      const grams = Math.max(toNumber(item.grams) || defaultAmount, item.perServing ? 0.01 : 1);
       const attachedFood = createAttachedFoodBase(item);
       const base = attachedFood || findFood(item.name);
-      const basisGrams = Math.max(toNumber(item.nutrientBasisGrams) || 100, 1);
-      const multiplier = base.perServing ? 1 : attachedFood ? grams / basisGrams : grams / 100;
+      const basisAmount = Math.max(toNumber(item.servingAmount) || toNumber(item.nutrientBasisGrams) || 100, 0.01);
+      const multiplier = attachedFood ? grams / basisAmount : base.perServing ? 1 : grams / 100;
       return {
         id: item.id,
         type: '음식',
@@ -392,6 +394,9 @@ function normalizeFoods(foodItems) {
         confidence: item.confidence || '',
         confidenceScore: item.confidenceScore || 0,
         recognitionSource: item.recognitionSource || '',
+        perServing: Boolean(base.perServing),
+        servingAmount: base.perServing ? basisAmount : 0,
+        servingUnit: item.servingUnit || (base.perServing ? '회' : 'g'),
         visualReason: item.visualReason || '',
         emoji: base.emoji,
         matched: base.matched,
@@ -431,6 +436,9 @@ function createAttachedFoodBase(item) {
     serving: item.serving || '',
     sourceLabel: item.sourceLabel || '식품영양성분 공공 DB',
     sourceUrl: item.sourceUrl || '',
+    perServing: Boolean(item.perServing),
+    servingAmount: Number(item.servingAmount || 0),
+    servingUnit: item.servingUnit || '',
     calories: toNumber(nutrients.calories),
     carb: toNumber(nutrients.carb),
     protein: toNumber(nutrients.protein),

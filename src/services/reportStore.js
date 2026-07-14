@@ -8,10 +8,10 @@ const MEALS_COLLECTION = 'meals_history';
 export async function saveNutritionReport(report, options = {}) {
   const payload = buildMealHistoryPayload(report, options.imageUrl || '');
 
-  saveLocalReport(payload);
+  const localSaved = saveLocalReport(payload);
 
   if (!firebaseEnabled || !db) {
-    return { storage: 'local', status: payload.status, mealId: payload.mealId };
+    return { storage: 'local', status: payload.status, mealId: payload.mealId, saved: localSaved };
   }
 
   try {
@@ -26,10 +26,10 @@ export async function saveNutritionReport(report, options = {}) {
       updatedAt: serverTimestamp(),
       uid: auth?.currentUser?.uid || null,
     });
-    return { storage: 'firebase', status: payload.status, mealId: payload.mealId };
+    return { storage: 'firebase', status: payload.status, mealId: payload.mealId, saved: true, localSaved };
   } catch (error) {
     console.warn('[reportStore] Firebase save failed, local report kept.', error);
-    return { storage: 'local', status: payload.status, mealId: payload.mealId, error };
+    return { storage: 'local', status: payload.status, mealId: payload.mealId, saved: localSaved, error };
   }
 }
 
@@ -104,11 +104,20 @@ function buildMealHistoryPayload(report, imageUrl = '') {
 
 function toMealHistoryItem(item) {
   const pending = Boolean(item.isPendingInfo);
+  const consumedAmount = Number(item.grams || 0);
+  const servingAmount = Number(item.servingAmount || 0);
+  const servingUnit = item.servingUnit || (item.perServing ? '회' : 'g');
 
   return {
     foodName: item.name,
     isPendingInfo: pending,
-    servingSizeGrams: Number(item.grams || 0),
+    servingSizeGrams: servingUnit === 'g' ? consumedAmount : servingUnit === 'kg' ? consumedAmount * 1000 : item.perServing ? 0 : consumedAmount,
+    servingVolumeMl: servingUnit === 'mL' ? consumedAmount : servingUnit === 'L' ? consumedAmount * 1000 : 0,
+    servingCount: item.perServing ? consumedAmount / Math.max(servingAmount || 1, 0.01) : 0,
+    consumedAmount,
+    servingAmount,
+    servingUnit,
+    servingLabel: item.serving || '',
     nutrients: pending ? createZeroNutrients() : normalizeNutrients(item),
     sourceLabel: item.sourceLabel || '',
     sourceUrl: item.sourceUrl || '',
@@ -199,15 +208,15 @@ function saveLocalReport(payload) {
   const reports = readLocalReports();
   reports.unshift(payload);
   const limitedReports = reports.slice(0, 50);
-  if (tryWriteLocalReports(limitedReports)) return;
+  if (tryWriteLocalReports(limitedReports)) return true;
 
   const keepRecentPhotos = limitedReports.map((report, index) => (index < 8 ? report : { ...report, imageUrl: '' }));
-  if (tryWriteLocalReports(keepRecentPhotos)) return;
+  if (tryWriteLocalReports(keepRecentPhotos)) return true;
 
   const newestPhotoOnly = limitedReports.map((report, index) => (index === 0 ? report : { ...report, imageUrl: '' }));
-  if (tryWriteLocalReports(newestPhotoOnly)) return;
+  if (tryWriteLocalReports(newestPhotoOnly)) return true;
 
-  tryWriteLocalReports(limitedReports.map((report) => ({ ...report, imageUrl: '' })));
+  return tryWriteLocalReports(limitedReports.map((report) => ({ ...report, imageUrl: '' })));
 }
 
 function tryWriteLocalReports(reports) {

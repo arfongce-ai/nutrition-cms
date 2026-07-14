@@ -18,6 +18,10 @@ export async function onRequestGet({ request, env }) {
     return json({ ok: false, message: '검색어가 필요합니다.', candidates: [] }, 400);
   }
 
+  if (query.length > 120) {
+    return json({ ok: false, message: '검색어는 120자 이내로 입력해주세요.', candidates: [] }, 400);
+  }
+
   if (!env.NUTRITION_DB) {
     return json(
       {
@@ -161,6 +165,8 @@ async function searchPublicFoods(db, query, limit) {
 
 function toOfficialCandidate(row) {
   const name = row.brand_name && !String(row.menu_name).includes(row.brand_name) ? `${row.brand_name} ${row.menu_name}` : row.menu_name;
+  const serving = row.serving_label || (row.serving_size_g ? `${row.serving_size_g}g` : '1회 제공량');
+  const servingDetails = parseServingDetails(serving, row.serving_size_g);
 
   return {
     id: `server-menu-${row.menu_id}`,
@@ -168,13 +174,16 @@ function toOfficialCandidate(row) {
     name,
     brand: row.brand_name || '',
     category: row.category || '공식 메뉴 DB',
-    serving: row.serving_label || '',
-    grams: row.serving_size_g ? String(row.serving_size_g) : '1',
+    serving,
+    grams: '1',
     sourceLabel: row.source_label || '공식 영양정보',
     sourceUrl: row.detail_deeplink_url || '',
     imageUrl: row.image_url || '',
     itemCode: row.item_code_val || '',
     nutrients: createNutrients(row),
+    perServing: true,
+    servingAmount: servingDetails.amount,
+    servingUnit: servingDetails.unit,
   };
 }
 
@@ -248,4 +257,17 @@ function numberOrZero(value) {
 function extractServingGrams(value) {
   const match = String(value || '').match(/(\d+(?:\.\d+)?)\s*g/i);
   return match?.[1] || '';
+}
+
+function parseServingDetails(label, fallbackGrams = 0) {
+  const matches = [...String(label || '').matchAll(/(\d+(?:\.\d+)?)\s*(kg|g|ml|mL|l|L|개|잔|봉|팩|병|캔|컵|그릇|조각|인분|회)/gi)];
+  const match = matches[matches.length - 1];
+  if (match) {
+    const rawUnit = String(match[2]);
+    const lowerUnit = rawUnit.toLowerCase();
+    const unit = lowerUnit === 'ml' ? 'mL' : lowerUnit === 'l' ? 'L' : lowerUnit === 'kg' ? 'kg' : lowerUnit === 'g' ? 'g' : rawUnit;
+    return { amount: Number(match[1]) || 1, unit };
+  }
+  if (Number(fallbackGrams) > 0) return { amount: Number(fallbackGrams), unit: 'g' };
+  return { amount: 1, unit: '회' };
 }
