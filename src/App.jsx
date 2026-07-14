@@ -10,6 +10,8 @@ import {
 import { OFFICIAL_BRAND_FOODS, findOfficialBrandFood, findOfficialNutritionSources } from './services/officialNutritionSources';
 import { findOfficialProductFood, findOfficialProductSources, searchOfficialProductFoods } from './services/officialProductDatabase';
 import { recordRecognitionCorrection, recordRecognitionObservation } from './services/recognitionLearningStore';
+import { assessMeasurementConfidence, classifyItemTrust, TRUST_TIER_LABEL } from './services/measurementConfidence';
+import { detectBarcodeFromCanvas } from './services/barcodeScanner';
 
 const PROFILE_KEY = 'nutritionCameraProfile.v2';
 const CAMERA_PERMISSION_KEY = 'nutritionCameraPermission.v1';
@@ -147,6 +149,7 @@ export default function App() {
   const liveScanTimerRef = useRef(null);
   const liveScanBusyRef = useRef(false);
   const liveScanFrameRef = useRef(0);
+  const barcodeLookupRef = useRef('');
   const cameraStartingRef = useRef(false);
   const [profile, setProfile] = useStoredProfile();
   const [cameraReady, setCameraReady] = useState(false);
@@ -156,8 +159,10 @@ export default function App() {
   const [savedReports, setSavedReports] = useState([]);
   const [captured, setCaptured] = useState(null);
   const [liveScan, setLiveScan] = useState({ status: 'idle', facts: {}, text: '' });
+  const [barcodeMatch, setBarcodeMatch] = useState({ status: 'idle', code: '', candidate: null });
   const [saveState, setSaveState] = useState('');
   const [cameraZoom, setCameraZoom] = useState(1);
+  const cameraZoomRef = useRef(cameraZoom);
 
   const report = useMemo(() => {
     if (!captured) return null;
@@ -177,12 +182,17 @@ export default function App() {
     });
   }, [captured, liveScan, profile]);
 
+  const confidence = useMemo(
+    () => (report ? assessMeasurementConfidence(report, captured?.liveEstimateSnapshot ?? null) : null),
+    [report, captured],
+  );
+
   const modeLabel = MODE_LABELS[profile.mode];
   const showCapturePrompt = cameraReady && !cameraError && !liveReport;
 
   useEffect(() => {
     document.documentElement.classList.add('dark');
-    document.body.style.background = '#0f172a';
+    document.body.style.background = '#10131a';
     startCamera();
     return () => {
       stopLiveNutrientScan();
@@ -195,6 +205,10 @@ export default function App() {
       drawFallbackGuide(fallbackCanvasRef.current);
     }
   }, [cameraReady]);
+
+  useEffect(() => {
+    cameraZoomRef.current = cameraZoom;
+  }, [cameraZoom]);
 
   useEffect(() => {
     if (!cameraReady || captured || settingsOpen || cameraError) {
@@ -327,6 +341,7 @@ export default function App() {
     try {
       liveScanFrameRef.current += 1;
       const shouldReadText = liveScanFrameRef.current === 1 || liveScanFrameRef.current % LIVE_OCR_EVERY_FRAMES === 0;
+      if (shouldReadText) checkBarcodeFromCanvas(canvas);
       const detected = shouldReadText
         ? await readNutritionTextFromCanvas(canvas, textDetectorRef)
         : { status: 'visual', text: '' };
@@ -361,12 +376,37 @@ export default function App() {
     }
   }
 
+  // A barcode match is the single most reliable identification signal available —
+  // it names an exact product rather than guessing from appearance. This runs
+  // independently of the OCR/food-estimate path above (fire-and-forget) so a slow
+  // lookup never delays the rest of the live scan.
+  async function checkBarcodeFromCanvas(canvas) {
+    try {
+      const code = await detectBarcodeFromCanvas(canvas);
+      if (!code || code === barcodeLookupRef.current) return;
+      barcodeLookupRef.current = code;
+      setBarcodeMatch({ status: 'looking-up', code, candidate: null });
+
+      const response = await fetch(`/api/barcode-lookup?code=${encodeURIComponent(code)}`);
+      const payload = await response.json().catch(() => ({}));
+      if (barcodeLookupRef.current !== code) return; // a newer barcode appeared meanwhile; ignore this stale response
+
+      setBarcodeMatch(
+        response.ok && payload.ok && payload.candidate
+          ? { status: 'found', code, candidate: payload.candidate }
+          : { status: 'not-found', code, candidate: null },
+      );
+    } catch {
+      // Transient network hiccup — the loop tries again in ~1s with a fresh frame.
+    }
+  }
+
   function drawLiveFrameForText() {
     const canvas = canvasRef.current;
     const video = videoRef.current;
     if (!canvas || !video?.videoWidth || !video?.videoHeight) return null;
 
-    drawZoomedVideoFrame(canvas, video, cameraZoom, LIVE_OCR_FRAME_MAX_WIDTH);
+    drawZoomedVideoFrame(canvas, video, cameraZoomRef.current, LIVE_OCR_FRAME_MAX_WIDTH);
     return canvas;
   }
 
@@ -450,28 +490,31 @@ export default function App() {
     const photo = await captureBestCameraFrame();
     if (!photo) return;
 
+    const liveEstimateSnapshot = liveReport ? createLiveCalorieEstimate(liveReport, liveScan) : null;
+    const barcodeFood = barcodeMatch.status === 'found' && barcodeMatch.candidate ? candidateToFoodItem(barcodeMatch.candidate) : null;
     const initialFacts = {
       ...createEmptyNutritionFacts(),
       ...liveScan.facts,
     };
     setCaptured({
       photo,
-      foods: liveScan.food ? [liveScan.food] : [],
+      foods: barcodeFood ? [barcodeFood] : liveScan.food ? [liveScan.food] : [],
       facts: initialFacts,
       analysisStatus: 'analyzing',
       ocrStatus: hasReadableNutritionFacts(liveScan.facts) ? 'detected' : 'checking',
       ocrText: liveScan.text || '',
+      liveEstimateSnapshot,
     });
     setSaveState('');
 
-    const canSkipVision = isTrustedLocalRecognition(liveScan.food, liveScan.facts);
+    const canSkipVision = Boolean(barcodeFood) || isTrustedLocalRecognition(liveScan.food, liveScan.facts);
     const [detected, visionFoods] = await Promise.all([
       readNutritionTextFromImage(photo),
       canSkipVision ? Promise.resolve([]) : recognizeFoodsWithVision(photo),
     ]);
     const parsedFacts = detected.text ? parseNutritionText(detected.text) : {};
     const hasParsedFacts = hasReadableNutritionFacts(parsedFacts);
-    const fallbackEstimate = visionFoods.length ? null : await estimateFoodFromPhoto(photo, detected.text);
+    const fallbackEstimate = visionFoods.length || barcodeFood ? null : await estimateFoodFromPhoto(photo, detected.text);
     const visualEstimates = visionFoods.length ? visionFoods : fallbackEstimate ? [fallbackEstimate] : [];
     recordRecognitionObservation(visualEstimates);
     setCaptured((current) => {
@@ -500,6 +543,8 @@ export default function App() {
     setCaptured(null);
     setSaveState('');
     setLiveScan({ status: 'scanning', facts: {}, text: '', food: null });
+    setBarcodeMatch({ status: 'idle', code: '', candidate: null });
+    barcodeLookupRef.current = '';
 
     const hasLiveTrack = streamRef.current?.getVideoTracks?.().some((track) => track.readyState === 'live');
     if (!hasLiveTrack) {
@@ -600,28 +645,33 @@ export default function App() {
     });
   }
 
+  function candidateToFoodItem(candidate) {
+    const servingDetails = createServingDetails(candidate.serving, candidate.servingAmount, candidate.servingUnit);
+    return {
+      ...createEmptyFoodItem(),
+      name: candidate.name,
+      grams: candidate.perServing ? String(servingDetails.amount) : candidate.grams || '100',
+      estimated: false,
+      visualReason: '',
+      nutrients: candidate.nutrients || null,
+      nutrientBasisGrams: candidate.perServing ? String(servingDetails.amount) : candidate.grams || '100',
+      brand: candidate.brand || '',
+      category: candidate.category || '',
+      serving: candidate.serving || '',
+      sourceLabel: candidate.sourceLabel || '',
+      sourceUrl: candidate.sourceUrl || '',
+      official: Boolean(candidate.official),
+      perServing: Boolean(candidate.perServing),
+      servingAmount: candidate.perServing ? servingDetails.amount : 0,
+      servingUnit: candidate.perServing ? servingDetails.unit : 'g',
+    };
+  }
+
   function applyFoodCandidate(candidate) {
     setSaveState('');
     setCaptured((current) => {
       if (!current) return current;
-      const servingDetails = createServingDetails(candidate.serving, candidate.servingAmount, candidate.servingUnit);
-      const nextFood = {
-        ...createEmptyFoodItem(),
-        name: candidate.name,
-        grams: candidate.perServing ? String(servingDetails.amount) : candidate.grams || '100',
-        estimated: false,
-        visualReason: '',
-        nutrients: candidate.nutrients || null,
-        nutrientBasisGrams: candidate.perServing ? String(servingDetails.amount) : candidate.grams || '100',
-        brand: candidate.brand || '',
-        category: candidate.category || '',
-        serving: candidate.serving || '',
-        sourceLabel: candidate.sourceLabel || '',
-        sourceUrl: candidate.sourceUrl || '',
-        perServing: Boolean(candidate.perServing),
-        servingAmount: candidate.perServing ? servingDetails.amount : 0,
-        servingUnit: candidate.perServing ? servingDetails.unit : 'g',
-      };
+      const nextFood = candidateToFoodItem(candidate);
       const shouldReplace = !current.foods.length || (current.foods.length === 1 && current.foods[0]?.estimated);
       return {
         ...current,
@@ -698,9 +748,9 @@ export default function App() {
   }
 
   return (
-    <main className={`min-h-screen overflow-hidden bg-slate-950 text-slate-50 mode-${profile.mode}`}>
+    <main className={`min-h-screen overflow-hidden bg-ink-950 text-ink-50 mode-${profile.mode}`}>
       {!report ? (
-        <section className="relative min-h-screen bg-slate-950">
+        <section className="relative min-h-screen bg-ink-950">
           <video
             id="camera-video"
             ref={videoRef}
@@ -713,33 +763,31 @@ export default function App() {
           <canvas ref={fallbackCanvasRef} width="900" height="1200" className={`absolute inset-0 h-full w-full object-cover ${cameraReady ? 'hidden' : 'block'}`} />
           <canvas ref={canvasRef} className="hidden" />
 
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/5 to-black/80" />
+          <div className="absolute inset-0 bg-gradient-to-b from-ink-950/80 via-ink-950/10 to-ink-950/85" />
           <div className="pointer-events-none absolute inset-0 grid place-items-center">
-            <div className="relative h-[min(58vw,340px)] w-[min(58vw,340px)] rounded-full border-2 border-white/85 shadow-[0_0_0_18px_rgba(255,255,255,0.05)] md:h-[min(46vw,390px)] md:w-[min(46vw,390px)]">
-              <div className="absolute left-[22%] right-[22%] top-1/2 h-0.5 -translate-y-1/2 rounded-full bg-emerald-300/90 shadow-[0_0_24px_rgba(52,211,153,0.85)]" />
-              {showCapturePrompt ? (
-                <div className="absolute -bottom-14 left-1/2 w-max max-w-[82vw] -translate-x-1/2 rounded-full bg-black/45 px-4 py-2 text-center text-sm font-black text-white/90">
-                  가까이 대고 가운데에 맞춰주세요
-                </div>
-              ) : null}
-            </div>
+            <CaptureReticle active={cameraReady && !cameraError} detected={liveReport?.stamp} />
+            {showCapturePrompt ? (
+              <div className="absolute top-[calc(50%+min(29vw,170px)+2.75rem)] left-1/2 w-max max-w-[82vw] -translate-x-1/2 rounded-full bg-ink-950/60 px-4 py-2 text-center text-sm font-black text-ink-50/90 backdrop-blur">
+                가까이 대고 가운데에 맞춰주세요
+              </div>
+            ) : null}
           </div>
 
           {showCapturePrompt ? (
-            <div className="pointer-events-none absolute inset-x-4 top-1/2 z-10 flex -translate-y-1/2 justify-center">
-              <div className="max-w-[88vw] animate-pulse rounded-full border border-white/20 bg-black/55 px-5 py-3 text-center text-lg font-black shadow-2xl backdrop-blur md:text-2xl">
-              음식 및 성분표를 촬영하세요
+            <div className="pointer-events-none absolute inset-x-4 top-[14%] z-10 flex justify-center">
+              <div className="max-w-[88vw] animate-[reticle-pulse_2.4s_ease-in-out_infinite] rounded-full border border-ink-50/15 bg-ink-950/60 px-5 py-3 text-center text-lg font-black shadow-2xl backdrop-blur md:text-2xl">
+                음식 및 성분표를 촬영하세요
               </div>
             </div>
           ) : null}
 
           {cameraError ? (
-            <div id="camera-status" role="alert" className="absolute bottom-36 left-4 right-4 z-10 rounded-lg border border-amber-400/30 bg-amber-500/15 px-4 py-3 text-center text-sm font-bold text-amber-100 backdrop-blur">
+            <div id="camera-status" role="alert" className="absolute bottom-36 left-4 right-4 z-10 rounded-lg border border-estimate-300/40 bg-estimate-500/20 px-4 py-3 text-center text-sm font-bold text-estimate-50 backdrop-blur">
               {cameraError}
               <button
                 type="button"
                 onClick={() => startCamera({ userRequested: true })}
-                className="mt-3 h-11 w-full rounded-full bg-amber-300 px-4 text-sm font-black text-amber-950"
+                className="mt-3 h-11 w-full rounded-full bg-estimate-300 px-4 text-sm font-black text-estimate-700"
               >
                 카메라 다시 켜기
               </button>
@@ -747,6 +795,7 @@ export default function App() {
           ) : null}
 
           {cameraReady && !cameraError ? <LiveNutritionBadge liveScan={liveScan} /> : null}
+          {cameraReady && !cameraError ? <BarcodeMatchBanner barcodeMatch={barcodeMatch} /> : null}
           {cameraReady && !cameraError ? <LiveAnalysisPanel liveReport={liveReport} liveScan={liveScan} /> : null}
           {cameraReady && !cameraError ? <ZoomControl zoom={cameraZoom} onChange={setCameraZoom} /> : null}
 
@@ -754,7 +803,7 @@ export default function App() {
             <button
               type="button"
               onClick={openDiary}
-              className="flex h-16 min-w-16 flex-col items-center justify-center rounded-2xl border border-white/25 bg-black/45 px-3 font-black shadow-2xl backdrop-blur transition active:scale-95"
+              className="flex h-16 min-w-16 flex-col items-center justify-center rounded-2xl border border-ink-50/15 bg-ink-950/55 px-3 font-black shadow-instrument backdrop-blur transition active:scale-95"
               aria-label="오늘 기록 열기"
             >
               <span className="text-2xl leading-none" aria-hidden="true">⌂</span>
@@ -764,16 +813,16 @@ export default function App() {
               type="button"
               onClick={handleShoot}
               disabled={!cameraReady || Boolean(cameraError)}
-              className={`grid h-24 w-24 place-items-center rounded-full border-[7px] shadow-2xl transition ${cameraReady && !cameraError ? 'border-white bg-white/15 active:scale-95' : 'cursor-not-allowed border-white/40 bg-white/5 opacity-50'}`}
+              className={`group grid h-24 w-24 place-items-center rounded-full border-[3px] shadow-2xl transition ${cameraReady && !cameraError ? 'border-ink-50 bg-ink-50/10 active:scale-95' : 'cursor-not-allowed border-ink-50/30 bg-ink-50/5 opacity-50'}`}
               aria-label="촬영"
               aria-describedby={cameraError ? 'camera-status' : undefined}
             >
-              <span className="block h-16 w-16 rounded-full bg-red-500 shadow-inner" />
+              <span className="block h-[4.1rem] w-[4.1rem] rounded-full bg-verified-500 shadow-inner transition group-active:bg-verified-600" />
             </button>
             <button
               type="button"
               onClick={() => setSettingsOpen(true)}
-              className="flex h-16 min-w-16 flex-col items-center justify-center rounded-2xl border border-white/25 bg-black/45 px-3 font-black shadow-2xl backdrop-blur transition active:scale-95"
+              className="flex h-16 min-w-16 flex-col items-center justify-center rounded-2xl border border-ink-50/15 bg-ink-950/55 px-3 font-black shadow-instrument backdrop-blur transition active:scale-95"
               aria-label="설정 열기"
             >
               <span className="text-2xl leading-none" aria-hidden="true">⚙</span>
@@ -786,6 +835,7 @@ export default function App() {
           captured={captured}
           modeLabel={modeLabel}
           report={report}
+          confidence={confidence}
           saveState={saveState}
           updateFood={updateFood}
           addFood={addFood}
@@ -820,10 +870,55 @@ export default function App() {
   );
 }
 
+// The signature element: a viewfinder reticle borrowed from measuring-instrument
+// vernacular (corner brackets like a rangefinder, tick marks like a dial) rather
+// than a plain circle. Its center mark switches to the traffic-light color the
+// moment the live analysis has a read, so the frame itself communicates status.
+function CaptureReticle({ active, detected }) {
+  const markColor = { green: '#6FBFAE', yellow: '#D9A057', red: '#D98177' }[detected] || 'rgba(241,243,247,0.85)';
+  return (
+    <div className="relative h-[min(58vw,340px)] w-[min(58vw,340px)] md:h-[min(46vw,390px)] md:w-[min(46vw,390px)]">
+      <svg viewBox="0 0 100 100" className="h-full w-full" aria-hidden="true">
+        <circle cx="50" cy="50" r="41" fill="none" stroke="rgba(241,243,247,0.55)" strokeWidth="1" />
+        {active ? (
+          <circle cx="50" cy="50" r="41" fill="none" stroke={markColor} strokeWidth="1.4" strokeDasharray="4 255" strokeLinecap="round" className="origin-center animate-[spin_6s_linear_infinite]" />
+        ) : null}
+        {[0, 90, 180, 270].map((angle) => (
+          <line
+            key={angle}
+            x1="50"
+            y1="6"
+            x2="50"
+            y2="12"
+            stroke="rgba(241,243,247,0.7)"
+            strokeWidth="1.4"
+            strokeLinecap="round"
+            transform={`rotate(${angle} 50 50)`}
+          />
+        ))}
+        {[0, 1, 2, 3].map((i) => {
+          const [x, y] = [[14, 14], [86, 14], [86, 86], [14, 86]][i];
+          const [dx] = [[1, 0], [-1, 0], [-1, 0], [1, 0]][i];
+          const [, ey] = [[0, 1], [0, 1], [0, -1], [0, -1]][i];
+          return (
+            <g key={i} stroke={markColor} strokeWidth="2.4" strokeLinecap="round">
+              <line x1={x} y1={y} x2={x + dx * 9} y2={y} />
+              <line x1={x} y1={y} x2={x} y2={y + ey * 9} />
+            </g>
+          );
+        })}
+        <line x1="38" y1="50" x2="62" y2="50" stroke={markColor} strokeWidth="1" opacity="0.9" />
+        <line x1="50" y1="42" x2="50" y2="58" stroke={markColor} strokeWidth="1" opacity="0.55" />
+      </svg>
+    </div>
+  );
+}
+
 function ReportView({
   captured,
   modeLabel,
   report,
+  confidence,
   saveState,
   updateFood,
   addFood,
@@ -837,9 +932,9 @@ function ReportView({
   onSpeak,
 }) {
   const stampStyles = {
-    green: 'border-emerald-500 text-emerald-600',
-    yellow: 'border-amber-500 text-amber-600',
-    red: 'border-red-500 text-red-600',
+    green: 'border-verified-500 text-verified-600',
+    yellow: 'border-estimate-500 text-estimate-600',
+    red: 'border-alert-500 text-alert-600',
   };
   const stampLabel = {
     green: '참 잘했어요',
@@ -855,20 +950,20 @@ function ReportView({
   const saveDisabled = analysisPending || analysisUnavailable || needsFoodConfirmation || saveBusy || saveComplete;
 
   return (
-    <section className="min-h-screen overflow-y-auto bg-slate-200 px-3 py-20 text-slate-950">
+    <section className="min-h-screen overflow-y-auto bg-ink-200 px-3 py-20 text-paper-ink">
       <div className="fixed left-3 right-3 top-4 z-20 flex justify-between">
-        <button type="button" onClick={onBack} className="h-12 rounded-full bg-white px-5 font-black shadow-lg">
+        <button type="button" onClick={onBack} className="h-12 rounded-full bg-paper px-5 font-black text-paper-ink shadow-label">
           다시 촬영
         </button>
         <div className="flex gap-2">
-          <button type="button" onClick={onSpeak} className="h-12 rounded-full bg-white px-4 font-black shadow-lg">
+          <button type="button" onClick={onSpeak} className="h-12 rounded-full bg-paper px-4 font-black text-paper-ink shadow-label">
             음성
           </button>
           <button
             type="button"
             onClick={onSave}
             disabled={saveDisabled}
-            className={`h-12 rounded-full px-5 font-black shadow-lg ${saveDisabled ? 'bg-slate-300 text-slate-500' : 'bg-slate-950 text-white'}`}
+            className={`h-12 rounded-full px-5 font-black shadow-label ${saveDisabled ? 'bg-ink-200 text-ink-400' : 'bg-ink-950 text-paper'}`}
           >
             {analysisPending ? '분석 중' : analysisUnavailable ? '저장 불가' : needsFoodConfirmation ? '음식 확인 필요' : saveState || '저장'}
           </button>
@@ -877,10 +972,10 @@ function ReportView({
 
       <div className="sr-only" role="status" aria-live="polite">{saveState}</div>
 
-      <article className="mx-auto flex min-h-[calc(100vh-7rem)] w-full max-w-[900px] flex-col gap-6 rounded-md bg-[#fffdf8] p-5 shadow-2xl md:aspect-[210/297] md:p-10">
-        <header className="flex items-start justify-between gap-4 border-b-4 border-slate-950 pb-5">
+      <article className="mx-auto flex min-h-[calc(100vh-7rem)] w-full max-w-[900px] flex-col gap-6 rounded-md bg-paper p-5 shadow-2xl md:aspect-[210/297] md:p-10">
+        <header className="flex items-start justify-between gap-4 border-b-4 border-ink-950 pb-5">
           <div>
-            <p className="text-xs font-black uppercase tracking-widest text-slate-500">KDRI 기반 음식·영양표 분석</p>
+            <p className="text-xs font-black uppercase tracking-widest text-ink-400">KDRI 기반 음식·영양표 분석</p>
             <h1 className="mt-1 text-2xl font-black tracking-tight sm:text-4xl md:text-6xl">{modeLabel} 결과리포트</h1>
           </div>
           <div className={`grid aspect-square w-24 shrink-0 rotate-[-8deg] place-items-center rounded-full border-[5px] text-center text-base font-black leading-tight md:w-40 md:border-[7px] md:text-xl ${stampStyles[report.stamp]}`}>
@@ -888,22 +983,23 @@ function ReportView({
           </div>
         </header>
 
+        {!analysisPending && !analysisUnavailable ? <MeasurementConfidenceStrip confidence={confidence} /> : null}
         {analysisPending ? <AnalysisPendingNotice /> : needsRecognitionHelp ? <RecognitionIssueNotice /> : null}
 
         <section className="grid gap-5 md:grid-cols-[0.85fr_1.15fr]">
-          <img src={captured.photo} alt="촬영된 음식" className="h-72 w-full rounded-lg border border-slate-200 object-cover md:h-full" />
+          <img src={captured.photo} alt="촬영된 음식" className="h-72 w-full rounded-lg border border-ink-100 object-cover md:h-full" />
           <div className="grid gap-4">
-            <div className="rounded-lg border-2 border-slate-950 bg-white p-5">
+            <div className="rounded-lg border-2 border-ink-950 bg-paper p-5">
               <h2 className="text-2xl font-black">음식 분석</h2>
-              <p className="mt-2 rounded-lg bg-emerald-50 p-3 text-sm font-bold text-emerald-800">
+              <p className="mt-2 rounded-lg bg-verified-50 p-3 text-sm font-bold text-verified-700">
                 촬영한 사진에서 음식명과 중량을 인식하고, 영양 DB와 비교해 칼로리를 자동 계산합니다.
               </p>
-              <FoodItemsForm foods={captured.foods} updateFood={updateFood} addFood={addFood} removeFood={removeFood} />
+              <FoodItemsForm foods={captured.foods} reportItems={report.items} updateFood={updateFood} addFood={addFood} removeFood={removeFood} />
             </div>
 
-            <div className="rounded-lg border border-slate-200 bg-white p-5">
+            <div className="rounded-lg border border-ink-100 bg-paper p-5">
               <h2 className="text-xl font-black">식품 영양표 함께 분석</h2>
-              <p className="mt-2 rounded-lg bg-slate-100 p-3 text-sm font-bold text-slate-600">
+              <p className="mt-2 rounded-lg bg-paper-100 p-3 text-sm font-bold text-ink-500">
                 {statusText(captured.ocrStatus)}
               </p>
               <NutritionLookupPanel
@@ -923,40 +1019,90 @@ function ReportView({
   );
 }
 
+// The trust cross-check: compares the quick live estimate against the careful
+// final analysis and shows how many items are backed by an official source vs.
+// a photo-based guess vs. unresolved. This sits above the calorie number itself
+// because whether to trust the number matters before the number does.
+function MeasurementConfidenceStrip({ confidence }) {
+  if (!confidence || confidence.level === 'none') return null;
+
+  const styles = {
+    high: { chip: 'bg-verified-500 text-paper', panel: 'border-verified-300 bg-verified-50', text: 'text-verified-700' },
+    medium: { chip: 'bg-estimate-500 text-paper', panel: 'border-estimate-300 bg-estimate-50', text: 'text-estimate-700' },
+    low: { chip: 'bg-alert-500 text-paper', panel: 'border-alert-300 bg-alert-50', text: 'text-alert-700' },
+  }[confidence.level];
+
+  const { tiers, agreement } = confidence;
+
+  return (
+    <div className={`rounded-lg border p-4 ${styles.panel}`}>
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <div className="flex items-center gap-2">
+          <span className={`rounded-full px-3 py-1 text-xs font-black ${styles.chip}`}>{confidence.label}</span>
+          <strong className="text-sm font-black">측정 신뢰도</strong>
+        </div>
+        {agreement ? (
+          <span className={`font-mono text-xs font-bold ${styles.text}`}>
+            실시간 {agreement.liveCalories} kcal → 정밀 {agreement.finalCalories} kcal
+          </span>
+        ) : null}
+      </div>
+      <ul className={`mt-2 grid gap-1 text-xs font-bold leading-relaxed ${styles.text}`}>
+        {confidence.reasons.map((reason) => (
+          <li key={reason}>· {reason}</li>
+        ))}
+      </ul>
+      <div className="mt-3 flex flex-wrap gap-2 text-[11px] font-black">
+        {tiers.official > 0 ? <span className="rounded-full bg-verified-100 px-2.5 py-1 text-verified-700">{TRUST_TIER_LABEL.official} {tiers.official}</span> : null}
+        {tiers.matched > 0 ? <span className="rounded-full bg-verified-100 px-2.5 py-1 text-verified-700">{TRUST_TIER_LABEL.matched} {tiers.matched}</span> : null}
+        {tiers.estimated > 0 ? <span className="rounded-full bg-estimate-100 px-2.5 py-1 text-estimate-700">{TRUST_TIER_LABEL.estimated} {tiers.estimated}</span> : null}
+        {tiers.pending > 0 ? <span className="rounded-full bg-alert-100 px-2.5 py-1 text-alert-700">{TRUST_TIER_LABEL.pending} {tiers.pending}</span> : null}
+      </div>
+    </div>
+  );
+}
+
 function CoachReportCard({ report, analysisPending = false }) {
   const traffic = createTrafficFeedback(report);
   const coachLine = createCoachLine(report);
   const analysisUnavailable = isAnalysisUnavailable(report);
   const badgeStyles = {
-    green: 'border-emerald-200 bg-emerald-100 text-emerald-800',
-    yellow: 'border-amber-200 bg-amber-100 text-amber-900',
-    red: 'border-red-200 bg-red-100 text-red-800',
+    green: 'border-verified-200 bg-verified-100 text-verified-700',
+    yellow: 'border-estimate-200 bg-estimate-100 text-estimate-700',
+    red: 'border-alert-200 bg-alert-100 text-alert-700',
   }[report.stamp];
 
   return (
-    <section className="rounded-lg border-2 border-slate-950 bg-white p-5">
+    <section className="rounded-lg border-2 border-ink-950 bg-paper p-5">
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
-          <p className="text-xs font-black uppercase tracking-widest text-teal-700">3단계 AI 메디-스포츠 영양 분석</p>
+          <p className="text-xs font-black uppercase tracking-widest text-verified-700">3단계 AI 메디-스포츠 영양 분석</p>
           <h2 className="mt-1 text-2xl font-black sm:text-3xl">실시간 분석 평가</h2>
         </div>
-        <span className={`shrink-0 whitespace-nowrap rounded-full border px-3 py-2 text-sm font-black sm:px-4 ${analysisPending || analysisUnavailable ? 'border-slate-800 bg-slate-950 text-white' : badgeStyles}`}>
+        <span className={`shrink-0 whitespace-nowrap rounded-full border px-3 py-2 text-sm font-black sm:px-4 ${analysisPending || analysisUnavailable ? 'border-ink-800 bg-ink-950 text-paper' : badgeStyles}`}>
           {analysisPending ? '분석 중' : analysisUnavailable ? '분석 안됨' : traffic.badge}
         </span>
       </div>
 
       <div className="mt-5 grid gap-4">
-        <ReportLine
-          title="총 칼로리"
-          body={
-            analysisPending
-              ? '음식 DB와 비교해 칼로리를 계산하고 있습니다'
-              : analysisUnavailable
-              ? '분석이 안됩니다'
-              : `${formatMetric(report.totals.calories, 'kcal')} · 탄수화물 ${report.macroPercent.carb}% · 단백질 ${report.macroPercent.protein}% · 지방 ${report.macroPercent.fat}%`
-          }
-          strong
-        />
+        <div className="rounded-lg border border-ink-100 bg-paper-100 p-4">
+          <h3 className="text-lg font-black">총 칼로리</h3>
+          {analysisPending ? (
+            <p className="mt-2 font-bold leading-relaxed text-ink-500">음식 DB와 비교해 칼로리를 계산하고 있습니다</p>
+          ) : analysisUnavailable ? (
+            <p className="mt-2 font-bold leading-relaxed text-ink-500">분석이 안됩니다</p>
+          ) : (
+            <>
+              <div className="mt-1 flex items-end gap-2">
+                <strong className="font-mono text-gauge-lg font-bold tracking-tight text-verified-700">{formatMetric(report.totals.calories, '').trim()}</strong>
+                <span className="pb-2 text-xl font-black text-verified-600">kcal</span>
+              </div>
+              <p className="mt-1 text-sm font-bold text-ink-500">
+                탄수화물 {report.macroPercent.carb}% · 단백질 {report.macroPercent.protein}% · 지방 {report.macroPercent.fat}%
+              </p>
+            </>
+          )}
+        </div>
         <ReportLine
           title="인식 음식·반찬 및 수량"
           body={analysisPending ? '사진에서 음식명과 중량을 확인하고 있습니다' : analysisUnavailable ? '분석이 안됩니다' : report.items.length ? report.items.map(formatReportItemLabel).join(', ') : '촬영 음식 250g 기준 자동 추정'}
@@ -971,7 +1117,7 @@ function CoachReportCard({ report, analysisPending = false }) {
         {report.sourceItems?.length ? <OfficialSourceList sources={report.sourceItems} /> : null}
         {report.additives?.length ? <AdditiveNotice additives={report.additives} /> : null}
 
-        {!analysisPending ? <div className="rounded-lg border border-slate-200 bg-slate-50 p-4">
+        {!analysisPending ? <div className="rounded-lg border border-ink-100 bg-paper-100 p-4">
           <h3 className="text-lg font-black">🚦 맞춤형 식단 평가</h3>
           <div className="mt-3 grid gap-2">
             <TrafficLine color="green" label="초록 (안전/적절)" text={traffic.green} />
@@ -988,8 +1134,8 @@ function CoachReportCard({ report, analysisPending = false }) {
 
 function AnalysisPendingNotice() {
   return (
-    <div className="flex items-center gap-4 rounded-lg border-2 border-teal-300 bg-teal-50 p-4 text-teal-950" role="status" aria-live="polite">
-      <span className="h-7 w-7 shrink-0 animate-spin rounded-full border-4 border-teal-200 border-t-teal-700" aria-hidden="true" />
+    <div className="flex items-center gap-4 rounded-lg border-2 border-verified-300 bg-verified-50 p-4 text-verified-700" role="status" aria-live="polite">
+      <span className="h-7 w-7 shrink-0 animate-spin rounded-full border-4 border-verified-200 border-t-verified-600" aria-hidden="true" />
       <div>
         <h2 className="text-xl font-black">사진 분석 중</h2>
         <p className="mt-1 text-sm font-bold leading-snug">음식명과 촬영량을 확인한 뒤 영양 DB와 비교해 칼로리를 자동 계산합니다.</p>
@@ -1000,7 +1146,7 @@ function AnalysisPendingNotice() {
 
 function RecognitionIssueNotice() {
   return (
-    <div className="rounded-lg border-2 border-red-300 bg-red-50 p-4 text-red-950">
+    <div className="rounded-lg border-2 border-alert-300 bg-alert-50 p-4 text-alert-700">
       <h2 className="text-xl font-black">분석이 안됩니다</h2>
       <p className="mt-1 text-sm font-bold leading-snug">
         현재 사진에서는 제품명이나 영양성분표 숫자를 충분히 읽지 못했습니다. 제품 포장은 앞면 제품명 또는 뒷면 영양성분표를 화면의 절반 이상으로 크게 촬영하거나,
@@ -1012,9 +1158,9 @@ function RecognitionIssueNotice() {
 
 function ReportLine({ title, body, strong = false }) {
   return (
-    <div className="rounded-lg border border-slate-200 bg-slate-50 p-4">
+    <div className="rounded-lg border border-ink-100 bg-paper-100 p-4">
       <h3 className="text-lg font-black">{title}</h3>
-      <p className={`mt-2 leading-relaxed ${strong ? 'text-xl font-black text-teal-800' : 'font-bold text-slate-700'}`}>{body}</p>
+      <p className={`mt-2 leading-relaxed ${strong ? 'text-xl font-black text-verified-700' : 'font-bold text-ink-600'}`}>{body}</p>
     </div>
   );
 }
@@ -1022,16 +1168,16 @@ function ReportLine({ title, body, strong = false }) {
 function GlycemicReportCard({ glycemic }) {
   const level = glycemic?.level || 'low';
   const styles = {
-    low: 'border-emerald-200 bg-emerald-50 text-emerald-800',
-    medium: 'border-amber-200 bg-amber-50 text-amber-800',
-    high: 'border-red-200 bg-red-50 text-red-800',
+    low: 'border-verified-200 bg-verified-50 text-verified-700',
+    medium: 'border-estimate-200 bg-estimate-50 text-estimate-700',
+    high: 'border-alert-200 bg-alert-50 text-alert-700',
   };
 
   return (
     <div className={`rounded-lg border p-4 ${styles[level]}`}>
       <div className="flex items-start justify-between gap-3">
         <h3 className="text-lg font-black">🩸 혈당 관리</h3>
-        <span className="rounded-full bg-white/70 px-3 py-1 text-xs font-black">{glycemic?.label || '낮음'}</span>
+        <span className="rounded-full bg-paper/70 px-3 py-1 text-xs font-black">{glycemic?.label || '낮음'}</span>
       </div>
       <p className="mt-2 text-sm font-black">
         탄수 {formatMetric(glycemic?.carbLoad, 'g')} · 당류 {formatMetric(glycemic?.sugar, 'g')}
@@ -1062,16 +1208,16 @@ function PendingInfoNotice({ items }) {
   const names = items.map((item) => item.name).join(', ');
 
   return (
-    <div className="rounded-lg border border-amber-200 bg-amber-50 p-4">
+    <div className="rounded-lg border border-alert-200 bg-alert-50 p-4">
       <div className="flex items-start justify-between gap-3">
         <div>
-          <h3 className="text-lg font-black text-amber-950">영양성분 확인 필요</h3>
-          <p className="mt-1 text-sm font-bold leading-snug text-amber-900">
+          <h3 className="text-lg font-black text-alert-700">영양성분 확인 필요</h3>
+          <p className="mt-1 text-sm font-bold leading-snug text-alert-600">
             {names}은 공식 DB에서 신뢰 가능한 값을 찾지 못해 열량, 탄수화물, 단백질, 지방, 나트륨을 0으로 처리했습니다.
             제품 성분표를 가까이 촬영하거나 음식명과 제공량을 보정하면 다시 계산됩니다.
           </p>
         </div>
-        <span className="shrink-0 rounded-full bg-amber-200 px-3 py-1 text-xs font-black text-amber-950">확인</span>
+        <span className="shrink-0 rounded-full bg-alert-100 px-3 py-1 text-xs font-black text-alert-700">확인</span>
       </div>
     </div>
   );
@@ -1079,7 +1225,7 @@ function PendingInfoNotice({ items }) {
 
 function OfficialSourceList({ sources }) {
   return (
-    <div className="rounded-lg border border-teal-200 bg-teal-50 p-4">
+    <div className="rounded-lg border border-verified-200 bg-verified-50 p-4">
       <h3 className="text-lg font-black">🔎 공식 출처 및 안전 확인</h3>
       <div className="mt-3 grid gap-2">
         {sources.map((source) => (
@@ -1088,9 +1234,9 @@ function OfficialSourceList({ sources }) {
             href={source.sourceUrl}
             target="_blank"
             rel="noreferrer"
-            className="rounded-lg border border-teal-100 bg-white p-3 text-sm font-black text-teal-800"
+            className="rounded-lg border border-verified-100 bg-paper p-3 text-sm font-black text-verified-700"
           >
-            <span className="block text-xs text-teal-600">{sourceTypeLabel(source)}</span>
+            <span className="block text-xs text-verified-500">{sourceTypeLabel(source)}</span>
             <span>
               {source.name}
               {source.serving ? ` · ${source.serving}` : ''} · {source.sourceLabel}
@@ -1107,27 +1253,27 @@ function AdditiveNotice({ additives }) {
   const extraCount = additives.length - visibleAdditives.length;
 
   return (
-    <div className="rounded-lg border border-amber-200 bg-amber-50 p-4">
+    <div className="rounded-lg border border-estimate-200 bg-estimate-50 p-4">
       <div className="flex items-start justify-between gap-3">
         <div>
-          <h3 className="text-lg font-black text-amber-950">🧪 첨가물 확인</h3>
-          <p className="mt-1 text-sm font-bold leading-snug text-amber-900">
+          <h3 className="text-lg font-black text-estimate-700">🧪 첨가물 확인</h3>
+          <p className="mt-1 text-sm font-bold leading-snug text-estimate-600">
             성분표·원재료명에서 감지된 후보입니다. 유해 판정이 아니라 표시사항 확인용입니다.
           </p>
         </div>
-        <span className="shrink-0 rounded-full bg-amber-200 px-3 py-1 text-xs font-black text-amber-950">주의</span>
+        <span className="shrink-0 rounded-full bg-estimate-100 px-3 py-1 text-xs font-black text-estimate-700">주의</span>
       </div>
       <div className="mt-3 grid gap-2">
         {visibleAdditives.map((item) => (
-          <div key={`${item.category}-${item.term}`} className="rounded-lg border border-amber-100 bg-white p-3">
-            <p className="text-sm font-black text-amber-950">
+          <div key={`${item.category}-${item.term}`} className="rounded-lg border border-estimate-100 bg-paper p-3">
+            <p className="text-sm font-black text-estimate-700">
               {item.category} · {item.term}
             </p>
-            <p className="mt-1 text-xs font-bold leading-snug text-amber-800">{item.caution}</p>
+            <p className="mt-1 text-xs font-bold leading-snug text-estimate-600">{item.caution}</p>
           </div>
         ))}
       </div>
-      {extraCount > 0 ? <p className="mt-2 text-xs font-black text-amber-900">외 {extraCount}개 후보가 더 있습니다.</p> : null}
+      {extraCount > 0 ? <p className="mt-2 text-xs font-black text-estimate-700">외 {extraCount}개 후보가 더 있습니다.</p> : null}
     </div>
   );
 }
@@ -1136,14 +1282,14 @@ function sourceTypeLabel(source) {
   if (source.type === 'official-value') return '공식값 적용';
   if (source.type === 'safety-reference' && `${source.name} ${source.category}`.includes('첨가물')) return '식품첨가물 안전 확인';
   if (source.type === 'safety-reference') return '알레르기·도핑 안전 확인';
-  return '공식 출처 확인';
+  return '외부 출처 확인 (공식 아님)';
 }
 
 function TrafficLine({ color, label, text }) {
   const styles = {
-    green: 'border-emerald-200 bg-emerald-50 text-emerald-800',
-    yellow: 'border-amber-200 bg-amber-50 text-amber-800',
-    red: 'border-red-200 bg-red-50 text-red-800',
+    green: 'border-verified-200 bg-verified-50 text-verified-700',
+    yellow: 'border-estimate-200 bg-estimate-50 text-estimate-700',
+    red: 'border-alert-200 bg-alert-50 text-alert-700',
   };
 
   return (
@@ -1156,9 +1302,9 @@ function TrafficLine({ color, label, text }) {
 
 function ZoomControl({ zoom, onChange }) {
   return (
-    <div className="absolute bottom-[8.5rem] left-4 right-4 z-10 rounded-full border border-white/15 bg-black/45 px-4 py-3 shadow-2xl backdrop-blur md:left-1/2 md:right-auto md:w-[420px] md:-translate-x-1/2">
+    <div className="absolute bottom-[8.5rem] left-4 right-4 z-10 rounded-full border border-ink-50/15 bg-ink-950/55 px-4 py-3 shadow-instrument backdrop-blur md:left-1/2 md:right-auto md:w-[420px] md:-translate-x-1/2">
       <div className="flex items-center gap-3">
-        <span className="shrink-0 text-sm font-black text-white">배율</span>
+        <span className="shrink-0 text-sm font-black text-ink-50">배율</span>
         <input
           type="range"
           min="1"
@@ -1166,13 +1312,42 @@ function ZoomControl({ zoom, onChange }) {
           step="0.1"
           value={zoom}
           onChange={(event) => onChange(Number(event.target.value))}
-          className="h-8 min-w-0 flex-1 accent-emerald-300"
+          className="h-8 min-w-0 flex-1 accent-verified-300"
           aria-label="카메라 배율 조정"
         />
-        <span className="w-12 shrink-0 text-right text-sm font-black text-emerald-100">{Number(zoom).toFixed(1)}x</span>
+        <span className="w-12 shrink-0 text-right font-mono text-sm font-bold text-verified-300">{Number(zoom).toFixed(1)}x</span>
       </div>
     </div>
   );
+}
+
+function BarcodeMatchBanner({ barcodeMatch }) {
+  if (barcodeMatch.status === 'looking-up') {
+    return (
+      <div className="absolute left-4 right-4 top-[18.5rem] z-10 flex items-center gap-2 rounded-full border border-ink-50/20 bg-ink-950/60 px-4 py-2 text-xs font-black text-ink-100 shadow-instrument backdrop-blur md:right-auto md:max-w-[520px]">
+        <span className="h-3 w-3 shrink-0 animate-spin rounded-full border-2 border-ink-50/30 border-t-verified-300" aria-hidden="true" />
+        바코드 {barcodeMatch.code} 조회 중
+      </div>
+    );
+  }
+
+  if (barcodeMatch.status === 'found' && barcodeMatch.candidate) {
+    return (
+      <div className="absolute left-4 right-4 top-[18.5rem] z-10 rounded-full border border-verified-300/50 bg-verified-500/25 px-4 py-2 text-xs font-black text-verified-50 shadow-instrument backdrop-blur md:right-auto md:max-w-[520px]">
+        바코드로 제품을 확인했어요: {barcodeMatch.candidate.name} · 촬영하면 바로 적용됩니다
+      </div>
+    );
+  }
+
+  if (barcodeMatch.status === 'not-found') {
+    return (
+      <div className="absolute left-4 right-4 top-[18.5rem] z-10 rounded-full border border-ink-50/15 bg-ink-950/55 px-4 py-2 text-xs font-black text-ink-200 shadow-instrument backdrop-blur md:right-auto md:max-w-[520px]">
+        바코드 {barcodeMatch.code}는 등록된 정보가 없어요. 사진으로 계속 인식할게요.
+      </div>
+    );
+  }
+
+  return null;
 }
 
 function LiveNutritionBadge({ liveScan }) {
@@ -1182,7 +1357,7 @@ function LiveNutritionBadge({ liveScan }) {
     const preview = detectedFacts.slice(0, 3).join(' · ');
     const extraCount = detectedFacts.length - 3;
     return (
-      <div className="absolute left-4 right-4 top-[21.5rem] z-10 rounded-full border border-emerald-300/40 bg-emerald-500/20 px-4 py-2 text-xs font-black text-emerald-50 shadow-xl backdrop-blur md:right-auto md:max-w-[520px]">
+      <div className="absolute left-4 right-4 top-[21.5rem] z-10 rounded-full border border-verified-300/40 bg-verified-500/25 px-4 py-2 text-xs font-black text-verified-50 shadow-xl backdrop-blur md:right-auto md:max-w-[520px]">
         영양표 자동 인식: {preview}
         {extraCount > 0 ? ` 외 ${extraCount}개` : ''}
       </div>
@@ -1196,18 +1371,18 @@ function LiveAnalysisPanel({ liveReport, liveScan }) {
   if (!liveReport) {
     const unsupported = liveScan?.status === 'unsupported';
     return (
-      <div className="absolute left-4 right-4 top-4 z-10 rounded-2xl border border-white/15 bg-black/55 p-4 text-white shadow-2xl backdrop-blur md:left-auto md:right-4 md:w-[380px]" role="status" aria-live="polite">
+      <div className="absolute left-4 right-4 top-4 z-10 rounded-2xl border border-ink-50/15 bg-ink-950/65 p-4 text-ink-50 shadow-instrument backdrop-blur md:left-auto md:right-4 md:w-[380px]" role="status" aria-live="polite">
         <div className="flex items-center justify-between gap-3">
           <strong className="text-sm font-black">실시간 칼로리 측정</strong>
-          <span className={`rounded-full px-3 py-1 text-xs font-black ${unsupported ? 'bg-amber-300 text-amber-950' : 'bg-white/10 text-white/75'}`}>
+          <span className={`rounded-full px-3 py-1 text-xs font-black ${unsupported ? 'bg-estimate-300 text-estimate-700' : 'bg-ink-50/10 text-ink-200'}`}>
             {unsupported ? '제한' : '분석 중'}
           </span>
         </div>
         <div className="mt-2 flex items-end gap-2">
-          <strong className="text-4xl font-black tracking-tight">--</strong>
-          <span className="pb-1 text-lg font-black text-emerald-200">kcal</span>
+          <strong className="font-mono text-gauge font-bold tracking-tight text-ink-200">--</strong>
+          <span className="pb-1 text-lg font-black text-ink-300">kcal</span>
         </div>
-        <p className="mt-2 text-xs font-bold leading-relaxed text-white/75">
+        <p className="mt-2 text-xs font-bold leading-relaxed text-ink-200">
           {unsupported
             ? '음식을 원 안에 맞추면 외형으로 우선 계산합니다. 성분표 문자는 촬영 후 직접 보완할 수 있습니다.'
             : '음식이나 성분표를 원 안에 크게 맞추세요. 약 1초마다 열량을 다시 계산하고 여러 화면을 누적해 값을 안정화합니다.'}
@@ -1217,9 +1392,9 @@ function LiveAnalysisPanel({ liveReport, liveScan }) {
   }
 
   const stamp = {
-    green: { label: '좋음', className: 'bg-emerald-400 text-emerald-950' },
-    yellow: { label: '주의', className: 'bg-amber-300 text-amber-950' },
-    red: { label: '조심', className: 'bg-red-400 text-red-950' },
+    green: { label: '좋음', className: 'bg-verified-300 text-verified-700' },
+    yellow: { label: '주의', className: 'bg-estimate-300 text-estimate-700' },
+    red: { label: '조심', className: 'bg-alert-300 text-alert-700' },
   }[liveReport.stamp];
 
   const primaryRisk = liveScan?.food?.visualReason
@@ -1228,34 +1403,34 @@ function LiveAnalysisPanel({ liveReport, liveScan }) {
   const estimate = createLiveCalorieEstimate(liveReport, liveScan);
 
   return (
-    <div className="absolute left-4 right-4 top-4 z-10 rounded-2xl border border-white/15 bg-black/60 p-4 text-white shadow-2xl backdrop-blur md:left-auto md:right-4 md:w-[380px]" role="status" aria-live="polite">
+    <div className="absolute left-4 right-4 top-4 z-10 rounded-2xl border border-ink-50/15 bg-ink-950/75 p-4 text-ink-50 shadow-instrument backdrop-blur md:left-auto md:right-4 md:w-[380px]" role="status" aria-live="polite">
       <div className="flex items-center justify-between gap-3">
         <div>
           <strong className="block text-sm font-black">실시간 칼로리 측정</strong>
-          <span className="text-[11px] font-bold text-white/60">{estimate.sourceLabel}</span>
+          <span className="text-[11px] font-bold text-ink-300">{estimate.sourceLabel}</span>
         </div>
         <span className={`rounded-full px-3 py-1 text-xs font-black ${stamp.className}`}>{stamp.label}</span>
       </div>
-      <div className="mt-2 rounded-2xl border border-emerald-300/25 bg-emerald-300/10 p-3">
+      <div className="mt-2 rounded-2xl border border-verified-300/25 bg-verified-500/10 p-3">
         <div className="flex items-end gap-2">
-          <strong className="text-4xl font-black tracking-tight text-emerald-100">{estimate.calories}</strong>
-          <span className="pb-1 text-lg font-black text-emerald-200">kcal</span>
+          <strong className="font-mono text-gauge font-bold tracking-tight text-verified-100">{estimate.calories}</strong>
+          <span className="pb-1 text-lg font-black text-verified-300">kcal</span>
         </div>
         <div className="mt-1 flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-xs font-black">
-          <span className="text-white/90">예상 범위 {estimate.low}–{estimate.high} kcal</span>
-          <span className="text-emerald-200">신뢰도 {estimate.confidencePercent}%</span>
+          <span className="font-mono text-ink-100">예상 범위 {estimate.low}–{estimate.high} kcal</span>
+          <span className="text-verified-300">신뢰도 {estimate.confidencePercent}%</span>
         </div>
-        <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-white/10" aria-hidden="true">
-          <div className="h-full rounded-full bg-emerald-300 transition-all duration-500" style={{ width: `${estimate.confidencePercent}%` }} />
+        <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-ink-50/10" aria-hidden="true">
+          <div className="h-full rounded-full bg-verified-300 transition-all duration-500" style={{ width: `${estimate.confidencePercent}%` }} />
         </div>
-        <p className="mt-2 text-xs font-black text-white/85">{estimate.foodLabel}</p>
+        <p className="mt-2 text-xs font-black text-ink-100">{estimate.foodLabel}</p>
       </div>
       <div className="mt-2 grid grid-cols-2 gap-2">
         <LiveMetric label="당류" value={formatMetric(liveReport.totals.sugar, 'g')} />
         <LiveMetric label="나트륨" value={formatMetric(liveReport.totals.sodium, 'mg')} />
       </div>
-      <p className="mt-2 max-h-10 overflow-hidden text-xs font-bold leading-snug text-white/80">{primaryRisk}</p>
-      <p className="mt-2 border-t border-white/10 pt-2 text-[11px] font-black text-amber-100/90">
+      <p className="mt-2 max-h-10 overflow-hidden text-xs font-bold leading-snug text-ink-200">{primaryRisk}</p>
+      <p className="mt-2 border-t border-ink-50/10 pt-2 text-[11px] font-black text-estimate-300">
         사진 기반 추정 범위입니다. 저장 전 음식과 양을 확인하세요.
       </p>
     </div>
@@ -1287,36 +1462,51 @@ function createLiveCalorieEstimate(liveReport, liveScan) {
 
 function LiveMetric({ label, value }) {
   return (
-    <div className="rounded-xl bg-white/10 p-2">
-      <div className="text-[11px] font-black text-white/60">{label}</div>
-      <div className="mt-0.5 text-sm font-black">{value}</div>
+    <div className="rounded-xl bg-ink-50/10 p-2">
+      <div className="text-[11px] font-black text-ink-300">{label}</div>
+      <div className="mt-0.5 font-mono text-sm font-bold text-ink-50">{value}</div>
     </div>
   );
 }
 
-function FoodItemsForm({ foods, updateFood, addFood, removeFood }) {
+function FoodItemsForm({ foods, reportItems, updateFood, addFood, removeFood }) {
   const namedFoodCount = foods.filter((food) => String(food.name || '').trim()).length;
   const fruitCount = foods.reduce((total, food) => total + (isFruitFood(food) ? Number(food.quantity || 0) : 0), 0);
+  const reportById = useMemo(() => new Map((reportItems || []).map((item) => [item.id, item])), [reportItems]);
+  const trustBadgeStyle = {
+    official: 'bg-verified-100 text-verified-700',
+    matched: 'bg-verified-100 text-verified-700',
+    estimated: 'bg-estimate-100 text-estimate-700',
+    pending: 'bg-alert-100 text-alert-700',
+  };
 
   return (
     <div className="mt-4 grid gap-3">
-      <div className="flex flex-wrap items-center gap-2 rounded-lg bg-teal-50 px-3 py-2 text-sm font-black text-teal-900">
+      <div className="flex flex-wrap items-center gap-2 rounded-lg bg-verified-50 px-3 py-2 text-sm font-black text-verified-700">
         <span>음식·반찬 {namedFoodCount}가지</span>
-        {fruitCount > 0 ? <span className="rounded-full bg-white px-3 py-1 text-emerald-800">과일 {fruitCount}개</span> : null}
+        {fruitCount > 0 ? <span className="rounded-full bg-paper px-3 py-1 text-verified-700">과일 {fruitCount}개</span> : null}
       </div>
-      {foods.map((food, index) => (
-        <div key={food.id} className="grid gap-3 rounded-lg border border-slate-200 bg-slate-50 p-3">
+      {foods.map((food, index) => {
+        const reportItem = reportById.get(food.id);
+        const trustTier = reportItem ? classifyItemTrust(reportItem) : null;
+        return (
+        <div key={food.id} className="grid gap-3 rounded-lg border border-ink-100 bg-paper-100 p-3">
           <div className="flex items-center justify-between gap-3">
-            <strong className="text-sm font-black text-slate-600">음식 {index + 1}</strong>
-            <div className="flex items-center gap-2">
+            <strong className="text-sm font-black text-ink-500">음식 {index + 1}</strong>
+            <div className="flex flex-wrap items-center justify-end gap-2">
+              {reportItem && String(food.name || '').trim() ? (
+                <span className={`rounded-full px-3 py-1 text-xs font-black ${trustBadgeStyle[trustTier]}`}>
+                  {TRUST_TIER_LABEL[trustTier]}{trustTier !== 'pending' ? ` · ${formatCompactNumber(reportItem.calories)} kcal` : ''}
+                </span>
+              ) : null}
               {food.estimated ? (
-                <span className="rounded-full bg-emerald-100 px-3 py-1 text-xs font-black text-emerald-700">자동 추정</span>
+                <span className="rounded-full bg-verified-100 px-3 py-1 text-xs font-black text-verified-700">자동 추정</span>
               ) : null}
               {foods.length > 1 ? (
                 <button
                   type="button"
                   onClick={() => removeFood(food.id)}
-                  className="h-8 rounded-full bg-slate-200 px-3 text-xs font-black text-slate-700"
+                  className="h-8 rounded-full bg-ink-100 px-3 text-xs font-black text-ink-600"
                 >
                   삭제
                 </button>
@@ -1324,23 +1514,23 @@ function FoodItemsForm({ foods, updateFood, addFood, removeFood }) {
             </div>
           </div>
           {food.estimated ? (
-            <div className="grid gap-2 rounded-lg border border-amber-200 bg-amber-50 p-3">
-              <p className="text-sm font-black text-amber-900">
+            <div className="grid gap-2 rounded-lg border border-estimate-200 bg-estimate-50 p-3">
+              <p className="text-sm font-black text-estimate-700">
                 {food.visualReason ? `사진 후보: ${food.visualReason}` : '사진만으로는 확정하지 않습니다.'}
               </p>
               {food.quantity || food.sizeLabel || food.confidence ? (
                 <div className="flex flex-wrap gap-2 text-xs font-black">
-                  {food.quantity ? <span className="rounded-full bg-white px-3 py-1 text-emerald-800">수량 약 {food.quantity}{food.unitLabel || '개'}</span> : null}
-                  {food.sizeLabel ? <span className="rounded-full bg-white px-3 py-1 text-emerald-800">크기 {food.sizeLabel}</span> : null}
-                  {food.confidence ? <span className="rounded-full bg-white px-3 py-1 text-amber-700">신뢰도 {food.confidence}</span> : null}
-                  {food.confidenceScore ? <span className="rounded-full bg-white px-3 py-1 text-slate-700">자동 신뢰 {Math.round(Number(food.confidenceScore) * 100)}%</span> : null}
+                  {food.quantity ? <span className="rounded-full bg-paper px-3 py-1 text-verified-700">수량 약 {food.quantity}{food.unitLabel || '개'}</span> : null}
+                  {food.sizeLabel ? <span className="rounded-full bg-paper px-3 py-1 text-verified-700">크기 {food.sizeLabel}</span> : null}
+                  {food.confidence ? <span className="rounded-full bg-paper px-3 py-1 text-estimate-700">신뢰도 {food.confidence}</span> : null}
+                  {food.confidenceScore ? <span className="rounded-full bg-paper px-3 py-1 text-ink-600">자동 신뢰 {Math.round(Number(food.confidenceScore) * 100)}%</span> : null}
                 </div>
               ) : null}
               {food.requiresConfirmation ? (
                 <button
                   type="button"
                   onClick={() => updateFood(food.id, { requiresConfirmation: false, estimated: false, visualReason: '' })}
-                  className="h-11 rounded-lg bg-amber-900 px-4 text-sm font-black text-white"
+                  className="h-11 rounded-lg bg-estimate-700 px-4 text-sm font-black text-paper"
                 >
                   이 음식이 맞아요
                 </button>
@@ -1352,15 +1542,21 @@ function FoodItemsForm({ foods, updateFood, addFood, removeFood }) {
             음식명
             <input
               value={food.name}
-              onChange={(event) => updateFood(food.id, { name: event.target.value, estimated: false, visualReason: '', requiresConfirmation: false })}
+              onChange={(event) => updateFood(food.id, {
+                name: event.target.value,
+                estimated: false,
+                visualReason: '',
+                requiresConfirmation: false,
+                ...clearAttachedNutrientFields(),
+              })}
               onBlur={() => recordRecognitionCorrection({ ...food, name: food.recognizedName || food.name }, food.name)}
-              className="h-12 rounded-lg border border-slate-200 bg-white px-3 text-base"
+              className="h-12 rounded-lg border border-ink-200 bg-paper px-3 text-base"
               placeholder="예: 현미밥, 닭가슴살, 김치"
             />
           </label>
           <label className="grid gap-1 text-sm font-black">
             {food.perServing ? '실제 섭취량' : '먹은 양'}
-            <div className="flex overflow-hidden rounded-lg border border-slate-200 bg-white">
+            <div className="flex overflow-hidden rounded-lg border border-ink-200 bg-paper">
               <input
                 value={food.grams}
                 type="number"
@@ -1372,10 +1568,10 @@ function FoodItemsForm({ foods, updateFood, addFood, removeFood }) {
                 className="h-12 min-w-0 flex-1 px-3 text-base outline-none"
                 placeholder={food.perServing ? String(food.servingAmount || 1) : '100'}
               />
-              <span className="grid w-14 place-items-center bg-slate-100 text-xs text-slate-500">{food.perServing ? food.servingUnit || '회' : 'g'}</span>
+              <span className="grid w-14 place-items-center bg-paper-100 text-xs text-ink-400">{food.perServing ? food.servingUnit || '회' : 'g'}</span>
             </div>
             {food.perServing && food.serving ? (
-              <span className="text-xs font-bold text-slate-500">
+              <span className="text-xs font-bold text-ink-400">
                 1회 기준: {food.serving}
                 {food.nutrients ? ` · ${formatCompactNumber(food.nutrients.calories)} kcal` : ''}
                 {food.nutrients ? ` · 현재 적용 ${formatCompactNumber(calculateAppliedFoodCalories(food))} kcal` : ''}
@@ -1393,7 +1589,7 @@ function FoodItemsForm({ foods, updateFood, addFood, removeFood }) {
                 max="100"
                 step="1"
                 onChange={(event) => updateFood(food.id, createQuantityUpdate(food, event.target.value))}
-                className="h-12 min-w-0 rounded-lg border border-slate-200 bg-white px-3 text-base"
+                className="h-12 min-w-0 rounded-lg border border-ink-200 bg-paper px-3 text-base"
                 placeholder="예: 3"
               />
             </label>
@@ -1402,7 +1598,7 @@ function FoodItemsForm({ foods, updateFood, addFood, removeFood }) {
               <select
                 value={food.unitLabel || '개'}
                 onChange={(event) => updateFood(food.id, { unitLabel: event.target.value })}
-                className="h-12 rounded-lg border border-slate-200 bg-white px-3 text-base"
+                className="h-12 rounded-lg border border-ink-200 bg-paper px-3 text-base"
               >
                 {['개', '가지', '조각', '그릇', '컵', '접시', '줌'].map((unit) => <option key={unit}>{unit}</option>)}
               </select>
@@ -1410,12 +1606,13 @@ function FoodItemsForm({ foods, updateFood, addFood, removeFood }) {
           </div>
           {!food.estimated ? <QuickFoodPresetSelect foodId={food.id} onApply={updateFood} compact /> : null}
         </div>
-      ))}
+        );
+      })}
 
       <button
         type="button"
         onClick={addFood}
-        className="h-12 rounded-lg border-2 border-dashed border-slate-300 bg-white font-black text-slate-700"
+        className="h-12 rounded-lg border-2 border-dashed border-ink-200 bg-paper font-black text-ink-600"
       >
         음식 추가
       </button>
@@ -1427,6 +1624,30 @@ function isFruitFood(food) {
   if (food?.foodType === 'fruit') return true;
   const text = `${food?.name || ''} ${food?.category || ''}`.toLowerCase().replace(/\s+/g, '');
   return ['과일', '바나나', '사과', '배', '귤', '오렌지', '포도', '딸기', '수박', '참외', '키위', '복숭아', '토마토'].some((term) => text.includes(term));
+}
+
+// A food item can carry structured nutrients attached from AI vision recognition or an
+// applied search candidate (see createVisionFoodItem / applyFoodCandidate). Those fields
+// describe a SPECIFIC matched food, not just a name string. If the name is then changed by
+// hand (correcting a misrecognition) or replaced via a quick preset, the old nutrients no
+// longer correspond to the new name — but nutritionEngine's normalizeFoods() only checks
+// whether `nutrients` is present, not whether it still matches. Without clearing these
+// fields, the report would keep silently computing calories from the previous food while
+// displaying the new name. Callers should spread this into the update whenever the name
+// itself is being replaced.
+function clearAttachedNutrientFields() {
+  return {
+    nutrients: null,
+    perServing: false,
+    servingAmount: 0,
+    servingUnit: 'g',
+    nutrientBasisGrams: '',
+    brand: '',
+    category: '',
+    serving: '',
+    sourceLabel: '',
+    sourceUrl: '',
+  };
 }
 
 function createQuantityUpdate(food, value) {
@@ -1510,7 +1731,17 @@ function QuickFoodPresetSelect({ foodId, onApply, compact = false }) {
   function handleChange(event) {
     const preset = foodCorrectionPresets[Number(event.target.value)];
     if (!preset) return;
-    onApply(foodId, { name: preset.name, grams: preset.grams, estimated: false, visualReason: '', confidence: '', quantity: '', sizeLabel: '', requiresConfirmation: false });
+    onApply(foodId, {
+      name: preset.name,
+      grams: preset.grams,
+      estimated: false,
+      visualReason: '',
+      confidence: '',
+      quantity: '',
+      sizeLabel: '',
+      requiresConfirmation: false,
+      ...clearAttachedNutrientFields(),
+    });
     event.target.value = '';
   }
 
@@ -1520,7 +1751,7 @@ function QuickFoodPresetSelect({ foodId, onApply, compact = false }) {
       <select
         defaultValue=""
         onChange={handleChange}
-        className="h-11 rounded-lg border border-slate-200 bg-white px-3 text-sm font-black text-slate-700"
+        className="h-11 rounded-lg border border-ink-200 bg-paper px-3 text-sm font-black text-ink-600"
       >
         <option value="">음식/제품 후보 선택</option>
         {foodCorrectionPresets.map((preset, index) => (
@@ -1536,7 +1767,7 @@ function QuickFoodPresetSelect({ foodId, onApply, compact = false }) {
 function NutritionFactsForm({ facts, updateFacts }) {
   return (
     <div className="mt-4 grid gap-3">
-      <p className="rounded-lg bg-teal-50 p-3 text-sm font-black text-teal-800">
+      <p className="rounded-lg bg-verified-50 p-3 text-sm font-black text-verified-700">
         성분표 사진을 찍으면 가능한 숫자는 자동 반영됩니다. 자동 인식이 안 되면 kcal, 탄수화물, 단백질, 지방, 나트륨 숫자만 입력해도 음식 분석과 함께 계산됩니다.
       </p>
       <label className="grid gap-1 text-sm font-black">
@@ -1544,7 +1775,7 @@ function NutritionFactsForm({ facts, updateFacts }) {
         <input
           value={facts.foodName}
           onChange={(event) => updateFacts({ foodName: event.target.value })}
-          className="h-11 rounded-lg border border-slate-200 px-3 text-base"
+          className="h-11 rounded-lg border border-ink-200 px-3 text-base"
           placeholder="예: 단백질바, 도시락, 음료"
         />
       </label>
@@ -1553,12 +1784,12 @@ function NutritionFactsForm({ facts, updateFacts }) {
         <input
           value={facts.servingSize}
           onChange={(event) => updateFacts({ servingSize: event.target.value })}
-          className="h-11 rounded-lg border border-slate-200 px-3 text-base"
+          className="h-11 rounded-lg border border-ink-200 px-3 text-base"
           placeholder="예: 1봉 50g"
         />
       </label>
-      <div className="grid grid-cols-2 gap-3">
-        <NumberFact label="열량" unit="kcal" value={facts.calories} onChange={(value) => updateFacts({ calories: value })} />
+      <div className="grid grid-cols-2 divide-y divide-ink-100 overflow-hidden rounded-lg border border-ink-950 sm:grid-cols-2 sm:divide-y-0">
+        <NumberFact label="열량" unit="kcal" value={facts.calories} onChange={(value) => updateFacts({ calories: value })} emphasize />
         <NumberFact label="나트륨" unit="mg" value={facts.sodium} onChange={(value) => updateFacts({ sodium: value })} />
         <NumberFact label="탄수화물" unit="g" value={facts.carb} onChange={(value) => updateFacts({ carb: value })} />
         <NumberFact label="당류" unit="g" value={facts.sugar} onChange={(value) => updateFacts({ sugar: value })} />
@@ -1582,7 +1813,10 @@ function NutritionLookupPanel({ captured, onApplyFood, onApplyFacts, onUploadLab
   const [remoteSearch, setRemoteSearch] = useState({ query: '', candidates: [] });
   const activeQuery = submittedQuery && submittedQuery === query.trim() ? submittedQuery : '';
   const localCandidates = useMemo(() => (activeQuery ? createNutritionSearchCandidates(activeQuery) : []), [activeQuery]);
-  const remoteCandidates = remoteSearch.query === activeQuery ? remoteSearch.candidates : [];
+  const remoteCandidates = useMemo(
+    () => (remoteSearch.query === activeQuery ? remoteSearch.candidates : []),
+    [remoteSearch, activeQuery],
+  );
   const candidates = useMemo(() => uniqueCandidates([...localCandidates, ...remoteCandidates]).slice(0, 10), [localCandidates, remoteCandidates]);
   const sourceLinks = useMemo(() => (activeQuery ? createOfficialSearchLinks(activeQuery, candidates) : []), [activeQuery, candidates]);
 
@@ -1629,24 +1863,24 @@ function NutritionLookupPanel({ captured, onApplyFood, onApplyFacts, onUploadLab
   }
 
   return (
-    <div className="mt-4 overflow-hidden rounded-lg border border-slate-200 bg-slate-50">
+    <div className="mt-4 overflow-hidden rounded-lg border border-ink-100 bg-paper-100">
       <button
         type="button"
         onClick={() => setOpen((current) => !current)}
-        className="flex min-h-14 w-full items-center justify-between gap-3 bg-white px-4 py-3 text-left"
+        className="flex min-h-14 w-full items-center justify-between gap-3 bg-paper px-4 py-3 text-left"
         aria-expanded={open}
         aria-controls="nutrition-lookup-content"
       >
         <span>
-          <strong className="block text-base font-black text-slate-950">제품·외식 메뉴 검색</strong>
-          <span className="mt-0.5 block text-xs font-bold text-slate-500">필요할 때 열어 공식 영양정보를 찾아보세요.</span>
+          <strong className="block text-base font-black text-paper-ink">제품·외식 메뉴 검색</strong>
+          <span className="mt-0.5 block text-xs font-bold text-ink-400">필요할 때 열어 공식 영양정보를 찾아보세요.</span>
         </span>
-        <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-slate-950 text-lg font-black text-white" aria-hidden="true">
+        <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-ink-950 text-lg font-black text-paper" aria-hidden="true">
           {open ? '−' : '+'}
         </span>
       </button>
 
-      {open ? <div id="nutrition-lookup-content" className="grid gap-3 border-t border-slate-200 p-3">
+      {open ? <div id="nutrition-lookup-content" className="grid gap-3 border-t border-ink-100 p-3">
         <form className="grid gap-2" onSubmit={handleRemoteSearch}>
           <label className="grid gap-1 text-sm font-black">
             검색어
@@ -1657,7 +1891,7 @@ function NutritionLookupPanel({ captured, onApplyFood, onApplyFacts, onUploadLab
                 setSubmittedQuery('');
                 setRemoteStatus('');
               }}
-              className="h-11 rounded-lg border border-slate-200 bg-white px-3 text-base"
+              className="h-11 rounded-lg border border-ink-200 bg-paper px-3 text-base"
               placeholder="예: 스타벅스 라떼, 빅맥, 현미밥"
             />
           </label>
@@ -1665,19 +1899,19 @@ function NutritionLookupPanel({ captured, onApplyFood, onApplyFacts, onUploadLab
             <button
               type="submit"
               disabled={searching}
-              className="h-10 rounded-lg bg-teal-700 px-4 text-sm font-black text-white disabled:opacity-60"
+              className="h-10 rounded-lg bg-verified-600 px-4 text-sm font-black text-paper disabled:opacity-60"
             >
               {searching ? '검색 중' : '검색'}
             </button>
-            <label className="grid h-10 cursor-pointer place-items-center rounded-lg bg-slate-950 px-4 text-sm font-black text-white">
+            <label className="grid h-10 cursor-pointer place-items-center rounded-lg bg-ink-950 px-4 text-sm font-black text-paper">
               성분표 업로드
               <input type="file" accept="image/*" className="hidden" onChange={handleUpload} />
             </label>
             {remoteStatus ? (
-              <span className="grid min-h-10 place-items-center rounded-lg bg-white px-3 text-xs font-black text-slate-600" role="status">{remoteStatus}</span>
+              <span className="grid min-h-10 place-items-center rounded-lg bg-paper px-3 text-xs font-black text-ink-600" role="status">{remoteStatus}</span>
             ) : null}
             {uploadStatus ? (
-              <span className="grid min-h-10 place-items-center rounded-lg bg-white px-3 text-xs font-black text-slate-600" role="status">{uploadStatus}</span>
+              <span className="grid min-h-10 place-items-center rounded-lg bg-paper px-3 text-xs font-black text-ink-600" role="status">{uploadStatus}</span>
             ) : null}
           </div>
         </form>
@@ -1685,28 +1919,33 @@ function NutritionLookupPanel({ captured, onApplyFood, onApplyFacts, onUploadLab
       {activeQuery ? <div className="grid gap-2">
         {candidates.length ? (
           candidates.map((candidate) => (
-            <div key={candidate.id} className="rounded-lg border border-slate-200 bg-white p-3">
+            <div key={candidate.id} className="rounded-lg border border-ink-100 bg-paper p-3">
               <div className="flex items-start justify-between gap-3">
                 <div>
-                  <p className="text-sm font-black text-slate-950">{candidate.name}</p>
-                  <p className="mt-0.5 text-xs font-bold text-slate-500">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <p className="text-sm font-black text-paper-ink">{candidate.name}</p>
+                    <span className={`rounded-full px-2 py-0.5 text-[10px] font-black ${candidate.official ? 'bg-verified-100 text-verified-700' : 'bg-estimate-100 text-estimate-700'}`}>
+                      {candidate.official ? '공식' : '외부 출처'}
+                    </span>
+                  </div>
+                  <p className="mt-0.5 text-xs font-bold text-ink-400">
                     {candidate.category}
                     {candidate.serving ? ` · ${candidate.serving}` : candidate.grams ? ` · ${candidate.grams}g` : ''}
                   </p>
                   {candidate.meta?.standardDate || candidate.meta?.sourceFile ? (
-                    <p className="mt-1 text-[11px] font-black text-teal-700">
+                    <p className="mt-1 text-[11px] font-black text-verified-700">
                       {candidate.meta?.standardDate ? `DB 기준일 ${candidate.meta.standardDate}` : '공공 DB'}
                       {candidate.meta?.sourceFile ? ` · ${candidate.meta.sourceFile}` : ''}
                     </p>
                   ) : null}
                 </div>
                 {candidate.glycemicTag ? (
-                  <span className="shrink-0 rounded-full bg-amber-100 px-2 py-1 text-[11px] font-black text-amber-800">혈당 {candidate.glycemicTag}</span>
+                  <span className="shrink-0 rounded-full bg-estimate-100 px-2 py-1 text-[11px] font-black text-estimate-700">혈당 {candidate.glycemicTag}</span>
                 ) : null}
               </div>
 
               {candidate.nutrients ? (
-                <div className="mt-2 grid grid-cols-4 gap-1 text-center text-[11px] font-black text-slate-600">
+                <div className="mt-2 grid grid-cols-4 gap-1 text-center text-[11px] font-black text-ink-600">
                   <CandidateMetric label={candidate.perServing ? '1회 kcal' : 'kcal'} value={candidate.nutrients.calories} />
                   <CandidateMetric label="탄수" value={candidate.nutrients.carb} />
                   <CandidateMetric label="단백" value={candidate.nutrients.protein} />
@@ -1718,7 +1957,7 @@ function NutritionLookupPanel({ captured, onApplyFood, onApplyFacts, onUploadLab
                 <button
                   type="button"
                   onClick={() => onApplyFood(candidate)}
-                  className="h-9 rounded-lg bg-emerald-600 px-3 text-xs font-black text-white"
+                  className="h-9 rounded-lg bg-verified-600 px-3 text-xs font-black text-paper"
                 >
                   식단에 추가
                 </button>
@@ -1726,7 +1965,7 @@ function NutritionLookupPanel({ captured, onApplyFood, onApplyFacts, onUploadLab
                   <button
                     type="button"
                     onClick={() => onApplyFacts(candidate)}
-                    className="h-9 rounded-lg border border-slate-300 bg-white px-3 text-xs font-black text-slate-700"
+                    className="h-9 rounded-lg border border-ink-200 bg-paper px-3 text-xs font-black text-ink-600"
                   >
                     성분표로 대체
                   </button>
@@ -1736,16 +1975,16 @@ function NutritionLookupPanel({ captured, onApplyFood, onApplyFacts, onUploadLab
                     href={candidate.sourceUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="grid h-9 place-items-center rounded-lg border border-teal-200 bg-teal-50 px-3 text-xs font-black text-teal-800"
+                    className="grid h-9 place-items-center rounded-lg border border-verified-200 bg-verified-50 px-3 text-xs font-black text-verified-700"
                   >
-                    공식 페이지
+                    {candidate.official ? '공식 페이지' : '출처 페이지'}
                   </a>
                 ) : null}
               </div>
             </div>
           ))
         ) : (
-          <p className="rounded-lg bg-white p-3 text-sm font-black text-slate-500">일치 결과 없음</p>
+          <p className="rounded-lg bg-paper p-3 text-sm font-black text-ink-400">일치 결과 없음</p>
         )}
       </div> : null}
 
@@ -1757,7 +1996,7 @@ function NutritionLookupPanel({ captured, onApplyFood, onApplyFacts, onUploadLab
               href={link.url}
               target="_blank"
               rel="noreferrer"
-              className="rounded-full border border-teal-200 bg-white px-3 py-2 text-xs font-black text-teal-800"
+              className="rounded-full border border-verified-200 bg-paper px-3 py-2 text-xs font-black text-verified-700"
             >
               {link.label}
             </a>
@@ -1771,7 +2010,7 @@ function NutritionLookupPanel({ captured, onApplyFood, onApplyFacts, onUploadLab
 
 function CandidateMetric({ label, value }) {
   return (
-    <span className="rounded-md bg-slate-100 px-1.5 py-1">
+    <span className="rounded-md bg-paper-100 px-1.5 py-1">
       {label} {formatCompactNumber(value)}
     </span>
   );
@@ -1877,6 +2116,7 @@ function toOfficialCandidate(entry, kind) {
     category: entry.category || (kind === 'official-product' ? '공식 제품 DB' : '외식 공식 메뉴'),
     sourceLabel: entry.sourceLabel || '공식 영양정보',
     sourceUrl: entry.sourceUrl || '',
+    official: true,
     nutrients: extractCandidateNutrients(entry),
     perServing: true,
     servingAmount: servingDetails.amount,
@@ -1910,6 +2150,7 @@ function normalizeRemoteCandidate(candidate) {
     category: candidate.category || '공식 메뉴 DB',
     sourceLabel: candidate.sourceLabel || '공식 영양정보',
     sourceUrl: candidate.sourceUrl || '',
+    official: Boolean(candidate.official),
     nutrients: extractCandidateNutrients(candidate.nutrients || {}),
     meta: candidate.meta || null,
     perServing: Boolean(candidate.perServing),
@@ -2067,11 +2308,11 @@ function formatCompactNumber(value) {
   return Number.isInteger(parsed) ? String(parsed) : String(Math.round(parsed * 10) / 10);
 }
 
-function NumberFact({ label, unit, value, onChange }) {
+function NumberFact({ label, unit, value, onChange, emphasize = false }) {
   return (
-    <label className="grid gap-1 text-sm font-black">
+    <label className={`grid gap-1 p-3 text-sm font-black ${emphasize ? 'col-span-2 bg-ink-950 text-paper sm:col-span-1' : 'text-ink-700'}`}>
       {label}
-      <div className="flex overflow-hidden rounded-lg border border-slate-200 bg-white">
+      <div className={`flex overflow-hidden rounded-lg border ${emphasize ? 'border-paper/25 bg-ink-900' : 'border-ink-200 bg-paper'}`}>
         <input
           value={value}
           type="number"
@@ -2079,10 +2320,10 @@ function NumberFact({ label, unit, value, onChange }) {
           min="0"
           step="any"
           onChange={(event) => onChange(event.target.value)}
-          className="h-11 min-w-0 flex-1 px-3 text-base outline-none"
+          className={`h-11 min-w-0 flex-1 px-3 text-base font-mono outline-none ${emphasize ? 'bg-transparent text-paper' : ''}`}
           placeholder="0"
         />
-        <span className="grid w-14 place-items-center bg-slate-100 text-xs text-slate-500">{unit}</span>
+        <span className={`grid w-14 place-items-center text-xs ${emphasize ? 'bg-paper/10 text-paper/70' : 'bg-paper-100 text-ink-400'}`}>{unit}</span>
       </div>
     </label>
   );
@@ -2125,37 +2366,37 @@ function DiarySheet({ profile, reports, onRefresh, onClose }) {
       aria-modal="true"
       aria-labelledby="diary-title"
       onMouseDown={(event) => event.target === event.currentTarget && onClose()}
-      className="fixed inset-0 z-30 bg-slate-950/70 backdrop-blur"
+      className="fixed inset-0 z-30 bg-ink-950/70 backdrop-blur"
     >
-      <div className="absolute inset-x-0 bottom-0 max-h-[92vh] overflow-y-auto rounded-t-3xl bg-slate-50 p-5 text-slate-950 shadow-2xl md:left-auto md:right-6 md:top-6 md:w-[560px] md:rounded-2xl">
+      <div className="absolute inset-x-0 bottom-0 max-h-[92vh] overflow-y-auto rounded-t-3xl bg-paper-100 p-5 text-paper-ink shadow-2xl md:left-auto md:right-6 md:top-6 md:w-[560px] md:rounded-2xl">
         <header className="mb-5 flex items-center justify-between gap-3">
           <div>
-            <p className="text-sm font-black text-teal-700">오늘 저장된 식단</p>
+            <p className="text-sm font-black text-verified-700">오늘 저장된 식단</p>
             <h2 id="diary-title" className="text-3xl font-black">기록 홈</h2>
           </div>
           <div className="flex gap-2">
-            <button type="button" onClick={onRefresh} className="h-11 rounded-full bg-white px-4 font-black shadow">
+            <button type="button" onClick={onRefresh} className="h-11 rounded-full bg-paper px-4 font-black shadow">
               새로고침
             </button>
-            <button ref={closeButtonRef} type="button" onClick={onClose} className="h-11 rounded-full bg-slate-950 px-5 font-black text-white">
+            <button ref={closeButtonRef} type="button" onClick={onClose} className="h-11 rounded-full bg-ink-950 px-5 font-black text-paper">
               닫기
             </button>
           </div>
         </header>
 
-        <section className="rounded-lg border border-slate-200 bg-white p-4">
+        <section className="rounded-lg border border-ink-100 bg-paper p-4">
           <div className="flex items-end justify-between gap-4">
             <div>
-              <p className="text-sm font-black text-slate-500">오늘 섭취</p>
-              <strong className="text-4xl font-black">{formatMetric(totals.calories, 'kcal')}</strong>
+              <p className="text-sm font-black text-ink-400">오늘 섭취</p>
+              <strong className="font-mono text-4xl font-bold">{formatMetric(totals.calories, 'kcal')}</strong>
             </div>
             <div className="text-right">
-              <p className="text-sm font-black text-slate-500">{calorieBalance >= 0 ? '남은 열량' : '초과 열량'}</p>
-              <strong className={`text-2xl font-black ${calorieBalance >= 0 ? 'text-teal-700' : 'text-red-600'}`}>{formatMetric(remainingCalories, 'kcal')}</strong>
+              <p className="text-sm font-black text-ink-400">{calorieBalance >= 0 ? '남은 열량' : '초과 열량'}</p>
+              <strong className={`font-mono text-2xl font-bold ${calorieBalance >= 0 ? 'text-verified-700' : 'text-alert-600'}`}>{formatMetric(remainingCalories, 'kcal')}</strong>
             </div>
           </div>
-          <div className="mt-4 h-3 overflow-hidden rounded-full bg-slate-100">
-            <div className="h-full rounded-full bg-teal-600" style={{ width: `${progress}%` }} />
+          <div className="mt-4 h-3 overflow-hidden rounded-full bg-paper-100">
+            <div className="h-full rounded-full bg-verified-600" style={{ width: `${progress}%` }} />
           </div>
           <div className="mt-4 grid grid-cols-3 gap-2">
             <Metric label="단백질" value={formatMetric(totals.protein, 'g')} />
@@ -2167,17 +2408,17 @@ function DiarySheet({ profile, reports, onRefresh, onClose }) {
         <section className="mt-4 grid gap-3">
           {todayReports.length ? (
             todayReports.map((report) => (
-              <article key={`${report.createdAt}-${report.summary}`} className="rounded-lg border border-slate-200 bg-white p-4">
+              <article key={`${report.createdAt}-${report.summary}`} className="rounded-lg border border-ink-100 bg-paper p-4">
                 {report.imageUrl ? (
                   <img
                     src={report.imageUrl}
                     alt={`${report.summary || '촬영 식단'} 기록 사진`}
-                    className="mb-4 aspect-[4/3] w-full rounded-lg bg-slate-100 object-cover"
+                    className="mb-4 aspect-[4/3] w-full rounded-lg bg-paper-100 object-cover"
                   />
                 ) : null}
                 <div className="flex items-start justify-between gap-3">
                   <div>
-                    <p className="text-xs font-black text-slate-500">{formatSavedReportTime(report.createdAt)}</p>
+                    <p className="text-xs font-black text-ink-400">{formatSavedReportTime(report.createdAt)}</p>
                     <h3 className="mt-1 text-lg font-black">{report.summary || '촬영 식단'}</h3>
                   </div>
                   <span className={`rounded-full px-3 py-1 text-xs font-black ${stampPillClass(report.stamp)}`}>
@@ -2192,7 +2433,7 @@ function DiarySheet({ profile, reports, onRefresh, onClose }) {
               </article>
             ))
           ) : (
-            <div className="rounded-lg border border-dashed border-slate-300 bg-white p-6 text-center font-black text-slate-500">
+            <div className="rounded-lg border border-dashed border-ink-200 bg-paper p-6 text-center font-black text-ink-400">
               아직 저장된 식단이 없습니다. 촬영 후 저장을 누르면 여기에 쌓입니다.
             </div>
           )}
@@ -2212,15 +2453,15 @@ function SettingsSheet({ profile, updateProfile, toggleMedical, onClose }) {
       aria-modal="true"
       aria-labelledby="settings-title"
       onMouseDown={(event) => event.target === event.currentTarget && onClose()}
-      className="fixed inset-0 z-30 bg-slate-950/70 backdrop-blur"
+      className="fixed inset-0 z-30 bg-ink-950/70 backdrop-blur"
     >
-      <div className="absolute inset-x-0 bottom-0 max-h-[92vh] overflow-y-auto rounded-t-3xl bg-slate-50 p-5 text-slate-950 shadow-2xl md:left-auto md:right-6 md:top-6 md:w-[520px] md:rounded-2xl">
+      <div className="absolute inset-x-0 bottom-0 max-h-[92vh] overflow-y-auto rounded-t-3xl bg-paper-100 p-5 text-paper-ink shadow-2xl md:left-auto md:right-6 md:top-6 md:w-[520px] md:rounded-2xl">
         <header className="mb-5 flex items-center justify-between">
           <div>
-            <p className="text-sm font-black text-teal-700">카메라 분석 설정</p>
+            <p className="text-sm font-black text-verified-700">카메라 분석 설정</p>
             <h2 id="settings-title" className="text-3xl font-black">설정</h2>
           </div>
-          <button ref={closeButtonRef} type="button" onClick={onClose} className="h-11 rounded-full bg-slate-950 px-5 font-black text-white">
+          <button ref={closeButtonRef} type="button" onClick={onClose} className="h-11 rounded-full bg-ink-950 px-5 font-black text-paper">
             완료
           </button>
         </header>
@@ -2235,7 +2476,7 @@ function SettingsSheet({ profile, updateProfile, toggleMedical, onClose }) {
                 type="button"
                 onClick={() => updateProfile({ mode: option.id })}
                 aria-pressed={profile.mode === option.id}
-                className={`h-14 rounded-lg border font-black ${profile.mode === option.id ? 'border-slate-950 bg-slate-950 text-white' : 'border-slate-200 bg-white'}`}
+                className={`h-14 rounded-lg border font-black ${profile.mode === option.id ? 'border-ink-950 bg-ink-950 text-paper' : 'border-ink-200 bg-paper'}`}
               >
                 {option.label}
               </button>
@@ -2249,7 +2490,7 @@ function SettingsSheet({ profile, updateProfile, toggleMedical, onClose }) {
           <RangeField label="몸무게" value={profile.weight} min={20} max={150} unit="kg" onChange={(weight) => updateProfile({ weight })} />
           <label className="grid gap-2 font-black">
             성별
-            <select value={profile.gender} onChange={(event) => updateProfile({ gender: event.target.value })} className="h-12 rounded-lg border border-slate-200 bg-white px-3">
+            <select value={profile.gender} onChange={(event) => updateProfile({ gender: event.target.value })} className="h-12 rounded-lg border border-ink-200 bg-paper px-3">
               <option value="남성">남성</option>
               <option value="여성">여성</option>
             </select>
@@ -2264,7 +2505,7 @@ function SettingsSheet({ profile, updateProfile, toggleMedical, onClose }) {
                 type="button"
                 onClick={() => toggleMedical(option)}
                 aria-pressed={profile.medical.includes(option)}
-                className={`min-h-12 rounded-lg border px-3 font-black ${profile.medical.includes(option) ? 'border-teal-700 bg-teal-700 text-white' : 'border-slate-200 bg-white'}`}
+                className={`min-h-12 rounded-lg border px-3 font-black ${profile.medical.includes(option) ? 'border-verified-700 bg-verified-700 text-paper' : 'border-ink-200 bg-paper'}`}
               >
                 {option === '없음' ? '건강해요' : option}
               </button>
@@ -2280,7 +2521,7 @@ function SettingsSheet({ profile, updateProfile, toggleMedical, onClose }) {
                 type="button"
                 onClick={() => updateProfile({ sport: option.id })}
                 aria-pressed={profile.sport === option.id}
-                className={`rounded-lg border p-4 text-left ${profile.sport === option.id ? 'border-slate-950 bg-slate-950 text-white' : 'border-slate-200 bg-white'}`}
+                className={`rounded-lg border p-4 text-left ${profile.sport === option.id ? 'border-ink-950 bg-ink-950 text-paper' : 'border-ink-200 bg-paper'}`}
               >
                 <strong className="block text-lg">{option.label}</strong>
                 <span className="text-sm opacity-75">{option.hint}</span>
@@ -2295,35 +2536,35 @@ function SettingsSheet({ profile, updateProfile, toggleMedical, onClose }) {
 
 function UserGuideAccordion({ open, onToggle }) {
   return (
-    <section className="mb-5 border-b border-slate-200 pb-5">
+    <section className="mb-5 border-b border-ink-100 pb-5">
       <button
         type="button"
         onClick={onToggle}
-        className="flex w-full items-center justify-between gap-3 rounded-xl border border-slate-200 bg-white p-4 text-left shadow-sm"
+        className="flex w-full items-center justify-between gap-3 rounded-xl border border-ink-100 bg-paper p-4 text-left shadow-sm"
         aria-expanded={open}
       >
         <span>
           <strong className="block text-xl font-black">사용설명서</strong>
-          <span className="mt-1 block text-sm font-bold text-slate-500">
+          <span className="mt-1 block text-sm font-bold text-ink-400">
             처음 사용하는 순서를 접었다 폈다 볼 수 있습니다.
           </span>
         </span>
-        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-slate-950 text-xl font-black text-white">
+        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-ink-950 text-xl font-black text-paper">
           {open ? '−' : '+'}
         </span>
       </button>
 
       {open ? (
-        <div className="mt-3 rounded-xl border border-teal-100 bg-teal-50 p-4 text-sm font-bold leading-relaxed text-slate-800">
+        <div className="mt-3 rounded-xl border border-verified-100 bg-verified-50 p-4 text-sm font-bold leading-relaxed text-verified-700">
           <ol className="grid gap-2">
             <li>1. 설정에서 신체 정보, 건강 상태, 운동 목적을 선택합니다.</li>
-            <li>2. 음식 전체를 둥근 테두리 안에 맞추고 빨간 촬영 버튼을 누릅니다.</li>
+            <li>2. 음식 전체를 뷰파인더 안에 맞추고 셔터 버튼을 누릅니다.</li>
             <li>3. 음식·반찬과 과일 개수를 바탕으로 계산된 총칼로리를 확인합니다.</li>
             <li>4. 음식명, 중량 또는 개수가 다르면 수정합니다. 총칼로리가 즉시 다시 계산됩니다.</li>
             <li>5. 저장을 누른 뒤 오늘 기록에서 식단을 확인합니다.</li>
           </ol>
-          <p className="mt-3 rounded-lg bg-white p-3 text-xs text-slate-600">
-            밝은 곳에서 음식이 겹치지 않게 촬영하고, 자동 인식된 음식명과 양을 한 번 확인하면 정확도가 높아집니다.
+          <p className="mt-3 rounded-lg bg-paper p-3 text-xs text-ink-600">
+            밝은 곳에서 음식이 겹치지 않게 촬영하고, 자동 인식된 음식명과 양을 한 번 확인하면 정확도가 높아집니다. 포장 제품은 바코드를 뷰파인더에 잠시 비추면 자동으로 인식됩니다.
           </p>
         </div>
       ) : null}
@@ -2333,9 +2574,9 @@ function UserGuideAccordion({ open, onToggle }) {
 
 function Metric({ label, value }) {
   return (
-    <div className="rounded-lg bg-slate-100 p-3">
-      <p className="text-xs font-black text-slate-500">{label}</p>
-      <p className="mt-1 text-lg font-black">{value}</p>
+    <div className="rounded-lg bg-paper-100 p-3">
+      <p className="text-xs font-black text-ink-400">{label}</p>
+      <p className="mt-1 font-mono text-lg font-bold">{value}</p>
     </div>
   );
 }
@@ -2423,7 +2664,7 @@ function hasTrustedReportItem(item) {
 
 function SettingBlock({ title, children }) {
   return (
-    <section className="border-t border-slate-200 py-5">
+    <section className="border-t border-ink-100 py-5">
       <h3 className="mb-3 text-xl font-black">{title}</h3>
       <div className="grid gap-4">{children}</div>
     </section>
@@ -2435,7 +2676,7 @@ function RangeField({ label, value, min, max, unit, onChange }) {
     <label className="grid gap-2 font-black">
       <span className="flex justify-between">
         {label}
-        <output className="text-teal-700">
+        <output className="font-mono text-verified-700">
           {value}
           {unit}
         </output>
@@ -2446,7 +2687,7 @@ function RangeField({ label, value, min, max, unit, onChange }) {
         max={max}
         value={value}
         onChange={(event) => onChange(Number(event.target.value))}
-        className="accent-teal-700"
+        className="accent-verified-700"
       />
     </label>
   );
@@ -2767,6 +3008,7 @@ async function createVisionFoodItem(recognition, provider) {
     serving: candidate?.serving || '',
     sourceLabel: candidate?.sourceLabel || '',
     sourceUrl: candidate?.sourceUrl || '',
+    official: Boolean(candidate?.official),
   };
 }
 
@@ -3654,16 +3896,6 @@ function drawFallbackGuide(canvas) {
   ctx.fillText('카메라 권한을 허용하면 식단을 바로 촬영할 수 있습니다', 450, 555);
 }
 
-function roundRect(ctx, x, y, width, height, radius) {
-  ctx.beginPath();
-  ctx.moveTo(x + radius, y);
-  ctx.arcTo(x + width, y, x + width, y + height, radius);
-  ctx.arcTo(x + width, y + height, x, y + height, radius);
-  ctx.arcTo(x, y + height, x, y, radius);
-  ctx.arcTo(x, y, x + width, y, radius);
-  ctx.closePath();
-}
-
 function statusText(status) {
   if (status === 'checking') return '정밀 분석 중입니다. 시간이 조금 걸려도 제품명과 성분표 숫자를 끝까지 확인합니다.';
   if (status === 'detected') return '성분표에서 읽은 값이 일부 입력되었습니다. 음식 분석과 함께 합산됩니다.';
@@ -3716,9 +3948,9 @@ function formatSavedReportTime(value) {
 }
 
 function stampPillClass(stamp) {
-  if (stamp === 'red') return 'bg-red-100 text-red-700';
-  if (stamp === 'yellow') return 'bg-amber-100 text-amber-700';
-  return 'bg-emerald-100 text-emerald-700';
+  if (stamp === 'red') return 'bg-alert-100 text-alert-700';
+  if (stamp === 'yellow') return 'bg-estimate-100 text-estimate-700';
+  return 'bg-verified-100 text-verified-700';
 }
 
 function hasReadableNutritionFacts(facts) {

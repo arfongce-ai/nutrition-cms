@@ -379,7 +379,7 @@ function normalizeFoods(foodItems) {
       const grams = Math.max(toNumber(item.grams) || defaultAmount, item.perServing ? 0.01 : 1);
       const attachedFood = createAttachedFoodBase(item);
       const base = attachedFood || findFood(item.name);
-      const basisAmount = Math.max(toNumber(item.servingAmount) || toNumber(item.nutrientBasisGrams) || 100, 0.01);
+      const basisAmount = Math.max(toNumber(item.servingAmount) || toNumber(item.nutrientBasisGrams) || (base.perServing ? 1 : 100), 0.01);
       const multiplier = attachedFood ? grams / basisAmount : base.perServing ? 1 : grams / 100;
       return {
         id: item.id,
@@ -400,7 +400,7 @@ function normalizeFoods(foodItems) {
         visualReason: item.visualReason || '',
         emoji: base.emoji,
         matched: base.matched,
-        official: Boolean(base.official || item.sourceLabel),
+        official: Boolean(base.official || item.official),
         brand: item.brand || base.brand || '',
         category: item.category || base.category || '',
         serving: item.serving || base.serving || '',
@@ -430,7 +430,7 @@ function createAttachedFoodBase(item) {
   return {
     emoji: '공공DB',
     matched: true,
-    official: true,
+    official: Boolean(item.official),
     brand: item.brand || '',
     category: item.category || '공공 식품영양 DB',
     serving: item.serving || '',
@@ -512,7 +512,7 @@ function createSourceItems(items, facts = {}, options = {}, additives = []) {
       sourceUrl: item.sourceUrl,
       official: Boolean(item.official),
       serving: item.serving || '',
-      type: item.official ? 'official-value' : 'official-source',
+      type: item.official ? 'official-value' : 'external-source',
     }));
 
   const safetySources = createSafetyReferenceItems(items, facts, options, additives);

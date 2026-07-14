@@ -57,6 +57,13 @@ firebase deploy --only firestore:rules
 `public/_redirects`가 포함되어 있어 새로고침 시에도 앱이 유지됩니다.
 `wrangler.toml`에 Pages 출력 디렉터리가 들어 있어 Wrangler 배포에서도 같은 설정을 사용합니다.
 
+## 오픈소스 및 외부 데이터 연동
+
+- **바코드 스캔**: 브라우저 내장 `BarcodeDetector`(Chrome/Android 계열)와 `@zxing/browser`(MIT 라이선스, Safari/iOS 포함 전 브라우저 폴백)를 함께 사용합니다. OCR과 동일하게 "내장 API 우선, 오픈소스 폴백" 구조입니다.
+- **Open Food Facts 연동** (`functions/api/barcode-lookup.js`): 인식된 바코드를 [Open Food Facts](https://openfoodfacts.org)(ODbL 라이선스, API 키 불필요)에서 조회해 제품명·영양정보를 가져옵니다. 전 세계 크라우드소싱 데이터라 한국 제품 커버리지는 식약처 공식 DB보다 낮으므로, 항상 **보조 출처**로만 취급합니다. 이 출처로 채워진 항목은 `official: false`로 표시되어 리포트에서 "외부 출처 확인 (공식 아님)"으로 구분 표시되고, 검색/OCR로 채워진 식약처 공식값과 절대 같은 취급을 받지 않습니다.
+- **추천 후속 작업 — 식약처 공식 바코드 API**: [공공데이터포털의 "식품의약품안전처_바코드연계제품정보"](https://www.data.go.kr/data/15060549/openapi.do)는 국내 제품에 한해 Open Food Facts보다 훨씬 신뢰도 높은 1차 출처가 될 수 있습니다. `data.go.kr`에서 개인 인증키를 발급받아 `MFDS_BARCODE_API_KEY` 같은 이름으로 Cloudflare Pages 환경 변수에 등록하고, `barcode-lookup.js`에 이 API를 Open Food Facts보다 우선 조회하도록 추가하면 바코드 인식의 신뢰도를 한 단계 높일 수 있습니다. (현재는 API 응답 스키마를 실제 키로 검증하지 못해 연동 코드를 작성하지 않았습니다.)
+- 두 의존성 모두 `npm audit` 기준 신규 취약점이 없습니다. (기존 `firebase`/`uuid` 관련 경고는 이번 작업과 무관한 사전 존재 항목입니다.)
+
 ## 검증
 
 ```powershell

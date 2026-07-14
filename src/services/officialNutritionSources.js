@@ -195,7 +195,7 @@ export const OFFICIAL_BRAND_FOODS = [
 
 export function findOfficialBrandFood(name) {
   const normalized = normalizeKeyword(name);
-  return OFFICIAL_BRAND_FOODS.find((entry) => {
+  const entry = OFFICIAL_BRAND_FOODS.find((entry) => {
     const brand = normalizeKeyword(entry.brand);
     const hasBrand = brand && normalized.includes(brand);
     return entry.keys.some((key) => {
@@ -204,6 +204,7 @@ export function findOfficialBrandFood(name) {
       return hasBrand || normalizedKey.includes(brand) || !isGenericBeverageKey(normalizedKey);
     });
   });
+  return entry ? { ...entry, official: true } : undefined;
 }
 
 export function findOfficialNutritionSources(name) {

@@ -17,6 +17,8 @@
     "db:apply:d1": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/apply-public-foods-d1.ps1"
   },
   "dependencies": {
+    "@zxing/browser": "^0.2.1",
+    "@zxing/library": "^0.23.0",
     "exceljs": "^4.4.0",
     "firebase": "^10.12.0",
     "react": "^18.3.0",
