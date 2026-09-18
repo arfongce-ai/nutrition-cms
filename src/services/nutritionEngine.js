@@ -1,3 +1,4 @@
+import { sameFoodName } from './foodPortions.js';
 import { findOfficialBrandFood, findOfficialNutritionSources, getSafetyReferenceSource } from './officialNutritionSources.js';
 import { findOfficialProductFood, findOfficialProductSources } from './officialProductDatabase.js';
 
@@ -84,7 +85,7 @@ const FOOD_DATABASE = [
   { keys: ['닭가슴살', '닭 가슴살'], emoji: '고기', calories: 165, carb: 0, protein: 31, fat: 3.6, sodium: 74, sugar: 0, fiber: 0, leucine: 2500 },
   { keys: ['샐러드', '채소'], emoji: '채소', calories: 35, carb: 7, protein: 1.8, fat: 0.3, sodium: 35, sugar: 2.5, fiber: 2.5, leucine: 90 },
   { keys: ['김치', '배추김치'], emoji: '김치', calories: 32, carb: 5, protein: 1.7, fat: 0.4, sodium: 640, sugar: 2, fiber: 1.8, leucine: 90 },
-  { keys: ['된장찌개', '찌개'], emoji: '찌개', calories: 105, carb: 8, protein: 7.5, fat: 4.5, sodium: 725, sugar: 2, fiber: 1.5, leucine: 480 },
+  { keys: ['된장찌개'], emoji: '찌개', calories: 105, carb: 8, protein: 7.5, fat: 4.5, sodium: 725, sugar: 2, fiber: 1.5, leucine: 480 },
   { keys: ['계란', '달걀'], emoji: '계란', calories: 143, carb: 0.7, protein: 12.6, fat: 9.5, sodium: 142, sugar: 0.4, fiber: 0, leucine: 1080 },
   { keys: ['두부'], emoji: '두부', calories: 84, carb: 2.5, protein: 9.3, fat: 4.2, sodium: 7, sugar: 0.6, fiber: 0.3, leucine: 720 },
   { keys: ['바나나'], emoji: '과일', calories: 89, carb: 23, protein: 1.1, fat: 0.3, sodium: 1, sugar: 12, fiber: 2.6, leucine: 70 },
@@ -379,10 +380,17 @@ function normalizeFoods(foodItems) {
       const grams = Math.max(toNumber(item.grams) || defaultAmount, item.perServing ? 0.01 : 1);
       const attachedFood = createAttachedFoodBase(item);
       const base = attachedFood || findFood(item.name);
-      const basisAmount = Math.max(toNumber(item.servingAmount) || toNumber(item.nutrientBasisGrams) || 100, 0.01);
+      const basisAmount = Math.max(toNumber(item.servingAmount) || toNumber(item.nutrientBasisGrams) || (base.perServing ? 1 : 100), 0.01);
       const multiplier = attachedFood ? grams / basisAmount : base.perServing ? 1 : grams / 100;
       return {
         id: item.id,
+        position: item.position || null,
+        nameConfirmed: Boolean(item.nameConfirmed),
+        portionSource: item.portionSource || (item.estimated ? 'photo' : 'unknown'),
+        portionConfirmed: Boolean(item.portionConfirmed) && Number(item.grams) > 0 && Number(item.grams) <= 5000,
+        portionChoice: item.portionChoice || '',
+        nutrientBasisGrams: basisAmount,
+        missingNutrients: base.missingNutrients || [],
         type: '음식',
         name: item.name.trim(),
         grams,
@@ -400,13 +408,13 @@ function normalizeFoods(foodItems) {
         visualReason: item.visualReason || '',
         emoji: base.emoji,
         matched: base.matched,
-        official: Boolean(base.official || item.sourceLabel),
+        official: Boolean(base.official || item.official),
         brand: item.brand || base.brand || '',
         category: item.category || base.category || '',
         serving: item.serving || base.serving || '',
         sourceLabel: item.sourceLabel || base.sourceLabel || '',
         sourceUrl: item.sourceUrl || base.sourceUrl || '',
-        isPendingInfo: Boolean(base.isPendingInfo),
+        isPendingInfo: Boolean(base.isPendingInfo || (base.perServing && !attachedFood)),
         calories: round(base.calories * multiplier),
         carb: round(base.carb * multiplier),
         protein: round(base.protein * multiplier),
@@ -424,17 +432,19 @@ function normalizeFoods(foodItems) {
 function createAttachedFoodBase(item) {
   const nutrients = item?.nutrients || null;
   if (!nutrients) return null;
-  const hasValue = ['calories', 'carb', 'protein', 'fat', 'sodium', 'sugar'].some((key) => toNumber(nutrients[key]) > 0);
+  const hasValue = ['calories', 'carb', 'protein', 'fat', 'sodium', 'sugar'].some((key) => nutrients[key] !== '' && nutrients[key] != null && Number.isFinite(Number(nutrients[key])));
   if (!hasValue) return null;
 
   return {
-    emoji: '공공DB',
+    emoji: 'DB',
+    isPendingInfo: nutrients.calories === '' || nutrients.calories == null || !Number.isFinite(Number(nutrients.calories)),
+    missingNutrients: ['calories', 'carb', 'protein', 'fat'].filter((key) => nutrients[key] === '' || nutrients[key] == null || !Number.isFinite(Number(nutrients[key]))),
     matched: true,
-    official: true,
+    official: Boolean(item.official),
     brand: item.brand || '',
     category: item.category || '공공 식품영양 DB',
     serving: item.serving || '',
-    sourceLabel: item.sourceLabel || '식품영양성분 공공 DB',
+    sourceLabel: item.sourceLabel || '음식 영양 참고값',
     sourceUrl: item.sourceUrl || '',
     perServing: Boolean(item.perServing),
     servingAmount: Number(item.servingAmount || 0),
@@ -460,8 +470,8 @@ function findFood(name) {
   const official = findOfficialBrandFood(name);
   if (official) return { ...official, matched: true, official: true, perServing: true };
 
-  const found = FOOD_DATABASE.find((entry) => entry.keys.some((key) => normalized.includes(key.toLowerCase().replace(/\s/g, ''))));
-  if (found) return { ...found, matched: true, ...createSourceFallback(name) };
+  const found = FOOD_DATABASE.find((entry) => entry.keys.some((key) => sameFoodName(normalized, key)));
+  if (found) return { ...found, matched: true, sourceLabel: '일반 음식 참고값 · 조리법에 따라 달라요', sourceUrl: '' };
   return {
     emoji: '음식',
     matched: false,
@@ -512,7 +522,7 @@ function createSourceItems(items, facts = {}, options = {}, additives = []) {
       sourceUrl: item.sourceUrl,
       official: Boolean(item.official),
       serving: item.serving || '',
-      type: item.official ? 'official-value' : 'official-source',
+      type: item.official ? 'official-value' : 'external-source',
     }));
 
   const safetySources = createSafetyReferenceItems(items, facts, options, additives);
@@ -595,21 +605,28 @@ function createReferenceSource(key, name) {
 }
 
 function createLabelItem(facts) {
-  const hasNumbers = ['calories', 'carb', 'protein', 'fat', 'sodium', 'sugar'].some((key) => toNumber(facts[key]) > 0);
-  if (!hasNumbers) return null;
+  const keys = ['calories', 'carb', 'protein', 'fat', 'sodium', 'sugar', 'saturatedFat', 'transFat'];
+  const present = (key) => facts[key] !== '' && facts[key] != null && Number.isFinite(Number(facts[key]));
+  if (!keys.some(present)) return null;
+  const servings = Number(facts.servingsConsumed) > 0 && Number(facts.servingsConsumed) <= 100 ? Number(facts.servingsConsumed) : 1;
   return {
+    id: 'nutrition-label',
     type: '영양성분표',
     name: facts.foodName || '포장식품',
-    grams: 0,
+    grams: servings,
+    servingUnit: '회분',
+    serving: facts.servingSize || '표시된 영양정보 1회분',
+    nutrientBasisGrams: 1,
+    nameConfirmed: Boolean(facts.labelConfirmed),
+    portionSource: facts.portionConfirmed ? 'label-serving' : 'standard',
+    portionChoice: facts.portionChoice || '',
+    portionConfirmed: Boolean(facts.portionConfirmed) && Number(facts.servingsConsumed) > 0 && Number(facts.servingsConsumed) <= 100,
+    sourceLabel: '입력한 포장지 영양정보',
+    sourceUrl: '',
+    missingNutrients: keys.filter((key) => !present(key)),
+    isPendingInfo: !present('calories'),
     emoji: '라벨',
-    calories: toNumber(facts.calories),
-    carb: toNumber(facts.carb),
-    protein: toNumber(facts.protein),
-    fat: toNumber(facts.fat),
-    saturatedFat: toNumber(facts.saturatedFat),
-    transFat: toNumber(facts.transFat),
-    sodium: toNumber(facts.sodium),
-    sugar: toNumber(facts.sugar),
+    ...Object.fromEntries(keys.map((key) => [key, round(toNumber(facts[key]) * servings)])),
     fiber: 0,
     leucine: 0,
   };
@@ -618,6 +635,8 @@ function createLabelItem(facts) {
 function sumItems(items) {
   return items.reduce(
     (acc, item) => {
+      acc.missingNutrients = [...new Set([...acc.missingNutrients, ...(item.missingNutrients || []), ...(item.isPendingInfo ? ['calories', 'carb', 'protein', 'fat'] : [])])];
+      if (item.isPendingInfo) return acc;
       acc.calories += Number(item.calories || 0);
       acc.carb += Number(item.carb || 0);
       acc.protein += Number(item.protein || 0);
@@ -630,7 +649,7 @@ function sumItems(items) {
       acc.leucine += Number(item.leucine || 0);
       return acc;
     },
-    { calories: 0, carb: 0, protein: 0, fat: 0, saturatedFat: 0, transFat: 0, sodium: 0, sugar: 0, fiber: 0, leucine: 0 },
+    { calories: 0, carb: 0, protein: 0, fat: 0, saturatedFat: 0, transFat: 0, sodium: 0, sugar: 0, fiber: 0, leucine: 0, missingNutrients: [] },
   );
 }
 

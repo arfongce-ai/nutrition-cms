@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-07-11",
+  "updatedAt": "2026-07-14",
   "updatePolicy": {
     "reviewCycle": "quarterly",
     "sourcePriority": [
@@ -11220,6 +11220,2698 @@
         "leucine": 0,
         "caffeine": 0
       }
+    },
+    {
+      "id": "krispy-kreme-61ef84f5879a",
+      "brand": "크리스피크림도넛",
+      "productName": "이거완전레몬이잖앙",
+      "aliases": [
+        "크리스피크림도넛 이거완전레몬이잖앙",
+        "크리스피크림 이거완전레몬이잖앙",
+        "크리스피 크림 이거완전레몬이잖앙",
+        "이거완전레몬이잖앙"
+      ],
+      "category": "크리스피크림도넛/신제품",
+      "servingSize": "70 g / 1회 제공량",
+      "servingGram": 70,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [
+        "밀",
+        "계란",
+        "대두",
+        "우유"
+      ],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 311,
+        "carb": null,
+        "sugar": 24,
+        "protein": 3,
+        "fat": null,
+        "saturatedFat": 10,
+        "transFat": null,
+        "sodium": 80,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": null
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-cdbd8279e3a1",
+      "brand": "크리스피크림도넛",
+      "productName": "쿠키앤처비",
+      "aliases": [
+        "크리스피크림도넛 쿠키앤처비",
+        "크리스피크림 쿠키앤처비",
+        "크리스피 크림 쿠키앤처비",
+        "쿠키앤처비"
+      ],
+      "category": "크리스피크림도넛/신제품",
+      "servingSize": "94 g / 1회 제공량",
+      "servingGram": 94,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [
+        "밀",
+        "계란",
+        "대두",
+        "우유"
+      ],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 422,
+        "carb": null,
+        "sugar": 25,
+        "protein": 5,
+        "fat": null,
+        "saturatedFat": 10,
+        "transFat": null,
+        "sodium": 280,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": null
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-a5ac7b94f386",
+      "brand": "크리스피크림도넛",
+      "productName": "장경자의 체리립",
+      "aliases": [
+        "크리스피크림도넛 장경자의 체리립",
+        "크리스피크림 장경자의 체리립",
+        "크리스피 크림 장경자의 체리립",
+        "장경자의 체리립",
+        "장경자의체리립"
+      ],
+      "category": "크리스피크림도넛/신제품",
+      "servingSize": "89 g / 1회 제공량",
+      "servingGram": 89,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [
+        "밀",
+        "계란",
+        "대두",
+        "우유"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 329,
+        "carb": null,
+        "sugar": 28,
+        "protein": 3,
+        "fat": null,
+        "saturatedFat": 9,
+        "transFat": null,
+        "sodium": 90,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": null
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-4518fbfba032",
+      "brand": "크리스피크림도넛",
+      "productName": "후르트마뚜루",
+      "aliases": [
+        "크리스피크림도넛 후르트마뚜루",
+        "크리스피크림 후르트마뚜루",
+        "크리스피 크림 후르트마뚜루",
+        "후르트마뚜루"
+      ],
+      "category": "크리스피크림도넛/신제품",
+      "servingSize": "72 g / 1회 제공량",
+      "servingGram": 72,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [
+        "밀",
+        "계란",
+        "대두",
+        "우유"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 328,
+        "carb": null,
+        "sugar": 24,
+        "protein": 4,
+        "fat": null,
+        "saturatedFat": 6,
+        "transFat": null,
+        "sodium": 140,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": null
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-6e577842c2a7",
+      "brand": "크리스피크림도넛",
+      "productName": "빠더너스 케이크 에디션",
+      "aliases": [
+        "크리스피크림도넛 빠더너스 케이크 에디션",
+        "크리스피크림 빠더너스 케이크 에디션",
+        "크리스피 크림 빠더너스 케이크 에디션",
+        "빠더너스 케이크 에디션",
+        "빠더너스케이크에디션"
+      ],
+      "category": "크리스피크림도넛/신제품",
+      "servingSize": "414 g / 1회 제공량",
+      "servingGram": 414,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [
+        "밀",
+        "계란",
+        "대두",
+        "우유"
+      ],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 1719,
+        "carb": null,
+        "sugar": 129,
+        "protein": 18,
+        "fat": null,
+        "saturatedFat": 44,
+        "transFat": null,
+        "sodium": 680,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": null
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-c7d56b08ba0e",
+      "brand": "크리스피크림도넛",
+      "productName": "아메리칸 스위트 더즌",
+      "aliases": [
+        "크리스피크림도넛 아메리칸 스위트 더즌",
+        "크리스피크림 아메리칸 스위트 더즌",
+        "크리스피 크림 아메리칸 스위트 더즌",
+        "아메리칸 스위트 더즌",
+        "아메리칸스위트더즌"
+      ],
+      "category": "크리스피크림도넛/신제품",
+      "servingSize": "773 g / 1회 제공량",
+      "servingGram": 773,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [
+        "밀",
+        "계란",
+        "대두",
+        "우유"
+      ],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 3400,
+        "carb": null,
+        "sugar": 222,
+        "protein": 42,
+        "fat": null,
+        "saturatedFat": 77,
+        "transFat": null,
+        "sodium": 1430,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": null
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-2626b32b4408",
+      "brand": "크리스피크림도넛",
+      "productName": "아메리칸 스위트 하프더즌",
+      "aliases": [
+        "크리스피크림도넛 아메리칸 스위트 하프더즌",
+        "크리스피크림 아메리칸 스위트 하프더즌",
+        "크리스피 크림 아메리칸 스위트 하프더즌",
+        "아메리칸 스위트 하프더즌",
+        "아메리칸스위트하프더즌"
+      ],
+      "category": "크리스피크림도넛/신제품",
+      "servingSize": "419 g / 1회 제공량",
+      "servingGram": 419,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [
+        "밀",
+        "계란",
+        "대두",
+        "우유"
+      ],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 1810,
+        "carb": null,
+        "sugar": 125,
+        "protein": 21,
+        "fat": null,
+        "saturatedFat": 43,
+        "transFat": null,
+        "sodium": 690,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": null
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-83527bc571fa",
+      "brand": "크리스피크림도넛",
+      "productName": "두바이 초코",
+      "aliases": [
+        "크리스피크림도넛 두바이 초코",
+        "크리스피크림 두바이 초코",
+        "크리스피 크림 두바이 초코",
+        "두바이 초코",
+        "두바이초코"
+      ],
+      "category": "크리스피크림도넛/신제품",
+      "servingSize": "87 g / 1회 제공량",
+      "servingGram": 87,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [
+        "밀",
+        "계란",
+        "대두",
+        "우유"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 420,
+        "carb": null,
+        "sugar": 18,
+        "protein": 7,
+        "fat": null,
+        "saturatedFat": 9,
+        "transFat": null,
+        "sodium": 130,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": 0
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-3f00b229cd1c",
+      "brand": "크리스피크림도넛",
+      "productName": "BEST 뉴욕세트",
+      "aliases": [
+        "크리스피크림도넛 BEST 뉴욕세트",
+        "크리스피크림 BEST 뉴욕세트",
+        "크리스피 크림 BEST 뉴욕세트",
+        "BEST 뉴욕세트",
+        "BEST뉴욕세트"
+      ],
+      "category": "크리스피크림도넛/신제품",
+      "servingSize": "286 g / 1회 제공량",
+      "servingGram": 286,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [
+        "밀",
+        "계란",
+        "대두",
+        "우유"
+      ],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 1137,
+        "carb": null,
+        "sugar": 70,
+        "protein": 15,
+        "fat": null,
+        "saturatedFat": 21,
+        "transFat": null,
+        "sodium": 560,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": null
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-6604773ff850",
+      "brand": "크리스피크림도넛",
+      "productName": "BEST 초코세트",
+      "aliases": [
+        "크리스피크림도넛 BEST 초코세트",
+        "크리스피크림 BEST 초코세트",
+        "크리스피 크림 BEST 초코세트",
+        "BEST 초코세트",
+        "BEST초코세트"
+      ],
+      "category": "크리스피크림도넛/신제품",
+      "servingSize": "268 g / 1회 제공량",
+      "servingGram": 268,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [
+        "밀",
+        "계란",
+        "대두",
+        "우유"
+      ],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 1216,
+        "carb": null,
+        "sugar": 74,
+        "protein": 14,
+        "fat": null,
+        "saturatedFat": 30,
+        "transFat": null,
+        "sodium": 440,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": null
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-01087d40b4ce",
+      "brand": "크리스피크림도넛",
+      "productName": "1리터커피+하프더즌",
+      "aliases": [
+        "크리스피크림도넛 1리터커피+하프더즌",
+        "크리스피크림 1리터커피+하프더즌",
+        "크리스피 크림 1리터커피+하프더즌",
+        "1리터커피+하프더즌"
+      ],
+      "category": "크리스피크림도넛/신제품",
+      "servingSize": "1202 g / 1회 제공량",
+      "servingGram": 1202,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [
+        "밀",
+        "계란",
+        "대두",
+        "우유"
+      ],
+      "additiveWatch": [
+        "카페인",
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 1267,
+        "carb": null,
+        "sugar": 72,
+        "protein": 18,
+        "fat": null,
+        "saturatedFat": 30,
+        "transFat": null,
+        "sodium": 420,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": 479
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-d578852b01e8",
+      "brand": "크리스피크림도넛",
+      "productName": "어쏘티드 더즌(N)",
+      "aliases": [
+        "크리스피크림도넛 어쏘티드 더즌(N)",
+        "크리스피크림 어쏘티드 더즌(N)",
+        "크리스피 크림 어쏘티드 더즌(N)",
+        "어쏘티드 더즌(N)",
+        "어쏘티드더즌(N)"
+      ],
+      "category": "크리스피크림도넛/더즌",
+      "servingSize": "868 g / 1회 제공량",
+      "servingGram": 868,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [
+        "밀",
+        "계란",
+        "대두",
+        "우유",
+        "땅콩"
+      ],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 3714,
+        "carb": null,
+        "sugar": 208,
+        "protein": 48,
+        "fat": null,
+        "saturatedFat": 84,
+        "transFat": null,
+        "sodium": 1530,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": null
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-659d6153ace6",
+      "brand": "크리스피크림도넛",
+      "productName": "오리지널 더즌",
+      "aliases": [
+        "크리스피크림도넛 오리지널 더즌",
+        "크리스피크림 오리지널 더즌",
+        "크리스피 크림 오리지널 더즌",
+        "오리지널 더즌",
+        "오리지널더즌"
+      ],
+      "category": "크리스피크림도넛/더즌",
+      "servingSize": "564 g / 1회 제공량",
+      "servingGram": 564,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [
+        "밀",
+        "계란",
+        "대두",
+        "우유"
+      ],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 2520,
+        "carb": null,
+        "sugar": 144,
+        "protein": 36,
+        "fat": null,
+        "saturatedFat": 51.6,
+        "transFat": null,
+        "sodium": 840,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": null
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-bbdc46d27ddd",
+      "brand": "크리스피크림도넛",
+      "productName": "오리지널 하프더즌",
+      "aliases": [
+        "크리스피크림도넛 오리지널 하프더즌",
+        "크리스피크림 오리지널 하프더즌",
+        "크리스피 크림 오리지널 하프더즌",
+        "오리지널 하프더즌",
+        "오리지널하프더즌"
+      ],
+      "category": "크리스피크림도넛/더즌",
+      "servingSize": "282 g / 1회 제공량",
+      "servingGram": 282,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [
+        "밀",
+        "계란",
+        "대두",
+        "우유"
+      ],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 1260,
+        "carb": null,
+        "sugar": 72,
+        "protein": 18,
+        "fat": null,
+        "saturatedFat": 25.8,
+        "transFat": null,
+        "sodium": 420,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": null
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-80d99d7a3959",
+      "brand": "크리스피크림도넛",
+      "productName": "크런치 바나나",
+      "aliases": [
+        "크리스피크림도넛 크런치 바나나",
+        "크리스피크림 크런치 바나나",
+        "크리스피 크림 크런치 바나나",
+        "크런치 바나나",
+        "크런치바나나"
+      ],
+      "category": "크리스피크림도넛/싱글",
+      "servingSize": "58 g / 1회 제공량",
+      "servingGram": 58,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [
+        "밀",
+        "계란",
+        "대두",
+        "우유"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 271,
+        "carb": null,
+        "sugar": 12,
+        "protein": 4,
+        "fat": null,
+        "saturatedFat": 9,
+        "transFat": null,
+        "sodium": 90,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": null
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-44c91a01c717",
+      "brand": "크리스피크림도넛",
+      "productName": "라즈베리 요거트 필드",
+      "aliases": [
+        "크리스피크림도넛 라즈베리 요거트 필드",
+        "크리스피크림 라즈베리 요거트 필드",
+        "크리스피 크림 라즈베리 요거트 필드",
+        "라즈베리 요거트 필드",
+        "라즈베리요거트필드"
+      ],
+      "category": "크리스피크림도넛/싱글",
+      "servingSize": "84 g / 1회 제공량",
+      "servingGram": 84,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [
+        "밀",
+        "계란",
+        "대두",
+        "우유"
+      ],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 352,
+        "carb": null,
+        "sugar": 21,
+        "protein": 4,
+        "fat": null,
+        "saturatedFat": 10,
+        "transFat": null,
+        "sodium": 105,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": null
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-509330fdf474",
+      "brand": "크리스피크림도넛",
+      "productName": "레인보우 글레이즈링",
+      "aliases": [
+        "크리스피크림도넛 레인보우 글레이즈링",
+        "크리스피크림 레인보우 글레이즈링",
+        "크리스피 크림 레인보우 글레이즈링",
+        "레인보우 글레이즈링",
+        "레인보우글레이즈링"
+      ],
+      "category": "크리스피크림도넛/싱글",
+      "servingSize": "58 g / 1회 제공량",
+      "servingGram": 58,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [
+        "밀",
+        "계란",
+        "대두",
+        "우유"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 267,
+        "carb": null,
+        "sugar": 19,
+        "protein": 3,
+        "fat": null,
+        "saturatedFat": 7,
+        "transFat": null,
+        "sodium": 75,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": null
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-d6689676393e",
+      "brand": "크리스피크림도넛",
+      "productName": "오리지널 글레이즈드",
+      "aliases": [
+        "크리스피크림도넛 오리지널 글레이즈드",
+        "크리스피크림 오리지널 글레이즈드",
+        "크리스피 크림 오리지널 글레이즈드",
+        "오리지널 글레이즈드",
+        "오리지널글레이즈드"
+      ],
+      "category": "크리스피크림도넛/싱글",
+      "servingSize": "47 g / 1회 제공량",
+      "servingGram": 47,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [
+        "밀",
+        "계란",
+        "대두",
+        "우유"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 210,
+        "carb": null,
+        "sugar": 12,
+        "protein": 3,
+        "fat": null,
+        "saturatedFat": 4.3,
+        "transFat": null,
+        "sodium": 70,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": null
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-9376cc406f98",
+      "brand": "크리스피크림도넛",
+      "productName": "초콜릿 아이스드 글레이즈드",
+      "aliases": [
+        "크리스피크림도넛 초콜릿 아이스드 글레이즈드",
+        "크리스피크림 초콜릿 아이스드 글레이즈드",
+        "크리스피 크림 초콜릿 아이스드 글레이즈드",
+        "초콜릿 아이스드 글레이즈드",
+        "초콜릿아이스드글레이즈드"
+      ],
+      "category": "크리스피크림도넛/싱글",
+      "servingSize": "56 g / 1회 제공량",
+      "servingGram": 56,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [
+        "밀",
+        "계란",
+        "대두",
+        "우유"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 256,
+        "carb": null,
+        "sugar": 16,
+        "protein": 3,
+        "fat": null,
+        "saturatedFat": 7,
+        "transFat": null,
+        "sodium": 70,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": null
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-997a149b6aa7",
+      "brand": "크리스피크림도넛",
+      "productName": "초코홀릭",
+      "aliases": [
+        "크리스피크림도넛 초코홀릭",
+        "크리스피크림 초코홀릭",
+        "크리스피 크림 초코홀릭",
+        "초코홀릭"
+      ],
+      "category": "크리스피크림도넛/싱글",
+      "servingSize": "85 g / 1회 제공량",
+      "servingGram": 85,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [
+        "밀",
+        "계란",
+        "대두",
+        "우유"
+      ],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 422,
+        "carb": null,
+        "sugar": 18,
+        "protein": 5,
+        "fat": null,
+        "saturatedFat": 13,
+        "transFat": null,
+        "sodium": 100,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": null
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-5285c75d831a",
+      "brand": "크리스피크림도넛",
+      "productName": "슈크림 카스테라",
+      "aliases": [
+        "크리스피크림도넛 슈크림 카스테라",
+        "크리스피크림 슈크림 카스테라",
+        "크리스피 크림 슈크림 카스테라",
+        "슈크림 카스테라",
+        "슈크림카스테라"
+      ],
+      "category": "크리스피크림도넛/싱글",
+      "servingSize": "88 g / 1회 제공량",
+      "servingGram": 88,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [
+        "밀",
+        "계란",
+        "대두",
+        "우유"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 326,
+        "carb": null,
+        "sugar": 14,
+        "protein": 6,
+        "fat": null,
+        "saturatedFat": 6,
+        "transFat": null,
+        "sodium": 160,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": null
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-17264eb10ca7",
+      "brand": "크리스피크림도넛",
+      "productName": "크런치 피넛버터",
+      "aliases": [
+        "크리스피크림도넛 크런치 피넛버터",
+        "크리스피크림 크런치 피넛버터",
+        "크리스피 크림 크런치 피넛버터",
+        "크런치 피넛버터",
+        "크런치피넛버터"
+      ],
+      "category": "크리스피크림도넛/싱글",
+      "servingSize": "65 g / 1회 제공량",
+      "servingGram": 65,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [
+        "밀",
+        "계란",
+        "대두",
+        "우유",
+        "땅콩"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 318,
+        "carb": null,
+        "sugar": 16,
+        "protein": 6,
+        "fat": null,
+        "saturatedFat": 7,
+        "transFat": null,
+        "sodium": 140,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": null
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-dda2d7d84644",
+      "brand": "크리스피크림도넛",
+      "productName": "글레이즈드 초콜릿 케익",
+      "aliases": [
+        "크리스피크림도넛 글레이즈드 초콜릿 케익",
+        "크리스피크림 글레이즈드 초콜릿 케익",
+        "크리스피 크림 글레이즈드 초콜릿 케익",
+        "글레이즈드 초콜릿 케익",
+        "글레이즈드초콜릿케익"
+      ],
+      "category": "크리스피크림도넛/싱글",
+      "servingSize": "80 g / 1회 제공량",
+      "servingGram": 80,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [
+        "밀",
+        "계란",
+        "대두",
+        "우유"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 328,
+        "carb": null,
+        "sugar": 27,
+        "protein": 3,
+        "fat": null,
+        "saturatedFat": 5,
+        "transFat": null,
+        "sodium": 190,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": null
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-5f605f8b7259",
+      "brand": "크리스피크림도넛",
+      "productName": "글레이즈드 사워크림",
+      "aliases": [
+        "크리스피크림도넛 글레이즈드 사워크림",
+        "크리스피크림 글레이즈드 사워크림",
+        "크리스피 크림 글레이즈드 사워크림",
+        "글레이즈드 사워크림",
+        "글레이즈드사워크림"
+      ],
+      "category": "크리스피크림도넛/싱글",
+      "servingSize": "80 g / 1회 제공량",
+      "servingGram": 80,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [
+        "밀",
+        "계란",
+        "대두",
+        "우유"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 336,
+        "carb": null,
+        "sugar": 28,
+        "protein": 2,
+        "fat": null,
+        "saturatedFat": 5,
+        "transFat": null,
+        "sodium": 230,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": null
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-c828a9564a56",
+      "brand": "크리스피크림도넛",
+      "productName": "프리미엄 스트로베리 필드",
+      "aliases": [
+        "크리스피크림도넛 프리미엄 스트로베리 필드",
+        "크리스피크림 프리미엄 스트로베리 필드",
+        "크리스피 크림 프리미엄 스트로베리 필드",
+        "프리미엄 스트로베리 필드",
+        "프리미엄스트로베리필드"
+      ],
+      "category": "크리스피크림도넛/싱글",
+      "servingSize": "70 g / 1회 제공량",
+      "servingGram": 70,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [
+        "밀",
+        "계란",
+        "대두",
+        "우유"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 256,
+        "carb": null,
+        "sugar": 11,
+        "protein": 4,
+        "fat": null,
+        "saturatedFat": 4.4,
+        "transFat": null,
+        "sodium": 105,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": null
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-8671a937a7a9",
+      "brand": "크리스피크림도넛",
+      "productName": "뉴욕 치즈케익",
+      "aliases": [
+        "크리스피크림도넛 뉴욕 치즈케익",
+        "크리스피크림 뉴욕 치즈케익",
+        "크리스피 크림 뉴욕 치즈케익",
+        "뉴욕 치즈케익",
+        "뉴욕치즈케익"
+      ],
+      "category": "크리스피크림도넛/싱글",
+      "servingSize": "90 g / 1회 제공량",
+      "servingGram": 90,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [
+        "밀",
+        "계란",
+        "대두",
+        "우유"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 332,
+        "carb": null,
+        "sugar": 18,
+        "protein": 5,
+        "fat": null,
+        "saturatedFat": 6,
+        "transFat": null,
+        "sodium": 150,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": null
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-e8aa3478601f",
+      "brand": "크리스피크림도넛",
+      "productName": "로투스 비스코프",
+      "aliases": [
+        "크리스피크림도넛 로투스 비스코프",
+        "크리스피크림 로투스 비스코프",
+        "크리스피 크림 로투스 비스코프",
+        "로투스 비스코프",
+        "로투스비스코프"
+      ],
+      "category": "크리스피크림도넛/싱글",
+      "servingSize": "82 g / 1회 제공량",
+      "servingGram": 82,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [
+        "밀",
+        "계란",
+        "대두",
+        "우유"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 374,
+        "carb": null,
+        "sugar": 14,
+        "protein": 5,
+        "fat": null,
+        "saturatedFat": 9,
+        "transFat": null,
+        "sodium": 170,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": null
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-eebfbcaa761f",
+      "brand": "크리스피크림도넛",
+      "productName": "슈가 코티드",
+      "aliases": [
+        "크리스피크림도넛 슈가 코티드",
+        "크리스피크림 슈가 코티드",
+        "크리스피 크림 슈가 코티드",
+        "슈가 코티드",
+        "슈가코티드"
+      ],
+      "category": "크리스피크림도넛/싱글",
+      "servingSize": "45 g / 1회 제공량",
+      "servingGram": 45,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [
+        "밀",
+        "계란",
+        "대두",
+        "우유"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 200,
+        "carb": null,
+        "sugar": 9,
+        "protein": 3,
+        "fat": null,
+        "saturatedFat": 3.6,
+        "transFat": null,
+        "sodium": 80,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": null
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-335e3f67cdd3",
+      "brand": "크리스피크림도넛",
+      "productName": "우유크림 듬뿍",
+      "aliases": [
+        "크리스피크림도넛 우유크림 듬뿍",
+        "크리스피크림 우유크림 듬뿍",
+        "크리스피 크림 우유크림 듬뿍",
+        "우유크림 듬뿍",
+        "우유크림듬뿍"
+      ],
+      "category": "크리스피크림도넛/싱글",
+      "servingSize": "84 g / 1회 제공량",
+      "servingGram": 84,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [
+        "밀",
+        "계란",
+        "대두",
+        "우유"
+      ],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 330,
+        "carb": null,
+        "sugar": 18,
+        "protein": 5,
+        "fat": null,
+        "saturatedFat": 10,
+        "transFat": null,
+        "sodium": 105,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": null
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-7304985dd372",
+      "brand": "크리스피크림도넛",
+      "productName": "샤인머스캣 스무디(M)",
+      "aliases": [
+        "크리스피크림도넛 샤인머스캣 스무디(M)",
+        "크리스피크림 샤인머스캣 스무디(M)",
+        "크리스피 크림 샤인머스캣 스무디(M)",
+        "샤인머스캣 스무디(M)",
+        "샤인머스캣스무디(M)"
+      ],
+      "category": "크리스피크림도넛/스무디",
+      "servingSize": "490 g / 1회 제공량",
+      "servingGram": 490,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 460,
+        "carb": null,
+        "sugar": 104,
+        "protein": 0.5,
+        "fat": null,
+        "saturatedFat": null,
+        "transFat": null,
+        "sodium": 40,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": null
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-77ce74ff1a1b",
+      "brand": "크리스피크림도넛",
+      "productName": "스트로베리 스무디 (M)",
+      "aliases": [
+        "크리스피크림도넛 스트로베리 스무디 (M)",
+        "크리스피크림 스트로베리 스무디 (M)",
+        "크리스피 크림 스트로베리 스무디 (M)",
+        "스트로베리 스무디 (M)",
+        "스트로베리스무디(M)"
+      ],
+      "category": "크리스피크림도넛/스무디",
+      "servingSize": "460 g / 1회 제공량",
+      "servingGram": 460,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 272,
+        "carb": null,
+        "sugar": 65,
+        "protein": 1,
+        "fat": null,
+        "saturatedFat": null,
+        "transFat": null,
+        "sodium": null,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": null
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-6dfab9db5268",
+      "brand": "크리스피크림도넛",
+      "productName": "망고 스무디 (M)",
+      "aliases": [
+        "크리스피크림도넛 망고 스무디 (M)",
+        "크리스피크림 망고 스무디 (M)",
+        "크리스피 크림 망고 스무디 (M)",
+        "망고 스무디 (M)",
+        "망고스무디(M)"
+      ],
+      "category": "크리스피크림도넛/스무디",
+      "servingSize": "460 g / 1회 제공량",
+      "servingGram": 460,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 309,
+        "carb": null,
+        "sugar": 70,
+        "protein": 1,
+        "fat": null,
+        "saturatedFat": null,
+        "transFat": null,
+        "sodium": 5,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": null
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-90f0ccdf1008",
+      "brand": "크리스피크림도넛",
+      "productName": "살구자두 스무디 (M)",
+      "aliases": [
+        "크리스피크림도넛 살구자두 스무디 (M)",
+        "크리스피크림 살구자두 스무디 (M)",
+        "크리스피 크림 살구자두 스무디 (M)",
+        "살구자두 스무디 (M)",
+        "살구자두스무디(M)"
+      ],
+      "category": "크리스피크림도넛/스무디",
+      "servingSize": "460 g / 1회 제공량",
+      "servingGram": 460,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 257,
+        "carb": null,
+        "sugar": 65,
+        "protein": null,
+        "fat": null,
+        "saturatedFat": null,
+        "transFat": null,
+        "sodium": null,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": null
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-6300eee4c1b6",
+      "brand": "크리스피크림도넛",
+      "productName": "메론 스무디 (M)",
+      "aliases": [
+        "크리스피크림도넛 메론 스무디 (M)",
+        "크리스피크림 메론 스무디 (M)",
+        "크리스피 크림 메론 스무디 (M)",
+        "메론 스무디 (M)",
+        "메론스무디(M)"
+      ],
+      "category": "크리스피크림도넛/스무디",
+      "servingSize": "460 g / 1회 제공량",
+      "servingGram": 460,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 345,
+        "carb": null,
+        "sugar": 56,
+        "protein": 11,
+        "fat": null,
+        "saturatedFat": 4,
+        "transFat": null,
+        "sodium": 180,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": null
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-622bb580c7fa",
+      "brand": "크리스피크림도넛",
+      "productName": "1리터 보틀커피",
+      "aliases": [
+        "크리스피크림도넛 1리터 보틀커피",
+        "크리스피크림 1리터 보틀커피",
+        "크리스피 크림 1리터 보틀커피",
+        "1리터 보틀커피",
+        "1리터보틀커피"
+      ],
+      "category": "크리스피크림도넛/커피",
+      "servingSize": "920 g / 1회 제공량",
+      "servingGram": 920,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 7,
+        "carb": null,
+        "sugar": null,
+        "protein": 1,
+        "fat": null,
+        "saturatedFat": null,
+        "transFat": null,
+        "sodium": null,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": 479
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-45fa196dc1f3",
+      "brand": "크리스피크림도넛",
+      "productName": "아메리카노 HOT(M)",
+      "aliases": [
+        "크리스피크림도넛 아메리카노 HOT(M)",
+        "크리스피크림 아메리카노 HOT(M)",
+        "크리스피 크림 아메리카노 HOT(M)",
+        "아메리카노 HOT(M)",
+        "아메리카노HOT(M)"
+      ],
+      "category": "크리스피크림도넛/커피",
+      "servingSize": "390 g / 1회 제공량",
+      "servingGram": 390,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [
+        "고카페인함유"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": null,
+        "carb": null,
+        "sugar": null,
+        "protein": null,
+        "fat": null,
+        "saturatedFat": null,
+        "transFat": null,
+        "sodium": null,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": 239
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-f9a685ffb874",
+      "brand": "크리스피크림도넛",
+      "productName": "아메리카노 ICE(M)",
+      "aliases": [
+        "크리스피크림도넛 아메리카노 ICE(M)",
+        "크리스피크림 아메리카노 ICE(M)",
+        "크리스피 크림 아메리카노 ICE(M)",
+        "아메리카노 ICE(M)",
+        "아메리카노ICE(M)"
+      ],
+      "category": "크리스피크림도넛/커피",
+      "servingSize": "450 g / 1회 제공량",
+      "servingGram": 450,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [
+        "고카페인함유"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": null,
+        "carb": null,
+        "sugar": null,
+        "protein": null,
+        "fat": null,
+        "saturatedFat": null,
+        "transFat": null,
+        "sodium": null,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": 239
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-78f18cb0fac2",
+      "brand": "크리스피크림도넛",
+      "productName": "아메리카노 ICE(L)",
+      "aliases": [
+        "크리스피크림도넛 아메리카노 ICE(L)",
+        "크리스피크림 아메리카노 ICE(L)",
+        "크리스피 크림 아메리카노 ICE(L)",
+        "아메리카노 ICE(L)",
+        "아메리카노ICE(L)"
+      ],
+      "category": "크리스피크림도넛/커피",
+      "servingSize": "605 g / 1회 제공량",
+      "servingGram": 605,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [
+        "고카페인함유"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 5,
+        "carb": null,
+        "sugar": null,
+        "protein": null,
+        "fat": null,
+        "saturatedFat": null,
+        "transFat": null,
+        "sodium": null,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": 359
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-8a0008f35712",
+      "brand": "크리스피크림도넛",
+      "productName": "아메리카노 ICE(XL)",
+      "aliases": [
+        "크리스피크림도넛 아메리카노 ICE(XL)",
+        "크리스피크림 아메리카노 ICE(XL)",
+        "크리스피 크림 아메리카노 ICE(XL)",
+        "아메리카노 ICE(XL)",
+        "아메리카노ICE(XL)"
+      ],
+      "category": "크리스피크림도넛/커피",
+      "servingSize": "920 g / 1회 제공량",
+      "servingGram": 920,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [
+        "고카페인함유"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 7,
+        "carb": null,
+        "sugar": null,
+        "protein": 0.5,
+        "fat": null,
+        "saturatedFat": null,
+        "transFat": null,
+        "sodium": null,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": 479
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-57e64ce2547e",
+      "brand": "크리스피크림도넛",
+      "productName": "말차라떼(M)",
+      "aliases": [
+        "크리스피크림도넛 말차라떼(M)",
+        "크리스피크림 말차라떼(M)",
+        "크리스피 크림 말차라떼(M)",
+        "말차라떼(M)"
+      ],
+      "category": "크리스피크림도넛/커피",
+      "servingSize": "330 g / 1회 제공량",
+      "servingGram": 330,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [
+        "우유",
+        "고카페인 함유"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 326,
+        "carb": null,
+        "sugar": 43,
+        "protein": 12,
+        "fat": null,
+        "saturatedFat": 5,
+        "transFat": null,
+        "sodium": 130,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": 210
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-356faea077c1",
+      "brand": "크리스피크림도넛",
+      "productName": "아이스 말차라떼(M)",
+      "aliases": [
+        "크리스피크림도넛 아이스 말차라떼(M)",
+        "크리스피크림 아이스 말차라떼(M)",
+        "크리스피 크림 아이스 말차라떼(M)",
+        "아이스 말차라떼(M)",
+        "아이스말차라떼(M)"
+      ],
+      "category": "크리스피크림도넛/커피",
+      "servingSize": "460 g / 1회 제공량",
+      "servingGram": 460,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [
+        "우유",
+        "고카페인 함유"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 284,
+        "carb": null,
+        "sugar": 40,
+        "protein": 10,
+        "fat": null,
+        "saturatedFat": 4,
+        "transFat": null,
+        "sodium": 100,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": 210
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-0855fb42c17d",
+      "brand": "크리스피크림도넛",
+      "productName": "라떼 HOT(M)",
+      "aliases": [
+        "크리스피크림도넛 라떼 HOT(M)",
+        "크리스피크림 라떼 HOT(M)",
+        "크리스피 크림 라떼 HOT(M)",
+        "라떼 HOT(M)",
+        "라떼HOT(M)"
+      ],
+      "category": "크리스피크림도넛/커피",
+      "servingSize": "395 g / 1회 제공량",
+      "servingGram": 395,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [
+        "우유",
+        "고카페인함유"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 172,
+        "carb": null,
+        "sugar": 13,
+        "protein": 9,
+        "fat": null,
+        "saturatedFat": 6,
+        "transFat": null,
+        "sodium": 140,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": 239
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-8216addd1d7b",
+      "brand": "크리스피크림도넛",
+      "productName": "라떼 ICE(M)",
+      "aliases": [
+        "크리스피크림도넛 라떼 ICE(M)",
+        "크리스피크림 라떼 ICE(M)",
+        "크리스피 크림 라떼 ICE(M)",
+        "라떼 ICE(M)",
+        "라떼ICE(M)"
+      ],
+      "category": "크리스피크림도넛/커피",
+      "servingSize": "430 g / 1회 제공량",
+      "servingGram": 430,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [
+        "우유",
+        "고카페인함유"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 100,
+        "carb": null,
+        "sugar": 7,
+        "protein": 5,
+        "fat": null,
+        "saturatedFat": 3.2,
+        "transFat": null,
+        "sodium": 80,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": 239
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-c85d9b5ff3d5",
+      "brand": "크리스피크림도넛",
+      "productName": "라떼 ICE(L)",
+      "aliases": [
+        "크리스피크림도넛 라떼 ICE(L)",
+        "크리스피크림 라떼 ICE(L)",
+        "크리스피 크림 라떼 ICE(L)",
+        "라떼 ICE(L)",
+        "라떼ICE(L)"
+      ],
+      "category": "크리스피크림도넛/커피",
+      "servingSize": "585 g / 1회 제공량",
+      "servingGram": 585,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [
+        "우유",
+        "고카페인함유"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 149,
+        "carb": null,
+        "sugar": 11,
+        "protein": 8,
+        "fat": null,
+        "saturatedFat": 4.8,
+        "transFat": null,
+        "sodium": 120,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": 359
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-86a0deeb56df",
+      "brand": "크리스피크림도넛",
+      "productName": "라떼 ICE(XL)",
+      "aliases": [
+        "크리스피크림도넛 라떼 ICE(XL)",
+        "크리스피크림 라떼 ICE(XL)",
+        "크리스피 크림 라떼 ICE(XL)",
+        "라떼 ICE(XL)",
+        "라떼ICE(XL)"
+      ],
+      "category": "크리스피크림도넛/커피",
+      "servingSize": "900 g / 1회 제공량",
+      "servingGram": 900,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [
+        "우유",
+        "고카페인함유"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 223,
+        "carb": null,
+        "sugar": 16,
+        "protein": 11,
+        "fat": null,
+        "saturatedFat": 7,
+        "transFat": null,
+        "sodium": 180,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": 479
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-044c79ce7938",
+      "brand": "크리스피크림도넛",
+      "productName": "모카 HOT(M)",
+      "aliases": [
+        "크리스피크림도넛 모카 HOT(M)",
+        "크리스피크림 모카 HOT(M)",
+        "크리스피 크림 모카 HOT(M)",
+        "모카 HOT(M)",
+        "모카HOT(M)"
+      ],
+      "category": "크리스피크림도넛/커피",
+      "servingSize": "370 g / 1회 제공량",
+      "servingGram": 370,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [
+        "대두",
+        "우유",
+        "고카페인함유"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 232,
+        "carb": null,
+        "sugar": 21,
+        "protein": 10,
+        "fat": null,
+        "saturatedFat": 6,
+        "transFat": null,
+        "sodium": 190,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": 342
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-17742ba9e255",
+      "brand": "크리스피크림도넛",
+      "productName": "모카 ICE(M)",
+      "aliases": [
+        "크리스피크림도넛 모카 ICE(M)",
+        "크리스피크림 모카 ICE(M)",
+        "크리스피 크림 모카 ICE(M)",
+        "모카 ICE(M)",
+        "모카ICE(M)"
+      ],
+      "category": "크리스피크림도넛/커피",
+      "servingSize": "420 g / 1회 제공량",
+      "servingGram": 420,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [
+        "대두",
+        "우유",
+        "고카페인함유"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 166,
+        "carb": null,
+        "sugar": 16,
+        "protein": 6,
+        "fat": null,
+        "saturatedFat": 3.9,
+        "transFat": null,
+        "sodium": 130,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": 342
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-5e81ca32bc5f",
+      "brand": "크리스피크림도넛",
+      "productName": "바닐라 라떼 HOT(M)",
+      "aliases": [
+        "크리스피크림도넛 바닐라 라떼 HOT(M)",
+        "크리스피크림 바닐라 라떼 HOT(M)",
+        "크리스피 크림 바닐라 라떼 HOT(M)",
+        "바닐라 라떼 HOT(M)",
+        "바닐라라떼HOT(M)"
+      ],
+      "category": "크리스피크림도넛/커피",
+      "servingSize": "383 g / 1회 제공량",
+      "servingGram": 383,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [
+        "우유",
+        "고카페인함유"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 258,
+        "carb": null,
+        "sugar": 30,
+        "protein": 8,
+        "fat": null,
+        "saturatedFat": 6,
+        "transFat": null,
+        "sodium": 180,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": 239
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-e35a4290edcd",
+      "brand": "크리스피크림도넛",
+      "productName": "바닐라 라떼 ICE(M)",
+      "aliases": [
+        "크리스피크림도넛 바닐라 라떼 ICE(M)",
+        "크리스피크림 바닐라 라떼 ICE(M)",
+        "크리스피 크림 바닐라 라떼 ICE(M)",
+        "바닐라 라떼 ICE(M)",
+        "바닐라라떼ICE(M)"
+      ],
+      "category": "크리스피크림도넛/커피",
+      "servingSize": "440 g / 1회 제공량",
+      "servingGram": 440,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [
+        "우유",
+        "고카페인함유"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 188,
+        "carb": null,
+        "sugar": 24,
+        "protein": 5,
+        "fat": null,
+        "saturatedFat": 4.3,
+        "transFat": null,
+        "sodium": 130,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": 239
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-ec0d2ff0a345",
+      "brand": "크리스피크림도넛",
+      "productName": "카라멜 마끼아또 HOT(M)",
+      "aliases": [
+        "크리스피크림도넛 카라멜 마끼아또 HOT(M)",
+        "크리스피크림 카라멜 마끼아또 HOT(M)",
+        "크리스피 크림 카라멜 마끼아또 HOT(M)",
+        "카라멜 마끼아또 HOT(M)",
+        "카라멜마끼아또HOT(M)"
+      ],
+      "category": "크리스피크림도넛/커피",
+      "servingSize": "411 g / 1회 제공량",
+      "servingGram": 411,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [
+        "대두",
+        "우유",
+        "고카페인함유"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 280,
+        "carb": null,
+        "sugar": 38,
+        "protein": 9,
+        "fat": null,
+        "saturatedFat": 6,
+        "transFat": null,
+        "sodium": 160,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": 239
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-0fd337a2653c",
+      "brand": "크리스피크림도넛",
+      "productName": "카라멜 마끼아또 ICE(M)",
+      "aliases": [
+        "크리스피크림도넛 카라멜 마끼아또 ICE(M)",
+        "크리스피크림 카라멜 마끼아또 ICE(M)",
+        "크리스피 크림 카라멜 마끼아또 ICE(M)",
+        "카라멜 마끼아또 ICE(M)",
+        "카라멜마끼아또ICE(M)"
+      ],
+      "category": "크리스피크림도넛/커피",
+      "servingSize": "461 g / 1회 제공량",
+      "servingGram": 461,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [
+        "대두",
+        "우유",
+        "고카페인함유"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 214,
+        "carb": null,
+        "sugar": 33,
+        "protein": 6,
+        "fat": null,
+        "saturatedFat": 3.7,
+        "transFat": null,
+        "sodium": 110,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": 239
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-96132fb4f3e0",
+      "brand": "크리스피크림도넛",
+      "productName": "디카페인 콜드브루 HOT(M)",
+      "aliases": [
+        "크리스피크림도넛 디카페인 콜드브루 HOT(M)",
+        "크리스피크림 디카페인 콜드브루 HOT(M)",
+        "크리스피 크림 디카페인 콜드브루 HOT(M)",
+        "디카페인 콜드브루 HOT(M)",
+        "디카페인콜드브루HOT(M)"
+      ],
+      "category": "크리스피크림도넛/커피",
+      "servingSize": "390 g / 1회 제공량",
+      "servingGram": 390,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 15,
+        "carb": null,
+        "sugar": null,
+        "protein": 0.5,
+        "fat": null,
+        "saturatedFat": null,
+        "transFat": null,
+        "sodium": null,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": null
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-656631d01d5c",
+      "brand": "크리스피크림도넛",
+      "productName": "디카페인 콜드브루 ICE(M)",
+      "aliases": [
+        "크리스피크림도넛 디카페인 콜드브루 ICE(M)",
+        "크리스피크림 디카페인 콜드브루 ICE(M)",
+        "크리스피 크림 디카페인 콜드브루 ICE(M)",
+        "디카페인 콜드브루 ICE(M)",
+        "디카페인콜드브루ICE(M)"
+      ],
+      "category": "크리스피크림도넛/커피",
+      "servingSize": "450 g / 1회 제공량",
+      "servingGram": 450,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 15,
+        "carb": null,
+        "sugar": null,
+        "protein": 0.5,
+        "fat": null,
+        "saturatedFat": null,
+        "transFat": null,
+        "sodium": null,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": null
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-c06d319b5346",
+      "brand": "크리스피크림도넛",
+      "productName": "디카페인 콜드브루 ICE(L)",
+      "aliases": [
+        "크리스피크림도넛 디카페인 콜드브루 ICE(L)",
+        "크리스피크림 디카페인 콜드브루 ICE(L)",
+        "크리스피 크림 디카페인 콜드브루 ICE(L)",
+        "디카페인 콜드브루 ICE(L)",
+        "디카페인콜드브루ICE(L)"
+      ],
+      "category": "크리스피크림도넛/커피",
+      "servingSize": "560 g / 1회 제공량",
+      "servingGram": 560,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 18,
+        "carb": null,
+        "sugar": null,
+        "protein": 0.5,
+        "fat": null,
+        "saturatedFat": null,
+        "transFat": null,
+        "sodium": null,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": null
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-a9c30ef22a51",
+      "brand": "크리스피크림도넛",
+      "productName": "디카페인 콜드브루 ICE(XL)",
+      "aliases": [
+        "크리스피크림도넛 디카페인 콜드브루 ICE(XL)",
+        "크리스피크림 디카페인 콜드브루 ICE(XL)",
+        "크리스피 크림 디카페인 콜드브루 ICE(XL)",
+        "디카페인 콜드브루 ICE(XL)",
+        "디카페인콜드브루ICE(XL)"
+      ],
+      "category": "크리스피크림도넛/커피",
+      "servingSize": "920 g / 1회 제공량",
+      "servingGram": 920,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 21,
+        "carb": null,
+        "sugar": null,
+        "protein": 0.5,
+        "fat": null,
+        "saturatedFat": null,
+        "transFat": null,
+        "sodium": null,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": null
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-c6e0a7fa1fc6",
+      "brand": "크리스피크림도넛",
+      "productName": "디카페인 콜드브루 라떼 HOT(M)",
+      "aliases": [
+        "크리스피크림도넛 디카페인 콜드브루 라떼 HOT(M)",
+        "크리스피크림 디카페인 콜드브루 라떼 HOT(M)",
+        "크리스피 크림 디카페인 콜드브루 라떼 HOT(M)",
+        "디카페인 콜드브루 라떼 HOT(M)",
+        "디카페인콜드브루라떼HOT(M)"
+      ],
+      "category": "크리스피크림도넛/커피",
+      "servingSize": "350 g / 1회 제공량",
+      "servingGram": 350,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 183,
+        "carb": null,
+        "sugar": 13,
+        "protein": 9,
+        "fat": null,
+        "saturatedFat": 6,
+        "transFat": null,
+        "sodium": 140,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": null
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-8c5023e55a69",
+      "brand": "크리스피크림도넛",
+      "productName": "디카페인 콜드브루 라떼 ICE(M)",
+      "aliases": [
+        "크리스피크림도넛 디카페인 콜드브루 라떼 ICE(M)",
+        "크리스피크림 디카페인 콜드브루 라떼 ICE(M)",
+        "크리스피 크림 디카페인 콜드브루 라떼 ICE(M)",
+        "디카페인 콜드브루 라떼 ICE(M)",
+        "디카페인콜드브루라떼ICE(M)"
+      ],
+      "category": "크리스피크림도넛/커피",
+      "servingSize": "450 g / 1회 제공량",
+      "servingGram": 450,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 135,
+        "carb": null,
+        "sugar": 9,
+        "protein": 7,
+        "fat": null,
+        "saturatedFat": 4,
+        "transFat": null,
+        "sodium": 100,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": null
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-64ef91649d11",
+      "brand": "크리스피크림도넛",
+      "productName": "디카페인 콜드브루 라떼 ICE(L)",
+      "aliases": [
+        "크리스피크림도넛 디카페인 콜드브루 라떼 ICE(L)",
+        "크리스피크림 디카페인 콜드브루 라떼 ICE(L)",
+        "크리스피 크림 디카페인 콜드브루 라떼 ICE(L)",
+        "디카페인 콜드브루 라떼 ICE(L)",
+        "디카페인콜드브루라떼ICE(L)"
+      ],
+      "category": "크리스피크림도넛/커피",
+      "servingSize": "560 g / 1회 제공량",
+      "servingGram": 560,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 168,
+        "carb": null,
+        "sugar": 11,
+        "protein": 8,
+        "fat": null,
+        "saturatedFat": 5,
+        "transFat": null,
+        "sodium": 130,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": null
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-35d6fb340b06",
+      "brand": "크리스피크림도넛",
+      "productName": "디카페인 콜드브루 라떼 ICE(XL)",
+      "aliases": [
+        "크리스피크림도넛 디카페인 콜드브루 라떼 ICE(XL)",
+        "크리스피크림 디카페인 콜드브루 라떼 ICE(XL)",
+        "크리스피 크림 디카페인 콜드브루 라떼 ICE(XL)",
+        "디카페인 콜드브루 라떼 ICE(XL)",
+        "디카페인콜드브루라떼ICE(XL)"
+      ],
+      "category": "크리스피크림도넛/커피",
+      "servingSize": "920 g / 1회 제공량",
+      "servingGram": 920,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 261,
+        "carb": null,
+        "sugar": 18,
+        "protein": 13,
+        "fat": null,
+        "saturatedFat": 8,
+        "transFat": null,
+        "sodium": 200,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": null
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-c5249613528d",
+      "brand": "크리스피크림도넛",
+      "productName": "자몽 블랙티 HOT(M)",
+      "aliases": [
+        "크리스피크림도넛 자몽 블랙티 HOT(M)",
+        "크리스피크림 자몽 블랙티 HOT(M)",
+        "크리스피 크림 자몽 블랙티 HOT(M)",
+        "자몽 블랙티 HOT(M)",
+        "자몽블랙티HOT(M)"
+      ],
+      "category": "크리스피크림도넛/음료",
+      "servingSize": "375 g / 1회 제공량",
+      "servingGram": 375,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 199,
+        "carb": null,
+        "sugar": 30,
+        "protein": null,
+        "fat": null,
+        "saturatedFat": null,
+        "transFat": null,
+        "sodium": 50,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": 48
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-da7ab5ee093e",
+      "brand": "크리스피크림도넛",
+      "productName": "자몽 블랙티 ICE(L)",
+      "aliases": [
+        "크리스피크림도넛 자몽 블랙티 ICE(L)",
+        "크리스피크림 자몽 블랙티 ICE(L)",
+        "크리스피 크림 자몽 블랙티 ICE(L)",
+        "자몽 블랙티 ICE(L)",
+        "자몽블랙티ICE(L)"
+      ],
+      "category": "크리스피크림도넛/음료",
+      "servingSize": "605 g / 1회 제공량",
+      "servingGram": 605,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 275,
+        "carb": null,
+        "sugar": 47,
+        "protein": null,
+        "fat": null,
+        "saturatedFat": null,
+        "transFat": null,
+        "sodium": 60,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": 25
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-6c9fb320fcdf",
+      "brand": "크리스피크림도넛",
+      "productName": "유자 민트티 HOT(M)",
+      "aliases": [
+        "크리스피크림도넛 유자 민트티 HOT(M)",
+        "크리스피크림 유자 민트티 HOT(M)",
+        "크리스피 크림 유자 민트티 HOT(M)",
+        "유자 민트티 HOT(M)",
+        "유자민트티HOT(M)"
+      ],
+      "category": "크리스피크림도넛/음료",
+      "servingSize": "375 g / 1회 제공량",
+      "servingGram": 375,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 203,
+        "carb": null,
+        "sugar": 49,
+        "protein": null,
+        "fat": null,
+        "saturatedFat": null,
+        "transFat": null,
+        "sodium": 70,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": null
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-0533bd0053b1",
+      "brand": "크리스피크림도넛",
+      "productName": "유자 민트티 ICE(L)",
+      "aliases": [
+        "크리스피크림도넛 유자 민트티 ICE(L)",
+        "크리스피크림 유자 민트티 ICE(L)",
+        "크리스피 크림 유자 민트티 ICE(L)",
+        "유자 민트티 ICE(L)",
+        "유자민트티ICE(L)"
+      ],
+      "category": "크리스피크림도넛/음료",
+      "servingSize": "605 g / 1회 제공량",
+      "servingGram": 605,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 281,
+        "carb": null,
+        "sugar": 68,
+        "protein": null,
+        "fat": null,
+        "saturatedFat": null,
+        "transFat": null,
+        "sodium": 75,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": null
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-f006fdc7f232",
+      "brand": "크리스피크림도넛",
+      "productName": "청귤 캐모마일티 ICE(L)",
+      "aliases": [
+        "크리스피크림도넛 청귤 캐모마일티 ICE(L)",
+        "크리스피크림 청귤 캐모마일티 ICE(L)",
+        "크리스피 크림 청귤 캐모마일티 ICE(L)",
+        "청귤 캐모마일티 ICE(L)",
+        "청귤캐모마일티ICE(L)"
+      ],
+      "category": "크리스피크림도넛/음료",
+      "servingSize": "575 g / 1회 제공량",
+      "servingGram": 575,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 217,
+        "carb": null,
+        "sugar": 50,
+        "protein": null,
+        "fat": null,
+        "saturatedFat": null,
+        "transFat": null,
+        "sodium": null,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": null
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-588e31509c36",
+      "brand": "크리스피크림도넛",
+      "productName": "밀크티 HOT(M)",
+      "aliases": [
+        "크리스피크림도넛 밀크티 HOT(M)",
+        "크리스피크림 밀크티 HOT(M)",
+        "크리스피 크림 밀크티 HOT(M)",
+        "밀크티 HOT(M)",
+        "밀크티HOT(M)"
+      ],
+      "category": "크리스피크림도넛/음료",
+      "servingSize": "350 g / 1회 제공량",
+      "servingGram": 350,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [
+        "우유",
+        "고카페인함유"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 296,
+        "carb": null,
+        "sugar": 46,
+        "protein": 8,
+        "fat": null,
+        "saturatedFat": 5,
+        "transFat": null,
+        "sodium": 150,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": 144
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-f96247f1b989",
+      "brand": "크리스피크림도넛",
+      "productName": "밀크티 ICE(M)",
+      "aliases": [
+        "크리스피크림도넛 밀크티 ICE(M)",
+        "크리스피크림 밀크티 ICE(M)",
+        "크리스피 크림 밀크티 ICE(M)",
+        "밀크티 ICE(M)",
+        "밀크티ICE(M)"
+      ],
+      "category": "크리스피크림도넛/음료",
+      "servingSize": "460 g / 1회 제공량",
+      "servingGram": 460,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [
+        "우유",
+        "고카페인함유"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 254,
+        "carb": null,
+        "sugar": 43,
+        "protein": 6,
+        "fat": null,
+        "saturatedFat": 3.8,
+        "transFat": null,
+        "sodium": 120,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": 144
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-e4ca9e74b989",
+      "brand": "크리스피크림도넛",
+      "productName": "아메리칸 레몬에이드",
+      "aliases": [
+        "크리스피크림도넛 아메리칸 레몬에이드",
+        "크리스피크림 아메리칸 레몬에이드",
+        "크리스피 크림 아메리칸 레몬에이드",
+        "아메리칸 레몬에이드",
+        "아메리칸레몬에이드"
+      ],
+      "category": "크리스피크림도넛/음료",
+      "servingSize": "470 g / 1회 제공량",
+      "servingGram": 470,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 157,
+        "carb": null,
+        "sugar": 39,
+        "protein": null,
+        "fat": null,
+        "saturatedFat": null,
+        "transFat": null,
+        "sodium": null,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": null
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-1bae6de33ea2",
+      "brand": "크리스피크림도넛",
+      "productName": "자몽에이드",
+      "aliases": [
+        "크리스피크림도넛 자몽에이드",
+        "크리스피크림 자몽에이드",
+        "크리스피 크림 자몽에이드",
+        "자몽에이드"
+      ],
+      "category": "크리스피크림도넛/음료",
+      "servingSize": "460 g / 1회 제공량",
+      "servingGram": 460,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 168,
+        "carb": null,
+        "sugar": 39,
+        "protein": null,
+        "fat": null,
+        "saturatedFat": null,
+        "transFat": null,
+        "sodium": 5,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": null
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
+    },
+    {
+      "id": "krispy-kreme-716adb0aba00",
+      "brand": "크리스피크림도넛",
+      "productName": "제로 복숭아 아이스티(M)",
+      "aliases": [
+        "크리스피크림도넛 제로 복숭아 아이스티(M)",
+        "크리스피크림 제로 복숭아 아이스티(M)",
+        "크리스피 크림 제로 복숭아 아이스티(M)",
+        "제로 복숭아 아이스티(M)",
+        "제로복숭아아이스티(M)"
+      ],
+      "category": "크리스피크림도넛/음료",
+      "servingSize": "460 g / 1회 제공량",
+      "servingGram": 460,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "롯데GRS 크리스피크림도넛 공식 영양성분표",
+      "sourceUrl": "https://www.lotteeatz.com/upload/etc/kkd/items.html",
+      "verifiedAt": "2026-05-04",
+      "allergens": [
+        "복숭아"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 3,
+        "carb": null,
+        "sugar": 1,
+        "protein": null,
+        "fat": null,
+        "saturatedFat": null,
+        "transFat": null,
+        "sodium": 45,
+        "fiber": null,
+        "leucine": null,
+        "caffeine": null
+      },
+      "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
     }
   ]
 }
