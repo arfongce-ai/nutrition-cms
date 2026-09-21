@@ -128,6 +128,7 @@ function sqlString(value) {
 }
 
 function sqlNumber(value) {
+  if (value == null || value === '') return 'NULL';
   const number = Number(value);
   return Number.isFinite(number) ? String(number) : 'NULL';
 }

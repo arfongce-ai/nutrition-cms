@@ -1,113 +1,46 @@
-// This module answers one question honestly: "how much should the person trust
-// this specific reading?" It does not compute nutrition values — nutritionEngine.js
-// already does that — it only cross-checks and labels the values that already exist,
-// using signals the app already has:
-//
-//   1. Per item: did the food's numbers come from an official source / matched
-//      database entry, or are they a photo-based guess with nothing to check them
-//      against (isPendingInfo)?
-//   2. Overall: does the live, on-screen estimate (cheap heuristic, updates ~1/sec)
-//      roughly agree with the final analysis (OCR label + AI vision + database
-//      lookup, computed once at capture)? A big gap between the two is itself useful
-//      information — it means the quick preview and the careful analysis disagree,
-//      which is worth surfacing rather than silently picking one number to show.
+export const TRUST_TIER = { OFFICIAL: 'official', MATCHED: 'matched', ESTIMATED: 'estimated', PENDING: 'pending' };
+export const TRUST_TIER_LABEL = { official: '출처 있는 영양정보', matched: '일반 음식 참고값', estimated: '직접 입력한 정보', pending: '영양정보 확인 필요' };
 
-export const TRUST_TIER = {
-  OFFICIAL: 'official',
-  MATCHED: 'matched',
-  ESTIMATED: 'estimated',
-  PENDING: 'pending',
-};
-
-export const TRUST_TIER_LABEL = {
-  [TRUST_TIER.OFFICIAL]: '공식 데이터',
-  [TRUST_TIER.MATCHED]: 'DB 일치',
-  [TRUST_TIER.ESTIMATED]: '사진 기반 추정',
-  [TRUST_TIER.PENDING]: '확인 필요',
-};
-
-// Where a single food item's numbers actually came from. Mirrors the fields
-// nutritionEngine.normalizeFoods() already attaches to every item.
 export function classifyItemTrust(item) {
-  if (!item) return TRUST_TIER.PENDING;
-  if (item.isPendingInfo) return TRUST_TIER.PENDING;
-  if (item.official) return TRUST_TIER.OFFICIAL;
+  if (!item || item.isPendingInfo) return TRUST_TIER.PENDING;
+  if (item.official && item.sourceUrl) return TRUST_TIER.OFFICIAL;
   if (item.matched) return TRUST_TIER.MATCHED;
   return TRUST_TIER.ESTIMATED;
 }
 
-const AGREEMENT_BAND = [0.6, 1.6]; // live estimate is a cheap heuristic; only flag genuinely large gaps
-
-/**
- * @param {ReturnType<typeof import('./nutritionEngine.js').analyzeMeal>} report final, captured-photo analysis
- * @param {{ calories: number, confidencePercent: number } | null} liveSnapshot the live estimate at the moment of capture
- */
-export function assessMeasurementConfidence(report, liveSnapshot) {
-  const items = Array.isArray(report?.items) ? report.items : [];
-  const total = items.length;
-
-  if (!total) {
-    return {
-      level: 'none',
-      label: '측정값 없음',
-      reasons: ['아직 인식된 음식이 없습니다.'],
-      tiers: { official: 0, matched: 0, estimated: 0, pending: 0, total: 0 },
-      agreement: null,
-    };
-  }
-
-  const tiers = items.reduce(
-    (acc, item) => {
-      acc[classifyItemTrust(item)] += 1;
-      return acc;
-    },
-    { official: 0, matched: 0, estimated: 0, pending: 0 },
-  );
-
-  const finalCalories = Math.round(report?.totals?.calories || 0);
-  const liveCalories = Number.isFinite(liveSnapshot?.calories) ? Math.round(liveSnapshot.calories) : null;
-
-  let agreement = null;
-  if (liveCalories && liveCalories > 0 && finalCalories > 0) {
-    const ratio = finalCalories / liveCalories;
-    agreement = {
-      ratio,
-      agrees: ratio >= AGREEMENT_BAND[0] && ratio <= AGREEMENT_BAND[1],
-      liveCalories,
-      finalCalories,
-    };
-  }
-
-  const reasons = [];
-  let level;
-
-  if (tiers.pending > 0) {
-    level = 'low';
-    reasons.push(
-      tiers.pending === total
-        ? '신뢰 가능한 DB에서 일치하는 값을 찾지 못해 전체 항목을 직접 확인해야 합니다.'
-        : `${tiers.pending}개 항목은 DB에서 값을 찾지 못해 직접 확인이 필요합니다.`,
-    );
-  } else if (agreement && !agreement.agrees) {
-    level = 'medium';
-    reasons.push('실시간 화면 추정치와 정밀 분석 결과의 차이가 커요. 결과를 한 번 더 확인해주세요.');
-  } else if (tiers.official + tiers.matched === total) {
-    level = 'high';
-    reasons.push('모든 항목이 공식 데이터베이스 값과 일치했습니다.');
-  } else {
-    level = 'medium';
-    reasons.push(`${tiers.estimated}개 항목은 사진 기반 추정치예요.`);
-  }
-
-  if (agreement?.agrees) {
-    reasons.push('실시간 추정치와 정밀 분석 결과가 서로 일치합니다.');
-  }
-
-  return {
-    level, // 'high' | 'medium' | 'low' | 'none'
-    label: { high: '신뢰도 높음', medium: '확인 권장', low: '직접 확인 필요', none: '측정값 없음' }[level],
-    reasons,
-    tiers: { ...tiers, total },
-    agreement,
+export function getFoodEvidence(item = {}) {
+  const source = item.portionSource || 'unknown';
+  const portionLabels = {
+    photo: '사진으로 추정 · 양 확인 필요',
+    standard: '기본 분량 · 양 확인 필요',
+    household: '양 선택 완료 · 무게는 추정',
+    'photo-adjusted': '사진의 양 선택 · 무게는 추정',
+    entered: '숫자 직접 입력 · 실측 여부 미확인',
+    measured: '저울로 잰 무게 입력',
+    'label-serving': '표시된 분량에서 먹은 양 선택',
+    unknown: '먹은 양 확인 필요',
   };
+  return {
+    name: item.nameConfirmed ? '사용자 확인' : '음식 이름 확인 필요',
+    portion: portionLabels[source] || portionLabels.unknown,
+    source: item.isPendingInfo ? '영양정보 확인 필요' : item.sourceLabel || (item.matched ? '일반 음식 참고값' : '직접 입력한 영양정보'),
+    estimated: source !== 'measured' && source !== 'label-serving',
+  };
+}
+
+// A database match and two agreeing model predictions do not validate a meal's weight.
+export function assessMeasurementConfidence(report) {
+  const items = report?.items || [];
+  const tiers = items.reduce((counts, item) => { counts[classifyItemTrust(item)]++; return counts; }, { official: 0, matched: 0, estimated: 0, pending: 0, total: items.length });
+  if (!items.length) return { level: 'none', label: '확인할 음식 없음', reasons: [], tiers };
+  const names = items.filter((item) => !item.nameConfirmed).length;
+  const portions = items.filter((item) => !item.portionConfirmed).length;
+  const estimates = items.filter((item) => getFoodEvidence(item).estimated).length;
+  const reasons = [];
+  if (tiers.pending) reasons.push(`${tiers.pending}개 음식은 영양정보가 없어 합계에서 빠져 있어요.`);
+  if (names) reasons.push(`${names}개 음식의 이름을 확인해 주세요.`);
+  if (portions) reasons.push(`${portions}개 음식의 먹은 양을 골라주세요.`);
+  if (estimates) reasons.push(`${estimates}개 음식의 무게는 추정 또는 직접 입력한 값이에요.`);
+  reasons.push('영양정보 출처와 사진 속 음식·양의 정확도는 별도로 확인해요.');
+  return { level: tiers.pending || names || portions ? 'low' : 'medium', label: tiers.pending || names || portions ? '확인할 내용이 있어요' : '입력 내용 확인 완료', reasons, tiers };
 }

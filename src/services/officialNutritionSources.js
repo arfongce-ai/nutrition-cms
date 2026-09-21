@@ -200,7 +200,7 @@ export function findOfficialBrandFood(name) {
     const hasBrand = brand && normalized.includes(brand);
     return entry.keys.some((key) => {
       const normalizedKey = normalizeKeyword(key);
-      if (!normalized.includes(normalizedKey)) return false;
+      if (normalized !== normalizedKey && normalized !== brand + normalizedKey) return false;
       return hasBrand || normalizedKey.includes(brand) || !isGenericBeverageKey(normalizedKey);
     });
   });

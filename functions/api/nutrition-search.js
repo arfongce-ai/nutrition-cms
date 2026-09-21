@@ -38,7 +38,16 @@ export async function onRequestGet({ request, env }) {
     searchPublicFoods(env.NUTRITION_DB, query, limit),
   ]);
 
-  const candidates = [...officialRows.map(toOfficialCandidate), ...publicRows.map(toPublicFoodCandidate)].slice(0, limit);
+  const normalizedQuery = compactText(query).toLowerCase();
+  const exactPublicRows = publicRows.filter((row) => compactText(row.food_name).toLowerCase() === normalizedQuery);
+  const remainingPublicRows = publicRows
+    .filter((row) => !exactPublicRows.includes(row))
+    .sort((left, right) => rankPublicFoodName(left.food_name, normalizedQuery) - rankPublicFoodName(right.food_name, normalizedQuery));
+  const candidates = [
+    ...exactPublicRows.map(toPublicFoodCandidate),
+    ...officialRows.map(toOfficialCandidate),
+    ...remainingPublicRows.map(toPublicFoodCandidate),
+  ].slice(0, limit);
   return json({ ok: true, query, candidates });
 }
 
@@ -191,7 +200,11 @@ function toOfficialCandidate(row) {
 function toPublicFoodCandidate(row) {
   const brand = row.manufacturer_name || row.distributor_name || row.importer_name || '';
   const category = [row.db_type, row.category_large, row.category_middle, row.category_small].filter(Boolean).join(' · ');
-  const serving = row.serving_weight || row.serving_basis || '';
+  const servingBasis = row.serving_basis || '';
+  const packageWeight = row.serving_weight || '';
+  const serving = servingBasis && packageWeight && servingBasis !== packageWeight
+    ? `${servingBasis} 기준 · 제품 ${packageWeight}`
+    : servingBasis || packageWeight;
 
   return {
     id: `server-public-${row.food_id}`,
@@ -200,7 +213,7 @@ function toPublicFoodCandidate(row) {
     brand,
     category: category || '공공 식품영양 DB',
     serving,
-    grams: extractServingGrams(serving) || '100',
+    grams: extractServingAmount(servingBasis) || extractServingAmount(packageWeight) || '100',
     sourceLabel: row.source_name || '식품영양성분 공공 DB',
     sourceUrl: '',
     official: true,
@@ -242,6 +255,15 @@ function compactText(value) {
   return String(value || '').replace(/\s+/g, '');
 }
 
+function rankPublicFoodName(foodName, normalizedQuery) {
+  const normalizedName = compactText(foodName).toLowerCase();
+  if (normalizedName === normalizedQuery) return 0;
+  if (normalizedName.endsWith(normalizedQuery)) return 1;
+  if (normalizedName.startsWith(normalizedQuery)) return 2;
+  if (normalizedName.includes(normalizedQuery)) return 3;
+  return 4;
+}
+
 function escapeLike(value) {
   return String(value || '').replace(/[\\%_]/g, (match) => `\\${match}`);
 }
@@ -256,8 +278,8 @@ function numberOrZero(value) {
   return Number.isFinite(number) ? number : 0;
 }
 
-function extractServingGrams(value) {
-  const match = String(value || '').match(/(\d+(?:\.\d+)?)\s*g/i);
+function extractServingAmount(value) {
+  const match = String(value || '').match(/(\d+(?:\.\d+)?)\s*(?:g|ml)/i);
   return match?.[1] || '';
 }
 

@@ -1,0 +1,102 @@
+import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
+import { dateKey } from '../src/services/diaryInsights.js';
+const { chromium } = await import(process.env.MEAL_PLAYWRIGHT_MODULE || 'playwright');
+const browser = await chromium.launch({ headless: true, ...(process.env.MEAL_CHROME_PATH ? { executablePath: process.env.MEAL_CHROME_PATH } : {}) });
+const context = await browser.newContext({ viewport: { width: 390, height: 844 }, timezoneId: 'Asia/Seoul', serviceWorkers: 'block' });
+await context.addInitScript(() => { window.TextDetector = class { async detect() { return []; } }; });
+const errors = [];
+let feedFails = false;
+await context.route('**/api/**', async (route) => {
+  const url = route.request().url();
+  if (url.includes('nutrition-updates')) {
+    return route.fulfill({ status: feedFails ? 503 : 200, json: { checkedAt: new Date().toISOString(), sources: [{ id: 'who', name: 'WHO 공식 가이드', status: 'fresh', checkedAt: new Date().toISOString(), url: 'https://www.who.int/news-room/fact-sheets/detail/healthy-diet', items: [{ id: 'guide', title: '건강한 식사: 영양 균형', url: 'https://www.who.int/news-room/fact-sheets/detail/healthy-diet', publishedAt: '2026-01-26', kind: '공식 가이드', publisher: 'WHO' }] }] } });
+  }
+  await route.fulfill({ json: url.includes('vision-analyze') ? { ok: true, foods: [{ name: '계란', confidence: .75, estimatedGrams: 50, quantity: 1, unitLabel: '개', position: { x: .5, y: .5 } }] } : { ok: true, candidates: [], images: [] } });
+});
+const page = await context.newPage();
+page.on('pageerror', (error) => errors.push(error.message));
+page.setDefaultTimeout(15000);
+const recent = new Date(); recent.setDate(recent.getDate() - 1);
+const older = new Date(); older.setDate(older.getDate() - 2);
+const recentDay = dateKey(recent), olderDay = dateKey(older);
+const image = await readFile('.qa/meal-fixture.png');
+async function noOverflow() { assert.equal(await page.locator('.meal-screen').last().evaluate((el) => el.scrollWidth <= el.clientWidth + 1), true); }
+const reports = () => page.evaluate(() => JSON.parse(localStorage.getItem('nutritionReports.v1') || '[]'));
+async function reviewAndSave(expectedTime) {
+  await page.getByRole('heading', { name: '음식과 양이 맞나요?' }).waitFor();
+  await page.getByRole('button', { name: '1개', exact: true }).click();
+  await page.getByRole('button', { name: '맞아요 · 결과 보기 →' }).click();
+  await page.getByRole('heading', { name: '오늘 먹은 한 끼' }).waitFor();
+  assert.equal(await page.getByLabel('식사 날짜와 시간', { exact: true }).inputValue(), expectedTime);
+  await page.getByRole('button', { name: '✓ 이 식사 저장하기' }).click();
+}
+try {
+  await page.goto('http://127.0.0.1:5173');
+  await page.getByLabel('음식 사진 고르기').setInputFiles(['recent', 'older', 'duplicate'].map((name) => ({ name: `${name}.png`, mimeType: 'image/png', buffer: image })));
+  await page.getByRole('heading', { name: '언제 먹은 사진인가요?' }).waitFor();
+  await page.locator('.batch-row').nth(2).getByRole('button', { name: '목록에서 빼기' }).click();
+  assert.equal(await page.locator('.batch-row').count(), 2);
+  assert.equal(await page.locator('.batch-row input[type="checkbox"]').first().isChecked(), false);
+  await page.locator('.batch-row').nth(0).getByLabel('식사 날짜와 시간').fill(`${recentDay}T08:30`);
+  await page.locator('.batch-row').nth(1).getByLabel('식사 날짜와 시간').fill(`${olderDay}T12:15`);
+  await noOverflow();
+  await page.screenshot({ path: '.qa/batch-mobile.png' });
+  await page.setViewportSize({ width: 320, height: 740 }); await noOverflow();
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.getByRole('button', { name: '2장 시간순으로 기록 시작' }).click();
+  await reviewAndSave(`${olderDay}T12:15`);
+  await reviewAndSave(`${recentDay}T08:30`);
+  await page.getByRole('heading', { name: '나의 식사 기록' }).waitFor();
+  let rows = await reports();
+  assert.equal(rows.length, 2);
+  assert.equal(rows[0].mealType, '아침'); assert.equal(rows[1].mealType, '점심');
+  assert.equal(rows[0].createdAt, new Date(`${recentDay}T08:30:00+09:00`).toISOString());
+  assert.equal(rows[1].createdAt, new Date(`${olderDay}T12:15:00+09:00`).toISOString());
+  assert.equal(await page.getByRole('button', { name: new RegExp(`^${recentDay},`) }).getAttribute('aria-pressed'), 'true');
+  const journal = page.getByRole('form', { name: '하루 일기' });
+  await journal.getByLabel('오늘의 메모').fill('산책 후 물을 마셨고 저녁에는 채소를 먹었어요.');
+  await journal.getByRole('button', { name: '＋ 물 200 mL' }).click();
+  await journal.getByRole('checkbox', { name: '채소 여러 색의 채소와 나물' }).check();
+  await journal.getByLabel('하루 기록 완료', { exact: false }).check();
+  await journal.getByRole('button', { name: '하루 일기 저장' }).click();
+  await page.getByText('하루 일기를 저장했어요.', { exact: true }).waitFor();
+  await page.getByRole('button', { name: '주간', exact: true }).click();
+  await page.getByRole('heading', { name: '주간 평가와 피드백' }).waitFor();
+  await page.locator('.period-review').scrollIntoViewIfNeeded();
+  await page.screenshot({ path: '.qa/weekly-feedback-mobile.png' });
+  await page.getByRole('button', { name: '월간', exact: true }).click();
+  await page.getByRole('heading', { name: '월간 평가와 피드백' }).waitFor();
+  await page.getByRole('button', { name: '6대 영양소', exact: true }).click();
+  assert.equal(await page.locator('.six-nutrient-grid article').count(), 6);
+  assert.equal(await page.getByText('개별 섭취량 데이터 없음', { exact: true }).count(), 2);
+  await page.locator('.six-nutrient-grid').scrollIntoViewIfNeeded();
+  await page.screenshot({ path: '.qa/six-nutrients-mobile.png' });
+  await page.setViewportSize({ width: 320, height: 740 }); await noOverflow();
+  await page.setViewportSize({ width: 1280, height: 900 }); await noOverflow();
+  await page.getByRole('button', { name: '최신 자료', exact: true }).click();
+  await page.getByRole('link', { name: '건강한 식사: 영양 균형 ↗' }).waitFor();
+  feedFails = true;
+  await page.getByRole('button', { name: '지금 확인' }).click();
+  await page.getByText('최신 확인 실패', { exact: true }).waitFor();
+  assert.equal(await page.getByRole('link', { name: '건강한 식사: 영양 균형 ↗' }).count(), 1);
+  await page.screenshot({ path: '.qa/news-stale-desktop.png' });
+  await page.reload();
+  await page.getByRole('button', { name: '오늘 기록 열기' }).click();
+  await page.getByRole('button', { name: new RegExp(`^${recentDay},`) }).click();
+  assert.equal(await page.getByLabel('오늘의 메모').inputValue(), '산책 후 물을 마셨고 저녁에는 채소를 먹었어요.');
+  assert.equal(await page.getByLabel('마신 물 (mL)').inputValue(), '200');
+  await page.locator('.diary-meal-card').first().getByRole('button', { name: '이름·양 고치기' }).click();
+  await page.getByLabel('날짜·시간', { exact: true }).fill(`${olderDay}T09:10`);
+  await page.getByRole('button', { name: '수정 저장' }).click();
+  await page.getByText('수정한 내용을 저장했어요.', { exact: true }).waitFor();
+  assert.equal(await page.locator('.diary-meal-card').count(), 0);
+  await page.getByRole('button', { name: new RegExp(`^${olderDay},`) }).click();
+  assert.equal(await page.locator('.diary-meal-card').count(), 2);
+  assert.equal((await reports()).length, 2);
+  assert.deepEqual(errors, []);
+  console.log('PASS: multi-photo timing, chronological save, calendar selection, time edit, journal/water reload, weekly/monthly feedback, six nutrients, stale source fallback, 320/390/1280px.');
+} catch (error) {
+  await page.screenshot({ path: '.qa/diary-feature-failure.png' });
+  throw error;
+} finally { await browser.close(); }

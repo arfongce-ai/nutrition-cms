@@ -12,11 +12,11 @@ export function findOfficialProductFood(text) {
     const brand = normalizeSearchText(entry.brand);
     const hasBrand = brand && normalized.includes(brand);
     const productName = normalizeSearchText(entry.productName);
-    if (hasBrand && productName && normalized.includes(productName)) return true;
+    if (hasBrand && productName && (normalized === productName || normalized === brand + productName)) return true;
 
     return (entry.aliases || []).some((term) => {
       const alias = normalizeSearchText(term);
-      if (!alias || !normalized.includes(alias)) return false;
+      if (!alias || (normalized !== alias && normalized !== brand + alias)) return false;
       const aliasHasBrand = brand && alias.includes(brand);
       return hasBrand || aliasHasBrand || !isGenericBeverageName(alias);
     });
@@ -66,6 +66,7 @@ function toFoodEntry(product) {
     serving: product.servingSize || '',
     sourceLabel: product.sourceLabel || `${product.brand} 공식 제품 영양정보`,
     sourceUrl: product.sourceUrl || '',
+    imageUrl: product.imageUrl || '',
     category: product.category || '',
     emoji: createEmoji(product.category),
     official: true,

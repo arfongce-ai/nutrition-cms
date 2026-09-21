@@ -61,12 +61,13 @@ service cloud.firestore {
     match /meals_history/{mealId} {
       allow create: if isSignedIn()
         && request.resource.data.uid == request.auth.uid;
-      allow read: if isSignedIn()
-        && resource.data.uid == request.auth.uid;
       allow update: if isSignedIn()
         && resource.data.uid == request.auth.uid
         && request.resource.data.uid == request.auth.uid;
-      allow delete: if false;
+      allow read: if isSignedIn()
+        && resource.data.uid == request.auth.uid;
+      allow delete: if isSignedIn()
+        && resource.data.uid == request.auth.uid;
     }
 
     match /{document=**} {
