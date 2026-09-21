@@ -2,6 +2,15 @@ name = "momgagym-nutrition"
 pages_build_output_dir = "dist"
 compatibility_date = "2026-07-08"
 
+[vars]
+VITE_FIREBASE_API_KEY = "AIzaSyC9R63MgGXKE0lQ_hfCR8LHRmMRv1jiugk"
+VITE_FIREBASE_AUTH_DOMAIN = "momgagym-cms.firebaseapp.com"
+VITE_FIREBASE_PROJECT_ID = "momgagym-cms"
+VITE_FIREBASE_STORAGE_BUCKET = "momgagym-cms.firebasestorage.app"
+VITE_FIREBASE_MESSAGING_SENDER_ID = "28887391734"
+VITE_FIREBASE_APP_ID = "1:28887391734:web:42eb4981c8dcacaccd7bd7"
+VITE_REQUIRE_MEMBER_LINK = "true"
+
 [ai]
 binding = "AI"
 
