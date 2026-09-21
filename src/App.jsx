@@ -13,6 +13,8 @@ import { findOfficialProductFood, findOfficialProductSources, searchOfficialProd
 import { recordRecognitionCorrection, recordRecognitionObservation } from './services/recognitionLearningStore';
 import { assessMeasurementConfidence, TRUST_TIER_LABEL } from './services/measurementConfidence';
 import { detectBarcodeFromCanvas } from './services/barcodeScanner';
+import FeedbackSheet from './FeedbackSheet.jsx';
+import { getConnection, disconnect as disconnectFromCms } from './services/nutritionLink';
 import { getVoiceUnitDefaultGrams, parseVoiceMealFoods } from './services/voiceMealParser';
 import { MealSteps, MealPhoto, MacroBar, DailyBudget, FoodNutritionCard, EatingOrder, foodColors, PortionPicker, FoodEvidence } from './components/MealPresentation';
 import { normalizeFoodPosition, scaleHistoryItem } from './services/mealPresentation';
@@ -182,6 +184,7 @@ export default function App() {
   const [cameraError, setCameraError] = useState('');
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [diaryOpen, setDiaryOpen] = useState(() => window.location.hash === '#diary');
+  const [feedbackOpen, setFeedbackOpen] = useState(false);
   const [diaryDay, setDiaryDay] = useState(dateKey());
   const [savedReports, setSavedReports] = useState([]);
   const [batchFiles, setBatchFiles] = useState(null);
@@ -835,6 +838,12 @@ export default function App() {
         return;
       }
       setSaveState(result.storage === 'firebase' ? 'Firebase 저장됨' : '기기 저장됨');
+      // 센터 CMS 연결이 되어 있으면 오늘 하루 요약을 백그라운드로 동기화한다.
+      // 실패해도 이 화면 흐름을 막지 않는다(fire-and-forget) — 연결이 안 되어
+      // 있으면 nutritionLink 쪽에서 조용히 건너뛴다.
+      import('./services/cmsSync').then(({ syncTodaySummaryToCms }) => {
+        syncTodaySummaryToCms().catch((error) => console.warn('CMS 요약 동기화 실패', error));
+      });
       analysisRunRef.current += 1;
       setLiveScan({ status: 'scanning', facts: {}, text: '', food: null });
       setBarcodeMatch({ status: 'idle', code: '', candidate: null });
@@ -1180,8 +1189,10 @@ export default function App() {
           onRestore={restoreSavedReport}
           onUpload={handlePhotoUpload}
           onClose={() => setDiaryOpen(false)}
+          onOpenFeedback={() => setFeedbackOpen(true)}
         />
       ) : null}
+      {feedbackOpen ? <FeedbackSheet onClose={() => setFeedbackOpen(false)} /> : null}
       {batchFiles ? <PhotoBatch files={batchFiles} onClose={() => { setBatchFiles(null); setPhotoQueue([]); }} onStart={startPhotoBatch} /> : null}
       {queueError ? <aside className="meal-screen photo-batch" role="dialog" aria-modal="true" aria-label="사진 업로드 오류"><div className="meal-page"><section className="meal-card"><h2>다음 사진을 확인해 주세요</h2><p role="alert">{queueError}</p><button className="meal-primary" type="button" onClick={async () => { try { await startQueuedPhoto(photoQueue[0]); } catch { setQueueError('사진을 열지 못했어요. 다른 형식의 사진을 선택해 주세요.'); } }}>다시 시도</button><button className="meal-secondary" type="button" onClick={async () => { const next = photoQueue.slice(1); setPhotoQueue(next); if (next.length) { try { await startQueuedPhoto(next[0]); } catch { setQueueError('다음 사진도 열지 못했어요.'); } } else { setQueueError(''); setDiaryOpen(true); } }}>이 사진 건너뛰기</button><button className="meal-back" type="button" onClick={() => { setPhotoQueue([]); setQueueError(''); setDiaryOpen(true); }}>남은 사진 취소 · 저장한 기록 보기</button></section></div></aside> : null}
     </main>
@@ -2695,7 +2706,7 @@ function useSheetDialog(onClose) {
   return closeButtonRef;
 }
 
-function DiarySheet({ profile, reports, onRefresh, onUpdate, onDelete, onRestore, onClose, onUpload, initialDay, notice = '' }) {
+function DiarySheet({ profile, reports, onRefresh, onUpdate, onDelete, onRestore, onClose, onUpload, onOpenFeedback, initialDay, notice = '' }) {
   const closeButtonRef = useSheetDialog(onClose);
   const [period, setPeriod] = useState('today');
   const [selectedDay, setSelectedDay] = useState(initialDay || dateKey());
@@ -2727,7 +2738,7 @@ function DiarySheet({ profile, reports, onRefresh, onUpdate, onDelete, onRestore
     } finally { setBusy(false); }
   }
   return <aside role="dialog" aria-modal="true" aria-labelledby="diary-title" className="meal-screen meal-diary"><div className="meal-page">
-    <header className="meal-header"><button ref={closeButtonRef} type="button" className="meal-back" onClick={onClose}>← 사진 찍기</button><button type="button" className="meal-back" onClick={onRefresh}>새로고침</button></header>
+    <header className="meal-header"><button ref={closeButtonRef} type="button" className="meal-back" onClick={onClose}>← 사진 찍기</button><button type="button" className="meal-back" onClick={onRefresh}>새로고침</button>{onOpenFeedback ? <button type="button" className="meal-back" onClick={onOpenFeedback}>선생님 피드백</button> : null}</header>
     <div className="meal-page-title"><p>차곡차곡 쌓이는 나의 하루</p><h1 id="diary-title">나의 식사 기록</h1><p>무엇을 먹었는지 함께 살펴봐요.</p></div>
     {notice ? <p className="meal-success" role="status">✓ {notice}</p> : null}
     <div className="meal-period-tabs" role="group" aria-label="일기 메뉴">{[{ key: 'records', label: '달력·일기' }, { key: 'guide', label: '6대 영양소' }, { key: 'updates', label: '최신 자료' }].map((tab) => <button type="button" key={tab.key} aria-pressed={diaryTab === tab.key} onClick={() => setDiaryTab(tab.key)}>{tab.label}</button>)}</div>
@@ -2991,6 +3002,8 @@ function SettingsSheet({ profile, updateProfile, toggleMedical, onClose }) {
 
         <UserGuideAccordion open={guideOpen} onToggle={() => setGuideOpen((current) => !current)} />
 
+        <NutritionLinkSettings />
+
         <SettingBlock title="사용자 모드">
           <div className="grid grid-cols-3 gap-2">
             {modeOptions.map((option) => (
@@ -3207,6 +3220,42 @@ function isAnalysisUnavailable(report) {
 
 function hasTrustedReportItem(item) {
   return Boolean(item && !item.isPendingInfo && !item.missingNutrients?.includes('calories') && Number.isFinite(Number(item.calories)) && Number(item.calories) >= 0);
+}
+
+function NutritionLinkSettings() {
+  const gateEnabled = import.meta.env.VITE_REQUIRE_MEMBER_LINK === 'true';
+  const [connection, setConnection] = useState(() => (gateEnabled ? getConnection() : null));
+  const [busy, setBusy] = useState(false);
+
+  if (!gateEnabled || !connection) return null;
+
+  const handleDisconnect = async () => {
+    if (!window.confirm('센터 연결을 해제할까요? 다시 이용하려면 트레이너에게 새 연결코드를 받아야 해요.')) return;
+    setBusy(true);
+    try {
+      await disconnectFromCms();
+    } finally {
+      // 연결 해제 후에는 AppGate가 처음부터 다시 상태를 판단해야 하므로
+      // 새로고침한다(여러 컴포넌트에 걸친 상태를 수동으로 맞추는 것보다 안전).
+      window.location.reload();
+    }
+  };
+
+  return (
+    <SettingBlock title="센터 연결">
+      <div className="rounded-xl border border-slate-200 bg-white p-4">
+        <p className="text-sm text-slate-600">몸가짐 센터 회원으로 연결되어 있어요.</p>
+        <button
+          type="button"
+          onClick={handleDisconnect}
+          disabled={busy}
+          className="mt-3 h-11 w-full rounded-xl border border-red-300 font-black text-red-700 disabled:opacity-50"
+        >
+          {busy ? '해제 중…' : '센터 연결 해제'}
+        </button>
+      </div>
+    </SettingBlock>
+  );
 }
 
 function SettingBlock({ title, children }) {
