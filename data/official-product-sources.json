@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-07-10",
+  "updatedAt": "2026-10-20",
   "sources": [
     {
       "brand": "59쌀피자",
@@ -9,7 +9,9 @@
       "aliases": [
         "59쌀피자"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "가성비커피",
@@ -18,7 +20,9 @@
       "aliases": [
         "가성비커피"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "감탄떡볶이",
@@ -27,7 +31,9 @@
       "aliases": [
         "감탄떡볶이"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "갓덴스시",
@@ -36,7 +42,9 @@
       "aliases": [
         "갓덴스시"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "경방신약",
@@ -45,7 +53,9 @@
       "aliases": [
         "경방신약"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "계절밥상",
@@ -54,7 +64,9 @@
       "aliases": [
         "계절밥상"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "고래식당",
@@ -63,7 +75,9 @@
       "aliases": [
         "고래식당"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "고려은단",
@@ -72,7 +86,9 @@
       "aliases": [
         "고려은단"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "고봉민김밥인",
@@ -81,7 +97,9 @@
       "aliases": [
         "고봉민김밥인"
       ],
-      "sourceKind": "official_menu_or_nutrition"
+      "sourceKind": "official_menu_or_nutrition",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "공차",
@@ -90,7 +108,9 @@
       "aliases": [
         "공차"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "광동제약",
@@ -99,7 +119,9 @@
       "aliases": [
         "광동제약"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "교동짬뽕",
@@ -108,7 +130,9 @@
       "aliases": [
         "교동짬뽕"
       ],
-      "sourceKind": "official_menu_or_nutrition"
+      "sourceKind": "official_menu_or_nutrition",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "교촌치킨",
@@ -117,7 +141,9 @@
       "aliases": [
         "교촌치킨"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "구이가",
@@ -126,7 +152,9 @@
       "aliases": [
         "구이가"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "국대떡볶이",
@@ -135,7 +163,9 @@
       "aliases": [
         "국대떡볶이"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "국대떡볶이",
@@ -144,7 +174,9 @@
       "aliases": [
         "국대떡볶이"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "국산보충제 가이너마트",
@@ -153,7 +185,9 @@
       "aliases": [
         "국산보충제 가이너마트"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "국수나무",
@@ -162,7 +196,9 @@
       "aliases": [
         "국수나무"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "굽네치킨",
@@ -171,7 +207,9 @@
       "aliases": [
         "굽네치킨"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "금화왕돈까스",
@@ -180,7 +218,9 @@
       "aliases": [
         "금화왕돈까스"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "김가네",
@@ -189,7 +229,9 @@
       "aliases": [
         "김가네"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "나뚜루",
@@ -198,7 +240,9 @@
       "aliases": [
         "나뚜루"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "네네치킨",
@@ -207,7 +251,9 @@
       "aliases": [
         "네네치킨"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "노브랜드 버거",
@@ -216,7 +262,9 @@
       "aliases": [
         "노브랜드 버거"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "놀부부대찌개",
@@ -225,7 +273,9 @@
       "aliases": [
         "놀부부대찌개"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "놀부부대찌개",
@@ -234,7 +284,9 @@
       "aliases": [
         "놀부부대찌개"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "뉴욕버거",
@@ -243,7 +295,9 @@
       "aliases": [
         "뉴욕버거"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "뉴트리디데이",
@@ -252,7 +306,9 @@
       "aliases": [
         "뉴트리디데이"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "뉴트리원",
@@ -261,7 +317,9 @@
       "aliases": [
         "뉴트리원"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "다이닝원",
@@ -270,7 +328,9 @@
       "aliases": [
         "다이닝원"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "달콤커피",
@@ -279,7 +339,9 @@
       "aliases": [
         "달콤커피"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "담소소사골순대육개장",
@@ -288,7 +350,9 @@
       "aliases": [
         "담소소사골순대육개장"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "대상웰라이프",
@@ -297,7 +361,9 @@
       "aliases": [
         "대상웰라이프"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "대웅제약",
@@ -306,7 +372,9 @@
       "aliases": [
         "대웅제약"
       ],
-      "sourceKind": "official_menu_or_nutrition"
+      "sourceKind": "official_menu_or_nutrition",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "댄싱컵",
@@ -315,7 +383,9 @@
       "aliases": [
         "댄싱컵"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "더벤티",
@@ -324,7 +394,9 @@
       "aliases": [
         "더벤티"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "더플레이스",
@@ -333,7 +405,9 @@
       "aliases": [
         "더플레이스"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "던킨",
@@ -342,7 +416,9 @@
       "aliases": [
         "던킨"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "도미노피자",
@@ -351,7 +427,9 @@
       "aliases": [
         "도미노피자"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "돈까스클럽",
@@ -360,7 +438,9 @@
       "aliases": [
         "돈까스클럽"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "동국제약",
@@ -369,7 +449,9 @@
       "aliases": [
         "동국제약"
       ],
-      "sourceKind": "official_menu_or_nutrition"
+      "sourceKind": "official_menu_or_nutrition",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "동대문엽기떡볶이",
@@ -378,7 +460,9 @@
       "aliases": [
         "동대문엽기떡볶이"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "동대문엽기떡볶이",
@@ -387,7 +471,9 @@
       "aliases": [
         "동대문엽기떡볶이"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "동아제약",
@@ -396,7 +482,9 @@
       "aliases": [
         "동아제약"
       ],
-      "sourceKind": "official_menu_or_nutrition"
+      "sourceKind": "official_menu_or_nutrition",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "동화약품",
@@ -405,7 +493,9 @@
       "aliases": [
         "동화약품"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "두끼",
@@ -414,7 +504,9 @@
       "aliases": [
         "두끼"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "드롭탑",
@@ -423,7 +515,9 @@
       "aliases": [
         "드롭탑"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "뚜레쥬르",
@@ -432,7 +526,9 @@
       "aliases": [
         "뚜레쥬르"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "라그릴리아",
@@ -441,7 +537,9 @@
       "aliases": [
         "라그릴리아"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "라라코스트",
@@ -450,7 +548,9 @@
       "aliases": [
         "라라코스트"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "라화쿵부",
@@ -459,7 +559,9 @@
       "aliases": [
         "라화쿵부"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "락토핏 / 종근당건강",
@@ -470,7 +572,9 @@
         "종근당건강",
         "락토핏 / 종근당건강"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "로니로티",
@@ -479,7 +583,9 @@
       "aliases": [
         "로니로티"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "로티보이",
@@ -488,7 +594,9 @@
       "aliases": [
         "로티보이"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "롤링파스타",
@@ -497,7 +605,9 @@
       "aliases": [
         "롤링파스타"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "롯데리아",
@@ -506,7 +616,9 @@
       "aliases": [
         "롯데리아"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "리치몬드 레스토랑",
@@ -515,7 +627,9 @@
       "aliases": [
         "리치몬드 레스토랑"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "마녀김밥",
@@ -524,7 +638,9 @@
       "aliases": [
         "마녀김밥"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "마라탕전문 피치",
@@ -533,7 +649,9 @@
       "aliases": [
         "마라탕전문 피치"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "마이프로틴",
@@ -542,7 +660,9 @@
       "aliases": [
         "마이프로틴"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "마포갈매기",
@@ -551,7 +671,9 @@
       "aliases": [
         "마포갈매기"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "맘스터치",
@@ -560,7 +682,9 @@
       "aliases": [
         "맘스터치"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "매드포갈릭",
@@ -569,7 +693,9 @@
       "aliases": [
         "매드포갈릭"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "매머드커피",
@@ -578,7 +704,9 @@
       "aliases": [
         "매머드커피"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "맥도날드",
@@ -590,7 +718,9 @@
         "bigmac",
         "빅맥"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "메가MGC커피",
@@ -599,7 +729,9 @@
       "aliases": [
         "메가MGC커피"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "멘무샤",
@@ -608,7 +740,9 @@
       "aliases": [
         "멘무샤"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "명인만두",
@@ -617,7 +751,9 @@
       "aliases": [
         "명인만두"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "모스버거",
@@ -626,7 +762,9 @@
       "aliases": [
         "모스버거"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "못난이꽈배기",
@@ -635,7 +773,9 @@
       "aliases": [
         "못난이꽈배기"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "무공돈까스",
@@ -644,7 +784,9 @@
       "aliases": [
         "무공돈까스"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "미소야",
@@ -653,7 +795,9 @@
       "aliases": [
         "미소야"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "미소야",
@@ -662,7 +806,9 @@
       "aliases": [
         "미소야"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "미스터피자",
@@ -671,7 +817,9 @@
       "aliases": [
         "미스터피자"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "미즈컨테이너",
@@ -680,7 +828,9 @@
       "aliases": [
         "미즈컨테이너"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "바나프레소",
@@ -689,7 +839,9 @@
       "aliases": [
         "바나프레소"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "바르다김선생",
@@ -698,7 +850,9 @@
       "aliases": [
         "바르다김선생"
       ],
-      "sourceKind": "official_menu_or_nutrition"
+      "sourceKind": "official_menu_or_nutrition",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "바른치킨버거",
@@ -707,7 +861,9 @@
       "aliases": [
         "바른치킨버거"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "박가부대",
@@ -716,7 +872,9 @@
       "aliases": [
         "박가부대"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "반올림피자",
@@ -725,7 +883,9 @@
       "aliases": [
         "반올림피자"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "배스킨라빈스",
@@ -734,7 +894,9 @@
       "aliases": [
         "배스킨라빈스"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "백미당",
@@ -743,7 +905,9 @@
       "aliases": [
         "백미당"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "백암순대",
@@ -752,7 +916,9 @@
       "aliases": [
         "백암순대"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "버거킹",
@@ -764,7 +930,9 @@
         "whopper",
         "와퍼"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "보노보노",
@@ -773,7 +941,9 @@
       "aliases": [
         "보노보노"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "보령",
@@ -782,7 +952,9 @@
       "aliases": [
         "보령"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "보배반점",
@@ -791,7 +963,9 @@
       "aliases": [
         "보배반점"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "보용만두",
@@ -800,7 +974,9 @@
       "aliases": [
         "보용만두"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "본죽 / 본죽&비빔밥",
@@ -813,7 +989,9 @@
         "본죽&비빔밥",
         "본죽 / 본죽&비빔밥"
       ],
-      "sourceKind": "official_menu_or_nutrition"
+      "sourceKind": "official_menu_or_nutrition",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "북창동순두부",
@@ -822,7 +1000,9 @@
       "aliases": [
         "북창동순두부"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "북촌손만두",
@@ -831,7 +1011,9 @@
       "aliases": [
         "북촌손만두"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "브레댄코",
@@ -840,7 +1022,9 @@
       "aliases": [
         "브레댄코"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "블루샥",
@@ -849,7 +1033,9 @@
       "aliases": [
         "블루샥"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "비타민마을",
@@ -858,7 +1044,9 @@
       "aliases": [
         "비타민마을"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "빕스",
@@ -867,7 +1055,9 @@
       "aliases": [
         "빕스"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "빕스",
@@ -876,7 +1066,9 @@
       "aliases": [
         "빕스"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "빽다방",
@@ -885,7 +1077,9 @@
       "aliases": [
         "빽다방"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "삼진제약",
@@ -894,7 +1088,9 @@
       "aliases": [
         "삼진제약"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "삼첩분식",
@@ -903,7 +1099,9 @@
       "aliases": [
         "삼첩분식"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "새마을식당",
@@ -912,7 +1110,9 @@
       "aliases": [
         "새마을식당"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "새마을식당",
@@ -921,7 +1121,9 @@
       "aliases": [
         "새마을식당"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "서가앤쿡",
@@ -930,7 +1132,9 @@
       "aliases": [
         "서가앤쿡"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "서가앤쿡",
@@ -939,7 +1143,9 @@
       "aliases": [
         "서가앤쿡"
       ],
-      "sourceKind": "official_menu_or_nutrition"
+      "sourceKind": "official_menu_or_nutrition",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "서가원김밥",
@@ -948,7 +1154,9 @@
       "aliases": [
         "서가원김밥"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "설빙",
@@ -957,7 +1165,9 @@
       "aliases": [
         "설빙"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "셀렉스",
@@ -966,7 +1176,9 @@
       "aliases": [
         "셀렉스"
       ],
-      "sourceKind": "official_shop_or_smartstore"
+      "sourceKind": "official_shop_or_smartstore",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "소림마라",
@@ -975,7 +1187,9 @@
       "aliases": [
         "소림마라"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "수가성순두부",
@@ -984,7 +1198,9 @@
       "aliases": [
         "수가성순두부"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "순남시래기",
@@ -993,7 +1209,9 @@
       "aliases": [
         "순남시래기"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "쉐이크쉑",
@@ -1002,7 +1220,9 @@
       "aliases": [
         "쉐이크쉑"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "스무디킹",
@@ -1011,7 +1231,9 @@
       "aliases": [
         "스무디킹"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "스시로",
@@ -1020,7 +1242,9 @@
       "aliases": [
         "스시로"
       ],
-      "sourceKind": "official_menu_or_nutrition"
+      "sourceKind": "official_menu_or_nutrition",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "스타벅스",
@@ -1030,7 +1254,9 @@
         "스타벅스",
         "starbucks"
       ],
-      "sourceKind": "official_menu_or_nutrition"
+      "sourceKind": "official_menu_or_nutrition",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "스타벅스",
@@ -1039,7 +1265,9 @@
       "aliases": [
         "스타벅스"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "스파게티스토리",
@@ -1048,7 +1276,9 @@
       "aliases": [
         "스파게티스토리"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "스포맥스",
@@ -1057,7 +1287,9 @@
       "aliases": [
         "스포맥스"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "신선설농탕",
@@ -1066,7 +1298,9 @@
       "aliases": [
         "신선설농탕"
       ],
-      "sourceKind": "official_menu_or_nutrition"
+      "sourceKind": "official_menu_or_nutrition",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "신전떡볶이",
@@ -1075,7 +1309,9 @@
       "aliases": [
         "신전떡볶이"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "신전떡볶이",
@@ -1084,7 +1320,9 @@
       "aliases": [
         "신전떡볶이"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "신참떡볶이",
@@ -1093,7 +1331,9 @@
       "aliases": [
         "신참떡볶이"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "신풍제약",
@@ -1102,7 +1342,9 @@
       "aliases": [
         "신풍제약"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "써브웨이",
@@ -1114,7 +1356,9 @@
         "subway",
         "bmt"
       ],
-      "sourceKind": "official_menu_or_nutrition"
+      "sourceKind": "official_menu_or_nutrition",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "써브웨이",
@@ -1123,7 +1367,9 @@
       "aliases": [
         "써브웨이"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "쑝쑝돈까스",
@@ -1132,7 +1378,9 @@
       "aliases": [
         "쑝쑝돈까스"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "아마스빈",
@@ -1141,7 +1389,9 @@
       "aliases": [
         "아마스빈"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "아비꼬",
@@ -1150,7 +1400,9 @@
       "aliases": [
         "아비꼬"
       ],
-      "sourceKind": "official_menu_or_nutrition"
+      "sourceKind": "official_menu_or_nutrition",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "아웃백 스테이크하우스",
@@ -1159,7 +1411,9 @@
       "aliases": [
         "아웃백 스테이크하우스"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "아웃백 스테이크하우스",
@@ -1168,7 +1422,9 @@
       "aliases": [
         "아웃백 스테이크하우스"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "아티제",
@@ -1177,7 +1433,9 @@
       "aliases": [
         "아티제"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "안국건강",
@@ -1186,7 +1444,9 @@
       "aliases": [
         "안국건강"
       ],
-      "sourceKind": "official_shop_or_smartstore"
+      "sourceKind": "official_shop_or_smartstore",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "애슐리퀸즈",
@@ -1195,7 +1455,9 @@
       "aliases": [
         "애슐리퀸즈"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "애슐리퀸즈",
@@ -1204,7 +1466,9 @@
       "aliases": [
         "애슐리퀸즈"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "얌샘김밥",
@@ -1213,7 +1477,9 @@
       "aliases": [
         "얌샘김밥"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "에이치키친",
@@ -1222,7 +1488,9 @@
       "aliases": [
         "에이치키친"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "엔제리너스",
@@ -1231,7 +1499,9 @@
       "aliases": [
         "엔제리너스"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "역전우동0410",
@@ -1240,7 +1510,9 @@
       "aliases": [
         "역전우동0410"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "역전우동0410",
@@ -1249,7 +1521,9 @@
       "aliases": [
         "역전우동0410"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "연안식당",
@@ -1258,7 +1532,9 @@
       "aliases": [
         "연안식당"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "오리온",
@@ -1272,7 +1548,9 @@
         "나초",
         "nacho"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "오봉도시락",
@@ -1281,7 +1559,9 @@
       "aliases": [
         "오봉도시락"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "오봉도시락",
@@ -1290,7 +1570,9 @@
       "aliases": [
         "오봉도시락"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "올반",
@@ -1299,7 +1581,9 @@
       "aliases": [
         "올반"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "옴니허브",
@@ -1308,7 +1592,9 @@
       "aliases": [
         "옴니허브"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "와플대학",
@@ -1317,7 +1603,9 @@
       "aliases": [
         "와플대학"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "와플몽",
@@ -1326,7 +1614,9 @@
       "aliases": [
         "와플몽"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "용우동",
@@ -1335,7 +1625,9 @@
       "aliases": [
         "용우동"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "우리할매떡볶이",
@@ -1344,7 +1636,9 @@
       "aliases": [
         "우리할매떡볶이"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "원할머니보쌈·족발",
@@ -1355,7 +1649,9 @@
         "족발",
         "원할머니보쌈·족발"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "원할머니보쌈·족발",
@@ -1366,7 +1662,9 @@
         "족발",
         "원할머니보쌈·족발"
       ],
-      "sourceKind": "official_menu_or_nutrition"
+      "sourceKind": "official_menu_or_nutrition",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "유한양행",
@@ -1375,7 +1673,9 @@
       "aliases": [
         "유한양행"
       ],
-      "sourceKind": "official_menu_or_nutrition"
+      "sourceKind": "official_menu_or_nutrition",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "육대장",
@@ -1384,7 +1684,9 @@
       "aliases": [
         "육대장"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "응급실국물떡볶이",
@@ -1393,7 +1695,9 @@
       "aliases": [
         "응급실국물떡볶이"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "이디야커피",
@@ -1402,7 +1706,9 @@
       "aliases": [
         "이디야커피"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "이바돔감자탕",
@@ -1411,7 +1717,9 @@
       "aliases": [
         "이바돔감자탕"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "이바돔감자탕",
@@ -1420,7 +1728,9 @@
       "aliases": [
         "이바돔감자탕"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "이오카츠",
@@ -1429,7 +1739,9 @@
       "aliases": [
         "이오카츠"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "이차돌",
@@ -1438,7 +1750,9 @@
       "aliases": [
         "이차돌"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "이화수전통육개장",
@@ -1447,7 +1761,9 @@
       "aliases": [
         "이화수전통육개장"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "익수제약",
@@ -1456,7 +1772,9 @@
       "aliases": [
         "익수제약"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "일동제약",
@@ -1465,7 +1783,9 @@
       "aliases": [
         "일동제약"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "자담치킨",
@@ -1474,7 +1794,9 @@
       "aliases": [
         "자담치킨"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "정성한줄",
@@ -1483,7 +1805,9 @@
       "aliases": [
         "정성한줄"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "제일약품",
@@ -1492,7 +1816,9 @@
       "aliases": [
         "제일약품"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "조선갈비탕",
@@ -1501,7 +1827,9 @@
       "aliases": [
         "조선갈비탕"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "종근당",
@@ -1510,7 +1838,9 @@
       "aliases": [
         "종근당"
       ],
-      "sourceKind": "official_menu_or_nutrition"
+      "sourceKind": "official_menu_or_nutrition",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "죠스떡볶이",
@@ -1519,7 +1849,9 @@
       "aliases": [
         "죠스떡볶이"
       ],
-      "sourceKind": "official_menu_or_nutrition"
+      "sourceKind": "official_menu_or_nutrition",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "쥬씨",
@@ -1528,7 +1860,9 @@
       "aliases": [
         "쥬씨"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "짚신매운갈비찜",
@@ -1537,7 +1871,9 @@
       "aliases": [
         "짚신매운갈비찜"
       ],
-      "sourceKind": "official_menu_or_nutrition"
+      "sourceKind": "official_menu_or_nutrition",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "차오름",
@@ -1546,7 +1882,9 @@
       "aliases": [
         "차오름"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "창화당",
@@ -1555,7 +1893,9 @@
       "aliases": [
         "창화당"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "채선당",
@@ -1564,7 +1904,9 @@
       "aliases": [
         "채선당"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "채선당",
@@ -1573,7 +1915,9 @@
       "aliases": [
         "채선당"
       ],
-      "sourceKind": "official_menu_or_nutrition"
+      "sourceKind": "official_menu_or_nutrition",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "처갓집양념치킨",
@@ -1582,7 +1926,9 @@
       "aliases": [
         "처갓집양념치킨"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "천호엔케어",
@@ -1591,7 +1937,9 @@
       "aliases": [
         "천호엔케어"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "청년다방",
@@ -1600,7 +1948,9 @@
       "aliases": [
         "청년다방"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "청년다방",
@@ -1609,7 +1959,9 @@
       "aliases": [
         "청년다방"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "청년피자",
@@ -1618,7 +1970,9 @@
       "aliases": [
         "청년피자"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "청담동마녀김밥",
@@ -1627,7 +1981,9 @@
       "aliases": [
         "청담동마녀김밥"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "카페051",
@@ -1636,7 +1992,9 @@
       "aliases": [
         "카페051"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "칸지우동",
@@ -1645,7 +2003,9 @@
       "aliases": [
         "칸지우동"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "칼로바이",
@@ -1654,7 +2014,9 @@
       "aliases": [
         "칼로바이"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "커피빈",
@@ -1663,7 +2025,9 @@
       "aliases": [
         "커피빈"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "컴포즈커피",
@@ -1672,7 +2036,9 @@
       "aliases": [
         "컴포즈커피"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "코코이찌방야",
@@ -1681,7 +2047,9 @@
       "aliases": [
         "코코이찌방야"
       ],
-      "sourceKind": "official_menu_or_nutrition"
+      "sourceKind": "official_menu_or_nutrition",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "쿠우쿠우",
@@ -1690,7 +2058,9 @@
       "aliases": [
         "쿠우쿠우"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "퀴즈노스",
@@ -1699,7 +2069,9 @@
       "aliases": [
         "퀴즈노스"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "크리스피 크림 도넛",
@@ -1708,7 +2080,9 @@
       "aliases": [
         "크리스피 크림 도넛"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "큰맘할매순대국",
@@ -1717,7 +2091,9 @@
       "aliases": [
         "큰맘할매순대국"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "탐앤탐스",
@@ -1726,7 +2102,9 @@
       "aliases": [
         "탐앤탐스"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "탕화쿵푸마라탕",
@@ -1735,7 +2113,9 @@
       "aliases": [
         "탕화쿵푸마라탕"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "태로떡볶이",
@@ -1744,7 +2124,9 @@
       "aliases": [
         "태로떡볶이"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "텐퍼센트커피",
@@ -1753,7 +2135,9 @@
       "aliases": [
         "텐퍼센트커피"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "토마토도시락",
@@ -1762,7 +2146,9 @@
       "aliases": [
         "토마토도시락"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "토마토도시락",
@@ -1771,7 +2157,9 @@
       "aliases": [
         "토마토도시락"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "토프레소",
@@ -1780,7 +2168,9 @@
       "aliases": [
         "토프레소"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "투썸플레이스",
@@ -1789,7 +2179,9 @@
       "aliases": [
         "투썸플레이스"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "파리바게뜨",
@@ -1798,7 +2190,9 @@
       "aliases": [
         "파리바게뜨"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "파스쿠찌",
@@ -1807,7 +2201,9 @@
       "aliases": [
         "파스쿠찌"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "파파이스",
@@ -1816,7 +2212,9 @@
       "aliases": [
         "파파이스"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "파파존스",
@@ -1825,7 +2223,9 @@
       "aliases": [
         "파파존스"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "팔공티",
@@ -1834,7 +2234,9 @@
       "aliases": [
         "팔공티"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "페리카나",
@@ -1843,7 +2245,9 @@
       "aliases": [
         "페리카나"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "폴 바셋",
@@ -1852,7 +2256,9 @@
       "aliases": [
         "폴 바셋"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "푸라닭",
@@ -1861,7 +2267,9 @@
       "aliases": [
         "푸라닭"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "프랭크버거",
@@ -1870,7 +2278,9 @@
       "aliases": [
         "프랭크버거"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "프로틴업",
@@ -1879,7 +2289,9 @@
       "aliases": [
         "프로틴업"
       ],
-      "sourceKind": "official_shop_or_smartstore"
+      "sourceKind": "official_shop_or_smartstore",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "피자나라치킨공주",
@@ -1888,7 +2300,9 @@
       "aliases": [
         "피자나라치킨공주"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "피자마루",
@@ -1897,7 +2311,9 @@
       "aliases": [
         "피자마루"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "피자몰",
@@ -1906,7 +2322,9 @@
       "aliases": [
         "피자몰"
       ],
-      "sourceKind": "official_shop_or_smartstore"
+      "sourceKind": "official_shop_or_smartstore",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "피자스쿨",
@@ -1915,7 +2333,9 @@
       "aliases": [
         "피자스쿨"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "피자헛",
@@ -1924,7 +2344,9 @@
       "aliases": [
         "피자헛"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "하남돼지집",
@@ -1933,7 +2355,9 @@
       "aliases": [
         "하남돼지집"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "하루엔소쿠",
@@ -1942,7 +2366,9 @@
       "aliases": [
         "하루엔소쿠"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "하삼동커피",
@@ -1951,7 +2377,9 @@
       "aliases": [
         "하삼동커피"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "하코야",
@@ -1960,7 +2388,9 @@
       "aliases": [
         "하코야"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "한국신약",
@@ -1969,7 +2399,9 @@
       "aliases": [
         "한국신약"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "한미약품",
@@ -1978,7 +2410,9 @@
       "aliases": [
         "한미약품"
       ],
-      "sourceKind": "official_menu_or_nutrition"
+      "sourceKind": "official_menu_or_nutrition",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "한솥도시락",
@@ -1987,7 +2421,9 @@
       "aliases": [
         "한솥도시락"
       ],
-      "sourceKind": "official_menu_or_nutrition"
+      "sourceKind": "official_menu_or_nutrition",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "한솥도시락",
@@ -1996,7 +2432,9 @@
       "aliases": [
         "한솥도시락"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "한촌설렁탕",
@@ -2005,7 +2443,9 @@
       "aliases": [
         "한촌설렁탕"
       ],
-      "sourceKind": "official_menu_or_nutrition"
+      "sourceKind": "official_menu_or_nutrition",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "한풍제약",
@@ -2014,7 +2454,9 @@
       "aliases": [
         "한풍제약"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "할리스",
@@ -2023,7 +2465,9 @@
       "aliases": [
         "할리스"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "할머니가래떡볶이",
@@ -2032,7 +2476,9 @@
       "aliases": [
         "할머니가래떡볶이"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "함소아제약",
@@ -2041,7 +2487,9 @@
       "aliases": [
         "함소아제약"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "핵밥",
@@ -2050,7 +2498,9 @@
       "aliases": [
         "핵밥"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "호치킨",
@@ -2059,7 +2509,9 @@
       "aliases": [
         "호치킨"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "홍대개미",
@@ -2068,7 +2520,9 @@
       "aliases": [
         "홍대개미"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "홍루이젠",
@@ -2077,7 +2531,9 @@
       "aliases": [
         "홍루이젠"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "홍콩반점0410",
@@ -2086,7 +2542,9 @@
       "aliases": [
         "홍콩반점0410"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "홍콩반점0410",
@@ -2095,7 +2553,9 @@
       "aliases": [
         "홍콩반점0410"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "휴럼",
@@ -2104,7 +2564,9 @@
       "aliases": [
         "휴럼"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "힘난다버거",
@@ -2113,7 +2575,9 @@
       "aliases": [
         "힘난다버거"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "BBQ 치킨",
@@ -2122,7 +2586,9 @@
       "aliases": [
         "BBQ 치킨"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "bhc 치킨",
@@ -2131,7 +2597,9 @@
       "aliases": [
         "bhc 치킨"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "GC녹십자",
@@ -2140,7 +2608,9 @@
       "aliases": [
         "GC녹십자"
       ],
-      "sourceKind": "official_menu_or_nutrition"
+      "sourceKind": "official_menu_or_nutrition",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "GNM자연의품격",
@@ -2149,7 +2619,9 @@
       "aliases": [
         "GNM자연의품격"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "GRN+",
@@ -2158,7 +2630,9 @@
       "aliases": [
         "GRN+"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "JW중외제약",
@@ -2167,7 +2641,9 @@
       "aliases": [
         "JW중외제약"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "KFC",
@@ -2176,7 +2652,9 @@
       "aliases": [
         "KFC"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "KGC인삼공사",
@@ -2185,7 +2663,9 @@
       "aliases": [
         "KGC인삼공사"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     },
     {
       "brand": "TGI 프라이데이스",
@@ -2194,7 +2674,9 @@
       "aliases": [
         "TGI 프라이데이스"
       ],
-      "sourceKind": "official_homepage"
+      "sourceKind": "official_homepage",
+      "lastScheduledReviewAt": "2026-10-20",
+      "reviewNote": "Quarterly source review scheduled. Product-level nutrition values must be verified before use."
     }
   ]
 }
