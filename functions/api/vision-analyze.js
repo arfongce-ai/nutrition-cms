@@ -29,6 +29,7 @@ export async function onRequestPost({ request, env }) {
   let outputText = '';
   let provider = '';
   let quotaExceeded = false;
+  let aiError = null;
 
   if (env.AI) {
     try {
@@ -53,6 +54,7 @@ export async function onRequestPost({ request, env }) {
       provider = 'cloudflare-gemma-fast';
     } catch (error) {
       quotaExceeded = quotaExceeded || isAiQuotaError(error);
+      aiError = error;
       console.error('Cloudflare Gemma vision failed', error);
     }
   }
@@ -65,6 +67,18 @@ export async function onRequestPost({ request, env }) {
       code: 'ai_free_quota_exceeded',
       message: '무료 AI 한도를 초과했습니다. AI 인식이 일시 제한될 수 있으며, DB 직접 검색과 수동 선택은 계속 사용할 수 있습니다.',
     }, 429);
+  }
+
+  // Cloudflare AI 호출이 예외로 실패했고(quota 문제가 아니라 네트워크/모델 오류 등) OpenAI
+  // 폴백 키도 없으면, 예전에는 여기서 그대로 ok:true + foods:[] 로 응답해서 "사진에 음식이
+  // 없음"과 "AI 호출 자체가 실패함"을 클라이언트가 구분할 수 없었다. 이제는 명확한 실패
+  // 응답을 돌려준다 — 화면에서 "다시 시도" 안내를 보여줄 수 있게.
+  if (!outputText && aiError && !env.OPENAI_API_KEY) {
+    return json({
+      ok: false,
+      code: 'vision_provider_error',
+      message: '비전 분석 요청에 실패했습니다. 잠시 후 다시 시도해주세요.',
+    }, 502);
   }
 
   if ((!Array.isArray(parsed?.foods) || !parsed.foods.length) && env.OPENAI_API_KEY) {

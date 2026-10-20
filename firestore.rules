@@ -1,75 +1,138 @@
 rules_version = '2';
 
+// 몸가짐 CMS — Firestore 보안 규칙 (nutrition-cms 쪽 사본)
+// 이 저장소와 momgagym-cms2가 같은 Firebase 프로젝트(momgagym-cms)를 쓰기 때문에,
+// 두 저장소의 firestore.rules는 항상 "완전히 같은 내용 + 자기 앱이 쓰는 컬렉션"이어야
+// 한다. 여기서 빠뜨리면 실수로 이 폴더에서 `firebase deploy --only firestore:rules`를
+// 돌렸을 때 momgagym-cms2가 지켜온 권한 규칙이 열린 규칙으로 덮어써진다.
+// 적용: Firebase 콘솔 → Firestore Database → 규칙(Rules) 탭에 붙여넣고 "게시".
+// 또는 CLI:  firebase deploy --only firestore:rules --project momgagym-cms
+//
+// 핵심 원칙
+//  1) roles 컬렉션은 관리자만 trainer 역할을 생성·회수할 수 있다(admin/staff 승격 차단).
+//  2) CMS 운영 데이터는 로그인 + roles 문서(admin/staff/trainer)가 있는 사용자만 접근.
+//  3) 관리자 전용 데이터(매출/지출/정산/설정)는 roles 문서가 admin인 사용자만.
+//  4) 뉴트리션 앱(momgagym-nutrition)의 식사 기록은 익명 Auth 본인 것만 접근 —
+//     CMS 운영 데이터(회원/결제/트레이너 등)와는 완전히 분리된 별도 컬렉션이며,
+//     isAuthorized()/isAdmin()과 무관하게 본인 uid 여부만 본다.
+//  5) CMS 서버 함수(functions/api/nutrition-*.js 등)는 서비스 계정 access token
+//     (REST)으로 직접 읽고 쓰므로 이 규칙을 그대로 우회한다 — linkCodes,
+//     nutritionConnections, nutritionSummaries, nutritionFeedback은 클라이언트
+//     SDK로 아무도 건드리지 않으므로 맨 아래 기본 차단 규칙으로 막히는 것이 맞다.
+
 service cloud.firestore {
   match /databases/{database}/documents {
-    function isSignedIn() {
-      return request.auth != null;
-    }
 
-    function isAdmin() {
-      return isSignedIn()
+    // Firebase Auth 계정이며 roles/{uid}에 CMS 역할이 등록된 사용자만 허용.
+    // 익명 인증(뉴트리션 앱)은 운영 데이터(회원/결제/트레이너)에 접근할 수 없다.
+    function hasRole(role) {
+      return request.auth != null
         && exists(/databases/$(database)/documents/roles/$(request.auth.uid))
-        && get(/databases/$(database)/documents/roles/$(request.auth.uid)).data.role == 'admin';
+        && get(/databases/$(database)/documents/roles/$(request.auth.uid)).data.role == role;
     }
 
+    function hasAdminClaim() {
+      return request.auth != null
+        && request.auth.token.admin == true;
+    }
+
+    // 역할 문서가 실수로 지워져도 센터 대표 계정이 복구 작업을 할 수 있는 비상 열쇠.
+    function hasOwnerEmail() {
+      return request.auth != null
+        && request.auth.token.email == 'momgagym@naver.com';
+    }
+
+    function isAuthorized() {
+      return isAdmin() || hasRole('staff') || hasRole('trainer');
+    }
+
+    // roles/{uid} 문서로 관리자 판별 (Custom Claims 미사용 시)
+    function isAdmin() {
+      return hasAdminClaim() || hasOwnerEmail() || hasRole('admin');
+    }
+
+    // ── roles : 권한의 원천 ──────────────────────────────
     match /roles/{uid} {
-      allow read: if isSignedIn();
-      allow write: if false;
+      allow get: if request.auth != null && (request.auth.uid == uid || isAdmin());
+      allow list: if false;
+      allow create, update: if isAdmin()
+        && request.resource.data.keys().hasOnly(['role', 'email'])
+        && request.resource.data.role == 'trainer';
+      allow delete: if isAdmin() && resource.data.role == 'trainer';
     }
 
-    match /members/{id} { allow read, write: if isSignedIn(); }
-    match /trainers/{id} { allow read, write: if isSignedIn(); }
-    match /schedules/{id} { allow read, write: if isSignedIn(); }
-    match /notices/{id} { allow read, write: if isSignedIn(); }
-    match /payments/{id} { allow read, write: if isSignedIn(); }
-    match /body/{id} { allow read, write: if isSignedIn(); }
-    match /ai/{id} { allow read, write: if isSignedIn(); }
-    match /gait_reports/{id} { allow read, write: if isSignedIn(); }
-    match /posture_reports/{id} { allow read, write: if isSignedIn(); }
-    match /rom_reports/{id} { allow read, write: if isSignedIn(); }
-    match /users/{userId}/reports/{reportId} { allow read, write: if isSignedIn(); }
-
-    match /expenses/{id} { allow read, write: if isAdmin(); }
-    match /promos/{id} {
-      allow read: if isSignedIn();
-      allow write: if isAdmin();
-    }
-    match /settleOverrides/{id} {
-      allow read: if isSignedIn();
-      allow write: if isAdmin();
-    }
-    match /settings/{id} {
-      allow read: if isSignedIn();
-      allow write: if isAdmin();
+    // 권한이 아직 없는 기존 트레이너가 로그인에 성공한 뒤 남기는 연결 요청.
+    match /loginRequests/{uid} {
+      allow create, update: if request.auth != null
+        && request.auth.uid == uid
+        && request.resource.data.keys().hasOnly(['email', 'requestedAt'])
+        && request.resource.data.email == request.auth.token.email;
+      allow get: if request.auth != null && (request.auth.uid == uid || isAdmin());
+      allow list: if isAdmin();
+      allow delete: if request.auth != null && (request.auth.uid == uid || isAdmin());
     }
 
+    // ── 일반 운영 데이터 : CMS 역할(admin/staff/trainer)이 있는 사용자만 ──────
+    match /members/{id}    { allow read, write: if isAuthorized(); }
+    match /trainers/{id} {
+      allow read: if isAuthorized();
+      allow create, delete: if isAdmin();
+      allow update: if isAdmin() || (
+        hasRole('trainer')
+        && resource.data.loginEmail == request.auth.token.email
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['authUid', 'updatedAt'])
+        && request.resource.data.authUid == request.auth.uid
+      );
+    }
+    match /schedules/{id}  { allow read, write: if isAuthorized(); }
+    match /notices/{id}    { allow read, write: if isAuthorized(); }
+    match /payments/{id}   { allow read, write: if isAuthorized(); }
+    match /body/{id}       { allow read, write: if isAuthorized(); }
+    match /ai/{id}         { allow read, write: if isAuthorized(); }
+    match /gait_reports/{id} { allow read, write: if isAuthorized(); }
+    match /posture_reports/{id} { allow read, write: if isAuthorized(); }
+    match /rom_reports/{id} { allow read, write: if isAuthorized(); }
+    match /users/{userId}/reports/{reportId} { allow read, write: if isAuthorized(); }
+
+    // ── 관리자 전용 데이터 ──────────────────────────────
+    match /expenses/{id}        { allow read, write: if isAdmin(); }
+    match /integrityDismissals/{id} { allow read, write: if isAdmin(); }
+    match /promos/{id}          { allow read: if isAuthorized(); allow write: if isAdmin(); }
+    match /settleOverrides/{id} { allow read: if isAuthorized(); allow write: if isAdmin(); }
+    match /settings/{id}        { allow read: if isAuthorized(); allow write: if isAdmin(); }
+
+    // ── 델타 동기화 인프라 ──────────────────────────────
     match /meta/{id} {
-      allow read, write: if isSignedIn();
+      allow read, write: if isAuthorized();
     }
-
     match /deletions/{id} {
-      allow read, create: if isSignedIn();
+      allow read, create: if isAuthorized();
       allow update, delete: if false;
     }
 
-    match /nutritionReports/{reportId} {
-      allow create: if isSignedIn()
-        && request.resource.data.uid == request.auth.uid;
-      allow read, update, delete: if false;
+    // ── 9장 준실시간 대시보드 ──────────────────────────────
+    match /dashboardSnapshots/{id} {
+      allow read: if isAdmin();
+      allow write: if false;
     }
 
+    // ── 뉴트리션 앱(momgagym-nutrition) : 회원 식사 기록 ──────────────────
+    // 익명 Auth를 쓰고, CMS 운영 데이터와는 무관한 독립 컬렉션이다. 위
+    // isAuthorized()/isAdmin()과 얽히지 않고, 본인이 쓴 uid와 일치하는
+    // 기록만 본인이 읽고/쓰고/지울 수 있다.
     match /meals_history/{mealId} {
-      allow create: if isSignedIn()
+      allow create: if request.auth != null
         && request.resource.data.uid == request.auth.uid;
-      allow update: if isSignedIn()
+      allow update: if request.auth != null
         && resource.data.uid == request.auth.uid
         && request.resource.data.uid == request.auth.uid;
-      allow read: if isSignedIn()
+      allow read: if request.auth != null
         && resource.data.uid == request.auth.uid;
-      allow delete: if isSignedIn()
+      allow delete: if request.auth != null
         && resource.data.uid == request.auth.uid;
     }
 
+    // 그 외 모든 경로 기본 차단
     match /{document=**} {
       allow read, write: if false;
     }

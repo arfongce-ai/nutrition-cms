@@ -5,11 +5,15 @@ const jsonHeaders = {
   'access-control-allow-headers': 'content-type',
 };
 
+// 같은 검색어는 동일 결과를 반환하므로(공식/공공 DB는 자주 안 바뀜) Cloudflare 엣지에 캐시.
+// 캐시 히트 시 D1을 아예 타지 않음 — 무료 D1 일일 읽기 한도를 아끼는 1차 방어선.
+const EDGE_CACHE_SECONDS = 60 * 60 * 24; // 24시간
+
 export async function onRequestOptions() {
   return new Response(null, { headers: jsonHeaders });
 }
 
-export async function onRequestGet({ request, env }) {
+export async function onRequestGet({ request, env, ctx }) {
   const url = new URL(request.url);
   const query = String(url.searchParams.get('q') || '').trim();
   const limit = clamp(Number(url.searchParams.get('limit') || 8), 1, 20);
@@ -33,6 +37,11 @@ export async function onRequestGet({ request, env }) {
     );
   }
 
+  const cache = caches.default;
+  const cacheKey = new Request(url.toString(), request);
+  const cached = await cache.match(cacheKey);
+  if (cached) return cached;
+
   const [officialRows, publicRows] = await Promise.all([
     searchOfficialMenus(env.NUTRITION_DB, query, limit),
     searchPublicFoods(env.NUTRITION_DB, query, limit),
@@ -48,10 +57,15 @@ export async function onRequestGet({ request, env }) {
     ...officialRows.map(toOfficialCandidate),
     ...remainingPublicRows.map(toPublicFoodCandidate),
   ].slice(0, limit);
-  return json({ ok: true, query, candidates });
+
+  const response = json({ ok: true, query, candidates });
+  response.headers.set('cache-control', `public, max-age=${EDGE_CACHE_SECONDS}`);
+  ctx.waitUntil(cache.put(cacheKey, response.clone()));
+  return response;
 }
 
 async function searchOfficialMenus(db, query, limit) {
+  // brands/brand_menus는 공식 등록 브랜드 메뉴만 담는 소규모 테이블이라 풀스캔 비용이 낮음 — 그대로 유지.
   const like = `%${escapeLike(query)}%`;
   const compactLike = `%${escapeLike(compactText(query))}%`;
 
@@ -108,68 +122,139 @@ async function searchOfficialMenus(db, query, limit) {
 }
 
 async function searchPublicFoods(db, query, limit) {
+  // public_foods는 공공 식품영양성분 DB(수만~수십만 행)라 LIKE '%q%' 풀스캔이 D1 읽기 한도를
+  // 하루 만에 소진시킨 주범. public_foods_fts(trigram) 인덱스가 있으면 그걸 우선 사용하고,
+  // 마이그레이션 전이거나(0002_public_foods_fts.sql 미적용) FTS 조회가 실패하면
+  // 기존 LIKE 방식으로 안전하게 폴백한다(동작은 그대로 유지, 비용만 못 줄이는 정도).
+  try {
+    return await searchPublicFoodsFts(db, query, limit);
+  } catch {
+    return await searchPublicFoodsLike(db, query, limit);
+  }
+}
+
+async function searchPublicFoodsFts(db, query, limit) {
+  const like = `%${escapeLike(query)}%`;
+  const compactLike = `%${escapeLike(compactText(query))}%`;
+
+  const result = await db
+    .prepare(
+      `
+        WITH matched AS (
+          SELECT rowid FROM public_foods_fts WHERE food_name LIKE ?1 ESCAPE '\\'
+          UNION
+          SELECT rowid FROM public_foods_fts WHERE search_name LIKE ?1 ESCAPE '\\'
+        )
+        SELECT
+          public_foods.food_id,
+          public_foods.food_code,
+          public_foods.db_type,
+          public_foods.food_name,
+          public_foods.category_large,
+          public_foods.category_middle,
+          public_foods.category_small,
+          public_foods.serving_basis,
+          public_foods.serving_weight,
+          public_foods.calories_kcal,
+          public_foods.carbohydrates_g,
+          public_foods.protein_g,
+          public_foods.fat_g,
+          public_foods.saturated_fat_g,
+          public_foods.trans_fat_g,
+          public_foods.sugar_g,
+          public_foods.sodium_mg,
+          public_foods.fiber_g,
+          public_foods.leucine_mg,
+          public_foods.caffeine_mg,
+          public_foods.manufacturer_name,
+          public_foods.importer_name,
+          public_foods.distributor_name,
+          public_foods.report_no,
+          public_foods.source_name,
+          public_foods.source_file,
+          public_foods.standard_date
+        FROM matched
+        JOIN public_foods ON public_foods.food_id = matched.rowid
+        ORDER BY
+          CASE
+            WHEN public_foods.food_name = ?2 THEN 0
+            WHEN public_foods.food_name LIKE ?3 ESCAPE '\\' THEN 1
+            WHEN public_foods.search_name LIKE ?1 ESCAPE '\\' THEN 2
+            ELSE 3
+          END,
+          public_foods.standard_date DESC,
+          public_foods.food_name
+        LIMIT ?4
+      `,
+    )
+    .bind(like, query, `${escapeLike(query)}%`, limit)
+    .all();
+
+  // food_code / manufacturer_name / distributor_name / report_no로 찾는 케이스는
+  // 바코드 조회 등 별도 API(barcode-lookup.js)가 이미 담당 — 여기서는 이름 검색만 담당해 스캔 범위를 좁힘.
+  void compactLike;
+  return result.results || [];
+}
+
+async function searchPublicFoodsLike(db, query, limit) {
   const like = `%${escapeLike(query)}%`;
   const prefixLike = `${escapeLike(query)}%`;
   const compactLike = `%${escapeLike(compactText(query))}%`;
 
-  try {
-    const result = await db
-      .prepare(
-        `
-          SELECT
-            food_id,
-            food_code,
-            db_type,
-            food_name,
-            category_large,
-            category_middle,
-            category_small,
-            serving_basis,
-            serving_weight,
-            calories_kcal,
-            carbohydrates_g,
-            protein_g,
-            fat_g,
-            saturated_fat_g,
-            trans_fat_g,
-            sugar_g,
-            sodium_mg,
-            fiber_g,
-            leucine_mg,
-            caffeine_mg,
-            manufacturer_name,
-            importer_name,
-            distributor_name,
-            report_no,
-            source_name,
-            source_file,
-            standard_date
-          FROM public_foods
-          WHERE
-            food_name LIKE ? ESCAPE '\\'
-            OR search_name LIKE ? ESCAPE '\\'
-            OR food_code LIKE ? ESCAPE '\\'
-            OR manufacturer_name LIKE ? ESCAPE '\\'
-            OR distributor_name LIKE ? ESCAPE '\\'
-            OR report_no LIKE ? ESCAPE '\\'
-          ORDER BY
-            CASE
-              WHEN food_name = ? THEN 0
-              WHEN food_name LIKE ? ESCAPE '\\' THEN 1
-              WHEN search_name LIKE ? ESCAPE '\\' THEN 2
-              ELSE 3
-            END,
-            standard_date DESC,
-            food_name
-          LIMIT ?
-        `,
-      )
-      .bind(like, compactLike, like, like, like, like, query, prefixLike, compactLike, limit)
-      .all();
-    return result.results || [];
-  } catch {
-    return [];
-  }
+  const result = await db
+    .prepare(
+      `
+        SELECT
+          food_id,
+          food_code,
+          db_type,
+          food_name,
+          category_large,
+          category_middle,
+          category_small,
+          serving_basis,
+          serving_weight,
+          calories_kcal,
+          carbohydrates_g,
+          protein_g,
+          fat_g,
+          saturated_fat_g,
+          trans_fat_g,
+          sugar_g,
+          sodium_mg,
+          fiber_g,
+          leucine_mg,
+          caffeine_mg,
+          manufacturer_name,
+          importer_name,
+          distributor_name,
+          report_no,
+          source_name,
+          source_file,
+          standard_date
+        FROM public_foods
+        WHERE
+          food_name LIKE ? ESCAPE '\\'
+          OR search_name LIKE ? ESCAPE '\\'
+          OR food_code LIKE ? ESCAPE '\\'
+          OR manufacturer_name LIKE ? ESCAPE '\\'
+          OR distributor_name LIKE ? ESCAPE '\\'
+          OR report_no LIKE ? ESCAPE '\\'
+        ORDER BY
+          CASE
+            WHEN food_name = ? THEN 0
+            WHEN food_name LIKE ? ESCAPE '\\' THEN 1
+            WHEN search_name LIKE ? ESCAPE '\\' THEN 2
+            ELSE 3
+          END,
+          standard_date DESC,
+          food_name
+        LIMIT ?
+      `,
+    )
+    .bind(like, compactLike, like, like, like, like, query, prefixLike, compactLike, limit)
+    .all();
+  return result.results || [];
 }
 
 function toOfficialCandidate(row) {
