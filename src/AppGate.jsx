@@ -24,6 +24,14 @@
 //
 //  포그라운드 복귀(visibilitychange) 시 재확인 — 요청 스펙 섹션 5.
 //
+//  QR/링크 자동연결(2026-10-20 추가): CMS 회원상세가 만드는 QR·공유링크는
+//  `https://momgagym-nutrition.pages.dev/?code=AB12CD34` 형태다
+//  (momgagym-cms2/src/components/members/MemberDetail.jsx:24,82). 그 ?code=를
+//  읽어 자동으로 exchangeLinkCode를 시도하고, 성공하면 바로 이용권한 확인으로
+//  넘어가 ConnectScreen을 건너뛴다. 실패하면(만료/이미 사용된 코드 등) 조용히
+//  ConnectScreen으로 떨어지되 에러 문구를 미리 채워서 수동 입력으로 복구할 수
+//  있게 한다. 코드는 1회용이라 주소창에서 즉시 지운다(services/linkCodeFromUrl.js).
+//
 //  화면 스타일은 App.jsx의 나머지 화면(meal-screen/meal-page/meal-card 등,
 //  src/styles/index.css)과 같은 클래스를 그대로 쓴다 — 별도 다크 테마를
 //  만들지 않는다(이 앱은 라이트 테마다).
@@ -32,13 +40,14 @@ import { useEffect, useState } from 'react';
 import App from './App.jsx';
 import { getConnection, exchangeLinkCode } from './services/nutritionLink';
 import { checkEligibility } from './services/sessionGuard';
+import { consumeUrlLinkCode } from './services/linkCodeFromUrl';
 
 const GATE_ENABLED = import.meta.env.VITE_REQUIRE_MEMBER_LINK === 'true';
 
-function ConnectScreen({ onConnected }) {
+function ConnectScreen({ onConnected, initialError }) {
   const [code, setCode] = useState('');
   const [busy, setBusy] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState(initialError || '');
 
   const submit = async (event) => {
     event.preventDefault();
@@ -104,12 +113,12 @@ function LockedScreen({ message, onRetry }) {
   );
 }
 
-function CheckingScreen() {
+function CheckingScreen({ message }) {
   return (
     <main className="meal-screen">
       <div className="meal-page">
         <div className="meal-card meal-empty">
-          <p>이용권한 확인 중…</p>
+          <p>{message || '이용권한 확인 중…'}</p>
         </div>
       </div>
     </main>
@@ -122,12 +131,34 @@ export default function AppGate() {
   // 호출하고, 분기는 각 훅 콜백 안이나 return 문에서만 한다.
   const [phase, setPhase] = useState('checking'); // 'checking' | 'connect' | 'locked' | 'ready'
   const [lockMessage, setLockMessage] = useState('');
+  const [connectError, setConnectError] = useState('');
+  const [checkingMessage, setCheckingMessage] = useState('');
 
   const runCheck = async () => {
     if (!getConnection()) {
-      setPhase('connect');
-      return;
+      // 연결이 아직 없으면, 이번이 QR/링크(?code=)로 열린 것인지부터 확인한다.
+      // 있으면 사용자가 손으로 코드를 입력할 필요 없이 자동으로 교환을 시도한다.
+      const urlCode = consumeUrlLinkCode();
+      if (urlCode) {
+        setConnectError('');
+        setCheckingMessage('QR 코드로 연결 중…');
+        setPhase('checking');
+        try {
+          await exchangeLinkCode(urlCode);
+          // 성공하면 아래 공통 흐름(이용권한 확인)으로 그대로 이어간다.
+        } catch (e) {
+          // 만료/이미 사용된 코드 등 — 조용히 수동 입력 화면으로 떨어뜨리되
+          // 왜 안 됐는지는 미리 보여줘서 바로 재시도할 수 있게 한다.
+          setConnectError(e.message || 'QR 연결에 실패했습니다. 코드를 직접 입력해주세요.');
+          setPhase('connect');
+          return;
+        }
+      } else {
+        setPhase('connect');
+        return;
+      }
     }
+    setCheckingMessage('');
     setPhase('checking');
     const result = await checkEligibility({ force: true });
     if (result.eligible) {
@@ -150,8 +181,8 @@ export default function AppGate() {
   }, []);
 
   if (!GATE_ENABLED) return <App />;
-  if (phase === 'connect') return <ConnectScreen onConnected={runCheck} />;
+  if (phase === 'connect') return <ConnectScreen onConnected={runCheck} initialError={connectError} />;
   if (phase === 'locked') return <LockedScreen message={lockMessage} onRetry={runCheck} />;
   if (phase === 'ready') return <App />;
-  return <CheckingScreen />;
+  return <CheckingScreen message={checkingMessage} />;
 }
