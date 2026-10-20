@@ -29,6 +29,7 @@ export async function onRequestPost({ request, env }) {
   let outputText = '';
   let provider = '';
   let quotaExceeded = false;
+  let aiError = null;
 
   if (env.AI) {
     try {
@@ -53,6 +54,7 @@ export async function onRequestPost({ request, env }) {
       provider = 'cloudflare-gemma-fast';
     } catch (error) {
       quotaExceeded = quotaExceeded || isAiQuotaError(error);
+      aiError = error;
       console.error('Cloudflare Gemma vision failed', error);
     }
   }
@@ -65,6 +67,18 @@ export async function onRequestPost({ request, env }) {
       code: 'ai_free_quota_exceeded',
       message: '무료 AI 한도를 초과했습니다. AI 인식이 일시 제한될 수 있으며, DB 직접 검색과 수동 선택은 계속 사용할 수 있습니다.',
     }, 429);
+  }
+
+  // Cloudflare AI 호출이 예외로 실패했고(quota 문제가 아니라 네트워크/모델 오류 등) OpenAI
+  // 폴백 키도 없으면, 예전에는 여기서 그대로 ok:true + foods:[] 로 응답해서 "사진에 음식이
+  // 없음"과 "AI 호출 자체가 실패함"을 클라이언트가 구분할 수 없었다. 이제는 명확한 실패
+  // 응답을 돌려준다 — 화면에서 "다시 시도" 안내를 보여줄 수 있게.
+  if (!outputText && aiError && !env.OPENAI_API_KEY) {
+    return json({
+      ok: false,
+      code: 'vision_provider_error',
+      message: '비전 분석 요청에 실패했습니다. 잠시 후 다시 시도해주세요.',
+    }, 502);
   }
 
   if ((!Array.isArray(parsed?.foods) || !parsed.foods.length) && env.OPENAI_API_KEY) {
@@ -167,6 +181,7 @@ function createRecognitionPrompt() {
     '각 음식의 사진 내 중심 위치를 position:{"x":0.5,"y":0.5}로 반환하세요. x는 왼쪽0~오른쪽1, y는 위0~아래1이며 위치가 불명확하면 null입니다.',
     '사진의 전경에서 실제로 보이는 음식, 반찬, 과일 또는 음료를 빠짐없이 각각 식별하세요.',
     '한식 한 상처럼 여러 그릇이나 반찬이 있으면 서로 다른 음식을 foods 배열의 별도 항목으로 최대 8가지까지 반환하세요.',
+    '국, 찌개처럼 그릇에 담긴 국물 요리는 건더기 질감이나 국물 표면의 반사광을 과자 봉지·비닐 포장지로 착각하지 말고 조리된 국물 요리로 분류하세요.',
     '같은 종류의 과일이나 달걀처럼 낱개로 셀 수 있으면 한 항목으로 묶고 보이는 개수를 quantity에 정수로 기록하세요.',
     '도넛처럼 같은 음식이 여러 개면 겹치거나 일부 가려진 항목까지 보이는 개수를 직접 세고 quantity에 전체 개수를 기록하세요.',
     'estimatedGrams는 한 개 무게가 아니라 화면에 보이는 해당 음식 전체의 섭취 가능 중량 합계로 추정하세요. 양을 판단할 근거가 없으면 0을 반환하세요. 사진 추정은 실측값이 아닙니다.',

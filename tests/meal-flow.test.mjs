@@ -73,3 +73,12 @@ test('unconfigured vision clearly reports unavailable', async () => {
   assert.equal(response.status, 503);
   assert.equal((await response.json()).code, 'vision_not_configured');
 });
+
+test('a Cloudflare AI call that throws (non-quota) with no OpenAI fallback is reported as a failure, not a silent empty success', async () => {
+  const AI = { run: async () => { throw new Error('model unavailable'); } };
+  const response = await onRequestPost({ request: request(), env: { AI } });
+  const result = await response.json();
+  assert.equal(response.status, 502);
+  assert.equal(result.ok, false);
+  assert.equal(result.code, 'vision_provider_error');
+});
