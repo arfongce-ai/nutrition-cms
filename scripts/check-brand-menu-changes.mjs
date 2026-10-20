@@ -13,7 +13,7 @@
 //  조용히 종료" 패턴과 동일).
 //
 //  사용: node scripts/check-brand-menu-changes.mjs <brand-key>
-//  brand-key: starbucks | krispy-kreme
+//  brand-key: starbucks | krispy-kreme | paikdabang | coffeebean | megamgc | compose | dominos | baskinrobbins
 //  GitHub Actions에서 쓰도록 $GITHUB_OUTPUT에 changed=true|false, summary=... 를
 //  쓴다(로컬 실행 등 그 환경변수가 없으면 건너뜀). 사람이 읽을 결과는 stdout에도 출력.
 // ════════════════════════════════════════════════════════════════════════
@@ -32,6 +32,36 @@ const BRANDS = {
   'krispy-kreme': {
     label: '크리스피크림도넛',
     run: () => execFileSync('node', ['scripts/import-krispy-kreme-menu-db.mjs'], { stdio: 'inherit' }),
+    extraTrackedPaths: [],
+  },
+  paikdabang: {
+    label: '빽다방',
+    run: () => execFileSync('node', ['scripts/import-paikdabang-menu-db.mjs'], { stdio: 'inherit' }),
+    extraTrackedPaths: [],
+  },
+  coffeebean: {
+    label: '커피빈',
+    run: () => execFileSync('node', ['scripts/import-coffeebean-menu-db.mjs'], { stdio: 'inherit' }),
+    extraTrackedPaths: [],
+  },
+  megamgc: {
+    label: '메가MGC커피',
+    run: () => execFileSync('node', ['scripts/import-megamgc-menu-db.mjs'], { stdio: 'inherit' }),
+    extraTrackedPaths: [],
+  },
+  compose: {
+    label: '컴포즈커피',
+    run: () => execFileSync('node', ['scripts/import-compose-menu-db.mjs'], { stdio: 'inherit' }),
+    extraTrackedPaths: [],
+  },
+  dominos: {
+    label: '도미노피자',
+    run: () => execFileSync('node', ['scripts/import-dominos-menu-db.mjs'], { stdio: 'inherit' }),
+    extraTrackedPaths: [],
+  },
+  baskinrobbins: {
+    label: '배스킨라빈스',
+    run: () => execFileSync('node', ['scripts/import-baskinrobbins-menu-db.mjs'], { stdio: 'inherit' }),
     extraTrackedPaths: [],
   },
 };
