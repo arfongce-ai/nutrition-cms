@@ -13,7 +13,8 @@
 //  조용히 종료" 패턴과 동일).
 //
 //  사용: node scripts/check-brand-menu-changes.mjs <brand-key>
-//  brand-key: starbucks | krispy-kreme | paikdabang | coffeebean | megamgc | compose | dominos | baskinrobbins
+//  brand-key: starbucks | krispy-kreme | paikdabang | coffeebean | megamgc | compose |
+//             dominos | baskinrobbins | bbq | bhc | nenechicken | hansot | kyochon
 //  GitHub Actions에서 쓰도록 $GITHUB_OUTPUT에 changed=true|false, summary=... 를
 //  쓴다(로컬 실행 등 그 환경변수가 없으면 건너뜀). 사람이 읽을 결과는 stdout에도 출력.
 // ════════════════════════════════════════════════════════════════════════
@@ -62,6 +63,33 @@ const BRANDS = {
   baskinrobbins: {
     label: '배스킨라빈스',
     run: () => execFileSync('node', ['scripts/import-baskinrobbins-menu-db.mjs'], { stdio: 'inherit' }),
+    extraTrackedPaths: [],
+  },
+  // 2026-10-20 추가: "칼로리만이라도" 재조사에서 실제로는 공식 데이터가 있던 것으로 뒤집힌
+  // 치킨 5곳 중 4곳(bbq·bhc·네네치킨·굽네치킨은 이미지라 보류) + 한솥도시락 + 교촌치킨.
+  bbq: {
+    label: 'BBQ치킨',
+    run: () => execFileSync('node', ['scripts/import-bbq-menu-db.mjs'], { stdio: 'inherit' }),
+    extraTrackedPaths: [],
+  },
+  bhc: {
+    label: 'bhc치킨',
+    run: () => execFileSync('node', ['scripts/import-bhc-menu-db.mjs'], { stdio: 'inherit' }),
+    extraTrackedPaths: [],
+  },
+  nenechicken: {
+    label: '네네치킨',
+    run: () => execFileSync('node', ['scripts/import-nenechicken-menu-db.mjs'], { stdio: 'inherit' }),
+    extraTrackedPaths: [],
+  },
+  hansot: {
+    label: '한솥도시락',
+    run: () => execFileSync('node', ['scripts/import-hansot-menu-db.mjs'], { stdio: 'inherit' }),
+    extraTrackedPaths: [],
+  },
+  kyochon: {
+    label: '교촌치킨',
+    run: () => execFileSync('node', ['scripts/import-kyochon-menu-db.mjs'], { stdio: 'inherit' }),
     extraTrackedPaths: [],
   },
 };
