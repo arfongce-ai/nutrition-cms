@@ -1,0 +1,53 @@
+﻿name: Daily Brand Menu Check
+
+on:
+  schedule:
+    - cron: '0 20 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  check-brand-menu:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        brand: [starbucks, krispy-kreme, paikdabang, coffeebean, megamgc, compose, dominos, baskinrobbins, bbq, bhc, nenechicken, hansot, kyochon]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check for real menu/nutrition changes
+        id: check
+        run: node scripts/check-brand-menu-changes.mjs ${{ matrix.brand }}
+
+      - name: Validate production build
+        if: steps.check.outputs.changed == 'true'
+        run: npm run build
+
+      - name: Open review pull request
+        if: steps.check.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "${{ matrix.brand }} 메뉴/영양정보 변경 감지"
+          title: "[자동] ${{ matrix.brand }} 메뉴 변경 감지 — 검수 필요"
+          body: |
+            공식 사이트에서 ${{ matrix.brand }} 메뉴/영양정보 변경이 감지되어 자동으로 열린 PR입니다.
+
+            ${{ steps.check.outputs.summary }}
+
+            병합 전 실제 값(열량, 나트륨, 당류 등)이 공식 사이트와 일치하는지 검수해주세요.
+          branch: "codex/daily-brand-menu-${{ matrix.brand }}"
+          delete-branch: true
