@@ -23,9 +23,17 @@ const baseUrl = 'https://www.kyochon.com';
 //   "[10호 닭 (951~1,050g)]" 처럼 범위로 적힌 경우(한마리류)가 있어, 이 텍스트를 함께
 //   파싱해서 100g당 수치를 실제 1인분(조리 전 중량) 수치로 환산해 저장한다.
 //   ⚠️ 윙박스/싱글윙 계열은 중량이 아니라 "[윙+봉 6조각]" 식 조각 수만 적혀 있어
-//   공식 사이트에 그램 환산 근거가 전혀 없다 — 이 상품들은 환산하지 않고 100g 기준을
-//   그대로 두되, reviewNote에 "환산 불가" 경고를 강하게 표시한다(아래 참고).
+//   공식 사이트에 그램 환산 근거가 전혀 없다. 교촌 자체 상품(콤보=날개+다리 920g, 다리만
+//   있는 스틱도 920g)으로는 윙 1조각당 그램을 역산할 깨끗한 근거가 없어서(대표님과 상의,
+//   2026-11-13), "업계 평균 치킨윙 1조각당 중량"(아래 WING_PIECE_GRAM_ESTIMATE)으로
+//   추정 환산한다 — 이건 교촌 공식 수치가 아니므로 reviewNote 맨 앞에 "[추정값]"을 붙이고
+//   sourceType은 그대로 두되 추정 사실을 명확히 적는다(기존 apply-similar-substitute.mjs의
+//   [추정값] 표시 관례와 동일).
 // robots.txt는 Yeti(네이버봇)만 전체 허용 명시, 그 외 제한 없음(2026-10-20 확인).
+
+// 업계에서 흔히 쓰는 "조리 전 치킨윙 1조각(봉 또는 윙 한 쪽) 평균 중량" 추정치(g).
+// 교촌 공식 수치가 아니며, 대표님이 "업계 평균 사용"으로 선택(2026-11-13).
+const WING_PIECE_GRAM_ESTIMATE = 45;
 const listUrl = `${baseUrl}/menu/chicken.asp`;
 
 const listResponse = await fetch(listUrl, {
@@ -59,6 +67,7 @@ const NUTRIENT_LABEL_MAP = [
 
 const allImported = [];
 let convertedCount = 0;
+let estimatedCount = 0;
 let unconvertibleCount = 0;
 
 for (const { id, cg } of ids) {
@@ -104,6 +113,7 @@ for (const { id, cg } of ids) {
   let servingSize = '100g 기준';
   let servingGram = 100;
   let conversionNote = '';
+  let notePrefix = '';
 
   if (weightInfo.type === 'point') {
     const gram = weightInfo.gram;
@@ -119,8 +129,17 @@ for (const { id, cg } of ids) {
     servingGram = mid;
     conversionNote = `⚠️ 공식 홈페이지에 "${low}~${high}g" 범위(10호 닭)로만 적혀 있어, 그 평균값(${mid}g)으로 환산한 추정치입니다. 실제 개체 중량에 따라 달라질 수 있습니다.`;
     convertedCount += 1;
+  } else if (weightInfo.type === 'pieceCount') {
+    const { pieceCount } = weightInfo;
+    const gram = Math.round(pieceCount * WING_PIECE_GRAM_ESTIMATE);
+    nutrients = scaleNutrients(nutrients100g, gram / 100);
+    servingSize = `1팩 (${pieceCount}조각, 추정 중량 약 ${gram}g)`;
+    servingGram = gram;
+    notePrefix = '[추정값] ';
+    conversionNote = `⚠️ 공식 홈페이지에는 "윙+봉 ${pieceCount}조각"처럼 조각 수만 있고 그램 표기가 없습니다. 교촌 자체 상품으로는 윙 1조각당 그램을 정확히 역산할 근거가 없어서(콤보=날개+다리 920g, 다리만 있는 스틱도 920g이라 역산 불가), "업계 평균 치킨윙 1조각당 ${WING_PIECE_GRAM_ESTIMATE}g"으로 추정해 총 ${gram}g으로 환산했습니다(대표님 승인, 2026-11-13). 교촌 공식 중량이 아니라 추정치이니 실제와 차이가 있을 수 있습니다.`;
+    estimatedCount += 1;
   } else {
-    conversionNote = '⚠️ 환산 불가: 공식 홈페이지에 이 상품의 1인분/1팩 중량(g)이 전혀 적혀 있지 않고 "조각 수"만 표시되어 있습니다(예: 윙+봉 6조각/16조각/20조각). 그램 환산 근거가 없어 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 그대로 보면 실제보다 훨씬 적게 나옵니다. 1인분 환산이 필요하면 조각당 평균 중량을 별도로 확인해야 합니다.';
+    conversionNote = '⚠️ 환산 불가: 공식 홈페이지에 이 상품의 조각 수조차 명확히 적혀 있지 않아 추정도 못 했습니다. 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 그대로 보면 실제보다 훨씬 적게 나옵니다.';
     unconvertibleCount += 1;
   }
 
@@ -142,7 +161,8 @@ for (const { id, cg } of ids) {
     ].filter(Boolean),
     nutrients,
     reviewNote:
-      '교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. '
+      notePrefix
+      + '교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. '
       + conversionNote
       + ' 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다.',
   });
@@ -175,8 +195,9 @@ console.log(
       totalProducts: database.products.length,
       listedLinks: ids.length,
       converted: convertedCount,
+      estimated: estimatedCount,
       unconvertible: unconvertibleCount,
-      note: '환산된 상품은 nutrients가 "1인분(조리 전 중량)" 기준, 환산 불가 상품은 여전히 "100g 기준"입니다 — 상품별 servingSize 문구로 구분됩니다.',
+      note: '환산된 상품은 nutrients가 "1인분(조리 전 중량)" 기준, 조각 수만 있던 윙박스/싱글윙 계열은 업계 평균(1조각당 45g)으로 추정 환산([추정값] 표시), 그래도 안 되는 상품만 "100g 기준" 그대로입니다 — 상품별 servingSize·reviewNote로 구분됩니다.',
     },
     null,
     2,
@@ -206,6 +227,13 @@ function extractWeightInfo(html) {
     const gram = Number.parseInt(pointMatch[1].replace(/,/g, ''), 10);
     if (Number.isFinite(gram) && gram > 0) {
       return { type: 'point', gram };
+    }
+  }
+  const pieceMatch = hay.match(/(\d+)\s*조각/);
+  if (pieceMatch) {
+    const pieceCount = Number.parseInt(pieceMatch[1], 10);
+    if (Number.isFinite(pieceCount) && pieceCount > 0) {
+      return { type: 'pieceCount', pieceCount };
     }
   }
   return { type: 'none' };

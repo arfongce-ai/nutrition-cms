@@ -24424,26 +24424,28 @@
         "허니옥수수윙박스20pcs"
       ],
       "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
+      "servingSize": "1팩 (10조각, 추정 중량 약 450g)",
+      "servingGram": 450,
       "sourceType": "official_nutrition_page",
       "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
       "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41640&cg=2",
       "verifiedAt": "2026-11-13",
       "allergens": [],
-      "additiveWatch": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
       "nutrients": {
-        "calories": 370,
+        "calories": 1665,
         "carb": null,
-        "sugar": 3.6,
-        "protein": 17,
+        "sugar": 16.2,
+        "protein": 76.5,
         "fat": null,
-        "saturatedFat": 6,
+        "saturatedFat": 27,
         "transFat": null,
-        "sodium": 360,
+        "sodium": 1620,
         "caffeine": null
       },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 환산 불가: 공식 홈페이지에 이 상품의 1인분/1팩 중량(g)이 전혀 적혀 있지 않고 \"조각 수\"만 표시되어 있습니다(예: 윙+봉 6조각/16조각/20조각). 그램 환산 근거가 없어 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 그대로 보면 실제보다 훨씬 적게 나옵니다. 1인분 환산이 필요하면 조각당 평균 중량을 별도로 확인해야 합니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+      "reviewNote": "[추정값] 교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 공식 홈페이지에는 \"윙+봉 10조각\"처럼 조각 수만 있고 그램 표기가 없습니다. 교촌 자체 상품으로는 윙 1조각당 그램을 정확히 역산할 근거가 없어서(콤보=날개+다리 920g, 다리만 있는 스틱도 920g이라 역산 불가), \"업계 평균 치킨윙 1조각당 45g\"으로 추정해 총 450g으로 환산했습니다(대표님 승인, 2026-11-13). 교촌 공식 중량이 아니라 추정치이니 실제와 차이가 있을 수 있습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
     },
     {
       "id": "kyochon-f512995d16f6",
@@ -24455,26 +24457,28 @@
         "허니옥수수윙박스16pcs"
       ],
       "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
+      "servingSize": "1팩 (8조각, 추정 중량 약 360g)",
+      "servingGram": 360,
       "sourceType": "official_nutrition_page",
       "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
       "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41641&cg=2",
       "verifiedAt": "2026-11-13",
       "allergens": [],
-      "additiveWatch": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
       "nutrients": {
-        "calories": 370,
+        "calories": 1332,
         "carb": null,
-        "sugar": 3.1,
-        "protein": 15,
+        "sugar": 11.2,
+        "protein": 54,
         "fat": null,
-        "saturatedFat": 5,
+        "saturatedFat": 18,
         "transFat": null,
-        "sodium": 380,
+        "sodium": 1368,
         "caffeine": null
       },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 환산 불가: 공식 홈페이지에 이 상품의 1인분/1팩 중량(g)이 전혀 적혀 있지 않고 \"조각 수\"만 표시되어 있습니다(예: 윙+봉 6조각/16조각/20조각). 그램 환산 근거가 없어 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 그대로 보면 실제보다 훨씬 적게 나옵니다. 1인분 환산이 필요하면 조각당 평균 중량을 별도로 확인해야 합니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+      "reviewNote": "[추정값] 교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 공식 홈페이지에는 \"윙+봉 8조각\"처럼 조각 수만 있고 그램 표기가 없습니다. 교촌 자체 상품으로는 윙 1조각당 그램을 정확히 역산할 근거가 없어서(콤보=날개+다리 920g, 다리만 있는 스틱도 920g이라 역산 불가), \"업계 평균 치킨윙 1조각당 45g\"으로 추정해 총 360g으로 환산했습니다(대표님 승인, 2026-11-13). 교촌 공식 중량이 아니라 추정치이니 실제와 차이가 있을 수 있습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
     },
     {
       "id": "kyochon-934f59cba888",
@@ -24486,8 +24490,8 @@
         "허니옥수수싱글윙"
       ],
       "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
+      "servingSize": "1팩 (3조각, 추정 중량 약 135g)",
+      "servingGram": 135,
       "sourceType": "official_nutrition_page",
       "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
       "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41642&cg=2",
@@ -24495,17 +24499,17 @@
       "allergens": [],
       "additiveWatch": [],
       "nutrients": {
-        "calories": 360,
+        "calories": 486,
         "carb": null,
-        "sugar": 2.9,
-        "protein": 18,
+        "sugar": 3.9,
+        "protein": 24.3,
         "fat": null,
-        "saturatedFat": 6,
+        "saturatedFat": 8.1,
         "transFat": null,
-        "sodium": 390,
+        "sodium": 526.5,
         "caffeine": null
       },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 환산 불가: 공식 홈페이지에 이 상품의 1인분/1팩 중량(g)이 전혀 적혀 있지 않고 \"조각 수\"만 표시되어 있습니다(예: 윙+봉 6조각/16조각/20조각). 그램 환산 근거가 없어 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 그대로 보면 실제보다 훨씬 적게 나옵니다. 1인분 환산이 필요하면 조각당 평균 중량을 별도로 확인해야 합니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+      "reviewNote": "[추정값] 교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 공식 홈페이지에는 \"윙+봉 3조각\"처럼 조각 수만 있고 그램 표기가 없습니다. 교촌 자체 상품으로는 윙 1조각당 그램을 정확히 역산할 근거가 없어서(콤보=날개+다리 920g, 다리만 있는 스틱도 920g이라 역산 불가), \"업계 평균 치킨윙 1조각당 45g\"으로 추정해 총 135g으로 환산했습니다(대표님 승인, 2026-11-13). 교촌 공식 중량이 아니라 추정치이니 실제와 차이가 있을 수 있습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
     },
     {
       "id": "kyochon-249698b3caa3",
@@ -24847,26 +24851,28 @@
         "허니갈릭윙박스20PCS"
       ],
       "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
+      "servingSize": "1팩 (20조각, 추정 중량 약 900g)",
+      "servingGram": 900,
       "sourceType": "official_nutrition_page",
       "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
       "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41366&cg=2",
       "verifiedAt": "2026-11-13",
       "allergens": [],
-      "additiveWatch": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
       "nutrients": {
-        "calories": 345,
+        "calories": 3105,
         "carb": null,
-        "sugar": 3.3,
-        "protein": 26,
+        "sugar": 29.7,
+        "protein": 234,
         "fat": null,
-        "saturatedFat": 8,
+        "saturatedFat": 72,
         "transFat": null,
-        "sodium": 460,
+        "sodium": 4140,
         "caffeine": null
       },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 환산 불가: 공식 홈페이지에 이 상품의 1인분/1팩 중량(g)이 전혀 적혀 있지 않고 \"조각 수\"만 표시되어 있습니다(예: 윙+봉 6조각/16조각/20조각). 그램 환산 근거가 없어 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 그대로 보면 실제보다 훨씬 적게 나옵니다. 1인분 환산이 필요하면 조각당 평균 중량을 별도로 확인해야 합니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+      "reviewNote": "[추정값] 교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 공식 홈페이지에는 \"윙+봉 20조각\"처럼 조각 수만 있고 그램 표기가 없습니다. 교촌 자체 상품으로는 윙 1조각당 그램을 정확히 역산할 근거가 없어서(콤보=날개+다리 920g, 다리만 있는 스틱도 920g이라 역산 불가), \"업계 평균 치킨윙 1조각당 45g\"으로 추정해 총 900g으로 환산했습니다(대표님 승인, 2026-11-13). 교촌 공식 중량이 아니라 추정치이니 실제와 차이가 있을 수 있습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
     },
     {
       "id": "kyochon-858b5bb56360",
@@ -24878,26 +24884,28 @@
         "마라레드윙박스20PCS"
       ],
       "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
+      "servingSize": "1팩 (20조각, 추정 중량 약 900g)",
+      "servingGram": 900,
       "sourceType": "official_nutrition_page",
       "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
       "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41365&cg=2",
       "verifiedAt": "2026-11-13",
       "allergens": [],
-      "additiveWatch": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
       "nutrients": {
-        "calories": 330,
+        "calories": 2970,
         "carb": null,
-        "sugar": 3,
-        "protein": 28,
+        "sugar": 27,
+        "protein": 252,
         "fat": null,
-        "saturatedFat": 4,
+        "saturatedFat": 36,
         "transFat": null,
-        "sodium": 410,
+        "sodium": 3690,
         "caffeine": null
       },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 환산 불가: 공식 홈페이지에 이 상품의 1인분/1팩 중량(g)이 전혀 적혀 있지 않고 \"조각 수\"만 표시되어 있습니다(예: 윙+봉 6조각/16조각/20조각). 그램 환산 근거가 없어 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 그대로 보면 실제보다 훨씬 적게 나옵니다. 1인분 환산이 필요하면 조각당 평균 중량을 별도로 확인해야 합니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+      "reviewNote": "[추정값] 교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 공식 홈페이지에는 \"윙+봉 20조각\"처럼 조각 수만 있고 그램 표기가 없습니다. 교촌 자체 상품으로는 윙 1조각당 그램을 정확히 역산할 근거가 없어서(콤보=날개+다리 920g, 다리만 있는 스틱도 920g이라 역산 불가), \"업계 평균 치킨윙 1조각당 45g\"으로 추정해 총 900g으로 환산했습니다(대표님 승인, 2026-11-13). 교촌 공식 중량이 아니라 추정치이니 실제와 차이가 있을 수 있습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
     },
     {
       "id": "kyochon-c9761f13e379",
@@ -24909,26 +24917,28 @@
         "간장윙박스20PCS"
       ],
       "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
+      "servingSize": "1팩 (20조각, 추정 중량 약 900g)",
+      "servingGram": 900,
       "sourceType": "official_nutrition_page",
       "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
       "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41363&cg=2",
       "verifiedAt": "2026-11-13",
       "allergens": [],
-      "additiveWatch": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
       "nutrients": {
-        "calories": 375,
+        "calories": 3375,
         "carb": null,
-        "sugar": 4,
-        "protein": 29,
+        "sugar": 36,
+        "protein": 261,
         "fat": null,
-        "saturatedFat": 2,
+        "saturatedFat": 18,
         "transFat": null,
-        "sodium": 420,
+        "sodium": 3780,
         "caffeine": null
       },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 환산 불가: 공식 홈페이지에 이 상품의 1인분/1팩 중량(g)이 전혀 적혀 있지 않고 \"조각 수\"만 표시되어 있습니다(예: 윙+봉 6조각/16조각/20조각). 그램 환산 근거가 없어 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 그대로 보면 실제보다 훨씬 적게 나옵니다. 1인분 환산이 필요하면 조각당 평균 중량을 별도로 확인해야 합니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+      "reviewNote": "[추정값] 교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 공식 홈페이지에는 \"윙+봉 20조각\"처럼 조각 수만 있고 그램 표기가 없습니다. 교촌 자체 상품으로는 윙 1조각당 그램을 정확히 역산할 근거가 없어서(콤보=날개+다리 920g, 다리만 있는 스틱도 920g이라 역산 불가), \"업계 평균 치킨윙 1조각당 45g\"으로 추정해 총 900g으로 환산했습니다(대표님 승인, 2026-11-13). 교촌 공식 중량이 아니라 추정치이니 실제와 차이가 있을 수 있습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
     },
     {
       "id": "kyochon-ab2b210a4d9d",
@@ -24940,26 +24950,28 @@
         "레드윙박스20PCS"
       ],
       "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
+      "servingSize": "1팩 (20조각, 추정 중량 약 900g)",
+      "servingGram": 900,
       "sourceType": "official_nutrition_page",
       "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
       "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41364&cg=2",
       "verifiedAt": "2026-11-13",
       "allergens": [],
-      "additiveWatch": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
       "nutrients": {
-        "calories": 365,
+        "calories": 3285,
         "carb": null,
-        "sugar": 5,
-        "protein": 27,
+        "sugar": 45,
+        "protein": 243,
         "fat": null,
-        "saturatedFat": 4.1,
+        "saturatedFat": 36.9,
         "transFat": null,
-        "sodium": 390,
+        "sodium": 3510,
         "caffeine": null
       },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 환산 불가: 공식 홈페이지에 이 상품의 1인분/1팩 중량(g)이 전혀 적혀 있지 않고 \"조각 수\"만 표시되어 있습니다(예: 윙+봉 6조각/16조각/20조각). 그램 환산 근거가 없어 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 그대로 보면 실제보다 훨씬 적게 나옵니다. 1인분 환산이 필요하면 조각당 평균 중량을 별도로 확인해야 합니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+      "reviewNote": "[추정값] 교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 공식 홈페이지에는 \"윙+봉 20조각\"처럼 조각 수만 있고 그램 표기가 없습니다. 교촌 자체 상품으로는 윙 1조각당 그램을 정확히 역산할 근거가 없어서(콤보=날개+다리 920g, 다리만 있는 스틱도 920g이라 역산 불가), \"업계 평균 치킨윙 1조각당 45g\"으로 추정해 총 900g으로 환산했습니다(대표님 승인, 2026-11-13). 교촌 공식 중량이 아니라 추정치이니 실제와 차이가 있을 수 있습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
     },
     {
       "id": "kyochon-2b87ee6d738e",
@@ -24971,26 +24983,28 @@
         "허니윙박스20PCS"
       ],
       "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
+      "servingSize": "1팩 (20조각, 추정 중량 약 900g)",
+      "servingGram": 900,
       "sourceType": "official_nutrition_page",
       "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
       "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41369&cg=2",
       "verifiedAt": "2026-11-13",
       "allergens": [],
-      "additiveWatch": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
       "nutrients": {
-        "calories": 360,
+        "calories": 3240,
         "carb": null,
-        "sugar": 3.6,
-        "protein": 22,
+        "sugar": 32.4,
+        "protein": 198,
         "fat": null,
-        "saturatedFat": 5,
+        "saturatedFat": 45,
         "transFat": null,
-        "sodium": 340,
+        "sodium": 3060,
         "caffeine": null
       },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 환산 불가: 공식 홈페이지에 이 상품의 1인분/1팩 중량(g)이 전혀 적혀 있지 않고 \"조각 수\"만 표시되어 있습니다(예: 윙+봉 6조각/16조각/20조각). 그램 환산 근거가 없어 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 그대로 보면 실제보다 훨씬 적게 나옵니다. 1인분 환산이 필요하면 조각당 평균 중량을 별도로 확인해야 합니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+      "reviewNote": "[추정값] 교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 공식 홈페이지에는 \"윙+봉 20조각\"처럼 조각 수만 있고 그램 표기가 없습니다. 교촌 자체 상품으로는 윙 1조각당 그램을 정확히 역산할 근거가 없어서(콤보=날개+다리 920g, 다리만 있는 스틱도 920g이라 역산 불가), \"업계 평균 치킨윙 1조각당 45g\"으로 추정해 총 900g으로 환산했습니다(대표님 승인, 2026-11-13). 교촌 공식 중량이 아니라 추정치이니 실제와 차이가 있을 수 있습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
     },
     {
       "id": "kyochon-4b37625e86f6",
@@ -25002,8 +25016,8 @@
         "후라이드윙박스20PCS"
       ],
       "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
+      "servingSize": "1팩 (20조각, 추정 중량 약 900g)",
+      "servingGram": 900,
       "sourceType": "official_nutrition_page",
       "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
       "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41367&cg=2",
@@ -25011,17 +25025,17 @@
       "allergens": [],
       "additiveWatch": [],
       "nutrients": {
-        "calories": 370,
+        "calories": 3330,
         "carb": null,
-        "sugar": 3.6,
-        "protein": 22,
+        "sugar": 32.4,
+        "protein": 198,
         "fat": null,
-        "saturatedFat": 1,
+        "saturatedFat": 9,
         "transFat": null,
-        "sodium": 510,
+        "sodium": 4590,
         "caffeine": null
       },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 환산 불가: 공식 홈페이지에 이 상품의 1인분/1팩 중량(g)이 전혀 적혀 있지 않고 \"조각 수\"만 표시되어 있습니다(예: 윙+봉 6조각/16조각/20조각). 그램 환산 근거가 없어 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 그대로 보면 실제보다 훨씬 적게 나옵니다. 1인분 환산이 필요하면 조각당 평균 중량을 별도로 확인해야 합니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+      "reviewNote": "[추정값] 교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 공식 홈페이지에는 \"윙+봉 20조각\"처럼 조각 수만 있고 그램 표기가 없습니다. 교촌 자체 상품으로는 윙 1조각당 그램을 정확히 역산할 근거가 없어서(콤보=날개+다리 920g, 다리만 있는 스틱도 920g이라 역산 불가), \"업계 평균 치킨윙 1조각당 45g\"으로 추정해 총 900g으로 환산했습니다(대표님 승인, 2026-11-13). 교촌 공식 중량이 아니라 추정치이니 실제와 차이가 있을 수 있습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
     },
     {
       "id": "kyochon-bfcbfb316e8c",
@@ -25033,26 +25047,28 @@
         "양념치킨윙박스20PCS"
       ],
       "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
+      "servingSize": "1팩 (20조각, 추정 중량 약 900g)",
+      "servingGram": 900,
       "sourceType": "official_nutrition_page",
       "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
       "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41368&cg=2",
       "verifiedAt": "2026-11-13",
       "allergens": [],
-      "additiveWatch": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
       "nutrients": {
-        "calories": 320,
+        "calories": 2880,
         "carb": null,
-        "sugar": 2.6,
-        "protein": 19,
+        "sugar": 23.4,
+        "protein": 171,
         "fat": null,
-        "saturatedFat": 9,
+        "saturatedFat": 81,
         "transFat": null,
-        "sodium": 560,
+        "sodium": 5040,
         "caffeine": null
       },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 환산 불가: 공식 홈페이지에 이 상품의 1인분/1팩 중량(g)이 전혀 적혀 있지 않고 \"조각 수\"만 표시되어 있습니다(예: 윙+봉 6조각/16조각/20조각). 그램 환산 근거가 없어 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 그대로 보면 실제보다 훨씬 적게 나옵니다. 1인분 환산이 필요하면 조각당 평균 중량을 별도로 확인해야 합니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+      "reviewNote": "[추정값] 교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 공식 홈페이지에는 \"윙+봉 20조각\"처럼 조각 수만 있고 그램 표기가 없습니다. 교촌 자체 상품으로는 윙 1조각당 그램을 정확히 역산할 근거가 없어서(콤보=날개+다리 920g, 다리만 있는 스틱도 920g이라 역산 불가), \"업계 평균 치킨윙 1조각당 45g\"으로 추정해 총 900g으로 환산했습니다(대표님 승인, 2026-11-13). 교촌 공식 중량이 아니라 추정치이니 실제와 차이가 있을 수 있습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
     },
     {
       "id": "kyochon-00744e25d959",
@@ -25064,26 +25080,28 @@
         "허니갈릭윙박스16PCS"
       ],
       "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
+      "servingSize": "1팩 (16조각, 추정 중량 약 720g)",
+      "servingGram": 720,
       "sourceType": "official_nutrition_page",
       "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
       "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41132&cg=2",
       "verifiedAt": "2026-11-13",
       "allergens": [],
-      "additiveWatch": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
       "nutrients": {
-        "calories": 345,
+        "calories": 2484,
         "carb": null,
-        "sugar": 8,
-        "protein": 26,
+        "sugar": 57.6,
+        "protein": 187.2,
         "fat": null,
-        "saturatedFat": 3.3,
+        "saturatedFat": 23.8,
         "transFat": null,
-        "sodium": 460,
+        "sodium": 3312,
         "caffeine": null
       },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 환산 불가: 공식 홈페이지에 이 상품의 1인분/1팩 중량(g)이 전혀 적혀 있지 않고 \"조각 수\"만 표시되어 있습니다(예: 윙+봉 6조각/16조각/20조각). 그램 환산 근거가 없어 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 그대로 보면 실제보다 훨씬 적게 나옵니다. 1인분 환산이 필요하면 조각당 평균 중량을 별도로 확인해야 합니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+      "reviewNote": "[추정값] 교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 공식 홈페이지에는 \"윙+봉 16조각\"처럼 조각 수만 있고 그램 표기가 없습니다. 교촌 자체 상품으로는 윙 1조각당 그램을 정확히 역산할 근거가 없어서(콤보=날개+다리 920g, 다리만 있는 스틱도 920g이라 역산 불가), \"업계 평균 치킨윙 1조각당 45g\"으로 추정해 총 720g으로 환산했습니다(대표님 승인, 2026-11-13). 교촌 공식 중량이 아니라 추정치이니 실제와 차이가 있을 수 있습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
     },
     {
       "id": "kyochon-4d9565812e89",
@@ -25095,26 +25113,28 @@
         "마라레드윙박스16PCS"
       ],
       "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
+      "servingSize": "1팩 (16조각, 추정 중량 약 720g)",
+      "servingGram": 720,
       "sourceType": "official_nutrition_page",
       "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
       "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=40992&cg=2",
       "verifiedAt": "2026-11-13",
       "allergens": [],
-      "additiveWatch": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
       "nutrients": {
-        "calories": 330,
+        "calories": 2376,
         "carb": null,
-        "sugar": 4,
-        "protein": 28,
+        "sugar": 28.8,
+        "protein": 201.6,
         "fat": null,
-        "saturatedFat": 3,
+        "saturatedFat": 21.6,
         "transFat": null,
-        "sodium": 410,
+        "sodium": 2952,
         "caffeine": null
       },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 환산 불가: 공식 홈페이지에 이 상품의 1인분/1팩 중량(g)이 전혀 적혀 있지 않고 \"조각 수\"만 표시되어 있습니다(예: 윙+봉 6조각/16조각/20조각). 그램 환산 근거가 없어 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 그대로 보면 실제보다 훨씬 적게 나옵니다. 1인분 환산이 필요하면 조각당 평균 중량을 별도로 확인해야 합니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+      "reviewNote": "[추정값] 교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 공식 홈페이지에는 \"윙+봉 16조각\"처럼 조각 수만 있고 그램 표기가 없습니다. 교촌 자체 상품으로는 윙 1조각당 그램을 정확히 역산할 근거가 없어서(콤보=날개+다리 920g, 다리만 있는 스틱도 920g이라 역산 불가), \"업계 평균 치킨윙 1조각당 45g\"으로 추정해 총 720g으로 환산했습니다(대표님 승인, 2026-11-13). 교촌 공식 중량이 아니라 추정치이니 실제와 차이가 있을 수 있습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
     },
     {
       "id": "kyochon-ec362b9a4538",
@@ -25126,26 +25146,28 @@
         "간장윙박스16PCS"
       ],
       "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
+      "servingSize": "1팩 (16조각, 추정 중량 약 720g)",
+      "servingGram": 720,
       "sourceType": "official_nutrition_page",
       "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
       "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=40936&cg=2",
       "verifiedAt": "2026-11-13",
       "allergens": [],
-      "additiveWatch": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
       "nutrients": {
-        "calories": 375,
+        "calories": 2700,
         "carb": null,
-        "sugar": 2,
-        "protein": 29,
+        "sugar": 14.4,
+        "protein": 208.8,
         "fat": null,
-        "saturatedFat": 4,
+        "saturatedFat": 28.8,
         "transFat": null,
-        "sodium": 420,
+        "sodium": 3024,
         "caffeine": null
       },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 환산 불가: 공식 홈페이지에 이 상품의 1인분/1팩 중량(g)이 전혀 적혀 있지 않고 \"조각 수\"만 표시되어 있습니다(예: 윙+봉 6조각/16조각/20조각). 그램 환산 근거가 없어 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 그대로 보면 실제보다 훨씬 적게 나옵니다. 1인분 환산이 필요하면 조각당 평균 중량을 별도로 확인해야 합니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+      "reviewNote": "[추정값] 교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 공식 홈페이지에는 \"윙+봉 16조각\"처럼 조각 수만 있고 그램 표기가 없습니다. 교촌 자체 상품으로는 윙 1조각당 그램을 정확히 역산할 근거가 없어서(콤보=날개+다리 920g, 다리만 있는 스틱도 920g이라 역산 불가), \"업계 평균 치킨윙 1조각당 45g\"으로 추정해 총 720g으로 환산했습니다(대표님 승인, 2026-11-13). 교촌 공식 중량이 아니라 추정치이니 실제와 차이가 있을 수 있습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
     },
     {
       "id": "kyochon-bcc7fae5011a",
@@ -25157,26 +25179,28 @@
         "레드윙박스16PCS"
       ],
       "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
+      "servingSize": "1팩 (16조각, 추정 중량 약 720g)",
+      "servingGram": 720,
       "sourceType": "official_nutrition_page",
       "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
       "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=40937&cg=2",
       "verifiedAt": "2026-11-13",
       "allergens": [],
-      "additiveWatch": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
       "nutrients": {
-        "calories": 365,
+        "calories": 2628,
         "carb": null,
-        "sugar": 5,
-        "protein": 27,
+        "sugar": 36,
+        "protein": 194.4,
         "fat": null,
-        "saturatedFat": 4.1,
+        "saturatedFat": 29.5,
         "transFat": null,
-        "sodium": 390,
+        "sodium": 2808,
         "caffeine": null
       },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 환산 불가: 공식 홈페이지에 이 상품의 1인분/1팩 중량(g)이 전혀 적혀 있지 않고 \"조각 수\"만 표시되어 있습니다(예: 윙+봉 6조각/16조각/20조각). 그램 환산 근거가 없어 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 그대로 보면 실제보다 훨씬 적게 나옵니다. 1인분 환산이 필요하면 조각당 평균 중량을 별도로 확인해야 합니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+      "reviewNote": "[추정값] 교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 공식 홈페이지에는 \"윙+봉 16조각\"처럼 조각 수만 있고 그램 표기가 없습니다. 교촌 자체 상품으로는 윙 1조각당 그램을 정확히 역산할 근거가 없어서(콤보=날개+다리 920g, 다리만 있는 스틱도 920g이라 역산 불가), \"업계 평균 치킨윙 1조각당 45g\"으로 추정해 총 720g으로 환산했습니다(대표님 승인, 2026-11-13). 교촌 공식 중량이 아니라 추정치이니 실제와 차이가 있을 수 있습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
     },
     {
       "id": "kyochon-bc25d9071622",
@@ -25188,26 +25212,28 @@
         "허니윙박스16PCS"
       ],
       "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
+      "servingSize": "1팩 (16조각, 추정 중량 약 720g)",
+      "servingGram": 720,
       "sourceType": "official_nutrition_page",
       "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
       "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=40875&cg=2",
       "verifiedAt": "2026-11-13",
       "allergens": [],
-      "additiveWatch": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
       "nutrients": {
-        "calories": 360,
+        "calories": 2592,
         "carb": null,
-        "sugar": 5,
-        "protein": 22,
+        "sugar": 36,
+        "protein": 158.4,
         "fat": null,
-        "saturatedFat": 3.6,
+        "saturatedFat": 25.9,
         "transFat": null,
-        "sodium": 340,
+        "sodium": 2448,
         "caffeine": null
       },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 환산 불가: 공식 홈페이지에 이 상품의 1인분/1팩 중량(g)이 전혀 적혀 있지 않고 \"조각 수\"만 표시되어 있습니다(예: 윙+봉 6조각/16조각/20조각). 그램 환산 근거가 없어 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 그대로 보면 실제보다 훨씬 적게 나옵니다. 1인분 환산이 필요하면 조각당 평균 중량을 별도로 확인해야 합니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+      "reviewNote": "[추정값] 교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 공식 홈페이지에는 \"윙+봉 16조각\"처럼 조각 수만 있고 그램 표기가 없습니다. 교촌 자체 상품으로는 윙 1조각당 그램을 정확히 역산할 근거가 없어서(콤보=날개+다리 920g, 다리만 있는 스틱도 920g이라 역산 불가), \"업계 평균 치킨윙 1조각당 45g\"으로 추정해 총 720g으로 환산했습니다(대표님 승인, 2026-11-13). 교촌 공식 중량이 아니라 추정치이니 실제와 차이가 있을 수 있습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
     },
     {
       "id": "kyochon-1ba7cbb4a74a",
@@ -25219,26 +25245,28 @@
         "후라이드윙박스16PCS"
       ],
       "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
+      "servingSize": "1팩 (16조각, 추정 중량 약 720g)",
+      "servingGram": 720,
       "sourceType": "official_nutrition_page",
       "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
       "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=40890&cg=2",
       "verifiedAt": "2026-11-13",
       "allergens": [],
-      "additiveWatch": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
       "nutrients": {
-        "calories": 370,
+        "calories": 2664,
         "carb": null,
-        "sugar": 1,
-        "protein": 22,
+        "sugar": 7.2,
+        "protein": 158.4,
         "fat": null,
-        "saturatedFat": 3.6,
+        "saturatedFat": 25.9,
         "transFat": null,
-        "sodium": 510,
+        "sodium": 3672,
         "caffeine": null
       },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 환산 불가: 공식 홈페이지에 이 상품의 1인분/1팩 중량(g)이 전혀 적혀 있지 않고 \"조각 수\"만 표시되어 있습니다(예: 윙+봉 6조각/16조각/20조각). 그램 환산 근거가 없어 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 그대로 보면 실제보다 훨씬 적게 나옵니다. 1인분 환산이 필요하면 조각당 평균 중량을 별도로 확인해야 합니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+      "reviewNote": "[추정값] 교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 공식 홈페이지에는 \"윙+봉 16조각\"처럼 조각 수만 있고 그램 표기가 없습니다. 교촌 자체 상품으로는 윙 1조각당 그램을 정확히 역산할 근거가 없어서(콤보=날개+다리 920g, 다리만 있는 스틱도 920g이라 역산 불가), \"업계 평균 치킨윙 1조각당 45g\"으로 추정해 총 720g으로 환산했습니다(대표님 승인, 2026-11-13). 교촌 공식 중량이 아니라 추정치이니 실제와 차이가 있을 수 있습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
     },
     {
       "id": "kyochon-80b3a3021444",
@@ -25250,26 +25278,28 @@
         "양념치킨윙박스16PCS"
       ],
       "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
+      "servingSize": "1팩 (16조각, 추정 중량 약 720g)",
+      "servingGram": 720,
       "sourceType": "official_nutrition_page",
       "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
       "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=40914&cg=2",
       "verifiedAt": "2026-11-13",
       "allergens": [],
-      "additiveWatch": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
       "nutrients": {
-        "calories": 320,
+        "calories": 2304,
         "carb": null,
-        "sugar": 9,
-        "protein": 19,
+        "sugar": 64.8,
+        "protein": 136.8,
         "fat": null,
-        "saturatedFat": 2.6,
+        "saturatedFat": 18.7,
         "transFat": null,
-        "sodium": 560,
+        "sodium": 4032,
         "caffeine": null
       },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 환산 불가: 공식 홈페이지에 이 상품의 1인분/1팩 중량(g)이 전혀 적혀 있지 않고 \"조각 수\"만 표시되어 있습니다(예: 윙+봉 6조각/16조각/20조각). 그램 환산 근거가 없어 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 그대로 보면 실제보다 훨씬 적게 나옵니다. 1인분 환산이 필요하면 조각당 평균 중량을 별도로 확인해야 합니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+      "reviewNote": "[추정값] 교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 공식 홈페이지에는 \"윙+봉 16조각\"처럼 조각 수만 있고 그램 표기가 없습니다. 교촌 자체 상품으로는 윙 1조각당 그램을 정확히 역산할 근거가 없어서(콤보=날개+다리 920g, 다리만 있는 스틱도 920g이라 역산 불가), \"업계 평균 치킨윙 1조각당 45g\"으로 추정해 총 720g으로 환산했습니다(대표님 승인, 2026-11-13). 교촌 공식 중량이 아니라 추정치이니 실제와 차이가 있을 수 있습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
     },
     {
       "id": "kyochon-40394b47270e",
@@ -26362,8 +26392,8 @@
         "허니갈릭싱글윙"
       ],
       "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
+      "servingSize": "1팩 (6조각, 추정 중량 약 270g)",
+      "servingGram": 270,
       "sourceType": "official_nutrition_page",
       "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
       "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41131&cg=2",
@@ -26371,17 +26401,17 @@
       "allergens": [],
       "additiveWatch": [],
       "nutrients": {
-        "calories": 345,
+        "calories": 931.5,
         "carb": null,
-        "sugar": 8,
-        "protein": 26,
+        "sugar": 21.6,
+        "protein": 70.2,
         "fat": null,
-        "saturatedFat": 3.3,
+        "saturatedFat": 8.9,
         "transFat": null,
-        "sodium": 460,
+        "sodium": 1242,
         "caffeine": null
       },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 환산 불가: 공식 홈페이지에 이 상품의 1인분/1팩 중량(g)이 전혀 적혀 있지 않고 \"조각 수\"만 표시되어 있습니다(예: 윙+봉 6조각/16조각/20조각). 그램 환산 근거가 없어 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 그대로 보면 실제보다 훨씬 적게 나옵니다. 1인분 환산이 필요하면 조각당 평균 중량을 별도로 확인해야 합니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+      "reviewNote": "[추정값] 교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 공식 홈페이지에는 \"윙+봉 6조각\"처럼 조각 수만 있고 그램 표기가 없습니다. 교촌 자체 상품으로는 윙 1조각당 그램을 정확히 역산할 근거가 없어서(콤보=날개+다리 920g, 다리만 있는 스틱도 920g이라 역산 불가), \"업계 평균 치킨윙 1조각당 45g\"으로 추정해 총 270g으로 환산했습니다(대표님 승인, 2026-11-13). 교촌 공식 중량이 아니라 추정치이니 실제와 차이가 있을 수 있습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
     },
     {
       "id": "kyochon-2d897b3231fc",
@@ -26393,8 +26423,8 @@
         "마라레드싱글윙"
       ],
       "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
+      "servingSize": "1팩 (6조각, 추정 중량 약 270g)",
+      "servingGram": 270,
       "sourceType": "official_nutrition_page",
       "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
       "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=40993&cg=2",
@@ -26402,17 +26432,17 @@
       "allergens": [],
       "additiveWatch": [],
       "nutrients": {
-        "calories": 330,
+        "calories": 891,
         "carb": null,
-        "sugar": 4,
-        "protein": 28,
+        "sugar": 10.8,
+        "protein": 75.6,
         "fat": null,
-        "saturatedFat": 3,
+        "saturatedFat": 8.1,
         "transFat": null,
-        "sodium": 410,
+        "sodium": 1107,
         "caffeine": null
       },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 환산 불가: 공식 홈페이지에 이 상품의 1인분/1팩 중량(g)이 전혀 적혀 있지 않고 \"조각 수\"만 표시되어 있습니다(예: 윙+봉 6조각/16조각/20조각). 그램 환산 근거가 없어 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 그대로 보면 실제보다 훨씬 적게 나옵니다. 1인분 환산이 필요하면 조각당 평균 중량을 별도로 확인해야 합니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+      "reviewNote": "[추정값] 교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 공식 홈페이지에는 \"윙+봉 6조각\"처럼 조각 수만 있고 그램 표기가 없습니다. 교촌 자체 상품으로는 윙 1조각당 그램을 정확히 역산할 근거가 없어서(콤보=날개+다리 920g, 다리만 있는 스틱도 920g이라 역산 불가), \"업계 평균 치킨윙 1조각당 45g\"으로 추정해 총 270g으로 환산했습니다(대표님 승인, 2026-11-13). 교촌 공식 중량이 아니라 추정치이니 실제와 차이가 있을 수 있습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
     },
     {
       "id": "kyochon-34a176f588b0",
@@ -26424,26 +26454,28 @@
         "간장싱글윙"
       ],
       "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
+      "servingSize": "1팩 (6조각, 추정 중량 약 270g)",
+      "servingGram": 270,
       "sourceType": "official_nutrition_page",
       "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
       "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=40801&cg=2",
       "verifiedAt": "2026-11-13",
       "allergens": [],
-      "additiveWatch": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
       "nutrients": {
-        "calories": 375,
+        "calories": 1012.5,
         "carb": null,
-        "sugar": 2,
-        "protein": 29,
+        "sugar": 5.4,
+        "protein": 78.3,
         "fat": null,
-        "saturatedFat": 4,
+        "saturatedFat": 10.8,
         "transFat": null,
-        "sodium": 420,
+        "sodium": 1134,
         "caffeine": null
       },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 환산 불가: 공식 홈페이지에 이 상품의 1인분/1팩 중량(g)이 전혀 적혀 있지 않고 \"조각 수\"만 표시되어 있습니다(예: 윙+봉 6조각/16조각/20조각). 그램 환산 근거가 없어 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 그대로 보면 실제보다 훨씬 적게 나옵니다. 1인분 환산이 필요하면 조각당 평균 중량을 별도로 확인해야 합니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+      "reviewNote": "[추정값] 교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 공식 홈페이지에는 \"윙+봉 6조각\"처럼 조각 수만 있고 그램 표기가 없습니다. 교촌 자체 상품으로는 윙 1조각당 그램을 정확히 역산할 근거가 없어서(콤보=날개+다리 920g, 다리만 있는 스틱도 920g이라 역산 불가), \"업계 평균 치킨윙 1조각당 45g\"으로 추정해 총 270g으로 환산했습니다(대표님 승인, 2026-11-13). 교촌 공식 중량이 아니라 추정치이니 실제와 차이가 있을 수 있습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
     },
     {
       "id": "kyochon-583a10ab4877",
@@ -26455,26 +26487,28 @@
         "레드싱글윙"
       ],
       "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
+      "servingSize": "1팩 (6조각, 추정 중량 약 270g)",
+      "servingGram": 270,
       "sourceType": "official_nutrition_page",
       "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
       "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=40802&cg=2",
       "verifiedAt": "2026-11-13",
       "allergens": [],
-      "additiveWatch": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
       "nutrients": {
-        "calories": 365,
+        "calories": 985.5,
         "carb": null,
-        "sugar": 5,
-        "protein": 27,
+        "sugar": 13.5,
+        "protein": 72.9,
         "fat": null,
-        "saturatedFat": 4.1,
+        "saturatedFat": 11.1,
         "transFat": null,
-        "sodium": 390,
+        "sodium": 1053,
         "caffeine": null
       },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 환산 불가: 공식 홈페이지에 이 상품의 1인분/1팩 중량(g)이 전혀 적혀 있지 않고 \"조각 수\"만 표시되어 있습니다(예: 윙+봉 6조각/16조각/20조각). 그램 환산 근거가 없어 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 그대로 보면 실제보다 훨씬 적게 나옵니다. 1인분 환산이 필요하면 조각당 평균 중량을 별도로 확인해야 합니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+      "reviewNote": "[추정값] 교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 공식 홈페이지에는 \"윙+봉 6조각\"처럼 조각 수만 있고 그램 표기가 없습니다. 교촌 자체 상품으로는 윙 1조각당 그램을 정확히 역산할 근거가 없어서(콤보=날개+다리 920g, 다리만 있는 스틱도 920g이라 역산 불가), \"업계 평균 치킨윙 1조각당 45g\"으로 추정해 총 270g으로 환산했습니다(대표님 승인, 2026-11-13). 교촌 공식 중량이 아니라 추정치이니 실제와 차이가 있을 수 있습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
     },
     {
       "id": "kyochon-14f7422fc185",
@@ -26486,8 +26520,8 @@
         "허니싱글윙"
       ],
       "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
+      "servingSize": "1팩 (6조각, 추정 중량 약 270g)",
+      "servingGram": 270,
       "sourceType": "official_nutrition_page",
       "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
       "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=40864&cg=2",
@@ -26495,17 +26529,17 @@
       "allergens": [],
       "additiveWatch": [],
       "nutrients": {
-        "calories": 360,
+        "calories": 972,
         "carb": null,
-        "sugar": 5,
-        "protein": 22,
+        "sugar": 13.5,
+        "protein": 59.4,
         "fat": null,
-        "saturatedFat": 3.6,
+        "saturatedFat": 9.7,
         "transFat": null,
-        "sodium": 340,
+        "sodium": 918,
         "caffeine": null
       },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 환산 불가: 공식 홈페이지에 이 상품의 1인분/1팩 중량(g)이 전혀 적혀 있지 않고 \"조각 수\"만 표시되어 있습니다(예: 윙+봉 6조각/16조각/20조각). 그램 환산 근거가 없어 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 그대로 보면 실제보다 훨씬 적게 나옵니다. 1인분 환산이 필요하면 조각당 평균 중량을 별도로 확인해야 합니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+      "reviewNote": "[추정값] 교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 공식 홈페이지에는 \"윙+봉 6조각\"처럼 조각 수만 있고 그램 표기가 없습니다. 교촌 자체 상품으로는 윙 1조각당 그램을 정확히 역산할 근거가 없어서(콤보=날개+다리 920g, 다리만 있는 스틱도 920g이라 역산 불가), \"업계 평균 치킨윙 1조각당 45g\"으로 추정해 총 270g으로 환산했습니다(대표님 승인, 2026-11-13). 교촌 공식 중량이 아니라 추정치이니 실제와 차이가 있을 수 있습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
     },
     {
       "id": "kyochon-ee114815f8a3",
@@ -26517,8 +26551,8 @@
         "후라이드싱글윙"
       ],
       "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
+      "servingSize": "1팩 (6조각, 추정 중량 약 270g)",
+      "servingGram": 270,
       "sourceType": "official_nutrition_page",
       "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
       "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=40885&cg=2",
@@ -26526,17 +26560,17 @@
       "allergens": [],
       "additiveWatch": [],
       "nutrients": {
-        "calories": 370,
+        "calories": 999,
         "carb": null,
-        "sugar": 1,
-        "protein": 22,
+        "sugar": 2.7,
+        "protein": 59.4,
         "fat": null,
-        "saturatedFat": 3.6,
+        "saturatedFat": 9.7,
         "transFat": null,
-        "sodium": 510,
+        "sodium": 1377,
         "caffeine": null
       },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 환산 불가: 공식 홈페이지에 이 상품의 1인분/1팩 중량(g)이 전혀 적혀 있지 않고 \"조각 수\"만 표시되어 있습니다(예: 윙+봉 6조각/16조각/20조각). 그램 환산 근거가 없어 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 그대로 보면 실제보다 훨씬 적게 나옵니다. 1인분 환산이 필요하면 조각당 평균 중량을 별도로 확인해야 합니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+      "reviewNote": "[추정값] 교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 공식 홈페이지에는 \"윙+봉 6조각\"처럼 조각 수만 있고 그램 표기가 없습니다. 교촌 자체 상품으로는 윙 1조각당 그램을 정확히 역산할 근거가 없어서(콤보=날개+다리 920g, 다리만 있는 스틱도 920g이라 역산 불가), \"업계 평균 치킨윙 1조각당 45g\"으로 추정해 총 270g으로 환산했습니다(대표님 승인, 2026-11-13). 교촌 공식 중량이 아니라 추정치이니 실제와 차이가 있을 수 있습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
     },
     {
       "id": "kyochon-e517bdcacb94",
@@ -26548,8 +26582,8 @@
         "양념치킨싱글윙"
       ],
       "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
+      "servingSize": "1팩 (6조각, 추정 중량 약 270g)",
+      "servingGram": 270,
       "sourceType": "official_nutrition_page",
       "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
       "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=40915&cg=2",
@@ -26557,17 +26591,17 @@
       "allergens": [],
       "additiveWatch": [],
       "nutrients": {
-        "calories": 320,
+        "calories": 864,
         "carb": null,
-        "sugar": 9,
-        "protein": 19,
+        "sugar": 24.3,
+        "protein": 51.3,
         "fat": null,
-        "saturatedFat": 2.6,
+        "saturatedFat": 7,
         "transFat": null,
-        "sodium": 560,
+        "sodium": 1512,
         "caffeine": null
       },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 환산 불가: 공식 홈페이지에 이 상품의 1인분/1팩 중량(g)이 전혀 적혀 있지 않고 \"조각 수\"만 표시되어 있습니다(예: 윙+봉 6조각/16조각/20조각). 그램 환산 근거가 없어 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 그대로 보면 실제보다 훨씬 적게 나옵니다. 1인분 환산이 필요하면 조각당 평균 중량을 별도로 확인해야 합니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+      "reviewNote": "[추정값] 교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 공식 홈페이지에는 \"윙+봉 6조각\"처럼 조각 수만 있고 그램 표기가 없습니다. 교촌 자체 상품으로는 윙 1조각당 그램을 정확히 역산할 근거가 없어서(콤보=날개+다리 920g, 다리만 있는 스틱도 920g이라 역산 불가), \"업계 평균 치킨윙 1조각당 45g\"으로 추정해 총 270g으로 환산했습니다(대표님 승인, 2026-11-13). 교촌 공식 중량이 아니라 추정치이니 실제와 차이가 있을 수 있습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
     },
     {
       "id": "kyochon-53c55495d0aa",
@@ -26807,8 +26841,8 @@
         "서울엄마파기름떡볶이치킨"
       ],
       "category": "굽네치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
+      "servingSize": "1마리 (조리 전 중량 955g 이상 기준)",
+      "servingGram": 955,
       "sourceType": "ai_image_transcription",
       "sourceLabel": "굽네치킨 공식 홈페이지 \"영양성분 및 알레르기 유발물질\" 표(이미지, 2026.09판) — Claude가 화면 캡처로 옮겨 적음, 원본 대조 필요",
       "sourceUrl": "https://www.goobne.co.kr/menu/menu_view_p?itemId=30001",
@@ -26816,17 +26850,17 @@
       "allergens": [],
       "additiveWatch": [],
       "nutrients": {
-        "calories": 215.54,
-        "carb": 14.93,
-        "sugar": 4.98,
-        "protein": 21.54,
-        "fat": 7.74,
-        "saturatedFat": 2.72,
-        "transFat": 0.16,
-        "sodium": 423.87,
+        "calories": 2058.4,
+        "carb": 142.6,
+        "sugar": 47.6,
+        "protein": 205.7,
+        "fat": 73.9,
+        "saturatedFat": 26,
+        "transFat": 1.5,
+        "sodium": 4048,
         "caffeine": null
       },
-      "reviewNote": "⚠️ 이 상품은 공식 사이트에 텍스트 영양정보가 없고 이미지 표로만 제공되어, Claude가 2026-11-13에 화면을 캡처해서 수치를 옮겨 적었습니다(AI가 이미지에서 읽음 — 원본 대조 필요). 다른 임포터처럼 자동으로 재확인되지 않으니, 사이트에서 표가 바뀌면(버전 \"(26.09)\" 등) 수동으로 다시 옮겨 적어야 합니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1인분/1조각 실제 섭취량과 다릅니다. 알레르기 유발물질은 표에 있으나 이미지가 작아 정확히 옮겨 적지 못해 비워뒀습니다(원본 이미지에서 직접 확인 필요)."
+      "reviewNote": "⚠️ 이 상품의 영양정보(100g당 수치)는 공식 사이트에 텍스트가 없고 이미지 표로만 제공되어, Claude가 2026-11-13에 화면을 캡처해서 옮겨 적었습니다(AI가 이미지에서 읽음 — 원본 대조 필요). 다른 임포터처럼 자동으로 재확인되지 않으니, 사이트에서 표가 바뀌면(버전 \"(26.09)\" 등) 수동으로 다시 옮겨 적어야 합니다. 공식 홈페이지 \"조리 전 중량\" 안내(상품 설명에 \"('뼈 한마리' 부위에 한합니다)\"로 명시, 공식 표기는 \"955g 이상\"(최소값))를 기준으로 100g당 수치를 1마리 수치로 환산했습니다. \"이상\"으로 표기된 최소값 기준이라 실제는 더 무거울 수 있습니다. 알레르기 유발물질은 표에 있으나 이미지가 작아 정확히 옮겨 적지 못해 비워뒀습니다(원본 이미지에서 직접 확인 필요)."
     },
     {
       "id": "goobne-a0a301c6d536",
@@ -26858,7 +26892,7 @@
         "sodium": 326.84,
         "caffeine": null
       },
-      "reviewNote": "⚠️ 이 상품은 공식 사이트에 텍스트 영양정보가 없고 이미지 표로만 제공되어, Claude가 2026-11-13에 화면을 캡처해서 수치를 옮겨 적었습니다(AI가 이미지에서 읽음 — 원본 대조 필요). 다른 임포터처럼 자동으로 재확인되지 않으니, 사이트에서 표가 바뀌면(버전 \"(26.09)\" 등) 수동으로 다시 옮겨 적어야 합니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1인분/1조각 실제 섭취량과 다릅니다. 알레르기 유발물질은 표에 있으나 이미지가 작아 정확히 옮겨 적지 못해 비워뒀습니다(원본 이미지에서 직접 확인 필요)."
+      "reviewNote": "⚠️ 이 상품의 영양정보(100g당 수치)는 공식 사이트에 텍스트가 없고 이미지 표로만 제공되어, Claude가 2026-11-13에 화면을 캡처해서 옮겨 적었습니다(AI가 이미지에서 읽음 — 원본 대조 필요). 다른 임포터처럼 자동으로 재확인되지 않으니, 사이트에서 표가 바뀌면(버전 \"(26.09)\" 등) 수동으로 다시 옮겨 적어야 합니다. ⚠️ 환산 불가: 공식 홈페이지 \"조리 전 중량\" 안내에 이 상품이 어느 부위인지 명시돼 있지 않거나(볼케이노·갈비천왕·바사삭 3종·양념 히어로), 부위는 알아도 그램이 아예 없습니다(장각·추추 치킨 스테이크는 \"N조각\"만, 폭립은 중량 정보 자체가 없음). 추측하지 않고 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 보면 실제보다 훨씬 적게 나옵니다. 알레르기 유발물질은 표에 있으나 이미지가 작아 정확히 옮겨 적지 못해 비워뒀습니다(원본 이미지에서 직접 확인 필요)."
     },
     {
       "id": "goobne-bbb3ada84b6b",
@@ -26890,7 +26924,7 @@
         "sodium": 436.97,
         "caffeine": null
       },
-      "reviewNote": "⚠️ 이 상품은 공식 사이트에 텍스트 영양정보가 없고 이미지 표로만 제공되어, Claude가 2026-11-13에 화면을 캡처해서 수치를 옮겨 적었습니다(AI가 이미지에서 읽음 — 원본 대조 필요). 다른 임포터처럼 자동으로 재확인되지 않으니, 사이트에서 표가 바뀌면(버전 \"(26.09)\" 등) 수동으로 다시 옮겨 적어야 합니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1인분/1조각 실제 섭취량과 다릅니다. 알레르기 유발물질은 표에 있으나 이미지가 작아 정확히 옮겨 적지 못해 비워뒀습니다(원본 이미지에서 직접 확인 필요)."
+      "reviewNote": "⚠️ 이 상품의 영양정보(100g당 수치)는 공식 사이트에 텍스트가 없고 이미지 표로만 제공되어, Claude가 2026-11-13에 화면을 캡처해서 옮겨 적었습니다(AI가 이미지에서 읽음 — 원본 대조 필요). 다른 임포터처럼 자동으로 재확인되지 않으니, 사이트에서 표가 바뀌면(버전 \"(26.09)\" 등) 수동으로 다시 옮겨 적어야 합니다. ⚠️ 환산 불가: 공식 홈페이지 \"조리 전 중량\" 안내에 이 상품이 어느 부위인지 명시돼 있지 않거나(볼케이노·갈비천왕·바사삭 3종·양념 히어로), 부위는 알아도 그램이 아예 없습니다(장각·추추 치킨 스테이크는 \"N조각\"만, 폭립은 중량 정보 자체가 없음). 추측하지 않고 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 보면 실제보다 훨씬 적게 나옵니다. 알레르기 유발물질은 표에 있으나 이미지가 작아 정확히 옮겨 적지 못해 비워뒀습니다(원본 이미지에서 직접 확인 필요)."
     },
     {
       "id": "goobne-af096243b31d",
@@ -26903,8 +26937,8 @@
         "New오리지널"
       ],
       "category": "굽네치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
+      "servingSize": "1마리 (조리 전 중량 955g 이상 기준)",
+      "servingGram": 955,
       "sourceType": "ai_image_transcription",
       "sourceLabel": "굽네치킨 공식 홈페이지 \"영양성분 및 알레르기 유발물질\" 표(이미지, 2026.09판) — Claude가 화면 캡처로 옮겨 적음, 원본 대조 필요",
       "sourceUrl": "https://www.goobne.co.kr/menu/menu_view_p?itemId=30001",
@@ -26912,17 +26946,17 @@
       "allergens": [],
       "additiveWatch": [],
       "nutrients": {
-        "calories": 190.14,
-        "carb": 2.44,
-        "sugar": 0.88,
-        "protein": 31.28,
-        "fat": 6.14,
-        "saturatedFat": 1.78,
-        "transFat": 0.33,
-        "sodium": 328.91,
+        "calories": 1815.8,
+        "carb": 23.3,
+        "sugar": 8.4,
+        "protein": 298.7,
+        "fat": 58.6,
+        "saturatedFat": 17,
+        "transFat": 3.2,
+        "sodium": 3141.1,
         "caffeine": null
       },
-      "reviewNote": "⚠️ 이 상품은 공식 사이트에 텍스트 영양정보가 없고 이미지 표로만 제공되어, Claude가 2026-11-13에 화면을 캡처해서 수치를 옮겨 적었습니다(AI가 이미지에서 읽음 — 원본 대조 필요). 다른 임포터처럼 자동으로 재확인되지 않으니, 사이트에서 표가 바뀌면(버전 \"(26.09)\" 등) 수동으로 다시 옮겨 적어야 합니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1인분/1조각 실제 섭취량과 다릅니다. 알레르기 유발물질은 표에 있으나 이미지가 작아 정확히 옮겨 적지 못해 비워뒀습니다(원본 이미지에서 직접 확인 필요)."
+      "reviewNote": "⚠️ 이 상품의 영양정보(100g당 수치)는 공식 사이트에 텍스트가 없고 이미지 표로만 제공되어, Claude가 2026-11-13에 화면을 캡처해서 옮겨 적었습니다(AI가 이미지에서 읽음 — 원본 대조 필요). 다른 임포터처럼 자동으로 재확인되지 않으니, 사이트에서 표가 바뀌면(버전 \"(26.09)\" 등) 수동으로 다시 옮겨 적어야 합니다. 공식 홈페이지 \"조리 전 중량\" 안내(상품 설명에 \"('뼈 한마리' 부위에 한합니다)\"로 명시, 공식 표기는 \"955g 이상\"(최소값))를 기준으로 100g당 수치를 1마리 수치로 환산했습니다. \"이상\"으로 표기된 최소값 기준이라 실제는 더 무거울 수 있습니다. 알레르기 유발물질은 표에 있으나 이미지가 작아 정확히 옮겨 적지 못해 비워뒀습니다(원본 이미지에서 직접 확인 필요)."
     },
     {
       "id": "goobne-f33b33e43855",
@@ -26953,7 +26987,7 @@
         "sodium": 519.3,
         "caffeine": null
       },
-      "reviewNote": "⚠️ 이 상품은 공식 사이트에 텍스트 영양정보가 없고 이미지 표로만 제공되어, Claude가 2026-11-13에 화면을 캡처해서 수치를 옮겨 적었습니다(AI가 이미지에서 읽음 — 원본 대조 필요). 다른 임포터처럼 자동으로 재확인되지 않으니, 사이트에서 표가 바뀌면(버전 \"(26.09)\" 등) 수동으로 다시 옮겨 적어야 합니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1인분/1조각 실제 섭취량과 다릅니다. 알레르기 유발물질은 표에 있으나 이미지가 작아 정확히 옮겨 적지 못해 비워뒀습니다(원본 이미지에서 직접 확인 필요)."
+      "reviewNote": "⚠️ 이 상품의 영양정보(100g당 수치)는 공식 사이트에 텍스트가 없고 이미지 표로만 제공되어, Claude가 2026-11-13에 화면을 캡처해서 옮겨 적었습니다(AI가 이미지에서 읽음 — 원본 대조 필요). 다른 임포터처럼 자동으로 재확인되지 않으니, 사이트에서 표가 바뀌면(버전 \"(26.09)\" 등) 수동으로 다시 옮겨 적어야 합니다. ⚠️ 환산 불가: 공식 홈페이지 \"조리 전 중량\" 안내에 이 상품이 어느 부위인지 명시돼 있지 않거나(볼케이노·갈비천왕·바사삭 3종·양념 히어로), 부위는 알아도 그램이 아예 없습니다(장각·추추 치킨 스테이크는 \"N조각\"만, 폭립은 중량 정보 자체가 없음). 추측하지 않고 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 보면 실제보다 훨씬 적게 나옵니다. 알레르기 유발물질은 표에 있으나 이미지가 작아 정확히 옮겨 적지 못해 비워뒀습니다(원본 이미지에서 직접 확인 필요)."
     },
     {
       "id": "goobne-4458808f8a12",
@@ -26984,7 +27018,7 @@
         "sodium": 361,
         "caffeine": null
       },
-      "reviewNote": "⚠️ 이 상품은 공식 사이트에 텍스트 영양정보가 없고 이미지 표로만 제공되어, Claude가 2026-11-13에 화면을 캡처해서 수치를 옮겨 적었습니다(AI가 이미지에서 읽음 — 원본 대조 필요). 다른 임포터처럼 자동으로 재확인되지 않으니, 사이트에서 표가 바뀌면(버전 \"(26.09)\" 등) 수동으로 다시 옮겨 적어야 합니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1인분/1조각 실제 섭취량과 다릅니다. 알레르기 유발물질은 표에 있으나 이미지가 작아 정확히 옮겨 적지 못해 비워뒀습니다(원본 이미지에서 직접 확인 필요)."
+      "reviewNote": "⚠️ 이 상품의 영양정보(100g당 수치)는 공식 사이트에 텍스트가 없고 이미지 표로만 제공되어, Claude가 2026-11-13에 화면을 캡처해서 옮겨 적었습니다(AI가 이미지에서 읽음 — 원본 대조 필요). 다른 임포터처럼 자동으로 재확인되지 않으니, 사이트에서 표가 바뀌면(버전 \"(26.09)\" 등) 수동으로 다시 옮겨 적어야 합니다. ⚠️ 환산 불가: 공식 홈페이지 \"조리 전 중량\" 안내에 이 상품이 어느 부위인지 명시돼 있지 않거나(볼케이노·갈비천왕·바사삭 3종·양념 히어로), 부위는 알아도 그램이 아예 없습니다(장각·추추 치킨 스테이크는 \"N조각\"만, 폭립은 중량 정보 자체가 없음). 추측하지 않고 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 보면 실제보다 훨씬 적게 나옵니다. 알레르기 유발물질은 표에 있으나 이미지가 작아 정확히 옮겨 적지 못해 비워뒀습니다(원본 이미지에서 직접 확인 필요)."
     },
     {
       "id": "goobne-63d8d3220b4a",
@@ -27016,7 +27050,7 @@
         "sodium": 449,
         "caffeine": null
       },
-      "reviewNote": "⚠️ 이 상품은 공식 사이트에 텍스트 영양정보가 없고 이미지 표로만 제공되어, Claude가 2026-11-13에 화면을 캡처해서 수치를 옮겨 적었습니다(AI가 이미지에서 읽음 — 원본 대조 필요). 다른 임포터처럼 자동으로 재확인되지 않으니, 사이트에서 표가 바뀌면(버전 \"(26.09)\" 등) 수동으로 다시 옮겨 적어야 합니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1인분/1조각 실제 섭취량과 다릅니다. 알레르기 유발물질은 표에 있으나 이미지가 작아 정확히 옮겨 적지 못해 비워뒀습니다(원본 이미지에서 직접 확인 필요)."
+      "reviewNote": "⚠️ 이 상품의 영양정보(100g당 수치)는 공식 사이트에 텍스트가 없고 이미지 표로만 제공되어, Claude가 2026-11-13에 화면을 캡처해서 옮겨 적었습니다(AI가 이미지에서 읽음 — 원본 대조 필요). 다른 임포터처럼 자동으로 재확인되지 않으니, 사이트에서 표가 바뀌면(버전 \"(26.09)\" 등) 수동으로 다시 옮겨 적어야 합니다. ⚠️ 환산 불가: 공식 홈페이지 \"조리 전 중량\" 안내에 이 상품이 어느 부위인지 명시돼 있지 않거나(볼케이노·갈비천왕·바사삭 3종·양념 히어로), 부위는 알아도 그램이 아예 없습니다(장각·추추 치킨 스테이크는 \"N조각\"만, 폭립은 중량 정보 자체가 없음). 추측하지 않고 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 보면 실제보다 훨씬 적게 나옵니다. 알레르기 유발물질은 표에 있으나 이미지가 작아 정확히 옮겨 적지 못해 비워뒀습니다(원본 이미지에서 직접 확인 필요)."
     },
     {
       "id": "goobne-1bb8f39cfcb9",
@@ -27048,7 +27082,7 @@
         "sodium": 673.5,
         "caffeine": null
       },
-      "reviewNote": "⚠️ 이 상품은 공식 사이트에 텍스트 영양정보가 없고 이미지 표로만 제공되어, Claude가 2026-11-13에 화면을 캡처해서 수치를 옮겨 적었습니다(AI가 이미지에서 읽음 — 원본 대조 필요). 다른 임포터처럼 자동으로 재확인되지 않으니, 사이트에서 표가 바뀌면(버전 \"(26.09)\" 등) 수동으로 다시 옮겨 적어야 합니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1인분/1조각 실제 섭취량과 다릅니다. 알레르기 유발물질은 표에 있으나 이미지가 작아 정확히 옮겨 적지 못해 비워뒀습니다(원본 이미지에서 직접 확인 필요)."
+      "reviewNote": "⚠️ 이 상품의 영양정보(100g당 수치)는 공식 사이트에 텍스트가 없고 이미지 표로만 제공되어, Claude가 2026-11-13에 화면을 캡처해서 옮겨 적었습니다(AI가 이미지에서 읽음 — 원본 대조 필요). 다른 임포터처럼 자동으로 재확인되지 않으니, 사이트에서 표가 바뀌면(버전 \"(26.09)\" 등) 수동으로 다시 옮겨 적어야 합니다. ⚠️ 환산 불가: 공식 홈페이지 \"조리 전 중량\" 안내에 이 상품이 어느 부위인지 명시돼 있지 않거나(볼케이노·갈비천왕·바사삭 3종·양념 히어로), 부위는 알아도 그램이 아예 없습니다(장각·추추 치킨 스테이크는 \"N조각\"만, 폭립은 중량 정보 자체가 없음). 추측하지 않고 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 보면 실제보다 훨씬 적게 나옵니다. 알레르기 유발물질은 표에 있으나 이미지가 작아 정확히 옮겨 적지 못해 비워뒀습니다(원본 이미지에서 직접 확인 필요)."
     },
     {
       "id": "goobne-cfba08082318",
@@ -27080,7 +27114,7 @@
         "sodium": 444.7,
         "caffeine": null
       },
-      "reviewNote": "⚠️ 이 상품은 공식 사이트에 텍스트 영양정보가 없고 이미지 표로만 제공되어, Claude가 2026-11-13에 화면을 캡처해서 수치를 옮겨 적었습니다(AI가 이미지에서 읽음 — 원본 대조 필요). 다른 임포터처럼 자동으로 재확인되지 않으니, 사이트에서 표가 바뀌면(버전 \"(26.09)\" 등) 수동으로 다시 옮겨 적어야 합니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1인분/1조각 실제 섭취량과 다릅니다. 알레르기 유발물질은 표에 있으나 이미지가 작아 정확히 옮겨 적지 못해 비워뒀습니다(원본 이미지에서 직접 확인 필요)."
+      "reviewNote": "⚠️ 이 상품의 영양정보(100g당 수치)는 공식 사이트에 텍스트가 없고 이미지 표로만 제공되어, Claude가 2026-11-13에 화면을 캡처해서 옮겨 적었습니다(AI가 이미지에서 읽음 — 원본 대조 필요). 다른 임포터처럼 자동으로 재확인되지 않으니, 사이트에서 표가 바뀌면(버전 \"(26.09)\" 등) 수동으로 다시 옮겨 적어야 합니다. ⚠️ 환산 불가: 공식 홈페이지 \"조리 전 중량\" 안내에 이 상품이 어느 부위인지 명시돼 있지 않거나(볼케이노·갈비천왕·바사삭 3종·양념 히어로), 부위는 알아도 그램이 아예 없습니다(장각·추추 치킨 스테이크는 \"N조각\"만, 폭립은 중량 정보 자체가 없음). 추측하지 않고 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 보면 실제보다 훨씬 적게 나옵니다. 알레르기 유발물질은 표에 있으나 이미지가 작아 정확히 옮겨 적지 못해 비워뒀습니다(원본 이미지에서 직접 확인 필요)."
     },
     {
       "id": "goobne-e4c30b43e45d",
@@ -27112,7 +27146,7 @@
         "sodium": 447.9,
         "caffeine": null
       },
-      "reviewNote": "⚠️ 이 상품은 공식 사이트에 텍스트 영양정보가 없고 이미지 표로만 제공되어, Claude가 2026-11-13에 화면을 캡처해서 수치를 옮겨 적었습니다(AI가 이미지에서 읽음 — 원본 대조 필요). 다른 임포터처럼 자동으로 재확인되지 않으니, 사이트에서 표가 바뀌면(버전 \"(26.09)\" 등) 수동으로 다시 옮겨 적어야 합니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1인분/1조각 실제 섭취량과 다릅니다. 알레르기 유발물질은 표에 있으나 이미지가 작아 정확히 옮겨 적지 못해 비워뒀습니다(원본 이미지에서 직접 확인 필요)."
+      "reviewNote": "⚠️ 이 상품의 영양정보(100g당 수치)는 공식 사이트에 텍스트가 없고 이미지 표로만 제공되어, Claude가 2026-11-13에 화면을 캡처해서 옮겨 적었습니다(AI가 이미지에서 읽음 — 원본 대조 필요). 다른 임포터처럼 자동으로 재확인되지 않으니, 사이트에서 표가 바뀌면(버전 \"(26.09)\" 등) 수동으로 다시 옮겨 적어야 합니다. ⚠️ 환산 불가: 공식 홈페이지 \"조리 전 중량\" 안내에 이 상품이 어느 부위인지 명시돼 있지 않거나(볼케이노·갈비천왕·바사삭 3종·양념 히어로), 부위는 알아도 그램이 아예 없습니다(장각·추추 치킨 스테이크는 \"N조각\"만, 폭립은 중량 정보 자체가 없음). 추측하지 않고 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 보면 실제보다 훨씬 적게 나옵니다. 알레르기 유발물질은 표에 있으나 이미지가 작아 정확히 옮겨 적지 못해 비워뒀습니다(원본 이미지에서 직접 확인 필요)."
     },
     {
       "id": "goobne-035412cde648",
@@ -27144,7 +27178,7 @@
         "sodium": 476.9,
         "caffeine": null
       },
-      "reviewNote": "⚠️ 이 상품은 공식 사이트에 텍스트 영양정보가 없고 이미지 표로만 제공되어, Claude가 2026-11-13에 화면을 캡처해서 수치를 옮겨 적었습니다(AI가 이미지에서 읽음 — 원본 대조 필요). 다른 임포터처럼 자동으로 재확인되지 않으니, 사이트에서 표가 바뀌면(버전 \"(26.09)\" 등) 수동으로 다시 옮겨 적어야 합니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1인분/1조각 실제 섭취량과 다릅니다. 알레르기 유발물질은 표에 있으나 이미지가 작아 정확히 옮겨 적지 못해 비워뒀습니다(원본 이미지에서 직접 확인 필요)."
+      "reviewNote": "⚠️ 이 상품의 영양정보(100g당 수치)는 공식 사이트에 텍스트가 없고 이미지 표로만 제공되어, Claude가 2026-11-13에 화면을 캡처해서 옮겨 적었습니다(AI가 이미지에서 읽음 — 원본 대조 필요). 다른 임포터처럼 자동으로 재확인되지 않으니, 사이트에서 표가 바뀌면(버전 \"(26.09)\" 등) 수동으로 다시 옮겨 적어야 합니다. ⚠️ 환산 불가: 공식 홈페이지 \"조리 전 중량\" 안내에 이 상품이 어느 부위인지 명시돼 있지 않거나(볼케이노·갈비천왕·바사삭 3종·양념 히어로), 부위는 알아도 그램이 아예 없습니다(장각·추추 치킨 스테이크는 \"N조각\"만, 폭립은 중량 정보 자체가 없음). 추측하지 않고 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 보면 실제보다 훨씬 적게 나옵니다. 알레르기 유발물질은 표에 있으나 이미지가 작아 정확히 옮겨 적지 못해 비워뒀습니다(원본 이미지에서 직접 확인 필요)."
     }
   ]
 }
