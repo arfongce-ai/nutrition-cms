@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-21",
+  "updatedAt": "2026-11-13",
   "updatePolicy": {
     "reviewCycle": "quarterly",
     "sourcePriority": [
@@ -24349,97 +24349,493 @@
       "reviewNote": "한솥도시락 공식 홈페이지 상품 상세 페이지에 표기된 열량만 저장했습니다. 공식 사이트가 열량 외 나트륨·당류·단백질 등 다른 영양소 수치를 제공하지 않아 전부 null입니다. 알레르기 정보는 사이트에 플래그(al1~al18)로만 있고 항목명이 명시되지 않아 수집하지 않았습니다."
     },
     {
-      "id": "kyochon-c9761f13e379",
+      "id": "kyochon-db66411914e5",
       "brand": "교촌치킨",
-      "productName": "간장윙박스20PCS",
+      "productName": "허니윙콤비(하프윙+순살)",
       "aliases": [
-        "교촌치킨 간장윙박스20PCS",
-        "교촌 간장윙박스20PCS",
-        "간장윙박스20PCS"
+        "교촌치킨 허니윙콤비(하프윙+순살)",
+        "교촌 허니윙콤비(하프윙+순살)",
+        "허니윙콤비(하프윙+순살)"
       ],
       "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
+      "servingSize": "1인분 (조리 전 중량 700g 기준)",
+      "servingGram": 700,
       "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41363&cg=2",
-      "verifiedAt": "2026-10-21",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41643&cg=2",
+      "verifiedAt": "2026-11-13",
       "allergens": [],
-      "additiveWatch": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
       "nutrients": {
-        "calories": 375,
+        "calories": 2730,
         "carb": null,
-        "sugar": 4,
-        "protein": 29,
+        "sugar": 19.6,
+        "protein": 119,
         "fat": null,
-        "saturatedFat": 2,
+        "saturatedFat": 28,
         "transFat": null,
-        "sodium": 420,
+        "sodium": 2450,
         "caffeine": null
       },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. 공식 홈페이지 상품 설명에 적힌 \"조리 전 중량 700g\"을 기준으로 100g당 수치를 실제 1인분 수치로 환산했습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
     },
     {
-      "id": "kyochon-ab2b210a4d9d",
+      "id": "kyochon-2c48a6af2a52",
       "brand": "교촌치킨",
-      "productName": "레드윙박스20PCS",
+      "productName": "허니옥수수윙콤비(하프윙+순살)",
       "aliases": [
-        "교촌치킨 레드윙박스20PCS",
-        "교촌 레드윙박스20PCS",
-        "레드윙박스20PCS"
+        "교촌치킨 허니옥수수윙콤비(하프윙+순살)",
+        "교촌 허니옥수수윙콤비(하프윙+순살)",
+        "허니옥수수윙콤비(하프윙+순살)"
+      ],
+      "category": "교촌치킨/치킨",
+      "servingSize": "1인분 (조리 전 중량 700g 기준)",
+      "servingGram": 700,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41639&cg=2",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 2660,
+        "carb": null,
+        "sugar": 35,
+        "protein": 112,
+        "fat": null,
+        "saturatedFat": 21.7,
+        "transFat": null,
+        "sodium": 2450,
+        "caffeine": null
+      },
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. 공식 홈페이지 상품 설명에 적힌 \"조리 전 중량 700g\"을 기준으로 100g당 수치를 실제 1인분 수치로 환산했습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+    },
+    {
+      "id": "kyochon-bbc779cac3b1",
+      "brand": "교촌치킨",
+      "productName": "허니옥수수윙박스20pcs",
+      "aliases": [
+        "교촌치킨 허니옥수수윙박스20pcs",
+        "교촌 허니옥수수윙박스20pcs",
+        "허니옥수수윙박스20pcs"
       ],
       "category": "교촌치킨/치킨",
       "servingSize": "100g 기준",
       "servingGram": 100,
       "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41364&cg=2",
-      "verifiedAt": "2026-10-21",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41640&cg=2",
+      "verifiedAt": "2026-11-13",
       "allergens": [],
       "additiveWatch": [],
       "nutrients": {
-        "calories": 365,
+        "calories": 370,
         "carb": null,
-        "sugar": 5,
-        "protein": 27,
+        "sugar": 3.6,
+        "protein": 17,
         "fat": null,
-        "saturatedFat": 4.1,
+        "saturatedFat": 6,
+        "transFat": null,
+        "sodium": 360,
+        "caffeine": null
+      },
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 환산 불가: 공식 홈페이지에 이 상품의 1인분/1팩 중량(g)이 전혀 적혀 있지 않고 \"조각 수\"만 표시되어 있습니다(예: 윙+봉 6조각/16조각/20조각). 그램 환산 근거가 없어 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 그대로 보면 실제보다 훨씬 적게 나옵니다. 1인분 환산이 필요하면 조각당 평균 중량을 별도로 확인해야 합니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+    },
+    {
+      "id": "kyochon-f512995d16f6",
+      "brand": "교촌치킨",
+      "productName": "허니옥수수윙박스16pcs",
+      "aliases": [
+        "교촌치킨 허니옥수수윙박스16pcs",
+        "교촌 허니옥수수윙박스16pcs",
+        "허니옥수수윙박스16pcs"
+      ],
+      "category": "교촌치킨/치킨",
+      "servingSize": "100g 기준",
+      "servingGram": 100,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41641&cg=2",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 370,
+        "carb": null,
+        "sugar": 3.1,
+        "protein": 15,
+        "fat": null,
+        "saturatedFat": 5,
+        "transFat": null,
+        "sodium": 380,
+        "caffeine": null
+      },
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 환산 불가: 공식 홈페이지에 이 상품의 1인분/1팩 중량(g)이 전혀 적혀 있지 않고 \"조각 수\"만 표시되어 있습니다(예: 윙+봉 6조각/16조각/20조각). 그램 환산 근거가 없어 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 그대로 보면 실제보다 훨씬 적게 나옵니다. 1인분 환산이 필요하면 조각당 평균 중량을 별도로 확인해야 합니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+    },
+    {
+      "id": "kyochon-934f59cba888",
+      "brand": "교촌치킨",
+      "productName": "허니옥수수싱글윙",
+      "aliases": [
+        "교촌치킨 허니옥수수싱글윙",
+        "교촌 허니옥수수싱글윙",
+        "허니옥수수싱글윙"
+      ],
+      "category": "교촌치킨/치킨",
+      "servingSize": "100g 기준",
+      "servingGram": 100,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41642&cg=2",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 360,
+        "carb": null,
+        "sugar": 2.9,
+        "protein": 18,
+        "fat": null,
+        "saturatedFat": 6,
         "transFat": null,
         "sodium": 390,
         "caffeine": null
       },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 환산 불가: 공식 홈페이지에 이 상품의 1인분/1팩 중량(g)이 전혀 적혀 있지 않고 \"조각 수\"만 표시되어 있습니다(예: 윙+봉 6조각/16조각/20조각). 그램 환산 근거가 없어 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 그대로 보면 실제보다 훨씬 적게 나옵니다. 1인분 환산이 필요하면 조각당 평균 중량을 별도로 확인해야 합니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
     },
     {
-      "id": "kyochon-858b5bb56360",
+      "id": "kyochon-249698b3caa3",
       "brand": "교촌치킨",
-      "productName": "마라레드윙박스20PCS",
+      "productName": "허니갈릭윙콤비(하프윙+순살)",
       "aliases": [
-        "교촌치킨 마라레드윙박스20PCS",
-        "교촌 마라레드윙박스20PCS",
-        "마라레드윙박스20PCS"
+        "교촌치킨 허니갈릭윙콤비(하프윙+순살)",
+        "교촌 허니갈릭윙콤비(하프윙+순살)",
+        "허니갈릭윙콤비(하프윙+순살)"
       ],
       "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
+      "servingSize": "1인분 (조리 전 중량 700g 기준)",
+      "servingGram": 700,
       "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41365&cg=2",
-      "verifiedAt": "2026-10-21",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41577&cg=2",
+      "verifiedAt": "2026-11-13",
       "allergens": [],
-      "additiveWatch": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
       "nutrients": {
-        "calories": 330,
+        "calories": 1813,
         "carb": null,
-        "sugar": 3,
-        "protein": 28,
+        "sugar": 21,
+        "protein": 175,
         "fat": null,
-        "saturatedFat": 4,
+        "saturatedFat": 51.8,
         "transFat": null,
-        "sodium": 410,
+        "sodium": 3094,
         "caffeine": null
       },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. 공식 홈페이지 상품 설명에 적힌 \"조리 전 중량 700g\"을 기준으로 100g당 수치를 실제 1인분 수치로 환산했습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+    },
+    {
+      "id": "kyochon-186e95159252",
+      "brand": "교촌치킨",
+      "productName": "마라레드윙콤비(하프윙+순살)",
+      "aliases": [
+        "교촌치킨 마라레드윙콤비(하프윙+순살)",
+        "교촌 마라레드윙콤비(하프윙+순살)",
+        "마라레드윙콤비(하프윙+순살)"
+      ],
+      "category": "교촌치킨/치킨",
+      "servingSize": "1인분 (조리 전 중량 700g 기준)",
+      "servingGram": 700,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41576&cg=2",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 2387,
+        "carb": null,
+        "sugar": 21,
+        "protein": 154,
+        "fat": null,
+        "saturatedFat": 33.6,
+        "transFat": null,
+        "sodium": 2996,
+        "caffeine": null
+      },
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. 공식 홈페이지 상품 설명에 적힌 \"조리 전 중량 700g\"을 기준으로 100g당 수치를 실제 1인분 수치로 환산했습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+    },
+    {
+      "id": "kyochon-934a4def89b1",
+      "brand": "교촌치킨",
+      "productName": "간장윙콤비(하프윙+순살)",
+      "aliases": [
+        "교촌치킨 간장윙콤비(하프윙+순살)",
+        "교촌 간장윙콤비(하프윙+순살)",
+        "간장윙콤비(하프윙+순살)"
+      ],
+      "category": "교촌치킨/치킨",
+      "servingSize": "1인분 (조리 전 중량 700g 기준)",
+      "servingGram": 700,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41574&cg=2",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 2471,
+        "carb": null,
+        "sugar": 23.8,
+        "protein": 189,
+        "fat": null,
+        "saturatedFat": 11.2,
+        "transFat": null,
+        "sodium": 3325,
+        "caffeine": null
+      },
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. 공식 홈페이지 상품 설명에 적힌 \"조리 전 중량 700g\"을 기준으로 100g당 수치를 실제 1인분 수치로 환산했습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+    },
+    {
+      "id": "kyochon-aeffcde91d32",
+      "brand": "교촌치킨",
+      "productName": "레드윙콤비(하프윙+순살)",
+      "aliases": [
+        "교촌치킨 레드윙콤비(하프윙+순살)",
+        "교촌 레드윙콤비(하프윙+순살)",
+        "레드윙콤비(하프윙+순살)"
+      ],
+      "category": "교촌치킨/치킨",
+      "servingSize": "1인분 (조리 전 중량 700g 기준)",
+      "servingGram": 700,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41575&cg=2",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 2310,
+        "carb": null,
+        "sugar": 18.2,
+        "protein": 182,
+        "fat": null,
+        "saturatedFat": 34.3,
+        "transFat": null,
+        "sodium": 3164,
+        "caffeine": null
+      },
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. 공식 홈페이지 상품 설명에 적힌 \"조리 전 중량 700g\"을 기준으로 100g당 수치를 실제 1인분 수치로 환산했습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+    },
+    {
+      "id": "kyochon-33592f77a8e8",
+      "brand": "교촌치킨",
+      "productName": "반반윙콤비[간장+레드](하프윙+순살)",
+      "aliases": [
+        "교촌치킨 반반윙콤비[간장+레드](하프윙+순살)",
+        "교촌 반반윙콤비[간장+레드](하프윙+순살)",
+        "반반윙콤비[간장+레드](하프윙+순살)"
+      ],
+      "category": "교촌치킨/치킨",
+      "servingSize": "1인분 (조리 전 중량 700g 기준)",
+      "servingGram": 700,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41578&cg=2",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 2394,
+        "carb": null,
+        "sugar": 21,
+        "protein": 189,
+        "fat": null,
+        "saturatedFat": 23.1,
+        "transFat": null,
+        "sodium": 3248,
+        "caffeine": null
+      },
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. 공식 홈페이지 상품 설명에 적힌 \"조리 전 중량 700g\"을 기준으로 100g당 수치를 실제 1인분 수치로 환산했습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+    },
+    {
+      "id": "kyochon-1c678627ecb4",
+      "brand": "교촌치킨",
+      "productName": "반반윙콤비[마라레드+허니갈릭](하프윙+순살)",
+      "aliases": [
+        "교촌치킨 반반윙콤비[마라레드+허니갈릭](하프윙+순살)",
+        "교촌 반반윙콤비[마라레드+허니갈릭](하프윙+순살)",
+        "반반윙콤비[마라레드+허니갈릭](하프윙+순살)"
+      ],
+      "category": "교촌치킨/치킨",
+      "servingSize": "1인분 (조리 전 중량 700g 기준)",
+      "servingGram": 700,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41583&cg=2",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 2450,
+        "carb": null,
+        "sugar": 21,
+        "protein": 168,
+        "fat": null,
+        "saturatedFat": 42.7,
+        "transFat": null,
+        "sodium": 3045,
+        "caffeine": null
+      },
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. 공식 홈페이지 상품 설명에 적힌 \"조리 전 중량 700g\"을 기준으로 100g당 수치를 실제 1인분 수치로 환산했습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+    },
+    {
+      "id": "kyochon-a2b6287f03ee",
+      "brand": "교촌치킨",
+      "productName": "반반윙콤비[레드+허니갈릭](하프윙+순살)",
+      "aliases": [
+        "교촌치킨 반반윙콤비[레드+허니갈릭](하프윙+순살)",
+        "교촌 반반윙콤비[레드+허니갈릭](하프윙+순살)",
+        "반반윙콤비[레드+허니갈릭](하프윙+순살)"
+      ],
+      "category": "교촌치킨/치킨",
+      "servingSize": "1인분 (조리 전 중량 700g 기준)",
+      "servingGram": 700,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41582&cg=2",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 2415,
+        "carb": null,
+        "sugar": 19.6,
+        "protein": 182,
+        "fat": null,
+        "saturatedFat": 43.4,
+        "transFat": null,
+        "sodium": 3129,
+        "caffeine": null
+      },
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. 공식 홈페이지 상품 설명에 적힌 \"조리 전 중량 700g\"을 기준으로 100g당 수치를 실제 1인분 수치로 환산했습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+    },
+    {
+      "id": "kyochon-c4ed56fb7f5a",
+      "brand": "교촌치킨",
+      "productName": "반반윙콤비[간장+허니갈릭](하프윙+순살)",
+      "aliases": [
+        "교촌치킨 반반윙콤비[간장+허니갈릭](하프윙+순살)",
+        "교촌 반반윙콤비[간장+허니갈릭](하프윙+순살)",
+        "반반윙콤비[간장+허니갈릭](하프윙+순살)"
+      ],
+      "category": "교촌치킨/치킨",
+      "servingSize": "1인분 (조리 전 중량 700g 기준)",
+      "servingGram": 700,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41580&cg=2",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 2492,
+        "carb": null,
+        "sugar": 22.4,
+        "protein": 182,
+        "fat": null,
+        "saturatedFat": 31.5,
+        "transFat": null,
+        "sodium": 3213,
+        "caffeine": null
+      },
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. 공식 홈페이지 상품 설명에 적힌 \"조리 전 중량 700g\"을 기준으로 100g당 수치를 실제 1인분 수치로 환산했습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+    },
+    {
+      "id": "kyochon-bab5017e824f",
+      "brand": "교촌치킨",
+      "productName": "반반윙콤비[간장+마라레드](하프윙+순살)",
+      "aliases": [
+        "교촌치킨 반반윙콤비[간장+마라레드](하프윙+순살)",
+        "교촌 반반윙콤비[간장+마라레드](하프윙+순살)",
+        "반반윙콤비[간장+마라레드](하프윙+순살)"
+      ],
+      "category": "교촌치킨/치킨",
+      "servingSize": "1인분 (조리 전 중량 700g 기준)",
+      "servingGram": 700,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41579&cg=2",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 2429,
+        "carb": null,
+        "sugar": 22.4,
+        "protein": 175,
+        "fat": null,
+        "saturatedFat": 22.4,
+        "transFat": null,
+        "sodium": 3164,
+        "caffeine": null
+      },
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. 공식 홈페이지 상품 설명에 적힌 \"조리 전 중량 700g\"을 기준으로 100g당 수치를 실제 1인분 수치로 환산했습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+    },
+    {
+      "id": "kyochon-e4466053b079",
+      "brand": "교촌치킨",
+      "productName": "반반윙콤비[레드+마라레드](하프윙+순살)",
+      "aliases": [
+        "교촌치킨 반반윙콤비[레드+마라레드](하프윙+순살)",
+        "교촌 반반윙콤비[레드+마라레드](하프윙+순살)",
+        "반반윙콤비[레드+마라레드](하프윙+순살)"
+      ],
+      "category": "교촌치킨/치킨",
+      "servingSize": "1인분 (조리 전 중량 700g 기준)",
+      "servingGram": 700,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41581&cg=2",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 2352,
+        "carb": null,
+        "sugar": 19.6,
+        "protein": 168,
+        "fat": null,
+        "saturatedFat": 34.3,
+        "transFat": null,
+        "sodium": 3080,
+        "caffeine": null
+      },
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. 공식 홈페이지 상품 설명에 적힌 \"조리 전 중량 700g\"을 기준으로 100g당 수치를 실제 1인분 수치로 환산했습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
     },
     {
       "id": "kyochon-947e31ce2655",
@@ -24454,9 +24850,9 @@
       "servingSize": "100g 기준",
       "servingGram": 100,
       "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
       "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41366&cg=2",
-      "verifiedAt": "2026-10-21",
+      "verifiedAt": "2026-11-13",
       "allergens": [],
       "additiveWatch": [],
       "nutrients": {
@@ -24470,69 +24866,100 @@
         "sodium": 460,
         "caffeine": null
       },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 환산 불가: 공식 홈페이지에 이 상품의 1인분/1팩 중량(g)이 전혀 적혀 있지 않고 \"조각 수\"만 표시되어 있습니다(예: 윙+봉 6조각/16조각/20조각). 그램 환산 근거가 없어 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 그대로 보면 실제보다 훨씬 적게 나옵니다. 1인분 환산이 필요하면 조각당 평균 중량을 별도로 확인해야 합니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
     },
     {
-      "id": "kyochon-4b37625e86f6",
+      "id": "kyochon-858b5bb56360",
       "brand": "교촌치킨",
-      "productName": "후라이드윙박스20PCS",
+      "productName": "마라레드윙박스20PCS",
       "aliases": [
-        "교촌치킨 후라이드윙박스20PCS",
-        "교촌 후라이드윙박스20PCS",
-        "후라이드윙박스20PCS"
+        "교촌치킨 마라레드윙박스20PCS",
+        "교촌 마라레드윙박스20PCS",
+        "마라레드윙박스20PCS"
       ],
       "category": "교촌치킨/치킨",
       "servingSize": "100g 기준",
       "servingGram": 100,
       "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41367&cg=2",
-      "verifiedAt": "2026-10-21",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41365&cg=2",
+      "verifiedAt": "2026-11-13",
       "allergens": [],
       "additiveWatch": [],
       "nutrients": {
-        "calories": 370,
+        "calories": 330,
         "carb": null,
-        "sugar": 3.6,
-        "protein": 22,
+        "sugar": 3,
+        "protein": 28,
         "fat": null,
-        "saturatedFat": 1,
+        "saturatedFat": 4,
         "transFat": null,
-        "sodium": 510,
+        "sodium": 410,
         "caffeine": null
       },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 환산 불가: 공식 홈페이지에 이 상품의 1인분/1팩 중량(g)이 전혀 적혀 있지 않고 \"조각 수\"만 표시되어 있습니다(예: 윙+봉 6조각/16조각/20조각). 그램 환산 근거가 없어 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 그대로 보면 실제보다 훨씬 적게 나옵니다. 1인분 환산이 필요하면 조각당 평균 중량을 별도로 확인해야 합니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
     },
     {
-      "id": "kyochon-bfcbfb316e8c",
+      "id": "kyochon-c9761f13e379",
       "brand": "교촌치킨",
-      "productName": "양념치킨윙박스20PCS",
+      "productName": "간장윙박스20PCS",
       "aliases": [
-        "교촌치킨 양념치킨윙박스20PCS",
-        "교촌 양념치킨윙박스20PCS",
-        "양념치킨윙박스20PCS"
+        "교촌치킨 간장윙박스20PCS",
+        "교촌 간장윙박스20PCS",
+        "간장윙박스20PCS"
       ],
       "category": "교촌치킨/치킨",
       "servingSize": "100g 기준",
       "servingGram": 100,
       "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41368&cg=2",
-      "verifiedAt": "2026-10-21",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41363&cg=2",
+      "verifiedAt": "2026-11-13",
       "allergens": [],
       "additiveWatch": [],
       "nutrients": {
-        "calories": 320,
+        "calories": 375,
         "carb": null,
-        "sugar": 2.6,
-        "protein": 19,
+        "sugar": 4,
+        "protein": 29,
         "fat": null,
-        "saturatedFat": 9,
+        "saturatedFat": 2,
         "transFat": null,
-        "sodium": 560,
+        "sodium": 420,
         "caffeine": null
       },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 환산 불가: 공식 홈페이지에 이 상품의 1인분/1팩 중량(g)이 전혀 적혀 있지 않고 \"조각 수\"만 표시되어 있습니다(예: 윙+봉 6조각/16조각/20조각). 그램 환산 근거가 없어 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 그대로 보면 실제보다 훨씬 적게 나옵니다. 1인분 환산이 필요하면 조각당 평균 중량을 별도로 확인해야 합니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+    },
+    {
+      "id": "kyochon-ab2b210a4d9d",
+      "brand": "교촌치킨",
+      "productName": "레드윙박스20PCS",
+      "aliases": [
+        "교촌치킨 레드윙박스20PCS",
+        "교촌 레드윙박스20PCS",
+        "레드윙박스20PCS"
+      ],
+      "category": "교촌치킨/치킨",
+      "servingSize": "100g 기준",
+      "servingGram": 100,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41364&cg=2",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 365,
+        "carb": null,
+        "sugar": 5,
+        "protein": 27,
+        "fat": null,
+        "saturatedFat": 4.1,
+        "transFat": null,
+        "sodium": 390,
+        "caffeine": null
+      },
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 환산 불가: 공식 홈페이지에 이 상품의 1인분/1팩 중량(g)이 전혀 적혀 있지 않고 \"조각 수\"만 표시되어 있습니다(예: 윙+봉 6조각/16조각/20조각). 그램 환산 근거가 없어 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 그대로 보면 실제보다 훨씬 적게 나옵니다. 1인분 환산이 필요하면 조각당 평균 중량을 별도로 확인해야 합니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
     },
     {
       "id": "kyochon-2b87ee6d738e",
@@ -24547,9 +24974,9 @@
       "servingSize": "100g 기준",
       "servingGram": 100,
       "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
       "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41369&cg=2",
-      "verifiedAt": "2026-10-21",
+      "verifiedAt": "2026-11-13",
       "allergens": [],
       "additiveWatch": [],
       "nutrients": {
@@ -24563,379 +24990,69 @@
         "sodium": 340,
         "caffeine": null
       },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 환산 불가: 공식 홈페이지에 이 상품의 1인분/1팩 중량(g)이 전혀 적혀 있지 않고 \"조각 수\"만 표시되어 있습니다(예: 윙+봉 6조각/16조각/20조각). 그램 환산 근거가 없어 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 그대로 보면 실제보다 훨씬 적게 나옵니다. 1인분 환산이 필요하면 조각당 평균 중량을 별도로 확인해야 합니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
     },
     {
-      "id": "kyochon-934a4def89b1",
+      "id": "kyochon-4b37625e86f6",
       "brand": "교촌치킨",
-      "productName": "간장윙콤비",
+      "productName": "후라이드윙박스20PCS",
       "aliases": [
-        "교촌치킨 간장윙콤비",
-        "교촌 간장윙콤비",
-        "간장윙콤비"
+        "교촌치킨 후라이드윙박스20PCS",
+        "교촌 후라이드윙박스20PCS",
+        "후라이드윙박스20PCS"
       ],
       "category": "교촌치킨/치킨",
       "servingSize": "100g 기준",
       "servingGram": 100,
       "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41574&cg=2",
-      "verifiedAt": "2026-10-21",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41367&cg=2",
+      "verifiedAt": "2026-11-13",
       "allergens": [],
       "additiveWatch": [],
       "nutrients": {
-        "calories": 353,
+        "calories": 370,
         "carb": null,
-        "sugar": 3.4,
-        "protein": 27,
-        "fat": null,
-        "saturatedFat": 1.6,
-        "transFat": null,
-        "sodium": 475,
-        "caffeine": null
-      },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
-    },
-    {
-      "id": "kyochon-aeffcde91d32",
-      "brand": "교촌치킨",
-      "productName": "레드윙콤비",
-      "aliases": [
-        "교촌치킨 레드윙콤비",
-        "교촌 레드윙콤비",
-        "레드윙콤비"
-      ],
-      "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41575&cg=2",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 330,
-        "carb": null,
-        "sugar": 2.6,
-        "protein": 26,
-        "fat": null,
-        "saturatedFat": 4.9,
-        "transFat": null,
-        "sodium": 452,
-        "caffeine": null
-      },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
-    },
-    {
-      "id": "kyochon-186e95159252",
-      "brand": "교촌치킨",
-      "productName": "마라레드윙콤비",
-      "aliases": [
-        "교촌치킨 마라레드윙콤비",
-        "교촌 마라레드윙콤비",
-        "마라레드윙콤비"
-      ],
-      "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41576&cg=2",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 341,
-        "carb": null,
-        "sugar": 3,
+        "sugar": 3.6,
         "protein": 22,
         "fat": null,
-        "saturatedFat": 4.8,
+        "saturatedFat": 1,
         "transFat": null,
-        "sodium": 428,
+        "sodium": 510,
         "caffeine": null
       },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 환산 불가: 공식 홈페이지에 이 상품의 1인분/1팩 중량(g)이 전혀 적혀 있지 않고 \"조각 수\"만 표시되어 있습니다(예: 윙+봉 6조각/16조각/20조각). 그램 환산 근거가 없어 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 그대로 보면 실제보다 훨씬 적게 나옵니다. 1인분 환산이 필요하면 조각당 평균 중량을 별도로 확인해야 합니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
     },
     {
-      "id": "kyochon-249698b3caa3",
+      "id": "kyochon-bfcbfb316e8c",
       "brand": "교촌치킨",
-      "productName": "허니갈릭윙콤비",
+      "productName": "양념치킨윙박스20PCS",
       "aliases": [
-        "교촌치킨 허니갈릭윙콤비",
-        "교촌 허니갈릭윙콤비",
-        "허니갈릭윙콤비"
+        "교촌치킨 양념치킨윙박스20PCS",
+        "교촌 양념치킨윙박스20PCS",
+        "양념치킨윙박스20PCS"
       ],
       "category": "교촌치킨/치킨",
       "servingSize": "100g 기준",
       "servingGram": 100,
       "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41577&cg=2",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 259,
-        "carb": null,
-        "sugar": 3,
-        "protein": 25,
-        "fat": null,
-        "saturatedFat": 7.4,
-        "transFat": null,
-        "sodium": 442,
-        "caffeine": null
-      },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
-    },
-    {
-      "id": "kyochon-33592f77a8e8",
-      "brand": "교촌치킨",
-      "productName": "반반윙콤비[간장+레드]",
-      "aliases": [
-        "교촌치킨 반반윙콤비[간장+레드]",
-        "교촌 반반윙콤비[간장+레드]",
-        "반반윙콤비[간장+레드]"
-      ],
-      "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41578&cg=2",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 342,
-        "carb": null,
-        "sugar": 3,
-        "protein": 27,
-        "fat": null,
-        "saturatedFat": 3.3,
-        "transFat": null,
-        "sodium": 464,
-        "caffeine": null
-      },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
-    },
-    {
-      "id": "kyochon-bab5017e824f",
-      "brand": "교촌치킨",
-      "productName": "반반윙콤비[간장+마라레드]",
-      "aliases": [
-        "교촌치킨 반반윙콤비[간장+마라레드]",
-        "교촌 반반윙콤비[간장+마라레드]",
-        "반반윙콤비[간장+마라레드]"
-      ],
-      "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41579&cg=2",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 347,
-        "carb": null,
-        "sugar": 3.2,
-        "protein": 25,
-        "fat": null,
-        "saturatedFat": 3.2,
-        "transFat": null,
-        "sodium": 452,
-        "caffeine": null
-      },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
-    },
-    {
-      "id": "kyochon-c4ed56fb7f5a",
-      "brand": "교촌치킨",
-      "productName": "반반윙콤비[간장+허니갈릭]",
-      "aliases": [
-        "교촌치킨 반반윙콤비[간장+허니갈릭]",
-        "교촌 반반윙콤비[간장+허니갈릭]",
-        "반반윙콤비[간장+허니갈릭]"
-      ],
-      "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41580&cg=2",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 356,
-        "carb": null,
-        "sugar": 3.2,
-        "protein": 26,
-        "fat": null,
-        "saturatedFat": 4.5,
-        "transFat": null,
-        "sodium": 459,
-        "caffeine": null
-      },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
-    },
-    {
-      "id": "kyochon-e4466053b079",
-      "brand": "교촌치킨",
-      "productName": "반반윙콤비[레드+마라레드]",
-      "aliases": [
-        "교촌치킨 반반윙콤비[레드+마라레드]",
-        "교촌 반반윙콤비[레드+마라레드]",
-        "반반윙콤비[레드+마라레드]"
-      ],
-      "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41581&cg=2",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 336,
-        "carb": null,
-        "sugar": 2.8,
-        "protein": 24,
-        "fat": null,
-        "saturatedFat": 4.9,
-        "transFat": null,
-        "sodium": 440,
-        "caffeine": null
-      },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
-    },
-    {
-      "id": "kyochon-a2b6287f03ee",
-      "brand": "교촌치킨",
-      "productName": "반반윙콤비[레드+허니갈릭]",
-      "aliases": [
-        "교촌치킨 반반윙콤비[레드+허니갈릭]",
-        "교촌 반반윙콤비[레드+허니갈릭]",
-        "반반윙콤비[레드+허니갈릭]"
-      ],
-      "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41582&cg=2",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 345,
-        "carb": null,
-        "sugar": 2.8,
-        "protein": 26,
-        "fat": null,
-        "saturatedFat": 6.2,
-        "transFat": null,
-        "sodium": 447,
-        "caffeine": null
-      },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
-    },
-    {
-      "id": "kyochon-1c678627ecb4",
-      "brand": "교촌치킨",
-      "productName": "반반윙콤비[마라레드+허니갈릭]",
-      "aliases": [
-        "교촌치킨 반반윙콤비[마라레드+허니갈릭]",
-        "교촌 반반윙콤비[마라레드+허니갈릭]",
-        "반반윙콤비[마라레드+허니갈릭]"
-      ],
-      "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41583&cg=2",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 350,
-        "carb": null,
-        "sugar": 3,
-        "protein": 24,
-        "fat": null,
-        "saturatedFat": 6.1,
-        "transFat": null,
-        "sodium": 435,
-        "caffeine": null
-      },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
-    },
-    {
-      "id": "kyochon-6704db1e0d6e",
-      "brand": "교촌치킨",
-      "productName": "허니갈릭한마리",
-      "aliases": [
-        "교촌치킨 허니갈릭한마리",
-        "교촌 허니갈릭한마리",
-        "허니갈릭한마리"
-      ],
-      "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41130&cg=2",
-      "verifiedAt": "2026-10-21",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41368&cg=2",
+      "verifiedAt": "2026-11-13",
       "allergens": [],
       "additiveWatch": [],
       "nutrients": {
         "calories": 320,
         "carb": null,
-        "sugar": 8,
-        "protein": 28,
+        "sugar": 2.6,
+        "protein": 19,
         "fat": null,
-        "saturatedFat": 2.6,
+        "saturatedFat": 9,
         "transFat": null,
-        "sodium": 420,
+        "sodium": 560,
         "caffeine": null
       },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
-    },
-    {
-      "id": "kyochon-b248c75eea43",
-      "brand": "교촌치킨",
-      "productName": "마라레드한마리",
-      "aliases": [
-        "교촌치킨 마라레드한마리",
-        "교촌 마라레드한마리",
-        "마라레드한마리"
-      ],
-      "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41062&cg=2",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 340,
-        "carb": null,
-        "sugar": 5,
-        "protein": 27,
-        "fat": null,
-        "saturatedFat": 2.7,
-        "transFat": null,
-        "sodium": 350,
-        "caffeine": null
-      },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 환산 불가: 공식 홈페이지에 이 상품의 1인분/1팩 중량(g)이 전혀 적혀 있지 않고 \"조각 수\"만 표시되어 있습니다(예: 윙+봉 6조각/16조각/20조각). 그램 환산 근거가 없어 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 그대로 보면 실제보다 훨씬 적게 나옵니다. 1인분 환산이 필요하면 조각당 평균 중량을 별도로 확인해야 합니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
     },
     {
       "id": "kyochon-00744e25d959",
@@ -24950,9 +25067,9 @@
       "servingSize": "100g 기준",
       "servingGram": 100,
       "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
       "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41132&cg=2",
-      "verifiedAt": "2026-10-21",
+      "verifiedAt": "2026-11-13",
       "allergens": [],
       "additiveWatch": [],
       "nutrients": {
@@ -24966,7 +25083,7 @@
         "sodium": 460,
         "caffeine": null
       },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 환산 불가: 공식 홈페이지에 이 상품의 1인분/1팩 중량(g)이 전혀 적혀 있지 않고 \"조각 수\"만 표시되어 있습니다(예: 윙+봉 6조각/16조각/20조각). 그램 환산 근거가 없어 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 그대로 보면 실제보다 훨씬 적게 나옵니다. 1인분 환산이 필요하면 조각당 평균 중량을 별도로 확인해야 합니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
     },
     {
       "id": "kyochon-4d9565812e89",
@@ -24981,9 +25098,9 @@
       "servingSize": "100g 기준",
       "servingGram": 100,
       "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
       "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=40992&cg=2",
-      "verifiedAt": "2026-10-21",
+      "verifiedAt": "2026-11-13",
       "allergens": [],
       "additiveWatch": [],
       "nutrients": {
@@ -24997,7 +25114,7 @@
         "sodium": 410,
         "caffeine": null
       },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 환산 불가: 공식 홈페이지에 이 상품의 1인분/1팩 중량(g)이 전혀 적혀 있지 않고 \"조각 수\"만 표시되어 있습니다(예: 윙+봉 6조각/16조각/20조각). 그램 환산 근거가 없어 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 그대로 보면 실제보다 훨씬 적게 나옵니다. 1인분 환산이 필요하면 조각당 평균 중량을 별도로 확인해야 합니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
     },
     {
       "id": "kyochon-ec362b9a4538",
@@ -25012,9 +25129,9 @@
       "servingSize": "100g 기준",
       "servingGram": 100,
       "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
       "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=40936&cg=2",
-      "verifiedAt": "2026-10-21",
+      "verifiedAt": "2026-11-13",
       "allergens": [],
       "additiveWatch": [],
       "nutrients": {
@@ -25028,7 +25145,7 @@
         "sodium": 420,
         "caffeine": null
       },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 환산 불가: 공식 홈페이지에 이 상품의 1인분/1팩 중량(g)이 전혀 적혀 있지 않고 \"조각 수\"만 표시되어 있습니다(예: 윙+봉 6조각/16조각/20조각). 그램 환산 근거가 없어 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 그대로 보면 실제보다 훨씬 적게 나옵니다. 1인분 환산이 필요하면 조각당 평균 중량을 별도로 확인해야 합니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
     },
     {
       "id": "kyochon-bcc7fae5011a",
@@ -25043,9 +25160,9 @@
       "servingSize": "100g 기준",
       "servingGram": 100,
       "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
       "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=40937&cg=2",
-      "verifiedAt": "2026-10-21",
+      "verifiedAt": "2026-11-13",
       "allergens": [],
       "additiveWatch": [],
       "nutrients": {
@@ -25059,7 +25176,7 @@
         "sodium": 390,
         "caffeine": null
       },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 환산 불가: 공식 홈페이지에 이 상품의 1인분/1팩 중량(g)이 전혀 적혀 있지 않고 \"조각 수\"만 표시되어 있습니다(예: 윙+봉 6조각/16조각/20조각). 그램 환산 근거가 없어 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 그대로 보면 실제보다 훨씬 적게 나옵니다. 1인분 환산이 필요하면 조각당 평균 중량을 별도로 확인해야 합니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
     },
     {
       "id": "kyochon-bc25d9071622",
@@ -25074,9 +25191,9 @@
       "servingSize": "100g 기준",
       "servingGram": 100,
       "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
       "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=40875&cg=2",
-      "verifiedAt": "2026-10-21",
+      "verifiedAt": "2026-11-13",
       "allergens": [],
       "additiveWatch": [],
       "nutrients": {
@@ -25090,7 +25207,7 @@
         "sodium": 340,
         "caffeine": null
       },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 환산 불가: 공식 홈페이지에 이 상품의 1인분/1팩 중량(g)이 전혀 적혀 있지 않고 \"조각 수\"만 표시되어 있습니다(예: 윙+봉 6조각/16조각/20조각). 그램 환산 근거가 없어 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 그대로 보면 실제보다 훨씬 적게 나옵니다. 1인분 환산이 필요하면 조각당 평균 중량을 별도로 확인해야 합니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
     },
     {
       "id": "kyochon-1ba7cbb4a74a",
@@ -25105,9 +25222,9 @@
       "servingSize": "100g 기준",
       "servingGram": 100,
       "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
       "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=40890&cg=2",
-      "verifiedAt": "2026-10-21",
+      "verifiedAt": "2026-11-13",
       "allergens": [],
       "additiveWatch": [],
       "nutrients": {
@@ -25121,7 +25238,7 @@
         "sodium": 510,
         "caffeine": null
       },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 환산 불가: 공식 홈페이지에 이 상품의 1인분/1팩 중량(g)이 전혀 적혀 있지 않고 \"조각 수\"만 표시되어 있습니다(예: 윙+봉 6조각/16조각/20조각). 그램 환산 근거가 없어 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 그대로 보면 실제보다 훨씬 적게 나옵니다. 1인분 환산이 필요하면 조각당 평균 중량을 별도로 확인해야 합니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
     },
     {
       "id": "kyochon-80b3a3021444",
@@ -25136,9 +25253,9 @@
       "servingSize": "100g 기준",
       "servingGram": 100,
       "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
       "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=40914&cg=2",
-      "verifiedAt": "2026-10-21",
+      "verifiedAt": "2026-11-13",
       "allergens": [],
       "additiveWatch": [],
       "nutrients": {
@@ -25152,7 +25269,1088 @@
         "sodium": 560,
         "caffeine": null
       },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 환산 불가: 공식 홈페이지에 이 상품의 1인분/1팩 중량(g)이 전혀 적혀 있지 않고 \"조각 수\"만 표시되어 있습니다(예: 윙+봉 6조각/16조각/20조각). 그램 환산 근거가 없어 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 그대로 보면 실제보다 훨씬 적게 나옵니다. 1인분 환산이 필요하면 조각당 평균 중량을 별도로 확인해야 합니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+    },
+    {
+      "id": "kyochon-40394b47270e",
+      "brand": "교촌치킨",
+      "productName": "허니한마리",
+      "aliases": [
+        "교촌치킨 허니한마리",
+        "교촌 허니한마리",
+        "허니한마리"
+      ],
+      "category": "교촌치킨/치킨",
+      "servingSize": "1마리 (조리 전 중량 약 1001g — 공식 범위 951~1050g의 평균값)",
+      "servingGram": 1001,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=30161&cg=2",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 3303.3,
+        "carb": null,
+        "sugar": 40,
+        "protein": 210.2,
+        "fat": null,
+        "saturatedFat": 25,
+        "transFat": null,
+        "sodium": 3433.4,
+        "caffeine": null
+      },
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 공식 홈페이지에 \"951~1050g\" 범위(10호 닭)로만 적혀 있어, 그 평균값(1001g)으로 환산한 추정치입니다. 실제 개체 중량에 따라 달라질 수 있습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+    },
+    {
+      "id": "kyochon-0bbb35d1e712",
+      "brand": "교촌치킨",
+      "productName": "허니콤보",
+      "aliases": [
+        "교촌치킨 허니콤보",
+        "교촌 허니콤보",
+        "허니콤보"
+      ],
+      "category": "교촌치킨/치킨",
+      "servingSize": "1인분 (조리 전 중량 880g 기준)",
+      "servingGram": 880,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=30164&cg=2",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 2816,
+        "carb": null,
+        "sugar": 44,
+        "protein": 167.2,
+        "fat": null,
+        "saturatedFat": 26.4,
+        "transFat": null,
+        "sodium": 3432,
+        "caffeine": null
+      },
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. 공식 홈페이지 상품 설명에 적힌 \"조리 전 중량 880g\"을 기준으로 100g당 수치를 실제 1인분 수치로 환산했습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+    },
+    {
+      "id": "kyochon-4752f05944f2",
+      "brand": "교촌치킨",
+      "productName": "허니순살",
+      "aliases": [
+        "교촌치킨 허니순살",
+        "교촌 허니순살",
+        "허니순살"
+      ],
+      "category": "교촌치킨/치킨",
+      "servingSize": "1인분 (조리 전 중량 500g 기준)",
+      "servingGram": 500,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=38053&cg=2",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 1725,
+        "carb": null,
+        "sugar": 35,
+        "protein": 95,
+        "fat": null,
+        "saturatedFat": 9,
+        "transFat": null,
+        "sodium": 2100,
+        "caffeine": null
+      },
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. 공식 홈페이지 상품 설명에 적힌 \"조리 전 중량 500g\"을 기준으로 100g당 수치를 실제 1인분 수치로 환산했습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+    },
+    {
+      "id": "kyochon-4c32ff8228e6",
+      "brand": "교촌치킨",
+      "productName": "후라이드한마리",
+      "aliases": [
+        "교촌치킨 후라이드한마리",
+        "교촌 후라이드한마리",
+        "후라이드한마리"
+      ],
+      "category": "교촌치킨/치킨",
+      "servingSize": "1마리 (조리 전 중량 약 1001g — 공식 범위 951~1050g의 평균값)",
+      "servingGram": 1001,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=40877&cg=2",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 3703.7,
+        "carb": null,
+        "sugar": 10,
+        "protein": 270.3,
+        "fat": null,
+        "saturatedFat": 28,
+        "transFat": null,
+        "sodium": 4604.6,
+        "caffeine": null
+      },
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 공식 홈페이지에 \"951~1050g\" 범위(10호 닭)로만 적혀 있어, 그 평균값(1001g)으로 환산한 추정치입니다. 실제 개체 중량에 따라 달라질 수 있습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+    },
+    {
+      "id": "kyochon-86e198b458b7",
+      "brand": "교촌치킨",
+      "productName": "양념치킨한마리",
+      "aliases": [
+        "교촌치킨 양념치킨한마리",
+        "교촌 양념치킨한마리",
+        "양념치킨한마리"
+      ],
+      "category": "교촌치킨/치킨",
+      "servingSize": "1마리 (조리 전 중량 약 1001g — 공식 범위 951~1050g의 평균값)",
+      "servingGram": 1001,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=40878&cg=2",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 3503.5,
+        "carb": null,
+        "sugar": 90.1,
+        "protein": 220.2,
+        "fat": null,
+        "saturatedFat": 26,
+        "transFat": null,
+        "sodium": 4904.9,
+        "caffeine": null
+      },
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 공식 홈페이지에 \"951~1050g\" 범위(10호 닭)로만 적혀 있어, 그 평균값(1001g)으로 환산한 추정치입니다. 실제 개체 중량에 따라 달라질 수 있습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+    },
+    {
+      "id": "kyochon-0d93e7c3553e",
+      "brand": "교촌치킨",
+      "productName": "후라이드양념반반한마리",
+      "aliases": [
+        "교촌치킨 후라이드양념반반한마리",
+        "교촌 후라이드양념반반한마리",
+        "후라이드양념반반한마리"
+      ],
+      "category": "교촌치킨/치킨",
+      "servingSize": "1마리 (조리 전 중량 약 1001g — 공식 범위 951~1050g의 평균값)",
+      "servingGram": 1001,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=40879&cg=2",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 3603.6,
+        "carb": null,
+        "sugar": 40,
+        "protein": 250.3,
+        "fat": null,
+        "saturatedFat": 27,
+        "transFat": null,
+        "sodium": 4804.8,
+        "caffeine": null
+      },
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 공식 홈페이지에 \"951~1050g\" 범위(10호 닭)로만 적혀 있어, 그 평균값(1001g)으로 환산한 추정치입니다. 실제 개체 중량에 따라 달라질 수 있습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+    },
+    {
+      "id": "kyochon-1e768c3a2a9f",
+      "brand": "교촌치킨",
+      "productName": "후라이드순살",
+      "aliases": [
+        "교촌치킨 후라이드순살",
+        "교촌 후라이드순살",
+        "후라이드순살"
+      ],
+      "category": "교촌치킨/치킨",
+      "servingSize": "1인분 (조리 전 중량 500g 기준)",
+      "servingGram": 500,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=40961&cg=2",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 1750,
+        "carb": null,
+        "sugar": 5,
+        "protein": 105,
+        "fat": null,
+        "saturatedFat": 13,
+        "transFat": null,
+        "sodium": 2400,
+        "caffeine": null
+      },
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. 공식 홈페이지 상품 설명에 적힌 \"조리 전 중량 500g\"을 기준으로 100g당 수치를 실제 1인분 수치로 환산했습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+    },
+    {
+      "id": "kyochon-c737d0aceb62",
+      "brand": "교촌치킨",
+      "productName": "양념치킨순살",
+      "aliases": [
+        "교촌치킨 양념치킨순살",
+        "교촌 양념치킨순살",
+        "양념치킨순살"
+      ],
+      "category": "교촌치킨/치킨",
+      "servingSize": "1인분 (조리 전 중량 500g 기준)",
+      "servingGram": 500,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=40962&cg=2",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 1550,
+        "carb": null,
+        "sugar": 45,
+        "protein": 105,
+        "fat": null,
+        "saturatedFat": 9.5,
+        "transFat": null,
+        "sodium": 2850,
+        "caffeine": null
+      },
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. 공식 홈페이지 상품 설명에 적힌 \"조리 전 중량 500g\"을 기준으로 100g당 수치를 실제 1인분 수치로 환산했습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+    },
+    {
+      "id": "kyochon-12ff9afa0aee",
+      "brand": "교촌치킨",
+      "productName": "후라이드양념반반순살",
+      "aliases": [
+        "교촌치킨 후라이드양념반반순살",
+        "교촌 후라이드양념반반순살",
+        "후라이드양념반반순살"
+      ],
+      "category": "교촌치킨/치킨",
+      "servingSize": "1인분 (조리 전 중량 500g 기준)",
+      "servingGram": 500,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=40963&cg=2",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 1650,
+        "carb": null,
+        "sugar": 22.5,
+        "protein": 105,
+        "fat": null,
+        "saturatedFat": 11.5,
+        "transFat": null,
+        "sodium": 2650,
+        "caffeine": null
+      },
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. 공식 홈페이지 상품 설명에 적힌 \"조리 전 중량 500g\"을 기준으로 100g당 수치를 실제 1인분 수치로 환산했습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+    },
+    {
+      "id": "kyochon-497280ff24df",
+      "brand": "교촌치킨",
+      "productName": "허니옥수수순살",
+      "aliases": [
+        "교촌치킨 허니옥수수순살",
+        "교촌 허니옥수수순살",
+        "허니옥수수순살"
+      ],
+      "category": "교촌치킨/치킨",
+      "servingSize": "1인분 (조리 전 중량 500g 기준)",
+      "servingGram": 500,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=40486&cg=2",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 2025,
+        "carb": null,
+        "sugar": 45,
+        "protein": 80,
+        "fat": null,
+        "saturatedFat": 15.5,
+        "transFat": null,
+        "sodium": 2550,
+        "caffeine": null
+      },
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. 공식 홈페이지 상품 설명에 적힌 \"조리 전 중량 500g\"을 기준으로 100g당 수치를 실제 1인분 수치로 환산했습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+    },
+    {
+      "id": "kyochon-422788485e13",
+      "brand": "교촌치킨",
+      "productName": "허니옥수수한마리",
+      "aliases": [
+        "교촌치킨 허니옥수수한마리",
+        "교촌 허니옥수수한마리",
+        "허니옥수수한마리"
+      ],
+      "category": "교촌치킨/치킨",
+      "servingSize": "1마리 (조리 전 중량 약 1001g — 공식 범위 951~1050g의 평균값)",
+      "servingGram": 1001,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=40484&cg=2",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 3803.8,
+        "carb": null,
+        "sugar": 80.1,
+        "protein": 200.2,
+        "fat": null,
+        "saturatedFat": 29,
+        "transFat": null,
+        "sodium": 4504.5,
+        "caffeine": null
+      },
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 공식 홈페이지에 \"951~1050g\" 범위(10호 닭)로만 적혀 있어, 그 평균값(1001g)으로 환산한 추정치입니다. 실제 개체 중량에 따라 달라질 수 있습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+    },
+    {
+      "id": "kyochon-c45fc9e799b4",
+      "brand": "교촌치킨",
+      "productName": "레드한마리",
+      "aliases": [
+        "교촌치킨 레드한마리",
+        "교촌 레드한마리",
+        "레드한마리"
+      ],
+      "category": "교촌치킨/치킨",
+      "servingSize": "1마리 (조리 전 중량 약 1001g — 공식 범위 951~1050g의 평균값)",
+      "servingGram": 1001,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=30022&cg=2",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 3353.4,
+        "carb": null,
+        "sugar": 40,
+        "protein": 290.3,
+        "fat": null,
+        "saturatedFat": 26,
+        "transFat": null,
+        "sodium": 3213.2,
+        "caffeine": null
+      },
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 공식 홈페이지에 \"951~1050g\" 범위(10호 닭)로만 적혀 있어, 그 평균값(1001g)으로 환산한 추정치입니다. 실제 개체 중량에 따라 달라질 수 있습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+    },
+    {
+      "id": "kyochon-19f8d2d8c57e",
+      "brand": "교촌치킨",
+      "productName": "레드콤보",
+      "aliases": [
+        "교촌치킨 레드콤보",
+        "교촌 레드콤보",
+        "레드콤보"
+      ],
+      "category": "교촌치킨/치킨",
+      "servingSize": "1인분 (조리 전 중량 920g 기준)",
+      "servingGram": 920,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=30030&cg=2",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 2806,
+        "carb": null,
+        "sugar": 36.8,
+        "protein": 239.2,
+        "fat": null,
+        "saturatedFat": 24.8,
+        "transFat": null,
+        "sodium": 3192.4,
+        "caffeine": null
+      },
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. 공식 홈페이지 상품 설명에 적힌 \"조리 전 중량 920g\"을 기준으로 100g당 수치를 실제 1인분 수치로 환산했습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+    },
+    {
+      "id": "kyochon-e265b56994cb",
+      "brand": "교촌치킨",
+      "productName": "레드스틱",
+      "aliases": [
+        "교촌치킨 레드스틱",
+        "교촌 레드스틱",
+        "레드스틱"
+      ],
+      "category": "교촌치킨/치킨",
+      "servingSize": "1인분 (조리 전 중량 920g 기준)",
+      "servingGram": 920,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=30018&cg=2",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 2576,
+        "carb": null,
+        "sugar": 36.8,
+        "protein": 248.4,
+        "fat": null,
+        "saturatedFat": 16.6,
+        "transFat": null,
+        "sodium": 2842.8,
+        "caffeine": null
+      },
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. 공식 홈페이지 상품 설명에 적힌 \"조리 전 중량 920g\"을 기준으로 100g당 수치를 실제 1인분 수치로 환산했습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+    },
+    {
+      "id": "kyochon-bef6f18e3a5f",
+      "brand": "교촌치킨",
+      "productName": "레드순살",
+      "aliases": [
+        "교촌치킨 레드순살",
+        "교촌 레드순살",
+        "레드순살"
+      ],
+      "category": "교촌치킨/치킨",
+      "servingSize": "1인분 (조리 전 중량 700g 기준)",
+      "servingGram": 700,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=38391&cg=2",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 2660,
+        "carb": null,
+        "sugar": 56,
+        "protein": 203,
+        "fat": null,
+        "saturatedFat": 23.1,
+        "transFat": null,
+        "sodium": 3080,
+        "caffeine": null
+      },
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. 공식 홈페이지 상품 설명에 적힌 \"조리 전 중량 700g\"을 기준으로 100g당 수치를 실제 1인분 수치로 환산했습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+    },
+    {
+      "id": "kyochon-bd9df7268a0a",
+      "brand": "교촌치킨",
+      "productName": "간장한마리",
+      "aliases": [
+        "교촌치킨 간장한마리",
+        "교촌 간장한마리",
+        "간장한마리"
+      ],
+      "category": "교촌치킨/치킨",
+      "servingSize": "1마리 (조리 전 중량 약 1001g — 공식 범위 951~1050g의 평균값)",
+      "servingGram": 1001,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=30098&cg=2",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 3403.4,
+        "carb": null,
+        "sugar": 10,
+        "protein": 290.3,
+        "fat": null,
+        "saturatedFat": 27,
+        "transFat": null,
+        "sodium": 3463.5,
+        "caffeine": null
+      },
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 공식 홈페이지에 \"951~1050g\" 범위(10호 닭)로만 적혀 있어, 그 평균값(1001g)으로 환산한 추정치입니다. 실제 개체 중량에 따라 달라질 수 있습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+    },
+    {
+      "id": "kyochon-7e9f9ed34aa1",
+      "brand": "교촌치킨",
+      "productName": "간장콤보",
+      "aliases": [
+        "교촌치킨 간장콤보",
+        "교촌 간장콤보",
+        "간장콤보"
+      ],
+      "category": "교촌치킨/치킨",
+      "servingSize": "1인분 (조리 전 중량 920g 기준)",
+      "servingGram": 920,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=30146&cg=2",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 2944,
+        "carb": null,
+        "sugar": 18.4,
+        "protein": 257.6,
+        "fat": null,
+        "saturatedFat": 23.9,
+        "transFat": null,
+        "sodium": 3312,
+        "caffeine": null
+      },
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. 공식 홈페이지 상품 설명에 적힌 \"조리 전 중량 920g\"을 기준으로 100g당 수치를 실제 1인분 수치로 환산했습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+    },
+    {
+      "id": "kyochon-c6aef412c91b",
+      "brand": "교촌치킨",
+      "productName": "간장스틱",
+      "aliases": [
+        "교촌치킨 간장스틱",
+        "교촌 간장스틱",
+        "간장스틱"
+      ],
+      "category": "교촌치킨/치킨",
+      "servingSize": "1인분 (조리 전 중량 920g 기준)",
+      "servingGram": 920,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=30083&cg=2",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 2484,
+        "carb": null,
+        "sugar": 18.4,
+        "protein": 248.4,
+        "fat": null,
+        "saturatedFat": 21.2,
+        "transFat": null,
+        "sodium": 3670.8,
+        "caffeine": null
+      },
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. 공식 홈페이지 상품 설명에 적힌 \"조리 전 중량 920g\"을 기준으로 100g당 수치를 실제 1인분 수치로 환산했습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+    },
+    {
+      "id": "kyochon-4383326c328c",
+      "brand": "교촌치킨",
+      "productName": "간장순살",
+      "aliases": [
+        "교촌치킨 간장순살",
+        "교촌 간장순살",
+        "간장순살"
+      ],
+      "category": "교촌치킨/치킨",
+      "servingSize": "1인분 (조리 전 중량 700g 기준)",
+      "servingGram": 700,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=38390&cg=2",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 2765,
+        "carb": null,
+        "sugar": 14,
+        "protein": 203,
+        "fat": null,
+        "saturatedFat": 31.5,
+        "transFat": null,
+        "sodium": 3290,
+        "caffeine": null
+      },
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. 공식 홈페이지 상품 설명에 적힌 \"조리 전 중량 700g\"을 기준으로 100g당 수치를 실제 1인분 수치로 환산했습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+    },
+    {
+      "id": "kyochon-6664359ea111",
+      "brand": "교촌치킨",
+      "productName": "반반한마리[간장+레드]",
+      "aliases": [
+        "교촌치킨 반반한마리[간장+레드]",
+        "교촌 반반한마리[간장+레드]",
+        "반반한마리[간장+레드]"
+      ],
+      "category": "교촌치킨/치킨",
+      "servingSize": "1마리 (조리 전 중량 약 1001g — 공식 범위 951~1050g의 평균값)",
+      "servingGram": 1001,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=30100&cg=2",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 3403.4,
+        "carb": null,
+        "sugar": 30,
+        "protein": 290.3,
+        "fat": null,
+        "saturatedFat": 30,
+        "transFat": null,
+        "sodium": 3303.3,
+        "caffeine": null
+      },
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 공식 홈페이지에 \"951~1050g\" 범위(10호 닭)로만 적혀 있어, 그 평균값(1001g)으로 환산한 추정치입니다. 실제 개체 중량에 따라 달라질 수 있습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+    },
+    {
+      "id": "kyochon-70842d8fbbf6",
+      "brand": "교촌치킨",
+      "productName": "반반한마리[마라레드+허니갈릭]",
+      "aliases": [
+        "교촌치킨 반반한마리[마라레드+허니갈릭]",
+        "교촌 반반한마리[마라레드+허니갈릭]",
+        "반반한마리[마라레드+허니갈릭]"
+      ],
+      "category": "교촌치킨/치킨",
+      "servingSize": "1마리 (조리 전 중량 약 1001g — 공식 범위 951~1050g의 평균값)",
+      "servingGram": 1001,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41137&cg=2",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 3303.3,
+        "carb": null,
+        "sugar": 70.1,
+        "protein": 280.3,
+        "fat": null,
+        "saturatedFat": 27,
+        "transFat": null,
+        "sodium": 3903.9,
+        "caffeine": null
+      },
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 공식 홈페이지에 \"951~1050g\" 범위(10호 닭)로만 적혀 있어, 그 평균값(1001g)으로 환산한 추정치입니다. 실제 개체 중량에 따라 달라질 수 있습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+    },
+    {
+      "id": "kyochon-3dbc9e734741",
+      "brand": "교촌치킨",
+      "productName": "반반한마리[레드+허니갈릭]",
+      "aliases": [
+        "교촌치킨 반반한마리[레드+허니갈릭]",
+        "교촌 반반한마리[레드+허니갈릭]",
+        "반반한마리[레드+허니갈릭]"
+      ],
+      "category": "교촌치킨/치킨",
+      "servingSize": "1마리 (조리 전 중량 약 1001g — 공식 범위 951~1050g의 평균값)",
+      "servingGram": 1001,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41134&cg=2",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 3403.4,
+        "carb": null,
+        "sugar": 60.1,
+        "protein": 290.3,
+        "fat": null,
+        "saturatedFat": 26,
+        "transFat": null,
+        "sodium": 3703.7,
+        "caffeine": null
+      },
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 공식 홈페이지에 \"951~1050g\" 범위(10호 닭)로만 적혀 있어, 그 평균값(1001g)으로 환산한 추정치입니다. 실제 개체 중량에 따라 달라질 수 있습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+    },
+    {
+      "id": "kyochon-d6b7d4ba96f1",
+      "brand": "교촌치킨",
+      "productName": "반반한마리[간장+허니갈릭]",
+      "aliases": [
+        "교촌치킨 반반한마리[간장+허니갈릭]",
+        "교촌 반반한마리[간장+허니갈릭]",
+        "반반한마리[간장+허니갈릭]"
+      ],
+      "category": "교촌치킨/치킨",
+      "servingSize": "1마리 (조리 전 중량 약 1001g — 공식 범위 951~1050g의 평균값)",
+      "servingGram": 1001,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41133&cg=2",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 3303.3,
+        "carb": null,
+        "sugar": 60.1,
+        "protein": 290.3,
+        "fat": null,
+        "saturatedFat": 27,
+        "transFat": null,
+        "sodium": 3803.8,
+        "caffeine": null
+      },
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 공식 홈페이지에 \"951~1050g\" 범위(10호 닭)로만 적혀 있어, 그 평균값(1001g)으로 환산한 추정치입니다. 실제 개체 중량에 따라 달라질 수 있습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+    },
+    {
+      "id": "kyochon-89b76d0345f6",
+      "brand": "교촌치킨",
+      "productName": "반반한마리[간장+마라레드]",
+      "aliases": [
+        "교촌치킨 반반한마리[간장+마라레드]",
+        "교촌 반반한마리[간장+마라레드]",
+        "반반한마리[간장+마라레드]"
+      ],
+      "category": "교촌치킨/치킨",
+      "servingSize": "1마리 (조리 전 중량 약 1001g — 공식 범위 951~1050g의 평균값)",
+      "servingGram": 1001,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41135&cg=2",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 3403.4,
+        "carb": null,
+        "sugar": 30,
+        "protein": 280.3,
+        "fat": null,
+        "saturatedFat": 27,
+        "transFat": null,
+        "sodium": 3503.5,
+        "caffeine": null
+      },
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 공식 홈페이지에 \"951~1050g\" 범위(10호 닭)로만 적혀 있어, 그 평균값(1001g)으로 환산한 추정치입니다. 실제 개체 중량에 따라 달라질 수 있습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+    },
+    {
+      "id": "kyochon-985a92f19d7c",
+      "brand": "교촌치킨",
+      "productName": "반반한마리[레드+마라레드]",
+      "aliases": [
+        "교촌치킨 반반한마리[레드+마라레드]",
+        "교촌 반반한마리[레드+마라레드]",
+        "반반한마리[레드+마라레드]"
+      ],
+      "category": "교촌치킨/치킨",
+      "servingSize": "1마리 (조리 전 중량 약 1001g — 공식 범위 951~1050g의 평균값)",
+      "servingGram": 1001,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41136&cg=2",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 3503.5,
+        "carb": null,
+        "sugar": 50.1,
+        "protein": 280.3,
+        "fat": null,
+        "saturatedFat": 27,
+        "transFat": null,
+        "sodium": 3403.4,
+        "caffeine": null
+      },
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 공식 홈페이지에 \"951~1050g\" 범위(10호 닭)로만 적혀 있어, 그 평균값(1001g)으로 환산한 추정치입니다. 실제 개체 중량에 따라 달라질 수 있습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+    },
+    {
+      "id": "kyochon-c4e57671f863",
+      "brand": "교촌치킨",
+      "productName": "반반콤보[간장+레드]",
+      "aliases": [
+        "교촌치킨 반반콤보[간장+레드]",
+        "교촌 반반콤보[간장+레드]",
+        "반반콤보[간장+레드]"
+      ],
+      "category": "교촌치킨/치킨",
+      "servingSize": "1인분 (조리 전 중량 920g 기준)",
+      "servingGram": 920,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=30150&cg=2",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 2898,
+        "carb": null,
+        "sugar": 27.6,
+        "protein": 248.4,
+        "fat": null,
+        "saturatedFat": 27.6,
+        "transFat": null,
+        "sodium": 3220,
+        "caffeine": null
+      },
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. 공식 홈페이지 상품 설명에 적힌 \"조리 전 중량 920g\"을 기준으로 100g당 수치를 실제 1인분 수치로 환산했습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+    },
+    {
+      "id": "kyochon-6f47a1143fe0",
+      "brand": "교촌치킨",
+      "productName": "반반스틱[간장+레드]",
+      "aliases": [
+        "교촌치킨 반반스틱[간장+레드]",
+        "교촌 반반스틱[간장+레드]",
+        "반반스틱[간장+레드]"
+      ],
+      "category": "교촌치킨/치킨",
+      "servingSize": "1인분 (조리 전 중량 920g 기준)",
+      "servingGram": 920,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=30086&cg=2",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 2530,
+        "carb": null,
+        "sugar": 27.6,
+        "protein": 248.4,
+        "fat": null,
+        "saturatedFat": 18.4,
+        "transFat": null,
+        "sodium": 3256.8,
+        "caffeine": null
+      },
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. 공식 홈페이지 상품 설명에 적힌 \"조리 전 중량 920g\"을 기준으로 100g당 수치를 실제 1인분 수치로 환산했습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+    },
+    {
+      "id": "kyochon-39a4de728904",
+      "brand": "교촌치킨",
+      "productName": "반반순살[간장+레드]",
+      "aliases": [
+        "교촌치킨 반반순살[간장+레드]",
+        "교촌 반반순살[간장+레드]",
+        "반반순살[간장+레드]"
+      ],
+      "category": "교촌치킨/치킨",
+      "servingSize": "1인분 (조리 전 중량 700g 기준)",
+      "servingGram": 700,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=38392&cg=2",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 2765,
+        "carb": null,
+        "sugar": 28,
+        "protein": 182,
+        "fat": null,
+        "saturatedFat": 21,
+        "transFat": null,
+        "sodium": 3220,
+        "caffeine": null
+      },
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. 공식 홈페이지 상품 설명에 적힌 \"조리 전 중량 700g\"을 기준으로 100g당 수치를 실제 1인분 수치로 환산했습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+    },
+    {
+      "id": "kyochon-0550ee6a4d98",
+      "brand": "교촌치킨",
+      "productName": "반반순살[레드+허니]",
+      "aliases": [
+        "교촌치킨 반반순살[레드+허니]",
+        "교촌 반반순살[레드+허니]",
+        "반반순살[레드+허니]"
+      ],
+      "category": "교촌치킨/치킨",
+      "servingSize": "1인분 (조리 전 중량 600g 기준)",
+      "servingGram": 600,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=38414&cg=2",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 2190,
+        "carb": null,
+        "sugar": 48,
+        "protein": 144,
+        "fat": null,
+        "saturatedFat": 18,
+        "transFat": null,
+        "sodium": 2580,
+        "caffeine": null
+      },
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. 공식 홈페이지 상품 설명에 적힌 \"조리 전 중량 600g\"을 기준으로 100g당 수치를 실제 1인분 수치로 환산했습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+    },
+    {
+      "id": "kyochon-6704db1e0d6e",
+      "brand": "교촌치킨",
+      "productName": "허니갈릭한마리",
+      "aliases": [
+        "교촌치킨 허니갈릭한마리",
+        "교촌 허니갈릭한마리",
+        "허니갈릭한마리"
+      ],
+      "category": "교촌치킨/치킨",
+      "servingSize": "1마리 (조리 전 중량 약 1001g — 공식 범위 951~1050g의 평균값)",
+      "servingGram": 1001,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41130&cg=2",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 3203.2,
+        "carb": null,
+        "sugar": 80.1,
+        "protein": 280.3,
+        "fat": null,
+        "saturatedFat": 26,
+        "transFat": null,
+        "sodium": 4204.2,
+        "caffeine": null
+      },
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 공식 홈페이지에 \"951~1050g\" 범위(10호 닭)로만 적혀 있어, 그 평균값(1001g)으로 환산한 추정치입니다. 실제 개체 중량에 따라 달라질 수 있습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+    },
+    {
+      "id": "kyochon-b248c75eea43",
+      "brand": "교촌치킨",
+      "productName": "마라레드한마리",
+      "aliases": [
+        "교촌치킨 마라레드한마리",
+        "교촌 마라레드한마리",
+        "마라레드한마리"
+      ],
+      "category": "교촌치킨/치킨",
+      "servingSize": "1마리 (조리 전 중량 약 1001g — 공식 범위 951~1050g의 평균값)",
+      "servingGram": 1001,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41062&cg=2",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 3403.4,
+        "carb": null,
+        "sugar": 50.1,
+        "protein": 270.3,
+        "fat": null,
+        "saturatedFat": 27,
+        "transFat": null,
+        "sodium": 3503.5,
+        "caffeine": null
+      },
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 공식 홈페이지에 \"951~1050g\" 범위(10호 닭)로만 적혀 있어, 그 평균값(1001g)으로 환산한 추정치입니다. 실제 개체 중량에 따라 달라질 수 있습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+    },
+    {
+      "id": "kyochon-63f87bf1ef11",
+      "brand": "교촌치킨",
+      "productName": "살살후라이드",
+      "aliases": [
+        "교촌치킨 살살후라이드",
+        "교촌 살살후라이드",
+        "살살후라이드"
+      ],
+      "category": "교촌치킨/치킨",
+      "servingSize": "1인분 (조리 전 중량 630g 기준)",
+      "servingGram": 630,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=39270&cg=2",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 2047.5,
+        "carb": null,
+        "sugar": 6.3,
+        "protein": 119.7,
+        "fat": null,
+        "saturatedFat": 8.2,
+        "transFat": null,
+        "sodium": 2961,
+        "caffeine": null
+      },
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. 공식 홈페이지 상품 설명에 적힌 \"조리 전 중량 630g\"을 기준으로 100g당 수치를 실제 1인분 수치로 환산했습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+    },
+    {
+      "id": "kyochon-9b19ba6e1204",
+      "brand": "교촌치킨",
+      "productName": "파채소이살살",
+      "aliases": [
+        "교촌치킨 파채소이살살",
+        "교촌 파채소이살살",
+        "파채소이살살"
+      ],
+      "category": "교촌치킨/치킨",
+      "servingSize": "1인분 (조리 전 중량 420g 기준)",
+      "servingGram": 420,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=39271&cg=2",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 861,
+        "carb": null,
+        "sugar": 46.2,
+        "protein": 37.8,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 2226,
+        "caffeine": null
+      },
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. 공식 홈페이지 상품 설명에 적힌 \"조리 전 중량 420g\"을 기준으로 100g당 수치를 실제 1인분 수치로 환산했습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
     },
     {
       "id": "kyochon-6dc21e46c695",
@@ -25167,9 +26365,9 @@
       "servingSize": "100g 기준",
       "servingGram": 100,
       "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
       "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41131&cg=2",
-      "verifiedAt": "2026-10-21",
+      "verifiedAt": "2026-11-13",
       "allergens": [],
       "additiveWatch": [],
       "nutrients": {
@@ -25183,7 +26381,7 @@
         "sodium": 460,
         "caffeine": null
       },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 환산 불가: 공식 홈페이지에 이 상품의 1인분/1팩 중량(g)이 전혀 적혀 있지 않고 \"조각 수\"만 표시되어 있습니다(예: 윙+봉 6조각/16조각/20조각). 그램 환산 근거가 없어 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 그대로 보면 실제보다 훨씬 적게 나옵니다. 1인분 환산이 필요하면 조각당 평균 중량을 별도로 확인해야 합니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
     },
     {
       "id": "kyochon-2d897b3231fc",
@@ -25198,9 +26396,9 @@
       "servingSize": "100g 기준",
       "servingGram": 100,
       "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
       "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=40993&cg=2",
-      "verifiedAt": "2026-10-21",
+      "verifiedAt": "2026-11-13",
       "allergens": [],
       "additiveWatch": [],
       "nutrients": {
@@ -25214,7 +26412,7 @@
         "sodium": 410,
         "caffeine": null
       },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 환산 불가: 공식 홈페이지에 이 상품의 1인분/1팩 중량(g)이 전혀 적혀 있지 않고 \"조각 수\"만 표시되어 있습니다(예: 윙+봉 6조각/16조각/20조각). 그램 환산 근거가 없어 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 그대로 보면 실제보다 훨씬 적게 나옵니다. 1인분 환산이 필요하면 조각당 평균 중량을 별도로 확인해야 합니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
     },
     {
       "id": "kyochon-34a176f588b0",
@@ -25229,9 +26427,9 @@
       "servingSize": "100g 기준",
       "servingGram": 100,
       "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
       "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=40801&cg=2",
-      "verifiedAt": "2026-10-21",
+      "verifiedAt": "2026-11-13",
       "allergens": [],
       "additiveWatch": [],
       "nutrients": {
@@ -25245,7 +26443,7 @@
         "sodium": 420,
         "caffeine": null
       },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 환산 불가: 공식 홈페이지에 이 상품의 1인분/1팩 중량(g)이 전혀 적혀 있지 않고 \"조각 수\"만 표시되어 있습니다(예: 윙+봉 6조각/16조각/20조각). 그램 환산 근거가 없어 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 그대로 보면 실제보다 훨씬 적게 나옵니다. 1인분 환산이 필요하면 조각당 평균 중량을 별도로 확인해야 합니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
     },
     {
       "id": "kyochon-583a10ab4877",
@@ -25260,9 +26458,9 @@
       "servingSize": "100g 기준",
       "servingGram": 100,
       "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
       "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=40802&cg=2",
-      "verifiedAt": "2026-10-21",
+      "verifiedAt": "2026-11-13",
       "allergens": [],
       "additiveWatch": [],
       "nutrients": {
@@ -25276,7 +26474,7 @@
         "sodium": 390,
         "caffeine": null
       },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 환산 불가: 공식 홈페이지에 이 상품의 1인분/1팩 중량(g)이 전혀 적혀 있지 않고 \"조각 수\"만 표시되어 있습니다(예: 윙+봉 6조각/16조각/20조각). 그램 환산 근거가 없어 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 그대로 보면 실제보다 훨씬 적게 나옵니다. 1인분 환산이 필요하면 조각당 평균 중량을 별도로 확인해야 합니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
     },
     {
       "id": "kyochon-14f7422fc185",
@@ -25291,9 +26489,9 @@
       "servingSize": "100g 기준",
       "servingGram": 100,
       "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
       "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=40864&cg=2",
-      "verifiedAt": "2026-10-21",
+      "verifiedAt": "2026-11-13",
       "allergens": [],
       "additiveWatch": [],
       "nutrients": {
@@ -25307,7 +26505,7 @@
         "sodium": 340,
         "caffeine": null
       },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 환산 불가: 공식 홈페이지에 이 상품의 1인분/1팩 중량(g)이 전혀 적혀 있지 않고 \"조각 수\"만 표시되어 있습니다(예: 윙+봉 6조각/16조각/20조각). 그램 환산 근거가 없어 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 그대로 보면 실제보다 훨씬 적게 나옵니다. 1인분 환산이 필요하면 조각당 평균 중량을 별도로 확인해야 합니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
     },
     {
       "id": "kyochon-ee114815f8a3",
@@ -25322,9 +26520,9 @@
       "servingSize": "100g 기준",
       "servingGram": 100,
       "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
       "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=40885&cg=2",
-      "verifiedAt": "2026-10-21",
+      "verifiedAt": "2026-11-13",
       "allergens": [],
       "additiveWatch": [],
       "nutrients": {
@@ -25338,7 +26536,7 @@
         "sodium": 510,
         "caffeine": null
       },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 환산 불가: 공식 홈페이지에 이 상품의 1인분/1팩 중량(g)이 전혀 적혀 있지 않고 \"조각 수\"만 표시되어 있습니다(예: 윙+봉 6조각/16조각/20조각). 그램 환산 근거가 없어 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 그대로 보면 실제보다 훨씬 적게 나옵니다. 1인분 환산이 필요하면 조각당 평균 중량을 별도로 확인해야 합니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
     },
     {
       "id": "kyochon-e517bdcacb94",
@@ -25353,9 +26551,9 @@
       "servingSize": "100g 기준",
       "servingGram": 100,
       "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
       "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=40915&cg=2",
-      "verifiedAt": "2026-10-21",
+      "verifiedAt": "2026-11-13",
       "allergens": [],
       "additiveWatch": [],
       "nutrients": {
@@ -25369,1154 +26567,7 @@
         "sodium": 560,
         "caffeine": null
       },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
-    },
-    {
-      "id": "kyochon-40394b47270e",
-      "brand": "교촌치킨",
-      "productName": "허니한마리",
-      "aliases": [
-        "교촌치킨 허니한마리",
-        "교촌 허니한마리",
-        "허니한마리"
-      ],
-      "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=30161&cg=2",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 330,
-        "carb": null,
-        "sugar": 4,
-        "protein": 21,
-        "fat": null,
-        "saturatedFat": 2.5,
-        "transFat": null,
-        "sodium": 343,
-        "caffeine": null
-      },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
-    },
-    {
-      "id": "kyochon-0bbb35d1e712",
-      "brand": "교촌치킨",
-      "productName": "허니콤보",
-      "aliases": [
-        "교촌치킨 허니콤보",
-        "교촌 허니콤보",
-        "허니콤보"
-      ],
-      "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=30164&cg=2",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 320,
-        "carb": null,
-        "sugar": 5,
-        "protein": 19,
-        "fat": null,
-        "saturatedFat": 3,
-        "transFat": null,
-        "sodium": 390,
-        "caffeine": null
-      },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
-    },
-    {
-      "id": "kyochon-4752f05944f2",
-      "brand": "교촌치킨",
-      "productName": "허니순살",
-      "aliases": [
-        "교촌치킨 허니순살",
-        "교촌 허니순살",
-        "허니순살"
-      ],
-      "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=38053&cg=2",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 345,
-        "carb": null,
-        "sugar": 7,
-        "protein": 19,
-        "fat": null,
-        "saturatedFat": 1.8,
-        "transFat": null,
-        "sodium": 420,
-        "caffeine": null
-      },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
-    },
-    {
-      "id": "kyochon-4c32ff8228e6",
-      "brand": "교촌치킨",
-      "productName": "후라이드한마리",
-      "aliases": [
-        "교촌치킨 후라이드한마리",
-        "교촌 후라이드한마리",
-        "후라이드한마리"
-      ],
-      "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=40877&cg=2",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 370,
-        "carb": null,
-        "sugar": 1,
-        "protein": 27,
-        "fat": null,
-        "saturatedFat": 2.8,
-        "transFat": null,
-        "sodium": 460,
-        "caffeine": null
-      },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
-    },
-    {
-      "id": "kyochon-86e198b458b7",
-      "brand": "교촌치킨",
-      "productName": "양념치킨한마리",
-      "aliases": [
-        "교촌치킨 양념치킨한마리",
-        "교촌 양념치킨한마리",
-        "양념치킨한마리"
-      ],
-      "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=40878&cg=2",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 350,
-        "carb": null,
-        "sugar": 9,
-        "protein": 22,
-        "fat": null,
-        "saturatedFat": 2.6,
-        "transFat": null,
-        "sodium": 490,
-        "caffeine": null
-      },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
-    },
-    {
-      "id": "kyochon-0d93e7c3553e",
-      "brand": "교촌치킨",
-      "productName": "후라이드양념반반한마리",
-      "aliases": [
-        "교촌치킨 후라이드양념반반한마리",
-        "교촌 후라이드양념반반한마리",
-        "후라이드양념반반한마리"
-      ],
-      "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=40879&cg=2",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 360,
-        "carb": null,
-        "sugar": 4,
-        "protein": 25,
-        "fat": null,
-        "saturatedFat": 2.7,
-        "transFat": null,
-        "sodium": 480,
-        "caffeine": null
-      },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
-    },
-    {
-      "id": "kyochon-1e768c3a2a9f",
-      "brand": "교촌치킨",
-      "productName": "후라이드순살",
-      "aliases": [
-        "교촌치킨 후라이드순살",
-        "교촌 후라이드순살",
-        "후라이드순살"
-      ],
-      "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=40961&cg=2",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 350,
-        "carb": null,
-        "sugar": 1,
-        "protein": 21,
-        "fat": null,
-        "saturatedFat": 2.6,
-        "transFat": null,
-        "sodium": 480,
-        "caffeine": null
-      },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
-    },
-    {
-      "id": "kyochon-c737d0aceb62",
-      "brand": "교촌치킨",
-      "productName": "양념치킨순살",
-      "aliases": [
-        "교촌치킨 양념치킨순살",
-        "교촌 양념치킨순살",
-        "양념치킨순살"
-      ],
-      "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=40962&cg=2",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 310,
-        "carb": null,
-        "sugar": 9,
-        "protein": 21,
-        "fat": null,
-        "saturatedFat": 1.9,
-        "transFat": null,
-        "sodium": 570,
-        "caffeine": null
-      },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
-    },
-    {
-      "id": "kyochon-12ff9afa0aee",
-      "brand": "교촌치킨",
-      "productName": "후라이드양념반반순살",
-      "aliases": [
-        "교촌치킨 후라이드양념반반순살",
-        "교촌 후라이드양념반반순살",
-        "후라이드양념반반순살"
-      ],
-      "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=40963&cg=2",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 330,
-        "carb": null,
-        "sugar": 4.5,
-        "protein": 21,
-        "fat": null,
-        "saturatedFat": 2.3,
-        "transFat": null,
-        "sodium": 530,
-        "caffeine": null
-      },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
-    },
-    {
-      "id": "kyochon-497280ff24df",
-      "brand": "교촌치킨",
-      "productName": "허니옥수수순살",
-      "aliases": [
-        "교촌치킨 허니옥수수순살",
-        "교촌 허니옥수수순살",
-        "허니옥수수순살"
-      ],
-      "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=40486&cg=2",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 405,
-        "carb": null,
-        "sugar": 9,
-        "protein": 16,
-        "fat": null,
-        "saturatedFat": 3.1,
-        "transFat": null,
-        "sodium": 510,
-        "caffeine": null
-      },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
-    },
-    {
-      "id": "kyochon-422788485e13",
-      "brand": "교촌치킨",
-      "productName": "허니옥수수한마리",
-      "aliases": [
-        "교촌치킨 허니옥수수한마리",
-        "교촌 허니옥수수한마리",
-        "허니옥수수한마리"
-      ],
-      "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=40484&cg=2",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 380,
-        "carb": null,
-        "sugar": 8,
-        "protein": 20,
-        "fat": null,
-        "saturatedFat": 2.9,
-        "transFat": null,
-        "sodium": 450,
-        "caffeine": null
-      },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
-    },
-    {
-      "id": "kyochon-bd9df7268a0a",
-      "brand": "교촌치킨",
-      "productName": "간장한마리",
-      "aliases": [
-        "교촌치킨 간장한마리",
-        "교촌 간장한마리",
-        "간장한마리"
-      ],
-      "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=30098&cg=2",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 340,
-        "carb": null,
-        "sugar": 1,
-        "protein": 29,
-        "fat": null,
-        "saturatedFat": 2.7,
-        "transFat": null,
-        "sodium": 346,
-        "caffeine": null
-      },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
-    },
-    {
-      "id": "kyochon-7e9f9ed34aa1",
-      "brand": "교촌치킨",
-      "productName": "간장콤보",
-      "aliases": [
-        "교촌치킨 간장콤보",
-        "교촌 간장콤보",
-        "간장콤보"
-      ],
-      "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=30146&cg=2",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 320,
-        "carb": null,
-        "sugar": 2,
-        "protein": 28,
-        "fat": null,
-        "saturatedFat": 2.6,
-        "transFat": null,
-        "sodium": 360,
-        "caffeine": null
-      },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
-    },
-    {
-      "id": "kyochon-4383326c328c",
-      "brand": "교촌치킨",
-      "productName": "간장순살",
-      "aliases": [
-        "교촌치킨 간장순살",
-        "교촌 간장순살",
-        "간장순살"
-      ],
-      "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=38390&cg=2",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 395,
-        "carb": null,
-        "sugar": 2,
-        "protein": 29,
-        "fat": null,
-        "saturatedFat": 4.5,
-        "transFat": null,
-        "sodium": 470,
-        "caffeine": null
-      },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
-    },
-    {
-      "id": "kyochon-c6aef412c91b",
-      "brand": "교촌치킨",
-      "productName": "간장스틱",
-      "aliases": [
-        "교촌치킨 간장스틱",
-        "교촌 간장스틱",
-        "간장스틱"
-      ],
-      "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=30083&cg=2",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 270,
-        "carb": null,
-        "sugar": 2,
-        "protein": 27,
-        "fat": null,
-        "saturatedFat": 2.3,
-        "transFat": null,
-        "sodium": 399,
-        "caffeine": null
-      },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
-    },
-    {
-      "id": "kyochon-c45fc9e799b4",
-      "brand": "교촌치킨",
-      "productName": "레드한마리",
-      "aliases": [
-        "교촌치킨 레드한마리",
-        "교촌 레드한마리",
-        "레드한마리"
-      ],
-      "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=30022&cg=2",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 335,
-        "carb": null,
-        "sugar": 4,
-        "protein": 29,
-        "fat": null,
-        "saturatedFat": 2.6,
-        "transFat": null,
-        "sodium": 321,
-        "caffeine": null
-      },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
-    },
-    {
-      "id": "kyochon-19f8d2d8c57e",
-      "brand": "교촌치킨",
-      "productName": "레드콤보",
-      "aliases": [
-        "교촌치킨 레드콤보",
-        "교촌 레드콤보",
-        "레드콤보"
-      ],
-      "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=30030&cg=2",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 305,
-        "carb": null,
-        "sugar": 4,
-        "protein": 26,
-        "fat": null,
-        "saturatedFat": 2.7,
-        "transFat": null,
-        "sodium": 347,
-        "caffeine": null
-      },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
-    },
-    {
-      "id": "kyochon-bef6f18e3a5f",
-      "brand": "교촌치킨",
-      "productName": "레드순살",
-      "aliases": [
-        "교촌치킨 레드순살",
-        "교촌 레드순살",
-        "레드순살"
-      ],
-      "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=38391&cg=2",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 380,
-        "carb": null,
-        "sugar": 8,
-        "protein": 29,
-        "fat": null,
-        "saturatedFat": 3.3,
-        "transFat": null,
-        "sodium": 440,
-        "caffeine": null
-      },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
-    },
-    {
-      "id": "kyochon-e265b56994cb",
-      "brand": "교촌치킨",
-      "productName": "레드스틱",
-      "aliases": [
-        "교촌치킨 레드스틱",
-        "교촌 레드스틱",
-        "레드스틱"
-      ],
-      "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=30018&cg=2",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 280,
-        "carb": null,
-        "sugar": 4,
-        "protein": 27,
-        "fat": null,
-        "saturatedFat": 1.8,
-        "transFat": null,
-        "sodium": 309,
-        "caffeine": null
-      },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
-    },
-    {
-      "id": "kyochon-6664359ea111",
-      "brand": "교촌치킨",
-      "productName": "반반한마리[간장+레드]",
-      "aliases": [
-        "교촌치킨 반반한마리[간장+레드]",
-        "교촌 반반한마리[간장+레드]",
-        "반반한마리[간장+레드]"
-      ],
-      "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=30100&cg=2",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 340,
-        "carb": null,
-        "sugar": 3,
-        "protein": 29,
-        "fat": null,
-        "saturatedFat": 3,
-        "transFat": null,
-        "sodium": 330,
-        "caffeine": null
-      },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
-    },
-    {
-      "id": "kyochon-70842d8fbbf6",
-      "brand": "교촌치킨",
-      "productName": "반반한마리[마라레드+허니갈릭]",
-      "aliases": [
-        "교촌치킨 반반한마리[마라레드+허니갈릭]",
-        "교촌 반반한마리[마라레드+허니갈릭]",
-        "반반한마리[마라레드+허니갈릭]"
-      ],
-      "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41137&cg=2",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 330,
-        "carb": null,
-        "sugar": 7,
-        "protein": 28,
-        "fat": null,
-        "saturatedFat": 2.7,
-        "transFat": null,
-        "sodium": 390,
-        "caffeine": null
-      },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
-    },
-    {
-      "id": "kyochon-3dbc9e734741",
-      "brand": "교촌치킨",
-      "productName": "반반한마리[레드+허니갈릭]",
-      "aliases": [
-        "교촌치킨 반반한마리[레드+허니갈릭]",
-        "교촌 반반한마리[레드+허니갈릭]",
-        "반반한마리[레드+허니갈릭]"
-      ],
-      "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41134&cg=2",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 340,
-        "carb": null,
-        "sugar": 6,
-        "protein": 29,
-        "fat": null,
-        "saturatedFat": 2.6,
-        "transFat": null,
-        "sodium": 370,
-        "caffeine": null
-      },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
-    },
-    {
-      "id": "kyochon-d6b7d4ba96f1",
-      "brand": "교촌치킨",
-      "productName": "반반한마리[간장+허니갈릭]",
-      "aliases": [
-        "교촌치킨 반반한마리[간장+허니갈릭]",
-        "교촌 반반한마리[간장+허니갈릭]",
-        "반반한마리[간장+허니갈릭]"
-      ],
-      "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41133&cg=2",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 330,
-        "carb": null,
-        "sugar": 6,
-        "protein": 29,
-        "fat": null,
-        "saturatedFat": 2.7,
-        "transFat": null,
-        "sodium": 380,
-        "caffeine": null
-      },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
-    },
-    {
-      "id": "kyochon-89b76d0345f6",
-      "brand": "교촌치킨",
-      "productName": "반반한마리[간장+마라레드]",
-      "aliases": [
-        "교촌치킨 반반한마리[간장+마라레드]",
-        "교촌 반반한마리[간장+마라레드]",
-        "반반한마리[간장+마라레드]"
-      ],
-      "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41135&cg=2",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 340,
-        "carb": null,
-        "sugar": 3,
-        "protein": 28,
-        "fat": null,
-        "saturatedFat": 2.7,
-        "transFat": null,
-        "sodium": 350,
-        "caffeine": null
-      },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
-    },
-    {
-      "id": "kyochon-985a92f19d7c",
-      "brand": "교촌치킨",
-      "productName": "반반한마리[레드+마라레드]",
-      "aliases": [
-        "교촌치킨 반반한마리[레드+마라레드]",
-        "교촌 반반한마리[레드+마라레드]",
-        "반반한마리[레드+마라레드]"
-      ],
-      "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=41136&cg=2",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 350,
-        "carb": null,
-        "sugar": 5,
-        "protein": 28,
-        "fat": null,
-        "saturatedFat": 2.7,
-        "transFat": null,
-        "sodium": 340,
-        "caffeine": null
-      },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
-    },
-    {
-      "id": "kyochon-c4e57671f863",
-      "brand": "교촌치킨",
-      "productName": "반반콤보[간장+레드]",
-      "aliases": [
-        "교촌치킨 반반콤보[간장+레드]",
-        "교촌 반반콤보[간장+레드]",
-        "반반콤보[간장+레드]"
-      ],
-      "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=30150&cg=2",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 315,
-        "carb": null,
-        "sugar": 3,
-        "protein": 27,
-        "fat": null,
-        "saturatedFat": 3,
-        "transFat": null,
-        "sodium": 350,
-        "caffeine": null
-      },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
-    },
-    {
-      "id": "kyochon-39a4de728904",
-      "brand": "교촌치킨",
-      "productName": "반반순살[간장+레드]",
-      "aliases": [
-        "교촌치킨 반반순살[간장+레드]",
-        "교촌 반반순살[간장+레드]",
-        "반반순살[간장+레드]"
-      ],
-      "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=38392&cg=2",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 395,
-        "carb": null,
-        "sugar": 4,
-        "protein": 26,
-        "fat": null,
-        "saturatedFat": 3,
-        "transFat": null,
-        "sodium": 460,
-        "caffeine": null
-      },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
-    },
-    {
-      "id": "kyochon-6f47a1143fe0",
-      "brand": "교촌치킨",
-      "productName": "반반스틱[간장+레드]",
-      "aliases": [
-        "교촌치킨 반반스틱[간장+레드]",
-        "교촌 반반스틱[간장+레드]",
-        "반반스틱[간장+레드]"
-      ],
-      "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=30086&cg=2",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 275,
-        "carb": null,
-        "sugar": 3,
-        "protein": 27,
-        "fat": null,
-        "saturatedFat": 2,
-        "transFat": null,
-        "sodium": 354,
-        "caffeine": null
-      },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
-    },
-    {
-      "id": "kyochon-0550ee6a4d98",
-      "brand": "교촌치킨",
-      "productName": "반반순살[레드+허니]",
-      "aliases": [
-        "교촌치킨 반반순살[레드+허니]",
-        "교촌 반반순살[레드+허니]",
-        "반반순살[레드+허니]"
-      ],
-      "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=38414&cg=2",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 365,
-        "carb": null,
-        "sugar": 8,
-        "protein": 24,
-        "fat": null,
-        "saturatedFat": 3,
-        "transFat": null,
-        "sodium": 430,
-        "caffeine": null
-      },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
-    },
-    {
-      "id": "kyochon-63f87bf1ef11",
-      "brand": "교촌치킨",
-      "productName": "살살후라이드",
-      "aliases": [
-        "교촌치킨 살살후라이드",
-        "교촌 살살후라이드",
-        "살살후라이드"
-      ],
-      "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=39270&cg=2",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 325,
-        "carb": null,
-        "sugar": 1,
-        "protein": 19,
-        "fat": null,
-        "saturatedFat": 1.3,
-        "transFat": null,
-        "sodium": 470,
-        "caffeine": null
-      },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
-    },
-    {
-      "id": "kyochon-9b19ba6e1204",
-      "brand": "교촌치킨",
-      "productName": "파채소이살살",
-      "aliases": [
-        "교촌치킨 파채소이살살",
-        "교촌 파채소이살살",
-        "파채소이살살"
-      ],
-      "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=39271&cg=2",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 205,
-        "carb": null,
-        "sugar": 11,
-        "protein": 9,
-        "fat": null,
-        "saturatedFat": 0,
-        "transFat": null,
-        "sodium": 530,
-        "caffeine": null
-      },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
-    },
-    {
-      "id": "kyochon-0b6f3854f649",
-      "brand": "교촌치킨",
-      "productName": "간장콤보[S]",
-      "aliases": [
-        "교촌치킨 간장콤보[S]",
-        "교촌 간장콤보[S]",
-        "간장콤보[S]"
-      ],
-      "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=30148&cg=2",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 320,
-        "carb": null,
-        "sugar": 2,
-        "protein": 28,
-        "fat": null,
-        "saturatedFat": 2.6,
-        "transFat": null,
-        "sodium": 360,
-        "caffeine": null
-      },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
-    },
-    {
-      "id": "kyochon-2d92a8d0cb57",
-      "brand": "교촌치킨",
-      "productName": "간장순살[S]",
-      "aliases": [
-        "교촌치킨 간장순살[S]",
-        "교촌 간장순살[S]",
-        "간장순살[S]"
-      ],
-      "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=38393&cg=2",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 395,
-        "carb": null,
-        "sugar": 2,
-        "protein": 29,
-        "fat": null,
-        "saturatedFat": 4.5,
-        "transFat": null,
-        "sodium": 470,
-        "caffeine": null
-      },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
-    },
-    {
-      "id": "kyochon-add9a43ccf52",
-      "brand": "교촌치킨",
-      "productName": "간장스틱[S]",
-      "aliases": [
-        "교촌치킨 간장스틱[S]",
-        "교촌 간장스틱[S]",
-        "간장스틱[S]"
-      ],
-      "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=30084&cg=2",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 270,
-        "carb": null,
-        "sugar": 2,
-        "protein": 27,
-        "fat": null,
-        "saturatedFat": 2.3,
-        "transFat": null,
-        "sodium": 399,
-        "caffeine": null
-      },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
-    },
-    {
-      "id": "kyochon-0bb4470cb96e",
-      "brand": "교촌치킨",
-      "productName": "레드콤보[S]",
-      "aliases": [
-        "교촌치킨 레드콤보[S]",
-        "교촌 레드콤보[S]",
-        "레드콤보[S]"
-      ],
-      "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=30032&cg=2",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 305,
-        "carb": null,
-        "sugar": 4,
-        "protein": 26,
-        "fat": null,
-        "saturatedFat": 2.7,
-        "transFat": null,
-        "sodium": 350,
-        "caffeine": null
-      },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
-    },
-    {
-      "id": "kyochon-d6f11596dc65",
-      "brand": "교촌치킨",
-      "productName": "레드순살[S]",
-      "aliases": [
-        "교촌치킨 레드순살[S]",
-        "교촌 레드순살[S]",
-        "레드순살[S]"
-      ],
-      "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=38394&cg=2",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 380,
-        "carb": null,
-        "sugar": 8,
-        "protein": 29,
-        "fat": null,
-        "saturatedFat": 3.3,
-        "transFat": null,
-        "sodium": 440,
-        "caffeine": null
-      },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
-    },
-    {
-      "id": "kyochon-a0d7b7affc6d",
-      "brand": "교촌치킨",
-      "productName": "레드스틱[S]",
-      "aliases": [
-        "교촌치킨 레드스틱[S]",
-        "교촌 레드스틱[S]",
-        "레드스틱[S]"
-      ],
-      "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
-      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=30020&cg=2",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 280,
-        "carb": null,
-        "sugar": 4,
-        "protein": 27,
-        "fat": null,
-        "saturatedFat": 1.8,
-        "transFat": null,
-        "sodium": 309,
-        "caffeine": null
-      },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. ⚠️ 환산 불가: 공식 홈페이지에 이 상품의 1인분/1팩 중량(g)이 전혀 적혀 있지 않고 \"조각 수\"만 표시되어 있습니다(예: 윙+봉 6조각/16조각/20조각). 그램 환산 근거가 없어 100g당 수치를 그대로 두었습니다 — 이 수치를 1인분 칼로리로 그대로 보면 실제보다 훨씬 적게 나옵니다. 1인분 환산이 필요하면 조각당 평균 중량을 별도로 확인해야 합니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
     },
     {
       "id": "kyochon-53c55495d0aa",
@@ -26528,26 +26579,572 @@
         "허니순살[S]"
       ],
       "category": "교촌치킨/치킨",
-      "servingSize": "100g 기준",
-      "servingGram": 100,
+      "servingSize": "1인분 (조리 전 중량 250g 기준)",
+      "servingGram": 250,
       "sourceType": "official_nutrition_page",
-      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
       "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=38055&cg=2",
-      "verifiedAt": "2026-10-21",
+      "verifiedAt": "2026-11-13",
       "allergens": [],
       "additiveWatch": [],
       "nutrients": {
-        "calories": 345,
+        "calories": 862.5,
         "carb": null,
-        "sugar": 7,
-        "protein": 19,
+        "sugar": 17.5,
+        "protein": 47.5,
         "fat": null,
-        "saturatedFat": 1.8,
+        "saturatedFat": 4.5,
         "transFat": null,
-        "sodium": 420,
+        "sodium": 1050,
         "caffeine": null
       },
-      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표를 그대로 저장했습니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1피스/1인분 실제 섭취량과 다릅니다 — 실제 중량(조리 전 중량 등 상품 설명에 표기)을 곱해 환산해야 1인분 수치가 나옵니다. 표에 탄수화물·지방·트랜스지방·카페인 항목이 없어 null입니다."
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. 공식 홈페이지 상품 설명에 적힌 \"조리 전 중량 250g\"을 기준으로 100g당 수치를 실제 1인분 수치로 환산했습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+    },
+    {
+      "id": "kyochon-d6f11596dc65",
+      "brand": "교촌치킨",
+      "productName": "레드순살[S]",
+      "aliases": [
+        "교촌치킨 레드순살[S]",
+        "교촌 레드순살[S]",
+        "레드순살[S]"
+      ],
+      "category": "교촌치킨/치킨",
+      "servingSize": "1인분 (조리 전 중량 350g 기준)",
+      "servingGram": 350,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=38394&cg=2",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 1330,
+        "carb": null,
+        "sugar": 28,
+        "protein": 101.5,
+        "fat": null,
+        "saturatedFat": 11.5,
+        "transFat": null,
+        "sodium": 1540,
+        "caffeine": null
+      },
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. 공식 홈페이지 상품 설명에 적힌 \"조리 전 중량 350g\"을 기준으로 100g당 수치를 실제 1인분 수치로 환산했습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+    },
+    {
+      "id": "kyochon-2d92a8d0cb57",
+      "brand": "교촌치킨",
+      "productName": "간장순살[S]",
+      "aliases": [
+        "교촌치킨 간장순살[S]",
+        "교촌 간장순살[S]",
+        "간장순살[S]"
+      ],
+      "category": "교촌치킨/치킨",
+      "servingSize": "1인분 (조리 전 중량 350g 기준)",
+      "servingGram": 350,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=38393&cg=2",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 1382.5,
+        "carb": null,
+        "sugar": 7,
+        "protein": 101.5,
+        "fat": null,
+        "saturatedFat": 15.8,
+        "transFat": null,
+        "sodium": 1645,
+        "caffeine": null
+      },
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. 공식 홈페이지 상품 설명에 적힌 \"조리 전 중량 350g\"을 기준으로 100g당 수치를 실제 1인분 수치로 환산했습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+    },
+    {
+      "id": "kyochon-0b6f3854f649",
+      "brand": "교촌치킨",
+      "productName": "간장콤보[S]",
+      "aliases": [
+        "교촌치킨 간장콤보[S]",
+        "교촌 간장콤보[S]",
+        "간장콤보[S]"
+      ],
+      "category": "교촌치킨/치킨",
+      "servingSize": "1인분 (조리 전 중량 460g 기준)",
+      "servingGram": 460,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=30148&cg=2",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 1472,
+        "carb": null,
+        "sugar": 9.2,
+        "protein": 128.8,
+        "fat": null,
+        "saturatedFat": 12,
+        "transFat": null,
+        "sodium": 1656,
+        "caffeine": null
+      },
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. 공식 홈페이지 상품 설명에 적힌 \"조리 전 중량 460g\"을 기준으로 100g당 수치를 실제 1인분 수치로 환산했습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+    },
+    {
+      "id": "kyochon-0bb4470cb96e",
+      "brand": "교촌치킨",
+      "productName": "레드콤보[S]",
+      "aliases": [
+        "교촌치킨 레드콤보[S]",
+        "교촌 레드콤보[S]",
+        "레드콤보[S]"
+      ],
+      "category": "교촌치킨/치킨",
+      "servingSize": "1인분 (조리 전 중량 460g 기준)",
+      "servingGram": 460,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=30032&cg=2",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 1403,
+        "carb": null,
+        "sugar": 18.4,
+        "protein": 119.6,
+        "fat": null,
+        "saturatedFat": 12.4,
+        "transFat": null,
+        "sodium": 1610,
+        "caffeine": null
+      },
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. 공식 홈페이지 상품 설명에 적힌 \"조리 전 중량 460g\"을 기준으로 100g당 수치를 실제 1인분 수치로 환산했습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+    },
+    {
+      "id": "kyochon-a0d7b7affc6d",
+      "brand": "교촌치킨",
+      "productName": "레드스틱[S]",
+      "aliases": [
+        "교촌치킨 레드스틱[S]",
+        "교촌 레드스틱[S]",
+        "레드스틱[S]"
+      ],
+      "category": "교촌치킨/치킨",
+      "servingSize": "1인분 (조리 전 중량 460g 기준)",
+      "servingGram": 460,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=30020&cg=2",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 1288,
+        "carb": null,
+        "sugar": 18.4,
+        "protein": 124.2,
+        "fat": null,
+        "saturatedFat": 8.3,
+        "transFat": null,
+        "sodium": 1421.4,
+        "caffeine": null
+      },
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. 공식 홈페이지 상품 설명에 적힌 \"조리 전 중량 460g\"을 기준으로 100g당 수치를 실제 1인분 수치로 환산했습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+    },
+    {
+      "id": "kyochon-add9a43ccf52",
+      "brand": "교촌치킨",
+      "productName": "간장스틱[S]",
+      "aliases": [
+        "교촌치킨 간장스틱[S]",
+        "교촌 간장스틱[S]",
+        "간장스틱[S]"
+      ],
+      "category": "교촌치킨/치킨",
+      "servingSize": "1인분 (조리 전 중량 460g 기준)",
+      "servingGram": 460,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "교촌치킨 공식 홈페이지 상품 상세 페이지 영양정보 + 상품 설명의 조리 전 중량",
+      "sourceUrl": "https://www.kyochon.com/menu/view.asp?id=30084&cg=2",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 1242,
+        "carb": null,
+        "sugar": 9.2,
+        "protein": 124.2,
+        "fat": null,
+        "saturatedFat": 10.6,
+        "transFat": null,
+        "sodium": 1835.4,
+        "caffeine": null
+      },
+      "reviewNote": "교촌치킨 공식 홈페이지 상품 상세 페이지의 영양정보 표(100g당)를 가져왔습니다. 공식 홈페이지 상품 설명에 적힌 \"조리 전 중량 460g\"을 기준으로 100g당 수치를 실제 1인분 수치로 환산했습니다. 탄수화물·지방·트랜스지방·카페인 항목은 공식 표에 없어 null입니다."
+    },
+    {
+      "id": "goobne-ec631c21976f",
+      "brand": "굽네치킨",
+      "productName": "서울엄마 파기름떡볶이 치킨",
+      "aliases": [
+        "굽네치킨 서울엄마 파기름떡볶이 치킨",
+        "굽네 서울엄마 파기름떡볶이 치킨",
+        "서울엄마 파기름떡볶이 치킨",
+        "서울엄마파기름떡볶이치킨"
+      ],
+      "category": "굽네치킨/치킨",
+      "servingSize": "100g 기준",
+      "servingGram": 100,
+      "sourceType": "ai_image_transcription",
+      "sourceLabel": "굽네치킨 공식 홈페이지 \"영양성분 및 알레르기 유발물질\" 표(이미지, 2026.09판) — Claude가 화면 캡처로 옮겨 적음, 원본 대조 필요",
+      "sourceUrl": "https://www.goobne.co.kr/menu/menu_view_p?itemId=30001",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 215.54,
+        "carb": 14.93,
+        "sugar": 4.98,
+        "protein": 21.54,
+        "fat": 7.74,
+        "saturatedFat": 2.72,
+        "transFat": 0.16,
+        "sodium": 423.87,
+        "caffeine": null
+      },
+      "reviewNote": "⚠️ 이 상품은 공식 사이트에 텍스트 영양정보가 없고 이미지 표로만 제공되어, Claude가 2026-11-13에 화면을 캡처해서 수치를 옮겨 적었습니다(AI가 이미지에서 읽음 — 원본 대조 필요). 다른 임포터처럼 자동으로 재확인되지 않으니, 사이트에서 표가 바뀌면(버전 \"(26.09)\" 등) 수동으로 다시 옮겨 적어야 합니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1인분/1조각 실제 섭취량과 다릅니다. 알레르기 유발물질은 표에 있으나 이미지가 작아 정확히 옮겨 적지 못해 비워뒀습니다(원본 이미지에서 직접 확인 필요)."
+    },
+    {
+      "id": "goobne-a0a301c6d536",
+      "brand": "굽네치킨",
+      "productName": "추추 치킨 스테이크",
+      "aliases": [
+        "굽네치킨 추추 치킨 스테이크",
+        "굽네 추추 치킨 스테이크",
+        "추추 치킨 스테이크",
+        "추추치킨스테이크"
+      ],
+      "category": "굽네치킨/치킨",
+      "servingSize": "100g 기준",
+      "servingGram": 100,
+      "sourceType": "ai_image_transcription",
+      "sourceLabel": "굽네치킨 공식 홈페이지 \"영양성분 및 알레르기 유발물질\" 표(이미지, 2026.09판) — Claude가 화면 캡처로 옮겨 적음, 원본 대조 필요",
+      "sourceUrl": "https://www.goobne.co.kr/menu/menu_view_p?itemId=30001",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 174.35,
+        "carb": 16.21,
+        "sugar": 5.32,
+        "protein": 13.72,
+        "fat": 6.07,
+        "saturatedFat": 2.06,
+        "transFat": 0.11,
+        "sodium": 326.84,
+        "caffeine": null
+      },
+      "reviewNote": "⚠️ 이 상품은 공식 사이트에 텍스트 영양정보가 없고 이미지 표로만 제공되어, Claude가 2026-11-13에 화면을 캡처해서 수치를 옮겨 적었습니다(AI가 이미지에서 읽음 — 원본 대조 필요). 다른 임포터처럼 자동으로 재확인되지 않으니, 사이트에서 표가 바뀌면(버전 \"(26.09)\" 등) 수동으로 다시 옮겨 적어야 합니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1인분/1조각 실제 섭취량과 다릅니다. 알레르기 유발물질은 표에 있으나 이미지가 작아 정확히 옮겨 적지 못해 비워뒀습니다(원본 이미지에서 직접 확인 필요)."
+    },
+    {
+      "id": "goobne-bbb3ada84b6b",
+      "brand": "굽네치킨",
+      "productName": "굽네 장각구이",
+      "aliases": [
+        "굽네치킨 굽네 장각구이",
+        "굽네 굽네 장각구이",
+        "굽네 장각구이",
+        "굽네장각구이"
+      ],
+      "category": "굽네치킨/치킨",
+      "servingSize": "100g 기준",
+      "servingGram": 100,
+      "sourceType": "ai_image_transcription",
+      "sourceLabel": "굽네치킨 공식 홈페이지 \"영양성분 및 알레르기 유발물질\" 표(이미지, 2026.09판) — Claude가 화면 캡처로 옮겨 적음, 원본 대조 필요",
+      "sourceUrl": "https://www.goobne.co.kr/menu/menu_view_p?itemId=30001",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 209.54,
+        "carb": 7.73,
+        "sugar": 2.52,
+        "protein": 22.02,
+        "fat": 10.06,
+        "saturatedFat": 3.09,
+        "transFat": 0.11,
+        "sodium": 436.97,
+        "caffeine": null
+      },
+      "reviewNote": "⚠️ 이 상품은 공식 사이트에 텍스트 영양정보가 없고 이미지 표로만 제공되어, Claude가 2026-11-13에 화면을 캡처해서 수치를 옮겨 적었습니다(AI가 이미지에서 읽음 — 원본 대조 필요). 다른 임포터처럼 자동으로 재확인되지 않으니, 사이트에서 표가 바뀌면(버전 \"(26.09)\" 등) 수동으로 다시 옮겨 적어야 합니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1인분/1조각 실제 섭취량과 다릅니다. 알레르기 유발물질은 표에 있으나 이미지가 작아 정확히 옮겨 적지 못해 비워뒀습니다(원본 이미지에서 직접 확인 필요)."
+    },
+    {
+      "id": "goobne-af096243b31d",
+      "brand": "굽네치킨",
+      "productName": "New 오리지널",
+      "aliases": [
+        "굽네치킨 New 오리지널",
+        "굽네 New 오리지널",
+        "New 오리지널",
+        "New오리지널"
+      ],
+      "category": "굽네치킨/치킨",
+      "servingSize": "100g 기준",
+      "servingGram": 100,
+      "sourceType": "ai_image_transcription",
+      "sourceLabel": "굽네치킨 공식 홈페이지 \"영양성분 및 알레르기 유발물질\" 표(이미지, 2026.09판) — Claude가 화면 캡처로 옮겨 적음, 원본 대조 필요",
+      "sourceUrl": "https://www.goobne.co.kr/menu/menu_view_p?itemId=30001",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 190.14,
+        "carb": 2.44,
+        "sugar": 0.88,
+        "protein": 31.28,
+        "fat": 6.14,
+        "saturatedFat": 1.78,
+        "transFat": 0.33,
+        "sodium": 328.91,
+        "caffeine": null
+      },
+      "reviewNote": "⚠️ 이 상품은 공식 사이트에 텍스트 영양정보가 없고 이미지 표로만 제공되어, Claude가 2026-11-13에 화면을 캡처해서 수치를 옮겨 적었습니다(AI가 이미지에서 읽음 — 원본 대조 필요). 다른 임포터처럼 자동으로 재확인되지 않으니, 사이트에서 표가 바뀌면(버전 \"(26.09)\" 등) 수동으로 다시 옮겨 적어야 합니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1인분/1조각 실제 섭취량과 다릅니다. 알레르기 유발물질은 표에 있으나 이미지가 작아 정확히 옮겨 적지 못해 비워뒀습니다(원본 이미지에서 직접 확인 필요)."
+    },
+    {
+      "id": "goobne-f33b33e43855",
+      "brand": "굽네치킨",
+      "productName": "볼케이노",
+      "aliases": [
+        "굽네치킨 볼케이노",
+        "굽네 볼케이노",
+        "볼케이노"
+      ],
+      "category": "굽네치킨/치킨",
+      "servingSize": "100g 기준",
+      "servingGram": 100,
+      "sourceType": "ai_image_transcription",
+      "sourceLabel": "굽네치킨 공식 홈페이지 \"영양성분 및 알레르기 유발물질\" 표(이미지, 2026.09판) — Claude가 화면 캡처로 옮겨 적음, 원본 대조 필요",
+      "sourceUrl": "https://www.goobne.co.kr/menu/menu_view_p?itemId=30001",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 221.7,
+        "carb": 6.5,
+        "sugar": 4.8,
+        "protein": 27.4,
+        "fat": 9.54,
+        "saturatedFat": 2.7,
+        "transFat": 0.06,
+        "sodium": 519.3,
+        "caffeine": null
+      },
+      "reviewNote": "⚠️ 이 상품은 공식 사이트에 텍스트 영양정보가 없고 이미지 표로만 제공되어, Claude가 2026-11-13에 화면을 캡처해서 수치를 옮겨 적었습니다(AI가 이미지에서 읽음 — 원본 대조 필요). 다른 임포터처럼 자동으로 재확인되지 않으니, 사이트에서 표가 바뀌면(버전 \"(26.09)\" 등) 수동으로 다시 옮겨 적어야 합니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1인분/1조각 실제 섭취량과 다릅니다. 알레르기 유발물질은 표에 있으나 이미지가 작아 정확히 옮겨 적지 못해 비워뒀습니다(원본 이미지에서 직접 확인 필요)."
+    },
+    {
+      "id": "goobne-4458808f8a12",
+      "brand": "굽네치킨",
+      "productName": "갈비천왕",
+      "aliases": [
+        "굽네치킨 갈비천왕",
+        "굽네 갈비천왕",
+        "갈비천왕"
+      ],
+      "category": "굽네치킨/치킨",
+      "servingSize": "100g 기준",
+      "servingGram": 100,
+      "sourceType": "ai_image_transcription",
+      "sourceLabel": "굽네치킨 공식 홈페이지 \"영양성분 및 알레르기 유발물질\" 표(이미지, 2026.09판) — Claude가 화면 캡처로 옮겨 적음, 원본 대조 필요",
+      "sourceUrl": "https://www.goobne.co.kr/menu/menu_view_p?itemId=30001",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 194,
+        "carb": 4.19,
+        "sugar": 2.5,
+        "protein": 26.8,
+        "fat": 7.73,
+        "saturatedFat": 2.46,
+        "transFat": 0.043,
+        "sodium": 361,
+        "caffeine": null
+      },
+      "reviewNote": "⚠️ 이 상품은 공식 사이트에 텍스트 영양정보가 없고 이미지 표로만 제공되어, Claude가 2026-11-13에 화면을 캡처해서 수치를 옮겨 적었습니다(AI가 이미지에서 읽음 — 원본 대조 필요). 다른 임포터처럼 자동으로 재확인되지 않으니, 사이트에서 표가 바뀌면(버전 \"(26.09)\" 등) 수동으로 다시 옮겨 적어야 합니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1인분/1조각 실제 섭취량과 다릅니다. 알레르기 유발물질은 표에 있으나 이미지가 작아 정확히 옮겨 적지 못해 비워뒀습니다(원본 이미지에서 직접 확인 필요)."
+    },
+    {
+      "id": "goobne-63d8d3220b4a",
+      "brand": "굽네치킨",
+      "productName": "고추 바사삭",
+      "aliases": [
+        "굽네치킨 고추 바사삭",
+        "굽네 고추 바사삭",
+        "고추 바사삭",
+        "고추바사삭"
+      ],
+      "category": "굽네치킨/치킨",
+      "servingSize": "100g 기준",
+      "servingGram": 100,
+      "sourceType": "ai_image_transcription",
+      "sourceLabel": "굽네치킨 공식 홈페이지 \"영양성분 및 알레르기 유발물질\" 표(이미지, 2026.09판) — Claude가 화면 캡처로 옮겨 적음, 원본 대조 필요",
+      "sourceUrl": "https://www.goobne.co.kr/menu/menu_view_p?itemId=30001",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 233.54,
+        "carb": 8.35,
+        "sugar": 1.78,
+        "protein": 23.71,
+        "fat": 11.7,
+        "saturatedFat": 3.06,
+        "transFat": 0.05,
+        "sodium": 449,
+        "caffeine": null
+      },
+      "reviewNote": "⚠️ 이 상품은 공식 사이트에 텍스트 영양정보가 없고 이미지 표로만 제공되어, Claude가 2026-11-13에 화면을 캡처해서 수치를 옮겨 적었습니다(AI가 이미지에서 읽음 — 원본 대조 필요). 다른 임포터처럼 자동으로 재확인되지 않으니, 사이트에서 표가 바뀌면(버전 \"(26.09)\" 등) 수동으로 다시 옮겨 적어야 합니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1인분/1조각 실제 섭취량과 다릅니다. 알레르기 유발물질은 표에 있으나 이미지가 작아 정확히 옮겨 적지 못해 비워뒀습니다(원본 이미지에서 직접 확인 필요)."
+    },
+    {
+      "id": "goobne-1bb8f39cfcb9",
+      "brand": "굽네치킨",
+      "productName": "오븐 바사삭",
+      "aliases": [
+        "굽네치킨 오븐 바사삭",
+        "굽네 오븐 바사삭",
+        "오븐 바사삭",
+        "오븐바사삭"
+      ],
+      "category": "굽네치킨/치킨",
+      "servingSize": "100g 기준",
+      "servingGram": 100,
+      "sourceType": "ai_image_transcription",
+      "sourceLabel": "굽네치킨 공식 홈페이지 \"영양성분 및 알레르기 유발물질\" 표(이미지, 2026.09판) — Claude가 화면 캡처로 옮겨 적음, 원본 대조 필요",
+      "sourceUrl": "https://www.goobne.co.kr/menu/menu_view_p?itemId=30001",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 229.93,
+        "carb": 7.14,
+        "sugar": 2.08,
+        "protein": 26.29,
+        "fat": 10.69,
+        "saturatedFat": 3.12,
+        "transFat": 0.04,
+        "sodium": 673.5,
+        "caffeine": null
+      },
+      "reviewNote": "⚠️ 이 상품은 공식 사이트에 텍스트 영양정보가 없고 이미지 표로만 제공되어, Claude가 2026-11-13에 화면을 캡처해서 수치를 옮겨 적었습니다(AI가 이미지에서 읽음 — 원본 대조 필요). 다른 임포터처럼 자동으로 재확인되지 않으니, 사이트에서 표가 바뀌면(버전 \"(26.09)\" 등) 수동으로 다시 옮겨 적어야 합니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1인분/1조각 실제 섭취량과 다릅니다. 알레르기 유발물질은 표에 있으나 이미지가 작아 정확히 옮겨 적지 못해 비워뒀습니다(원본 이미지에서 직접 확인 필요)."
+    },
+    {
+      "id": "goobne-cfba08082318",
+      "brand": "굽네치킨",
+      "productName": "남해마늘 바사삭",
+      "aliases": [
+        "굽네치킨 남해마늘 바사삭",
+        "굽네 남해마늘 바사삭",
+        "남해마늘 바사삭",
+        "남해마늘바사삭"
+      ],
+      "category": "굽네치킨/치킨",
+      "servingSize": "100g 기준",
+      "servingGram": 100,
+      "sourceType": "ai_image_transcription",
+      "sourceLabel": "굽네치킨 공식 홈페이지 \"영양성분 및 알레르기 유발물질\" 표(이미지, 2026.09판) — Claude가 화면 캡처로 옮겨 적음, 원본 대조 필요",
+      "sourceUrl": "https://www.goobne.co.kr/menu/menu_view_p?itemId=30001",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 201.47,
+        "carb": 10.81,
+        "sugar": 1.23,
+        "protein": 21.4,
+        "fat": 8.07,
+        "saturatedFat": 2.28,
+        "transFat": 0.04,
+        "sodium": 444.7,
+        "caffeine": null
+      },
+      "reviewNote": "⚠️ 이 상품은 공식 사이트에 텍스트 영양정보가 없고 이미지 표로만 제공되어, Claude가 2026-11-13에 화면을 캡처해서 수치를 옮겨 적었습니다(AI가 이미지에서 읽음 — 원본 대조 필요). 다른 임포터처럼 자동으로 재확인되지 않으니, 사이트에서 표가 바뀌면(버전 \"(26.09)\" 등) 수동으로 다시 옮겨 적어야 합니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1인분/1조각 실제 섭취량과 다릅니다. 알레르기 유발물질은 표에 있으나 이미지가 작아 정확히 옮겨 적지 못해 비워뒀습니다(원본 이미지에서 직접 확인 필요)."
+    },
+    {
+      "id": "goobne-e4c30b43e45d",
+      "brand": "굽네치킨",
+      "productName": "양념 히어로",
+      "aliases": [
+        "굽네치킨 양념 히어로",
+        "굽네 양념 히어로",
+        "양념 히어로",
+        "양념히어로"
+      ],
+      "category": "굽네치킨/치킨",
+      "servingSize": "100g 기준",
+      "servingGram": 100,
+      "sourceType": "ai_image_transcription",
+      "sourceLabel": "굽네치킨 공식 홈페이지 \"영양성분 및 알레르기 유발물질\" 표(이미지, 2026.09판) — Claude가 화면 캡처로 옮겨 적음, 원본 대조 필요",
+      "sourceUrl": "https://www.goobne.co.kr/menu/menu_view_p?itemId=30001",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 221.49,
+        "carb": 13.9,
+        "sugar": 7.71,
+        "protein": 21.56,
+        "fat": 8.85,
+        "saturatedFat": 2.58,
+        "transFat": 0.05,
+        "sodium": 447.9,
+        "caffeine": null
+      },
+      "reviewNote": "⚠️ 이 상품은 공식 사이트에 텍스트 영양정보가 없고 이미지 표로만 제공되어, Claude가 2026-11-13에 화면을 캡처해서 수치를 옮겨 적었습니다(AI가 이미지에서 읽음 — 원본 대조 필요). 다른 임포터처럼 자동으로 재확인되지 않으니, 사이트에서 표가 바뀌면(버전 \"(26.09)\" 등) 수동으로 다시 옮겨 적어야 합니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1인분/1조각 실제 섭취량과 다릅니다. 알레르기 유발물질은 표에 있으나 이미지가 작아 정확히 옮겨 적지 못해 비워뒀습니다(원본 이미지에서 직접 확인 필요)."
+    },
+    {
+      "id": "goobne-035412cde648",
+      "brand": "굽네치킨",
+      "productName": "폭립(돼지 등갈비)",
+      "aliases": [
+        "굽네치킨 폭립(돼지 등갈비)",
+        "굽네 폭립(돼지 등갈비)",
+        "폭립(돼지 등갈비)",
+        "폭립(돼지등갈비)"
+      ],
+      "category": "굽네치킨/립(돼지)",
+      "servingSize": "100g 기준",
+      "servingGram": 100,
+      "sourceType": "ai_image_transcription",
+      "sourceLabel": "굽네치킨 공식 홈페이지 \"영양성분 및 알레르기 유발물질\" 표(이미지, 2026.09판) — Claude가 화면 캡처로 옮겨 적음, 원본 대조 필요",
+      "sourceUrl": "https://www.goobne.co.kr/menu/menu_view_p?itemId=30001",
+      "verifiedAt": "2026-11-13",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 297.3,
+        "carb": 8.49,
+        "sugar": 8.43,
+        "protein": 25.29,
+        "fat": 18.02,
+        "saturatedFat": 6.02,
+        "transFat": 0.04,
+        "sodium": 476.9,
+        "caffeine": null
+      },
+      "reviewNote": "⚠️ 이 상품은 공식 사이트에 텍스트 영양정보가 없고 이미지 표로만 제공되어, Claude가 2026-11-13에 화면을 캡처해서 수치를 옮겨 적었습니다(AI가 이미지에서 읽음 — 원본 대조 필요). 다른 임포터처럼 자동으로 재확인되지 않으니, 사이트에서 표가 바뀌면(버전 \"(26.09)\" 등) 수동으로 다시 옮겨 적어야 합니다. ⚠️ 공식 표 기준이 \"100g당\"이라 1인분/1조각 실제 섭취량과 다릅니다. 알레르기 유발물질은 표에 있으나 이미지가 작아 정확히 옮겨 적지 못해 비워뒀습니다(원본 이미지에서 직접 확인 필요)."
     }
   ]
 }
