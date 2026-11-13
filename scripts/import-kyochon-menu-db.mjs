@@ -229,6 +229,18 @@ function extractWeightInfo(html) {
       return { type: 'point', gram };
     }
   }
+  // "조각수: 윙 10조각, 봉 10조각" 처럼 윙/봉을 따로 적는 상품(허니옥수수 시리즈 등)은
+  // 두 숫자를 더해야 총 조각 수가 나온다(2026-11-13, 라이브 데이터 검수 중 발견 — 앞 숫자만
+  // 읽으면 실제의 절반으로 과소환산됨). "[윙+봉 6조각]"처럼 이미 합계로 적힌 경우는 아래
+  // 단일 숫자 매칭으로 충분하므로, 윙+봉 분리 패턴을 먼저 확인한다.
+  const splitPieceMatch = hay.match(/윙\s*(\d+)\s*조각[^가-힣]{0,10}봉\s*(\d+)\s*조각/);
+  if (splitPieceMatch) {
+    const wingPieces = Number.parseInt(splitPieceMatch[1], 10);
+    const bongPieces = Number.parseInt(splitPieceMatch[2], 10);
+    if (Number.isFinite(wingPieces) && Number.isFinite(bongPieces)) {
+      return { type: 'pieceCount', pieceCount: wingPieces + bongPieces };
+    }
+  }
   const pieceMatch = hay.match(/(\d+)\s*조각/);
   if (pieceMatch) {
     const pieceCount = Number.parseInt(pieceMatch[1], 10);
