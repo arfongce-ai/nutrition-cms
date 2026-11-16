@@ -95,7 +95,7 @@ test('PubMed uses publication bounds, strips markup, and links primary records',
 });
 
 test('store preserves past consumption time, keeps over 120 meals, and updates calendar date', async () => {
-  const bundle = await build({ entryPoints: ['src/services/reportStore.js'], bundle: true, write: false, platform: 'node', format: 'esm', logLevel: 'silent', plugins: [{ name: 'local-only', setup(b) {
+  const bundle = await build({ entryPoints: ['src/services/reportStore.js'], bundle: true, write: false, platform: 'node', format: 'esm', logLevel: 'silent', define: { 'import.meta.env': '{}' }, plugins: [{ name: 'local-only', setup(b) {
     b.onResolve({ filter: /^\.\.\/firebase$/ }, () => ({ path: 'local-only', namespace: 'test' }));
     b.onResolve({ filter: /^firebase\// }, () => ({ path: 'sdk', namespace: 'test' }));
     b.onLoad({ filter: /.*/, namespace: 'test' }, (args) => ({ contents: args.path === 'local-only' ? 'export const auth=null, db=null, firebaseEnabled=false;' : 'export const deleteDoc=()=>{}, doc=()=>{}, getDoc=()=>{}, serverTimestamp=()=>{}, setDoc=()=>{}, updateDoc=()=>{}, signInAnonymously=()=>{};', loader: 'js' }));
@@ -117,4 +117,30 @@ test('store preserves past consumption time, keeps over 120 meals, and updates c
     assert.equal((await store.saveNutritionReport(report, { createdAt: '2100-01-01' })).saved, false);
     assert.equal(store.readLocalReports().length, 122);
   } finally { if (originalStorage === undefined) delete globalThis.localStorage; else globalThis.localStorage = originalStorage; }
+});
+
+test('shared device: each linked member gets their own meal list; legacy records go to the first member only', async () => {
+  const bundle = await build({ entryPoints: ['src/services/reportStore.js'], bundle: true, write: false, platform: 'node', format: 'esm', logLevel: 'silent', define: { 'import.meta.env': '{}' }, plugins: [{ name: 'local-only', setup(b) {
+    b.onResolve({ filter: /^\.\.\/firebase$/ }, () => ({ path: 'local-only', namespace: 'test' }));
+    b.onResolve({ filter: /^firebase\// }, () => ({ path: 'sdk', namespace: 'test' }));
+    b.onLoad({ filter: /.*/, namespace: 'test' }, (args) => ({ contents: args.path === 'local-only' ? 'export const auth=null, db=null, firebaseEnabled=false;' : 'export const deleteDoc=()=>{}, doc=()=>{}, getDoc=()=>{}, serverTimestamp=()=>{}, setDoc=()=>{}, updateDoc=()=>{}, signInAnonymously=()=>{};', loader: 'js' }));
+  } }] });
+  const store = await import('data:text/javascript;base64,' + Buffer.from(bundle.outputFiles[0].text).toString('base64'));
+  const originalStorage = globalThis.localStorage;
+  globalThis.localStorage = memoryStorage();
+  const link = (memberRef) => globalThis.localStorage.setItem('nutritionCmsLink.v1', JSON.stringify({ memberRef, connectionToken: 't' }));
+  try {
+    globalThis.localStorage.setItem('nutritionReports.v1', JSON.stringify([{ ...meal('2026-08-01T12:00:00'), mealId: 'legacy-1' }]));
+    link('member-A');
+    assert.deepEqual(store.readLocalReports().map((r) => r.mealId), ['legacy-1']);
+    const report = { items: [{ name: '밥', calories: 300, carb: 50, protein: 4, fat: 1, grams: 100 }], profile: { mode: 'adult' }, totals: { calories: 300, carb: 50, protein: 4, fat: 1 } };
+    await store.saveNutritionReport(report, { createdAt: '2026-09-01T08:00:00+09:00', mealType: '아침' });
+    assert.equal(store.readLocalReports().length, 2);
+    link('member-B');
+    assert.deepEqual(store.readLocalReports(), []);
+    link('member-A');
+    assert.equal(store.readLocalReports().length, 2);
+  } finally {
+    globalThis.localStorage = originalStorage;
+  }
 });

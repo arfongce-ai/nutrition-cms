@@ -15,7 +15,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        brand: [starbucks, krispy-kreme, paikdabang, coffeebean, megamgc, compose, dominos, baskinrobbins, bbq, bhc, nenechicken, hansot, kyochon]
+        brand: [starbucks, krispy-kreme, paikdabang, coffeebean, megamgc, compose, dominos, baskinrobbins, bbq, bhc, nenechicken, hansot, kyochon, myprotein]
     steps:
       - name: Checkout
         uses: actions/checkout@v4

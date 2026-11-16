@@ -150,6 +150,10 @@ const DEFAULT_PROFILE = {
   weight: 72,
   medical: ['없음'],
   sport: '없음',
+  // 2026-11-14 추가: 목적별(감량/유지/증량) 체중관리를 위한 선택값. '감량'을 기본값으로 둬서
+  // 이 필드가 아직 없는 기존 회원 프로필(마이그레이션 전)도 전과 똑같이 하루 300kcal 적게
+  // 계산되도록 유지한다(estimateDailyCalorieGoal 참고, 기존 동작 그대로 보존).
+  goal: '감량',
 };
 
 const modeOptions = [
@@ -165,6 +169,15 @@ const sportOptions = [
   { id: '근력파워', label: '근력·파워', hint: '웨이트, 역도, 보디빌딩' },
   { id: '팀스포츠', label: '팀스포츠', hint: '축구, 농구, 테니스' },
   { id: '지구력', label: '지구력', hint: '마라톤, 사이클, 수영' },
+];
+
+// 2026-11-14 추가: 체중 관리 목적 선택지. estimateDailyCalorieGoal()이 이 값으로 하루 목표
+// 칼로리를 조정한다(성인 모드에서만 적용, 아동·노인은 적용 안 함 — 성장기·고령자에게 임의로
+// 감량 목표를 주지 않는다는 기존 안전 원칙 유지).
+const goalOptions = [
+  { id: '감량', label: '체중 감량', hint: '하루 목표를 유지 칼로리보다 300kcal 적게' },
+  { id: '유지', label: '체중 유지', hint: '지금 체중을 유지하는 칼로리' },
+  { id: '증량', label: '체중 증량', hint: '하루 목표를 유지 칼로리보다 300kcal 많게' },
 ];
 
 export default function App() {
@@ -3065,6 +3078,25 @@ function SettingsSheet({ profile, updateProfile, toggleMedical, onClose }) {
             ))}
           </div>
         </SettingBlock>
+
+        {profile.mode === 'adult' ? (
+          <SettingBlock title="체중 관리 목적">
+            <div className="grid gap-2">
+              {goalOptions.map((option) => (
+                <button
+                  key={option.id}
+                  type="button"
+                  onClick={() => updateProfile({ goal: option.id })}
+                  aria-pressed={(profile.goal || DEFAULT_PROFILE.goal) === option.id}
+                  className={`rounded-lg border p-4 text-left ${(profile.goal || DEFAULT_PROFILE.goal) === option.id ? 'border-slate-950 bg-slate-950 text-white' : 'border-slate-200 bg-white'}`}
+                >
+                  <strong className="block text-lg">{option.label}</strong>
+                  <span className="text-sm opacity-75">{option.hint}</span>
+                </button>
+              ))}
+            </div>
+          </SettingBlock>
+        ) : null}
       </div>
     </aside>
   );
@@ -3289,10 +3321,33 @@ function RangeField({ label, value, min, max, unit, onChange }) {
   );
 }
 
+const PROFILE_MIGRATED_FLAG = 'nutritionCameraProfile.v2.migratedOnce';
+
+// 2026-11-14: reportStore.js의 식단 기록과 같은 이유로, 신체정보·목적 프로필도
+// 회원(memberRef)별로 분리해서 저장한다 — 공용 기기에서 이전 회원의 키·체중·
+// 목적이 다음 회원에게 그대로 보이는 문제를 막기 위함. 이관 규칙도 동일하게
+// "기기당 1회만, 가장 먼저 연결한 회원에게만" 전역 값을 넘긴다(reportStore.js
+// getReportsStorageKey() 주석 참고).
+function getProfileStorageKey() {
+  const memberRef = getConnection()?.memberRef;
+  if (!memberRef) return PROFILE_KEY;
+  const scopedKey = `${PROFILE_KEY}.member.${memberRef}`;
+  try {
+    if (!localStorage.getItem(PROFILE_MIGRATED_FLAG)) {
+      const legacyRaw = localStorage.getItem(PROFILE_KEY);
+      if (legacyRaw) localStorage.setItem(scopedKey, legacyRaw);
+      localStorage.setItem(PROFILE_MIGRATED_FLAG, memberRef);
+    }
+  } catch (error) {
+    console.warn('[useStoredProfile] 기존 프로필 이관 확인 실패.', error);
+  }
+  return scopedKey;
+}
+
 function useStoredProfile() {
   const [profile, setProfileState] = useState(() => {
     try {
-      return normalizeStoredProfile(JSON.parse(localStorage.getItem(PROFILE_KEY) || '{}'));
+      return normalizeStoredProfile(JSON.parse(localStorage.getItem(getProfileStorageKey()) || '{}'));
     } catch {
       return DEFAULT_PROFILE;
     }
@@ -3303,7 +3358,7 @@ function useStoredProfile() {
       const next = typeof updater === 'function' ? updater(current) : updater;
       const normalized = normalizeStoredProfile(next);
       try {
-        localStorage.setItem(PROFILE_KEY, JSON.stringify(normalized));
+        localStorage.setItem(getProfileStorageKey(), JSON.stringify(normalized));
       } catch {
         // Storage can be unavailable in private browsing; keep the in-memory profile usable.
       }
@@ -3319,6 +3374,10 @@ function normalizeStoredProfile(value = {}) {
   const mode = modeOptions.some((option) => option.id === source.mode) ? source.mode : DEFAULT_PROFILE.mode;
   const gender = ['남성', '여성'].includes(source.gender) ? source.gender : DEFAULT_PROFILE.gender;
   const sport = sportOptions.some((option) => option.id === source.sport) ? source.sport : DEFAULT_PROFILE.sport;
+  // 2026-11-14 추가: goal(체중 관리 목적) 필드도 mode/sport와 동일하게 화이트리스트로 검증해야
+  // localStorage에 저장된 값이 새로고침 후에도 유지된다(여기 안 넣으면 매번 기본값 '감량'으로
+  // 되돌아가는 버그가 생김 — 실제로 직접 검토 중 발견).
+  const goal = goalOptions.some((option) => option.id === source.goal) ? source.goal : DEFAULT_PROFILE.goal;
   const medical = Array.isArray(source.medical)
     ? source.medical.filter((item) => medicalOptions.includes(item))
     : DEFAULT_PROFILE.medical;
@@ -3330,6 +3389,7 @@ function normalizeStoredProfile(value = {}) {
     weight: clampNumber(Number(source.weight) || DEFAULT_PROFILE.weight, 20, 150),
     medical: medical.length ? medical : ['없음'],
     sport,
+    goal,
   };
 }
 
@@ -3602,8 +3662,11 @@ async function recognizeFoodsWithVision(photo) {
       return [];
     }
 
+    // 2026-11-14: 서버(functions/api/vision-analyze.js)와 같은 기준(0.4)으로 낮춤 — 모든 후보는
+    // 어차피 estimated:true, requiresConfirmation:true로 사람이 확인해야 저장되므로, 문턱을 낮춰
+    // 사진 속 음식이 후보 목록에서 통째로 빠지는 일을 줄임.
     const recognitions = (Array.isArray(result?.foods) ? result.foods : []).filter(
-      (recognition) => recognition?.name && Number(recognition.confidence || 0) >= 0.55,
+      (recognition) => recognition?.name && Number(recognition.confidence || 0) >= 0.4,
     );
     return await Promise.all(recognitions.map((recognition) => createVisionFoodItem(recognition, result?.provider)));
   } catch (error) {
@@ -3670,8 +3733,10 @@ async function createVisionFoodItem(recognition, provider) {
 }
 
 async function createFoodReferenceGroups(foods, { includeImages = false } = {}) {
+  // 2026-11-14: 서버 쪽 최대 반환 개수를 8→15로 늘린 것과 맞춰서 여기도 같이 늘림 — 서버가 15개를
+  // 돌려줘도 여기서 다시 8개로 잘라버리면 똑같이 일부 음식이 화면에 안 뜨는 문제가 남기 때문.
   return Promise.all(
-    foods.slice(0, 8).map(async (food, index) => {
+    foods.slice(0, 15).map(async (food, index) => {
       if (food.recognitionSource === 'manual-review' || normalizeLookupText(food.name).includes('직접검색')) {
         return {
           id: `reference-${food.id || index}-manual`,
@@ -4835,7 +4900,15 @@ function estimateDailyCalorieGoal(profile) {
   const sexOffset = profile.gender === '여성' ? -161 : 5;
   const activity = profile.sport && profile.sport !== '없음' ? 1.55 : 1.35;
   const bmr = 10 * weight + 6.25 * height - 5 * age + sexOffset;
-  const target = profile.mode === 'adult' ? bmr * activity - 300 : bmr * activity;
+  const tdee = bmr * activity;
+  // 2026-11-14: 성인만 체중 관리 목적(goal)에 따라 유지 칼로리를 가감한다. 아동·노인은 목적과
+  // 무관하게 유지 칼로리 그대로(성장기·고령자에게 임의로 감량/증량 목표를 주지 않음 — 기존 동작
+  // 그대로 유지). goal이 없는 기존 프로필은 DEFAULT_PROFILE.goal('감량')로 처리해서 이 변경 전과
+  // 동일하게 -300kcal가 적용된다.
+  if (profile.mode !== 'adult') return Math.max(1200, Math.round(tdee / 50) * 50);
+  const goal = profile.goal || DEFAULT_PROFILE.goal;
+  const adjustment = goal === '증량' ? 300 : goal === '유지' ? 0 : -300;
+  const target = tdee + adjustment;
   return Math.max(1200, Math.round(target / 50) * 50);
 }
 

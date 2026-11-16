@@ -14,7 +14,7 @@
 //
 //  사용: node scripts/check-brand-menu-changes.mjs <brand-key>
 //  brand-key: starbucks | krispy-kreme | paikdabang | coffeebean | megamgc | compose |
-//             dominos | baskinrobbins | bbq | bhc | nenechicken | hansot | kyochon
+//             dominos | baskinrobbins | bbq | bhc | nenechicken | hansot | kyochon | myprotein
 //  GitHub Actions에서 쓰도록 $GITHUB_OUTPUT에 changed=true|false, summary=... 를
 //  쓴다(로컬 실행 등 그 환경변수가 없으면 건너뜀). 사람이 읽을 결과는 stdout에도 출력.
 // ════════════════════════════════════════════════════════════════════════
@@ -90,6 +90,12 @@ const BRANDS = {
   kyochon: {
     label: '교촌치킨',
     run: () => execFileSync('node', ['scripts/import-kyochon-menu-db.mjs'], { stdio: 'inherit' }),
+    extraTrackedPaths: [],
+  },
+  // 2026-11-16: 마이프로틴(보충제) — 사이트를 직접 읽어야 해서 인터넷이 되는 GitHub에서 매일 돌린다.
+  myprotein: {
+    label: '마이프로틴',
+    run: () => execFileSync('node', ['scripts/import-myprotein-menu-db.mjs'], { stdio: 'inherit' }),
     extraTrackedPaths: [],
   },
 };

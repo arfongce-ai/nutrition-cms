@@ -26,6 +26,28 @@ export function findOfficialProductFood(text) {
   return toFoodEntry(product);
 }
 
+// 2026-11-14 추가: 브랜드 자체가 미확인이라 위 findOfficialProductFood가 아예 못 찾는 경우
+// (예: 노브랜드버거·역전할머니맥주·허닭 등)를 위한 마지막 안전망. 상품명이 정확히 같아야 하는
+// 위 매칭과 달리, 음식명에 "치킨" 같은 카테고리 키워드가 "포함"만 되어도 매칭한다 — 그래서
+// matchType: 'category'로 표시된 항목(scripts/apply-similar-substitute.mjs의
+// buildCategorySubstitutes가 만든 평균값)만 대상으로 하고, 실제 브랜드 데이터는 절대 이 경로로
+// 안 돌아가게 막는다.
+export function findCategorySubstituteFood(text) {
+  const normalized = normalizeSearchText(text);
+  if (!normalized) return null;
+
+  const product = PRODUCT_RECORDS.find((entry) => {
+    if (entry.matchType !== 'category') return false;
+    return (entry.categoryKeywords || []).some((keyword) => {
+      const normalizedKeyword = normalizeSearchText(keyword);
+      return normalizedKeyword && normalized.includes(normalizedKeyword);
+    });
+  });
+
+  if (!product) return null;
+  return toFoodEntry(product);
+}
+
 export function searchOfficialProductFoods(text, limit = 6) {
   const normalized = normalizeSearchText(text);
   if (!normalized) return [];
@@ -60,6 +82,15 @@ export function getOfficialProductStats() {
 
 function toFoodEntry(product) {
   const nutrients = product.nutrients || {};
+  // 2026-11-13: apply-similar-substitute.mjs가 만드는 "일반(추정)" 항목(sourceType
+  // 'estimated_similar_average' — 여러 브랜드 평균값, 특정 브랜드의 실측값이 아님)은
+  // 공식 확정값과 절대 같은 것으로 보이면 안 됨(센터 설계원칙: 추정값을 확정 판정처럼
+  // 보이게 하지 않는다). 이전에는 여기서 무조건 official:true를 리턴해서 유사 대체
+  // 추정값이 공식 데이터와 구분 없이 회원에게 노출됐고, reviewNote(그 안의 "[추정값]"
+  // 문구)도 아예 전달이 안 됐음(교촌 윙 조각수 추정 등 브랜드 내부 추정에도 동일하게
+  // 영향) — 둘 다 고침.
+  const isSimilarSubstitute = product.sourceType === 'estimated_similar_average';
+  const isEstimated = isSimilarSubstitute || /\[추정값\]/.test(String(product.reviewNote || ''));
   return {
     brand: product.brand,
     keys: [product.productName, ...(product.aliases || [])],
@@ -69,8 +100,10 @@ function toFoodEntry(product) {
     imageUrl: product.imageUrl || '',
     category: product.category || '',
     emoji: createEmoji(product.category),
-    official: true,
-    officialProduct: true,
+    official: !isSimilarSubstitute,
+    officialProduct: !isSimilarSubstitute,
+    estimated: isEstimated,
+    reviewNote: product.reviewNote || '',
     perServing: true,
     calories: numberValue(nutrients.calories),
     carb: numberValue(nutrients.carb),
