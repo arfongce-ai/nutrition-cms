@@ -2,9 +2,35 @@ import { deleteDoc, doc, getDoc, serverTimestamp, setDoc, updateDoc } from 'fire
 import { signInAnonymously } from 'firebase/auth';
 import { auth, db, firebaseEnabled } from '../firebase';
 import { getMacroBreakdown } from './mealPresentation';
+import { getConnection } from './nutritionLink';
 
 const LOCAL_REPORTS_KEY = 'nutritionReports.v1';
+const LOCAL_REPORTS_MIGRATED_FLAG = 'nutritionReports.v1.migratedOnce';
 const MEALS_COLLECTION = 'meals_history';
+
+// 2026-11-14: 여러 회원이 같은 기기(공용 PC, 체험용 폰 등)를 돌려 쓸 수 있는 상황을
+// 대비해, 식단 기록을 memberRef(센터 연결코드로 교환된 회원 식별자)별로 분리해서
+// 저장한다. 아직 연결이 안 된 상태(게이트가 꺼져 있는 지금의 기본 운영 방식)에서는
+// 기존처럼 전역 키 하나를 그대로 쓰므로 지금 동작은 바뀌지 않는다.
+// 이관(마이그레이션)은 "이 기기에서 딱 한 번만" 일어난다 — 그렇지 않으면 다음에
+// 연결하는 다른 회원에게도 이전 회원의 전역 기록이 또 복사되어 보이는 사고가 날 수
+// 있다(전역 키 자체는 지우지 않으므로 두 번째 연결 때도 여전히 남아있음). 그래서
+// 기기당 플래그 하나만 보고, 가장 먼저 연결하는 회원에게 1회만 넘겨준 뒤 끝낸다.
+function getReportsStorageKey() {
+  const memberRef = getConnection()?.memberRef;
+  if (!memberRef) return LOCAL_REPORTS_KEY;
+  const scopedKey = `${LOCAL_REPORTS_KEY}.member.${memberRef}`;
+  try {
+    if (!localStorage.getItem(LOCAL_REPORTS_MIGRATED_FLAG)) {
+      const legacyRaw = localStorage.getItem(LOCAL_REPORTS_KEY);
+      if (legacyRaw) localStorage.setItem(scopedKey, legacyRaw);
+      localStorage.setItem(LOCAL_REPORTS_MIGRATED_FLAG, memberRef);
+    }
+  } catch (error) {
+    console.warn('[reportStore] 기존 기록 이관 확인 실패.', error);
+  }
+  return scopedKey;
+}
 
 export async function saveNutritionReport(report, options = {}) {
   if (options.createdAt && (!Number.isFinite(new Date(options.createdAt).getTime()) || new Date(options.createdAt) > new Date())) return { saved: false, error: new Error('식사 날짜와 시간을 확인해 주세요.') };
@@ -360,7 +386,7 @@ function inferMealType(date) {
 
 function tryWriteLocalReports(reports) {
   try {
-    localStorage.setItem(LOCAL_REPORTS_KEY, JSON.stringify(reports));
+    localStorage.setItem(getReportsStorageKey(), JSON.stringify(reports));
     return true;
   } catch (error) {
     console.warn('[reportStore] Local photo storage limit reached.', error);
@@ -370,7 +396,7 @@ function tryWriteLocalReports(reports) {
 
 export function readLocalReports() {
   try {
-    const parsed = JSON.parse(localStorage.getItem(LOCAL_REPORTS_KEY) || '[]');
+    const parsed = JSON.parse(localStorage.getItem(getReportsStorageKey()) || '[]');
     return Array.isArray(parsed) ? parsed : [];
   } catch {
     return [];

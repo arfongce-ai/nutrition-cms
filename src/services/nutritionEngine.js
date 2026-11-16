@@ -1,6 +1,6 @@
 import { sameFoodName } from './foodPortions.js';
 import { findOfficialBrandFood, findOfficialNutritionSources, getSafetyReferenceSource } from './officialNutritionSources.js';
-import { findOfficialProductFood, findOfficialProductSources } from './officialProductDatabase.js';
+import { findOfficialProductFood, findOfficialProductSources, findCategorySubstituteFood } from './officialProductDatabase.js';
 
 export const SYSTEM_PROMPT = `
 당신은 대한민국 최고의 AI 메디-스포츠 영양 코치이며, 한국 식약처 데이터 및 외식/식음료 메뉴 분석 전문가입니다.
@@ -381,7 +381,13 @@ function normalizeFoods(foodItems) {
       const attachedFood = createAttachedFoodBase(item);
       const base = attachedFood || findFood(item.name);
       const basisAmount = Math.max(toNumber(item.servingAmount) || toNumber(item.nutrientBasisGrams) || (base.perServing ? 1 : 100), 0.01);
-      const multiplier = attachedFood ? grams / basisAmount : base.perServing ? 1 : grams / 100;
+      // 2026-11-14: perServing(공식 상품 등) 항목은 기존에 multiplier를 무조건 1로 고정해서,
+      // 회원이 "섭취량" 입력을 1인분 기본값에서 바꿔도(예: 굽네치킨 1마리 955g 중 400g만 먹음)
+      // 항상 "1인분 전체" 칼로리로 기록되는 버그가 있었음(입력한 grams가 계산에 전혀 반영 안 됨).
+      // calculateAppliedFoodCalories()(App.jsx 미리보기 계산)는 이미 grams/basisAmount로 정확히
+      // 비례 계산하고 있어서, 최종 저장값과 미리보기 값이 서로 달랐음. attachedFood와 동일하게
+      // grams/basisAmount로 통일 — 입력을 기본값(=basisAmount) 그대로 두면 결과는 기존과 동일(배율 1).
+      const multiplier = base.perServing || attachedFood ? grams / basisAmount : grams / 100;
       return {
         id: item.id,
         position: item.position || null,
@@ -409,6 +415,11 @@ function normalizeFoods(foodItems) {
         emoji: base.emoji,
         matched: base.matched,
         official: Boolean(base.official || item.official),
+        // 2026-11-13: "유사 대체"(다른 브랜드 평균값) 또는 브랜드 내부 추정("[추정값]"
+        // reviewNote)인지 끝까지 전달해서, 리포트 문구와 출처 목록에서 공식 확정값과
+        // 구분해서 보여줄 수 있게 함(센터 설계원칙: 추정값을 확정 판정처럼 보이지 않게).
+        estimatedSimilar: Boolean(base.estimated),
+        reviewNote: base.reviewNote || '',
         brand: item.brand || base.brand || '',
         category: item.category || base.category || '',
         serving: item.serving || base.serving || '',
@@ -465,13 +476,25 @@ function createAttachedFoodBase(item) {
 function findFood(name) {
   const normalized = String(name || '').toLowerCase().replace(/\s/g, '');
   const officialProduct = findOfficialProductFood(name);
-  if (officialProduct) return { ...officialProduct, matched: true, official: true, perServing: true };
+  // 2026-11-13: officialProduct.official은 이제 officialProductDatabase.js의 toFoodEntry()가
+  // sourceType 기준으로 정확히 계산해서 줌("일반(추정)" 유사 대체 항목은 false) — 여기서
+  // 예전처럼 official:true로 덮어쓰면 그 구분이 다시 사라지므로 더 이상 덮어쓰지 않는다.
+  if (officialProduct) return { ...officialProduct, matched: true, perServing: true };
 
   const official = findOfficialBrandFood(name);
   if (official) return { ...official, matched: true, official: true, perServing: true };
 
   const found = FOOD_DATABASE.find((entry) => entry.keys.some((key) => sameFoodName(normalized, key)));
   if (found) return { ...found, matched: true, sourceLabel: '일반 음식 참고값 · 조리법에 따라 달라요', sourceUrl: '' };
+
+  // 2026-11-14: 브랜드 자체가 미확인이라 위 어떤 매칭도 안 되는 경우(노브랜드버거 고유 메뉴,
+  // 허닭·역전할머니맥주 등 치킨류 등) — 음식명에 "치킨" 같은 카테고리 키워드가 있으면 치킨
+  // 전문 브랜드(교촌·bhc·BBQ·네네) 평균(추정)으로 대체한다(0으로 비워두는 대신). 이 대체값은
+  // officialProductDatabase.js의 toFoodEntry()가 estimated:true로 표시해서 공식 데이터와
+  // 구분되어 회원에게 "추정값" 안내가 함께 나간다.
+  const categorySubstitute = findCategorySubstituteFood(name);
+  if (categorySubstitute) return { ...categorySubstitute, matched: true, perServing: true };
+
   return {
     emoji: '음식',
     matched: false,
@@ -522,7 +545,9 @@ function createSourceItems(items, facts = {}, options = {}, additives = []) {
       sourceUrl: item.sourceUrl,
       official: Boolean(item.official),
       serving: item.serving || '',
-      type: item.official ? 'official-value' : 'external-source',
+      // 2026-11-13: 추정값(유사 대체·브랜드 내부 추정)은 "값이 아예 없는 외부 링크"
+      // (external-source)와 다르므로 구분된 타입으로 표시.
+      type: item.estimatedSimilar ? 'estimated-value' : item.official ? 'official-value' : 'external-source',
     }));
 
   const safetySources = createSafetyReferenceItems(items, facts, options, additives);
@@ -873,6 +898,14 @@ function createAdultMessage(profile, foods, labelItem, facts, totals, macroPerce
   }
 
   paragraphs.push(`현재 합산 나트륨은 ${Math.round(totals.sodium)} mg으로 성인 CDRR 2,300 mg/일의 약 ${sodiumRatio}%입니다. 고혈압 이력이 있으면 국물류, 김치류, 가공식품을 같은 끼니에 겹치지 않게 조절하세요.`);
+
+  // 2026-11-13: 유사 대체(다른 브랜드 평균값)나 브랜드 내부 추정값(예: 중량 정보가 없어
+  // 조각 수로 추정한 치킨윙)이 섞여 있으면, 공식 확정값이 아니라는 점을 리포트에도 명시.
+  const estimatedSimilarFoods = foods.filter((food) => food.estimatedSimilar);
+  if (estimatedSimilarFoods.length) {
+    const estimatedNames = estimatedSimilarFoods.map((food) => food.name).join(', ');
+    paragraphs.push(`${estimatedNames}은(는) 정확한 공식 수치 대신 추정값(비슷한 메뉴 평균 또는 중량 추정)을 사용했습니다. 실제 섭취량과 차이가 있을 수 있으니 참고용으로만 확인하세요.`);
+  }
 
   if (labelItem) {
     paragraphs.push(`${facts.foodName || '포장식품'} 영양성분표도 함께 반영했습니다. 촬영 사진에서 글자가 자동 입력되지 않으면 숫자를 직접 고치면 리포트가 즉시 다시 계산됩니다.`);
