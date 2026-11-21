@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-14",
+  "updatedAt": "2026-11-21",
   "updatePolicy": {
     "reviewCycle": "quarterly",
     "sourcePriority": [
@@ -13914,3046 +13914,6 @@
       "reviewNote": "공식 표에 공개된 중량, 열량, 포화지방, 당류, 단백질, 나트륨, 카페인 및 알레르기 정보만 저장했습니다. 공개되지 않은 탄수화물·총지방 값은 null입니다."
     },
     {
-      "id": "bbq-8d2491daa8ae",
-      "brand": "BBQ치킨",
-      "productName": "BBQ 황올 미니 콤보 세트",
-      "aliases": [
-        "BBQ치킨 BBQ 황올 미니 콤보 세트",
-        "비비큐 BBQ 황올 미니 콤보 세트",
-        "BBQ 황올 미니 콤보 세트",
-        "BBQ황올미니콤보세트"
-      ],
-      "category": "BBQ치킨/세트",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/18",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "알류",
-        "우유",
-        "땅콩",
-        "대두",
-        "밀",
-        "새우",
-        "닭고기",
-        "쇠고기",
-        "조개류"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 1153,
-        "carb": null,
-        "sugar": null,
-        "protein": null,
-        "fat": null,
-        "saturatedFat": null,
-        "transFat": null,
-        "sodium": null,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-a0267e9b2832",
-      "brand": "BBQ치킨",
-      "productName": "BBQ 황올 반마리 세트",
-      "aliases": [
-        "BBQ치킨 BBQ 황올 반마리 세트",
-        "비비큐 BBQ 황올 반마리 세트",
-        "BBQ 황올 반마리 세트",
-        "BBQ황올반마리세트"
-      ],
-      "category": "BBQ치킨/세트",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/18",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "알류",
-        "우유",
-        "땅콩",
-        "대두",
-        "밀",
-        "새우",
-        "닭고기",
-        "쇠고기",
-        "조개류"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 1271,
-        "carb": null,
-        "sugar": null,
-        "protein": null,
-        "fat": null,
-        "saturatedFat": null,
-        "transFat": null,
-        "sodium": null,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-2c4ecc7188c9",
-      "brand": "BBQ치킨",
-      "productName": "황금올리브치킨™반마리",
-      "aliases": [
-        "BBQ치킨 황금올리브치킨™반마리",
-        "비비큐 황금올리브치킨™반마리",
-        "황금올리브치킨™반마리"
-      ],
-      "category": "BBQ치킨/세트",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/18",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "알류",
-        "우유",
-        "땅콩",
-        "대두",
-        "밀",
-        "새우",
-        "닭고기",
-        "쇠고기",
-        "조개류"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 253,
-        "carb": null,
-        "sugar": 0,
-        "protein": 18,
-        "fat": null,
-        "saturatedFat": 2,
-        "transFat": null,
-        "sodium": 408,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-5de7695d48e1",
-      "brand": "BBQ치킨",
-      "productName": "TOP3세트메뉴 Set1",
-      "aliases": [
-        "BBQ치킨 TOP3세트메뉴 Set1",
-        "비비큐 TOP3세트메뉴 Set1",
-        "TOP3세트메뉴 Set1",
-        "TOP3세트메뉴Set1"
-      ],
-      "category": "BBQ치킨/세트",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/18",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "알류",
-        "우유",
-        "땅콩",
-        "대두",
-        "밀",
-        "새우",
-        "닭고기",
-        "쇠고기",
-        "조개류"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 2420,
-        "carb": null,
-        "sugar": 0,
-        "protein": 32,
-        "fat": null,
-        "saturatedFat": 6,
-        "transFat": null,
-        "sodium": 1161,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-313c11f28277",
-      "brand": "BBQ치킨",
-      "productName": "황금올리브치킨™핫크리스피 반마리",
-      "aliases": [
-        "BBQ치킨 황금올리브치킨™핫크리스피 반마리",
-        "비비큐 황금올리브치킨™핫크리스피 반마리",
-        "황금올리브치킨™핫크리스피 반마리",
-        "황금올리브치킨™핫크리스피반마리"
-      ],
-      "category": "BBQ치킨/세트",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/18",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "우유",
-        "땅콩",
-        "대두",
-        "밀",
-        "새우",
-        "돼지고기",
-        "토마토",
-        "닭고기",
-        "쇠고기",
-        "조개류"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 255,
-        "carb": null,
-        "sugar": 6,
-        "protein": 20,
-        "fat": null,
-        "saturatedFat": 2,
-        "transFat": null,
-        "sodium": 533,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-34812303f74d",
-      "brand": "BBQ치킨",
-      "productName": "TOP3세트메뉴 Set2",
-      "aliases": [
-        "BBQ치킨 TOP3세트메뉴 Set2",
-        "비비큐 TOP3세트메뉴 Set2",
-        "TOP3세트메뉴 Set2",
-        "TOP3세트메뉴Set2"
-      ],
-      "category": "BBQ치킨/세트",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/18",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "알류",
-        "우유",
-        "땅콩",
-        "대두",
-        "밀",
-        "새우",
-        "돼지고기",
-        "토마토",
-        "닭고기",
-        "쇠고기",
-        "조개류"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 3230,
-        "carb": null,
-        "sugar": 0,
-        "protein": 33,
-        "fat": null,
-        "saturatedFat": 7,
-        "transFat": null,
-        "sodium": 1223,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-c639e640344b",
-      "brand": "BBQ치킨",
-      "productName": "황금올리브치킨™블랙페퍼 반마리",
-      "aliases": [
-        "BBQ치킨 황금올리브치킨™블랙페퍼 반마리",
-        "비비큐 황금올리브치킨™블랙페퍼 반마리",
-        "황금올리브치킨™블랙페퍼 반마리",
-        "황금올리브치킨™블랙페퍼반마리"
-      ],
-      "category": "BBQ치킨/세트",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/18",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "알류",
-        "우유",
-        "땅콩",
-        "대두",
-        "밀",
-        "새우",
-        "닭고기",
-        "쇠고기",
-        "조개류"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 323,
-        "carb": null,
-        "sugar": 0,
-        "protein": 19,
-        "fat": null,
-        "saturatedFat": 3,
-        "transFat": null,
-        "sodium": 470,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-0ec743f5e1f0",
-      "brand": "BBQ치킨",
-      "productName": "TOP3세트메뉴 Set3",
-      "aliases": [
-        "BBQ치킨 TOP3세트메뉴 Set3",
-        "비비큐 TOP3세트메뉴 Set3",
-        "TOP3세트메뉴 Set3",
-        "TOP3세트메뉴Set3"
-      ],
-      "category": "BBQ치킨/세트",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/18",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "알류",
-        "우유",
-        "땅콩",
-        "대두",
-        "밀",
-        "새우",
-        "토마토",
-        "닭고기",
-        "쇠고기",
-        "조개류"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 1894,
-        "carb": null,
-        "sugar": null,
-        "protein": null,
-        "fat": null,
-        "saturatedFat": null,
-        "transFat": null,
-        "sodium": null,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-094741a0c953",
-      "brand": "BBQ치킨",
-      "productName": "자메이카 통다리구이 반마리",
-      "aliases": [
-        "BBQ치킨 자메이카 통다리구이 반마리",
-        "비비큐 자메이카 통다리구이 반마리",
-        "자메이카 통다리구이 반마리",
-        "자메이카통다리구이반마리"
-      ],
-      "category": "BBQ치킨/세트",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/18",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "대두",
-        "밀",
-        "토마토",
-        "닭고기",
-        "쇠고기",
-        "조개류"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 304,
-        "carb": null,
-        "sugar": 0,
-        "protein": 20,
-        "fat": null,
-        "saturatedFat": 3,
-        "transFat": null,
-        "sodium": 414,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-7164fa021a79",
-      "brand": "BBQ치킨",
-      "productName": "황금올리브치킨™양념 반마리",
-      "aliases": [
-        "BBQ치킨 황금올리브치킨™양념 반마리",
-        "비비큐 황금올리브치킨™양념 반마리",
-        "황금올리브치킨™양념 반마리",
-        "황금올리브치킨™양념반마리"
-      ],
-      "category": "BBQ치킨/세트",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/18",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "알류",
-        "우유",
-        "땅콩",
-        "대두",
-        "밀",
-        "새우",
-        "토마토",
-        "닭고기",
-        "쇠고기",
-        "조개류"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 255,
-        "carb": null,
-        "sugar": 6,
-        "protein": 20,
-        "fat": null,
-        "saturatedFat": 2,
-        "transFat": null,
-        "sodium": 533,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-a5ee29c2ee64",
-      "brand": "BBQ치킨",
-      "productName": "황금올리브치킨™매운양념 반마리",
-      "aliases": [
-        "BBQ치킨 황금올리브치킨™매운양념 반마리",
-        "비비큐 황금올리브치킨™매운양념 반마리",
-        "황금올리브치킨™매운양념 반마리",
-        "황금올리브치킨™매운양념반마리"
-      ],
-      "category": "BBQ치킨/세트",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/18",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "알류",
-        "우유",
-        "땅콩",
-        "대두",
-        "밀",
-        "새우",
-        "토마토",
-        "닭고기",
-        "쇠고기",
-        "조개류"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 291,
-        "carb": null,
-        "sugar": 10,
-        "protein": 16,
-        "fat": null,
-        "saturatedFat": 2,
-        "transFat": null,
-        "sodium": 559,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-c2f35a4454b0",
-      "brand": "BBQ치킨",
-      "productName": "황금올리브치킨™",
-      "aliases": [
-        "BBQ치킨 황금올리브치킨™",
-        "비비큐 황금올리브치킨™",
-        "황금올리브치킨™"
-      ],
-      "category": "BBQ치킨/치킨",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/19",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "알류",
-        "우유",
-        "땅콩",
-        "대두",
-        "밀",
-        "새우",
-        "닭고기",
-        "쇠고기",
-        "조개류"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 253,
-        "carb": null,
-        "sugar": 0,
-        "protein": 18,
-        "fat": null,
-        "saturatedFat": 2,
-        "transFat": null,
-        "sodium": 408,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-a077d4ba71ae",
-      "brand": "BBQ치킨",
-      "productName": "자메이카 통다리구이",
-      "aliases": [
-        "BBQ치킨 자메이카 통다리구이",
-        "비비큐 자메이카 통다리구이",
-        "자메이카 통다리구이",
-        "자메이카통다리구이"
-      ],
-      "category": "BBQ치킨/치킨",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/19",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "대두",
-        "밀",
-        "토마토",
-        "닭고기",
-        "쇠고기",
-        "조개류"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 201,
-        "carb": null,
-        "sugar": 0,
-        "protein": 20,
-        "fat": null,
-        "saturatedFat": 3,
-        "transFat": null,
-        "sodium": 423,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-523bbe2a0a07",
-      "brand": "BBQ치킨",
-      "productName": "뿜치킹",
-      "aliases": [
-        "BBQ치킨 뿜치킹",
-        "비비큐 뿜치킹",
-        "뿜치킹"
-      ],
-      "category": "BBQ치킨/치킨",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/19",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "우유",
-        "땅콩",
-        "대두",
-        "밀",
-        "닭고기",
-        "쇠고기"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 302,
-        "carb": null,
-        "sugar": 3,
-        "protein": 22,
-        "fat": null,
-        "saturatedFat": 2,
-        "transFat": null,
-        "sodium": 445,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-4d49a7b6f13a",
-      "brand": "BBQ치킨",
-      "productName": "황금올리브치킨™핫크리스피",
-      "aliases": [
-        "BBQ치킨 황금올리브치킨™핫크리스피",
-        "비비큐 황금올리브치킨™핫크리스피",
-        "황금올리브치킨™핫크리스피"
-      ],
-      "category": "BBQ치킨/치킨",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/19",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "우유",
-        "땅콩",
-        "대두",
-        "밀",
-        "새우",
-        "돼지고기",
-        "토마토",
-        "닭고기",
-        "쇠고기",
-        "조개류"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 323,
-        "carb": null,
-        "sugar": 0,
-        "protein": 19,
-        "fat": null,
-        "saturatedFat": 3,
-        "transFat": null,
-        "sodium": 470,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-3b22e8170fe1",
-      "brand": "BBQ치킨",
-      "productName": "황금올리브치킨™블랙페퍼",
-      "aliases": [
-        "BBQ치킨 황금올리브치킨™블랙페퍼",
-        "비비큐 황금올리브치킨™블랙페퍼",
-        "황금올리브치킨™블랙페퍼"
-      ],
-      "category": "BBQ치킨/치킨",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/19",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "알류",
-        "우유",
-        "땅콩",
-        "대두",
-        "밀",
-        "새우",
-        "닭고기",
-        "쇠고기",
-        "조개류"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 304,
-        "carb": null,
-        "sugar": 0,
-        "protein": 20,
-        "fat": null,
-        "saturatedFat": 3,
-        "transFat": null,
-        "sodium": 414,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-7ea2950dbb0f",
-      "brand": "BBQ치킨",
-      "productName": "스모크치킨(5조각)",
-      "aliases": [
-        "BBQ치킨 스모크치킨(5조각)",
-        "비비큐 스모크치킨(5조각)",
-        "스모크치킨(5조각)"
-      ],
-      "category": "BBQ치킨/치킨",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/19",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "대두",
-        "닭고기"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 315,
-        "carb": null,
-        "sugar": 2,
-        "protein": 25,
-        "fat": null,
-        "saturatedFat": 7,
-        "transFat": null,
-        "sodium": 650,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-710cc20910e0",
-      "brand": "BBQ치킨",
-      "productName": "[황.양.반] 황올 반+양념 반",
-      "aliases": [
-        "BBQ치킨 [황.양.반] 황올 반+양념 반",
-        "비비큐 [황.양.반] 황올 반+양념 반",
-        "[황.양.반] 황올 반+양념 반",
-        "[황.양.반]황올반+양념반"
-      ],
-      "category": "BBQ치킨/치킨",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/19",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "알류",
-        "우유",
-        "땅콩",
-        "대두",
-        "밀",
-        "새우",
-        "토마토",
-        "닭고기",
-        "쇠고기",
-        "조개류"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 254,
-        "carb": null,
-        "sugar": 3,
-        "protein": 19,
-        "fat": null,
-        "saturatedFat": 2,
-        "transFat": null,
-        "sodium": 470,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-b4eb8ce642a2",
-      "brand": "BBQ치킨",
-      "productName": "황금올리브치킨™양념",
-      "aliases": [
-        "BBQ치킨 황금올리브치킨™양념",
-        "비비큐 황금올리브치킨™양념",
-        "황금올리브치킨™양념"
-      ],
-      "category": "BBQ치킨/치킨",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/19",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "알류",
-        "우유",
-        "땅콩",
-        "대두",
-        "밀",
-        "새우",
-        "토마토",
-        "닭고기",
-        "쇠고기",
-        "조개류"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 255,
-        "carb": null,
-        "sugar": 6,
-        "protein": 20,
-        "fat": null,
-        "saturatedFat": 2,
-        "transFat": null,
-        "sodium": 533,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-4a5dcfda1969",
-      "brand": "BBQ치킨",
-      "productName": "황금올리브치킨™속안심",
-      "aliases": [
-        "BBQ치킨 황금올리브치킨™속안심",
-        "비비큐 황금올리브치킨™속안심",
-        "황금올리브치킨™속안심"
-      ],
-      "category": "BBQ치킨/치킨",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/19",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "알류",
-        "우유",
-        "땅콩",
-        "대두",
-        "밀",
-        "새우",
-        "토마토",
-        "닭고기",
-        "쇠고기",
-        "조개류"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 269,
-        "carb": null,
-        "sugar": 1,
-        "protein": 23,
-        "fat": null,
-        "saturatedFat": 2,
-        "transFat": null,
-        "sodium": 636,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-33e2b0635dc8",
-      "brand": "BBQ치킨",
-      "productName": "크런치버터치킨",
-      "aliases": [
-        "BBQ치킨 크런치버터치킨",
-        "비비큐 크런치버터치킨",
-        "크런치버터치킨"
-      ],
-      "category": "BBQ치킨/치킨",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/19",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "알류",
-        "우유",
-        "땅콩",
-        "대두",
-        "밀",
-        "새우",
-        "닭고기",
-        "쇠고기",
-        "조개류"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 317,
-        "carb": null,
-        "sugar": 3,
-        "protein": 19,
-        "fat": null,
-        "saturatedFat": 3,
-        "transFat": null,
-        "sodium": 502,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-03d69508f3d7",
-      "brand": "BBQ치킨",
-      "productName": "핫베이크 윙",
-      "aliases": [
-        "BBQ치킨 핫베이크 윙",
-        "비비큐 핫베이크 윙",
-        "핫베이크 윙",
-        "핫베이크윙"
-      ],
-      "category": "BBQ치킨/치킨",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/19",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "우유",
-        "땅콩",
-        "대두",
-        "밀",
-        "돼지고기",
-        "토마토",
-        "닭고기",
-        "쇠고기",
-        "조개류"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 246,
-        "carb": null,
-        "sugar": 1,
-        "protein": 24,
-        "fat": null,
-        "saturatedFat": 3,
-        "transFat": null,
-        "sodium": 818,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-20172b2f38cc",
-      "brand": "BBQ치킨",
-      "productName": "맵소디",
-      "aliases": [
-        "BBQ치킨 맵소디",
-        "비비큐 맵소디",
-        "맵소디"
-      ],
-      "category": "BBQ치킨/치킨",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/19",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "알류",
-        "우유",
-        "땅콩",
-        "대두",
-        "밀",
-        "닭고기",
-        "쇠고기",
-        "조개류"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 289,
-        "carb": null,
-        "sugar": 5,
-        "protein": 20,
-        "fat": null,
-        "saturatedFat": 2,
-        "transFat": null,
-        "sodium": 472,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-dd764391a8fa",
-      "brand": "BBQ치킨",
-      "productName": "땡쇼크",
-      "aliases": [
-        "BBQ치킨 땡쇼크",
-        "비비큐 땡쇼크",
-        "땡쇼크"
-      ],
-      "category": "BBQ치킨/치킨",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/19",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "알류",
-        "대두",
-        "밀",
-        "아황산류",
-        "닭고기",
-        "조개류"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 237,
-        "carb": null,
-        "sugar": 6,
-        "protein": 16,
-        "fat": null,
-        "saturatedFat": 1,
-        "transFat": null,
-        "sodium": 444,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-71b273938ab9",
-      "brand": "BBQ치킨",
-      "productName": "황금올리브치킨™핫윙(VAP)",
-      "aliases": [
-        "BBQ치킨 황금올리브치킨™핫윙(VAP)",
-        "비비큐 황금올리브치킨™핫윙(VAP)",
-        "황금올리브치킨™핫윙(VAP)"
-      ],
-      "category": "BBQ치킨/치킨",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/19",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "우유",
-        "땅콩",
-        "대두",
-        "밀",
-        "새우",
-        "닭고기"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 313,
-        "carb": null,
-        "sugar": 0,
-        "protein": 17,
-        "fat": null,
-        "saturatedFat": 3,
-        "transFat": null,
-        "sodium": 541,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-8f356d8a11aa",
-      "brand": "BBQ치킨",
-      "productName": "크런치 순살크래커",
-      "aliases": [
-        "BBQ치킨 크런치 순살크래커",
-        "비비큐 크런치 순살크래커",
-        "크런치 순살크래커",
-        "크런치순살크래커"
-      ],
-      "category": "BBQ치킨/치킨",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/19",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "대두",
-        "밀",
-        "닭고기",
-        "조개류"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 262,
-        "carb": null,
-        "sugar": 0,
-        "protein": 18,
-        "fat": null,
-        "saturatedFat": 2,
-        "transFat": null,
-        "sodium": 387,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-c63d5a0f3bc1",
-      "brand": "BBQ치킨",
-      "productName": "자메이카 소떡만나치킨",
-      "aliases": [
-        "BBQ치킨 자메이카 소떡만나치킨",
-        "비비큐 자메이카 소떡만나치킨",
-        "자메이카 소떡만나치킨",
-        "자메이카소떡만나치킨"
-      ],
-      "category": "BBQ치킨/치킨",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/19",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "알류",
-        "우유",
-        "대두",
-        "밀",
-        "돼지고기",
-        "토마토",
-        "닭고기",
-        "쇠고기",
-        "조개류"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 286,
-        "carb": null,
-        "sugar": 4,
-        "protein": 17,
-        "fat": null,
-        "saturatedFat": 3,
-        "transFat": null,
-        "sodium": 415,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-8d7171bf843b",
-      "brand": "BBQ치킨",
-      "productName": "황금올리브치킨™매운양념",
-      "aliases": [
-        "BBQ치킨 황금올리브치킨™매운양념",
-        "비비큐 황금올리브치킨™매운양념",
-        "황금올리브치킨™매운양념"
-      ],
-      "category": "BBQ치킨/치킨",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/19",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "알류",
-        "우유",
-        "땅콩",
-        "대두",
-        "밀",
-        "새우",
-        "토마토",
-        "닭고기",
-        "쇠고기",
-        "조개류"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 291,
-        "carb": null,
-        "sugar": 10,
-        "protein": 16,
-        "fat": null,
-        "saturatedFat": 2,
-        "transFat": null,
-        "sodium": 559,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-00cd4e620de5",
-      "brand": "BBQ치킨",
-      "productName": "바사칸 윙",
-      "aliases": [
-        "BBQ치킨 바사칸 윙",
-        "비비큐 바사칸 윙",
-        "바사칸 윙",
-        "바사칸윙"
-      ],
-      "category": "BBQ치킨/치킨",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/19",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "알류",
-        "대두",
-        "밀",
-        "닭고기"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 256,
-        "carb": null,
-        "sugar": 1,
-        "protein": 18,
-        "fat": null,
-        "saturatedFat": 3,
-        "transFat": null,
-        "sodium": 571,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-4f17a4dca5d4",
-      "brand": "BBQ치킨",
-      "productName": "파더's치킨",
-      "aliases": [
-        "BBQ치킨 파더's치킨",
-        "비비큐 파더's치킨",
-        "파더's치킨"
-      ],
-      "category": "BBQ치킨/치킨",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/19",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "알류",
-        "우유",
-        "대두",
-        "밀",
-        "토마토",
-        "닭고기",
-        "쇠고기"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 201,
-        "carb": null,
-        "sugar": 0,
-        "protein": 22,
-        "fat": null,
-        "saturatedFat": 2,
-        "transFat": null,
-        "sodium": 583,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-814750cac354",
-      "brand": "BBQ치킨",
-      "productName": "극한왕갈비치킨",
-      "aliases": [
-        "BBQ치킨 극한왕갈비치킨",
-        "비비큐 극한왕갈비치킨",
-        "극한왕갈비치킨"
-      ],
-      "category": "BBQ치킨/치킨",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/19",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "땅콩",
-        "대두",
-        "밀",
-        "아황산류",
-        "닭고기",
-        "쇠고기",
-        "조개류"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 322,
-        "carb": null,
-        "sugar": 10,
-        "protein": 15,
-        "fat": null,
-        "saturatedFat": 3,
-        "transFat": null,
-        "sodium": 407,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-45b697c66973",
-      "brand": "BBQ치킨",
-      "productName": "빠리치킨",
-      "aliases": [
-        "BBQ치킨 빠리치킨",
-        "비비큐 빠리치킨",
-        "빠리치킨"
-      ],
-      "category": "BBQ치킨/치킨",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/19",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "알류",
-        "대두",
-        "밀",
-        "닭고기"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 326,
-        "carb": null,
-        "sugar": 4,
-        "protein": 23,
-        "fat": null,
-        "saturatedFat": 3,
-        "transFat": null,
-        "sodium": 488,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-f4575158cd2c",
-      "brand": "BBQ치킨",
-      "productName": "페퍼로니 시카고피자",
-      "aliases": [
-        "BBQ치킨 페퍼로니 시카고피자",
-        "비비큐 페퍼로니 시카고피자",
-        "페퍼로니 시카고피자",
-        "페퍼로니시카고피자"
-      ],
-      "category": "BBQ치킨/피자&버거",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/20",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "알류",
-        "우유",
-        "대두",
-        "밀",
-        "돼지고기",
-        "토마토",
-        "쇠고기",
-        "조개류"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 255,
-        "carb": null,
-        "sugar": 1,
-        "protein": 9,
-        "fat": null,
-        "saturatedFat": 5,
-        "transFat": null,
-        "sodium": 401,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-8db0e2fc2c51",
-      "brand": "BBQ치킨",
-      "productName": "허니리코타 시카고피자",
-      "aliases": [
-        "BBQ치킨 허니리코타 시카고피자",
-        "비비큐 허니리코타 시카고피자",
-        "허니리코타 시카고피자",
-        "허니리코타시카고피자"
-      ],
-      "category": "BBQ치킨/피자&버거",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/20",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "알류",
-        "우유",
-        "대두",
-        "밀",
-        "돼지고기",
-        "토마토",
-        "쇠고기",
-        "조개류"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 275,
-        "carb": null,
-        "sugar": 2,
-        "protein": 12,
-        "fat": null,
-        "saturatedFat": 8,
-        "transFat": null,
-        "sodium": 356,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-b01bdc08bb09",
-      "brand": "BBQ치킨",
-      "productName": "고구마퐁듀피자",
-      "aliases": [
-        "BBQ치킨 고구마퐁듀피자",
-        "비비큐 고구마퐁듀피자",
-        "고구마퐁듀피자"
-      ],
-      "category": "BBQ치킨/피자&버거",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/20",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "알류",
-        "우유",
-        "대두",
-        "밀",
-        "돼지고기",
-        "토마토",
-        "닭고기",
-        "쇠고기",
-        "조개류"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 230,
-        "carb": null,
-        "sugar": 4,
-        "protein": 12,
-        "fat": null,
-        "saturatedFat": 4,
-        "transFat": null,
-        "sodium": 364,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-327989b543f1",
-      "brand": "BBQ치킨",
-      "productName": "쉬림프고르곤졸라피자",
-      "aliases": [
-        "BBQ치킨 쉬림프고르곤졸라피자",
-        "비비큐 쉬림프고르곤졸라피자",
-        "쉬림프고르곤졸라피자"
-      ],
-      "category": "BBQ치킨/피자&버거",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/20",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "우유",
-        "대두",
-        "밀",
-        "새우"
-      ],
-      "additiveWatch": [
-        "포화지방"
-      ],
-      "nutrients": {
-        "calories": 422,
-        "carb": null,
-        "sugar": 6,
-        "protein": 23,
-        "fat": null,
-        "saturatedFat": 10,
-        "transFat": null,
-        "sodium": 682,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-14e1826c9047",
-      "brand": "BBQ치킨",
-      "productName": "콤비네이션피자",
-      "aliases": [
-        "BBQ치킨 콤비네이션피자",
-        "비비큐 콤비네이션피자",
-        "콤비네이션피자"
-      ],
-      "category": "BBQ치킨/피자&버거",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/20",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "우유",
-        "대두",
-        "밀",
-        "돼지고기",
-        "토마토",
-        "아황산류",
-        "닭고기",
-        "쇠고기",
-        "조개류"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 336,
-        "carb": null,
-        "sugar": 2,
-        "protein": 14,
-        "fat": null,
-        "saturatedFat": 7,
-        "transFat": null,
-        "sodium": 584,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-982d94b942ab",
-      "brand": "BBQ치킨",
-      "productName": "브라운비프피자",
-      "aliases": [
-        "BBQ치킨 브라운비프피자",
-        "비비큐 브라운비프피자",
-        "브라운비프피자"
-      ],
-      "category": "BBQ치킨/피자&버거",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/20",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "우유",
-        "대두",
-        "밀",
-        "토마토",
-        "아황산류",
-        "닭고기",
-        "쇠고기",
-        "조개류"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 257,
-        "carb": null,
-        "sugar": 4,
-        "protein": 14,
-        "fat": null,
-        "saturatedFat": 6,
-        "transFat": null,
-        "sodium": 397,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-6e050eff86e2",
-      "brand": "BBQ치킨",
-      "productName": "뿜치킹 콘립(4개)",
-      "aliases": [
-        "BBQ치킨 뿜치킹 콘립(4개)",
-        "비비큐 뿜치킹 콘립(4개)",
-        "뿜치킹 콘립(4개)",
-        "뿜치킹콘립(4개)"
-      ],
-      "category": "BBQ치킨/사이드",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/21",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "우유",
-        "대두",
-        "밀",
-        "쇠고기"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 184,
-        "carb": null,
-        "sugar": 10,
-        "protein": 4,
-        "fat": null,
-        "saturatedFat": 1,
-        "transFat": null,
-        "sodium": 351,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-2d873e0622bc",
-      "brand": "BBQ치킨",
-      "productName": "오감볼",
-      "aliases": [
-        "BBQ치킨 오감볼",
-        "비비큐 오감볼",
-        "오감볼"
-      ],
-      "category": "BBQ치킨/사이드",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/21",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "우유",
-        "대두",
-        "밀",
-        "쇠고기",
-        "새우",
-        "오징어"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 259,
-        "carb": null,
-        "sugar": 0,
-        "protein": 8,
-        "fat": null,
-        "saturatedFat": 2,
-        "transFat": null,
-        "sodium": 427,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-316dd803de27",
-      "brand": "BBQ치킨",
-      "productName": "새우스틱(2개)",
-      "aliases": [
-        "BBQ치킨 새우스틱(2개)",
-        "비비큐 새우스틱(2개)",
-        "새우스틱(2개)"
-      ],
-      "category": "BBQ치킨/사이드",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/21",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "대두",
-        "밀",
-        "계란",
-        "새우"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 270,
-        "carb": null,
-        "sugar": 0,
-        "protein": 8,
-        "fat": null,
-        "saturatedFat": 2,
-        "transFat": null,
-        "sodium": 707,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-7ac2f6aa52f5",
-      "brand": "BBQ치킨",
-      "productName": "모둠감자튀김",
-      "aliases": [
-        "BBQ치킨 모둠감자튀김",
-        "비비큐 모둠감자튀김",
-        "모둠감자튀김"
-      ],
-      "category": "BBQ치킨/사이드",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/21",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "대두",
-        "밀"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 287,
-        "carb": null,
-        "sugar": 0,
-        "protein": 3,
-        "fat": null,
-        "saturatedFat": 2,
-        "transFat": null,
-        "sodium": 189,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-1d01032b3556",
-      "brand": "BBQ치킨",
-      "productName": "BBQ 떡볶이",
-      "aliases": [
-        "BBQ치킨 BBQ 떡볶이",
-        "비비큐 BBQ 떡볶이",
-        "BBQ 떡볶이",
-        "BBQ떡볶이"
-      ],
-      "category": "BBQ치킨/사이드",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/21",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "대두",
-        "밀",
-        "우유",
-        "토마토",
-        "닭고기",
-        "쇠고기",
-        "새우",
-        "조개류(굴",
-        "홍합)"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 157,
-        "carb": null,
-        "sugar": 7,
-        "protein": 3,
-        "fat": null,
-        "saturatedFat": 0,
-        "transFat": null,
-        "sodium": 408,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-2f0ceabffd33",
-      "brand": "BBQ치킨",
-      "productName": "BBQ 고추킹(2개)",
-      "aliases": [
-        "BBQ치킨 BBQ 고추킹(2개)",
-        "비비큐 BBQ 고추킹(2개)",
-        "BBQ 고추킹(2개)",
-        "BBQ고추킹(2개)"
-      ],
-      "category": "BBQ치킨/사이드",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/21",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "대두",
-        "밀",
-        "새우",
-        "돼지고기",
-        "아황산류",
-        "닭고기",
-        "쇠고기",
-        "조개류"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 205,
-        "carb": null,
-        "sugar": 1,
-        "protein": 5,
-        "fat": null,
-        "saturatedFat": 2,
-        "transFat": null,
-        "sodium": 426,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-8892609e721c",
-      "brand": "BBQ치킨",
-      "productName": "BBQ볼(5개)",
-      "aliases": [
-        "BBQ치킨 BBQ볼(5개)",
-        "비비큐 BBQ볼(5개)",
-        "BBQ볼(5개)"
-      ],
-      "category": "BBQ치킨/사이드",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/21",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "우유",
-        "대두",
-        "밀"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 0,
-        "carb": null,
-        "sugar": 0,
-        "protein": 0,
-        "fat": null,
-        "saturatedFat": 0,
-        "transFat": null,
-        "sodium": 0,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-eb0c0c408bf4",
-      "brand": "BBQ치킨",
-      "productName": "BBQ 오뎅탕",
-      "aliases": [
-        "BBQ치킨 BBQ 오뎅탕",
-        "비비큐 BBQ 오뎅탕",
-        "BBQ 오뎅탕",
-        "BBQ오뎅탕"
-      ],
-      "category": "BBQ치킨/사이드",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/21",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "우유",
-        "대두",
-        "밀",
-        "조개류(굴",
-        "홍합)",
-        "고등어",
-        "게",
-        "새우",
-        "아황산류"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 61,
-        "carb": null,
-        "sugar": 1,
-        "protein": 4,
-        "fat": null,
-        "saturatedFat": 0,
-        "transFat": null,
-        "sodium": 654,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-d74c8c927f2c",
-      "brand": "BBQ치킨",
-      "productName": "BBQ 닭볶음탕",
-      "aliases": [
-        "BBQ치킨 BBQ 닭볶음탕",
-        "비비큐 BBQ 닭볶음탕",
-        "BBQ 닭볶음탕",
-        "BBQ닭볶음탕"
-      ],
-      "category": "BBQ치킨/사이드",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/21",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "우유",
-        "대두",
-        "밀",
-        "닭고기. 쇠고기"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 84,
-        "carb": null,
-        "sugar": 3,
-        "protein": 9,
-        "fat": null,
-        "saturatedFat": 0,
-        "transFat": null,
-        "sodium": 440,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-70214c8399b3",
-      "brand": "BBQ치킨",
-      "productName": "오징어튀김(3개)",
-      "aliases": [
-        "BBQ치킨 오징어튀김(3개)",
-        "비비큐 오징어튀김(3개)",
-        "오징어튀김(3개)"
-      ],
-      "category": "BBQ치킨/사이드",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/21",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "우유",
-        "대두",
-        "밀",
-        "쇠고기",
-        "오징어"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 214,
-        "carb": null,
-        "sugar": 0,
-        "protein": 11,
-        "fat": null,
-        "saturatedFat": 1,
-        "transFat": null,
-        "sodium": 387,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-528922f120c6",
-      "brand": "BBQ치킨",
-      "productName": "황올한 닭발튀김",
-      "aliases": [
-        "BBQ치킨 황올한 닭발튀김",
-        "비비큐 황올한 닭발튀김",
-        "황올한 닭발튀김",
-        "황올한닭발튀김"
-      ],
-      "category": "BBQ치킨/사이드",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/21",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "우유",
-        "땅콩",
-        "밀",
-        "새우",
-        "닭고기"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 448,
-        "carb": null,
-        "sugar": 1,
-        "protein": 17,
-        "fat": null,
-        "saturatedFat": 5,
-        "transFat": null,
-        "sodium": 783,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-82e272ac4bdf",
-      "brand": "BBQ치킨",
-      "productName": "BBQ 감자튀김",
-      "aliases": [
-        "BBQ치킨 BBQ 감자튀김",
-        "비비큐 BBQ 감자튀김",
-        "BBQ 감자튀김",
-        "BBQ감자튀김"
-      ],
-      "category": "BBQ치킨/사이드",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/21",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "대두"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 254,
-        "carb": null,
-        "sugar": 0,
-        "protein": 3,
-        "fat": null,
-        "saturatedFat": 1,
-        "transFat": null,
-        "sodium": 518,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-3efca1222cc6",
-      "brand": "BBQ치킨",
-      "productName": "타르타르 새우튀김(5개)",
-      "aliases": [
-        "BBQ치킨 타르타르 새우튀김(5개)",
-        "비비큐 타르타르 새우튀김(5개)",
-        "타르타르 새우튀김(5개)",
-        "타르타르새우튀김(5개)"
-      ],
-      "category": "BBQ치킨/사이드",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/21",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "우유",
-        "대두",
-        "밀",
-        "계란",
-        "새우"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 295,
-        "carb": null,
-        "sugar": 1,
-        "protein": 6,
-        "fat": null,
-        "saturatedFat": 3,
-        "transFat": null,
-        "sodium": 755,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-88444e247fe7",
-      "brand": "BBQ치킨",
-      "productName": "통새우 멘보샤(5개)",
-      "aliases": [
-        "BBQ치킨 통새우 멘보샤(5개)",
-        "비비큐 통새우 멘보샤(5개)",
-        "통새우 멘보샤(5개)",
-        "통새우멘보샤(5개)"
-      ],
-      "category": "BBQ치킨/사이드",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/21",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "밀",
-        "대두",
-        "새우"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 284,
-        "carb": null,
-        "sugar": 5,
-        "protein": 8,
-        "fat": null,
-        "saturatedFat": 2,
-        "transFat": null,
-        "sodium": 598,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-33d7bbd5765c",
-      "brand": "BBQ치킨",
-      "productName": "롱치즈스틱(1개)",
-      "aliases": [
-        "BBQ치킨 롱치즈스틱(1개)",
-        "비비큐 롱치즈스틱(1개)",
-        "롱치즈스틱(1개)"
-      ],
-      "category": "BBQ치킨/사이드",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/21",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "우유",
-        "대두",
-        "밀",
-        "계란"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 217,
-        "carb": null,
-        "sugar": 0,
-        "protein": 9,
-        "fat": null,
-        "saturatedFat": 5,
-        "transFat": null,
-        "sodium": 466,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-c5eeffe5acf3",
-      "brand": "BBQ치킨",
-      "productName": "BBQ 닭껍데기",
-      "aliases": [
-        "BBQ치킨 BBQ 닭껍데기",
-        "비비큐 BBQ 닭껍데기",
-        "BBQ 닭껍데기",
-        "BBQ닭껍데기"
-      ],
-      "category": "BBQ치킨/사이드",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/21",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "대두",
-        "밀",
-        "우유",
-        "닭고기",
-        "조개류(굴)",
-        "땅콩",
-        "새우"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 615,
-        "carb": null,
-        "sugar": 0,
-        "protein": 20,
-        "fat": null,
-        "saturatedFat": 9,
-        "transFat": null,
-        "sodium": 937,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-27cea91ef54e",
-      "brand": "BBQ치킨",
-      "productName": "BBQ 소떡",
-      "aliases": [
-        "BBQ치킨 BBQ 소떡",
-        "비비큐 BBQ 소떡",
-        "BBQ 소떡",
-        "BBQ소떡"
-      ],
-      "category": "BBQ치킨/사이드",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/21",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "우유",
-        "대두",
-        "밀",
-        "닭고기",
-        "조개류(굴)",
-        "토마토",
-        "쇠고기",
-        "돼지고기",
-        "아황산류"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 283,
-        "carb": null,
-        "sugar": 1,
-        "protein": 7,
-        "fat": null,
-        "saturatedFat": 2,
-        "transFat": null,
-        "sodium": 432,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-97600cb4a38e",
-      "brand": "BBQ치킨",
-      "productName": "BBQ 모둠볼(6개)",
-      "aliases": [
-        "BBQ치킨 BBQ 모둠볼(6개)",
-        "비비큐 BBQ 모둠볼(6개)",
-        "BBQ 모둠볼(6개)",
-        "BBQ모둠볼(6개)"
-      ],
-      "category": "BBQ치킨/사이드",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/21",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "우유",
-        "대두",
-        "밀",
-        "계란"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 0,
-        "carb": null,
-        "sugar": 0,
-        "protein": 0,
-        "fat": null,
-        "saturatedFat": 0,
-        "transFat": null,
-        "sodium": 0,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-029e5236e50b",
-      "brand": "BBQ치킨",
-      "productName": "BBQ 모둠볼(10개)",
-      "aliases": [
-        "BBQ치킨 BBQ 모둠볼(10개)",
-        "비비큐 BBQ 모둠볼(10개)",
-        "BBQ 모둠볼(10개)",
-        "BBQ모둠볼(10개)"
-      ],
-      "category": "BBQ치킨/사이드",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/21",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "우유",
-        "대두",
-        "밀",
-        "계란"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 0,
-        "carb": null,
-        "sugar": 0,
-        "protein": 0,
-        "fat": null,
-        "saturatedFat": 0,
-        "transFat": null,
-        "sodium": 0,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-c6546ff445de",
-      "brand": "BBQ치킨",
-      "productName": "BBQ 소스",
-      "aliases": [
-        "BBQ치킨 BBQ 소스",
-        "비비큐 BBQ 소스",
-        "BBQ 소스",
-        "BBQ소스"
-      ],
-      "category": "BBQ치킨/소스&시즈닝&무",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/22",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "우유",
-        "대두",
-        "밀",
-        "계란",
-        "닭고기",
-        "조개류(굴)",
-        "토마토",
-        "쇠고기",
-        "아황산류"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 0,
-        "carb": null,
-        "sugar": 0,
-        "protein": 0,
-        "fat": null,
-        "saturatedFat": 0,
-        "transFat": null,
-        "sodium": 0,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-dce483a0553d",
-      "brand": "BBQ치킨",
-      "productName": "BBQ 디핑소스",
-      "aliases": [
-        "BBQ치킨 BBQ 디핑소스",
-        "비비큐 BBQ 디핑소스",
-        "BBQ 디핑소스",
-        "BBQ디핑소스"
-      ],
-      "category": "BBQ치킨/소스&시즈닝&무",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/22",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "우유",
-        "대두",
-        "밀",
-        "계란",
-        "닭고기",
-        "조개류(굴)",
-        "토마토",
-        "쇠고기",
-        "아황산류"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 0,
-        "carb": null,
-        "sugar": 0,
-        "protein": 0,
-        "fat": null,
-        "saturatedFat": 0,
-        "transFat": null,
-        "sodium": 0,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-42ae231c5dae",
-      "brand": "BBQ치킨",
-      "productName": "BBQ 치밥소스",
-      "aliases": [
-        "BBQ치킨 BBQ 치밥소스",
-        "비비큐 BBQ 치밥소스",
-        "BBQ 치밥소스",
-        "BBQ치밥소스"
-      ],
-      "category": "BBQ치킨/소스&시즈닝&무",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/22",
-      "verifiedAt": "2026-10-21",
-      "allergens": [
-        "우유",
-        "대두",
-        "밀",
-        "계란",
-        "닭고기",
-        "조개류(굴)",
-        "토마토",
-        "쇠고기",
-        "아황산류"
-      ],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 0,
-        "carb": null,
-        "sugar": 0,
-        "protein": 0,
-        "fat": null,
-        "saturatedFat": 0,
-        "transFat": null,
-        "sodium": 0,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-38b57d510a72",
-      "brand": "BBQ치킨",
-      "productName": "BBQ 시즈닝",
-      "aliases": [
-        "BBQ치킨 BBQ 시즈닝",
-        "비비큐 BBQ 시즈닝",
-        "BBQ 시즈닝",
-        "BBQ시즈닝"
-      ],
-      "category": "BBQ치킨/소스&시즈닝&무",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/22",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 0,
-        "carb": null,
-        "sugar": 0,
-        "protein": 0,
-        "fat": null,
-        "saturatedFat": 0,
-        "transFat": null,
-        "sodium": 0,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-ac115524b47d",
-      "brand": "BBQ치킨",
-      "productName": "치킨무",
-      "aliases": [
-        "BBQ치킨 치킨무",
-        "비비큐 치킨무",
-        "치킨무"
-      ],
-      "category": "BBQ치킨/소스&시즈닝&무",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/22",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 34,
-        "carb": null,
-        "sugar": 5,
-        "protein": 0,
-        "fat": null,
-        "saturatedFat": 0,
-        "transFat": null,
-        "sodium": 440,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-7042ecdf4a38",
-      "brand": "BBQ치킨",
-      "productName": "스파클링 레몬보이245ml",
-      "aliases": [
-        "BBQ치킨 스파클링 레몬보이245ml",
-        "비비큐 스파클링 레몬보이245ml",
-        "스파클링 레몬보이245ml",
-        "스파클링레몬보이245ml"
-      ],
-      "category": "BBQ치킨/음료",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/23",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 89,
-        "carb": null,
-        "sugar": 21,
-        "protein": 0,
-        "fat": null,
-        "saturatedFat": 0,
-        "transFat": null,
-        "sodium": 10,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-2078643fe9fd",
-      "brand": "BBQ치킨",
-      "productName": "바이젠 500cc",
-      "aliases": [
-        "BBQ치킨 바이젠 500cc",
-        "비비큐 바이젠 500cc",
-        "바이젠 500cc",
-        "바이젠500cc"
-      ],
-      "category": "BBQ치킨/음료",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/23",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 0,
-        "carb": null,
-        "sugar": 0,
-        "protein": 0,
-        "fat": null,
-        "saturatedFat": 0,
-        "transFat": null,
-        "sodium": 0,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-80c62ef90514",
-      "brand": "BBQ치킨",
-      "productName": "스파클링 레몬보이500ml",
-      "aliases": [
-        "BBQ치킨 스파클링 레몬보이500ml",
-        "비비큐 스파클링 레몬보이500ml",
-        "스파클링 레몬보이500ml",
-        "스파클링레몬보이500ml"
-      ],
-      "category": "BBQ치킨/음료",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/23",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 196,
-        "carb": null,
-        "sugar": 43,
-        "protein": 0,
-        "fat": null,
-        "saturatedFat": 0,
-        "transFat": null,
-        "sodium": 0,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-4be4a157ca27",
-      "brand": "BBQ치킨",
-      "productName": "페일에일 500cc",
-      "aliases": [
-        "BBQ치킨 페일에일 500cc",
-        "비비큐 페일에일 500cc",
-        "페일에일 500cc",
-        "페일에일500cc"
-      ],
-      "category": "BBQ치킨/음료",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/23",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 0,
-        "carb": null,
-        "sugar": 0,
-        "protein": 0,
-        "fat": null,
-        "saturatedFat": 0,
-        "transFat": null,
-        "sodium": 0,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-0f88faba0f7f",
-      "brand": "BBQ치킨",
-      "productName": "콜라245ml",
-      "aliases": [
-        "BBQ치킨 콜라245ml",
-        "비비큐 콜라245ml",
-        "콜라245ml"
-      ],
-      "category": "BBQ치킨/음료",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/23",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 104,
-        "carb": null,
-        "sugar": 26,
-        "protein": 1,
-        "fat": null,
-        "saturatedFat": 0,
-        "transFat": null,
-        "sodium": 7,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-35f12a3c2e80",
-      "brand": "BBQ치킨",
-      "productName": "생맥주 500cc",
-      "aliases": [
-        "BBQ치킨 생맥주 500cc",
-        "비비큐 생맥주 500cc",
-        "생맥주 500cc",
-        "생맥주500cc"
-      ],
-      "category": "BBQ치킨/음료",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/23",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 0,
-        "carb": null,
-        "sugar": 0,
-        "protein": 0,
-        "fat": null,
-        "saturatedFat": 0,
-        "transFat": null,
-        "sodium": 0,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-edbc69b06e31",
-      "brand": "BBQ치킨",
-      "productName": "콜라355ml",
-      "aliases": [
-        "BBQ치킨 콜라355ml",
-        "비비큐 콜라355ml",
-        "콜라355ml"
-      ],
-      "category": "BBQ치킨/음료",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/23",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 152,
-        "carb": null,
-        "sugar": 38,
-        "protein": 0,
-        "fat": null,
-        "saturatedFat": 0,
-        "transFat": null,
-        "sodium": 11,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-d14474db850a",
-      "brand": "BBQ치킨",
-      "productName": "생맥주 1,000cc",
-      "aliases": [
-        "BBQ치킨 생맥주 1,000cc",
-        "비비큐 생맥주 1,000cc",
-        "생맥주 1,000cc",
-        "생맥주1,000cc"
-      ],
-      "category": "BBQ치킨/음료",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/23",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 0,
-        "carb": null,
-        "sugar": 0,
-        "protein": 0,
-        "fat": null,
-        "saturatedFat": 0,
-        "transFat": null,
-        "sodium": 0,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-dd719a26d32b",
-      "brand": "BBQ치킨",
-      "productName": "콜라500ml",
-      "aliases": [
-        "BBQ치킨 콜라500ml",
-        "비비큐 콜라500ml",
-        "콜라500ml"
-      ],
-      "category": "BBQ치킨/음료",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/23",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 216,
-        "carb": null,
-        "sugar": 54,
-        "protein": 0,
-        "fat": null,
-        "saturatedFat": 0,
-        "transFat": null,
-        "sodium": 15,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-1da6f2c930b8",
-      "brand": "BBQ치킨",
-      "productName": "소주",
-      "aliases": [
-        "BBQ치킨 소주",
-        "비비큐 소주",
-        "소주"
-      ],
-      "category": "BBQ치킨/음료",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/23",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 0,
-        "carb": null,
-        "sugar": 0,
-        "protein": 0,
-        "fat": null,
-        "saturatedFat": 0,
-        "transFat": null,
-        "sodium": 0,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-881153827614",
-      "brand": "BBQ치킨",
-      "productName": "콜라1.25L",
-      "aliases": [
-        "BBQ치킨 콜라1.25L",
-        "비비큐 콜라1.25L",
-        "콜라1.25L"
-      ],
-      "category": "BBQ치킨/음료",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/23",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 92,
-        "carb": null,
-        "sugar": 22,
-        "protein": 0,
-        "fat": null,
-        "saturatedFat": 0,
-        "transFat": null,
-        "sodium": 12,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-5c8dab90e331",
-      "brand": "BBQ치킨",
-      "productName": "병맥주",
-      "aliases": [
-        "BBQ치킨 병맥주",
-        "비비큐 병맥주",
-        "병맥주"
-      ],
-      "category": "BBQ치킨/음료",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/23",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 0,
-        "carb": null,
-        "sugar": 0,
-        "protein": 0,
-        "fat": null,
-        "saturatedFat": 0,
-        "transFat": null,
-        "sodium": 0,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-6b637b52f427",
-      "brand": "BBQ치킨",
-      "productName": "제로콜라245ml",
-      "aliases": [
-        "BBQ치킨 제로콜라245ml",
-        "비비큐 제로콜라245ml",
-        "제로콜라245ml"
-      ],
-      "category": "BBQ치킨/음료",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/23",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 0,
-        "carb": null,
-        "sugar": 0,
-        "protein": 0,
-        "fat": null,
-        "saturatedFat": 0,
-        "transFat": null,
-        "sodium": 15,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-572e79373573",
-      "brand": "BBQ치킨",
-      "productName": "제로콜라355ml",
-      "aliases": [
-        "BBQ치킨 제로콜라355ml",
-        "비비큐 제로콜라355ml",
-        "제로콜라355ml"
-      ],
-      "category": "BBQ치킨/음료",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/23",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 0,
-        "carb": null,
-        "sugar": 0,
-        "protein": 0,
-        "fat": null,
-        "saturatedFat": 0,
-        "transFat": null,
-        "sodium": 22,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-b006518092b7",
-      "brand": "BBQ치킨",
-      "productName": "제로콜라500ml",
-      "aliases": [
-        "BBQ치킨 제로콜라500ml",
-        "비비큐 제로콜라500ml",
-        "제로콜라500ml"
-      ],
-      "category": "BBQ치킨/음료",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/23",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 0,
-        "carb": null,
-        "sugar": 0,
-        "protein": 0,
-        "fat": null,
-        "saturatedFat": 0,
-        "transFat": null,
-        "sodium": 30,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-a5b5bfc8198c",
-      "brand": "BBQ치킨",
-      "productName": "제로콜라1.25L",
-      "aliases": [
-        "BBQ치킨 제로콜라1.25L",
-        "비비큐 제로콜라1.25L",
-        "제로콜라1.25L"
-      ],
-      "category": "BBQ치킨/음료",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/23",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 0,
-        "carb": null,
-        "sugar": 0,
-        "protein": 0,
-        "fat": null,
-        "saturatedFat": 0,
-        "transFat": null,
-        "sodium": 6,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-fd6abac4c459",
-      "brand": "BBQ치킨",
-      "productName": "스프라이트355ml",
-      "aliases": [
-        "BBQ치킨 스프라이트355ml",
-        "비비큐 스프라이트355ml",
-        "스프라이트355ml"
-      ],
-      "category": "BBQ치킨/음료",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/23",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 160,
-        "carb": null,
-        "sugar": 40,
-        "protein": 0,
-        "fat": null,
-        "saturatedFat": 0,
-        "transFat": null,
-        "sodium": 33,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-f9b946738d53",
-      "brand": "BBQ치킨",
-      "productName": "스프라이트500ml",
-      "aliases": [
-        "BBQ치킨 스프라이트500ml",
-        "비비큐 스프라이트500ml",
-        "스프라이트500ml"
-      ],
-      "category": "BBQ치킨/음료",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/23",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 228,
-        "carb": null,
-        "sugar": 57,
-        "protein": 0,
-        "fat": null,
-        "saturatedFat": 0,
-        "transFat": null,
-        "sodium": 47,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
-      "id": "bbq-aa09ac07e6bd",
-      "brand": "BBQ치킨",
-      "productName": "스프라이트1.5L",
-      "aliases": [
-        "BBQ치킨 스프라이트1.5L",
-        "비비큐 스프라이트1.5L",
-        "스프라이트1.5L"
-      ],
-      "category": "BBQ치킨/음료",
-      "servingSize": "1인분",
-      "servingGram": null,
-      "sourceType": "official_nutrition_page",
-      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
-      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/23",
-      "verifiedAt": "2026-10-21",
-      "allergens": [],
-      "additiveWatch": [],
-      "nutrients": {
-        "calories": 44,
-        "carb": null,
-        "sugar": 11,
-        "protein": 0,
-        "fat": null,
-        "saturatedFat": 0,
-        "transFat": null,
-        "sodium": 9,
-        "caffeine": null
-      },
-      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
-    },
-    {
       "id": "bhc-360b61e56224",
       "brand": "bhc치킨",
       "productName": "맛초킹 (순살)",
@@ -29068,6 +26028,3046 @@
         "caffeine": null
       },
       "reviewNote": "자담치킨 공식 홈페이지 \"제품 영양정보\" 표(이미지)를 Claude가 화면 캡처로 옮겨 적었습니다(AI가 이미지에서 읽음 — 원본 대조 필요). 표에 중량이 직접 적혀 있어 그 중량 기준 확정값입니다."
+    },
+    {
+      "id": "bbq-8d2491daa8ae",
+      "brand": "BBQ치킨",
+      "productName": "BBQ 황올 미니 콤보 세트",
+      "aliases": [
+        "BBQ치킨 BBQ 황올 미니 콤보 세트",
+        "비비큐 BBQ 황올 미니 콤보 세트",
+        "BBQ 황올 미니 콤보 세트",
+        "BBQ황올미니콤보세트"
+      ],
+      "category": "BBQ치킨/세트",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/18",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "알류",
+        "우유",
+        "땅콩",
+        "대두",
+        "밀",
+        "새우",
+        "닭고기",
+        "쇠고기",
+        "조개류"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 1153,
+        "carb": null,
+        "sugar": null,
+        "protein": null,
+        "fat": null,
+        "saturatedFat": null,
+        "transFat": null,
+        "sodium": null,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-a0267e9b2832",
+      "brand": "BBQ치킨",
+      "productName": "BBQ 황올 반마리 세트",
+      "aliases": [
+        "BBQ치킨 BBQ 황올 반마리 세트",
+        "비비큐 BBQ 황올 반마리 세트",
+        "BBQ 황올 반마리 세트",
+        "BBQ황올반마리세트"
+      ],
+      "category": "BBQ치킨/세트",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/18",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "알류",
+        "우유",
+        "땅콩",
+        "대두",
+        "밀",
+        "새우",
+        "닭고기",
+        "쇠고기",
+        "조개류"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 1271,
+        "carb": null,
+        "sugar": null,
+        "protein": null,
+        "fat": null,
+        "saturatedFat": null,
+        "transFat": null,
+        "sodium": null,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-2c4ecc7188c9",
+      "brand": "BBQ치킨",
+      "productName": "황금올리브치킨™반마리",
+      "aliases": [
+        "BBQ치킨 황금올리브치킨™반마리",
+        "비비큐 황금올리브치킨™반마리",
+        "황금올리브치킨™반마리"
+      ],
+      "category": "BBQ치킨/세트",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/18",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "알류",
+        "우유",
+        "땅콩",
+        "대두",
+        "밀",
+        "새우",
+        "닭고기",
+        "쇠고기",
+        "조개류"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 253,
+        "carb": null,
+        "sugar": 0,
+        "protein": 18,
+        "fat": null,
+        "saturatedFat": 2,
+        "transFat": null,
+        "sodium": 408,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-5de7695d48e1",
+      "brand": "BBQ치킨",
+      "productName": "TOP3세트메뉴 Set1",
+      "aliases": [
+        "BBQ치킨 TOP3세트메뉴 Set1",
+        "비비큐 TOP3세트메뉴 Set1",
+        "TOP3세트메뉴 Set1",
+        "TOP3세트메뉴Set1"
+      ],
+      "category": "BBQ치킨/세트",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/18",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "알류",
+        "우유",
+        "땅콩",
+        "대두",
+        "밀",
+        "새우",
+        "닭고기",
+        "쇠고기",
+        "조개류"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 2420,
+        "carb": null,
+        "sugar": 0,
+        "protein": 32,
+        "fat": null,
+        "saturatedFat": 6,
+        "transFat": null,
+        "sodium": 1161,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-313c11f28277",
+      "brand": "BBQ치킨",
+      "productName": "황금올리브치킨™핫크리스피 반마리",
+      "aliases": [
+        "BBQ치킨 황금올리브치킨™핫크리스피 반마리",
+        "비비큐 황금올리브치킨™핫크리스피 반마리",
+        "황금올리브치킨™핫크리스피 반마리",
+        "황금올리브치킨™핫크리스피반마리"
+      ],
+      "category": "BBQ치킨/세트",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/18",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "우유",
+        "땅콩",
+        "대두",
+        "밀",
+        "새우",
+        "돼지고기",
+        "토마토",
+        "닭고기",
+        "쇠고기",
+        "조개류"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 255,
+        "carb": null,
+        "sugar": 6,
+        "protein": 20,
+        "fat": null,
+        "saturatedFat": 2,
+        "transFat": null,
+        "sodium": 533,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-34812303f74d",
+      "brand": "BBQ치킨",
+      "productName": "TOP3세트메뉴 Set2",
+      "aliases": [
+        "BBQ치킨 TOP3세트메뉴 Set2",
+        "비비큐 TOP3세트메뉴 Set2",
+        "TOP3세트메뉴 Set2",
+        "TOP3세트메뉴Set2"
+      ],
+      "category": "BBQ치킨/세트",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/18",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "알류",
+        "우유",
+        "땅콩",
+        "대두",
+        "밀",
+        "새우",
+        "돼지고기",
+        "토마토",
+        "닭고기",
+        "쇠고기",
+        "조개류"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 3230,
+        "carb": null,
+        "sugar": 0,
+        "protein": 33,
+        "fat": null,
+        "saturatedFat": 7,
+        "transFat": null,
+        "sodium": 1223,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-c639e640344b",
+      "brand": "BBQ치킨",
+      "productName": "황금올리브치킨™블랙페퍼 반마리",
+      "aliases": [
+        "BBQ치킨 황금올리브치킨™블랙페퍼 반마리",
+        "비비큐 황금올리브치킨™블랙페퍼 반마리",
+        "황금올리브치킨™블랙페퍼 반마리",
+        "황금올리브치킨™블랙페퍼반마리"
+      ],
+      "category": "BBQ치킨/세트",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/18",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "알류",
+        "우유",
+        "땅콩",
+        "대두",
+        "밀",
+        "새우",
+        "닭고기",
+        "쇠고기",
+        "조개류"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 323,
+        "carb": null,
+        "sugar": 0,
+        "protein": 19,
+        "fat": null,
+        "saturatedFat": 3,
+        "transFat": null,
+        "sodium": 470,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-0ec743f5e1f0",
+      "brand": "BBQ치킨",
+      "productName": "TOP3세트메뉴 Set3",
+      "aliases": [
+        "BBQ치킨 TOP3세트메뉴 Set3",
+        "비비큐 TOP3세트메뉴 Set3",
+        "TOP3세트메뉴 Set3",
+        "TOP3세트메뉴Set3"
+      ],
+      "category": "BBQ치킨/세트",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/18",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "알류",
+        "우유",
+        "땅콩",
+        "대두",
+        "밀",
+        "새우",
+        "토마토",
+        "닭고기",
+        "쇠고기",
+        "조개류"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 1894,
+        "carb": null,
+        "sugar": null,
+        "protein": null,
+        "fat": null,
+        "saturatedFat": null,
+        "transFat": null,
+        "sodium": null,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-094741a0c953",
+      "brand": "BBQ치킨",
+      "productName": "자메이카 통다리구이 반마리",
+      "aliases": [
+        "BBQ치킨 자메이카 통다리구이 반마리",
+        "비비큐 자메이카 통다리구이 반마리",
+        "자메이카 통다리구이 반마리",
+        "자메이카통다리구이반마리"
+      ],
+      "category": "BBQ치킨/세트",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/18",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "대두",
+        "밀",
+        "토마토",
+        "닭고기",
+        "쇠고기",
+        "조개류"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 304,
+        "carb": null,
+        "sugar": 0,
+        "protein": 20,
+        "fat": null,
+        "saturatedFat": 3,
+        "transFat": null,
+        "sodium": 414,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-7164fa021a79",
+      "brand": "BBQ치킨",
+      "productName": "황금올리브치킨™양념 반마리",
+      "aliases": [
+        "BBQ치킨 황금올리브치킨™양념 반마리",
+        "비비큐 황금올리브치킨™양념 반마리",
+        "황금올리브치킨™양념 반마리",
+        "황금올리브치킨™양념반마리"
+      ],
+      "category": "BBQ치킨/세트",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/18",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "알류",
+        "우유",
+        "땅콩",
+        "대두",
+        "밀",
+        "새우",
+        "토마토",
+        "닭고기",
+        "쇠고기",
+        "조개류"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 255,
+        "carb": null,
+        "sugar": 6,
+        "protein": 20,
+        "fat": null,
+        "saturatedFat": 2,
+        "transFat": null,
+        "sodium": 533,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-a5ee29c2ee64",
+      "brand": "BBQ치킨",
+      "productName": "황금올리브치킨™매운양념 반마리",
+      "aliases": [
+        "BBQ치킨 황금올리브치킨™매운양념 반마리",
+        "비비큐 황금올리브치킨™매운양념 반마리",
+        "황금올리브치킨™매운양념 반마리",
+        "황금올리브치킨™매운양념반마리"
+      ],
+      "category": "BBQ치킨/세트",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/18",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "알류",
+        "우유",
+        "땅콩",
+        "대두",
+        "밀",
+        "새우",
+        "토마토",
+        "닭고기",
+        "쇠고기",
+        "조개류"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 291,
+        "carb": null,
+        "sugar": 10,
+        "protein": 16,
+        "fat": null,
+        "saturatedFat": 2,
+        "transFat": null,
+        "sodium": 559,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-c2f35a4454b0",
+      "brand": "BBQ치킨",
+      "productName": "황금올리브치킨™",
+      "aliases": [
+        "BBQ치킨 황금올리브치킨™",
+        "비비큐 황금올리브치킨™",
+        "황금올리브치킨™"
+      ],
+      "category": "BBQ치킨/치킨",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/19",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "알류",
+        "우유",
+        "땅콩",
+        "대두",
+        "밀",
+        "새우",
+        "닭고기",
+        "쇠고기",
+        "조개류"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 253,
+        "carb": null,
+        "sugar": 0,
+        "protein": 18,
+        "fat": null,
+        "saturatedFat": 2,
+        "transFat": null,
+        "sodium": 408,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-a077d4ba71ae",
+      "brand": "BBQ치킨",
+      "productName": "자메이카 통다리구이",
+      "aliases": [
+        "BBQ치킨 자메이카 통다리구이",
+        "비비큐 자메이카 통다리구이",
+        "자메이카 통다리구이",
+        "자메이카통다리구이"
+      ],
+      "category": "BBQ치킨/치킨",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/19",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "대두",
+        "밀",
+        "토마토",
+        "닭고기",
+        "쇠고기",
+        "조개류"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 201,
+        "carb": null,
+        "sugar": 0,
+        "protein": 20,
+        "fat": null,
+        "saturatedFat": 3,
+        "transFat": null,
+        "sodium": 423,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-523bbe2a0a07",
+      "brand": "BBQ치킨",
+      "productName": "뿜치킹",
+      "aliases": [
+        "BBQ치킨 뿜치킹",
+        "비비큐 뿜치킹",
+        "뿜치킹"
+      ],
+      "category": "BBQ치킨/치킨",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/19",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "우유",
+        "땅콩",
+        "대두",
+        "밀",
+        "닭고기",
+        "쇠고기"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 302,
+        "carb": null,
+        "sugar": 3,
+        "protein": 22,
+        "fat": null,
+        "saturatedFat": 2,
+        "transFat": null,
+        "sodium": 445,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-4d49a7b6f13a",
+      "brand": "BBQ치킨",
+      "productName": "황금올리브치킨™핫크리스피",
+      "aliases": [
+        "BBQ치킨 황금올리브치킨™핫크리스피",
+        "비비큐 황금올리브치킨™핫크리스피",
+        "황금올리브치킨™핫크리스피"
+      ],
+      "category": "BBQ치킨/치킨",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/19",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "우유",
+        "땅콩",
+        "대두",
+        "밀",
+        "새우",
+        "돼지고기",
+        "토마토",
+        "닭고기",
+        "쇠고기",
+        "조개류"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 323,
+        "carb": null,
+        "sugar": 0,
+        "protein": 19,
+        "fat": null,
+        "saturatedFat": 3,
+        "transFat": null,
+        "sodium": 470,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-3b22e8170fe1",
+      "brand": "BBQ치킨",
+      "productName": "황금올리브치킨™블랙페퍼",
+      "aliases": [
+        "BBQ치킨 황금올리브치킨™블랙페퍼",
+        "비비큐 황금올리브치킨™블랙페퍼",
+        "황금올리브치킨™블랙페퍼"
+      ],
+      "category": "BBQ치킨/치킨",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/19",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "알류",
+        "우유",
+        "땅콩",
+        "대두",
+        "밀",
+        "새우",
+        "닭고기",
+        "쇠고기",
+        "조개류"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 304,
+        "carb": null,
+        "sugar": 0,
+        "protein": 20,
+        "fat": null,
+        "saturatedFat": 3,
+        "transFat": null,
+        "sodium": 414,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-7ea2950dbb0f",
+      "brand": "BBQ치킨",
+      "productName": "스모크치킨(5조각)",
+      "aliases": [
+        "BBQ치킨 스모크치킨(5조각)",
+        "비비큐 스모크치킨(5조각)",
+        "스모크치킨(5조각)"
+      ],
+      "category": "BBQ치킨/치킨",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/19",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "대두",
+        "닭고기"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 315,
+        "carb": null,
+        "sugar": 2,
+        "protein": 25,
+        "fat": null,
+        "saturatedFat": 7,
+        "transFat": null,
+        "sodium": 650,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-710cc20910e0",
+      "brand": "BBQ치킨",
+      "productName": "[황.양.반] 황올 반+양념 반",
+      "aliases": [
+        "BBQ치킨 [황.양.반] 황올 반+양념 반",
+        "비비큐 [황.양.반] 황올 반+양념 반",
+        "[황.양.반] 황올 반+양념 반",
+        "[황.양.반]황올반+양념반"
+      ],
+      "category": "BBQ치킨/치킨",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/19",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "알류",
+        "우유",
+        "땅콩",
+        "대두",
+        "밀",
+        "새우",
+        "토마토",
+        "닭고기",
+        "쇠고기",
+        "조개류"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 254,
+        "carb": null,
+        "sugar": 3,
+        "protein": 19,
+        "fat": null,
+        "saturatedFat": 2,
+        "transFat": null,
+        "sodium": 470,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-b4eb8ce642a2",
+      "brand": "BBQ치킨",
+      "productName": "황금올리브치킨™양념",
+      "aliases": [
+        "BBQ치킨 황금올리브치킨™양념",
+        "비비큐 황금올리브치킨™양념",
+        "황금올리브치킨™양념"
+      ],
+      "category": "BBQ치킨/치킨",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/19",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "알류",
+        "우유",
+        "땅콩",
+        "대두",
+        "밀",
+        "새우",
+        "토마토",
+        "닭고기",
+        "쇠고기",
+        "조개류"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 255,
+        "carb": null,
+        "sugar": 6,
+        "protein": 20,
+        "fat": null,
+        "saturatedFat": 2,
+        "transFat": null,
+        "sodium": 533,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-4a5dcfda1969",
+      "brand": "BBQ치킨",
+      "productName": "황금올리브치킨™속안심",
+      "aliases": [
+        "BBQ치킨 황금올리브치킨™속안심",
+        "비비큐 황금올리브치킨™속안심",
+        "황금올리브치킨™속안심"
+      ],
+      "category": "BBQ치킨/치킨",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/19",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "알류",
+        "우유",
+        "땅콩",
+        "대두",
+        "밀",
+        "새우",
+        "토마토",
+        "닭고기",
+        "쇠고기",
+        "조개류"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 269,
+        "carb": null,
+        "sugar": 1,
+        "protein": 23,
+        "fat": null,
+        "saturatedFat": 2,
+        "transFat": null,
+        "sodium": 636,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-33e2b0635dc8",
+      "brand": "BBQ치킨",
+      "productName": "크런치버터치킨",
+      "aliases": [
+        "BBQ치킨 크런치버터치킨",
+        "비비큐 크런치버터치킨",
+        "크런치버터치킨"
+      ],
+      "category": "BBQ치킨/치킨",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/19",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "알류",
+        "우유",
+        "땅콩",
+        "대두",
+        "밀",
+        "새우",
+        "닭고기",
+        "쇠고기",
+        "조개류"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 317,
+        "carb": null,
+        "sugar": 3,
+        "protein": 19,
+        "fat": null,
+        "saturatedFat": 3,
+        "transFat": null,
+        "sodium": 502,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-03d69508f3d7",
+      "brand": "BBQ치킨",
+      "productName": "핫베이크 윙",
+      "aliases": [
+        "BBQ치킨 핫베이크 윙",
+        "비비큐 핫베이크 윙",
+        "핫베이크 윙",
+        "핫베이크윙"
+      ],
+      "category": "BBQ치킨/치킨",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/19",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "우유",
+        "땅콩",
+        "대두",
+        "밀",
+        "돼지고기",
+        "토마토",
+        "닭고기",
+        "쇠고기",
+        "조개류"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 246,
+        "carb": null,
+        "sugar": 1,
+        "protein": 24,
+        "fat": null,
+        "saturatedFat": 3,
+        "transFat": null,
+        "sodium": 818,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-20172b2f38cc",
+      "brand": "BBQ치킨",
+      "productName": "맵소디",
+      "aliases": [
+        "BBQ치킨 맵소디",
+        "비비큐 맵소디",
+        "맵소디"
+      ],
+      "category": "BBQ치킨/치킨",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/19",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "알류",
+        "우유",
+        "땅콩",
+        "대두",
+        "밀",
+        "닭고기",
+        "쇠고기",
+        "조개류"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 289,
+        "carb": null,
+        "sugar": 5,
+        "protein": 20,
+        "fat": null,
+        "saturatedFat": 2,
+        "transFat": null,
+        "sodium": 472,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-dd764391a8fa",
+      "brand": "BBQ치킨",
+      "productName": "땡쇼크",
+      "aliases": [
+        "BBQ치킨 땡쇼크",
+        "비비큐 땡쇼크",
+        "땡쇼크"
+      ],
+      "category": "BBQ치킨/치킨",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/19",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "알류",
+        "대두",
+        "밀",
+        "아황산류",
+        "닭고기",
+        "조개류"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 237,
+        "carb": null,
+        "sugar": 6,
+        "protein": 16,
+        "fat": null,
+        "saturatedFat": 1,
+        "transFat": null,
+        "sodium": 444,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-71b273938ab9",
+      "brand": "BBQ치킨",
+      "productName": "황금올리브치킨™핫윙(VAP)",
+      "aliases": [
+        "BBQ치킨 황금올리브치킨™핫윙(VAP)",
+        "비비큐 황금올리브치킨™핫윙(VAP)",
+        "황금올리브치킨™핫윙(VAP)"
+      ],
+      "category": "BBQ치킨/치킨",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/19",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "우유",
+        "땅콩",
+        "대두",
+        "밀",
+        "새우",
+        "닭고기"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 313,
+        "carb": null,
+        "sugar": 0,
+        "protein": 17,
+        "fat": null,
+        "saturatedFat": 3,
+        "transFat": null,
+        "sodium": 541,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-8f356d8a11aa",
+      "brand": "BBQ치킨",
+      "productName": "크런치 순살크래커",
+      "aliases": [
+        "BBQ치킨 크런치 순살크래커",
+        "비비큐 크런치 순살크래커",
+        "크런치 순살크래커",
+        "크런치순살크래커"
+      ],
+      "category": "BBQ치킨/치킨",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/19",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "대두",
+        "밀",
+        "닭고기",
+        "조개류"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 262,
+        "carb": null,
+        "sugar": 0,
+        "protein": 18,
+        "fat": null,
+        "saturatedFat": 2,
+        "transFat": null,
+        "sodium": 387,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-c63d5a0f3bc1",
+      "brand": "BBQ치킨",
+      "productName": "자메이카 소떡만나치킨",
+      "aliases": [
+        "BBQ치킨 자메이카 소떡만나치킨",
+        "비비큐 자메이카 소떡만나치킨",
+        "자메이카 소떡만나치킨",
+        "자메이카소떡만나치킨"
+      ],
+      "category": "BBQ치킨/치킨",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/19",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "알류",
+        "우유",
+        "대두",
+        "밀",
+        "돼지고기",
+        "토마토",
+        "닭고기",
+        "쇠고기",
+        "조개류"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 286,
+        "carb": null,
+        "sugar": 4,
+        "protein": 17,
+        "fat": null,
+        "saturatedFat": 3,
+        "transFat": null,
+        "sodium": 415,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-8d7171bf843b",
+      "brand": "BBQ치킨",
+      "productName": "황금올리브치킨™매운양념",
+      "aliases": [
+        "BBQ치킨 황금올리브치킨™매운양념",
+        "비비큐 황금올리브치킨™매운양념",
+        "황금올리브치킨™매운양념"
+      ],
+      "category": "BBQ치킨/치킨",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/19",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "알류",
+        "우유",
+        "땅콩",
+        "대두",
+        "밀",
+        "새우",
+        "토마토",
+        "닭고기",
+        "쇠고기",
+        "조개류"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 291,
+        "carb": null,
+        "sugar": 10,
+        "protein": 16,
+        "fat": null,
+        "saturatedFat": 2,
+        "transFat": null,
+        "sodium": 559,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-00cd4e620de5",
+      "brand": "BBQ치킨",
+      "productName": "바사칸 윙",
+      "aliases": [
+        "BBQ치킨 바사칸 윙",
+        "비비큐 바사칸 윙",
+        "바사칸 윙",
+        "바사칸윙"
+      ],
+      "category": "BBQ치킨/치킨",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/19",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "알류",
+        "대두",
+        "밀",
+        "닭고기"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 256,
+        "carb": null,
+        "sugar": 1,
+        "protein": 18,
+        "fat": null,
+        "saturatedFat": 3,
+        "transFat": null,
+        "sodium": 571,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-4f17a4dca5d4",
+      "brand": "BBQ치킨",
+      "productName": "파더's치킨",
+      "aliases": [
+        "BBQ치킨 파더's치킨",
+        "비비큐 파더's치킨",
+        "파더's치킨"
+      ],
+      "category": "BBQ치킨/치킨",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/19",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "알류",
+        "우유",
+        "대두",
+        "밀",
+        "토마토",
+        "닭고기",
+        "쇠고기"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 201,
+        "carb": null,
+        "sugar": 0,
+        "protein": 22,
+        "fat": null,
+        "saturatedFat": 2,
+        "transFat": null,
+        "sodium": 583,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-814750cac354",
+      "brand": "BBQ치킨",
+      "productName": "극한왕갈비치킨",
+      "aliases": [
+        "BBQ치킨 극한왕갈비치킨",
+        "비비큐 극한왕갈비치킨",
+        "극한왕갈비치킨"
+      ],
+      "category": "BBQ치킨/치킨",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/19",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "땅콩",
+        "대두",
+        "밀",
+        "아황산류",
+        "닭고기",
+        "쇠고기",
+        "조개류"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 322,
+        "carb": null,
+        "sugar": 10,
+        "protein": 15,
+        "fat": null,
+        "saturatedFat": 3,
+        "transFat": null,
+        "sodium": 407,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-45b697c66973",
+      "brand": "BBQ치킨",
+      "productName": "빠리치킨",
+      "aliases": [
+        "BBQ치킨 빠리치킨",
+        "비비큐 빠리치킨",
+        "빠리치킨"
+      ],
+      "category": "BBQ치킨/치킨",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/19",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "알류",
+        "대두",
+        "밀",
+        "닭고기"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 326,
+        "carb": null,
+        "sugar": 4,
+        "protein": 23,
+        "fat": null,
+        "saturatedFat": 3,
+        "transFat": null,
+        "sodium": 488,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-f4575158cd2c",
+      "brand": "BBQ치킨",
+      "productName": "페퍼로니 시카고피자",
+      "aliases": [
+        "BBQ치킨 페퍼로니 시카고피자",
+        "비비큐 페퍼로니 시카고피자",
+        "페퍼로니 시카고피자",
+        "페퍼로니시카고피자"
+      ],
+      "category": "BBQ치킨/피자&버거",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/20",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "알류",
+        "우유",
+        "대두",
+        "밀",
+        "돼지고기",
+        "토마토",
+        "쇠고기",
+        "조개류"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 255,
+        "carb": null,
+        "sugar": 1,
+        "protein": 9,
+        "fat": null,
+        "saturatedFat": 5,
+        "transFat": null,
+        "sodium": 401,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-8db0e2fc2c51",
+      "brand": "BBQ치킨",
+      "productName": "허니리코타 시카고피자",
+      "aliases": [
+        "BBQ치킨 허니리코타 시카고피자",
+        "비비큐 허니리코타 시카고피자",
+        "허니리코타 시카고피자",
+        "허니리코타시카고피자"
+      ],
+      "category": "BBQ치킨/피자&버거",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/20",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "알류",
+        "우유",
+        "대두",
+        "밀",
+        "돼지고기",
+        "토마토",
+        "쇠고기",
+        "조개류"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 275,
+        "carb": null,
+        "sugar": 2,
+        "protein": 12,
+        "fat": null,
+        "saturatedFat": 8,
+        "transFat": null,
+        "sodium": 356,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-b01bdc08bb09",
+      "brand": "BBQ치킨",
+      "productName": "고구마퐁듀피자",
+      "aliases": [
+        "BBQ치킨 고구마퐁듀피자",
+        "비비큐 고구마퐁듀피자",
+        "고구마퐁듀피자"
+      ],
+      "category": "BBQ치킨/피자&버거",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/20",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "알류",
+        "우유",
+        "대두",
+        "밀",
+        "돼지고기",
+        "토마토",
+        "닭고기",
+        "쇠고기",
+        "조개류"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 230,
+        "carb": null,
+        "sugar": 4,
+        "protein": 12,
+        "fat": null,
+        "saturatedFat": 4,
+        "transFat": null,
+        "sodium": 364,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-327989b543f1",
+      "brand": "BBQ치킨",
+      "productName": "쉬림프고르곤졸라피자",
+      "aliases": [
+        "BBQ치킨 쉬림프고르곤졸라피자",
+        "비비큐 쉬림프고르곤졸라피자",
+        "쉬림프고르곤졸라피자"
+      ],
+      "category": "BBQ치킨/피자&버거",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/20",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "우유",
+        "대두",
+        "밀",
+        "새우"
+      ],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 422,
+        "carb": null,
+        "sugar": 6,
+        "protein": 23,
+        "fat": null,
+        "saturatedFat": 10,
+        "transFat": null,
+        "sodium": 682,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-14e1826c9047",
+      "brand": "BBQ치킨",
+      "productName": "콤비네이션피자",
+      "aliases": [
+        "BBQ치킨 콤비네이션피자",
+        "비비큐 콤비네이션피자",
+        "콤비네이션피자"
+      ],
+      "category": "BBQ치킨/피자&버거",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/20",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "우유",
+        "대두",
+        "밀",
+        "돼지고기",
+        "토마토",
+        "아황산류",
+        "닭고기",
+        "쇠고기",
+        "조개류"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 336,
+        "carb": null,
+        "sugar": 2,
+        "protein": 14,
+        "fat": null,
+        "saturatedFat": 7,
+        "transFat": null,
+        "sodium": 584,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-982d94b942ab",
+      "brand": "BBQ치킨",
+      "productName": "브라운비프피자",
+      "aliases": [
+        "BBQ치킨 브라운비프피자",
+        "비비큐 브라운비프피자",
+        "브라운비프피자"
+      ],
+      "category": "BBQ치킨/피자&버거",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/20",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "우유",
+        "대두",
+        "밀",
+        "토마토",
+        "아황산류",
+        "닭고기",
+        "쇠고기",
+        "조개류"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 257,
+        "carb": null,
+        "sugar": 4,
+        "protein": 14,
+        "fat": null,
+        "saturatedFat": 6,
+        "transFat": null,
+        "sodium": 397,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-6e050eff86e2",
+      "brand": "BBQ치킨",
+      "productName": "뿜치킹 콘립(4개)",
+      "aliases": [
+        "BBQ치킨 뿜치킹 콘립(4개)",
+        "비비큐 뿜치킹 콘립(4개)",
+        "뿜치킹 콘립(4개)",
+        "뿜치킹콘립(4개)"
+      ],
+      "category": "BBQ치킨/사이드",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/21",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "우유",
+        "대두",
+        "밀",
+        "쇠고기"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 184,
+        "carb": null,
+        "sugar": 10,
+        "protein": 4,
+        "fat": null,
+        "saturatedFat": 1,
+        "transFat": null,
+        "sodium": 351,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-2d873e0622bc",
+      "brand": "BBQ치킨",
+      "productName": "오감볼",
+      "aliases": [
+        "BBQ치킨 오감볼",
+        "비비큐 오감볼",
+        "오감볼"
+      ],
+      "category": "BBQ치킨/사이드",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/21",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "우유",
+        "대두",
+        "밀",
+        "쇠고기",
+        "새우",
+        "오징어"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 259,
+        "carb": null,
+        "sugar": 0,
+        "protein": 8,
+        "fat": null,
+        "saturatedFat": 2,
+        "transFat": null,
+        "sodium": 427,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-316dd803de27",
+      "brand": "BBQ치킨",
+      "productName": "새우스틱(2개)",
+      "aliases": [
+        "BBQ치킨 새우스틱(2개)",
+        "비비큐 새우스틱(2개)",
+        "새우스틱(2개)"
+      ],
+      "category": "BBQ치킨/사이드",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/21",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "대두",
+        "밀",
+        "계란",
+        "새우"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 270,
+        "carb": null,
+        "sugar": 0,
+        "protein": 8,
+        "fat": null,
+        "saturatedFat": 2,
+        "transFat": null,
+        "sodium": 707,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-7ac2f6aa52f5",
+      "brand": "BBQ치킨",
+      "productName": "모둠감자튀김",
+      "aliases": [
+        "BBQ치킨 모둠감자튀김",
+        "비비큐 모둠감자튀김",
+        "모둠감자튀김"
+      ],
+      "category": "BBQ치킨/사이드",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/21",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "대두",
+        "밀"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 287,
+        "carb": null,
+        "sugar": 0,
+        "protein": 3,
+        "fat": null,
+        "saturatedFat": 2,
+        "transFat": null,
+        "sodium": 189,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-1d01032b3556",
+      "brand": "BBQ치킨",
+      "productName": "BBQ 떡볶이",
+      "aliases": [
+        "BBQ치킨 BBQ 떡볶이",
+        "비비큐 BBQ 떡볶이",
+        "BBQ 떡볶이",
+        "BBQ떡볶이"
+      ],
+      "category": "BBQ치킨/사이드",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/21",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "대두",
+        "밀",
+        "우유",
+        "토마토",
+        "닭고기",
+        "쇠고기",
+        "새우",
+        "조개류(굴",
+        "홍합)"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 157,
+        "carb": null,
+        "sugar": 7,
+        "protein": 3,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 408,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-2f0ceabffd33",
+      "brand": "BBQ치킨",
+      "productName": "BBQ 고추킹(2개)",
+      "aliases": [
+        "BBQ치킨 BBQ 고추킹(2개)",
+        "비비큐 BBQ 고추킹(2개)",
+        "BBQ 고추킹(2개)",
+        "BBQ고추킹(2개)"
+      ],
+      "category": "BBQ치킨/사이드",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/21",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "대두",
+        "밀",
+        "새우",
+        "돼지고기",
+        "아황산류",
+        "닭고기",
+        "쇠고기",
+        "조개류"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 205,
+        "carb": null,
+        "sugar": 1,
+        "protein": 5,
+        "fat": null,
+        "saturatedFat": 2,
+        "transFat": null,
+        "sodium": 426,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-8892609e721c",
+      "brand": "BBQ치킨",
+      "productName": "BBQ볼(5개)",
+      "aliases": [
+        "BBQ치킨 BBQ볼(5개)",
+        "비비큐 BBQ볼(5개)",
+        "BBQ볼(5개)"
+      ],
+      "category": "BBQ치킨/사이드",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/21",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "우유",
+        "대두",
+        "밀"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 0,
+        "carb": null,
+        "sugar": 0,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 0,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-eb0c0c408bf4",
+      "brand": "BBQ치킨",
+      "productName": "BBQ 오뎅탕",
+      "aliases": [
+        "BBQ치킨 BBQ 오뎅탕",
+        "비비큐 BBQ 오뎅탕",
+        "BBQ 오뎅탕",
+        "BBQ오뎅탕"
+      ],
+      "category": "BBQ치킨/사이드",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/21",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "우유",
+        "대두",
+        "밀",
+        "조개류(굴",
+        "홍합)",
+        "고등어",
+        "게",
+        "새우",
+        "아황산류"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 61,
+        "carb": null,
+        "sugar": 1,
+        "protein": 4,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 654,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-d74c8c927f2c",
+      "brand": "BBQ치킨",
+      "productName": "BBQ 닭볶음탕",
+      "aliases": [
+        "BBQ치킨 BBQ 닭볶음탕",
+        "비비큐 BBQ 닭볶음탕",
+        "BBQ 닭볶음탕",
+        "BBQ닭볶음탕"
+      ],
+      "category": "BBQ치킨/사이드",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/21",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "우유",
+        "대두",
+        "밀",
+        "닭고기. 쇠고기"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 84,
+        "carb": null,
+        "sugar": 3,
+        "protein": 9,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 440,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-70214c8399b3",
+      "brand": "BBQ치킨",
+      "productName": "오징어튀김(3개)",
+      "aliases": [
+        "BBQ치킨 오징어튀김(3개)",
+        "비비큐 오징어튀김(3개)",
+        "오징어튀김(3개)"
+      ],
+      "category": "BBQ치킨/사이드",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/21",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "우유",
+        "대두",
+        "밀",
+        "쇠고기",
+        "오징어"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 214,
+        "carb": null,
+        "sugar": 0,
+        "protein": 11,
+        "fat": null,
+        "saturatedFat": 1,
+        "transFat": null,
+        "sodium": 387,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-528922f120c6",
+      "brand": "BBQ치킨",
+      "productName": "황올한 닭발튀김",
+      "aliases": [
+        "BBQ치킨 황올한 닭발튀김",
+        "비비큐 황올한 닭발튀김",
+        "황올한 닭발튀김",
+        "황올한닭발튀김"
+      ],
+      "category": "BBQ치킨/사이드",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/21",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "우유",
+        "땅콩",
+        "밀",
+        "새우",
+        "닭고기"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 448,
+        "carb": null,
+        "sugar": 1,
+        "protein": 17,
+        "fat": null,
+        "saturatedFat": 5,
+        "transFat": null,
+        "sodium": 783,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-82e272ac4bdf",
+      "brand": "BBQ치킨",
+      "productName": "BBQ 감자튀김",
+      "aliases": [
+        "BBQ치킨 BBQ 감자튀김",
+        "비비큐 BBQ 감자튀김",
+        "BBQ 감자튀김",
+        "BBQ감자튀김"
+      ],
+      "category": "BBQ치킨/사이드",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/21",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "대두"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 254,
+        "carb": null,
+        "sugar": 0,
+        "protein": 3,
+        "fat": null,
+        "saturatedFat": 1,
+        "transFat": null,
+        "sodium": 518,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-3efca1222cc6",
+      "brand": "BBQ치킨",
+      "productName": "타르타르 새우튀김(5개)",
+      "aliases": [
+        "BBQ치킨 타르타르 새우튀김(5개)",
+        "비비큐 타르타르 새우튀김(5개)",
+        "타르타르 새우튀김(5개)",
+        "타르타르새우튀김(5개)"
+      ],
+      "category": "BBQ치킨/사이드",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/21",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "우유",
+        "대두",
+        "밀",
+        "계란",
+        "새우"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 295,
+        "carb": null,
+        "sugar": 1,
+        "protein": 6,
+        "fat": null,
+        "saturatedFat": 3,
+        "transFat": null,
+        "sodium": 755,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-88444e247fe7",
+      "brand": "BBQ치킨",
+      "productName": "통새우 멘보샤(5개)",
+      "aliases": [
+        "BBQ치킨 통새우 멘보샤(5개)",
+        "비비큐 통새우 멘보샤(5개)",
+        "통새우 멘보샤(5개)",
+        "통새우멘보샤(5개)"
+      ],
+      "category": "BBQ치킨/사이드",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/21",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "밀",
+        "대두",
+        "새우"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 284,
+        "carb": null,
+        "sugar": 5,
+        "protein": 8,
+        "fat": null,
+        "saturatedFat": 2,
+        "transFat": null,
+        "sodium": 598,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-33d7bbd5765c",
+      "brand": "BBQ치킨",
+      "productName": "롱치즈스틱(1개)",
+      "aliases": [
+        "BBQ치킨 롱치즈스틱(1개)",
+        "비비큐 롱치즈스틱(1개)",
+        "롱치즈스틱(1개)"
+      ],
+      "category": "BBQ치킨/사이드",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/21",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "우유",
+        "대두",
+        "밀",
+        "계란"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 217,
+        "carb": null,
+        "sugar": 0,
+        "protein": 9,
+        "fat": null,
+        "saturatedFat": 5,
+        "transFat": null,
+        "sodium": 466,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-c5eeffe5acf3",
+      "brand": "BBQ치킨",
+      "productName": "BBQ 닭껍데기",
+      "aliases": [
+        "BBQ치킨 BBQ 닭껍데기",
+        "비비큐 BBQ 닭껍데기",
+        "BBQ 닭껍데기",
+        "BBQ닭껍데기"
+      ],
+      "category": "BBQ치킨/사이드",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/21",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "대두",
+        "밀",
+        "우유",
+        "닭고기",
+        "조개류(굴)",
+        "땅콩",
+        "새우"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 615,
+        "carb": null,
+        "sugar": 0,
+        "protein": 20,
+        "fat": null,
+        "saturatedFat": 9,
+        "transFat": null,
+        "sodium": 937,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-27cea91ef54e",
+      "brand": "BBQ치킨",
+      "productName": "BBQ 소떡",
+      "aliases": [
+        "BBQ치킨 BBQ 소떡",
+        "비비큐 BBQ 소떡",
+        "BBQ 소떡",
+        "BBQ소떡"
+      ],
+      "category": "BBQ치킨/사이드",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/21",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "우유",
+        "대두",
+        "밀",
+        "닭고기",
+        "조개류(굴)",
+        "토마토",
+        "쇠고기",
+        "돼지고기",
+        "아황산류"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 283,
+        "carb": null,
+        "sugar": 1,
+        "protein": 7,
+        "fat": null,
+        "saturatedFat": 2,
+        "transFat": null,
+        "sodium": 432,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-97600cb4a38e",
+      "brand": "BBQ치킨",
+      "productName": "BBQ 모둠볼(6개)",
+      "aliases": [
+        "BBQ치킨 BBQ 모둠볼(6개)",
+        "비비큐 BBQ 모둠볼(6개)",
+        "BBQ 모둠볼(6개)",
+        "BBQ모둠볼(6개)"
+      ],
+      "category": "BBQ치킨/사이드",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/21",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "우유",
+        "대두",
+        "밀",
+        "계란"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 0,
+        "carb": null,
+        "sugar": 0,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 0,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-029e5236e50b",
+      "brand": "BBQ치킨",
+      "productName": "BBQ 모둠볼(10개)",
+      "aliases": [
+        "BBQ치킨 BBQ 모둠볼(10개)",
+        "비비큐 BBQ 모둠볼(10개)",
+        "BBQ 모둠볼(10개)",
+        "BBQ모둠볼(10개)"
+      ],
+      "category": "BBQ치킨/사이드",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/21",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "우유",
+        "대두",
+        "밀",
+        "계란"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 0,
+        "carb": null,
+        "sugar": 0,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 0,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-c6546ff445de",
+      "brand": "BBQ치킨",
+      "productName": "BBQ 소스",
+      "aliases": [
+        "BBQ치킨 BBQ 소스",
+        "비비큐 BBQ 소스",
+        "BBQ 소스",
+        "BBQ소스"
+      ],
+      "category": "BBQ치킨/소스&시즈닝&무",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/22",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "우유",
+        "대두",
+        "밀",
+        "계란",
+        "닭고기",
+        "조개류(굴)",
+        "토마토",
+        "쇠고기",
+        "아황산류"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 0,
+        "carb": null,
+        "sugar": 0,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 0,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-dce483a0553d",
+      "brand": "BBQ치킨",
+      "productName": "BBQ 디핑소스",
+      "aliases": [
+        "BBQ치킨 BBQ 디핑소스",
+        "비비큐 BBQ 디핑소스",
+        "BBQ 디핑소스",
+        "BBQ디핑소스"
+      ],
+      "category": "BBQ치킨/소스&시즈닝&무",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/22",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "우유",
+        "대두",
+        "밀",
+        "계란",
+        "닭고기",
+        "조개류(굴)",
+        "토마토",
+        "쇠고기",
+        "아황산류"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 0,
+        "carb": null,
+        "sugar": 0,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 0,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-42ae231c5dae",
+      "brand": "BBQ치킨",
+      "productName": "BBQ 치밥소스",
+      "aliases": [
+        "BBQ치킨 BBQ 치밥소스",
+        "비비큐 BBQ 치밥소스",
+        "BBQ 치밥소스",
+        "BBQ치밥소스"
+      ],
+      "category": "BBQ치킨/소스&시즈닝&무",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/22",
+      "verifiedAt": "2026-11-21",
+      "allergens": [
+        "우유",
+        "대두",
+        "밀",
+        "계란",
+        "닭고기",
+        "조개류(굴)",
+        "토마토",
+        "쇠고기",
+        "아황산류"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 0,
+        "carb": null,
+        "sugar": 0,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 0,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-38b57d510a72",
+      "brand": "BBQ치킨",
+      "productName": "BBQ 시즈닝",
+      "aliases": [
+        "BBQ치킨 BBQ 시즈닝",
+        "비비큐 BBQ 시즈닝",
+        "BBQ 시즈닝",
+        "BBQ시즈닝"
+      ],
+      "category": "BBQ치킨/소스&시즈닝&무",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/22",
+      "verifiedAt": "2026-11-21",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 0,
+        "carb": null,
+        "sugar": 0,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 0,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-ac115524b47d",
+      "brand": "BBQ치킨",
+      "productName": "치킨무",
+      "aliases": [
+        "BBQ치킨 치킨무",
+        "비비큐 치킨무",
+        "치킨무"
+      ],
+      "category": "BBQ치킨/소스&시즈닝&무",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/22",
+      "verifiedAt": "2026-11-21",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 34,
+        "carb": null,
+        "sugar": 5,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 440,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-7042ecdf4a38",
+      "brand": "BBQ치킨",
+      "productName": "스파클링 레몬보이245ml",
+      "aliases": [
+        "BBQ치킨 스파클링 레몬보이245ml",
+        "비비큐 스파클링 레몬보이245ml",
+        "스파클링 레몬보이245ml",
+        "스파클링레몬보이245ml"
+      ],
+      "category": "BBQ치킨/음료",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/23",
+      "verifiedAt": "2026-11-21",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 89,
+        "carb": null,
+        "sugar": 21,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 10,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-0851c8d8e6c1",
+      "brand": "BBQ치킨",
+      "productName": "콜라500ml/510ml",
+      "aliases": [
+        "BBQ치킨 콜라500ml/510ml",
+        "비비큐 콜라500ml/510ml",
+        "콜라500ml/510ml"
+      ],
+      "category": "BBQ치킨/음료",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/23",
+      "verifiedAt": "2026-11-21",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 216,
+        "carb": null,
+        "sugar": 54,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 15,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-f954ea949486",
+      "brand": "BBQ치킨",
+      "productName": "제로콜라500ml/510ml",
+      "aliases": [
+        "BBQ치킨 제로콜라500ml/510ml",
+        "비비큐 제로콜라500ml/510ml",
+        "제로콜라500ml/510ml"
+      ],
+      "category": "BBQ치킨/음료",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/23",
+      "verifiedAt": "2026-11-21",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 0,
+        "carb": null,
+        "sugar": 0,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 30,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-2078643fe9fd",
+      "brand": "BBQ치킨",
+      "productName": "바이젠 500cc",
+      "aliases": [
+        "BBQ치킨 바이젠 500cc",
+        "비비큐 바이젠 500cc",
+        "바이젠 500cc",
+        "바이젠500cc"
+      ],
+      "category": "BBQ치킨/음료",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/23",
+      "verifiedAt": "2026-11-21",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 0,
+        "carb": null,
+        "sugar": 0,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 0,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-80c62ef90514",
+      "brand": "BBQ치킨",
+      "productName": "스파클링 레몬보이500ml",
+      "aliases": [
+        "BBQ치킨 스파클링 레몬보이500ml",
+        "비비큐 스파클링 레몬보이500ml",
+        "스파클링 레몬보이500ml",
+        "스파클링레몬보이500ml"
+      ],
+      "category": "BBQ치킨/음료",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/23",
+      "verifiedAt": "2026-11-21",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 196,
+        "carb": null,
+        "sugar": 43,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 0,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-4be4a157ca27",
+      "brand": "BBQ치킨",
+      "productName": "페일에일 500cc",
+      "aliases": [
+        "BBQ치킨 페일에일 500cc",
+        "비비큐 페일에일 500cc",
+        "페일에일 500cc",
+        "페일에일500cc"
+      ],
+      "category": "BBQ치킨/음료",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/23",
+      "verifiedAt": "2026-11-21",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 0,
+        "carb": null,
+        "sugar": 0,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 0,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-0f88faba0f7f",
+      "brand": "BBQ치킨",
+      "productName": "콜라245ml",
+      "aliases": [
+        "BBQ치킨 콜라245ml",
+        "비비큐 콜라245ml",
+        "콜라245ml"
+      ],
+      "category": "BBQ치킨/음료",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/23",
+      "verifiedAt": "2026-11-21",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 104,
+        "carb": null,
+        "sugar": 26,
+        "protein": 1,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 7,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-35f12a3c2e80",
+      "brand": "BBQ치킨",
+      "productName": "생맥주 500cc",
+      "aliases": [
+        "BBQ치킨 생맥주 500cc",
+        "비비큐 생맥주 500cc",
+        "생맥주 500cc",
+        "생맥주500cc"
+      ],
+      "category": "BBQ치킨/음료",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/23",
+      "verifiedAt": "2026-11-21",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 0,
+        "carb": null,
+        "sugar": 0,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 0,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-edbc69b06e31",
+      "brand": "BBQ치킨",
+      "productName": "콜라355ml",
+      "aliases": [
+        "BBQ치킨 콜라355ml",
+        "비비큐 콜라355ml",
+        "콜라355ml"
+      ],
+      "category": "BBQ치킨/음료",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/23",
+      "verifiedAt": "2026-11-21",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 152,
+        "carb": null,
+        "sugar": 38,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 11,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-d14474db850a",
+      "brand": "BBQ치킨",
+      "productName": "생맥주 1,000cc",
+      "aliases": [
+        "BBQ치킨 생맥주 1,000cc",
+        "비비큐 생맥주 1,000cc",
+        "생맥주 1,000cc",
+        "생맥주1,000cc"
+      ],
+      "category": "BBQ치킨/음료",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/23",
+      "verifiedAt": "2026-11-21",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 0,
+        "carb": null,
+        "sugar": 0,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 0,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-1da6f2c930b8",
+      "brand": "BBQ치킨",
+      "productName": "소주",
+      "aliases": [
+        "BBQ치킨 소주",
+        "비비큐 소주",
+        "소주"
+      ],
+      "category": "BBQ치킨/음료",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/23",
+      "verifiedAt": "2026-11-21",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 0,
+        "carb": null,
+        "sugar": 0,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 0,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-881153827614",
+      "brand": "BBQ치킨",
+      "productName": "콜라1.25L",
+      "aliases": [
+        "BBQ치킨 콜라1.25L",
+        "비비큐 콜라1.25L",
+        "콜라1.25L"
+      ],
+      "category": "BBQ치킨/음료",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/23",
+      "verifiedAt": "2026-11-21",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 92,
+        "carb": null,
+        "sugar": 22,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 12,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-5c8dab90e331",
+      "brand": "BBQ치킨",
+      "productName": "병맥주",
+      "aliases": [
+        "BBQ치킨 병맥주",
+        "비비큐 병맥주",
+        "병맥주"
+      ],
+      "category": "BBQ치킨/음료",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/23",
+      "verifiedAt": "2026-11-21",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 0,
+        "carb": null,
+        "sugar": 0,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 0,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-6b637b52f427",
+      "brand": "BBQ치킨",
+      "productName": "제로콜라245ml",
+      "aliases": [
+        "BBQ치킨 제로콜라245ml",
+        "비비큐 제로콜라245ml",
+        "제로콜라245ml"
+      ],
+      "category": "BBQ치킨/음료",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/23",
+      "verifiedAt": "2026-11-21",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 0,
+        "carb": null,
+        "sugar": 0,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 15,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-572e79373573",
+      "brand": "BBQ치킨",
+      "productName": "제로콜라355ml",
+      "aliases": [
+        "BBQ치킨 제로콜라355ml",
+        "비비큐 제로콜라355ml",
+        "제로콜라355ml"
+      ],
+      "category": "BBQ치킨/음료",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/23",
+      "verifiedAt": "2026-11-21",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 0,
+        "carb": null,
+        "sugar": 0,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 22,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-a5b5bfc8198c",
+      "brand": "BBQ치킨",
+      "productName": "제로콜라1.25L",
+      "aliases": [
+        "BBQ치킨 제로콜라1.25L",
+        "비비큐 제로콜라1.25L",
+        "제로콜라1.25L"
+      ],
+      "category": "BBQ치킨/음료",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/23",
+      "verifiedAt": "2026-11-21",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 0,
+        "carb": null,
+        "sugar": 0,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 6,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-fd6abac4c459",
+      "brand": "BBQ치킨",
+      "productName": "스프라이트355ml",
+      "aliases": [
+        "BBQ치킨 스프라이트355ml",
+        "비비큐 스프라이트355ml",
+        "스프라이트355ml"
+      ],
+      "category": "BBQ치킨/음료",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/23",
+      "verifiedAt": "2026-11-21",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 160,
+        "carb": null,
+        "sugar": 40,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 33,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-f9b946738d53",
+      "brand": "BBQ치킨",
+      "productName": "스프라이트500ml",
+      "aliases": [
+        "BBQ치킨 스프라이트500ml",
+        "비비큐 스프라이트500ml",
+        "스프라이트500ml"
+      ],
+      "category": "BBQ치킨/음료",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/23",
+      "verifiedAt": "2026-11-21",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 228,
+        "carb": null,
+        "sugar": 57,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 47,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
+    },
+    {
+      "id": "bbq-aa09ac07e6bd",
+      "brand": "BBQ치킨",
+      "productName": "스프라이트1.5L",
+      "aliases": [
+        "BBQ치킨 스프라이트1.5L",
+        "비비큐 스프라이트1.5L",
+        "스프라이트1.5L"
+      ],
+      "category": "BBQ치킨/음료",
+      "servingSize": "1인분",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "BBQ치킨 공식 배달 사이트 메뉴 API",
+      "sourceUrl": "https://bbq.co.kr/api/delivery/menu/23",
+      "verifiedAt": "2026-11-21",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 44,
+        "carb": null,
+        "sugar": 11,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 9,
+        "caffeine": null
+      },
+      "reviewNote": "BBQ치킨 공식 배달 사이트(bbq.co.kr) 메뉴 API 응답에 포함된 영양정보를 그대로 저장했습니다. API가 탄수화물·지방·트랜스지방·카페인·1회 제공량(g)을 제공하지 않아 해당 항목은 null입니다."
     }
   ]
 }
