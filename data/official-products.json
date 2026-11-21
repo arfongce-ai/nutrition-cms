@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-14",
+  "updatedAt": "2026-11-21",
   "updatePolicy": {
     "reviewCycle": "quarterly",
     "sourcePriority": [
@@ -73,7 +73,7 @@
       "sourceType": "official_menu_page",
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=94",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "allergens": [],
       "additiveWatch": [
         "카페인"
@@ -112,7 +112,7 @@
       "sourceType": "official_menu_page",
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=41",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "allergens": [],
       "additiveWatch": [
         "카페인",
@@ -748,7 +748,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000004951",
       "sourceProductCode": "9200000004951",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -783,7 +783,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000004950",
       "sourceProductCode": "9200000004950",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -818,7 +818,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000003659",
       "sourceProductCode": "9200000003659",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -853,7 +853,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=17",
       "sourceProductCode": "17",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -888,7 +888,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=72",
       "sourceProductCode": "72",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -925,7 +925,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=110621",
       "sourceProductCode": "110621",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -962,7 +962,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000004953",
       "sourceProductCode": "9200000004953",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -998,7 +998,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=18",
       "sourceProductCode": "18",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -1033,7 +1033,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000004957",
       "sourceProductCode": "9200000004957",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -1068,7 +1068,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000004952",
       "sourceProductCode": "9200000004952",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -1105,7 +1105,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000003658",
       "sourceProductCode": "9200000003658",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -1141,7 +1141,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000002594",
       "sourceProductCode": "9200000002594",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -1177,7 +1177,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=2",
       "sourceProductCode": "2",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -1212,7 +1212,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000006852",
       "sourceProductCode": "9200000006852",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -1248,7 +1248,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=106509",
       "sourceProductCode": "106509",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -1283,7 +1283,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000003276",
       "sourceProductCode": "9200000003276",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -1389,7 +1389,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000006577",
       "sourceProductCode": "9200000006577",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -1425,7 +1425,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=169001",
       "sourceProductCode": "169001",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -1460,7 +1460,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=167004",
       "sourceProductCode": "167004",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -1496,14 +1496,14 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000004716",
       "sourceProductCode": "9200000004716",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
         "카페인",
         "당류"
       ],
-      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/03/[9200000004716]_20260303083311982.jpg",
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/10/[9200000004716]_20261006112253581.jpg",
       "nutrients": {
         "calories": 110,
         "carb": 28,
@@ -1532,7 +1532,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000006941",
       "sourceProductCode": "9200000006941",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -1604,7 +1604,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000004945",
       "sourceProductCode": "9200000004945",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -1677,13 +1677,13 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000004870",
       "sourceProductCode": "9200000004870",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
         "당류"
       ],
-      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2023/09/[9200000004870]_20230905110300360.jpg",
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/07/[9200000004870]_20260731110244613.jpg",
       "nutrients": {
         "calories": 145,
         "carb": 42,
@@ -1712,7 +1712,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000006466",
       "sourceProductCode": "9200000006466",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -1720,9 +1720,9 @@
       ],
       "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2025/09/[9200000006466]_20250904105105974.jpg",
       "nutrients": {
-        "calories": 190,
-        "carb": 47,
-        "sugar": 40,
+        "calories": 175,
+        "carb": 44,
+        "sugar": 41,
         "protein": 0,
         "fat": 0,
         "saturatedFat": 0,
@@ -1747,7 +1747,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000005377",
       "sourceProductCode": "9200000005377",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -1782,7 +1782,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000004780",
       "sourceProductCode": "9200000004780",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -1815,20 +1815,20 @@
       "servingSize": "Tall 사이즈 기준",
       "sourceType": "official_menu_page",
       "sourceLabel": "스타벅스 공식 음료 영양정보",
-      "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000004753",
-      "sourceProductCode": "9200000004753",
-      "verifiedAt": "2026-07-11",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000003763",
+      "sourceProductCode": "9200000003763",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
         "카페인",
         "당류"
       ],
-      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2025/06/[9200000004753]_20250626175350251.jpg",
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2025/06/[9200000003763]_20250626093913823.jpg",
       "nutrients": {
-        "calories": 265,
-        "carb": 64,
-        "sugar": 62,
+        "calories": 105,
+        "carb": 25,
+        "sugar": 24,
         "protein": 1,
         "fat": 0.1,
         "saturatedFat": 0,
@@ -1836,7 +1836,7 @@
         "sodium": 0,
         "fiber": 0,
         "leucine": 0,
-        "caffeine": 73
+        "caffeine": 30
       }
     },
     {
@@ -1853,7 +1853,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000007097",
       "sourceProductCode": "9200000007097",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -1889,7 +1889,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9300000003775",
       "sourceProductCode": "9300000003775",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -1924,7 +1924,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=5210008070",
       "sourceProductCode": "5210008070",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -1959,7 +1959,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=5210008061",
       "sourceProductCode": "5210008061",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -1994,7 +1994,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=5210008063",
       "sourceProductCode": "5210008063",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [],
@@ -2027,7 +2027,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9300000005405",
       "sourceProductCode": "9300000005405",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -2062,7 +2062,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9300000005406",
       "sourceProductCode": "9300000005406",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [],
@@ -2095,7 +2095,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9300000003771",
       "sourceProductCode": "9300000003771",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -2130,7 +2130,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9300000004348",
       "sourceProductCode": "9300000004348",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [],
@@ -2163,7 +2163,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=5210008072",
       "sourceProductCode": "5210008072",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -2198,7 +2198,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=5210008055",
       "sourceProductCode": "5210008055",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -2233,7 +2233,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9300000002565",
       "sourceProductCode": "9300000002565",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -2268,7 +2268,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9300000004346",
       "sourceProductCode": "9300000004346",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [],
@@ -2301,7 +2301,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000006172",
       "sourceProductCode": "9200000006172",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -2337,7 +2337,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000005168",
       "sourceProductCode": "9200000005168",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [],
@@ -2370,7 +2370,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000005283",
       "sourceProductCode": "9200000005283",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -2405,7 +2405,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000006937",
       "sourceProductCode": "9200000006937",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -2440,7 +2440,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000004751",
       "sourceProductCode": "9200000004751",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -2475,7 +2475,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000005588",
       "sourceProductCode": "9200000005588",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -2510,7 +2510,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000004946",
       "sourceProductCode": "9200000004946",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -2545,7 +2545,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000004947",
       "sourceProductCode": "9200000004947",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -2580,7 +2580,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000005983",
       "sourceProductCode": "9200000005983",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [],
@@ -2613,7 +2613,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=107051",
       "sourceProductCode": "107051",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -2649,7 +2649,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000004567",
       "sourceProductCode": "9200000004567",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -2685,7 +2685,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000004119",
       "sourceProductCode": "9200000004119",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -2722,7 +2722,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000006235",
       "sourceProductCode": "9200000006235",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -2759,7 +2759,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000006343",
       "sourceProductCode": "9200000006343",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -2796,7 +2796,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000001939",
       "sourceProductCode": "9200000001939",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -2833,7 +2833,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=110612",
       "sourceProductCode": "110612",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -2868,7 +2868,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000006054",
       "sourceProductCode": "9200000006054",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -2905,7 +2905,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000002095",
       "sourceProductCode": "9200000002095",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -2941,7 +2941,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000003505",
       "sourceProductCode": "9200000003505",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -2978,7 +2978,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000005518",
       "sourceProductCode": "9200000005518",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -3014,7 +3014,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000005514",
       "sourceProductCode": "9200000005514",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -3049,7 +3049,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000005522",
       "sourceProductCode": "9200000005522",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -3085,7 +3085,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000006164",
       "sourceProductCode": "9200000006164",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -3122,7 +3122,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=128692",
       "sourceProductCode": "128692",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -3157,7 +3157,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000006840",
       "sourceProductCode": "9200000006840",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -3192,14 +3192,14 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000007131",
       "sourceProductCode": "9200000007131",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
         "카페인",
         "당류"
       ],
-      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/07/[9200000007131]_20260701090005824.jpg",
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/07/[9200000007131]_20260729082321315.jpg",
       "nutrients": {
         "calories": 105,
         "carb": 25,
@@ -3228,7 +3228,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000003506",
       "sourceProductCode": "9200000003506",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -3263,7 +3263,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000004120",
       "sourceProductCode": "9200000004120",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -3300,7 +3300,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000006238",
       "sourceProductCode": "9200000006238",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -3336,7 +3336,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000006346",
       "sourceProductCode": "9200000006346",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -3371,7 +3371,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000001941",
       "sourceProductCode": "9200000001941",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -3407,7 +3407,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000005520",
       "sourceProductCode": "9200000005520",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -3442,7 +3442,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000005516",
       "sourceProductCode": "9200000005516",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -3477,7 +3477,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000005523",
       "sourceProductCode": "9200000005523",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -3513,7 +3513,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000006165",
       "sourceProductCode": "9200000006165",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -3549,7 +3549,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=128695",
       "sourceProductCode": "128695",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -3585,7 +3585,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000007089",
       "sourceProductCode": "9200000007089",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -3622,7 +3622,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000005285",
       "sourceProductCode": "9200000005285",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -3659,7 +3659,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=110582",
       "sourceProductCode": "110582",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -3695,7 +3695,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=110569",
       "sourceProductCode": "110569",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -3730,7 +3730,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=110566",
       "sourceProductCode": "110566",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -3767,7 +3767,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=110563",
       "sourceProductCode": "110563",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -3802,7 +3802,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=110601",
       "sourceProductCode": "110601",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -3837,7 +3837,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000005181",
       "sourceProductCode": "9200000005181",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -3872,7 +3872,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=110572",
       "sourceProductCode": "110572",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -3908,7 +3908,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=20",
       "sourceProductCode": "20",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -3943,7 +3943,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=25",
       "sourceProductCode": "25",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -3978,7 +3978,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=30",
       "sourceProductCode": "30",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -4013,7 +4013,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000005284",
       "sourceProductCode": "9200000005284",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -4050,7 +4050,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000006575",
       "sourceProductCode": "9200000006575",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -4087,7 +4087,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=126197",
       "sourceProductCode": "126197",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -4124,7 +4124,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=46",
       "sourceProductCode": "46",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -4160,7 +4160,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=38",
       "sourceProductCode": "38",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -4195,7 +4195,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=110611",
       "sourceProductCode": "110611",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -4229,7 +4229,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000006338",
       "sourceProductCode": "9200000006338",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -4264,7 +4264,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000004313",
       "sourceProductCode": "9200000004313",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -4300,14 +4300,14 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000001631",
       "sourceProductCode": "9200000001631",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
         "카페인",
         "포화지방"
       ],
-      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2021/02/[9200000001631]_20210225090916684.jpg",
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/09/[9200000001631]_20260909161158483.jpg",
       "nutrients": {
         "calories": 240,
         "carb": 23,
@@ -4336,7 +4336,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000005178",
       "sourceProductCode": "9200000005178",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -4372,7 +4372,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000006976",
       "sourceProductCode": "9200000006976",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -4409,7 +4409,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=110614",
       "sourceProductCode": "110614",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -4444,7 +4444,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=128192",
       "sourceProductCode": "128192",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -4481,7 +4481,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000002487",
       "sourceProductCode": "9200000002487",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -4516,7 +4516,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000000479",
       "sourceProductCode": "9200000000479",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -4551,7 +4551,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000002081",
       "sourceProductCode": "9200000002081",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -4587,7 +4587,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000002407",
       "sourceProductCode": "9200000002407",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -4622,7 +4622,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000002093",
       "sourceProductCode": "9200000002093",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -4657,7 +4657,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000005282",
       "sourceProductCode": "9200000005282",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -4694,7 +4694,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000004312",
       "sourceProductCode": "9200000004312",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -4719,10 +4719,11 @@
     {
       "id": "starbucks-바닐라-아인슈페너-콜드브루-9200000006945",
       "brand": "스타벅스",
-      "productName": "바닐라 아인슈페너 콜드브루",
+      "productName": "바닐라 아인슈페너 콜드 브루",
       "aliases": [
         "스타벅스 바닐라 아인슈페너 콜드브루",
-        "바닐라아인슈페너콜드브루"
+        "바닐라아인슈페너콜드브루",
+        "스타벅스 바닐라 아인슈페너 콜드 브루"
       ],
       "category": "스타벅스/음료/콜드 브루 커피",
       "servingSize": "Tall 사이즈 기준",
@@ -4730,7 +4731,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000006945",
       "sourceProductCode": "9200000006945",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -4766,7 +4767,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000000487",
       "sourceProductCode": "9200000000487",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -4802,7 +4803,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000005991",
       "sourceProductCode": "9200000005991",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -4838,7 +4839,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000006301",
       "sourceProductCode": "9200000006301",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -4863,10 +4864,11 @@
     {
       "id": "starbucks-서울-막걸리향-콜드브루-9200000006938",
       "brand": "스타벅스",
-      "productName": "서울 막걸리향 콜드브루",
+      "productName": "서울 막걸리향 콜드 브루",
       "aliases": [
         "스타벅스 서울 막걸리향 콜드브루",
-        "서울막걸리향콜드브루"
+        "서울막걸리향콜드브루",
+        "스타벅스 서울 막걸리향 콜드 브루"
       ],
       "category": "스타벅스/음료/콜드 브루 커피",
       "servingSize": "Tall 사이즈 기준",
@@ -4874,7 +4876,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000006938",
       "sourceProductCode": "9200000006938",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -4910,7 +4912,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000006056",
       "sourceProductCode": "9200000006056",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -4945,7 +4947,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000003661",
       "sourceProductCode": "9200000003661",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -5004,10 +5006,11 @@
     {
       "id": "starbucks-여수-윤슬-헤이즐넛-콜드브루-9200000004750",
       "brand": "스타벅스",
-      "productName": "여수 윤슬 헤이즐넛 콜드브루",
+      "productName": "여수 윤슬 헤이즐넛 콜드 브루",
       "aliases": [
         "스타벅스 여수 윤슬 헤이즐넛 콜드브루",
-        "여수윤슬헤이즐넛콜드브루"
+        "여수윤슬헤이즐넛콜드브루",
+        "스타벅스 여수 윤슬 헤이즐넛 콜드 브루"
       ],
       "category": "스타벅스/음료/콜드 브루 커피",
       "servingSize": "Tall 사이즈 기준",
@@ -5015,7 +5018,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000004750",
       "sourceProductCode": "9200000004750",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -5052,7 +5055,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000003285",
       "sourceProductCode": "9200000003285",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -5087,7 +5090,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000005616",
       "sourceProductCode": "9200000005616",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -5123,7 +5126,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000000038",
       "sourceProductCode": "9200000000038",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -5158,7 +5161,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000001636",
       "sourceProductCode": "9200000001636",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -5195,7 +5198,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000001635",
       "sourceProductCode": "9200000001635",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -5231,7 +5234,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000006948",
       "sourceProductCode": "9200000006948",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -5303,7 +5306,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000004990",
       "sourceProductCode": "9200000004990",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -5338,7 +5341,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000004954",
       "sourceProductCode": "9200000004954",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -5375,7 +5378,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=4004000000056",
       "sourceProductCode": "4004000000056",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [],
@@ -5406,28 +5409,27 @@
       "servingSize": "Tall 사이즈 기준",
       "sourceType": "official_menu_page",
       "sourceLabel": "스타벅스 공식 음료 영양정보",
-      "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000005310",
-      "sourceProductCode": "9200000005310",
-      "verifiedAt": "2026-07-11",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000005307",
+      "sourceProductCode": "9200000005307",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
-        "카페인",
-        "당류"
+        "카페인"
       ],
-      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2025/06/[9200000005310]_20250626175453436.jpg",
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2025/06/[9200000005307]_20250626101543177.jpg",
       "nutrients": {
-        "calories": 255,
-        "carb": 76,
-        "sugar": 34,
-        "protein": 1,
-        "fat": 1,
+        "calories": 110,
+        "carb": 32,
+        "sugar": 15,
+        "protein": 0,
+        "fat": 0.3,
         "saturatedFat": 0,
         "transFat": 0,
-        "sodium": 75,
+        "sodium": 35,
         "fiber": 0,
         "leucine": 0,
-        "caffeine": 70
+        "caffeine": 30
       }
     },
     {
@@ -5444,7 +5446,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000005304",
       "sourceProductCode": "9200000005304",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -5480,7 +5482,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000004933",
       "sourceProductCode": "9200000004933",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -5490,17 +5492,17 @@
       ],
       "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2025/01/[9200000004933]_20250102105625904.jpg",
       "nutrients": {
-        "calories": 300,
-        "carb": 33,
-        "sugar": 32,
-        "protein": 4,
+        "calories": 290,
+        "carb": 28,
+        "sugar": 28,
+        "protein": 5,
         "fat": 17,
-        "saturatedFat": 13,
+        "saturatedFat": 14,
         "transFat": 0,
         "sodium": 80,
         "fiber": 0,
         "leucine": 0,
-        "caffeine": 190
+        "caffeine": 170
       }
     },
     {
@@ -5517,7 +5519,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000004942",
       "sourceProductCode": "9200000004942",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -5527,17 +5529,17 @@
       ],
       "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2025/06/[9200000004942]_20250626095409672.jpg",
       "nutrients": {
-        "calories": 485,
-        "carb": 53,
-        "sugar": 52,
+        "calories": 455,
+        "carb": 45,
+        "sugar": 44,
         "protein": 7,
         "fat": 27,
-        "saturatedFat": 21,
+        "saturatedFat": 22,
         "transFat": 0,
         "sodium": 130,
         "fiber": 0,
         "leucine": 0,
-        "caffeine": 195
+        "caffeine": 155
       }
     },
     {
@@ -5554,7 +5556,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000006560",
       "sourceProductCode": "9200000006560",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -5624,7 +5626,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000004991",
       "sourceProductCode": "9200000004991",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -5659,7 +5661,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000004955",
       "sourceProductCode": "9200000004955",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -5696,7 +5698,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=4004000000059",
       "sourceProductCode": "4004000000059",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [],
@@ -5729,19 +5731,18 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000004936",
       "sourceProductCode": "9200000004936",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
         "카페인",
-        "당류",
         "포화지방"
       ],
       "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2025/06/[9200000004936]_20250626095136814.jpg",
       "nutrients": {
-        "calories": 200,
-        "carb": 23,
-        "sugar": 23,
+        "calories": 185,
+        "carb": 18,
+        "sugar": 18,
         "protein": 3,
         "fat": 11,
         "saturatedFat": 9,
@@ -5749,7 +5750,7 @@
         "sodium": 50,
         "fiber": 0,
         "leucine": 0,
-        "caffeine": 80
+        "caffeine": 65
       }
     },
     {
@@ -5803,7 +5804,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=4004000000039",
       "sourceProductCode": "4004000000039",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -5838,7 +5839,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000007093",
       "sourceProductCode": "9200000007093",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -5874,7 +5875,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000000229",
       "sourceProductCode": "9200000000229",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -5909,7 +5910,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000002959",
       "sourceProductCode": "9200000002959",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -5944,7 +5945,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000005590",
       "sourceProductCode": "9200000005590",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -5981,7 +5982,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=4004000000019",
       "sourceProductCode": "4004000000019",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -6016,7 +6017,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000004769",
       "sourceProductCode": "9200000004769",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -6052,7 +6053,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000002499",
       "sourceProductCode": "9200000002499",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -6076,10 +6077,12 @@
     {
       "id": "starbucks-아이스-제주-유기농-녹차로-만든-티-400400000094",
       "brand": "스타벅스",
-      "productName": "아이스 제주 유기농 녹차로 만든 티",
+      "productName": "아이스 제주 녹차",
       "aliases": [
         "스타벅스 아이스 제주 유기농 녹차로 만든 티",
-        "아이스제주유기농녹차로만든티"
+        "아이스제주유기농녹차로만든티",
+        "스타벅스 아이스 제주 녹차",
+        "아이스제주녹차"
       ],
       "category": "스타벅스/음료/티(티바나)",
       "servingSize": "Tall 사이즈 기준",
@@ -6087,7 +6090,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=400400000094",
       "sourceProductCode": "400400000094",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -6122,7 +6125,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000004944",
       "sourceProductCode": "9200000004944",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -6158,7 +6161,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=4004000000079",
       "sourceProductCode": "4004000000079",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [],
@@ -6191,7 +6194,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000006059",
       "sourceProductCode": "9200000006059",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -6228,7 +6231,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=4004000000069",
       "sourceProductCode": "4004000000069",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [],
@@ -6298,7 +6301,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=4004000000036",
       "sourceProductCode": "4004000000036",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -6333,7 +6336,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000000226",
       "sourceProductCode": "9200000000226",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -6368,7 +6371,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000002956",
       "sourceProductCode": "9200000002956",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -6403,7 +6406,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000005589",
       "sourceProductCode": "9200000005589",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -6440,7 +6443,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=4004000000016",
       "sourceProductCode": "4004000000016",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -6475,7 +6478,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000000187",
       "sourceProductCode": "9200000000187",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -6511,7 +6514,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000002496",
       "sourceProductCode": "9200000002496",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -6537,10 +6540,12 @@
     {
       "id": "starbucks-제주-유기농-녹차로-만든-티-400400000091",
       "brand": "스타벅스",
-      "productName": "제주 유기농 녹차로 만든 티",
+      "productName": "제주 녹차",
       "aliases": [
         "스타벅스 제주 유기농 녹차로 만든 티",
-        "제주유기농녹차로만든티"
+        "제주유기농녹차로만든티",
+        "스타벅스 제주 녹차",
+        "제주녹차"
       ],
       "category": "스타벅스/음료/티(티바나)",
       "servingSize": "Tall 사이즈 기준",
@@ -6548,7 +6553,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=400400000091",
       "sourceProductCode": "400400000091",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -6583,7 +6588,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000004943",
       "sourceProductCode": "9200000004943",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -6619,7 +6624,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=4004000000076",
       "sourceProductCode": "4004000000076",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [],
@@ -6688,7 +6693,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000006058",
       "sourceProductCode": "9200000006058",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -6725,7 +6730,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=4004000000066",
       "sourceProductCode": "4004000000066",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [],
@@ -6758,7 +6763,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000002760",
       "sourceProductCode": "9200000002760",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -6794,7 +6799,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000005369",
       "sourceProductCode": "9200000005369",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -6866,7 +6871,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000006304",
       "sourceProductCode": "9200000006304",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -6902,7 +6907,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000006305",
       "sourceProductCode": "9200000006305",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -6939,7 +6944,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000006303",
       "sourceProductCode": "9200000006303",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -6975,7 +6980,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=168007",
       "sourceProductCode": "168007",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -7046,7 +7051,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=168016",
       "sourceProductCode": "168016",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -7083,7 +7088,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000002088",
       "sourceProductCode": "9200000002088",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -7119,7 +7124,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000002502",
       "sourceProductCode": "9200000002502",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -7129,12 +7134,12 @@
       ],
       "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2025/06/[9200000002502]_20250626100915378.jpg",
       "nutrients": {
-        "calories": 200,
-        "carb": 23,
-        "sugar": 20,
+        "calories": 235,
+        "carb": 28,
+        "sugar": 24,
         "protein": 5,
-        "fat": 10,
-        "saturatedFat": 7,
+        "fat": 11,
+        "saturatedFat": 9,
         "transFat": 0,
         "sodium": 170,
         "fiber": 0,
@@ -7156,7 +7161,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000002090",
       "sourceProductCode": "9200000002090",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -7192,7 +7197,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000006981",
       "sourceProductCode": "9200000006981",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -7264,7 +7269,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=168066",
       "sourceProductCode": "168066",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -7301,7 +7306,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=168010",
       "sourceProductCode": "168010",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -7374,7 +7379,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000006980",
       "sourceProductCode": "9200000006980",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -7410,7 +7415,7 @@
       "sourceLabel": "스타벅스 공식 음료 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000002403",
       "sourceProductCode": "9200000002403",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -7446,7 +7451,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000004508",
       "sourceProductCode": "9300000004508",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -7549,7 +7554,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000005088",
       "sourceProductCode": "9300000005088",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [],
@@ -7581,7 +7586,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006068",
       "sourceProductCode": "9300000006068",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [],
@@ -7614,7 +7619,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000001912",
       "sourceProductCode": "9300000001912",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [],
@@ -7647,7 +7652,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000001361",
       "sourceProductCode": "9300000001361",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -7682,7 +7687,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000005768",
       "sourceProductCode": "9300000005768",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [],
@@ -7715,7 +7720,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000004008",
       "sourceProductCode": "9300000004008",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -7748,22 +7753,24 @@
       "servingSize": "1회 제공량 기준",
       "sourceType": "official_menu_page",
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
-      "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000005856",
-      "sourceProductCode": "9300000005856",
-      "verifiedAt": "2026-07-11",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006831",
+      "sourceProductCode": "9300000006831",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
-      "additiveWatch": [],
-      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2025/05/[9300000005856]_20250523093416978.jpg",
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/08/[9300000006831]_20260820125137656.jpg",
       "nutrients": {
-        "calories": 205,
-        "carb": 27,
+        "calories": 223,
+        "carb": 26,
         "sugar": 1,
-        "protein": 4,
-        "fat": 9,
-        "saturatedFat": 4.8,
+        "protein": 5,
+        "fat": 11,
+        "saturatedFat": 8,
         "transFat": 0,
-        "sodium": 320,
+        "sodium": 380,
         "fiber": 0,
         "leucine": 0,
         "caffeine": 0
@@ -7783,7 +7790,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006480",
       "sourceProductCode": "9300000006480",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -7851,7 +7858,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006492",
       "sourceProductCode": "9300000006492",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [],
@@ -7884,7 +7891,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000005663",
       "sourceProductCode": "9300000005663",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -7919,7 +7926,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000002489",
       "sourceProductCode": "9300000002489",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -7955,7 +7962,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006537",
       "sourceProductCode": "9300000006537",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -7991,7 +7998,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000004823",
       "sourceProductCode": "9300000004823",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [],
@@ -8024,7 +8031,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000004833",
       "sourceProductCode": "9300000004833",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [],
@@ -8057,7 +8064,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006230",
       "sourceProductCode": "9300000006230",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -8092,7 +8099,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000004028",
       "sourceProductCode": "9300000004028",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -8128,7 +8135,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=5110006070",
       "sourceProductCode": "5110006070",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -8198,7 +8205,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006508",
       "sourceProductCode": "9300000006508",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [],
@@ -8231,7 +8238,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000004506",
       "sourceProductCode": "9300000004506",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -8267,7 +8274,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000005697",
       "sourceProductCode": "9300000005697",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -8303,7 +8310,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000005349",
       "sourceProductCode": "9300000005349",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -8312,14 +8319,14 @@
       ],
       "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2024/08/[9300000005349]_20240802095756947.jpg",
       "nutrients": {
-        "calories": 425,
-        "carb": 41,
-        "sugar": 7,
-        "protein": 20,
+        "calories": 392,
+        "carb": 35,
+        "sugar": 3,
+        "protein": 18,
         "fat": 20,
         "saturatedFat": 6,
         "transFat": 0,
-        "sodium": 1100,
+        "sodium": 1040,
         "fiber": 0,
         "leucine": 0,
         "caffeine": 0
@@ -8410,7 +8417,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000005813",
       "sourceProductCode": "9300000005813",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -8445,18 +8452,20 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006634",
       "sourceProductCode": "9300000006634",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
-      "additiveWatch": [],
-      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/05/[9300000006634]_20260522085109815.jpg",
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/08/[9300000006634]_20260827090848261.jpg",
       "nutrients": {
-        "calories": 444,
+        "calories": 445,
         "carb": 46,
         "sugar": 6,
         "protein": 20,
         "fat": 20,
-        "saturatedFat": 0,
+        "saturatedFat": 6,
         "transFat": 0,
         "sodium": 591,
         "fiber": 0,
@@ -8478,7 +8487,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000005859",
       "sourceProductCode": "9300000005859",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [],
@@ -8511,13 +8520,13 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006549",
       "sourceProductCode": "9300000006549",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
         "나트륨"
       ],
-      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/06/[9300000006549]_20260622092944422.jpg",
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/07/[9300000006549]_20260727103107787.jpg",
       "nutrients": {
         "calories": 464,
         "carb": 51,
@@ -8546,7 +8555,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000005233",
       "sourceProductCode": "9300000005233",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -8581,7 +8590,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000005350",
       "sourceProductCode": "9300000005350",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -8617,7 +8626,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006121",
       "sourceProductCode": "9300000006121",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -8653,7 +8662,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000005698",
       "sourceProductCode": "9300000005698",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -8688,7 +8697,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000005157",
       "sourceProductCode": "9300000005157",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -8795,7 +8804,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000005855",
       "sourceProductCode": "9300000005855",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -8830,7 +8839,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006468",
       "sourceProductCode": "9300000006468",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -8865,7 +8874,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000005567",
       "sourceProductCode": "9300000005567",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -8936,7 +8945,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006499",
       "sourceProductCode": "9300000006499",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [],
@@ -8969,7 +8978,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006410",
       "sourceProductCode": "9300000006410",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -9004,7 +9013,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000001924",
       "sourceProductCode": "9300000001924",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [],
@@ -9073,7 +9082,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000005528",
       "sourceProductCode": "9300000005528",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -9108,7 +9117,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000005533",
       "sourceProductCode": "9300000005533",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -9143,7 +9152,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000001610",
       "sourceProductCode": "9300000001610",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -9178,7 +9187,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000005560",
       "sourceProductCode": "9300000005560",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [],
@@ -9210,7 +9219,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000004784",
       "sourceProductCode": "9300000004784",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -9245,7 +9254,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000005815",
       "sourceProductCode": "9300000005815",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -9280,7 +9289,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000005814",
       "sourceProductCode": "9300000005814",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -9316,7 +9325,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000005315",
       "sourceProductCode": "9300000005315",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [],
@@ -9349,7 +9358,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000005313",
       "sourceProductCode": "9300000005313",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -9384,7 +9393,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000005546",
       "sourceProductCode": "9300000005546",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -9420,7 +9429,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000005547",
       "sourceProductCode": "9300000005547",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -9455,7 +9464,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000005687",
       "sourceProductCode": "9300000005687",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -9491,7 +9500,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006428",
       "sourceProductCode": "9300000006428",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [],
@@ -9524,23 +9533,22 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006319",
       "sourceProductCode": "9300000006319",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
-        "당류",
-        "포화지방"
+        "당류"
       ],
       "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/04/[9300000006319]_20260428085839301.jpg",
       "nutrients": {
         "calories": 500,
         "carb": 57,
-        "sugar": 34,
+        "sugar": 35,
         "protein": 14,
         "fat": 24,
-        "saturatedFat": 6,
+        "saturatedFat": 3.6,
         "transFat": 0,
-        "sodium": 75,
+        "sodium": 63,
         "fiber": 0,
         "leucine": 0,
         "caffeine": 0
@@ -9593,7 +9601,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000005563",
       "sourceProductCode": "9300000005563",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [],
@@ -9626,7 +9634,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000002556",
       "sourceProductCode": "9300000002556",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [],
@@ -9659,7 +9667,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000001257",
       "sourceProductCode": "9300000001257",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -9728,7 +9736,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006125",
       "sourceProductCode": "9300000006125",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [],
@@ -9761,7 +9769,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006162",
       "sourceProductCode": "9300000006162",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -9797,7 +9805,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000005608",
       "sourceProductCode": "9300000005608",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -9832,7 +9840,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006083",
       "sourceProductCode": "9300000006083",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -9868,7 +9876,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006019",
       "sourceProductCode": "9300000006019",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [],
@@ -9901,7 +9909,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9900000001722",
       "sourceProductCode": "9900000001722",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [],
@@ -9934,7 +9942,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006493",
       "sourceProductCode": "9300000006493",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -9969,7 +9977,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000005609",
       "sourceProductCode": "9300000005609",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -10004,7 +10012,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006388",
       "sourceProductCode": "9300000006388",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [],
@@ -10072,7 +10080,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000004517",
       "sourceProductCode": "9300000004517",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [],
@@ -10105,7 +10113,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000005562",
       "sourceProductCode": "9300000005562",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [],
@@ -10138,7 +10146,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000005559",
       "sourceProductCode": "9300000005559",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [],
@@ -10171,7 +10179,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000002718",
       "sourceProductCode": "9300000002718",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -10206,7 +10214,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000002000",
       "sourceProductCode": "9300000002000",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [],
@@ -10239,7 +10247,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000005565",
       "sourceProductCode": "9300000005565",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [],
@@ -10272,18 +10280,18 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000005372",
       "sourceProductCode": "9300000005372",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [],
       "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2024/07/[9300000005372]_20240709162811414.jpg",
       "nutrients": {
-        "calories": 154,
+        "calories": 150,
         "carb": 14,
-        "sugar": 2,
+        "sugar": 10,
         "protein": 3,
-        "fat": 10,
-        "saturatedFat": 3.6,
+        "fat": 9,
+        "saturatedFat": 4,
         "transFat": 0,
         "sodium": 10,
         "fiber": 0,
@@ -10305,7 +10313,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000005404",
       "sourceProductCode": "9300000005404",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -10340,7 +10348,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006126",
       "sourceProductCode": "9300000006126",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -10411,7 +10419,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000005403",
       "sourceProductCode": "9300000005403",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -10482,7 +10490,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006218",
       "sourceProductCode": "9300000006218",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -10518,7 +10526,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000001055",
       "sourceProductCode": "9300000001055",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -10554,7 +10562,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000005594",
       "sourceProductCode": "9300000005594",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -10590,7 +10598,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000005607",
       "sourceProductCode": "9300000005607",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -10697,14 +10705,14 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006609",
       "sourceProductCode": "9300000006609",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
         "당류",
         "포화지방"
       ],
-      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/06/[9300000006609]_20260609095913168.jpg",
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/07/[9300000006609]_20260727102747891.jpg",
       "nutrients": {
         "calories": 669,
         "carb": 83,
@@ -10733,7 +10741,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000004100",
       "sourceProductCode": "9300000004100",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -10769,7 +10777,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000005866",
       "sourceProductCode": "9300000005866",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -10805,7 +10813,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000005472",
       "sourceProductCode": "9300000005472",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -10913,7 +10921,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000002065",
       "sourceProductCode": "9300000002065",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -10949,7 +10957,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006282",
       "sourceProductCode": "9300000006282",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -10985,7 +10993,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000003468",
       "sourceProductCode": "9300000003468",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -11021,7 +11029,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000003469",
       "sourceProductCode": "9300000003469",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -11056,7 +11064,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000001521",
       "sourceProductCode": "9300000001521",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -11128,7 +11136,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000005769",
       "sourceProductCode": "9300000005769",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -11137,14 +11145,14 @@
       ],
       "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2025/03/[9300000005769]_20250304112847520.jpg",
       "nutrients": {
-        "calories": 602,
-        "carb": 64,
-        "sugar": 44,
-        "protein": 10,
-        "fat": 34,
-        "saturatedFat": 17,
+        "calories": 627,
+        "carb": 60,
+        "sugar": 59,
+        "protein": 9,
+        "fat": 39,
+        "saturatedFat": 19,
         "transFat": 0,
-        "sodium": 220,
+        "sodium": 236,
         "fiber": 0,
         "leucine": 0,
         "caffeine": 0
@@ -11164,7 +11172,7 @@
       "sourceLabel": "스타벅스 공식 푸드 영양정보",
       "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006565",
       "sourceProductCode": "9300000006565",
-      "verifiedAt": "2026-07-11",
+      "verifiedAt": "2026-11-21",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
       "allergens": [],
       "additiveWatch": [
@@ -29068,6 +29076,1770 @@
         "caffeine": null
       },
       "reviewNote": "자담치킨 공식 홈페이지 \"제품 영양정보\" 표(이미지)를 Claude가 화면 캡처로 옮겨 적었습니다(AI가 이미지에서 읽음 — 원본 대조 필요). 표에 중량이 직접 적혀 있어 그 중량 기준 확정값입니다."
+    },
+    {
+      "id": "starbucks-아이스-카스텔라-고구마-라떼-9200000007170",
+      "brand": "스타벅스",
+      "productName": "아이스 카스텔라 고구마 라떼",
+      "aliases": [
+        "스타벅스 아이스 카스텔라 고구마 라떼",
+        "아이스카스텔라고구마라떼"
+      ],
+      "category": "스타벅스/음료/기타 제조 음료",
+      "servingSize": "Tall 사이즈 기준",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "스타벅스 공식 음료 영양정보",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000007170",
+      "sourceProductCode": "9200000007170",
+      "verifiedAt": "2026-11-21",
+      "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
+      "allergens": [],
+      "additiveWatch": [
+        "당류",
+        "포화지방"
+      ],
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/09/[9200000007170]_20260928104805180.jpg",
+      "nutrients": {
+        "calories": 300,
+        "carb": 33,
+        "sugar": 26,
+        "protein": 5.5,
+        "fat": 16,
+        "saturatedFat": 12,
+        "transFat": 0,
+        "sodium": 110,
+        "fiber": 0,
+        "leucine": 0,
+        "caffeine": 0
+      }
+    },
+    {
+      "id": "starbucks-카스텔라-고구마-라떼-9200000007167",
+      "brand": "스타벅스",
+      "productName": "카스텔라 고구마 라떼",
+      "aliases": [
+        "스타벅스 카스텔라 고구마 라떼",
+        "카스텔라고구마라떼"
+      ],
+      "category": "스타벅스/음료/기타 제조 음료",
+      "servingSize": "Tall 사이즈 기준",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "스타벅스 공식 음료 영양정보",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000007167",
+      "sourceProductCode": "9200000007167",
+      "verifiedAt": "2026-11-21",
+      "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
+      "allergens": [],
+      "additiveWatch": [
+        "당류",
+        "포화지방"
+      ],
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/09/[9200000007167]_20260928104702866.jpg",
+      "nutrients": {
+        "calories": 425,
+        "carb": 45,
+        "sugar": 36,
+        "protein": 9,
+        "fat": 23,
+        "saturatedFat": 17,
+        "transFat": 0,
+        "sodium": 175,
+        "fiber": 0,
+        "leucine": 0,
+        "caffeine": 0
+      }
+    },
+    {
+      "id": "starbucks-블루베리-딜라이트-요거트-블렌디드-9200000006963",
+      "brand": "스타벅스",
+      "productName": "블루베리 딜라이트 요거트 블렌디드",
+      "aliases": [
+        "스타벅스 블루베리 딜라이트 요거트 블렌디드",
+        "블루베리딜라이트요거트블렌디드"
+      ],
+      "category": "스타벅스/음료/블렌디드",
+      "servingSize": "Tall 사이즈 기준",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "스타벅스 공식 음료 영양정보",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000006963",
+      "sourceProductCode": "9200000006963",
+      "verifiedAt": "2026-11-21",
+      "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
+      "allergens": [],
+      "additiveWatch": [
+        "당류"
+      ],
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/07/[9200000006963]_20260714082039571.jpg",
+      "nutrients": {
+        "calories": 245,
+        "carb": 42,
+        "sugar": 35,
+        "protein": 5,
+        "fat": 6,
+        "saturatedFat": 4.1,
+        "transFat": 0,
+        "sodium": 105,
+        "fiber": 0,
+        "leucine": 0,
+        "caffeine": 0
+      }
+    },
+    {
+      "id": "starbucks-유자-말차-v-피지오-9200000007152",
+      "brand": "스타벅스",
+      "productName": "유자 말차 V 피지오",
+      "aliases": [
+        "스타벅스 유자 말차 V 피지오",
+        "유자말차V피지오"
+      ],
+      "category": "스타벅스/음료/스타벅스 피지오",
+      "servingSize": "Tall 사이즈 기준",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "스타벅스 공식 음료 영양정보",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000007152",
+      "sourceProductCode": "9200000007152",
+      "verifiedAt": "2026-11-21",
+      "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/09/[9200000007152]_20260928104430399.jpg",
+      "nutrients": {
+        "calories": 85,
+        "carb": 20,
+        "sugar": 18,
+        "protein": 1,
+        "fat": 0.2,
+        "saturatedFat": 0,
+        "transFat": 0,
+        "sodium": 0,
+        "fiber": 0,
+        "leucine": 0,
+        "caffeine": 60
+      }
+    },
+    {
+      "id": "starbucks-유자-v-피지오-9200000007155",
+      "brand": "스타벅스",
+      "productName": "유자 V 피지오",
+      "aliases": [
+        "스타벅스 유자 V 피지오",
+        "유자V피지오"
+      ],
+      "category": "스타벅스/음료/스타벅스 피지오",
+      "servingSize": "Tall 사이즈 기준",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "스타벅스 공식 음료 영양정보",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000007155",
+      "sourceProductCode": "9200000007155",
+      "verifiedAt": "2026-11-21",
+      "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
+      "allergens": [],
+      "additiveWatch": [],
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/09/[9200000007155]_20260928104553674.jpg",
+      "nutrients": {
+        "calories": 75,
+        "carb": 18,
+        "sugar": 18,
+        "protein": 0,
+        "fat": 0.1,
+        "saturatedFat": 0,
+        "transFat": 0,
+        "sodium": 0,
+        "fiber": 0,
+        "leucine": 0,
+        "caffeine": 0
+      }
+    },
+    {
+      "id": "starbucks-블랙-글레이즈드-라떼-9200000002259",
+      "brand": "스타벅스",
+      "productName": "블랙 글레이즈드 라떼",
+      "aliases": [
+        "스타벅스 블랙 글레이즈드 라떼",
+        "블랙글레이즈드라떼"
+      ],
+      "category": "스타벅스/음료/에스프레소",
+      "servingSize": "Tall 사이즈 기준",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "스타벅스 공식 음료 영양정보",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000002259",
+      "sourceProductCode": "9200000002259",
+      "verifiedAt": "2026-11-21",
+      "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인",
+        "당류",
+        "포화지방"
+      ],
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/09/[9200000002259]_20260928101559278.jpg",
+      "nutrients": {
+        "calories": 345,
+        "carb": 39,
+        "sugar": 35,
+        "protein": 9,
+        "fat": 17,
+        "saturatedFat": 11,
+        "transFat": 0,
+        "sodium": 200,
+        "fiber": 0,
+        "leucine": 0,
+        "caffeine": 75
+      }
+    },
+    {
+      "id": "starbucks-아이스-블랙-글레이즈드-라떼-9200000002262",
+      "brand": "스타벅스",
+      "productName": "아이스 블랙 글레이즈드 라떼",
+      "aliases": [
+        "스타벅스 아이스 블랙 글레이즈드 라떼",
+        "아이스블랙글레이즈드라떼"
+      ],
+      "category": "스타벅스/음료/에스프레소",
+      "servingSize": "Tall 사이즈 기준",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "스타벅스 공식 음료 영양정보",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000002262",
+      "sourceProductCode": "9200000002262",
+      "verifiedAt": "2026-11-21",
+      "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인",
+        "당류",
+        "포화지방"
+      ],
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/09/[9200000002262]_20260928101657468.jpg",
+      "nutrients": {
+        "calories": 290,
+        "carb": 35,
+        "sugar": 31,
+        "protein": 6,
+        "fat": 14,
+        "saturatedFat": 10,
+        "transFat": 0,
+        "sodium": 160,
+        "fiber": 0,
+        "leucine": 0,
+        "caffeine": 75
+      }
+    },
+    {
+      "id": "starbucks-글레이즈드-폼-블랙-티-9200000007173",
+      "brand": "스타벅스",
+      "productName": "글레이즈드 폼 블랙 티",
+      "aliases": [
+        "스타벅스 글레이즈드 폼 블랙 티",
+        "글레이즈드폼블랙티"
+      ],
+      "category": "스타벅스/음료/티(티바나)",
+      "servingSize": "Tall 사이즈 기준",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "스타벅스 공식 음료 영양정보",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000007173",
+      "sourceProductCode": "9200000007173",
+      "verifiedAt": "2026-11-21",
+      "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인",
+        "당류",
+        "포화지방"
+      ],
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/09/[9200000007173]_20260910142947420.jpg",
+      "nutrients": {
+        "calories": 145,
+        "carb": 22,
+        "sugar": 21,
+        "protein": 1,
+        "fat": 6,
+        "saturatedFat": 5,
+        "transFat": 0,
+        "sodium": 25,
+        "fiber": 0,
+        "leucine": 0,
+        "caffeine": 80
+      }
+    },
+    {
+      "id": "starbucks-말차-글레이즈드-티-라떼-9200000006412",
+      "brand": "스타벅스",
+      "productName": "말차 글레이즈드 티 라떼",
+      "aliases": [
+        "스타벅스 말차 글레이즈드 티 라떼",
+        "말차글레이즈드티라떼"
+      ],
+      "category": "스타벅스/음료/티(티바나)",
+      "servingSize": "Tall 사이즈 기준",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "스타벅스 공식 음료 영양정보",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000006412",
+      "sourceProductCode": "9200000006412",
+      "verifiedAt": "2026-11-21",
+      "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인",
+        "당류",
+        "포화지방"
+      ],
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/09/[9200000006412]_20260910142648343.jpg",
+      "nutrients": {
+        "calories": 310,
+        "carb": 32,
+        "sugar": 29,
+        "protein": 9,
+        "fat": 16,
+        "saturatedFat": 11,
+        "transFat": 0,
+        "sodium": 180,
+        "fiber": 0,
+        "leucine": 0,
+        "caffeine": 65
+      }
+    },
+    {
+      "id": "starbucks-아이스-말차-글레이즈드-티-라떼-9200000006415",
+      "brand": "스타벅스",
+      "productName": "아이스 말차 글레이즈드 티 라떼",
+      "aliases": [
+        "스타벅스 아이스 말차 글레이즈드 티 라떼",
+        "아이스말차글레이즈드티라떼"
+      ],
+      "category": "스타벅스/음료/티(티바나)",
+      "servingSize": "Tall 사이즈 기준",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "스타벅스 공식 음료 영양정보",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000006415",
+      "sourceProductCode": "9200000006415",
+      "verifiedAt": "2026-11-21",
+      "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인",
+        "당류",
+        "포화지방"
+      ],
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/09/[9200000006415]_20260910142754201.jpg",
+      "nutrients": {
+        "calories": 235,
+        "carb": 26,
+        "sugar": 23,
+        "protein": 6,
+        "fat": 12,
+        "saturatedFat": 8,
+        "transFat": 0,
+        "sodium": 115,
+        "fiber": 0,
+        "leucine": 0,
+        "caffeine": 60
+      }
+    },
+    {
+      "id": "starbucks-아이스-퓨어-말차-9200000007158",
+      "brand": "스타벅스",
+      "productName": "아이스 퓨어 말차",
+      "aliases": [
+        "스타벅스 아이스 퓨어 말차",
+        "아이스퓨어말차"
+      ],
+      "category": "스타벅스/음료/티(티바나)",
+      "servingSize": "Tall 사이즈 기준",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "스타벅스 공식 음료 영양정보",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000007158",
+      "sourceProductCode": "9200000007158",
+      "verifiedAt": "2026-11-21",
+      "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/10/[9200000007158]_20261001123512465.jpg",
+      "nutrients": {
+        "calories": 9,
+        "carb": 2,
+        "sugar": 0,
+        "protein": 1,
+        "fat": 0.1,
+        "saturatedFat": 0,
+        "transFat": 0,
+        "sodium": 0,
+        "fiber": 0,
+        "leucine": 0,
+        "caffeine": 60
+      }
+    },
+    {
+      "id": "starbucks-아이스-퓨어-호지차-9200000007184",
+      "brand": "스타벅스",
+      "productName": "아이스 퓨어 호지차",
+      "aliases": [
+        "스타벅스 아이스 퓨어 호지차",
+        "아이스퓨어호지차"
+      ],
+      "category": "스타벅스/음료/티(티바나)",
+      "servingSize": "Tall 사이즈 기준",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "스타벅스 공식 음료 영양정보",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000007184",
+      "sourceProductCode": "9200000007184",
+      "verifiedAt": "2026-11-21",
+      "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/10/[9200000007184]_20261001123958037.jpg",
+      "nutrients": {
+        "calories": 7,
+        "carb": 2,
+        "sugar": 0,
+        "protein": 0,
+        "fat": 0,
+        "saturatedFat": 0,
+        "transFat": 0,
+        "sodium": 0,
+        "fiber": 0,
+        "leucine": 0,
+        "caffeine": 20
+      }
+    },
+    {
+      "id": "starbucks-아이스-호지-글레이즈드-티-라떼-9200000007164",
+      "brand": "스타벅스",
+      "productName": "아이스 호지 글레이즈드 티 라떼",
+      "aliases": [
+        "스타벅스 아이스 호지 글레이즈드 티 라떼",
+        "아이스호지글레이즈드티라떼"
+      ],
+      "category": "스타벅스/음료/티(티바나)",
+      "servingSize": "Tall 사이즈 기준",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "스타벅스 공식 음료 영양정보",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000007164",
+      "sourceProductCode": "9200000007164",
+      "verifiedAt": "2026-11-21",
+      "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인",
+        "당류",
+        "포화지방"
+      ],
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/09/[9200000007164]_20260928103930887.jpg",
+      "nutrients": {
+        "calories": 215,
+        "carb": 24,
+        "sugar": 22,
+        "protein": 5,
+        "fat": 11,
+        "saturatedFat": 8,
+        "transFat": 0,
+        "sodium": 90,
+        "fiber": 0,
+        "leucine": 0,
+        "caffeine": 20
+      }
+    },
+    {
+      "id": "starbucks-퓨어-말차-9200000007178",
+      "brand": "스타벅스",
+      "productName": "퓨어 말차",
+      "aliases": [
+        "스타벅스 퓨어 말차",
+        "퓨어말차"
+      ],
+      "category": "스타벅스/음료/티(티바나)",
+      "servingSize": "Tall 사이즈 기준",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "스타벅스 공식 음료 영양정보",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000007178",
+      "sourceProductCode": "9200000007178",
+      "verifiedAt": "2026-11-21",
+      "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/10/[9200000007178]_20261001123642175.jpg",
+      "nutrients": {
+        "calories": 11,
+        "carb": 2,
+        "sugar": 0,
+        "protein": 1,
+        "fat": 0.1,
+        "saturatedFat": 0,
+        "transFat": 0,
+        "sodium": 5,
+        "fiber": 0,
+        "leucine": 0,
+        "caffeine": 75
+      }
+    },
+    {
+      "id": "starbucks-퓨어-호지차-9200000007181",
+      "brand": "스타벅스",
+      "productName": "퓨어 호지차",
+      "aliases": [
+        "스타벅스 퓨어 호지차",
+        "퓨어호지차"
+      ],
+      "category": "스타벅스/음료/티(티바나)",
+      "servingSize": "Tall 사이즈 기준",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "스타벅스 공식 음료 영양정보",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000007181",
+      "sourceProductCode": "9200000007181",
+      "verifiedAt": "2026-11-21",
+      "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/10/[9200000007181]_20261001123852597.jpg",
+      "nutrients": {
+        "calories": 8,
+        "carb": 2,
+        "sugar": 0,
+        "protein": 1,
+        "fat": 0.1,
+        "saturatedFat": 0,
+        "transFat": 0,
+        "sodium": 0,
+        "fiber": 0,
+        "leucine": 0,
+        "caffeine": 25
+      }
+    },
+    {
+      "id": "starbucks-호지-글레이즈드-티-라떼-9200000007161",
+      "brand": "스타벅스",
+      "productName": "호지 글레이즈드 티 라떼",
+      "aliases": [
+        "스타벅스 호지 글레이즈드 티 라떼",
+        "호지글레이즈드티라떼"
+      ],
+      "category": "스타벅스/음료/티(티바나)",
+      "servingSize": "Tall 사이즈 기준",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "스타벅스 공식 음료 영양정보",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000007161",
+      "sourceProductCode": "9200000007161",
+      "verifiedAt": "2026-11-21",
+      "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인",
+        "당류",
+        "포화지방"
+      ],
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/09/[9200000007161]_20260928103330438.jpg",
+      "nutrients": {
+        "calories": 295,
+        "carb": 31,
+        "sugar": 28,
+        "protein": 9,
+        "fat": 15,
+        "saturatedFat": 11,
+        "transFat": 0,
+        "sodium": 150,
+        "fiber": 0,
+        "leucine": 0,
+        "caffeine": 20
+      }
+    },
+    {
+      "id": "starbucks-카라멜-커스터드-푸딩-9300000006872",
+      "brand": "스타벅스",
+      "productName": "카라멜 커스터드 푸딩",
+      "aliases": [
+        "스타벅스 카라멜 커스터드 푸딩",
+        "카라멜커스터드푸딩"
+      ],
+      "category": "스타벅스/푸드/과일 & 요거트",
+      "servingSize": "1회 제공량 기준",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "스타벅스 공식 푸드 영양정보",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006872",
+      "sourceProductCode": "9300000006872",
+      "verifiedAt": "2026-11-21",
+      "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
+      "allergens": [],
+      "additiveWatch": [],
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/10/[9300000006872]_20261007130134170.jpg",
+      "nutrients": {
+        "calories": 0,
+        "carb": 0,
+        "sugar": 0,
+        "protein": 0,
+        "fat": 0,
+        "saturatedFat": 0,
+        "transFat": 0,
+        "sodium": 0,
+        "fiber": 0,
+        "leucine": 0,
+        "caffeine": 0
+      }
+    },
+    {
+      "id": "starbucks-프리미엄-바나나-5110009171",
+      "brand": "스타벅스",
+      "productName": "프리미엄 바나나",
+      "aliases": [
+        "스타벅스 프리미엄 바나나",
+        "프리미엄바나나"
+      ],
+      "category": "스타벅스/푸드/과일 & 요거트",
+      "servingSize": "1회 제공량 기준",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "스타벅스 공식 푸드 영양정보",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=5110009171",
+      "sourceProductCode": "5110009171",
+      "verifiedAt": "2026-11-21",
+      "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
+      "allergens": [],
+      "additiveWatch": [],
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2021/04/[5110009171]_20210421162111179.jpg",
+      "nutrients": {
+        "calories": 110,
+        "carb": 21,
+        "sugar": 14,
+        "protein": 1,
+        "fat": 0.1,
+        "saturatedFat": 0,
+        "transFat": 0,
+        "sodium": 0,
+        "fiber": 0,
+        "leucine": 0,
+        "caffeine": 0
+      }
+    },
+    {
+      "id": "starbucks-찰떡콩떡-베이글-9300000006830",
+      "brand": "스타벅스",
+      "productName": "찰떡콩떡 베이글",
+      "aliases": [
+        "스타벅스 찰떡콩떡 베이글",
+        "찰떡콩떡베이글"
+      ],
+      "category": "스타벅스/푸드/브레드",
+      "servingSize": "1회 제공량 기준",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "스타벅스 공식 푸드 영양정보",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006830",
+      "sourceProductCode": "9300000006830",
+      "verifiedAt": "2026-11-21",
+      "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
+      "allergens": [],
+      "additiveWatch": [],
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/09/[9300000006830]_20260910143804575.jpg",
+      "nutrients": {
+        "calories": 293,
+        "carb": 57,
+        "sugar": 16,
+        "protein": 7,
+        "fat": 4.1,
+        "saturatedFat": 2.7,
+        "transFat": 0,
+        "sodium": 584,
+        "fiber": 0,
+        "leucine": 0,
+        "caffeine": 0
+      }
+    },
+    {
+      "id": "starbucks-무화과-잠봉-루꼴라-샌드위치-9300000006829",
+      "brand": "스타벅스",
+      "productName": "무화과 잠봉 루꼴라 샌드위치",
+      "aliases": [
+        "스타벅스 무화과 잠봉 루꼴라 샌드위치",
+        "무화과잠봉루꼴라샌드위치"
+      ],
+      "category": "스타벅스/푸드/샌드위치 & 샐러드",
+      "servingSize": "1회 제공량 기준",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "스타벅스 공식 푸드 영양정보",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006829",
+      "sourceProductCode": "9300000006829",
+      "verifiedAt": "2026-11-21",
+      "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/09/[9300000006829]_20260928095541112.jpg",
+      "nutrients": {
+        "calories": 375,
+        "carb": 53,
+        "sugar": 10,
+        "protein": 16,
+        "fat": 11,
+        "saturatedFat": 6,
+        "transFat": 0,
+        "sodium": 626,
+        "fiber": 0,
+        "leucine": 0,
+        "caffeine": 0
+      }
+    },
+    {
+      "id": "starbucks-미트-칠리-핫도그-9300000006431",
+      "brand": "스타벅스",
+      "productName": "미트 칠리 핫도그",
+      "aliases": [
+        "스타벅스 미트 칠리 핫도그",
+        "미트칠리핫도그"
+      ],
+      "category": "스타벅스/푸드/샌드위치 & 샐러드",
+      "servingSize": "1회 제공량 기준",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "스타벅스 공식 푸드 영양정보",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006431",
+      "sourceProductCode": "9300000006431",
+      "verifiedAt": "2026-11-21",
+      "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
+      "allergens": [],
+      "additiveWatch": [
+        "나트륨",
+        "포화지방"
+      ],
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/04/[9300000006431]_20260415083650734.jpg",
+      "nutrients": {
+        "calories": 455,
+        "carb": 50,
+        "sugar": 7,
+        "protein": 20,
+        "fat": 19,
+        "saturatedFat": 11,
+        "transFat": 0,
+        "sodium": 1050,
+        "fiber": 0,
+        "leucine": 0,
+        "caffeine": 0
+      }
+    },
+    {
+      "id": "starbucks-프렌치-어니언-멜팅-치즈-샌드위치-9300000006856",
+      "brand": "스타벅스",
+      "productName": "프렌치 어니언 멜팅 치즈 샌드위치",
+      "aliases": [
+        "스타벅스 프렌치 어니언 멜팅 치즈 샌드위치",
+        "프렌치어니언멜팅치즈샌드위치"
+      ],
+      "category": "스타벅스/푸드/샌드위치 & 샐러드",
+      "servingSize": "1회 제공량 기준",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "스타벅스 공식 푸드 영양정보",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006856",
+      "sourceProductCode": "9300000006856",
+      "verifiedAt": "2026-11-21",
+      "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
+      "allergens": [],
+      "additiveWatch": [
+        "나트륨",
+        "포화지방"
+      ],
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/09/[9300000006856]_20260910143712578.jpg",
+      "nutrients": {
+        "calories": 425,
+        "carb": 49,
+        "sugar": 6,
+        "protein": 23,
+        "fat": 15,
+        "saturatedFat": 7,
+        "transFat": 0,
+        "sodium": 1130,
+        "fiber": 0,
+        "leucine": 0,
+        "caffeine": 0
+      }
+    },
+    {
+      "id": "starbucks-10개입-인절미찰떡파이-9300000006875",
+      "brand": "스타벅스",
+      "productName": "(10개입)인절미찰떡파이",
+      "aliases": [
+        "스타벅스 (10개입)인절미찰떡파이"
+      ],
+      "category": "스타벅스/푸드/스낵 & 미니 디저트",
+      "servingSize": "1회 제공량 기준",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "스타벅스 공식 푸드 영양정보",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006875",
+      "sourceProductCode": "9300000006875",
+      "verifiedAt": "2026-11-21",
+      "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
+      "allergens": [],
+      "additiveWatch": [
+        "당류",
+        "포화지방"
+      ],
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/10/[9300000006875]_20261007131923227.jpg",
+      "nutrients": {
+        "calories": 474,
+        "carb": 61,
+        "sugar": 35,
+        "protein": 8,
+        "fat": 22,
+        "saturatedFat": 9,
+        "transFat": 0,
+        "sodium": 180,
+        "fiber": 0,
+        "leucine": 0,
+        "caffeine": 0
+      }
+    },
+    {
+      "id": "starbucks-14개입-오도독-하루-넛-블루베리-9900000001980",
+      "brand": "스타벅스",
+      "productName": "(14개입)오도독 하루 넛&블루베리",
+      "aliases": [
+        "스타벅스 (14개입)오도독 하루 넛&블루베리",
+        "(14개입)오도독하루넛&블루베리"
+      ],
+      "category": "스타벅스/푸드/스낵 & 미니 디저트",
+      "servingSize": "1회 제공량 기준",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "스타벅스 공식 푸드 영양정보",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9900000001980",
+      "sourceProductCode": "9900000001980",
+      "verifiedAt": "2026-11-21",
+      "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
+      "allergens": [],
+      "additiveWatch": [],
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/08/[9900000001980]_20260813102958523.jpg",
+      "nutrients": {
+        "calories": 145,
+        "carb": 9,
+        "sugar": 4,
+        "protein": 3,
+        "fat": 11,
+        "saturatedFat": 1.3,
+        "transFat": 0,
+        "sodium": 1.2,
+        "fiber": 0,
+        "leucine": 0,
+        "caffeine": 0
+      }
+    },
+    {
+      "id": "starbucks-러스크-어소트먼트-세트-9300000006834",
+      "brand": "스타벅스",
+      "productName": "러스크 어소트먼트 세트",
+      "aliases": [
+        "스타벅스 러스크 어소트먼트 세트",
+        "러스크어소트먼트세트"
+      ],
+      "category": "스타벅스/푸드/스낵 & 미니 디저트",
+      "servingSize": "1회 제공량 기준",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "스타벅스 공식 푸드 영양정보",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006834",
+      "sourceProductCode": "9300000006834",
+      "verifiedAt": "2026-11-21",
+      "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
+      "allergens": [],
+      "additiveWatch": [
+        "당류",
+        "포화지방"
+      ],
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/08/[9300000006834]_20260813102434118.jpg",
+      "nutrients": {
+        "calories": 513,
+        "carb": 66,
+        "sugar": 33,
+        "protein": 6,
+        "fat": 25,
+        "saturatedFat": 20,
+        "transFat": 0,
+        "sodium": 239,
+        "fiber": 0,
+        "leucine": 0,
+        "caffeine": 0
+      }
+    },
+    {
+      "id": "starbucks-마롱-마들렌-9300000006209",
+      "brand": "스타벅스",
+      "productName": "마롱 마들렌",
+      "aliases": [
+        "스타벅스 마롱 마들렌",
+        "마롱마들렌"
+      ],
+      "category": "스타벅스/푸드/스낵 & 미니 디저트",
+      "servingSize": "1회 제공량 기준",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "스타벅스 공식 푸드 영양정보",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006209",
+      "sourceProductCode": "9300000006209",
+      "verifiedAt": "2026-11-21",
+      "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
+      "allergens": [],
+      "additiveWatch": [],
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/09/[9300000006209]_20260928095729253.jpg",
+      "nutrients": {
+        "calories": 178,
+        "carb": 19,
+        "sugar": 17,
+        "protein": 3,
+        "fat": 10,
+        "saturatedFat": 4.6,
+        "transFat": 0,
+        "sodium": 50,
+        "fiber": 0,
+        "leucine": 0,
+        "caffeine": 0
+      }
+    },
+    {
+      "id": "starbucks-마롱-찰떡-세트-9300000006887",
+      "brand": "스타벅스",
+      "productName": "마롱 찰떡 세트",
+      "aliases": [
+        "스타벅스 마롱 찰떡 세트",
+        "마롱찰떡세트"
+      ],
+      "category": "스타벅스/푸드/스낵 & 미니 디저트",
+      "servingSize": "1회 제공량 기준",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "스타벅스 공식 푸드 영양정보",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006887",
+      "sourceProductCode": "9300000006887",
+      "verifiedAt": "2026-11-21",
+      "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
+      "allergens": [],
+      "additiveWatch": [
+        "당류",
+        "포화지방"
+      ],
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/10/[9300000006887]_20261007132517627.jpg",
+      "nutrients": {
+        "calories": 730,
+        "carb": 120,
+        "sugar": 24,
+        "protein": 8,
+        "fat": 24,
+        "saturatedFat": 12,
+        "transFat": 0,
+        "sodium": 420,
+        "fiber": 0,
+        "leucine": 0,
+        "caffeine": 0
+      }
+    },
+    {
+      "id": "starbucks-말랑쫀득-고구마바-9300000006824",
+      "brand": "스타벅스",
+      "productName": "말랑쫀득 고구마바",
+      "aliases": [
+        "스타벅스 말랑쫀득 고구마바",
+        "말랑쫀득고구마바"
+      ],
+      "category": "스타벅스/푸드/스낵 & 미니 디저트",
+      "servingSize": "1회 제공량 기준",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "스타벅스 공식 푸드 영양정보",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006824",
+      "sourceProductCode": "9300000006824",
+      "verifiedAt": "2026-11-21",
+      "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
+      "allergens": [],
+      "additiveWatch": [],
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/08/[9300000006824]_20260813103508000.jpg",
+      "nutrients": {
+        "calories": 55,
+        "carb": 14,
+        "sugar": 7,
+        "protein": 0,
+        "fat": 0,
+        "saturatedFat": 0,
+        "transFat": 0,
+        "sodium": 5,
+        "fiber": 0,
+        "leucine": 0,
+        "caffeine": 0
+      }
+    },
+    {
+      "id": "starbucks-버터-카라멜-샌드-쿠키-9300000006877",
+      "brand": "스타벅스",
+      "productName": "버터 카라멜 샌드 쿠키",
+      "aliases": [
+        "스타벅스 버터 카라멜 샌드 쿠키",
+        "버터카라멜샌드쿠키"
+      ],
+      "category": "스타벅스/푸드/스낵 & 미니 디저트",
+      "servingSize": "1회 제공량 기준",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "스타벅스 공식 푸드 영양정보",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006877",
+      "sourceProductCode": "9300000006877",
+      "verifiedAt": "2026-11-21",
+      "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/09/[9300000006877]_20260923091736343.jpg",
+      "nutrients": {
+        "calories": 194,
+        "carb": 24,
+        "sugar": 11,
+        "protein": 2,
+        "fat": 10,
+        "saturatedFat": 6,
+        "transFat": 0,
+        "sodium": 38,
+        "fiber": 0,
+        "leucine": 0,
+        "caffeine": 0
+      }
+    },
+    {
+      "id": "starbucks-베이스볼-팝콘-프레첼-9300000006466",
+      "brand": "스타벅스",
+      "productName": "베이스볼 팝콘&프레첼",
+      "aliases": [
+        "스타벅스 베이스볼 팝콘&프레첼",
+        "베이스볼팝콘&프레첼"
+      ],
+      "category": "스타벅스/푸드/스낵 & 미니 디저트",
+      "servingSize": "1회 제공량 기준",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "스타벅스 공식 푸드 영양정보",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006466",
+      "sourceProductCode": "9300000006466",
+      "verifiedAt": "2026-11-21",
+      "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/04/[9300000006466]_20260415083814229.jpg",
+      "nutrients": {
+        "calories": 540,
+        "carb": 61,
+        "sugar": 13,
+        "protein": 6,
+        "fat": 30,
+        "saturatedFat": 12,
+        "transFat": 0,
+        "sodium": 410,
+        "fiber": 0,
+        "leucine": 0,
+        "caffeine": 0
+      }
+    },
+    {
+      "id": "starbucks-별별꾸러미-9900000001764",
+      "brand": "스타벅스",
+      "productName": "별별꾸러미",
+      "aliases": [
+        "스타벅스 별별꾸러미"
+      ],
+      "category": "스타벅스/푸드/스낵 & 미니 디저트",
+      "servingSize": "1회 제공량 기준",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "스타벅스 공식 푸드 영양정보",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9900000001764",
+      "sourceProductCode": "9900000001764",
+      "verifiedAt": "2026-11-21",
+      "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
+      "allergens": [],
+      "additiveWatch": [],
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/07/[9900000001764]_20260713125111525.jpg",
+      "nutrients": {
+        "calories": 0,
+        "carb": 0,
+        "sugar": 0,
+        "protein": 0,
+        "fat": 0,
+        "saturatedFat": 0,
+        "transFat": 0,
+        "sodium": 0,
+        "fiber": 0,
+        "leucine": 0,
+        "caffeine": 0
+      }
+    },
+    {
+      "id": "starbucks-오도독-하루-넛-블루베리-9300000006823",
+      "brand": "스타벅스",
+      "productName": "오도독 하루 넛&블루베리",
+      "aliases": [
+        "스타벅스 오도독 하루 넛&블루베리",
+        "오도독하루넛&블루베리"
+      ],
+      "category": "스타벅스/푸드/스낵 & 미니 디저트",
+      "servingSize": "1회 제공량 기준",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "스타벅스 공식 푸드 영양정보",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006823",
+      "sourceProductCode": "9300000006823",
+      "verifiedAt": "2026-11-21",
+      "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
+      "allergens": [],
+      "additiveWatch": [],
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/08/[9300000006823]_20260813102816704.jpg",
+      "nutrients": {
+        "calories": 145,
+        "carb": 9,
+        "sugar": 4,
+        "protein": 3,
+        "fat": 11,
+        "saturatedFat": 1.3,
+        "transFat": 0,
+        "sodium": 1.2,
+        "fiber": 0,
+        "leucine": 0,
+        "caffeine": 0
+      }
+    },
+    {
+      "id": "starbucks-우리쌀-전병-땅콩맛-9300000006322",
+      "brand": "스타벅스",
+      "productName": "우리쌀 전병 땅콩맛",
+      "aliases": [
+        "스타벅스 우리쌀 전병 땅콩맛",
+        "우리쌀전병땅콩맛"
+      ],
+      "category": "스타벅스/푸드/스낵 & 미니 디저트",
+      "servingSize": "1회 제공량 기준",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "스타벅스 공식 푸드 영양정보",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006322",
+      "sourceProductCode": "9300000006322",
+      "verifiedAt": "2026-11-21",
+      "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
+      "allergens": [],
+      "additiveWatch": [
+        "당류"
+      ],
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/08/[9300000006322]_20260824090032920.jpg",
+      "nutrients": {
+        "calories": 410,
+        "carb": 81,
+        "sugar": 39,
+        "protein": 6,
+        "fat": 7,
+        "saturatedFat": 3.2,
+        "transFat": 0,
+        "sodium": 180,
+        "fiber": 0,
+        "leucine": 0,
+        "caffeine": 0
+      }
+    },
+    {
+      "id": "starbucks-우리쌀-전병-파래김맛-9300000006321",
+      "brand": "스타벅스",
+      "productName": "우리쌀 전병 파래김맛",
+      "aliases": [
+        "스타벅스 우리쌀 전병 파래김맛",
+        "우리쌀전병파래김맛"
+      ],
+      "category": "스타벅스/푸드/스낵 & 미니 디저트",
+      "servingSize": "1회 제공량 기준",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "스타벅스 공식 푸드 영양정보",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006321",
+      "sourceProductCode": "9300000006321",
+      "verifiedAt": "2026-11-21",
+      "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
+      "allergens": [],
+      "additiveWatch": [
+        "당류"
+      ],
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/08/[9300000006321]_20260824085715152.jpg",
+      "nutrients": {
+        "calories": 415,
+        "carb": 82,
+        "sugar": 39,
+        "protein": 6,
+        "fat": 7,
+        "saturatedFat": 3,
+        "transFat": 0,
+        "sodium": 150,
+        "fiber": 0,
+        "leucine": 0,
+        "caffeine": 0
+      }
+    },
+    {
+      "id": "starbucks-쫀득-마롱-찰떡-9300000006883",
+      "brand": "스타벅스",
+      "productName": "쫀득 마롱 찰떡",
+      "aliases": [
+        "스타벅스 쫀득 마롱 찰떡",
+        "쫀득마롱찰떡"
+      ],
+      "category": "스타벅스/푸드/스낵 & 미니 디저트",
+      "servingSize": "1회 제공량 기준",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "스타벅스 공식 푸드 영양정보",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006883",
+      "sourceProductCode": "9300000006883",
+      "verifiedAt": "2026-11-21",
+      "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
+      "allergens": [],
+      "additiveWatch": [],
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/09/[9300000006883]_20260910143912053.jpg",
+      "nutrients": {
+        "calories": 180,
+        "carb": 30,
+        "sugar": 6,
+        "protein": 2,
+        "fat": 6,
+        "saturatedFat": 3,
+        "transFat": 0,
+        "sodium": 105,
+        "fiber": 0,
+        "leucine": 0,
+        "caffeine": 0
+      }
+    },
+    {
+      "id": "starbucks-치즈-감자-베이글칩-9300000006765",
+      "brand": "스타벅스",
+      "productName": "치즈 감자 베이글칩",
+      "aliases": [
+        "스타벅스 치즈 감자 베이글칩",
+        "치즈감자베이글칩"
+      ],
+      "category": "스타벅스/푸드/스낵 & 미니 디저트",
+      "servingSize": "1회 제공량 기준",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "스타벅스 공식 푸드 영양정보",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006765",
+      "sourceProductCode": "9300000006765",
+      "verifiedAt": "2026-11-21",
+      "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/07/[9300000006765]_20260715100949613.jpg",
+      "nutrients": {
+        "calories": 265,
+        "carb": 45,
+        "sugar": 14,
+        "protein": 6,
+        "fat": 7,
+        "saturatedFat": 5,
+        "transFat": 0,
+        "sodium": 370,
+        "fiber": 0,
+        "leucine": 0,
+        "caffeine": 0
+      }
+    },
+    {
+      "id": "starbucks-클로버-샌드-쿠키-9300000006028",
+      "brand": "스타벅스",
+      "productName": "클로버 샌드 쿠키",
+      "aliases": [
+        "스타벅스 클로버 샌드 쿠키",
+        "클로버샌드쿠키"
+      ],
+      "category": "스타벅스/푸드/스낵 & 미니 디저트",
+      "servingSize": "1회 제공량 기준",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "스타벅스 공식 푸드 영양정보",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006028",
+      "sourceProductCode": "9300000006028",
+      "verifiedAt": "2026-11-21",
+      "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
+      "allergens": [],
+      "additiveWatch": [
+        "당류",
+        "포화지방"
+      ],
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/10/[9300000006028]_20261007131732834.jpg",
+      "nutrients": {
+        "calories": 1440,
+        "carb": 128,
+        "sugar": 104,
+        "protein": 16,
+        "fat": 96,
+        "saturatedFat": 53,
+        "transFat": 0,
+        "sodium": 248,
+        "fiber": 0,
+        "leucine": 0,
+        "caffeine": 0
+      }
+    },
+    {
+      "id": "starbucks-클로버-틴-초콜릿-9300000006881",
+      "brand": "스타벅스",
+      "productName": "클로버 틴 초콜릿",
+      "aliases": [
+        "스타벅스 클로버 틴 초콜릿",
+        "클로버틴초콜릿"
+      ],
+      "category": "스타벅스/푸드/스낵 & 미니 디저트",
+      "servingSize": "1회 제공량 기준",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "스타벅스 공식 푸드 영양정보",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006881",
+      "sourceProductCode": "9300000006881",
+      "verifiedAt": "2026-11-21",
+      "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
+      "allergens": [],
+      "additiveWatch": [
+        "당류",
+        "포화지방"
+      ],
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/10/[9300000006881]_20261007132126024.jpg",
+      "nutrients": {
+        "calories": 247,
+        "carb": 25,
+        "sugar": 24,
+        "protein": 3,
+        "fat": 15,
+        "saturatedFat": 7,
+        "transFat": 0,
+        "sodium": 40,
+        "fiber": 0,
+        "leucine": 0,
+        "caffeine": 0
+      }
+    },
+    {
+      "id": "starbucks-풀문-잼-쿠키-세트-9300000006825",
+      "brand": "스타벅스",
+      "productName": "풀문 잼 쿠키 세트",
+      "aliases": [
+        "스타벅스 풀문 잼 쿠키 세트",
+        "풀문잼쿠키세트"
+      ],
+      "category": "스타벅스/푸드/스낵 & 미니 디저트",
+      "servingSize": "1회 제공량 기준",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "스타벅스 공식 푸드 영양정보",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006825",
+      "sourceProductCode": "9300000006825",
+      "verifiedAt": "2026-11-21",
+      "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
+      "allergens": [],
+      "additiveWatch": [
+        "당류",
+        "포화지방"
+      ],
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/08/[9300000006825]_20260813102221820.jpg",
+      "nutrients": {
+        "calories": 1221,
+        "carb": 144,
+        "sugar": 53,
+        "protein": 15,
+        "fat": 65,
+        "saturatedFat": 35,
+        "transFat": 0,
+        "sodium": 310,
+        "fiber": 0,
+        "leucine": 0,
+        "caffeine": 0
+      }
+    },
+    {
+      "id": "starbucks-핑거-초콜릿-파우치-세트-9300000006882",
+      "brand": "스타벅스",
+      "productName": "핑거 초콜릿 파우치 세트",
+      "aliases": [
+        "스타벅스 핑거 초콜릿 파우치 세트",
+        "핑거초콜릿파우치세트"
+      ],
+      "category": "스타벅스/푸드/스낵 & 미니 디저트",
+      "servingSize": "1회 제공량 기준",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "스타벅스 공식 푸드 영양정보",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006882",
+      "sourceProductCode": "9300000006882",
+      "verifiedAt": "2026-11-21",
+      "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
+      "allergens": [],
+      "additiveWatch": [
+        "당류",
+        "포화지방"
+      ],
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/10/[9300000006882]_20261007132246014.jpg",
+      "nutrients": {
+        "calories": 1240,
+        "carb": 134,
+        "sugar": 62,
+        "protein": 13.4,
+        "fat": 72,
+        "saturatedFat": 42,
+        "transFat": 0,
+        "sodium": 230,
+        "fiber": 0,
+        "leucine": 0,
+        "caffeine": 0
+      }
+    },
+    {
+      "id": "starbucks-골든-펌킨-크림-치즈-케이크-9300000006871",
+      "brand": "스타벅스",
+      "productName": "골든 펌킨 크림 치즈 케이크",
+      "aliases": [
+        "스타벅스 골든 펌킨 크림 치즈 케이크",
+        "골든펌킨크림치즈케이크"
+      ],
+      "category": "스타벅스/푸드/케이크",
+      "servingSize": "1회 제공량 기준",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "스타벅스 공식 푸드 영양정보",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006871",
+      "sourceProductCode": "9300000006871",
+      "verifiedAt": "2026-11-21",
+      "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
+      "allergens": [],
+      "additiveWatch": [
+        "당류",
+        "포화지방"
+      ],
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/09/[9300000006871]_20260910143631424.jpg",
+      "nutrients": {
+        "calories": 495,
+        "carb": 40,
+        "sugar": 39,
+        "protein": 5,
+        "fat": 35,
+        "saturatedFat": 19,
+        "transFat": 0,
+        "sodium": 388,
+        "fiber": 0,
+        "leucine": 0,
+        "caffeine": 0
+      }
+    },
+    {
+      "id": "starbucks-더-멜론-오브-샤인-케이크-9300000006869",
+      "brand": "스타벅스",
+      "productName": "더 멜론 오브 샤인 케이크",
+      "aliases": [
+        "스타벅스 더 멜론 오브 샤인 케이크",
+        "더멜론오브샤인케이크"
+      ],
+      "category": "스타벅스/푸드/케이크",
+      "servingSize": "1회 제공량 기준",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "스타벅스 공식 푸드 영양정보",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006869",
+      "sourceProductCode": "9300000006869",
+      "verifiedAt": "2026-11-21",
+      "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
+      "allergens": [],
+      "additiveWatch": [
+        "당류",
+        "포화지방"
+      ],
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/08/[9300000006869]_20260825095237251.jpg",
+      "nutrients": {
+        "calories": 810,
+        "carb": 75,
+        "sugar": 74,
+        "protein": 6,
+        "fat": 54,
+        "saturatedFat": 30,
+        "transFat": 0,
+        "sodium": 265,
+        "fiber": 0,
+        "leucine": 0,
+        "caffeine": 0
+      }
+    },
+    {
+      "id": "starbucks-마롱-몽블랑-치즈-케이크-9300000006186",
+      "brand": "스타벅스",
+      "productName": "마롱 몽블랑 치즈 케이크",
+      "aliases": [
+        "스타벅스 마롱 몽블랑 치즈 케이크",
+        "마롱몽블랑치즈케이크"
+      ],
+      "category": "스타벅스/푸드/케이크",
+      "servingSize": "1회 제공량 기준",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "스타벅스 공식 푸드 영양정보",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006186",
+      "sourceProductCode": "9300000006186",
+      "verifiedAt": "2026-11-21",
+      "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
+      "allergens": [],
+      "additiveWatch": [
+        "당류",
+        "포화지방"
+      ],
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/09/[9300000006186]_20260928095207564.jpg",
+      "nutrients": {
+        "calories": 526,
+        "carb": 30,
+        "sugar": 28,
+        "protein": 7,
+        "fat": 42,
+        "saturatedFat": 23,
+        "transFat": 0,
+        "sodium": 231,
+        "fiber": 0,
+        "leucine": 0,
+        "caffeine": 0
+      }
+    },
+    {
+      "id": "starbucks-모찌-품은-바스크-치즈-케이크-9300000006889",
+      "brand": "스타벅스",
+      "productName": "모찌 품은 바스크 치즈 케이크",
+      "aliases": [
+        "스타벅스 모찌 품은 바스크 치즈 케이크",
+        "모찌품은바스크치즈케이크"
+      ],
+      "category": "스타벅스/푸드/케이크",
+      "servingSize": "1회 제공량 기준",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "스타벅스 공식 푸드 영양정보",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006889",
+      "sourceProductCode": "9300000006889",
+      "verifiedAt": "2026-11-21",
+      "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
+      "allergens": [],
+      "additiveWatch": [
+        "당류",
+        "포화지방"
+      ],
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/09/[9300000006889]_20260909162756087.jpg",
+      "nutrients": {
+        "calories": 339,
+        "carb": 38,
+        "sugar": 36,
+        "protein": 4,
+        "fat": 19,
+        "saturatedFat": 13,
+        "transFat": 0,
+        "sodium": 363,
+        "fiber": 0,
+        "leucine": 0,
+        "caffeine": 0
+      }
+    },
+    {
+      "id": "starbucks-바나나-푸딩-케이크-9300000006873",
+      "brand": "스타벅스",
+      "productName": "바나나 푸딩 케이크",
+      "aliases": [
+        "스타벅스 바나나 푸딩 케이크",
+        "바나나푸딩케이크"
+      ],
+      "category": "스타벅스/푸드/케이크",
+      "servingSize": "1회 제공량 기준",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "스타벅스 공식 푸드 영양정보",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006873",
+      "sourceProductCode": "9300000006873",
+      "verifiedAt": "2026-11-21",
+      "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
+      "allergens": [],
+      "additiveWatch": [
+        "당류",
+        "포화지방"
+      ],
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/08/[9300000006873]_20260805083656256.jpg",
+      "nutrients": {
+        "calories": 348,
+        "carb": 38,
+        "sugar": 36,
+        "protein": 4,
+        "fat": 20,
+        "saturatedFat": 11,
+        "transFat": 0,
+        "sodium": 192,
+        "fiber": 0,
+        "leucine": 0,
+        "caffeine": 0
+      }
+    },
+    {
+      "id": "starbucks-보늬밤-몽블랑-치즈-케이크-9300000006891",
+      "brand": "스타벅스",
+      "productName": "보늬밤 몽블랑 치즈 케이크",
+      "aliases": [
+        "스타벅스 보늬밤 몽블랑 치즈 케이크",
+        "보늬밤몽블랑치즈케이크"
+      ],
+      "category": "스타벅스/푸드/케이크",
+      "servingSize": "1회 제공량 기준",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "스타벅스 공식 푸드 영양정보",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006891",
+      "sourceProductCode": "9300000006891",
+      "verifiedAt": "2026-11-21",
+      "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
+      "allergens": [],
+      "additiveWatch": [
+        "당류",
+        "포화지방"
+      ],
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/09/[9300000006891]_20260923141831744.jpg",
+      "nutrients": {
+        "calories": 337,
+        "carb": 24,
+        "sugar": 22,
+        "protein": 4,
+        "fat": 25,
+        "saturatedFat": 16,
+        "transFat": 0,
+        "sodium": 225,
+        "fiber": 0,
+        "leucine": 0,
+        "caffeine": 0
+      }
+    },
+    {
+      "id": "starbucks-브륄레-쿠키-치즈케이크-9300000006822",
+      "brand": "스타벅스",
+      "productName": "브륄레 쿠키 치즈케이크",
+      "aliases": [
+        "스타벅스 브륄레 쿠키 치즈케이크",
+        "브륄레쿠키치즈케이크"
+      ],
+      "category": "스타벅스/푸드/케이크",
+      "servingSize": "1회 제공량 기준",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "스타벅스 공식 푸드 영양정보",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006822",
+      "sourceProductCode": "9300000006822",
+      "verifiedAt": "2026-11-21",
+      "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
+      "allergens": [],
+      "additiveWatch": [
+        "당류",
+        "나트륨",
+        "포화지방"
+      ],
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/08/[9300000006822]_20260825095357293.jpg",
+      "nutrients": {
+        "calories": 1400,
+        "carb": 103,
+        "sugar": 102,
+        "protein": 13,
+        "fat": 104,
+        "saturatedFat": 58,
+        "transFat": 0,
+        "sodium": 1100,
+        "fiber": 0,
+        "leucine": 0,
+        "caffeine": 0
+      }
+    },
+    {
+      "id": "starbucks-블랙-글레이즈드-부생카-9300000006870",
+      "brand": "스타벅스",
+      "productName": "블랙 글레이즈드 부생카",
+      "aliases": [
+        "스타벅스 블랙 글레이즈드 부생카",
+        "블랙글레이즈드부생카"
+      ],
+      "category": "스타벅스/푸드/케이크",
+      "servingSize": "1회 제공량 기준",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "스타벅스 공식 푸드 영양정보",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006870",
+      "sourceProductCode": "9300000006870",
+      "verifiedAt": "2026-11-21",
+      "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
+      "allergens": [],
+      "additiveWatch": [
+        "당류",
+        "포화지방"
+      ],
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/09/[9300000006870]_20260928100853538.jpg",
+      "nutrients": {
+        "calories": 614,
+        "carb": 60,
+        "sugar": 59,
+        "protein": 8,
+        "fat": 38,
+        "saturatedFat": 30,
+        "transFat": 0,
+        "sodium": 401,
+        "fiber": 0,
+        "leucine": 0,
+        "caffeine": 0
+      }
+    },
+    {
+      "id": "starbucks-얼-그레이-카라멜-넛츠-케이크-9300000006817",
+      "brand": "스타벅스",
+      "productName": "얼 그레이 카라멜 넛츠 케이크",
+      "aliases": [
+        "스타벅스 얼 그레이 카라멜 넛츠 케이크",
+        "얼그레이카라멜넛츠케이크"
+      ],
+      "category": "스타벅스/푸드/케이크",
+      "servingSize": "1회 제공량 기준",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "스타벅스 공식 푸드 영양정보",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006817",
+      "sourceProductCode": "9300000006817",
+      "verifiedAt": "2026-11-21",
+      "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
+      "allergens": [],
+      "additiveWatch": [
+        "당류",
+        "포화지방"
+      ],
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/09/[9300000006817]_20260928095016062.jpg",
+      "nutrients": {
+        "calories": 631,
+        "carb": 46,
+        "sugar": 45,
+        "protein": 6,
+        "fat": 47,
+        "saturatedFat": 24,
+        "transFat": 0,
+        "sodium": 137,
+        "fiber": 0,
+        "leucine": 0,
+        "caffeine": 0
+      }
+    },
+    {
+      "id": "starbucks-티라미수-크레이프-케이크-9300000006880",
+      "brand": "스타벅스",
+      "productName": "티라미수 크레이프 케이크",
+      "aliases": [
+        "스타벅스 티라미수 크레이프 케이크",
+        "티라미수크레이프케이크"
+      ],
+      "category": "스타벅스/푸드/케이크",
+      "servingSize": "1회 제공량 기준",
+      "sourceType": "official_menu_page",
+      "sourceLabel": "스타벅스 공식 푸드 영양정보",
+      "sourceUrl": "https://www.starbucks.co.kr/menu/food_view.do?product_cd=9300000006880",
+      "sourceProductCode": "9300000006880",
+      "verifiedAt": "2026-11-21",
+      "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 푸드는 공식 영양정보 표의 1회 제공량 기준값을 적용합니다.",
+      "allergens": [],
+      "additiveWatch": [
+        "당류",
+        "포화지방"
+      ],
+      "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2026/08/[9300000006880]_20260818090612678.jpg",
+      "nutrients": {
+        "calories": 313,
+        "carb": 27,
+        "sugar": 25,
+        "protein": 4,
+        "fat": 21,
+        "saturatedFat": 10,
+        "transFat": 0,
+        "sodium": 130,
+        "fiber": 0,
+        "leucine": 0,
+        "caffeine": 0
+      }
     }
   ]
 }
