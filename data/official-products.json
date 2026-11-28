@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-14",
+  "updatedAt": "2026-11-28",
   "updatePolicy": {
     "reviewCycle": "quarterly",
     "sourcePriority": [
@@ -29068,6 +29068,4994 @@
         "caffeine": null
       },
       "reviewNote": "자담치킨 공식 홈페이지 \"제품 영양정보\" 표(이미지)를 Claude가 화면 캡처로 옮겨 적었습니다(AI가 이미지에서 읽음 — 원본 대조 필요). 표에 중량이 직접 적혀 있어 그 중량 기준 확정값입니다."
+    },
+    {
+      "id": "baskinrobbins-805c93bd7df8",
+      "brand": "배스킨라빈스",
+      "productName": "도우와줘요 호빵맨",
+      "aliases": [
+        "배스킨라빈스 도우와줘요 호빵맨",
+        "도우와줘요 호빵맨",
+        "도우와줘요호빵맨"
+      ],
+      "category": "배스킨라빈스/아이스크림",
+      "servingSize": "1회 제공량 (115g)",
+      "servingGram": 115,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view.php?seq=1192",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유",
+        "계란",
+        "대두",
+        "밀"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 253,
+        "carb": null,
+        "sugar": null,
+        "protein": 4,
+        "fat": null,
+        "saturatedFat": 8,
+        "transFat": null,
+        "sodium": 89,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-97ceb3ec77d9",
+      "brand": "배스킨라빈스",
+      "productName": "초코볼 시리얼 크런틴",
+      "aliases": [
+        "배스킨라빈스 초코볼 시리얼 크런틴",
+        "초코볼 시리얼 크런틴",
+        "초코볼시리얼크런틴"
+      ],
+      "category": "배스킨라빈스/아이스크림",
+      "servingSize": "1회 제공량 (115g)",
+      "servingGram": 115,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view.php?seq=1199",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유",
+        "밀",
+        "대두"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 301,
+        "carb": null,
+        "sugar": null,
+        "protein": 5,
+        "fat": null,
+        "saturatedFat": 8,
+        "transFat": null,
+        "sodium": 125,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-5d16e7840af7",
+      "brand": "배스킨라빈스",
+      "productName": "잘 될거예엿",
+      "aliases": [
+        "배스킨라빈스 잘 될거예엿",
+        "잘 될거예엿",
+        "잘될거예엿"
+      ],
+      "category": "배스킨라빈스/아이스크림",
+      "servingSize": "1회 제공량 (115g)",
+      "servingGram": 115,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view.php?seq=1197",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유",
+        "대두"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 272,
+        "carb": null,
+        "sugar": null,
+        "protein": 4,
+        "fat": null,
+        "saturatedFat": 7,
+        "transFat": null,
+        "sodium": 65,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-b1e785447df8",
+      "brand": "배스킨라빈스",
+      "productName": "레몬베리 코튼캔디",
+      "aliases": [
+        "배스킨라빈스 레몬베리 코튼캔디",
+        "레몬베리 코튼캔디",
+        "레몬베리코튼캔디"
+      ],
+      "category": "배스킨라빈스/아이스크림",
+      "servingSize": "1회 제공량 (115g)",
+      "servingGram": 115,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view.php?seq=1196",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유",
+        "계란",
+        "밀",
+        "대두",
+        "쇠고기"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 228,
+        "carb": null,
+        "sugar": null,
+        "protein": 3,
+        "fat": null,
+        "saturatedFat": 5,
+        "transFat": null,
+        "sodium": 66,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-9848399db09a",
+      "brand": "배스킨라빈스",
+      "productName": "루나 치즈 케이크",
+      "aliases": [
+        "배스킨라빈스 루나 치즈 케이크",
+        "루나 치즈 케이크",
+        "루나치즈케이크"
+      ],
+      "category": "배스킨라빈스/아이스크림",
+      "servingSize": "1회 제공량 (115g)",
+      "servingGram": 115,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view.php?seq=1189",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유",
+        "밀",
+        "대두",
+        "계란",
+        "땅콩"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 233,
+        "carb": null,
+        "sugar": null,
+        "protein": 8,
+        "fat": null,
+        "saturatedFat": 4.9,
+        "transFat": null,
+        "sodium": 93,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-c6c4950f6402",
+      "brand": "배스킨라빈스",
+      "productName": "바나나 스플릿",
+      "aliases": [
+        "배스킨라빈스 바나나 스플릿",
+        "바나나 스플릿",
+        "바나나스플릿"
+      ],
+      "category": "배스킨라빈스/아이스크림",
+      "servingSize": "1회 제공량 (115g)",
+      "servingGram": 115,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view.php?seq=1180",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유",
+        "대두"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 288,
+        "carb": null,
+        "sugar": null,
+        "protein": 4,
+        "fat": null,
+        "saturatedFat": 7,
+        "transFat": null,
+        "sodium": 73,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-aa0388cf7448",
+      "brand": "배스킨라빈스",
+      "productName": "아이엠, 샘",
+      "aliases": [
+        "배스킨라빈스 아이엠, 샘",
+        "아이엠, 샘",
+        "아이엠,샘"
+      ],
+      "category": "배스킨라빈스/아이스크림",
+      "servingSize": "1회 제공량 (115g)",
+      "servingGram": 115,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view.php?seq=1178",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "계란",
+        "우유",
+        "밀",
+        "대두"
+      ],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 332,
+        "carb": null,
+        "sugar": null,
+        "protein": 4,
+        "fat": null,
+        "saturatedFat": 12,
+        "transFat": null,
+        "sodium": 92,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-7ec19ddbef76",
+      "brand": "배스킨라빈스",
+      "productName": "말차에 바나나",
+      "aliases": [
+        "배스킨라빈스 말차에 바나나",
+        "말차에 바나나",
+        "말차에바나나"
+      ],
+      "category": "배스킨라빈스/아이스크림",
+      "servingSize": "1회 제공량 (115g)",
+      "servingGram": 115,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view.php?seq=1166",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "밀",
+        "우유",
+        "대두"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 230,
+        "carb": null,
+        "sugar": null,
+        "protein": 5,
+        "fat": null,
+        "saturatedFat": 6,
+        "transFat": null,
+        "sodium": 83,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-5c9d995a81d7",
+      "brand": "배스킨라빈스",
+      "productName": "프랄린 앤 크림",
+      "aliases": [
+        "배스킨라빈스 프랄린 앤 크림",
+        "프랄린 앤 크림",
+        "프랄린앤크림"
+      ],
+      "category": "배스킨라빈스/아이스크림",
+      "servingSize": "1회 제공량 (115g)",
+      "servingGram": 115,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view.php?seq=1179",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 294,
+        "carb": null,
+        "sugar": null,
+        "protein": 5,
+        "fat": null,
+        "saturatedFat": 8,
+        "transFat": null,
+        "sodium": 161,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-4ae77e1bd9bc",
+      "brand": "배스킨라빈스",
+      "productName": "골드 메달 리본",
+      "aliases": [
+        "배스킨라빈스 골드 메달 리본",
+        "골드 메달 리본",
+        "골드메달리본"
+      ],
+      "category": "배스킨라빈스/아이스크림",
+      "servingSize": "1회 제공량 (115g)",
+      "servingGram": 115,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view.php?seq=1156",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 269,
+        "carb": null,
+        "sugar": null,
+        "protein": 4,
+        "fat": null,
+        "saturatedFat": 8,
+        "transFat": null,
+        "sodium": 104,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-505d906ccd31",
+      "brand": "배스킨라빈스",
+      "productName": "팥있는 말차당",
+      "aliases": [
+        "배스킨라빈스 팥있는 말차당",
+        "팥있는 말차당",
+        "팥있는말차당"
+      ],
+      "category": "배스킨라빈스/아이스크림",
+      "servingSize": "1회 제공량 (115g)",
+      "servingGram": 115,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view.php?seq=1149",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유",
+        "대두",
+        "밀"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 242,
+        "carb": null,
+        "sugar": null,
+        "protein": 4,
+        "fat": null,
+        "saturatedFat": 6,
+        "transFat": null,
+        "sodium": 74,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-e2b9030d76a6",
+      "brand": "배스킨라빈스",
+      "productName": "고무고무 블루베리 마카롱",
+      "aliases": [
+        "배스킨라빈스 고무고무 블루베리 마카롱",
+        "고무고무 블루베리 마카롱",
+        "고무고무블루베리마카롱"
+      ],
+      "category": "배스킨라빈스/아이스크림",
+      "servingSize": "1회 제공량 (115g)",
+      "servingGram": 115,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view.php?seq=1075",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유",
+        "계란"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 243,
+        "carb": null,
+        "sugar": null,
+        "protein": 3,
+        "fat": null,
+        "saturatedFat": 6,
+        "transFat": null,
+        "sodium": 67,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-5a56edd6482d",
+      "brand": "배스킨라빈스",
+      "productName": "망고 탱고",
+      "aliases": [
+        "배스킨라빈스 망고 탱고",
+        "망고 탱고",
+        "망고탱고"
+      ],
+      "category": "배스킨라빈스/아이스크림",
+      "servingSize": "1회 제공량 (115g)",
+      "servingGram": 115,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view.php?seq=1125",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 238,
+        "carb": null,
+        "sugar": null,
+        "protein": 3,
+        "fat": null,
+        "saturatedFat": 6,
+        "transFat": null,
+        "sodium": 37,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-dcd85cf866a8",
+      "brand": "배스킨라빈스",
+      "productName": "우디의 후르츠 어드벤처",
+      "aliases": [
+        "배스킨라빈스 우디의 후르츠 어드벤처",
+        "우디의 후르츠 어드벤처",
+        "우디의후르츠어드벤처"
+      ],
+      "category": "배스킨라빈스/아이스크림",
+      "servingSize": "1회 제공량 (115g)",
+      "servingGram": 115,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view.php?seq=1037",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유",
+        "복숭아"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 162,
+        "carb": null,
+        "sugar": null,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0.4,
+        "transFat": null,
+        "sodium": 11,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-a9bc2f5a81ea",
+      "brand": "배스킨라빈스",
+      "productName": "두바이에서 온 엄마는 외계인",
+      "aliases": [
+        "배스킨라빈스 두바이에서 온 엄마는 외계인",
+        "두바이에서 온 엄마는 외계인",
+        "두바이에서온엄마는외계인"
+      ],
+      "category": "배스킨라빈스/아이스크림",
+      "servingSize": "1회 제공량 (115g)",
+      "servingGram": 115,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view.php?seq=933",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유",
+        "밀",
+        "대두"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 295,
+        "carb": null,
+        "sugar": null,
+        "protein": 5,
+        "fat": null,
+        "saturatedFat": 8,
+        "transFat": null,
+        "sodium": 153,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-664289eafe9e",
+      "brand": "배스킨라빈스",
+      "productName": "레인보우 샤베트",
+      "aliases": [
+        "배스킨라빈스 레인보우 샤베트",
+        "레인보우 샤베트",
+        "레인보우샤베트"
+      ],
+      "category": "배스킨라빈스/아이스크림",
+      "servingSize": "1회 제공량 (115g)",
+      "servingGram": 115,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view.php?seq=1070",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 163,
+        "carb": null,
+        "sugar": null,
+        "protein": 1,
+        "fat": null,
+        "saturatedFat": 1.2,
+        "transFat": null,
+        "sodium": 15,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-3c1b5f3241e5",
+      "brand": "배스킨라빈스",
+      "productName": "그린티",
+      "aliases": [
+        "배스킨라빈스 그린티",
+        "그린티"
+      ],
+      "category": "배스킨라빈스/아이스크림",
+      "servingSize": "1회 제공량 (115g)",
+      "servingGram": 115,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view.php?seq=1060",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 250,
+        "carb": null,
+        "sugar": null,
+        "protein": 4,
+        "fat": null,
+        "saturatedFat": 8,
+        "transFat": null,
+        "sodium": 73,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-369840ae1b2b",
+      "brand": "배스킨라빈스",
+      "productName": "메롱 멜론",
+      "aliases": [
+        "배스킨라빈스 메롱 멜론",
+        "메롱 멜론",
+        "메롱멜론"
+      ],
+      "category": "배스킨라빈스/아이스크림",
+      "servingSize": "1회 제공량 (115g)",
+      "servingGram": 115,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view.php?seq=1051",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 218,
+        "carb": null,
+        "sugar": null,
+        "protein": 2,
+        "fat": null,
+        "saturatedFat": 3.8,
+        "transFat": null,
+        "sodium": 41,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-8b5fc715d200",
+      "brand": "배스킨라빈스",
+      "productName": "애플민트",
+      "aliases": [
+        "배스킨라빈스 애플민트",
+        "애플민트"
+      ],
+      "category": "배스킨라빈스/아이스크림",
+      "servingSize": "1회 제공량 (115g)",
+      "servingGram": 115,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view.php?seq=996",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 187,
+        "carb": null,
+        "sugar": null,
+        "protein": 6,
+        "fat": null,
+        "saturatedFat": 3.1,
+        "transFat": null,
+        "sodium": 29,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-94befbecdd93",
+      "brand": "배스킨라빈스",
+      "productName": "블루베리 요거트",
+      "aliases": [
+        "배스킨라빈스 블루베리 요거트",
+        "블루베리 요거트",
+        "블루베리요거트"
+      ],
+      "category": "배스킨라빈스/아이스크림",
+      "servingSize": "1회 제공량 (115g)",
+      "servingGram": 115,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view.php?seq=966",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유",
+        "대두"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 210,
+        "carb": null,
+        "sugar": null,
+        "protein": 5,
+        "fat": null,
+        "saturatedFat": 3.6,
+        "transFat": null,
+        "sodium": 56,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-63dfa8ee3bae",
+      "brand": "배스킨라빈스",
+      "productName": "(Lessly Edition) 바 베 바",
+      "aliases": [
+        "배스킨라빈스 (Lessly Edition) 바 베 바",
+        "(Lessly Edition) 바 베 바",
+        "(LesslyEdition)바베바"
+      ],
+      "category": "배스킨라빈스/아이스크림",
+      "servingSize": "1회 제공량 (115g)",
+      "servingGram": 115,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view.php?seq=944",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 135,
+        "carb": null,
+        "sugar": null,
+        "protein": 3,
+        "fat": null,
+        "saturatedFat": 1.7,
+        "transFat": null,
+        "sodium": 45,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-deda73bab43e",
+      "brand": "배스킨라빈스",
+      "productName": "(Lessly Edition) 엄마는 외계인",
+      "aliases": [
+        "배스킨라빈스 (Lessly Edition) 엄마는 외계인",
+        "(Lessly Edition) 엄마는 외계인",
+        "(LesslyEdition)엄마는외계인"
+      ],
+      "category": "배스킨라빈스/아이스크림",
+      "servingSize": "1회 제공량 (115g)",
+      "servingGram": 115,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view.php?seq=777",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유",
+        "밀",
+        "대두"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 156,
+        "carb": null,
+        "sugar": null,
+        "protein": 5,
+        "fat": null,
+        "saturatedFat": 3.8,
+        "transFat": null,
+        "sodium": 57,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-7ab72bc461e3",
+      "brand": "배스킨라빈스",
+      "productName": "사랑에 빠진 딸기",
+      "aliases": [
+        "배스킨라빈스 사랑에 빠진 딸기",
+        "사랑에 빠진 딸기",
+        "사랑에빠진딸기"
+      ],
+      "category": "배스킨라빈스/아이스크림",
+      "servingSize": "1회 제공량 (115g)",
+      "servingGram": 115,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view.php?seq=786",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유",
+        "계란",
+        "대두",
+        "땅콩",
+        "밀"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 292,
+        "carb": null,
+        "sugar": null,
+        "protein": 4,
+        "fat": null,
+        "saturatedFat": 8,
+        "transFat": null,
+        "sodium": 103,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-7c4db8f9a52c",
+      "brand": "배스킨라빈스",
+      "productName": "윈터 민트 초콜릿 칩",
+      "aliases": [
+        "배스킨라빈스 윈터 민트 초콜릿 칩",
+        "윈터 민트 초콜릿 칩",
+        "윈터민트초콜릿칩"
+      ],
+      "category": "배스킨라빈스/아이스크림",
+      "servingSize": "1회 제공량 (115g)",
+      "servingGram": 115,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view.php?seq=691",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유",
+        "대두"
+      ],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 288,
+        "carb": null,
+        "sugar": null,
+        "protein": 4,
+        "fat": null,
+        "saturatedFat": 10,
+        "transFat": null,
+        "sodium": 67,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-7d6c9e6be2fb",
+      "brand": "배스킨라빈스",
+      "productName": "엄마는 외계인",
+      "aliases": [
+        "배스킨라빈스 엄마는 외계인",
+        "엄마는 외계인",
+        "엄마는외계인"
+      ],
+      "category": "배스킨라빈스/아이스크림",
+      "servingSize": "1회 제공량 (115g)",
+      "servingGram": 115,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view.php?seq=17",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유",
+        "대두",
+        "밀"
+      ],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 296,
+        "carb": null,
+        "sugar": null,
+        "protein": 5,
+        "fat": null,
+        "saturatedFat": 11,
+        "transFat": null,
+        "sodium": 124,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-11b8cb0b98b0",
+      "brand": "배스킨라빈스",
+      "productName": "민트 초콜릿 칩",
+      "aliases": [
+        "배스킨라빈스 민트 초콜릿 칩",
+        "민트 초콜릿 칩",
+        "민트초콜릿칩"
+      ],
+      "category": "배스킨라빈스/아이스크림",
+      "servingSize": "1회 제공량 (115g)",
+      "servingGram": 115,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view.php?seq=6",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유",
+        "대두"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 259,
+        "carb": null,
+        "sugar": null,
+        "protein": 4,
+        "fat": null,
+        "saturatedFat": 9,
+        "transFat": null,
+        "sodium": 81,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-acb6dfbfcb2e",
+      "brand": "배스킨라빈스",
+      "productName": "뉴욕 치즈케이크",
+      "aliases": [
+        "배스킨라빈스 뉴욕 치즈케이크",
+        "뉴욕 치즈케이크",
+        "뉴욕치즈케이크"
+      ],
+      "category": "배스킨라빈스/아이스크림",
+      "servingSize": "1회 제공량 (115g)",
+      "servingGram": 115,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view.php?seq=3",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유",
+        "대두",
+        "밀"
+      ],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 275,
+        "carb": null,
+        "sugar": null,
+        "protein": 4,
+        "fat": null,
+        "saturatedFat": 10,
+        "transFat": null,
+        "sodium": 105,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-b860573a9bb1",
+      "brand": "배스킨라빈스",
+      "productName": "체리쥬빌레",
+      "aliases": [
+        "배스킨라빈스 체리쥬빌레",
+        "체리쥬빌레"
+      ],
+      "category": "배스킨라빈스/아이스크림",
+      "servingSize": "1회 제공량 (115g)",
+      "servingGram": 115,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view.php?seq=24",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 239,
+        "carb": null,
+        "sugar": null,
+        "protein": 3,
+        "fat": null,
+        "saturatedFat": 7,
+        "transFat": null,
+        "sodium": 48,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-079ebb03f584",
+      "brand": "배스킨라빈스",
+      "productName": "슈팅스타",
+      "aliases": [
+        "배스킨라빈스 슈팅스타",
+        "슈팅스타"
+      ],
+      "category": "배스킨라빈스/아이스크림",
+      "servingSize": "1회 제공량 (115g)",
+      "servingGram": 115,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view.php?seq=15",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유",
+        "대두",
+        "밀"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 260,
+        "carb": null,
+        "sugar": null,
+        "protein": 3,
+        "fat": null,
+        "saturatedFat": 7,
+        "transFat": null,
+        "sodium": 65,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-2292c6c34db6",
+      "brand": "배스킨라빈스",
+      "productName": "오레오 쿠키 앤 크림",
+      "aliases": [
+        "배스킨라빈스 오레오 쿠키 앤 크림",
+        "오레오 쿠키 앤 크림",
+        "오레오쿠키앤크림"
+      ],
+      "category": "배스킨라빈스/아이스크림",
+      "servingSize": "1회 제공량 (115g)",
+      "servingGram": 115,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view.php?seq=19",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유",
+        "대두",
+        "밀"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 254,
+        "carb": null,
+        "sugar": null,
+        "protein": 4,
+        "fat": null,
+        "saturatedFat": 8,
+        "transFat": null,
+        "sodium": 92,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-42103dd8bf37",
+      "brand": "배스킨라빈스",
+      "productName": "베리베리 스트로베리",
+      "aliases": [
+        "배스킨라빈스 베리베리 스트로베리",
+        "베리베리 스트로베리",
+        "베리베리스트로베리"
+      ],
+      "category": "배스킨라빈스/아이스크림",
+      "servingSize": "1회 제공량 (115g)",
+      "servingGram": 115,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view.php?seq=12",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 228,
+        "carb": null,
+        "sugar": null,
+        "protein": 3,
+        "fat": null,
+        "saturatedFat": 7,
+        "transFat": null,
+        "sodium": 69,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-b7485c9e0037",
+      "brand": "배스킨라빈스",
+      "productName": "31요거트",
+      "aliases": [
+        "배스킨라빈스 31요거트",
+        "31요거트"
+      ],
+      "category": "배스킨라빈스/아이스크림",
+      "servingSize": "1회 제공량 (115g)",
+      "servingGram": 115,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view.php?seq=1",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유",
+        "대두"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 198,
+        "carb": null,
+        "sugar": null,
+        "protein": 5,
+        "fat": null,
+        "saturatedFat": 4,
+        "transFat": null,
+        "sodium": 67,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-21adac6da5aa",
+      "brand": "배스킨라빈스",
+      "productName": "바람과 함께 사라지다",
+      "aliases": [
+        "배스킨라빈스 바람과 함께 사라지다",
+        "바람과 함께 사라지다",
+        "바람과함께사라지다"
+      ],
+      "category": "배스킨라빈스/아이스크림",
+      "servingSize": "1회 제공량 (115g)",
+      "servingGram": 115,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view.php?seq=8",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유",
+        "계란",
+        "대두",
+        "밀"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 269,
+        "carb": null,
+        "sugar": null,
+        "protein": 4,
+        "fat": null,
+        "saturatedFat": 8,
+        "transFat": null,
+        "sodium": 95,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-7ad01d1426e4",
+      "brand": "배스킨라빈스",
+      "productName": "피스타치오 아몬드",
+      "aliases": [
+        "배스킨라빈스 피스타치오 아몬드",
+        "피스타치오 아몬드",
+        "피스타치오아몬드"
+      ],
+      "category": "배스킨라빈스/아이스크림",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view.php?seq=29",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": null,
+        "carb": null,
+        "sugar": null,
+        "protein": null,
+        "fat": null,
+        "saturatedFat": null,
+        "transFat": null,
+        "sodium": null,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-64326d93232a",
+      "brand": "배스킨라빈스",
+      "productName": "초콜릿",
+      "aliases": [
+        "배스킨라빈스 초콜릿",
+        "초콜릿"
+      ],
+      "category": "배스킨라빈스/아이스크림",
+      "servingSize": "1회 제공량 (115g)",
+      "servingGram": 115,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view.php?seq=27",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 274,
+        "carb": null,
+        "sugar": null,
+        "protein": 5,
+        "fat": null,
+        "saturatedFat": 8,
+        "transFat": null,
+        "sodium": 85,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-39300536195d",
+      "brand": "배스킨라빈스",
+      "productName": "자모카 아몬드 훠지",
+      "aliases": [
+        "배스킨라빈스 자모카 아몬드 훠지",
+        "자모카 아몬드 훠지",
+        "자모카아몬드훠지"
+      ],
+      "category": "배스킨라빈스/아이스크림",
+      "servingSize": "1회 제공량 (115g)",
+      "servingGram": 115,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view.php?seq=23",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 273,
+        "carb": null,
+        "sugar": null,
+        "protein": 5,
+        "fat": null,
+        "saturatedFat": 7,
+        "transFat": null,
+        "sodium": 82,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-eaa68df4ef74",
+      "brand": "배스킨라빈스",
+      "productName": "아몬드 봉봉",
+      "aliases": [
+        "배스킨라빈스 아몬드 봉봉",
+        "아몬드 봉봉",
+        "아몬드봉봉"
+      ],
+      "category": "배스킨라빈스/아이스크림",
+      "servingSize": "1회 제공량 (115g)",
+      "servingGram": 115,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view.php?seq=16",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유",
+        "대두"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 312,
+        "carb": null,
+        "sugar": null,
+        "protein": 5,
+        "fat": null,
+        "saturatedFat": 8,
+        "transFat": null,
+        "sodium": 94,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-5f24a10062ac",
+      "brand": "배스킨라빈스",
+      "productName": "바닐라",
+      "aliases": [
+        "배스킨라빈스 바닐라",
+        "바닐라"
+      ],
+      "category": "배스킨라빈스/아이스크림",
+      "servingSize": "1회 제공량 (115g)",
+      "servingGram": 115,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view.php?seq=7",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 246,
+        "carb": null,
+        "sugar": null,
+        "protein": 4,
+        "fat": null,
+        "saturatedFat": 8,
+        "transFat": null,
+        "sodium": 74,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-63747e7d3c59",
+      "brand": "배스킨라빈스",
+      "productName": "세균맨납작복숭아아이스티",
+      "aliases": [
+        "배스킨라빈스 세균맨납작복숭아아이스티",
+        "세균맨납작복숭아아이스티"
+      ],
+      "category": "배스킨라빈스/음료",
+      "servingSize": "1회 제공량 (460g)",
+      "servingGram": 460,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=98",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "복숭아"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 125,
+        "carb": null,
+        "sugar": null,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 0,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-176b58da64bf",
+      "brand": "배스킨라빈스",
+      "productName": "호빵맨납작복숭아아이스티",
+      "aliases": [
+        "배스킨라빈스 호빵맨납작복숭아아이스티",
+        "호빵맨납작복숭아아이스티"
+      ],
+      "category": "배스킨라빈스/음료",
+      "servingSize": "1회 제공량 (460g)",
+      "servingGram": 460,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=96",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "복숭아"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 125,
+        "carb": null,
+        "sugar": null,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 0,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-423955dc9297",
+      "brand": "배스킨라빈스",
+      "productName": "오레오 쉐이크(NEW)",
+      "aliases": [
+        "배스킨라빈스 오레오 쉐이크(NEW)",
+        "오레오 쉐이크(NEW)",
+        "오레오쉐이크(NEW)"
+      ],
+      "category": "배스킨라빈스/음료",
+      "servingSize": "1회 제공량 (320g)",
+      "servingGram": 320,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=95",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "밀",
+        "대두",
+        "우유"
+      ],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 640,
+        "carb": null,
+        "sugar": null,
+        "protein": 10,
+        "fat": null,
+        "saturatedFat": 20,
+        "transFat": null,
+        "sodium": 300,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-46c4330504e6",
+      "brand": "배스킨라빈스",
+      "productName": "믹솔로지 티 프로스티 (I_R)",
+      "aliases": [
+        "배스킨라빈스 믹솔로지 티 프로스티",
+        "믹솔로지 티 프로스티",
+        "믹솔로지티프로스티"
+      ],
+      "category": "배스킨라빈스/음료",
+      "servingSize": "1회 제공량 (300g)",
+      "servingGram": 300,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=92",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 160,
+        "carb": null,
+        "sugar": null,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 38,
+        "caffeine": 6
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다. 공식 값이 범위(예: \"38~39\")로 표기된 항목은 상한값을 저장했습니다. 상품명 뒤 괄호(I_R)는 같은 페이지에 이름이 겹치는 핫/아이스·사이즈 변형을 구분하기 위해 사이트 내부 코드를 그대로 붙인 것입니다(정확한 의미는 공식 사이트 상품 상세에서 직접 확인 필요)."
+    },
+    {
+      "id": "baskinrobbins-5fa88b2d3b41",
+      "brand": "배스킨라빈스",
+      "productName": "믹솔로지 티 프로스티 (I_L)",
+      "aliases": [
+        "배스킨라빈스 믹솔로지 티 프로스티",
+        "믹솔로지 티 프로스티",
+        "믹솔로지티프로스티"
+      ],
+      "category": "배스킨라빈스/음료",
+      "servingSize": "1회 제공량 (600g)",
+      "servingGram": 600,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=92",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 315,
+        "carb": null,
+        "sugar": null,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 77,
+        "caffeine": 12
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다. 공식 값이 범위(예: \"38~39\")로 표기된 항목은 상한값을 저장했습니다. 상품명 뒤 괄호(I_L)는 같은 페이지에 이름이 겹치는 핫/아이스·사이즈 변형을 구분하기 위해 사이트 내부 코드를 그대로 붙인 것입니다(정확한 의미는 공식 사이트 상품 상세에서 직접 확인 필요)."
+    },
+    {
+      "id": "baskinrobbins-da52df4a9e20",
+      "brand": "배스킨라빈스",
+      "productName": "감귤 캐모마일 티 프로스티",
+      "aliases": [
+        "배스킨라빈스 감귤 캐모마일 티 프로스티",
+        "감귤 캐모마일 티 프로스티",
+        "감귤캐모마일티프로스티"
+      ],
+      "category": "배스킨라빈스/음료",
+      "servingSize": "1회 제공량 (300g)",
+      "servingGram": 300,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=91",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 155,
+        "carb": null,
+        "sugar": null,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 20,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-1b79ae59396c",
+      "brand": "배스킨라빈스",
+      "productName": "감귤캐모마일티프로스티",
+      "aliases": [
+        "배스킨라빈스 감귤캐모마일티프로스티",
+        "감귤캐모마일티프로스티"
+      ],
+      "category": "배스킨라빈스/음료",
+      "servingSize": "1회 제공량 (600g)",
+      "servingGram": 600,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=91",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 310,
+        "carb": null,
+        "sugar": null,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 39,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-38cc840adb08",
+      "brand": "배스킨라빈스",
+      "productName": "배 자스민 티프로스티",
+      "aliases": [
+        "배스킨라빈스 배 자스민 티프로스티",
+        "배 자스민 티프로스티",
+        "배자스민티프로스티"
+      ],
+      "category": "배스킨라빈스/음료",
+      "servingSize": "1회 제공량 (300g)",
+      "servingGram": 300,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=90",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 160,
+        "carb": null,
+        "sugar": null,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 54,
+        "caffeine": 11
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-9329888554c2",
+      "brand": "배스킨라빈스",
+      "productName": "배 자스민 티 프로스티",
+      "aliases": [
+        "배스킨라빈스 배 자스민 티 프로스티",
+        "배 자스민 티 프로스티",
+        "배자스민티프로스티"
+      ],
+      "category": "배스킨라빈스/음료",
+      "servingSize": "1회 제공량 (600g)",
+      "servingGram": 600,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=90",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 320,
+        "carb": null,
+        "sugar": null,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 108,
+        "caffeine": 23
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-11a4fa03c8e4",
+      "brand": "배스킨라빈스",
+      "productName": "민트 초콜릿 칩 쉐이크",
+      "aliases": [
+        "배스킨라빈스 민트 초콜릿 칩 쉐이크",
+        "민트 초콜릿 칩 쉐이크",
+        "민트초콜릿칩쉐이크"
+      ],
+      "category": "배스킨라빈스/음료",
+      "servingSize": "1회 제공량 (320g)",
+      "servingGram": 320,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=89",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "밀",
+        "대두",
+        "우유"
+      ],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 655,
+        "carb": null,
+        "sugar": null,
+        "protein": 11,
+        "fat": null,
+        "saturatedFat": 24,
+        "transFat": null,
+        "sodium": 257,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-a1300d9e34d9",
+      "brand": "배스킨라빈스",
+      "productName": "크런치 쉐이크(마시멜로)",
+      "aliases": [
+        "배스킨라빈스 크런치 쉐이크(마시멜로)",
+        "크런치 쉐이크(마시멜로)",
+        "크런치쉐이크(마시멜로)"
+      ],
+      "category": "배스킨라빈스/음료",
+      "servingSize": "1회 제공량 (310g)",
+      "servingGram": 310,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=88",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "아이스크림",
+        ":",
+        "선택하신",
+        "아이스크림의",
+        "알레르기",
+        "유발성분을",
+        "확인해주세요.",
+        "아이스크림",
+        "외",
+        ":",
+        "대두",
+        "우유",
+        "돼지고기"
+      ],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 700,
+        "carb": null,
+        "sugar": null,
+        "protein": 12,
+        "fat": null,
+        "saturatedFat": 25,
+        "transFat": null,
+        "sodium": 226,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다. 공식 값이 범위(예: \"38~39\")로 표기된 항목은 상한값을 저장했습니다."
+    },
+    {
+      "id": "baskinrobbins-57648936f848",
+      "brand": "배스킨라빈스",
+      "productName": "크런치 쉐이크(씨리얼)",
+      "aliases": [
+        "배스킨라빈스 크런치 쉐이크(씨리얼)",
+        "크런치 쉐이크(씨리얼)",
+        "크런치쉐이크(씨리얼)"
+      ],
+      "category": "배스킨라빈스/음료",
+      "servingSize": "1회 제공량 (314g)",
+      "servingGram": 314,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=87",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "아이스크림",
+        ":",
+        "선택하신",
+        "아이스크림의",
+        "알레르기",
+        "유발성분을",
+        "확인해주세요.",
+        "아이스크림",
+        "외",
+        ":",
+        "밀",
+        "대두",
+        "우유"
+      ],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 725,
+        "carb": null,
+        "sugar": null,
+        "protein": 12,
+        "fat": null,
+        "saturatedFat": 26,
+        "transFat": null,
+        "sodium": 273,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다. 공식 값이 범위(예: \"38~39\")로 표기된 항목은 상한값을 저장했습니다."
+    },
+    {
+      "id": "baskinrobbins-41d037cfaf84",
+      "brand": "배스킨라빈스",
+      "productName": "엄마는외계인크림라떼",
+      "aliases": [
+        "배스킨라빈스 엄마는외계인크림라떼",
+        "엄마는외계인크림라떼"
+      ],
+      "category": "배스킨라빈스/음료",
+      "servingSize": "1회 제공량 (333g)",
+      "servingGram": 333,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=86",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "밀",
+        "대두",
+        "우유"
+      ],
+      "additiveWatch": [
+        "카페인",
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 290,
+        "carb": null,
+        "sugar": null,
+        "protein": 7,
+        "fat": null,
+        "saturatedFat": 10,
+        "transFat": null,
+        "sodium": 162,
+        "caffeine": 3
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-5d6b96ad6b72",
+      "brand": "배스킨라빈스",
+      "productName": "스트로베리말차크림라떼",
+      "aliases": [
+        "배스킨라빈스 스트로베리말차크림라떼",
+        "스트로베리말차크림라떼"
+      ],
+      "category": "배스킨라빈스/음료",
+      "servingSize": "1회 제공량 (338g)",
+      "servingGram": 338,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=85",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유",
+        "대두"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 270,
+        "carb": null,
+        "sugar": null,
+        "protein": 5,
+        "fat": null,
+        "saturatedFat": 5,
+        "transFat": null,
+        "sodium": 73,
+        "caffeine": 17
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-f77d947c4111",
+      "brand": "배스킨라빈스",
+      "productName": "사과 듬뿍 블라스트",
+      "aliases": [
+        "배스킨라빈스 사과 듬뿍 블라스트",
+        "사과 듬뿍 블라스트",
+        "사과듬뿍블라스트"
+      ],
+      "category": "배스킨라빈스/음료",
+      "servingSize": "1회 제공량 (465g)",
+      "servingGram": 465,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=84",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 270,
+        "carb": null,
+        "sugar": null,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 4,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-0988fcf20bcd",
+      "brand": "배스킨라빈스",
+      "productName": "몬치치(걸)납작복숭아아이스티",
+      "aliases": [
+        "배스킨라빈스 몬치치(걸)납작복숭아아이스티",
+        "몬치치(걸)납작복숭아아이스티"
+      ],
+      "category": "배스킨라빈스/음료",
+      "servingSize": "1회 제공량 (460g)",
+      "servingGram": 460,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=83",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "복숭아"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 125,
+        "carb": null,
+        "sugar": null,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 0,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-b7e6831b284e",
+      "brand": "배스킨라빈스",
+      "productName": "몬치치(보이)납작복숭아아이스티",
+      "aliases": [
+        "배스킨라빈스 몬치치(보이)납작복숭아아이스티",
+        "몬치치(보이)납작복숭아아이스티"
+      ],
+      "category": "배스킨라빈스/음료",
+      "servingSize": "1회 제공량 (460g)",
+      "servingGram": 460,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=83",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "복숭아"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 125,
+        "carb": null,
+        "sugar": null,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 0,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-108a355f656b",
+      "brand": "배스킨라빈스",
+      "productName": "산딸기연유블라스트",
+      "aliases": [
+        "배스킨라빈스 산딸기연유블라스트",
+        "산딸기연유블라스트"
+      ],
+      "category": "배스킨라빈스/음료",
+      "servingSize": "1회 제공량 (360g)",
+      "servingGram": 360,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=79",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 395,
+        "carb": null,
+        "sugar": null,
+        "protein": 7,
+        "fat": null,
+        "saturatedFat": 9,
+        "transFat": null,
+        "sodium": 125,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-c81d1c8b111c",
+      "brand": "배스킨라빈스",
+      "productName": "트로피컬 티 블라스트",
+      "aliases": [
+        "배스킨라빈스 트로피컬 티 블라스트",
+        "트로피컬 티 블라스트",
+        "트로피컬티블라스트"
+      ],
+      "category": "배스킨라빈스/음료",
+      "servingSize": "1회 제공량 (485g)",
+      "servingGram": 485,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=77",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 260,
+        "carb": null,
+        "sugar": null,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 6,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-ba50ca2bce4e",
+      "brand": "배스킨라빈스",
+      "productName": "밀키소다 블라스트",
+      "aliases": [
+        "배스킨라빈스 밀키소다 블라스트",
+        "밀키소다 블라스트",
+        "밀키소다블라스트"
+      ],
+      "category": "배스킨라빈스/음료",
+      "servingSize": "1회 제공량 (485g)",
+      "servingGram": 485,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=77",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 250,
+        "carb": null,
+        "sugar": null,
+        "protein": 2,
+        "fat": null,
+        "saturatedFat": 2.1,
+        "transFat": null,
+        "sodium": 45,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-ebb07ee99ffb",
+      "brand": "배스킨라빈스",
+      "productName": "자몽 히비스커스 티(ICED)",
+      "aliases": [
+        "배스킨라빈스 자몽 히비스커스 티(ICED)",
+        "자몽 히비스커스 티(ICED)",
+        "자몽히비스커스티(ICED)"
+      ],
+      "category": "배스킨라빈스/음료",
+      "servingSize": "1회 제공량 (338g)",
+      "servingGram": 338,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=61",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 150,
+        "carb": null,
+        "sugar": null,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 8,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-88e07507c17c",
+      "brand": "배스킨라빈스",
+      "productName": "레드향 캐모마일 티(ICED)",
+      "aliases": [
+        "배스킨라빈스 레드향 캐모마일 티(ICED)",
+        "레드향 캐모마일 티(ICED)",
+        "레드향캐모마일티(ICED)"
+      ],
+      "category": "배스킨라빈스/음료",
+      "servingSize": "1회 제공량 (338g)",
+      "servingGram": 338,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=61",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 125,
+        "carb": null,
+        "sugar": null,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 7,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-7fd8cf130e5a",
+      "brand": "배스킨라빈스",
+      "productName": "레드향 캐모마일 티(HOT)",
+      "aliases": [
+        "배스킨라빈스 레드향 캐모마일 티(HOT)",
+        "레드향 캐모마일 티(HOT)",
+        "레드향캐모마일티(HOT)"
+      ],
+      "category": "배스킨라빈스/음료",
+      "servingSize": "1회 제공량 (325g)",
+      "servingGram": 325,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=60",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 125,
+        "carb": null,
+        "sugar": null,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 7,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-8588cce46843",
+      "brand": "배스킨라빈스",
+      "productName": "자몽 히비스커스 티(HOT)",
+      "aliases": [
+        "배스킨라빈스 자몽 히비스커스 티(HOT)",
+        "자몽 히비스커스 티(HOT)",
+        "자몽히비스커스티(HOT)"
+      ],
+      "category": "배스킨라빈스/음료",
+      "servingSize": "1회 제공량 (325g)",
+      "servingGram": 325,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=60",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 150,
+        "carb": null,
+        "sugar": null,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 8,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-6760ed5a792c",
+      "brand": "배스킨라빈스",
+      "productName": "설향딸기 블라스트 L",
+      "aliases": [
+        "배스킨라빈스 설향딸기 블라스트 L",
+        "설향딸기 블라스트 L",
+        "설향딸기블라스트L"
+      ],
+      "category": "배스킨라빈스/음료",
+      "servingSize": "1회 제공량 (465g)",
+      "servingGram": 465,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=7",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 250,
+        "carb": null,
+        "sugar": null,
+        "protein": 1,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 16,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-65ab1e489744",
+      "brand": "배스킨라빈스",
+      "productName": "아몬드 봉봉 블라스트 R",
+      "aliases": [
+        "배스킨라빈스 아몬드 봉봉 블라스트 R",
+        "아몬드 봉봉 블라스트 R",
+        "아몬드봉봉블라스트R"
+      ],
+      "category": "배스킨라빈스/음료",
+      "servingSize": "1회 제공량 (371g)",
+      "servingGram": 371,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=8",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유",
+        "대두"
+      ],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 595,
+        "carb": null,
+        "sugar": null,
+        "protein": 11,
+        "fat": null,
+        "saturatedFat": 11,
+        "transFat": null,
+        "sodium": 375,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-c27fe92a488e",
+      "brand": "배스킨라빈스",
+      "productName": "아몬드 봉봉 블라스트 L",
+      "aliases": [
+        "배스킨라빈스 아몬드 봉봉 블라스트 L",
+        "아몬드 봉봉 블라스트 L",
+        "아몬드봉봉블라스트L"
+      ],
+      "category": "배스킨라빈스/음료",
+      "servingSize": "1회 제공량 (522g)",
+      "servingGram": 522,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=8",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유",
+        "대두"
+      ],
+      "additiveWatch": [
+        "카페인",
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 835,
+        "carb": null,
+        "sugar": null,
+        "protein": 14,
+        "fat": null,
+        "saturatedFat": 12,
+        "transFat": null,
+        "sodium": 549,
+        "caffeine": 1
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-0236fd386ab7",
+      "brand": "배스킨라빈스",
+      "productName": "엄마는 외계인 블라스트 R",
+      "aliases": [
+        "배스킨라빈스 엄마는 외계인 블라스트 R",
+        "엄마는 외계인 블라스트 R",
+        "엄마는외계인블라스트R"
+      ],
+      "category": "배스킨라빈스/음료",
+      "servingSize": "1회 제공량 (381g)",
+      "servingGram": 381,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=8",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유",
+        "대두",
+        "밀"
+      ],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 710,
+        "carb": null,
+        "sugar": null,
+        "protein": 12,
+        "fat": null,
+        "saturatedFat": 28,
+        "transFat": null,
+        "sodium": 342,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-06bc5643b4a8",
+      "brand": "배스킨라빈스",
+      "productName": "엄마는 외계인 블라스트 L",
+      "aliases": [
+        "배스킨라빈스 엄마는 외계인 블라스트 L",
+        "엄마는 외계인 블라스트 L",
+        "엄마는외계인블라스트L"
+      ],
+      "category": "배스킨라빈스/음료",
+      "servingSize": "1회 제공량 (509g)",
+      "servingGram": 509,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=8",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유",
+        "대두",
+        "밀"
+      ],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 870,
+        "carb": null,
+        "sugar": null,
+        "protein": 15,
+        "fat": null,
+        "saturatedFat": 33,
+        "transFat": null,
+        "sodium": 414,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-064ee72c647e",
+      "brand": "배스킨라빈스",
+      "productName": "와츄원쉐이크 L",
+      "aliases": [
+        "배스킨라빈스 와츄원쉐이크 L",
+        "와츄원쉐이크 L",
+        "와츄원쉐이크L"
+      ],
+      "category": "배스킨라빈스/음료",
+      "servingSize": "1회 제공량 (420g)",
+      "servingGram": 420,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=5",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "아이스크림",
+        ":",
+        "선택하신",
+        "아이스크림의",
+        "알레르기",
+        "유발성분을",
+        "확인해주세요.",
+        "아이스크림",
+        "外",
+        ":",
+        "우유"
+      ],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 825,
+        "carb": null,
+        "sugar": null,
+        "protein": 16,
+        "fat": null,
+        "saturatedFat": 31,
+        "transFat": null,
+        "sodium": 298,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다. 공식 값이 범위(예: \"38~39\")로 표기된 항목은 상한값을 저장했습니다."
+    },
+    {
+      "id": "baskinrobbins-983093afebdd",
+      "brand": "배스킨라빈스",
+      "productName": "와츄원쉐이크 R",
+      "aliases": [
+        "배스킨라빈스 와츄원쉐이크 R",
+        "와츄원쉐이크 R",
+        "와츄원쉐이크R"
+      ],
+      "category": "배스킨라빈스/음료",
+      "servingSize": "1회 제공량 (300g)",
+      "servingGram": 300,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=5",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "아이스크림",
+        ":",
+        "선택하신",
+        "아이스크림의",
+        "알레르기",
+        "유발성분을",
+        "확인해주세요.",
+        "아이스크림",
+        "外",
+        ":",
+        "우유"
+      ],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 600,
+        "carb": null,
+        "sugar": null,
+        "protein": 11,
+        "fat": null,
+        "saturatedFat": 23,
+        "transFat": null,
+        "sodium": 214,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다. 공식 값이 범위(예: \"38~39\")로 표기된 항목은 상한값을 저장했습니다."
+    },
+    {
+      "id": "baskinrobbins-7ea8ae2b10be",
+      "brand": "배스킨라빈스",
+      "productName": "밀크 쉐이크 L",
+      "aliases": [
+        "배스킨라빈스 밀크 쉐이크 L",
+        "밀크 쉐이크 L",
+        "밀크쉐이크L"
+      ],
+      "category": "배스킨라빈스/음료",
+      "servingSize": "1회 제공량 (420g)",
+      "servingGram": 420,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=4",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 660,
+        "carb": null,
+        "sugar": null,
+        "protein": 13,
+        "fat": null,
+        "saturatedFat": 22,
+        "transFat": null,
+        "sodium": 248,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-bb59d194acbd",
+      "brand": "배스킨라빈스",
+      "productName": "밀크 쉐이크 R",
+      "aliases": [
+        "배스킨라빈스 밀크 쉐이크 R",
+        "밀크 쉐이크 R",
+        "밀크쉐이크R"
+      ],
+      "category": "배스킨라빈스/음료",
+      "servingSize": "1회 제공량 (300g)",
+      "servingGram": 300,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=4",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 480,
+        "carb": null,
+        "sugar": null,
+        "protein": 9,
+        "fat": null,
+        "saturatedFat": 16,
+        "transFat": null,
+        "sodium": 178,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-4b2c203a094c",
+      "brand": "배스킨라빈스",
+      "productName": "납작 복숭아 아이스티",
+      "aliases": [
+        "배스킨라빈스 납작 복숭아 아이스티",
+        "납작 복숭아 아이스티",
+        "납작복숭아아이스티"
+      ],
+      "category": "배스킨라빈스/음료",
+      "servingSize": "1회 제공량 (460g)",
+      "servingGram": 460,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=2",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "복숭아"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 125,
+        "carb": null,
+        "sugar": null,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 0,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-b582ea05826c",
+      "brand": "배스킨라빈스",
+      "productName": "납작복숭아 아이스티",
+      "aliases": [
+        "배스킨라빈스 납작복숭아 아이스티",
+        "납작복숭아 아이스티",
+        "납작복숭아아이스티"
+      ],
+      "category": "배스킨라빈스/음료",
+      "servingSize": "1회 제공량 (950g)",
+      "servingGram": 950,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=2",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "복숭아"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 230,
+        "carb": null,
+        "sugar": null,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 0,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-0ca8eaf17933",
+      "brand": "배스킨라빈스",
+      "productName": "딸기 연유 라떼 ICED L",
+      "aliases": [
+        "배스킨라빈스 딸기 연유 라떼 ICED L",
+        "딸기 연유 라떼 ICED L",
+        "딸기연유라떼ICEDL"
+      ],
+      "category": "배스킨라빈스/음료",
+      "servingSize": "1회 제공량 (480g)",
+      "servingGram": 480,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=1",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 415,
+        "carb": null,
+        "sugar": null,
+        "protein": 7,
+        "fat": null,
+        "saturatedFat": 7,
+        "transFat": null,
+        "sodium": 113,
+        "caffeine": null
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-1846344b644a",
+      "brand": "배스킨라빈스",
+      "productName": "세균맨아메리카노 (I_RD)",
+      "aliases": [
+        "배스킨라빈스 세균맨아메리카노",
+        "세균맨아메리카노"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (435g)",
+      "servingGram": 435,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=99",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 10,
+        "carb": null,
+        "sugar": null,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0.1,
+        "transFat": null,
+        "sodium": 1,
+        "caffeine": 2
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다. 상품명 뒤 괄호(I_RD)는 같은 페이지에 이름이 겹치는 핫/아이스·사이즈 변형을 구분하기 위해 사이트 내부 코드를 그대로 붙인 것입니다(정확한 의미는 공식 사이트 상품 상세에서 직접 확인 필요)."
+    },
+    {
+      "id": "baskinrobbins-d141120d7612",
+      "brand": "배스킨라빈스",
+      "productName": "세균맨아메리카노 (I_R)",
+      "aliases": [
+        "배스킨라빈스 세균맨아메리카노",
+        "세균맨아메리카노"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (440g)",
+      "servingGram": 440,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=99",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 15,
+        "carb": null,
+        "sugar": null,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0.1,
+        "transFat": null,
+        "sodium": 2,
+        "caffeine": 131
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다. 상품명 뒤 괄호(I_R)는 같은 페이지에 이름이 겹치는 핫/아이스·사이즈 변형을 구분하기 위해 사이트 내부 코드를 그대로 붙인 것입니다(정확한 의미는 공식 사이트 상품 상세에서 직접 확인 필요)."
+    },
+    {
+      "id": "baskinrobbins-9c98534e3d4d",
+      "brand": "배스킨라빈스",
+      "productName": "호빵맨아메리카노 (I_R)",
+      "aliases": [
+        "배스킨라빈스 호빵맨아메리카노",
+        "호빵맨아메리카노"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (440g)",
+      "servingGram": 440,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=97",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 15,
+        "carb": null,
+        "sugar": null,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0.1,
+        "transFat": null,
+        "sodium": 2,
+        "caffeine": 131
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다. 상품명 뒤 괄호(I_R)는 같은 페이지에 이름이 겹치는 핫/아이스·사이즈 변형을 구분하기 위해 사이트 내부 코드를 그대로 붙인 것입니다(정확한 의미는 공식 사이트 상품 상세에서 직접 확인 필요)."
+    },
+    {
+      "id": "baskinrobbins-f762f19d6e5b",
+      "brand": "배스킨라빈스",
+      "productName": "호빵맨아메리카노 (I_RD)",
+      "aliases": [
+        "배스킨라빈스 호빵맨아메리카노",
+        "호빵맨아메리카노"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (435g)",
+      "servingGram": 435,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=97",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 10,
+        "carb": null,
+        "sugar": null,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0.1,
+        "transFat": null,
+        "sodium": 1,
+        "caffeine": 2
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다. 상품명 뒤 괄호(I_RD)는 같은 페이지에 이름이 겹치는 핫/아이스·사이즈 변형을 구분하기 위해 사이트 내부 코드를 그대로 붙인 것입니다(정확한 의미는 공식 사이트 상품 상세에서 직접 확인 필요)."
+    },
+    {
+      "id": "baskinrobbins-b80a7258067c",
+      "brand": "배스킨라빈스",
+      "productName": "D몬치치(보이)아메리카노",
+      "aliases": [
+        "배스킨라빈스 D몬치치(보이)아메리카노",
+        "D몬치치(보이)아메리카노"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (435g)",
+      "servingGram": 435,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=82",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 10,
+        "carb": null,
+        "sugar": null,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0.1,
+        "transFat": null,
+        "sodium": 1,
+        "caffeine": 2
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-5e01ba5f827d",
+      "brand": "배스킨라빈스",
+      "productName": "D몬치치(걸)아메리카노",
+      "aliases": [
+        "배스킨라빈스 D몬치치(걸)아메리카노",
+        "D몬치치(걸)아메리카노"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (435g)",
+      "servingGram": 435,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=82",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 10,
+        "carb": null,
+        "sugar": null,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0.1,
+        "transFat": null,
+        "sodium": 1,
+        "caffeine": 2
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-a93588dddc31",
+      "brand": "배스킨라빈스",
+      "productName": "몬치치(걸)아메리카노",
+      "aliases": [
+        "배스킨라빈스 몬치치(걸)아메리카노",
+        "몬치치(걸)아메리카노"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (440g)",
+      "servingGram": 440,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=82",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 15,
+        "carb": null,
+        "sugar": null,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0.1,
+        "transFat": null,
+        "sodium": 2,
+        "caffeine": 131
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-16a62ea23170",
+      "brand": "배스킨라빈스",
+      "productName": "몬치치(보이)아메리카노",
+      "aliases": [
+        "배스킨라빈스 몬치치(보이)아메리카노",
+        "몬치치(보이)아메리카노"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (440g)",
+      "servingGram": 440,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=82",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 15,
+        "carb": null,
+        "sugar": null,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0.1,
+        "transFat": null,
+        "sodium": 2,
+        "caffeine": 131
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-979378c85334",
+      "brand": "배스킨라빈스",
+      "productName": "아몬드봉봉크림라떼 (I_RD)",
+      "aliases": [
+        "배스킨라빈스 아몬드봉봉크림라떼",
+        "아몬드봉봉크림라떼"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (465g)",
+      "servingGram": 465,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=80",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "대두",
+        "우유"
+      ],
+      "additiveWatch": [
+        "카페인",
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 430,
+        "carb": null,
+        "sugar": null,
+        "protein": 11,
+        "fat": null,
+        "saturatedFat": 10,
+        "transFat": null,
+        "sodium": 310,
+        "caffeine": 2
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다. 상품명 뒤 괄호(I_RD)는 같은 페이지에 이름이 겹치는 핫/아이스·사이즈 변형을 구분하기 위해 사이트 내부 코드를 그대로 붙인 것입니다(정확한 의미는 공식 사이트 상품 상세에서 직접 확인 필요)."
+    },
+    {
+      "id": "baskinrobbins-d54058f0e6e5",
+      "brand": "배스킨라빈스",
+      "productName": "자모카 훠지 크림 라떼",
+      "aliases": [
+        "배스킨라빈스 자모카 훠지 크림 라떼",
+        "자모카 훠지 크림 라떼",
+        "자모카훠지크림라떼"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (456g)",
+      "servingGram": 456,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=80",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "대두",
+        "우유"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 340,
+        "carb": null,
+        "sugar": null,
+        "protein": 9,
+        "fat": null,
+        "saturatedFat": 9,
+        "transFat": null,
+        "sodium": 167,
+        "caffeine": 142
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-317f557d5cd1",
+      "brand": "배스킨라빈스",
+      "productName": "D자모카훠지 크림 라떼",
+      "aliases": [
+        "배스킨라빈스 D자모카훠지 크림 라떼",
+        "D자모카훠지 크림 라떼",
+        "D자모카훠지크림라떼"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (451g)",
+      "servingGram": 451,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=80",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "대두",
+        "우유"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 335,
+        "carb": null,
+        "sugar": null,
+        "protein": 9,
+        "fat": null,
+        "saturatedFat": 9,
+        "transFat": null,
+        "sodium": 166,
+        "caffeine": 13
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-02b466f3e91f",
+      "brand": "배스킨라빈스",
+      "productName": "아몬드봉봉크림라떼 (I_R)",
+      "aliases": [
+        "배스킨라빈스 아몬드봉봉크림라떼",
+        "아몬드봉봉크림라떼"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (470g)",
+      "servingGram": 470,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=80",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "대두",
+        "우유"
+      ],
+      "additiveWatch": [
+        "카페인",
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 435,
+        "carb": null,
+        "sugar": null,
+        "protein": 11,
+        "fat": null,
+        "saturatedFat": 10,
+        "transFat": null,
+        "sodium": 310,
+        "caffeine": 131
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다. 상품명 뒤 괄호(I_R)는 같은 페이지에 이름이 겹치는 핫/아이스·사이즈 변형을 구분하기 위해 사이트 내부 코드를 그대로 붙인 것입니다(정확한 의미는 공식 사이트 상품 상세에서 직접 확인 필요)."
+    },
+    {
+      "id": "baskinrobbins-a8fb48b4ea30",
+      "brand": "배스킨라빈스",
+      "productName": "I_납작복숭아아샷추",
+      "aliases": [
+        "배스킨라빈스 I_납작복숭아아샷추",
+        "I_납작복숭아아샷추"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (950g)",
+      "servingGram": 950,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=78",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "복숭아"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 220,
+        "carb": null,
+        "sugar": null,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 1,
+        "caffeine": 105
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-c8e5f5252c54",
+      "brand": "배스킨라빈스",
+      "productName": "납작복숭아아샷추",
+      "aliases": [
+        "배스킨라빈스 납작복숭아아샷추",
+        "납작복숭아아샷추"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (950g)",
+      "servingGram": 950,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=78",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "복숭아"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 220,
+        "carb": null,
+        "sugar": null,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0.1,
+        "transFat": null,
+        "sodium": 1,
+        "caffeine": 2
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-bd821b22d413",
+      "brand": "배스킨라빈스",
+      "productName": "바나나 카페라떼(DECAF)",
+      "aliases": [
+        "배스킨라빈스 바나나 카페라떼(DECAF)",
+        "바나나 카페라떼(DECAF)",
+        "바나나카페라떼(DECAF)"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (453g)",
+      "servingGram": 453,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=76",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 270,
+        "carb": null,
+        "sugar": null,
+        "protein": 6,
+        "fat": null,
+        "saturatedFat": 5,
+        "transFat": null,
+        "sodium": 101,
+        "caffeine": 2
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-1f2881ddb89e",
+      "brand": "배스킨라빈스",
+      "productName": "바나나 카페라떼",
+      "aliases": [
+        "배스킨라빈스 바나나 카페라떼",
+        "바나나 카페라떼",
+        "바나나카페라떼"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (453g)",
+      "servingGram": 453,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=76",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 270,
+        "carb": null,
+        "sugar": null,
+        "protein": 6,
+        "fat": null,
+        "saturatedFat": 5,
+        "transFat": null,
+        "sodium": 101,
+        "caffeine": 105
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-1ec883e06adc",
+      "brand": "배스킨라빈스",
+      "productName": "카페31 디카페인 연유라떼 ICED R",
+      "aliases": [
+        "배스킨라빈스 카페31 디카페인 연유라떼 ICED R",
+        "카페31 디카페인 연유라떼 ICED R",
+        "카페31디카페인연유라떼ICEDR"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (533g)",
+      "servingGram": 533,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=69",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "아이스크림",
+        ":",
+        "선택하신",
+        "아이스크림의",
+        "알레르기",
+        "유발성분을",
+        "확인해주세요.",
+        "아이스크림",
+        "外",
+        ":",
+        "우유"
+      ],
+      "additiveWatch": [
+        "카페인",
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 520,
+        "carb": null,
+        "sugar": null,
+        "protein": 12,
+        "fat": null,
+        "saturatedFat": 15,
+        "transFat": null,
+        "sodium": 219,
+        "caffeine": 2
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다. 공식 값이 범위(예: \"38~39\")로 표기된 항목은 상한값을 저장했습니다."
+    },
+    {
+      "id": "baskinrobbins-dbf45167bd5d",
+      "brand": "배스킨라빈스",
+      "productName": "카페31 디카페인 바닐라빈라떼 ICED R",
+      "aliases": [
+        "배스킨라빈스 카페31 디카페인 바닐라빈라떼 ICED R",
+        "카페31 디카페인 바닐라빈라떼 ICED R",
+        "카페31디카페인바닐라빈라떼ICEDR"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (513g)",
+      "servingGram": 513,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=69",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "아이스크림",
+        ":",
+        "선택하신",
+        "아이스크림의",
+        "알레르기",
+        "유발성분을",
+        "확인해주세요.",
+        "아이스크림",
+        "外",
+        ":",
+        "우유"
+      ],
+      "additiveWatch": [
+        "카페인",
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 460,
+        "carb": null,
+        "sugar": null,
+        "protein": 8,
+        "fat": null,
+        "saturatedFat": 17,
+        "transFat": null,
+        "sodium": 173,
+        "caffeine": 2
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다. 공식 값이 범위(예: \"38~39\")로 표기된 항목은 상한값을 저장했습니다."
+    },
+    {
+      "id": "baskinrobbins-e168dff021e1",
+      "brand": "배스킨라빈스",
+      "productName": "카페31 디카페인 카페라떼 ICED R",
+      "aliases": [
+        "배스킨라빈스 카페31 디카페인 카페라떼 ICED R",
+        "카페31 디카페인 카페라떼 ICED R",
+        "카페31디카페인카페라떼ICEDR"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (505g)",
+      "servingGram": 505,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=69",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "아이스크림",
+        ":",
+        "선택하신",
+        "아이스크림의",
+        "알레르기",
+        "유발성분을",
+        "확인해주세요.",
+        "아이스크림",
+        "外",
+        ":",
+        "우유"
+      ],
+      "additiveWatch": [
+        "카페인",
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 365,
+        "carb": null,
+        "sugar": null,
+        "protein": 10,
+        "fat": null,
+        "saturatedFat": 14,
+        "transFat": null,
+        "sodium": 179,
+        "caffeine": 2
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다. 공식 값이 범위(예: \"38~39\")로 표기된 항목은 상한값을 저장했습니다."
+    },
+    {
+      "id": "baskinrobbins-f708b5826e48",
+      "brand": "배스킨라빈스",
+      "productName": "카페31 디카페인 아메리카노 ICED R",
+      "aliases": [
+        "배스킨라빈스 카페31 디카페인 아메리카노 ICED R",
+        "카페31 디카페인 아메리카노 ICED R",
+        "카페31디카페인아메리카노ICEDR"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (510g)",
+      "servingGram": 510,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=69",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "아이스크림",
+        ":",
+        "선택하신",
+        "아이스크림의",
+        "알레르기",
+        "유발성분을",
+        "확인해주세요.",
+        "아이스크림",
+        "外",
+        ":",
+        "없음"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 220,
+        "carb": null,
+        "sugar": null,
+        "protein": 3,
+        "fat": null,
+        "saturatedFat": 8,
+        "transFat": null,
+        "sodium": 64,
+        "caffeine": 2
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다. 공식 값이 범위(예: \"38~39\")로 표기된 항목은 상한값을 저장했습니다."
+    },
+    {
+      "id": "baskinrobbins-3dc90d93e5cc",
+      "brand": "배스킨라빈스",
+      "productName": "카페31 연유라떼 ICED R",
+      "aliases": [
+        "배스킨라빈스 카페31 연유라떼 ICED R",
+        "카페31 연유라떼 ICED R",
+        "카페31연유라떼ICEDR"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (543g)",
+      "servingGram": 543,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=68",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "아이스크림",
+        ":",
+        "선택하신",
+        "아이스크림의",
+        "알레르기",
+        "유발성분을",
+        "확인해주세요.",
+        "아이스크림",
+        "外",
+        ":",
+        "우유"
+      ],
+      "additiveWatch": [
+        "카페인",
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 525,
+        "carb": null,
+        "sugar": null,
+        "protein": 12,
+        "fat": null,
+        "saturatedFat": 15,
+        "transFat": null,
+        "sodium": 219,
+        "caffeine": 131
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다. 공식 값이 범위(예: \"38~39\")로 표기된 항목은 상한값을 저장했습니다."
+    },
+    {
+      "id": "baskinrobbins-e10a08115791",
+      "brand": "배스킨라빈스",
+      "productName": "카페31 바닐라빈라떼 ICED R",
+      "aliases": [
+        "배스킨라빈스 카페31 바닐라빈라떼 ICED R",
+        "카페31 바닐라빈라떼 ICED R",
+        "카페31바닐라빈라떼ICEDR"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (523g)",
+      "servingGram": 523,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=68",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "아이스크림",
+        ":",
+        "선택하신",
+        "아이스크림의",
+        "알레르기",
+        "유발성분을",
+        "확인해주세요.",
+        "아이스크림",
+        "外",
+        ":",
+        "우유"
+      ],
+      "additiveWatch": [
+        "카페인",
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 465,
+        "carb": null,
+        "sugar": null,
+        "protein": 8,
+        "fat": null,
+        "saturatedFat": 17,
+        "transFat": null,
+        "sodium": 174,
+        "caffeine": 131
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다. 공식 값이 범위(예: \"38~39\")로 표기된 항목은 상한값을 저장했습니다."
+    },
+    {
+      "id": "baskinrobbins-4874c014703c",
+      "brand": "배스킨라빈스",
+      "productName": "카페31 카페라떼 ICED R",
+      "aliases": [
+        "배스킨라빈스 카페31 카페라떼 ICED R",
+        "카페31 카페라떼 ICED R",
+        "카페31카페라떼ICEDR"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (515g)",
+      "servingGram": 515,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=68",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "아이스크림",
+        ":",
+        "선택하신",
+        "아이스크림의",
+        "알레르기",
+        "유발성분을",
+        "확인해주세요.",
+        "아이스크림",
+        "外",
+        ":",
+        "우유"
+      ],
+      "additiveWatch": [
+        "카페인",
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 375,
+        "carb": null,
+        "sugar": null,
+        "protein": 10,
+        "fat": null,
+        "saturatedFat": 14,
+        "transFat": null,
+        "sodium": 179,
+        "caffeine": 131
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다. 공식 값이 범위(예: \"38~39\")로 표기된 항목은 상한값을 저장했습니다."
+    },
+    {
+      "id": "baskinrobbins-42da93c675eb",
+      "brand": "배스킨라빈스",
+      "productName": "카페31 아메리카노 ICED R",
+      "aliases": [
+        "배스킨라빈스 카페31 아메리카노 ICED R",
+        "카페31 아메리카노 ICED R",
+        "카페31아메리카노ICEDR"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (515g)",
+      "servingGram": 515,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=68",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "아이스크림",
+        ":",
+        "선택하신",
+        "아이스크림의",
+        "알레르기",
+        "유발성분을",
+        "확인해주세요.",
+        "아이스크림",
+        "外",
+        ":",
+        "없음"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 225,
+        "carb": null,
+        "sugar": null,
+        "protein": 3,
+        "fat": null,
+        "saturatedFat": 8,
+        "transFat": null,
+        "sodium": 64,
+        "caffeine": 131
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다. 공식 값이 범위(예: \"38~39\")로 표기된 항목은 상한값을 저장했습니다."
+    },
+    {
+      "id": "baskinrobbins-698e246d6b4e",
+      "brand": "배스킨라빈스",
+      "productName": "아메리카노 (H_L)",
+      "aliases": [
+        "배스킨라빈스 아메리카노",
+        "아메리카노"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (415g)",
+      "servingGram": 415,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=24",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 15,
+        "carb": null,
+        "sugar": null,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0.1,
+        "transFat": null,
+        "sodium": 2,
+        "caffeine": 158
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다. 상품명 뒤 괄호(H_L)는 같은 페이지에 이름이 겹치는 핫/아이스·사이즈 변형을 구분하기 위해 사이트 내부 코드를 그대로 붙인 것입니다(정확한 의미는 공식 사이트 상품 상세에서 직접 확인 필요)."
+    },
+    {
+      "id": "baskinrobbins-0669dc90b15f",
+      "brand": "배스킨라빈스",
+      "productName": "아메리카노 (I_L)",
+      "aliases": [
+        "배스킨라빈스 아메리카노",
+        "아메리카노"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (525g)",
+      "servingGram": 525,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=24",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 20,
+        "carb": null,
+        "sugar": null,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0.1,
+        "transFat": null,
+        "sodium": 2,
+        "caffeine": 158
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다. 상품명 뒤 괄호(I_L)는 같은 페이지에 이름이 겹치는 핫/아이스·사이즈 변형을 구분하기 위해 사이트 내부 코드를 그대로 붙인 것입니다(정확한 의미는 공식 사이트 상품 상세에서 직접 확인 필요)."
+    },
+    {
+      "id": "baskinrobbins-b51fa5d9f9e9",
+      "brand": "배스킨라빈스",
+      "productName": "킹 아메리카노 (I_K)",
+      "aliases": [
+        "배스킨라빈스 킹 아메리카노",
+        "킹 아메리카노",
+        "킹아메리카노"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (930g)",
+      "servingGram": 930,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=24",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 25,
+        "carb": null,
+        "sugar": null,
+        "protein": 1,
+        "fat": null,
+        "saturatedFat": 0.2,
+        "transFat": null,
+        "sodium": 3,
+        "caffeine": 261
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다. 상품명 뒤 괄호(I_K)는 같은 페이지에 이름이 겹치는 핫/아이스·사이즈 변형을 구분하기 위해 사이트 내부 코드를 그대로 붙인 것입니다(정확한 의미는 공식 사이트 상품 상세에서 직접 확인 필요)."
+    },
+    {
+      "id": "baskinrobbins-2783766dc0a5",
+      "brand": "배스킨라빈스",
+      "productName": "아메리카노 (H_LD)",
+      "aliases": [
+        "배스킨라빈스 아메리카노",
+        "아메리카노"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (410g)",
+      "servingGram": 410,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=24",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 10,
+        "carb": null,
+        "sugar": null,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0.1,
+        "transFat": null,
+        "sodium": 1,
+        "caffeine": 3
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다. 상품명 뒤 괄호(H_LD)는 같은 페이지에 이름이 겹치는 핫/아이스·사이즈 변형을 구분하기 위해 사이트 내부 코드를 그대로 붙인 것입니다(정확한 의미는 공식 사이트 상품 상세에서 직접 확인 필요)."
+    },
+    {
+      "id": "baskinrobbins-6eb9452f7fcf",
+      "brand": "배스킨라빈스",
+      "productName": "아메리카노 (I_LD)",
+      "aliases": [
+        "배스킨라빈스 아메리카노",
+        "아메리카노"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (520g)",
+      "servingGram": 520,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=24",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 10,
+        "carb": null,
+        "sugar": null,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0.1,
+        "transFat": null,
+        "sodium": 1,
+        "caffeine": 3
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다. 상품명 뒤 괄호(I_LD)는 같은 페이지에 이름이 겹치는 핫/아이스·사이즈 변형을 구분하기 위해 사이트 내부 코드를 그대로 붙인 것입니다(정확한 의미는 공식 사이트 상품 상세에서 직접 확인 필요)."
+    },
+    {
+      "id": "baskinrobbins-f313a5a7e51a",
+      "brand": "배스킨라빈스",
+      "productName": "킹 아메리카노 (I_KD)",
+      "aliases": [
+        "배스킨라빈스 킹 아메리카노",
+        "킹 아메리카노",
+        "킹아메리카노"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (920g)",
+      "servingGram": 920,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=24",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 15,
+        "carb": null,
+        "sugar": null,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0.1,
+        "transFat": null,
+        "sodium": 1,
+        "caffeine": 4
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다. 상품명 뒤 괄호(I_KD)는 같은 페이지에 이름이 겹치는 핫/아이스·사이즈 변형을 구분하기 위해 사이트 내부 코드를 그대로 붙인 것입니다(정확한 의미는 공식 사이트 상품 상세에서 직접 확인 필요)."
+    },
+    {
+      "id": "baskinrobbins-ecdfb5a2225a",
+      "brand": "배스킨라빈스",
+      "productName": "ICED 아메리카노 R",
+      "aliases": [
+        "배스킨라빈스 ICED 아메리카노 R",
+        "ICED 아메리카노 R",
+        "ICED아메리카노R"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (440g)",
+      "servingGram": 440,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=24",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 15,
+        "carb": null,
+        "sugar": null,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0.1,
+        "transFat": null,
+        "sodium": 2,
+        "caffeine": 131
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-d7a74c772dfe",
+      "brand": "배스킨라빈스",
+      "productName": "HOT 아메리카노 R",
+      "aliases": [
+        "배스킨라빈스 HOT 아메리카노 R",
+        "HOT 아메리카노 R",
+        "HOT아메리카노R"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (310g)",
+      "servingGram": 310,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=24",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 15,
+        "carb": null,
+        "sugar": null,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0.1,
+        "transFat": null,
+        "sodium": 2,
+        "caffeine": 131
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-44da84910724",
+      "brand": "배스킨라빈스",
+      "productName": "디카페인 아메리카노 ICED R",
+      "aliases": [
+        "배스킨라빈스 디카페인 아메리카노 ICED R",
+        "디카페인 아메리카노 ICED R",
+        "디카페인아메리카노ICEDR"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (435g)",
+      "servingGram": 435,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=24",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 10,
+        "carb": null,
+        "sugar": null,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0.1,
+        "transFat": null,
+        "sodium": 1,
+        "caffeine": 2
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-d506ecde52a2",
+      "brand": "배스킨라빈스",
+      "productName": "디카페인 아메리카노 HOT R",
+      "aliases": [
+        "배스킨라빈스 디카페인 아메리카노 HOT R",
+        "디카페인 아메리카노 HOT R",
+        "디카페인아메리카노HOTR"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (305g)",
+      "servingGram": 305,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=24",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 10,
+        "carb": null,
+        "sugar": null,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0.1,
+        "transFat": null,
+        "sodium": 1,
+        "caffeine": 2
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-d6f5756227d9",
+      "brand": "배스킨라빈스",
+      "productName": "HOT 카페라떼 R",
+      "aliases": [
+        "배스킨라빈스 HOT 카페라떼 R",
+        "HOT 카페라떼 R",
+        "HOT카페라떼R"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (315g)",
+      "servingGram": 315,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=23",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 185,
+        "carb": null,
+        "sugar": null,
+        "protein": 8,
+        "fat": null,
+        "saturatedFat": 7,
+        "transFat": null,
+        "sodium": 134,
+        "caffeine": 131
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-2bfdf80b0e85",
+      "brand": "배스킨라빈스",
+      "productName": "ICED 카페라떼 R",
+      "aliases": [
+        "배스킨라빈스 ICED 카페라떼 R",
+        "ICED 카페라떼 R",
+        "ICED카페라떼R"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (440g)",
+      "servingGram": 440,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=23",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 165,
+        "carb": null,
+        "sugar": null,
+        "protein": 7,
+        "fat": null,
+        "saturatedFat": 6,
+        "transFat": null,
+        "sodium": 117,
+        "caffeine": 131
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-28cbcdcdb6fa",
+      "brand": "배스킨라빈스",
+      "productName": "카페라떼 오트변경 HOT R",
+      "aliases": [
+        "배스킨라빈스 카페라떼 오트변경 HOT R",
+        "카페라떼 오트변경 HOT R",
+        "카페라떼오트변경HOTR"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (315g)",
+      "servingGram": 315,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=23",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 170,
+        "carb": null,
+        "sugar": null,
+        "protein": 3,
+        "fat": null,
+        "saturatedFat": 0.8,
+        "transFat": null,
+        "sodium": 104,
+        "caffeine": 131
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-53cffb12c862",
+      "brand": "배스킨라빈스",
+      "productName": "카페라떼 오트변경 ICED R",
+      "aliases": [
+        "배스킨라빈스 카페라떼 오트변경 ICED R",
+        "카페라떼 오트변경 ICED R",
+        "카페라떼오트변경ICEDR"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (440g)",
+      "servingGram": 440,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=23",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 150,
+        "carb": null,
+        "sugar": null,
+        "protein": 3,
+        "fat": null,
+        "saturatedFat": 0.7,
+        "transFat": null,
+        "sodium": 91,
+        "caffeine": 131
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-8e9611d7d5e2",
+      "brand": "배스킨라빈스",
+      "productName": "디카페인 카페라떼 오트 변경 HOT R",
+      "aliases": [
+        "배스킨라빈스 디카페인 카페라떼 오트 변경 HOT R",
+        "디카페인 카페라떼 오트 변경 HOT R",
+        "디카페인카페라떼오트변경HOTR"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (325g)",
+      "servingGram": 325,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=23",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 160,
+        "carb": null,
+        "sugar": null,
+        "protein": 3,
+        "fat": null,
+        "saturatedFat": 0.8,
+        "transFat": null,
+        "sodium": 104,
+        "caffeine": 2
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-0b6564dab538",
+      "brand": "배스킨라빈스",
+      "productName": "디카페인 카페라떼 일반 우유 HOT R",
+      "aliases": [
+        "배스킨라빈스 디카페인 카페라떼 일반 우유 HOT R",
+        "디카페인 카페라떼 일반 우유 HOT R",
+        "디카페인카페라떼일반우유HOTR"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (325g)",
+      "servingGram": 325,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=23",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 180,
+        "carb": null,
+        "sugar": null,
+        "protein": 8,
+        "fat": null,
+        "saturatedFat": 7,
+        "transFat": null,
+        "sodium": 134,
+        "caffeine": 2
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-b90a1fc2a00a",
+      "brand": "배스킨라빈스",
+      "productName": "디카페인 카페라떼 일반 우유 ICED R",
+      "aliases": [
+        "배스킨라빈스 디카페인 카페라떼 일반 우유 ICED R",
+        "디카페인 카페라떼 일반 우유 ICED R",
+        "디카페인카페라떼일반우유ICEDR"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (430g)",
+      "servingGram": 430,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=23",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 155,
+        "carb": null,
+        "sugar": null,
+        "protein": 7,
+        "fat": null,
+        "saturatedFat": 6,
+        "transFat": null,
+        "sodium": 116,
+        "caffeine": 2
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-00fc900f75e7",
+      "brand": "배스킨라빈스",
+      "productName": "디카페인 카페라떼 오트 변경 ICED R",
+      "aliases": [
+        "배스킨라빈스 디카페인 카페라떼 오트 변경 ICED R",
+        "디카페인 카페라떼 오트 변경 ICED R",
+        "디카페인카페라떼오트변경ICEDR"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (430g)",
+      "servingGram": 430,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=23",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 135,
+        "carb": null,
+        "sugar": null,
+        "protein": 2,
+        "fat": null,
+        "saturatedFat": 0.7,
+        "transFat": null,
+        "sodium": 90,
+        "caffeine": 2
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-f1bade8a1c55",
+      "brand": "배스킨라빈스",
+      "productName": "바닐라빈라떼 오트변경 ICED R",
+      "aliases": [
+        "배스킨라빈스 바닐라빈라떼 오트변경 ICED R",
+        "바닐라빈라떼 오트변경 ICED R",
+        "바닐라빈라떼오트변경ICEDR"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (448g)",
+      "servingGram": 448,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=22",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 250,
+        "carb": null,
+        "sugar": null,
+        "protein": 2,
+        "fat": null,
+        "saturatedFat": 7,
+        "transFat": null,
+        "sodium": 96,
+        "caffeine": 131
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-b31c96850978",
+      "brand": "배스킨라빈스",
+      "productName": "HOT 바닐라빈라떼 R",
+      "aliases": [
+        "배스킨라빈스 HOT 바닐라빈라떼 R",
+        "HOT 바닐라빈라떼 R",
+        "HOT바닐라빈라떼R"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (270g)",
+      "servingGram": 270,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=22",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [
+        "카페인",
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 285,
+        "carb": null,
+        "sugar": null,
+        "protein": 6,
+        "fat": null,
+        "saturatedFat": 11,
+        "transFat": null,
+        "sodium": 136,
+        "caffeine": 131
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-087821c173eb",
+      "brand": "배스킨라빈스",
+      "productName": "바닐라빈라떼 오트변경 HOT R",
+      "aliases": [
+        "배스킨라빈스 바닐라빈라떼 오트변경 HOT R",
+        "바닐라빈라떼 오트변경 HOT R",
+        "바닐라빈라떼오트변경HOTR"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (270g)",
+      "servingGram": 270,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=22",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 280,
+        "carb": null,
+        "sugar": null,
+        "protein": 3,
+        "fat": null,
+        "saturatedFat": 7,
+        "transFat": null,
+        "sodium": 116,
+        "caffeine": 131
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-6f42dc81bd8b",
+      "brand": "배스킨라빈스",
+      "productName": "ICED 바닐라빈라떼 R",
+      "aliases": [
+        "배스킨라빈스 ICED 바닐라빈라떼 R",
+        "ICED 바닐라빈라떼 R",
+        "ICED바닐라빈라떼R"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (448g)",
+      "servingGram": 448,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=22",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 260,
+        "carb": null,
+        "sugar": null,
+        "protein": 5,
+        "fat": null,
+        "saturatedFat": 9,
+        "transFat": null,
+        "sodium": 111,
+        "caffeine": 131
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-b7dc90c76575",
+      "brand": "배스킨라빈스",
+      "productName": "디카페인 바닐라빈 라떼 오트 변경 HOT R",
+      "aliases": [
+        "배스킨라빈스 디카페인 바닐라빈 라떼 오트 변경 HOT R",
+        "디카페인 바닐라빈 라떼 오트 변경 HOT R",
+        "디카페인바닐라빈라떼오트변경HOTR"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (280g)",
+      "servingGram": 280,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=22",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 265,
+        "carb": null,
+        "sugar": null,
+        "protein": 2,
+        "fat": null,
+        "saturatedFat": 7,
+        "transFat": null,
+        "sodium": 115,
+        "caffeine": 2
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-de66bcfe6969",
+      "brand": "배스킨라빈스",
+      "productName": "디카페인 바닐라빈 라떼 일반 우유 HOT R",
+      "aliases": [
+        "배스킨라빈스 디카페인 바닐라빈 라떼 일반 우유 HOT R",
+        "디카페인 바닐라빈 라떼 일반 우유 HOT R",
+        "디카페인바닐라빈라떼일반우유HOTR"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (280g)",
+      "servingGram": 280,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=22",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [
+        "카페인",
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 285,
+        "carb": null,
+        "sugar": null,
+        "protein": 6,
+        "fat": null,
+        "saturatedFat": 11,
+        "transFat": null,
+        "sodium": 135,
+        "caffeine": 2
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-7226782635c8",
+      "brand": "배스킨라빈스",
+      "productName": "디카페인 바닐라빈 라떼 일반 우유 ICED R",
+      "aliases": [
+        "배스킨라빈스 디카페인 바닐라빈 라떼 일반 우유 ICED R",
+        "디카페인 바닐라빈 라떼 일반 우유 ICED R",
+        "디카페인바닐라빈라떼일반우유ICEDR"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (438g)",
+      "servingGram": 438,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=22",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 250,
+        "carb": null,
+        "sugar": null,
+        "protein": 4,
+        "fat": null,
+        "saturatedFat": 9,
+        "transFat": null,
+        "sodium": 110,
+        "caffeine": 2
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-b1e5e414af2d",
+      "brand": "배스킨라빈스",
+      "productName": "디카페인 바닐라빈 라떼 오트 변경 ICED R",
+      "aliases": [
+        "배스킨라빈스 디카페인 바닐라빈 라떼 오트 변경 ICED R",
+        "디카페인 바닐라빈 라떼 오트 변경 ICED R",
+        "디카페인바닐라빈라떼오트변경ICEDR"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (438g)",
+      "servingGram": 438,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=22",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 240,
+        "carb": null,
+        "sugar": null,
+        "protein": 2,
+        "fat": null,
+        "saturatedFat": 7,
+        "transFat": null,
+        "sodium": 96,
+        "caffeine": 2
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-3e4698db3e61",
+      "brand": "배스킨라빈스",
+      "productName": "연유라떼 오트변경 HOT R",
+      "aliases": [
+        "배스킨라빈스 연유라떼 오트변경 HOT R",
+        "연유라떼 오트변경 HOT R",
+        "연유라떼오트변경HOTR"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (265g)",
+      "servingGram": 265,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=19",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 280,
+        "carb": null,
+        "sugar": null,
+        "protein": 6,
+        "fat": null,
+        "saturatedFat": 3.7,
+        "transFat": null,
+        "sodium": 135,
+        "caffeine": 131
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-f3a6c9a287df",
+      "brand": "배스킨라빈스",
+      "productName": "연유라떼 오트변경 ICED R",
+      "aliases": [
+        "배스킨라빈스 연유라떼 오트변경 ICED R",
+        "연유라떼 오트변경 ICED R",
+        "연유라떼오트변경ICEDR"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (468g)",
+      "servingGram": 468,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=19",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 310,
+        "carb": null,
+        "sugar": null,
+        "protein": 6,
+        "fat": null,
+        "saturatedFat": 4.7,
+        "transFat": null,
+        "sodium": 142,
+        "caffeine": 131
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-f85a4384861d",
+      "brand": "배스킨라빈스",
+      "productName": "HOT 연유라떼 R",
+      "aliases": [
+        "배스킨라빈스 HOT 연유라떼 R",
+        "HOT 연유라떼 R",
+        "HOT연유라떼R"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (265g)",
+      "servingGram": 265,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=19",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 285,
+        "carb": null,
+        "sugar": null,
+        "protein": 9,
+        "fat": null,
+        "saturatedFat": 7,
+        "transFat": null,
+        "sodium": 154,
+        "caffeine": 131
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-dd9ab19e5611",
+      "brand": "배스킨라빈스",
+      "productName": "ICED 연유라떼R",
+      "aliases": [
+        "배스킨라빈스 ICED 연유라떼R",
+        "ICED 연유라떼R",
+        "ICED연유라떼R"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (468g)",
+      "servingGram": 468,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=19",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 315,
+        "carb": null,
+        "sugar": null,
+        "protein": 9,
+        "fat": null,
+        "saturatedFat": 8,
+        "transFat": null,
+        "sodium": 157,
+        "caffeine": 131
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-e1666f3deee0",
+      "brand": "배스킨라빈스",
+      "productName": "디카페인 연유 라떼 일반 우유 HOT R",
+      "aliases": [
+        "배스킨라빈스 디카페인 연유 라떼 일반 우유 HOT R",
+        "디카페인 연유 라떼 일반 우유 HOT R",
+        "디카페인연유라떼일반우유HOTR"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (260g)",
+      "servingGram": 260,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=19",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 280,
+        "carb": null,
+        "sugar": null,
+        "protein": 9,
+        "fat": null,
+        "saturatedFat": 7,
+        "transFat": null,
+        "sodium": 153,
+        "caffeine": 2
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-d53725d40fcd",
+      "brand": "배스킨라빈스",
+      "productName": "디카페인 연유 라떼 일반 우유 ICED R",
+      "aliases": [
+        "배스킨라빈스 디카페인 연유 라떼 일반 우유 ICED R",
+        "디카페인 연유 라떼 일반 우유 ICED R",
+        "디카페인연유라떼일반우유ICEDR"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (458g)",
+      "servingGram": 458,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=19",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 310,
+        "carb": null,
+        "sugar": null,
+        "protein": 9,
+        "fat": null,
+        "saturatedFat": 8,
+        "transFat": null,
+        "sodium": 156,
+        "caffeine": 2
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-8a1f92a81d40",
+      "brand": "배스킨라빈스",
+      "productName": "디카페인 연유 라떼 오트 변경 HOT R",
+      "aliases": [
+        "배스킨라빈스 디카페인 연유 라떼 오트 변경 HOT R",
+        "디카페인 연유 라떼 오트 변경 HOT R",
+        "디카페인연유라떼오트변경HOTR"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (260g)",
+      "servingGram": 260,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=19",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 265,
+        "carb": null,
+        "sugar": null,
+        "protein": 5,
+        "fat": null,
+        "saturatedFat": 3.7,
+        "transFat": null,
+        "sodium": 134,
+        "caffeine": 2
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-9fdcaece4ab6",
+      "brand": "배스킨라빈스",
+      "productName": "디카페인 연유 라떼 오트 변경 ICED R",
+      "aliases": [
+        "배스킨라빈스 디카페인 연유 라떼 오트 변경 ICED R",
+        "디카페인 연유 라떼 오트 변경 ICED R",
+        "디카페인연유라떼오트변경ICEDR"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (458g)",
+      "servingGram": 458,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=19",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 295,
+        "carb": null,
+        "sugar": null,
+        "protein": 6,
+        "fat": null,
+        "saturatedFat": 4.6,
+        "transFat": null,
+        "sodium": 141,
+        "caffeine": 2
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-71c332ad1473",
+      "brand": "배스킨라빈스",
+      "productName": "아포가토 라떼 오트 변경 ICED R",
+      "aliases": [
+        "배스킨라빈스 아포가토 라떼 오트 변경 ICED R",
+        "아포가토 라떼 오트 변경 ICED R",
+        "아포가토라떼오트변경ICEDR"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (315g)",
+      "servingGram": 315,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=17",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 230,
+        "carb": null,
+        "sugar": null,
+        "protein": 4,
+        "fat": null,
+        "saturatedFat": 6,
+        "transFat": null,
+        "sodium": 92,
+        "caffeine": 27
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-8c52b3a5a86f",
+      "brand": "배스킨라빈스",
+      "productName": "ICED 아포가토 라떼R",
+      "aliases": [
+        "배스킨라빈스 ICED 아포가토 라떼R",
+        "ICED 아포가토 라떼R",
+        "ICED아포가토라떼R"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (315g)",
+      "servingGram": 315,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=17",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 235,
+        "carb": null,
+        "sugar": null,
+        "protein": 6,
+        "fat": null,
+        "saturatedFat": 8,
+        "transFat": null,
+        "sodium": 104,
+        "caffeine": 27
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-674bf0677377",
+      "brand": "배스킨라빈스",
+      "productName": "디카페인 아포가토 라떼 일반 우유 ICED R",
+      "aliases": [
+        "배스킨라빈스 디카페인 아포가토 라떼 일반 우유 ICED R",
+        "디카페인 아포가토 라떼 일반 우유 ICED R",
+        "디카페인아포가토라떼일반우유ICEDR"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (315g)",
+      "servingGram": 315,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=17",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 235,
+        "carb": null,
+        "sugar": null,
+        "protein": 6,
+        "fat": null,
+        "saturatedFat": 8,
+        "transFat": null,
+        "sodium": 104,
+        "caffeine": 1
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-dc0ddab2bafc",
+      "brand": "배스킨라빈스",
+      "productName": "디카페인 아포가토 라떼 오트 변경 ICED R",
+      "aliases": [
+        "배스킨라빈스 디카페인 아포가토 라떼 오트 변경 ICED R",
+        "디카페인 아포가토 라떼 오트 변경 ICED R",
+        "디카페인아포가토라떼오트변경ICEDR"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (315g)",
+      "servingGram": 315,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=17",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 225,
+        "carb": null,
+        "sugar": null,
+        "protein": 3,
+        "fat": null,
+        "saturatedFat": 6,
+        "transFat": null,
+        "sodium": 92,
+        "caffeine": 0.8
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-c9ee1d3b1d55",
+      "brand": "배스킨라빈스",
+      "productName": "디카페인 아포가토 R",
+      "aliases": [
+        "배스킨라빈스 디카페인 아포가토 R",
+        "디카페인 아포가토 R",
+        "디카페인아포가토R"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (195g)",
+      "servingGram": 195,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=52",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "아이스크림",
+        ":",
+        "선택하신",
+        "아이스크림의",
+        "알레르기",
+        "유발성분을",
+        "확인해주세요.",
+        "아이스크림",
+        "外",
+        ":",
+        "없음"
+      ],
+      "additiveWatch": [
+        "카페인",
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 425,
+        "carb": null,
+        "sugar": null,
+        "protein": 6,
+        "fat": null,
+        "saturatedFat": 16,
+        "transFat": null,
+        "sodium": 126,
+        "caffeine": 2
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다. 공식 값이 범위(예: \"38~39\")로 표기된 항목은 상한값을 저장했습니다."
+    },
+    {
+      "id": "baskinrobbins-890d8c38a276",
+      "brand": "배스킨라빈스",
+      "productName": "아포가토 R",
+      "aliases": [
+        "배스킨라빈스 아포가토 R",
+        "아포가토 R",
+        "아포가토R"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (200g)",
+      "servingGram": 200,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=52",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "아이스크림",
+        ":",
+        "선택하신",
+        "아이스크림의",
+        "알레르기",
+        "유발성분을",
+        "확인해주세요.",
+        "아이스크림",
+        "外",
+        ":",
+        "없음"
+      ],
+      "additiveWatch": [
+        "카페인",
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 430,
+        "carb": null,
+        "sugar": null,
+        "protein": 7,
+        "fat": null,
+        "saturatedFat": 16,
+        "transFat": null,
+        "sodium": 127,
+        "caffeine": 131
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다. 공식 값이 범위(예: \"38~39\")로 표기된 항목은 상한값을 저장했습니다."
+    },
+    {
+      "id": "baskinrobbins-b2e9e80bdd62",
+      "brand": "배스킨라빈스",
+      "productName": "카푸치노 블라스트 오리지널 R",
+      "aliases": [
+        "배스킨라빈스 카푸치노 블라스트 오리지널 R",
+        "카푸치노 블라스트 오리지널 R",
+        "카푸치노블라스트오리지널R"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (320g)",
+      "servingGram": 320,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=9",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 285,
+        "carb": null,
+        "sugar": null,
+        "protein": 4,
+        "fat": null,
+        "saturatedFat": 7,
+        "transFat": null,
+        "sodium": 79,
+        "caffeine": 119
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-7e5e6ab3d11f",
+      "brand": "배스킨라빈스",
+      "productName": "카푸치노 블라스트 오리지널 L",
+      "aliases": [
+        "배스킨라빈스 카푸치노 블라스트 오리지널 L",
+        "카푸치노 블라스트 오리지널 L",
+        "카푸치노블라스트오리지널L"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (445g)",
+      "servingGram": 445,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=9",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 365,
+        "carb": null,
+        "sugar": null,
+        "protein": 6,
+        "fat": null,
+        "saturatedFat": 9,
+        "transFat": null,
+        "sodium": 101,
+        "caffeine": 149
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-9cc96b519208",
+      "brand": "배스킨라빈스",
+      "productName": "카푸치노 블라스트 모카 L",
+      "aliases": [
+        "배스킨라빈스 카푸치노 블라스트 모카 L",
+        "카푸치노 블라스트 모카 L",
+        "카푸치노블라스트모카L"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (475g)",
+      "servingGram": 475,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=9",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유",
+        "대두"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 470,
+        "carb": null,
+        "sugar": null,
+        "protein": 6,
+        "fat": null,
+        "saturatedFat": 9,
+        "transFat": null,
+        "sodium": 135,
+        "caffeine": 150
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
+    },
+    {
+      "id": "baskinrobbins-1df6ec0cf7c1",
+      "brand": "배스킨라빈스",
+      "productName": "카푸치노 블라스트 모카 R",
+      "aliases": [
+        "배스킨라빈스 카푸치노 블라스트 모카 R",
+        "카푸치노 블라스트 모카 R",
+        "카푸치노블라스트모카R"
+      ],
+      "category": "배스킨라빈스/커피",
+      "servingSize": "1회 제공량 (342g)",
+      "servingGram": 342,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "배스킨라빈스 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.baskinrobbins.co.kr/menu/view_subcategory.php?seq=9",
+      "verifiedAt": "2026-11-28",
+      "allergens": [
+        "우유",
+        "대두"
+      ],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 360,
+        "carb": null,
+        "sugar": null,
+        "protein": 5,
+        "fat": null,
+        "saturatedFat": 7,
+        "transFat": null,
+        "sodium": 105,
+        "caffeine": 120
+      },
+      "reviewNote": "배스킨라빈스 공식 홈페이지 상품 상세 페이지의 영양정보를 그대로 저장했습니다. 표에 없는 탄수화물·지방·트랜스지방 항목은 null입니다."
     }
   ]
 }
