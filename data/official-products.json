@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-14",
+  "updatedAt": "2026-11-28",
   "updatePolicy": {
     "reviewCycle": "quarterly",
     "sourcePriority": [
@@ -134,76 +134,6 @@
       "sourceProductCode": "41",
       "reviewNote": "스타벅스 공식 메뉴 JSON 데이터 기준입니다. 음료는 공식 영양정보 표의 Tall 사이즈 기준값을 적용합니다.",
       "imageUrl": "https://image.istarbucks.co.kr/upload/store/skuimg/2021/04/[41]_20210415133833725.jpg"
-    },
-    {
-      "id": "mega-mgc-americano-ice",
-      "brand": "메가MGC커피",
-      "productName": "아메리카노",
-      "aliases": [
-        "메가MGC 아메리카노",
-        "메가커피 아메리카노",
-        "mega americano",
-        "mega mgc americano"
-      ],
-      "category": "커피/음료",
-      "servingSize": "1잔",
-      "sourceType": "official_menu_page",
-      "sourceLabel": "메가MGC커피 공식 메뉴 영양정보",
-      "sourceUrl": "https://www.mega-mgccoffee.com",
-      "verifiedAt": "2026-07-10",
-      "reviewNote": "대표 음료 우선 매핑값입니다. 제품명 OCR 매칭 시 사용하고, 분기 업데이트 때 공식 페이지 기준으로 재검수합니다.",
-      "allergens": [],
-      "additiveWatch": [
-        "카페인"
-      ],
-      "nutrients": {
-        "calories": 15,
-        "carb": 2,
-        "sugar": 0,
-        "protein": 1,
-        "fat": 0,
-        "saturatedFat": 0,
-        "transFat": 0,
-        "sodium": 5,
-        "fiber": 0,
-        "leucine": 0
-      }
-    },
-    {
-      "id": "mega-mgc-cafe-latte",
-      "brand": "메가MGC커피",
-      "productName": "카페라떼",
-      "aliases": [
-        "메가MGC 카페라떼",
-        "메가커피 카페라떼",
-        "mega cafe latte",
-        "mega mgc latte"
-      ],
-      "category": "커피/음료",
-      "servingSize": "1잔",
-      "sourceType": "official_menu_page",
-      "sourceLabel": "메가MGC커피 공식 메뉴 영양정보",
-      "sourceUrl": "https://www.mega-mgccoffee.com",
-      "verifiedAt": "2026-07-10",
-      "reviewNote": "대표 음료 우선 매핑값입니다. 제품명 OCR 매칭 시 사용하고, 분기 업데이트 때 공식 페이지 기준으로 재검수합니다.",
-      "allergens": [
-        "우유"
-      ],
-      "additiveWatch": [
-        "카페인"
-      ],
-      "nutrients": {
-        "calories": 155,
-        "carb": 13,
-        "sugar": 9,
-        "protein": 7,
-        "fat": 7,
-        "saturatedFat": 4.5,
-        "transFat": 0,
-        "sodium": 100,
-        "fiber": 0,
-        "leucine": 490
-      }
     },
     {
       "id": "compose-coffee-americano",
@@ -29068,6 +28998,5275 @@
         "caffeine": null
       },
       "reviewNote": "자담치킨 공식 홈페이지 \"제품 영양정보\" 표(이미지)를 Claude가 화면 캡처로 옮겨 적었습니다(AI가 이미지에서 읽음 — 원본 대조 필요). 표에 중량이 직접 적혀 있어 그 중량 기준 확정값입니다."
+    },
+    {
+      "id": "megamgc-c241fccba8d1",
+      "brand": "메가MGC커피",
+      "productName": "딥 초코 체리 프라페",
+      "aliases": [
+        "메가MGC커피 딥 초코 체리 프라페",
+        "딥 초코 체리 프라페",
+        "딥초코체리프라페",
+        "Deep Chocolate Cherry Frappe"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=1&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인",
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 604,
+        "carb": null,
+        "sugar": 90.7,
+        "protein": 10.9,
+        "fat": null,
+        "saturatedFat": 11.1,
+        "transFat": null,
+        "sodium": 273.6,
+        "caffeine": 26
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-6ce389de0ea6",
+      "brand": "메가MGC커피",
+      "productName": "쫀득 모찌 밀크티",
+      "aliases": [
+        "메가MGC커피 쫀득 모찌 밀크티",
+        "쫀득 모찌 밀크티",
+        "쫀득모찌밀크티",
+        "Chewy Mochi Milk Tea"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=1&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 375.3,
+        "carb": null,
+        "sugar": 46.4,
+        "protein": 6.4,
+        "fat": null,
+        "saturatedFat": 5.4,
+        "transFat": null,
+        "sodium": 372.2,
+        "caffeine": 14.2
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-fb666b4921da",
+      "brand": "메가MGC커피",
+      "productName": "매실 모과차",
+      "aliases": [
+        "메가MGC커피 매실 모과차",
+        "매실 모과차",
+        "매실모과차",
+        "Green Plum Quince Tea"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=1&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 244.7,
+        "carb": null,
+        "sugar": 50.4,
+        "protein": 0.2,
+        "fat": null,
+        "saturatedFat": 0.1,
+        "transFat": null,
+        "sodium": 154.4,
+        "caffeine": 0
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-45c29db2a84e",
+      "brand": "메가MGC커피",
+      "productName": "나 혼자만 드랍 UP! 은랑 큐브 레몬에이드",
+      "aliases": [
+        "메가MGC커피 나 혼자만 드랍 UP! 은랑 큐브 레몬에이드",
+        "나 혼자만 드랍 UP! 은랑 큐브 레몬에이드",
+        "나혼자만드랍UP!은랑큐브레몬에이드",
+        "Solo Drop Maxxing! Silver Wolf LemonAde"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=1&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 193.5,
+        "carb": null,
+        "sugar": 44.9,
+        "protein": 0.4,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 93.8,
+        "caffeine": 0
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-470761783736",
+      "brand": "메가MGC커피",
+      "productName": "음, 괜찮은 휴식이군 블레이드 초코크림커피",
+      "aliases": [
+        "메가MGC커피 음, 괜찮은 휴식이군 블레이드 초코크림커피",
+        "음, 괜찮은 휴식이군 블레이드 초코크림커피",
+        "음,괜찮은휴식이군블레이드초코크림커피",
+        "Hmm, Fine Break Blade Choco Cream Coffee"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=1&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 305.7,
+        "carb": null,
+        "sugar": 43,
+        "protein": 3.3,
+        "fat": null,
+        "saturatedFat": 8.2,
+        "transFat": null,
+        "sodium": 91.8,
+        "caffeine": 242.7
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-57ec0130a8ac",
+      "brand": "메가MGC커피",
+      "productName": "하우스밀크 라떼",
+      "aliases": [
+        "메가MGC커피 하우스밀크 라떼",
+        "하우스밀크 라떼",
+        "하우스밀크라떼",
+        "House Milk Latte"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=1&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인",
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 328.6,
+        "carb": null,
+        "sugar": 15.8,
+        "protein": 6,
+        "fat": null,
+        "saturatedFat": 19.8,
+        "transFat": null,
+        "sodium": 180,
+        "caffeine": 118
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-a02845f63e4a",
+      "brand": "메가MGC커피",
+      "productName": "무카페인 오르조라떼",
+      "aliases": [
+        "메가MGC커피 무카페인 오르조라떼",
+        "무카페인 오르조라떼",
+        "무카페인오르조라떼",
+        "Caffeine-Free Orzo Latte"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=1&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 245.4,
+        "carb": null,
+        "sugar": 23.4,
+        "protein": 7.4,
+        "fat": null,
+        "saturatedFat": 5.2,
+        "transFat": null,
+        "sodium": 121,
+        "caffeine": 0
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-eae871a2e3a9",
+      "brand": "메가MGC커피",
+      "productName": "저당 골든애플 블랙티",
+      "aliases": [
+        "메가MGC커피 저당 골든애플 블랙티",
+        "저당 골든애플 블랙티",
+        "저당골든애플블랙티",
+        "Low-Sugar Golden Apple Black Tea"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=1&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 123.4,
+        "carb": null,
+        "sugar": 13.2,
+        "protein": 0.6,
+        "fat": null,
+        "saturatedFat": 0.1,
+        "transFat": null,
+        "sodium": 8.6,
+        "caffeine": 68
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-b858f3c0cccd",
+      "brand": "메가MGC커피",
+      "productName": "ARIH 듀얼바이오틱 소다 레드 루비 갈로어",
+      "aliases": [
+        "메가MGC커피 ARIH 듀얼바이오틱 소다 레드 루비 갈로어",
+        "ARIH 듀얼바이오틱 소다 레드 루비 갈로어",
+        "ARIH듀얼바이오틱소다레드루비갈로어",
+        "ARIH DUAL BIOTIC SODA RED RUBY"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=1&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 20,
+        "carb": null,
+        "sugar": 2,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 110,
+        "caffeine": 0
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-3ab05d9e3eac",
+      "brand": "메가MGC커피",
+      "productName": "ARIH 듀얼바이오틱 소다 포지티브 오렌지",
+      "aliases": [
+        "메가MGC커피 ARIH 듀얼바이오틱 소다 포지티브 오렌지",
+        "ARIH 듀얼바이오틱 소다 포지티브 오렌지",
+        "ARIH듀얼바이오틱소다포지티브오렌지",
+        "ARIH DUAL BIOTIC SODA ORANGE"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=1&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 20,
+        "carb": null,
+        "sugar": 2,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 110,
+        "caffeine": 0
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-2b59e5dd6517",
+      "brand": "메가MGC커피",
+      "productName": "ARIH 듀얼바이오틱 소다 클리어레몬",
+      "aliases": [
+        "메가MGC커피 ARIH 듀얼바이오틱 소다 클리어레몬",
+        "ARIH 듀얼바이오틱 소다 클리어레몬",
+        "ARIH듀얼바이오틱소다클리어레몬",
+        "ARIH DUAL BIOTIC SODA CLEAR LEMON"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=1&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 20,
+        "carb": null,
+        "sugar": 2,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 130,
+        "caffeine": 0
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-a1e8ce723f5b",
+      "brand": "메가MGC커피",
+      "productName": "ARIH 듀얼바이오틱 소다 피치망고 호라이즌",
+      "aliases": [
+        "메가MGC커피 ARIH 듀얼바이오틱 소다 피치망고 호라이즌",
+        "ARIH 듀얼바이오틱 소다 피치망고 호라이즌",
+        "ARIH듀얼바이오틱소다피치망고호라이즌",
+        "ARIH DUAL BIOTIC SODA PEACH & MANGO"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=1&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 20,
+        "carb": null,
+        "sugar": 2,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 70,
+        "caffeine": 0
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-22f524c19501",
+      "brand": "메가MGC커피",
+      "productName": "ARIH 포스트바이오틱 에너지 드링크 레몬크레스트",
+      "aliases": [
+        "메가MGC커피 ARIH 포스트바이오틱 에너지 드링크 레몬크레스트",
+        "ARIH 포스트바이오틱 에너지 드링크 레몬크레스트",
+        "ARIH포스트바이오틱에너지드링크레몬크레스트",
+        "ARIH POSTBIOTIC ENERGY DRINK LEMON CREST"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=1&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 10,
+        "carb": null,
+        "sugar": 0,
+        "protein": 1,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 280,
+        "caffeine": 100
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-ccc8563110d7",
+      "brand": "메가MGC커피",
+      "productName": "ARIH 포스트바이오틱 에너지 드링크 오렌지아워",
+      "aliases": [
+        "메가MGC커피 ARIH 포스트바이오틱 에너지 드링크 오렌지아워",
+        "ARIH 포스트바이오틱 에너지 드링크 오렌지아워",
+        "ARIH포스트바이오틱에너지드링크오렌지아워",
+        "ARIH POSTBIOTIC ENERGY DRINK ORANGE HOUR"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=1&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 10,
+        "carb": null,
+        "sugar": 0,
+        "protein": 1,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 280,
+        "caffeine": 100
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-97bd00d907c0",
+      "brand": "메가MGC커피",
+      "productName": "ARIH 포스트바이오틱 에너지 드링크 트로피칼웨이브",
+      "aliases": [
+        "메가MGC커피 ARIH 포스트바이오틱 에너지 드링크 트로피칼웨이브",
+        "ARIH 포스트바이오틱 에너지 드링크 트로피칼웨이브",
+        "ARIH포스트바이오틱에너지드링크트로피칼웨이브",
+        "ARIH POSTBIOTIC ENERGY DRINK TROPICAL WAVE"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=1&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 10,
+        "carb": null,
+        "sugar": 0,
+        "protein": 1,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 280,
+        "caffeine": 100
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-cf02c96d057a",
+      "brand": "메가MGC커피",
+      "productName": "저당 꿀배 XO야쿠르트",
+      "aliases": [
+        "메가MGC커피 저당 꿀배 XO야쿠르트",
+        "저당 꿀배 XO야쿠르트",
+        "저당꿀배XO야쿠르트",
+        "XO"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=1&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 25.4,
+        "carb": null,
+        "sugar": 1.1,
+        "protein": 3.6,
+        "fat": null,
+        "saturatedFat": 0.1,
+        "transFat": null,
+        "sodium": 67.8,
+        "caffeine": 0
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-5ae0cb832a22",
+      "brand": "메가MGC커피",
+      "productName": "딸기라떼",
+      "aliases": [
+        "메가MGC커피 딸기라떼",
+        "딸기라떼",
+        "Strawberry Latte"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=1&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 314.5,
+        "carb": null,
+        "sugar": 58,
+        "protein": 4.8,
+        "fat": null,
+        "saturatedFat": 3,
+        "transFat": null,
+        "sodium": 67.9,
+        "caffeine": 0
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-a6ea310ba2e9",
+      "brand": "메가MGC커피",
+      "productName": "밀크쉐이크",
+      "aliases": [
+        "메가MGC커피 밀크쉐이크",
+        "밀크쉐이크",
+        "Milkshake"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=1&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 401,
+        "carb": null,
+        "sugar": 62.4,
+        "protein": 8.9,
+        "fat": null,
+        "saturatedFat": 4.1,
+        "transFat": null,
+        "sodium": 308.2,
+        "caffeine": 0
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-99db2cff1e28",
+      "brand": "메가MGC커피",
+      "productName": "유자생강차",
+      "aliases": [
+        "메가MGC커피 유자생강차",
+        "유자생강차",
+        "Citron Ginger Tea"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=2&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 389.4,
+        "carb": null,
+        "sugar": 88.7,
+        "protein": 0.2,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 90.7,
+        "caffeine": 0
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-b3e5a4f12ad3",
+      "brand": "메가MGC커피",
+      "productName": "초코젤라또 말차라떼",
+      "aliases": [
+        "메가MGC커피 초코젤라또 말차라떼",
+        "초코젤라또 말차라떼",
+        "초코젤라또말차라떼",
+        "Choco-gelato Matcha Tea Latte"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=2&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 326.8,
+        "carb": null,
+        "sugar": 46.8,
+        "protein": 10.1,
+        "fat": null,
+        "saturatedFat": 5.1,
+        "transFat": null,
+        "sodium": 82.4,
+        "caffeine": 153.8
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-b3effe766e10",
+      "brand": "메가MGC커피",
+      "productName": "(HOT)헛개리카노",
+      "aliases": [
+        "메가MGC커피 (HOT)헛개리카노",
+        "(HOT)헛개리카노",
+        "Oriental Raisin-Tea Americano"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=2&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 41.3,
+        "carb": null,
+        "sugar": 2.4,
+        "protein": 1.2,
+        "fat": null,
+        "saturatedFat": 0.1,
+        "transFat": null,
+        "sodium": 7.4,
+        "caffeine": 236
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-7695521b355d",
+      "brand": "메가MGC커피",
+      "productName": "(ICE)헛개리카노",
+      "aliases": [
+        "메가MGC커피 (ICE)헛개리카노",
+        "(ICE)헛개리카노",
+        "Oriental Raisin-Tea Americano"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=2&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 41.3,
+        "carb": null,
+        "sugar": 2.4,
+        "protein": 1.2,
+        "fat": null,
+        "saturatedFat": 0.1,
+        "transFat": null,
+        "sodium": 7.4,
+        "caffeine": 236
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-ef70c14c5a34",
+      "brand": "메가MGC커피",
+      "productName": "제로 부스트 에이드",
+      "aliases": [
+        "메가MGC커피 제로 부스트 에이드",
+        "제로 부스트 에이드",
+        "제로부스트에이드",
+        "ZERO SUGAR Energy-Drink Ade"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=2&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 10.5,
+        "carb": null,
+        "sugar": 0.7,
+        "protein": 1,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 182.5,
+        "caffeine": 0
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-75a8b12ec301",
+      "brand": "메가MGC커피",
+      "productName": "블루베리요거트스무디",
+      "aliases": [
+        "메가MGC커피 블루베리요거트스무디",
+        "블루베리요거트스무디",
+        "Blueberry Yogurt Smoothie"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=2&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 542.3,
+        "carb": null,
+        "sugar": 111.6,
+        "protein": 10.1,
+        "fat": null,
+        "saturatedFat": 3.5,
+        "transFat": null,
+        "sodium": 143.7,
+        "caffeine": 0
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-415467a6a648",
+      "brand": "메가MGC커피",
+      "productName": "골드키위주스",
+      "aliases": [
+        "메가MGC커피 골드키위주스",
+        "골드키위주스",
+        "Gold Kiwi Juice"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=2&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 202.7,
+        "carb": null,
+        "sugar": 38.7,
+        "protein": 1.6,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 49.9,
+        "caffeine": 0
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-5f430099f817",
+      "brand": "메가MGC커피",
+      "productName": "귤 톡톡 젤리스무디",
+      "aliases": [
+        "메가MGC커피 귤 톡톡 젤리스무디",
+        "귤 톡톡 젤리스무디",
+        "귤톡톡젤리스무디",
+        "Tangerine Jelly Smoothie"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=2&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 369.4,
+        "carb": null,
+        "sugar": 78.7,
+        "protein": 0.4,
+        "fat": null,
+        "saturatedFat": 0.1,
+        "transFat": null,
+        "sodium": 25.6,
+        "caffeine": 0
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-583cb9bda856",
+      "brand": "메가MGC커피",
+      "productName": "왕메가카페라떼",
+      "aliases": [
+        "메가MGC커피 왕메가카페라떼",
+        "왕메가카페라떼",
+        "BIG MEGA Caffe Latte"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=2&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 284.2,
+        "carb": null,
+        "sugar": 20,
+        "protein": 13.6,
+        "fat": null,
+        "saturatedFat": 9.3,
+        "transFat": null,
+        "sodium": 201.6,
+        "caffeine": 354
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-dc77f4cb1d54",
+      "brand": "메가MGC커피",
+      "productName": "디카페인 왕메가카페라떼",
+      "aliases": [
+        "메가MGC커피 디카페인 왕메가카페라떼",
+        "디카페인 왕메가카페라떼",
+        "디카페인왕메가카페라떼",
+        "Decaf BIG MEGA Caffe Latte"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=2&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 282,
+        "carb": null,
+        "sugar": 20,
+        "protein": 12.8,
+        "fat": null,
+        "saturatedFat": 9.3,
+        "transFat": null,
+        "sodium": 201.6,
+        "caffeine": 11.7
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-2ed69e3083f7",
+      "brand": "메가MGC커피",
+      "productName": "디카페인 라이트 바닐라 아몬드라떼",
+      "aliases": [
+        "메가MGC커피 디카페인 라이트 바닐라 아몬드라떼",
+        "디카페인 라이트 바닐라 아몬드라떼",
+        "디카페인라이트바닐라아몬드라떼",
+        "Decaf Light vanilla almond latte"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=2&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 81.7,
+        "carb": null,
+        "sugar": 5.4,
+        "protein": 1.5,
+        "fat": null,
+        "saturatedFat": 0.2,
+        "transFat": null,
+        "sodium": 124.3,
+        "caffeine": 7.8
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-61456e0ebc7d",
+      "brand": "메가MGC커피",
+      "productName": "왕메가사과유자",
+      "aliases": [
+        "메가MGC커피 왕메가사과유자",
+        "왕메가사과유자",
+        "BIG MEGA Apple Citron Tea"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=2&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 313.3,
+        "carb": null,
+        "sugar": 76.7,
+        "protein": 0.2,
+        "fat": null,
+        "saturatedFat": 0.1,
+        "transFat": null,
+        "sodium": 120.4,
+        "caffeine": 0
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-70550b139d41",
+      "brand": "메가MGC커피",
+      "productName": "왕메가헛개리카노",
+      "aliases": [
+        "메가MGC커피 왕메가헛개리카노",
+        "왕메가헛개리카노",
+        "BIG MEGA Oriental Raisin-Tea Americano"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=2&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 66.2,
+        "carb": null,
+        "sugar": 4,
+        "protein": 1.8,
+        "fat": null,
+        "saturatedFat": 0.1,
+        "transFat": null,
+        "sodium": 12.1,
+        "caffeine": 354
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-c328cc9bd66a",
+      "brand": "메가MGC커피",
+      "productName": "(HOT)디카페인 헛개리카노",
+      "aliases": [
+        "메가MGC커피 (HOT)디카페인 헛개리카노",
+        "(HOT)디카페인 헛개리카노",
+        "(HOT)디카페인헛개리카노",
+        "Decaf Oriental Raisin-Tea Americano"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=2&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 39.8,
+        "carb": null,
+        "sugar": 2.4,
+        "protein": 0.6,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 7.4,
+        "caffeine": 7.8
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-c1ae0ed6dd49",
+      "brand": "메가MGC커피",
+      "productName": "(ICE)디카페인 헛개리카노",
+      "aliases": [
+        "메가MGC커피 (ICE)디카페인 헛개리카노",
+        "(ICE)디카페인 헛개리카노",
+        "(ICE)디카페인헛개리카노",
+        "Decaf Oriental Raisin-Tea Americano"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=2&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 39.8,
+        "carb": null,
+        "sugar": 2.4,
+        "protein": 0.6,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 7.4,
+        "caffeine": 7.8
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-bb6c0fd050d4",
+      "brand": "메가MGC커피",
+      "productName": "디카페인 왕메가헛개리카노",
+      "aliases": [
+        "메가MGC커피 디카페인 왕메가헛개리카노",
+        "디카페인 왕메가헛개리카노",
+        "디카페인왕메가헛개리카노",
+        "Decaf BIG MEGA Oriental Raisin-Tea Americano"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=2&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 64,
+        "carb": null,
+        "sugar": 4,
+        "protein": 0.9,
+        "fat": null,
+        "saturatedFat": 0.1,
+        "transFat": null,
+        "sodium": 12.1,
+        "caffeine": 11.7
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-aae7fc4263fd",
+      "brand": "메가MGC커피",
+      "productName": "(HOT)상큼 리치티",
+      "aliases": [
+        "메가MGC커피 (HOT)상큼 리치티",
+        "(HOT)상큼 리치티",
+        "(HOT)상큼리치티",
+        "(HOT) Zesty Lychee Tea"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=2&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 274.8,
+        "carb": null,
+        "sugar": 64.1,
+        "protein": 0.7,
+        "fat": null,
+        "saturatedFat": 0.1,
+        "transFat": null,
+        "sodium": 10.1,
+        "caffeine": 0
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-1a3fbab71aae",
+      "brand": "메가MGC커피",
+      "productName": "(ICE)상큼 리치티",
+      "aliases": [
+        "메가MGC커피 (ICE)상큼 리치티",
+        "(ICE)상큼 리치티",
+        "(ICE)상큼리치티",
+        "(ICE) Zesty Lychee Tea"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=2&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 265.7,
+        "carb": null,
+        "sugar": 59.4,
+        "protein": 0.2,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 3.7,
+        "caffeine": 0
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-2237939c0bc7",
+      "brand": "메가MGC커피",
+      "productName": "할메가미숫커피",
+      "aliases": [
+        "메가MGC커피 할메가미숫커피",
+        "할메가미숫커피",
+        "MEGA MGC Mix Coffee Blend with Grain Powder"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=2&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 418.7,
+        "carb": null,
+        "sugar": 47.4,
+        "protein": 5.6,
+        "fat": null,
+        "saturatedFat": 5,
+        "transFat": null,
+        "sodium": 15.5,
+        "caffeine": 176.5
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-7ac16d52c1cb",
+      "brand": "메가MGC커피",
+      "productName": "라이트 바닐라 아몬드라떼",
+      "aliases": [
+        "메가MGC커피 라이트 바닐라 아몬드라떼",
+        "라이트 바닐라 아몬드라떼",
+        "라이트바닐라아몬드라떼",
+        "Light vanilla almond latte"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=2&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 83.2,
+        "carb": null,
+        "sugar": 5.4,
+        "protein": 2.1,
+        "fat": null,
+        "saturatedFat": 0.3,
+        "transFat": null,
+        "sodium": 124.3,
+        "caffeine": 236
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-eaa0a1dabc1a",
+      "brand": "메가MGC커피",
+      "productName": "왕메가초코",
+      "aliases": [
+        "메가MGC커피 왕메가초코",
+        "왕메가초코",
+        "32oz MEGA Chocolate"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=3&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 515.1,
+        "carb": null,
+        "sugar": 73.6,
+        "protein": 12.6,
+        "fat": null,
+        "saturatedFat": 7.4,
+        "transFat": null,
+        "sodium": 312.9,
+        "caffeine": 4.3
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-b822071fcea2",
+      "brand": "메가MGC커피",
+      "productName": "왕메가아이스티",
+      "aliases": [
+        "메가MGC커피 왕메가아이스티",
+        "왕메가아이스티",
+        "32oz MEGA Peach Iced Tea"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=3&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 384.1,
+        "carb": null,
+        "sugar": 88,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 0,
+        "caffeine": 41.2
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-f96994d4e529",
+      "brand": "메가MGC커피",
+      "productName": "제로 복숭아 아이스티",
+      "aliases": [
+        "메가MGC커피 제로 복숭아 아이스티",
+        "제로 복숭아 아이스티",
+        "제로복숭아아이스티",
+        "ZERO Sugar Peach Iced Tea"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=3&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 6.8,
+        "carb": null,
+        "sugar": 0.2,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 3.5,
+        "caffeine": 13
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-b8bae011b465",
+      "brand": "메가MGC커피",
+      "productName": "연유라떼",
+      "aliases": [
+        "메가MGC커피 연유라떼",
+        "연유라떼",
+        "Condensed milk Latte"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=6&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 377.8,
+        "carb": null,
+        "sugar": 44.1,
+        "protein": 12.6,
+        "fat": null,
+        "saturatedFat": 9.3,
+        "transFat": null,
+        "sodium": 171.1,
+        "caffeine": 236
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-8670407f420b",
+      "brand": "메가MGC커피",
+      "productName": "골드망고스무디",
+      "aliases": [
+        "메가MGC커피 골드망고스무디",
+        "골드망고스무디",
+        "Gold Mango Smoothie"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=3&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 218,
+        "carb": null,
+        "sugar": 49.5,
+        "protein": 0.8,
+        "fat": null,
+        "saturatedFat": 0.1,
+        "transFat": null,
+        "sodium": 19.9,
+        "caffeine": 0
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-1b4c5fc32db9",
+      "brand": "메가MGC커피",
+      "productName": "할메가커피",
+      "aliases": [
+        "메가MGC커피 할메가커피",
+        "할메가커피",
+        "MEGA Mix Coffee"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=3&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 258.7,
+        "carb": null,
+        "sugar": 28.7,
+        "protein": 1.5,
+        "fat": null,
+        "saturatedFat": 4.7,
+        "transFat": null,
+        "sodium": 14.1,
+        "caffeine": 176.5
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-6ee57ac52fe1",
+      "brand": "메가MGC커피",
+      "productName": "왕할메가커피",
+      "aliases": [
+        "메가MGC커피 왕할메가커피",
+        "왕할메가커피",
+        "BIG MEGA Mix Coffee"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=3&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 409.6,
+        "carb": null,
+        "sugar": 45.4,
+        "protein": 2.3,
+        "fat": null,
+        "saturatedFat": 7.4,
+        "transFat": null,
+        "sodium": 22.3,
+        "caffeine": 279.5
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-eb7c1c4895fd",
+      "brand": "메가MGC커피",
+      "productName": "코코넛 커피 스무디",
+      "aliases": [
+        "메가MGC커피 코코넛 커피 스무디",
+        "코코넛 커피 스무디",
+        "코코넛커피스무디",
+        "Coconut Coffee Smoothie"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=3&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인",
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 700.1,
+        "carb": null,
+        "sugar": 75,
+        "protein": 5,
+        "fat": null,
+        "saturatedFat": 17.1,
+        "transFat": null,
+        "sodium": 235.1,
+        "caffeine": 236
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-f3cf7e93f752",
+      "brand": "메가MGC커피",
+      "productName": "딸기주스",
+      "aliases": [
+        "메가MGC커피 딸기주스",
+        "딸기주스",
+        "Strawberry Juice"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=3&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 242.2,
+        "carb": null,
+        "sugar": 47.3,
+        "protein": 1.2,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 20,
+        "caffeine": 0
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-ff6224d91f5b",
+      "brand": "메가MGC커피",
+      "productName": "딸기바나나주스",
+      "aliases": [
+        "메가MGC커피 딸기바나나주스",
+        "딸기바나나주스",
+        "Strawberry-Banana Juice"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=3&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 296.5,
+        "carb": null,
+        "sugar": 46.9,
+        "protein": 4.7,
+        "fat": null,
+        "saturatedFat": 1.8,
+        "transFat": null,
+        "sodium": 73,
+        "caffeine": 0
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-ec5ceb170e48",
+      "brand": "메가MGC커피",
+      "productName": "디카페인 에스프레소",
+      "aliases": [
+        "메가MGC커피 디카페인 에스프레소",
+        "디카페인 에스프레소",
+        "디카페인에스프레소",
+        "Decaf Espresso"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=3&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 7.3,
+        "carb": null,
+        "sugar": 0,
+        "protein": 0.3,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 0.5,
+        "caffeine": 3.9
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-a21e1a718f8b",
+      "brand": "메가MGC커피",
+      "productName": "디카페인 아메리카노",
+      "aliases": [
+        "메가MGC커피 디카페인 아메리카노",
+        "디카페인 아메리카노",
+        "디카페인아메리카노",
+        "Decaf Americano"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=4&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 14.6,
+        "carb": null,
+        "sugar": 0,
+        "protein": 0.5,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 1.1,
+        "caffeine": 7.8
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-904137896537",
+      "brand": "메가MGC커피",
+      "productName": "디카페인 꿀아메리카노",
+      "aliases": [
+        "메가MGC커피 디카페인 꿀아메리카노",
+        "디카페인 꿀아메리카노",
+        "디카페인꿀아메리카노",
+        "Decaf Honey Americano"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=4&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 200,
+        "carb": null,
+        "sugar": 36.9,
+        "protein": 0.5,
+        "fat": null,
+        "saturatedFat": 0.2,
+        "transFat": null,
+        "sodium": 3,
+        "caffeine": 7.8
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-36a71610e8ff",
+      "brand": "메가MGC커피",
+      "productName": "디카페인 헤이즐넛 아메리카노",
+      "aliases": [
+        "메가MGC커피 디카페인 헤이즐넛 아메리카노",
+        "디카페인 헤이즐넛 아메리카노",
+        "디카페인헤이즐넛아메리카노",
+        "Decaf Hazelnut Americano"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=4&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 87.4,
+        "carb": null,
+        "sugar": 12.3,
+        "protein": 0.5,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 1.1,
+        "caffeine": 7.8
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-f5ddc05d9da0",
+      "brand": "메가MGC커피",
+      "productName": "디카페인 바닐라 아메리카노",
+      "aliases": [
+        "메가MGC커피 디카페인 바닐라 아메리카노",
+        "디카페인 바닐라 아메리카노",
+        "디카페인바닐라아메리카노",
+        "Decaf Vanilla Americano"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=4&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 109.7,
+        "carb": null,
+        "sugar": 23.5,
+        "protein": 0.5,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 1.1,
+        "caffeine": 7.8
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-39c5e0639503",
+      "brand": "메가MGC커피",
+      "productName": "디카페인 카페라떼",
+      "aliases": [
+        "메가MGC커피 디카페인 카페라떼",
+        "디카페인 카페라떼",
+        "디카페인카페라떼",
+        "Decaf Cafe Latte"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=4&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 164.1,
+        "carb": null,
+        "sugar": 11.5,
+        "protein": 7.4,
+        "fat": null,
+        "saturatedFat": 5.3,
+        "transFat": null,
+        "sodium": 116.1,
+        "caffeine": 7.8
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-4f0af51d830b",
+      "brand": "메가MGC커피",
+      "productName": "디카페인 카푸치노",
+      "aliases": [
+        "메가MGC커피 디카페인 카푸치노",
+        "디카페인 카푸치노",
+        "디카페인카푸치노",
+        "Decaf Cappuccino"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=4&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 144.6,
+        "carb": null,
+        "sugar": 10.3,
+        "protein": 6.6,
+        "fat": null,
+        "saturatedFat": 4.6,
+        "transFat": null,
+        "sodium": 101.1,
+        "caffeine": 7.8
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-01f567d0cf0f",
+      "brand": "메가MGC커피",
+      "productName": "디카페인 바닐라라떼",
+      "aliases": [
+        "메가MGC커피 디카페인 바닐라라떼",
+        "디카페인 바닐라라떼",
+        "디카페인바닐라라떼",
+        "Decaf Vanilla Latte"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=4&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 248.5,
+        "carb": null,
+        "sugar": 30.2,
+        "protein": 8,
+        "fat": null,
+        "saturatedFat": 5.8,
+        "transFat": null,
+        "sodium": 126.1,
+        "caffeine": 7.8
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-93479bec6795",
+      "brand": "메가MGC커피",
+      "productName": "디카페인 헤이즐넛 라떼",
+      "aliases": [
+        "메가MGC커피 디카페인 헤이즐넛 라떼",
+        "디카페인 헤이즐넛 라떼",
+        "디카페인헤이즐넛라떼",
+        "Decaf Hazelnut Latte"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=4&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 217.4,
+        "carb": null,
+        "sugar": 22.3,
+        "protein": 6.5,
+        "fat": null,
+        "saturatedFat": 4.6,
+        "transFat": null,
+        "sodium": 101.1,
+        "caffeine": 7.8
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-1056b617c405",
+      "brand": "메가MGC커피",
+      "productName": "디카페인 카라멜마끼아또",
+      "aliases": [
+        "메가MGC커피 디카페인 카라멜마끼아또",
+        "디카페인 카라멜마끼아또",
+        "디카페인카라멜마끼아또",
+        "Decaf Caramel Macchiato"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=4&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 237.6,
+        "carb": null,
+        "sugar": 33.8,
+        "protein": 6.2,
+        "fat": null,
+        "saturatedFat": 4.5,
+        "transFat": null,
+        "sodium": 98.7,
+        "caffeine": 7.8
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-840b1af9cd7a",
+      "brand": "메가MGC커피",
+      "productName": "디카페인 연유라떼",
+      "aliases": [
+        "메가MGC커피 디카페인 연유라떼",
+        "디카페인 연유라떼",
+        "디카페인연유라떼",
+        "Decaf Condensed Milk Latte"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=4&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 317.6,
+        "carb": null,
+        "sugar": 35.5,
+        "protein": 10.5,
+        "fat": null,
+        "saturatedFat": 8.1,
+        "transFat": null,
+        "sodium": 146.1,
+        "caffeine": 7.8
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-daaf49583e0d",
+      "brand": "메가MGC커피",
+      "productName": "디카페인 카페모카",
+      "aliases": [
+        "메가MGC커피 디카페인 카페모카",
+        "디카페인 카페모카",
+        "디카페인카페모카",
+        "Decaf Cafe Mocha"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=4&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인",
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 395.7,
+        "carb": null,
+        "sugar": 41.6,
+        "protein": 9.8,
+        "fat": null,
+        "saturatedFat": 13.2,
+        "transFat": null,
+        "sodium": 210.3,
+        "caffeine": 9.7
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-be92a686a5de",
+      "brand": "메가MGC커피",
+      "productName": "디카페인 메가리카노",
+      "aliases": [
+        "메가MGC커피 디카페인 메가리카노",
+        "디카페인 메가리카노",
+        "디카페인메가리카노",
+        "Decaf Megaricano"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=4&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 22,
+        "carb": null,
+        "sugar": 0,
+        "protein": 0.8,
+        "fat": null,
+        "saturatedFat": 0.1,
+        "transFat": null,
+        "sodium": 1.6,
+        "caffeine": 11.7
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-6ba5683587a0",
+      "brand": "메가MGC커피",
+      "productName": "딸기쿠키프라페",
+      "aliases": [
+        "메가MGC커피 딸기쿠키프라페",
+        "딸기쿠키프라페",
+        "Strawberry Cookie Frappe"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=4&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 589.5,
+        "carb": null,
+        "sugar": 74.1,
+        "protein": 7.1,
+        "fat": null,
+        "saturatedFat": 14,
+        "transFat": null,
+        "sodium": 270.2,
+        "caffeine": 0
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-f97fc9c7f8a1",
+      "brand": "메가MGC커피",
+      "productName": "콜드브루디카페인",
+      "aliases": [
+        "메가MGC커피 콜드브루디카페인",
+        "콜드브루디카페인",
+        "Decaf Coldbrew"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=4&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 13,
+        "carb": null,
+        "sugar": 0,
+        "protein": 0.3,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 1,
+        "caffeine": 8.7
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-aa8c7915c398",
+      "brand": "메가MGC커피",
+      "productName": "콜드브루디카페인라떼",
+      "aliases": [
+        "메가MGC커피 콜드브루디카페인라떼",
+        "콜드브루디카페인라떼",
+        "Decaf Coldbrew Latte"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=4&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 175.5,
+        "carb": null,
+        "sugar": 12.5,
+        "protein": 7.8,
+        "fat": null,
+        "saturatedFat": 5.8,
+        "transFat": null,
+        "sodium": 126,
+        "caffeine": 8.7
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-4d6491a16fdd",
+      "brand": "메가MGC커피",
+      "productName": "에스프레소",
+      "aliases": [
+        "메가MGC커피 에스프레소",
+        "에스프레소",
+        "Espresso"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=4&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 8.1,
+        "carb": null,
+        "sugar": 0,
+        "protein": 0.5,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 0.5,
+        "caffeine": 118
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-32faae3f9c19",
+      "brand": "메가MGC커피",
+      "productName": "에스프레소 도피오",
+      "aliases": [
+        "메가MGC커피 에스프레소 도피오",
+        "에스프레소 도피오",
+        "에스프레소도피오",
+        "Espresso doppio"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=5&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 16.1,
+        "carb": null,
+        "sugar": 0,
+        "protein": 1.1,
+        "fat": null,
+        "saturatedFat": 0.1,
+        "transFat": null,
+        "sodium": 1.1,
+        "caffeine": 236
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-b0046634bc1e",
+      "brand": "메가MGC커피",
+      "productName": "쿠키프라페",
+      "aliases": [
+        "메가MGC커피 쿠키프라페",
+        "쿠키프라페",
+        "Cookie Frappe"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=5&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 759.8,
+        "carb": null,
+        "sugar": 73,
+        "protein": 10,
+        "fat": null,
+        "saturatedFat": 20.1,
+        "transFat": null,
+        "sodium": 434.6,
+        "caffeine": 0
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-23b483545184",
+      "brand": "메가MGC커피",
+      "productName": "고구마라떼",
+      "aliases": [
+        "메가MGC커피 고구마라떼",
+        "고구마라떼",
+        "Sweet Potato Latte"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=5&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 284.9,
+        "carb": null,
+        "sugar": 38.6,
+        "protein": 6.6,
+        "fat": null,
+        "saturatedFat": 4.6,
+        "transFat": null,
+        "sodium": 108.2,
+        "caffeine": 0
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-978c86fa2b96",
+      "brand": "메가MGC커피",
+      "productName": "곡물라떼",
+      "aliases": [
+        "메가MGC커피 곡물라떼",
+        "곡물라떼",
+        "Grain Latte"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=5&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 418.2,
+        "carb": null,
+        "sugar": 43.9,
+        "protein": 13.7,
+        "fat": null,
+        "saturatedFat": 6.3,
+        "transFat": null,
+        "sodium": 127.2,
+        "caffeine": 0
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-24282732d75c",
+      "brand": "메가MGC커피",
+      "productName": "토피넛라떼",
+      "aliases": [
+        "메가MGC커피 토피넛라떼",
+        "토피넛라떼",
+        "Toffeenut Latte"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=5&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인",
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 379.1,
+        "carb": null,
+        "sugar": 37.1,
+        "protein": 8.8,
+        "fat": null,
+        "saturatedFat": 10,
+        "transFat": null,
+        "sodium": 255.9,
+        "caffeine": 49.3
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-3a2f3d82b5e3",
+      "brand": "메가MGC커피",
+      "productName": "오레오초코라떼",
+      "aliases": [
+        "메가MGC커피 오레오초코라떼",
+        "오레오초코라떼",
+        "Oreo Chocolate Latte"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=5&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인",
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 493.2,
+        "carb": null,
+        "sugar": 46.8,
+        "protein": 9.1,
+        "fat": null,
+        "saturatedFat": 16.3,
+        "transFat": null,
+        "sodium": 301.5,
+        "caffeine": 1.1
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-e11c9ec5b634",
+      "brand": "메가MGC커피",
+      "productName": "흑당버블밀크티라떼",
+      "aliases": [
+        "메가MGC커피 흑당버블밀크티라떼",
+        "흑당버블밀크티라떼",
+        "Brown Sugar Bubble Milktea Latte"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=5&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 330.2,
+        "carb": null,
+        "sugar": 24.4,
+        "protein": 7.6,
+        "fat": null,
+        "saturatedFat": 4.3,
+        "transFat": null,
+        "sodium": 106.7,
+        "caffeine": 14.3
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-c61b071071bd",
+      "brand": "메가MGC커피",
+      "productName": "핫초코",
+      "aliases": [
+        "메가MGC커피 핫초코",
+        "핫초코",
+        "Hot Chocolate"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=5&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 428,
+        "carb": null,
+        "sugar": 59.4,
+        "protein": 11.1,
+        "fat": null,
+        "saturatedFat": 6.7,
+        "transFat": null,
+        "sodium": 262.6,
+        "caffeine": 4.5
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-e7acdb642c40",
+      "brand": "메가MGC커피",
+      "productName": "녹차라떼",
+      "aliases": [
+        "메가MGC커피 녹차라떼",
+        "녹차라떼",
+        "Green Tea Latte"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=5&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 271.5,
+        "carb": null,
+        "sugar": 40.7,
+        "protein": 7.9,
+        "fat": null,
+        "saturatedFat": 4.3,
+        "transFat": null,
+        "sodium": 81.1,
+        "caffeine": 72.5
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-74eed3e37f4e",
+      "brand": "메가MGC커피",
+      "productName": "로얄밀크티라떼",
+      "aliases": [
+        "메가MGC커피 로얄밀크티라떼",
+        "로얄밀크티라떼",
+        "Royal Milk Tea Latte"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=5&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 271.3,
+        "carb": null,
+        "sugar": 38,
+        "protein": 6.7,
+        "fat": null,
+        "saturatedFat": 4.6,
+        "transFat": null,
+        "sodium": 181.4,
+        "caffeine": 74.7
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-022e84483761",
+      "brand": "메가MGC커피",
+      "productName": "흑당라떼",
+      "aliases": [
+        "메가MGC커피 흑당라떼",
+        "흑당라떼",
+        "Brown Sugar Latte (No Pearls)"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=5&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 318.7,
+        "carb": null,
+        "sugar": 52.3,
+        "protein": 7.5,
+        "fat": null,
+        "saturatedFat": 5.8,
+        "transFat": null,
+        "sodium": 132.1,
+        "caffeine": 0
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-b5affcb4ce4d",
+      "brand": "메가MGC커피",
+      "productName": "흑당밀크티라떼",
+      "aliases": [
+        "메가MGC커피 흑당밀크티라떼",
+        "흑당밀크티라떼",
+        "Brown Sugar Milk tea Latte (No pearls)"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=5&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 310.3,
+        "carb": null,
+        "sugar": 49.3,
+        "protein": 7.5,
+        "fat": null,
+        "saturatedFat": 5.8,
+        "transFat": null,
+        "sodium": 129.9,
+        "caffeine": 8.1
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-1361ac82e41f",
+      "brand": "메가MGC커피",
+      "productName": "흑당버블라떼",
+      "aliases": [
+        "메가MGC커피 흑당버블라떼",
+        "흑당버블라떼",
+        "Brown Sugar Bubble Latte"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=5&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 320.3,
+        "carb": null,
+        "sugar": 27.2,
+        "protein": 7.2,
+        "fat": null,
+        "saturatedFat": 4.1,
+        "transFat": null,
+        "sodium": 104.9,
+        "caffeine": 0
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-798d6f5ffb40",
+      "brand": "메가MGC커피",
+      "productName": "아이스초코",
+      "aliases": [
+        "메가MGC커피 아이스초코",
+        "아이스초코",
+        "Ice Choco"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=5&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 322.6,
+        "carb": null,
+        "sugar": 46.9,
+        "protein": 7.7,
+        "fat": null,
+        "saturatedFat": 4.4,
+        "transFat": null,
+        "sodium": 194,
+        "caffeine": 2.8
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-4f82c7877649",
+      "brand": "메가MGC커피",
+      "productName": "아메리카노",
+      "aliases": [
+        "메가MGC커피 아메리카노",
+        "아메리카노",
+        "Americano"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=7&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 16.1,
+        "carb": null,
+        "sugar": 0,
+        "protein": 1.1,
+        "fat": null,
+        "saturatedFat": 0.1,
+        "transFat": null,
+        "sodium": 1.1,
+        "caffeine": 236
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-58f13a1ecf2b",
+      "brand": "메가MGC커피",
+      "productName": "메가리카노",
+      "aliases": [
+        "메가MGC커피 메가리카노",
+        "메가리카노",
+        "32oz Americano"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=6&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 24.2,
+        "carb": null,
+        "sugar": 0,
+        "protein": 1.6,
+        "fat": null,
+        "saturatedFat": 0.1,
+        "transFat": null,
+        "sodium": 1.6,
+        "caffeine": 354
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-6f36dca534dc",
+      "brand": "메가MGC커피",
+      "productName": "꿀아메리카노",
+      "aliases": [
+        "메가MGC커피 꿀아메리카노",
+        "꿀아메리카노",
+        "Honey Americano"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=6&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 201.5,
+        "carb": null,
+        "sugar": 36.9,
+        "protein": 1.1,
+        "fat": null,
+        "saturatedFat": 0.2,
+        "transFat": null,
+        "sodium": 3.1,
+        "caffeine": 236
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-168d3e58ba50",
+      "brand": "메가MGC커피",
+      "productName": "바닐라라떼",
+      "aliases": [
+        "메가MGC커피 바닐라라떼",
+        "바닐라라떼",
+        "Vanilla Latte"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=6&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 241.2,
+        "carb": null,
+        "sugar": 33.5,
+        "protein": 7.1,
+        "fat": null,
+        "saturatedFat": 4.7,
+        "transFat": null,
+        "sodium": 101.1,
+        "caffeine": 236
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-7e08ce0a0f38",
+      "brand": "메가MGC커피",
+      "productName": "바닐라아메리카노",
+      "aliases": [
+        "메가MGC커피 바닐라아메리카노",
+        "바닐라아메리카노",
+        "Vanilla Americano"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=6&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 111.2,
+        "carb": null,
+        "sugar": 23.5,
+        "protein": 1.1,
+        "fat": null,
+        "saturatedFat": 0.1,
+        "transFat": null,
+        "sodium": 1.1,
+        "caffeine": 236
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-34063fb9202d",
+      "brand": "메가MGC커피",
+      "productName": "카라멜마끼아또",
+      "aliases": [
+        "메가MGC커피 카라멜마끼아또",
+        "카라멜마끼아또",
+        "Caramel Macchiato"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=6&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 245.6,
+        "carb": null,
+        "sugar": 34.3,
+        "protein": 7.1,
+        "fat": null,
+        "saturatedFat": 4.7,
+        "transFat": null,
+        "sodium": 103.7,
+        "caffeine": 236
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-7756ce441b30",
+      "brand": "메가MGC커피",
+      "productName": "카페라떼",
+      "aliases": [
+        "메가MGC커피 카페라떼",
+        "카페라떼",
+        "Caffe Latte"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=6&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 165.6,
+        "carb": null,
+        "sugar": 11.5,
+        "protein": 8,
+        "fat": null,
+        "saturatedFat": 5.3,
+        "transFat": null,
+        "sodium": 116.1,
+        "caffeine": 236
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-1b739d69f26d",
+      "brand": "메가MGC커피",
+      "productName": "카페모카",
+      "aliases": [
+        "메가MGC커피 카페모카",
+        "카페모카",
+        "Caffe Mocha"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=6&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 310.3,
+        "carb": null,
+        "sugar": 31.7,
+        "protein": 6.5,
+        "fat": null,
+        "saturatedFat": 3.4,
+        "transFat": null,
+        "sodium": 131.3,
+        "caffeine": 237.9
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-6139e4a97625",
+      "brand": "메가MGC커피",
+      "productName": "카푸치노",
+      "aliases": [
+        "메가MGC커피 카푸치노",
+        "카푸치노",
+        "Cappuccino"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=6&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 146.1,
+        "carb": null,
+        "sugar": 10.3,
+        "protein": 7.1,
+        "fat": null,
+        "saturatedFat": 4.7,
+        "transFat": null,
+        "sodium": 101.1,
+        "caffeine": 236
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-276ee75173da",
+      "brand": "메가MGC커피",
+      "productName": "콜드브루라떼",
+      "aliases": [
+        "메가MGC커피 콜드브루라떼",
+        "콜드브루라떼",
+        "Coldbrew Latte"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=7&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 152,
+        "carb": null,
+        "sugar": 11,
+        "protein": 7.4,
+        "fat": null,
+        "saturatedFat": 5.1,
+        "transFat": null,
+        "sodium": 110.4,
+        "caffeine": 157.5
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-9b94fb6f5820",
+      "brand": "메가MGC커피",
+      "productName": "콜드브루오리지널",
+      "aliases": [
+        "메가MGC커피 콜드브루오리지널",
+        "콜드브루오리지널",
+        "Coldbrew"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=7&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 9,
+        "carb": null,
+        "sugar": 0,
+        "protein": 0.8,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 0.4,
+        "caffeine": 157.5
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-da6d6247b3b9",
+      "brand": "메가MGC커피",
+      "productName": "헤이즐넛라떼",
+      "aliases": [
+        "메가MGC커피 헤이즐넛라떼",
+        "헤이즐넛라떼",
+        "Hazelnut Latte"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=7&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 218.9,
+        "carb": null,
+        "sugar": 22.3,
+        "protein": 7.1,
+        "fat": null,
+        "saturatedFat": 4.7,
+        "transFat": null,
+        "sodium": 101.1,
+        "caffeine": 236
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-aca367b25135",
+      "brand": "메가MGC커피",
+      "productName": "헤이즐넛아메리카노",
+      "aliases": [
+        "메가MGC커피 헤이즐넛아메리카노",
+        "헤이즐넛아메리카노",
+        "Hazelnut Americano"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=7&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 88.9,
+        "carb": null,
+        "sugar": 12.3,
+        "protein": 1.1,
+        "fat": null,
+        "saturatedFat": 0.1,
+        "transFat": null,
+        "sodium": 1.1,
+        "caffeine": 236
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-1cd8019356b8",
+      "brand": "메가MGC커피",
+      "productName": "큐브라떼",
+      "aliases": [
+        "메가MGC커피 큐브라떼",
+        "큐브라떼",
+        "Cube Latte"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=7&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 329.9,
+        "carb": null,
+        "sugar": 35.5,
+        "protein": 11.8,
+        "fat": null,
+        "saturatedFat": 8.2,
+        "transFat": null,
+        "sodium": 146.8,
+        "caffeine": 393.3
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-e3203f868cbe",
+      "brand": "메가MGC커피",
+      "productName": "녹차프라페",
+      "aliases": [
+        "메가MGC커피 녹차프라페",
+        "녹차프라페",
+        "Green Tea Frappe"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=7&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인",
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 546.6,
+        "carb": null,
+        "sugar": 86.6,
+        "protein": 5.2,
+        "fat": null,
+        "saturatedFat": 11.6,
+        "transFat": null,
+        "sodium": 113.5,
+        "caffeine": 158.2
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-2804c98275b2",
+      "brand": "메가MGC커피",
+      "productName": "딸기요거트스무디",
+      "aliases": [
+        "메가MGC커피 딸기요거트스무디",
+        "딸기요거트스무디",
+        "Strawberry Yogurt Smoothie"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=7&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 443.6,
+        "carb": null,
+        "sugar": 85.9,
+        "protein": 10.6,
+        "fat": null,
+        "saturatedFat": 3.5,
+        "transFat": null,
+        "sodium": 81.4,
+        "caffeine": 0
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-702f9ea21e4a",
+      "brand": "메가MGC커피",
+      "productName": "딸기퐁크러쉬",
+      "aliases": [
+        "메가MGC커피 딸기퐁크러쉬",
+        "딸기퐁크러쉬",
+        "Strawberry Pongcrush"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=7&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 607.8,
+        "carb": null,
+        "sugar": 67.3,
+        "protein": 10.4,
+        "fat": null,
+        "saturatedFat": 10.1,
+        "transFat": null,
+        "sodium": 260.5,
+        "caffeine": 0
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-5ce398a773e7",
+      "brand": "메가MGC커피",
+      "productName": "리얼초코프라페",
+      "aliases": [
+        "메가MGC커피 리얼초코프라페",
+        "리얼초코프라페",
+        "Real Chocolate Frappe"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=7&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인",
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 599.3,
+        "carb": null,
+        "sugar": 78.7,
+        "protein": 7,
+        "fat": null,
+        "saturatedFat": 15.7,
+        "transFat": null,
+        "sodium": 234.5,
+        "caffeine": 3.5
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-d3db7f29690d",
+      "brand": "메가MGC커피",
+      "productName": "망고요거트스무디",
+      "aliases": [
+        "메가MGC커피 망고요거트스무디",
+        "망고요거트스무디",
+        "Mango Yogurt Smoothie"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=7&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 388.6,
+        "carb": null,
+        "sugar": 73.3,
+        "protein": 10.3,
+        "fat": null,
+        "saturatedFat": 3.5,
+        "transFat": null,
+        "sodium": 85.9,
+        "caffeine": 0
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-1c1fd4dc3503",
+      "brand": "메가MGC커피",
+      "productName": "민트프라페",
+      "aliases": [
+        "메가MGC커피 민트프라페",
+        "민트프라페",
+        "Mint Frappe"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=7&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 666,
+        "carb": null,
+        "sugar": 82.6,
+        "protein": 7,
+        "fat": null,
+        "saturatedFat": 19,
+        "transFat": null,
+        "sodium": 201.5,
+        "caffeine": 0
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-30945e8016c4",
+      "brand": "메가MGC커피",
+      "productName": "바나나퐁크러쉬",
+      "aliases": [
+        "메가MGC커피 바나나퐁크러쉬",
+        "바나나퐁크러쉬",
+        "Banana Pongcrush"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=7&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 673,
+        "carb": null,
+        "sugar": 74.8,
+        "protein": 10.7,
+        "fat": null,
+        "saturatedFat": 10.7,
+        "transFat": null,
+        "sodium": 253.6,
+        "caffeine": 0
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-4febea4665cc",
+      "brand": "메가MGC커피",
+      "productName": "초코허니퐁크러쉬",
+      "aliases": [
+        "메가MGC커피 초코허니퐁크러쉬",
+        "초코허니퐁크러쉬",
+        "Chocolate Honey Pong Crush"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=7&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 663.1,
+        "carb": null,
+        "sugar": 79.5,
+        "protein": 12.1,
+        "fat": null,
+        "saturatedFat": 9.6,
+        "transFat": null,
+        "sodium": 286.8,
+        "caffeine": 2.1
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-1307bd4cdb97",
+      "brand": "메가MGC커피",
+      "productName": "커피프라페",
+      "aliases": [
+        "메가MGC커피 커피프라페",
+        "커피프라페",
+        "Coffee Frappe"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=7&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인",
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 461.6,
+        "carb": null,
+        "sugar": 46,
+        "protein": 6.5,
+        "fat": null,
+        "saturatedFat": 14.3,
+        "transFat": null,
+        "sodium": 174.9,
+        "caffeine": 236
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-d512fbd78138",
+      "brand": "메가MGC커피",
+      "productName": "플레인요거트스무디",
+      "aliases": [
+        "메가MGC커피 플레인요거트스무디",
+        "플레인요거트스무디",
+        "Plain Yogurt Smoothie"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=7&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 543.6,
+        "carb": null,
+        "sugar": 105,
+        "protein": 16.8,
+        "fat": null,
+        "saturatedFat": 4.6,
+        "transFat": null,
+        "sodium": 108.7,
+        "caffeine": 0
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-414f8c8cc144",
+      "brand": "메가MGC커피",
+      "productName": "플레인퐁크러쉬",
+      "aliases": [
+        "메가MGC커피 플레인퐁크러쉬",
+        "플레인퐁크러쉬",
+        "Plain Pongcrush"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=7&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 547.4,
+        "carb": null,
+        "sugar": 56.2,
+        "protein": 10.3,
+        "fat": null,
+        "saturatedFat": 10.1,
+        "transFat": null,
+        "sodium": 236.3,
+        "caffeine": 0
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-b4eda42b9cde",
+      "brand": "메가MGC커피",
+      "productName": "라임모히또",
+      "aliases": [
+        "메가MGC커피 라임모히또",
+        "라임모히또",
+        "Lime Mojito"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=7&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 257.2,
+        "carb": null,
+        "sugar": 59.4,
+        "protein": 0.2,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 39.7,
+        "caffeine": 0
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-98171789aa50",
+      "brand": "메가MGC커피",
+      "productName": "레몬에이드",
+      "aliases": [
+        "메가MGC커피 레몬에이드",
+        "레몬에이드",
+        "Lemonade"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=7&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 223.6,
+        "carb": null,
+        "sugar": 53.6,
+        "protein": 0.6,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 169.3,
+        "caffeine": 0
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-3b6a05c54295",
+      "brand": "메가MGC커피",
+      "productName": "블루레몬에이드",
+      "aliases": [
+        "메가MGC커피 블루레몬에이드",
+        "블루레몬에이드",
+        "Blue Lemon Ade"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=7&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 270.1,
+        "carb": null,
+        "sugar": 65.1,
+        "protein": 0.6,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 169.3,
+        "caffeine": 0
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-1bae6de33ea2",
+      "brand": "메가MGC커피",
+      "productName": "자몽에이드",
+      "aliases": [
+        "메가MGC커피 자몽에이드",
+        "자몽에이드",
+        "Grapefruit Ade"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=8&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 208.3,
+        "carb": null,
+        "sugar": 49.6,
+        "protein": 0.3,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 17,
+        "caffeine": 0
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-3874680a58e6",
+      "brand": "메가MGC커피",
+      "productName": "청포도에이드",
+      "aliases": [
+        "메가MGC커피 청포도에이드",
+        "청포도에이드",
+        "Green Grape Ade"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=8&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 341.2,
+        "carb": null,
+        "sugar": 81,
+        "protein": 0.1,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 23.3,
+        "caffeine": 0
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-66d1ee7db3f3",
+      "brand": "메가MGC커피",
+      "productName": "체리콜라",
+      "aliases": [
+        "메가MGC커피 체리콜라",
+        "체리콜라",
+        "Cherry Cola"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=8&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 313.9,
+        "carb": null,
+        "sugar": 77,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 9.9,
+        "caffeine": 24
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-d45aa738ede2",
+      "brand": "메가MGC커피",
+      "productName": "메가에이드",
+      "aliases": [
+        "메가MGC커피 메가에이드",
+        "메가에이드",
+        "MEGA Ade"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=8&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 259.5,
+        "carb": null,
+        "sugar": 50,
+        "protein": 0.5,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 35.9,
+        "caffeine": 0
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-afaa1fc844b0",
+      "brand": "메가MGC커피",
+      "productName": "녹차",
+      "aliases": [
+        "메가MGC커피 녹차",
+        "녹차",
+        "Green Tea"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=8&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 5.7,
+        "carb": null,
+        "sugar": 0,
+        "protein": 0.4,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 2.4,
+        "caffeine": 54.3
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-485e5226af8c",
+      "brand": "메가MGC커피",
+      "productName": "사과유자차",
+      "aliases": [
+        "메가MGC커피 사과유자차",
+        "사과유자차",
+        "Applecitron Tea"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=8&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 242.2,
+        "carb": null,
+        "sugar": 37.5,
+        "protein": 0.3,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 74.5,
+        "caffeine": 0
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-91b26bb5d5eb",
+      "brand": "메가MGC커피",
+      "productName": "얼그레이",
+      "aliases": [
+        "메가MGC커피 얼그레이",
+        "얼그레이",
+        "Earl Grey"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=8&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 5.5,
+        "carb": null,
+        "sugar": 0,
+        "protein": 0.7,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 5.1,
+        "caffeine": 67.2
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-06fe8cdcd4de",
+      "brand": "메가MGC커피",
+      "productName": "캐모마일",
+      "aliases": [
+        "메가MGC커피 캐모마일",
+        "캐모마일",
+        "Chamomile"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=8&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 6.6,
+        "carb": null,
+        "sugar": 0,
+        "protein": 0.2,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 3.7,
+        "caffeine": 0
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-7cea3281c2d4",
+      "brand": "메가MGC커피",
+      "productName": "페퍼민트",
+      "aliases": [
+        "메가MGC커피 페퍼민트",
+        "페퍼민트",
+        "Peppermint Tea"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=8&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 6.6,
+        "carb": null,
+        "sugar": 0,
+        "protein": 0.7,
+        "fat": null,
+        "saturatedFat": 0.2,
+        "transFat": null,
+        "sodium": 6.5,
+        "caffeine": 0
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-6a552f09eeef",
+      "brand": "메가MGC커피",
+      "productName": "복숭아아이스티",
+      "aliases": [
+        "메가MGC커피 복숭아아이스티",
+        "복숭아아이스티",
+        "Peach Iced Tea"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=8&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 240.1,
+        "carb": null,
+        "sugar": 55,
+        "protein": 0,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 0,
+        "caffeine": 24
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-e3dc5d0b817b",
+      "brand": "메가MGC커피",
+      "productName": "유자차",
+      "aliases": [
+        "메가MGC커피 유자차",
+        "유자차",
+        "Citron Tea"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=8&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 304.1,
+        "carb": null,
+        "sugar": 70,
+        "protein": 0.5,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 82.4,
+        "caffeine": 0
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-f9efba34e600",
+      "brand": "메가MGC커피",
+      "productName": "레몬차",
+      "aliases": [
+        "메가MGC커피 레몬차",
+        "레몬차",
+        "Lemon Tea"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=9&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 312.2,
+        "carb": null,
+        "sugar": 71.1,
+        "protein": 0.5,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 80.6,
+        "caffeine": 0
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-853e8930c3fa",
+      "brand": "메가MGC커피",
+      "productName": "자몽차",
+      "aliases": [
+        "메가MGC커피 자몽차",
+        "자몽차",
+        "Grapefruit Tea"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=9&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 226.9,
+        "carb": null,
+        "sugar": 52.8,
+        "protein": 0.4,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 67.1,
+        "caffeine": 0
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-e4abdd41490b",
+      "brand": "메가MGC커피",
+      "productName": "허니자몽블랙티",
+      "aliases": [
+        "메가MGC커피 허니자몽블랙티",
+        "허니자몽블랙티",
+        "Honey Grapefruit Black Tea"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=9&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "카페인"
+      ],
+      "nutrients": {
+        "calories": 253,
+        "carb": null,
+        "sugar": 47.6,
+        "protein": 0.6,
+        "fat": null,
+        "saturatedFat": 0,
+        "transFat": null,
+        "sodium": 84.7,
+        "caffeine": 37
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-930ada3c28be",
+      "brand": "메가MGC커피",
+      "productName": "자몽 톡톡 스무디",
+      "aliases": [
+        "메가MGC커피 자몽 톡톡 스무디",
+        "자몽 톡톡 스무디",
+        "자몽톡톡스무디",
+        "Grapefruit Smoothie"
+      ],
+      "category": "메가MGC커피/음료",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=9&menu_category1=1&menu_category2=1&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 342.3,
+        "carb": null,
+        "sugar": 70.6,
+        "protein": 0.7,
+        "fat": null,
+        "saturatedFat": 0.1,
+        "transFat": null,
+        "sodium": 36.2,
+        "caffeine": 0
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-f76d44f1c985",
+      "brand": "메가MGC커피",
+      "productName": "바삭허니 엠지씨네 컵치킨",
+      "aliases": [
+        "메가MGC커피 바삭허니 엠지씨네 컵치킨",
+        "바삭허니 엠지씨네 컵치킨",
+        "바삭허니엠지씨네컵치킨",
+        "MGC's Crispy Honey Cup Chicken"
+      ],
+      "category": "메가MGC커피/푸드",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=1&menu_category1=2&menu_category2=2&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 610,
+        "carb": null,
+        "sugar": 26,
+        "protein": 20,
+        "fat": null,
+        "saturatedFat": 6,
+        "transFat": null,
+        "sodium": 1320,
+        "caffeine": null
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-3cb8e5a0f98a",
+      "brand": "메가MGC커피",
+      "productName": "엠지씨네 마라 떡볶이",
+      "aliases": [
+        "메가MGC커피 엠지씨네 마라 떡볶이",
+        "엠지씨네 마라 떡볶이",
+        "엠지씨네마라떡볶이",
+        "MGC's Mala Tteokbokki"
+      ],
+      "category": "메가MGC커피/푸드",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=1&menu_category1=2&menu_category2=2&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 714,
+        "carb": null,
+        "sugar": 29,
+        "protein": 22,
+        "fat": null,
+        "saturatedFat": 5,
+        "transFat": null,
+        "sodium": 2500,
+        "caffeine": null
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-a3bd36c7fdb7",
+      "brand": "메가MGC커피",
+      "productName": "햄치즈에그 샌드위치",
+      "aliases": [
+        "메가MGC커피 햄치즈에그 샌드위치",
+        "햄치즈에그 샌드위치",
+        "햄치즈에그샌드위치",
+        "Ham Cheese&Egg Sandwich"
+      ],
+      "category": "메가MGC커피/푸드",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=1&menu_category1=2&menu_category2=2&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 425,
+        "carb": null,
+        "sugar": 15,
+        "protein": 15,
+        "fat": null,
+        "saturatedFat": 7,
+        "transFat": null,
+        "sodium": 1200,
+        "caffeine": null
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-3b3c38529a60",
+      "brand": "메가MGC커피",
+      "productName": "에그마요 샌드위치",
+      "aliases": [
+        "메가MGC커피 에그마요 샌드위치",
+        "에그마요 샌드위치",
+        "에그마요샌드위치",
+        "Egg Mayo Sandwich"
+      ],
+      "category": "메가MGC커피/푸드",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=1&menu_category1=2&menu_category2=2&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 590,
+        "carb": null,
+        "sugar": 18,
+        "protein": 18,
+        "fat": null,
+        "saturatedFat": 11,
+        "transFat": null,
+        "sodium": 1300,
+        "caffeine": null
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-e749c00ddddb",
+      "brand": "메가MGC커피",
+      "productName": "크래미마요 샌드위치",
+      "aliases": [
+        "메가MGC커피 크래미마요 샌드위치",
+        "크래미마요 샌드위치",
+        "크래미마요샌드위치",
+        "Crab Stick Mayo Sandwich"
+      ],
+      "category": "메가MGC커피/푸드",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=1&menu_category1=2&menu_category2=2&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 550,
+        "carb": null,
+        "sugar": 10,
+        "protein": 14,
+        "fat": null,
+        "saturatedFat": 10,
+        "transFat": null,
+        "sodium": 1700,
+        "caffeine": null
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-0ececec784d1",
+      "brand": "메가MGC커피",
+      "productName": "모짜렐라 바질치킨 샌드위치",
+      "aliases": [
+        "메가MGC커피 모짜렐라 바질치킨 샌드위치",
+        "모짜렐라 바질치킨 샌드위치",
+        "모짜렐라바질치킨샌드위치",
+        "Mozzarella Basil Chicken Sandwich"
+      ],
+      "category": "메가MGC커피/푸드",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=1&menu_category1=2&menu_category2=2&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 400,
+        "carb": null,
+        "sugar": 8,
+        "protein": 15,
+        "fat": null,
+        "saturatedFat": 6,
+        "transFat": null,
+        "sodium": 1260,
+        "caffeine": null
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-69c10be9db46",
+      "brand": "메가MGC커피",
+      "productName": "불고기 에그 샌드위치",
+      "aliases": [
+        "메가MGC커피 불고기 에그 샌드위치",
+        "불고기 에그 샌드위치",
+        "불고기에그샌드위치",
+        "Bulgogi Egg Sandwich"
+      ],
+      "category": "메가MGC커피/푸드",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=1&menu_category1=2&menu_category2=2&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 520,
+        "carb": null,
+        "sugar": 12,
+        "protein": 20,
+        "fat": null,
+        "saturatedFat": 13,
+        "transFat": null,
+        "sodium": 1450,
+        "caffeine": null
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-cfe4c068f9c7",
+      "brand": "메가MGC커피",
+      "productName": "스파이시 치킨텐더 샌드위치",
+      "aliases": [
+        "메가MGC커피 스파이시 치킨텐더 샌드위치",
+        "스파이시 치킨텐더 샌드위치",
+        "스파이시치킨텐더샌드위치",
+        "Spicy Chicken Tender Sandwich"
+      ],
+      "category": "메가MGC커피/푸드",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=1&menu_category1=2&menu_category2=2&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 710,
+        "carb": null,
+        "sugar": 18,
+        "protein": 18,
+        "fat": null,
+        "saturatedFat": 13,
+        "transFat": null,
+        "sodium": 1220,
+        "caffeine": null
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-97c7f61bf208",
+      "brand": "메가MGC커피",
+      "productName": "중식마녀 마라크림 새우토스트",
+      "aliases": [
+        "메가MGC커피 중식마녀 마라크림 새우토스트",
+        "중식마녀 마라크림 새우토스트",
+        "중식마녀마라크림새우토스트",
+        "Witch Chef's Mala Cream Shrimp Toast"
+      ],
+      "category": "메가MGC커피/푸드",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=1&menu_category1=2&menu_category2=2&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 528,
+        "carb": null,
+        "sugar": 7.6,
+        "protein": 12.2,
+        "fat": null,
+        "saturatedFat": 12.6,
+        "transFat": null,
+        "sodium": 747,
+        "caffeine": null
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-efb7ddba3816",
+      "brand": "메가MGC커피",
+      "productName": "메가MGC커피 자일리톨 커피 캔디",
+      "aliases": [
+        "메가MGC커피 메가MGC커피 자일리톨 커피 캔디",
+        "메가MGC커피 자일리톨 커피 캔디",
+        "메가MGC커피자일리톨커피캔디",
+        "MEGA MGC COFFEE Xylitol Coffee Candy"
+      ],
+      "category": "메가MGC커피/푸드",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=1&menu_category1=2&menu_category2=2&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": null,
+        "carb": null,
+        "sugar": 0,
+        "protein": 0.4,
+        "fat": null,
+        "saturatedFat": 1.3,
+        "transFat": null,
+        "sodium": 48,
+        "caffeine": null
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-66f99a082c3a",
+      "brand": "메가MGC커피",
+      "productName": "버터가 쫀득해떡",
+      "aliases": [
+        "메가MGC커피 버터가 쫀득해떡",
+        "버터가 쫀득해떡",
+        "버터가쫀득해떡",
+        "Butter Tteok"
+      ],
+      "category": "메가MGC커피/푸드",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=1&menu_category1=2&menu_category2=2&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 105,
+        "carb": null,
+        "sugar": 4,
+        "protein": 1,
+        "fat": null,
+        "saturatedFat": 4,
+        "transFat": null,
+        "sodium": 80,
+        "caffeine": null
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-91a8ce569071",
+      "brand": "메가MGC커피",
+      "productName": "메가베리 아사이볼",
+      "aliases": [
+        "메가MGC커피 메가베리 아사이볼",
+        "메가베리 아사이볼",
+        "메가베리아사이볼",
+        "Mega Berry Acai Bowl"
+      ],
+      "category": "메가MGC커피/푸드",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=1&menu_category1=2&menu_category2=2&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 313,
+        "carb": null,
+        "sugar": 43,
+        "protein": 4,
+        "fat": null,
+        "saturatedFat": 1,
+        "transFat": null,
+        "sodium": 12,
+        "caffeine": null
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-f5582636a364",
+      "brand": "메가MGC커피",
+      "productName": "딥치즈 불고기 베이크",
+      "aliases": [
+        "메가MGC커피 딥치즈 불고기 베이크",
+        "딥치즈 불고기 베이크",
+        "딥치즈불고기베이크",
+        "Double Cheese Bulgogi Bake"
+      ],
+      "category": "메가MGC커피/푸드",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=1&menu_category1=2&menu_category2=2&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 385,
+        "carb": null,
+        "sugar": 10,
+        "protein": 18,
+        "fat": null,
+        "saturatedFat": 4.2,
+        "transFat": null,
+        "sodium": 1003,
+        "caffeine": null
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-b28ac5ebe031",
+      "brand": "메가MGC커피",
+      "productName": "요거젤라또 초코베리믹스",
+      "aliases": [
+        "메가MGC커피 요거젤라또 초코베리믹스",
+        "요거젤라또 초코베리믹스",
+        "요거젤라또초코베리믹스",
+        "Yogurt Gelato Choco Berry Mix"
+      ],
+      "category": "메가MGC커피/푸드",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=1&menu_category1=2&menu_category2=2&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 418,
+        "carb": null,
+        "sugar": 47,
+        "protein": 5,
+        "fat": null,
+        "saturatedFat": 10,
+        "transFat": null,
+        "sodium": 53,
+        "caffeine": null
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-e1d5285ddfc4",
+      "brand": "메가MGC커피",
+      "productName": "요거젤라또 씨리얼 초코베리믹스",
+      "aliases": [
+        "메가MGC커피 요거젤라또 씨리얼 초코베리믹스",
+        "요거젤라또 씨리얼 초코베리믹스",
+        "요거젤라또씨리얼초코베리믹스",
+        "Yogurt Gelato Cereal Choco Berry Mix"
+      ],
+      "category": "메가MGC커피/푸드",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=1&menu_category1=2&menu_category2=2&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 433,
+        "carb": null,
+        "sugar": 49,
+        "protein": 6,
+        "fat": null,
+        "saturatedFat": 6.2,
+        "transFat": null,
+        "sodium": 183,
+        "caffeine": null
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-0153dda40202",
+      "brand": "메가MGC커피",
+      "productName": "멕시칸 미트칠리 핫도그",
+      "aliases": [
+        "메가MGC커피 멕시칸 미트칠리 핫도그",
+        "멕시칸 미트칠리 핫도그",
+        "멕시칸미트칠리핫도그",
+        "Mexican Meat Chili Hot Dog"
+      ],
+      "category": "메가MGC커피/푸드",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=1&menu_category1=2&menu_category2=2&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 462,
+        "carb": null,
+        "sugar": 6,
+        "protein": 17,
+        "fat": null,
+        "saturatedFat": 10,
+        "transFat": null,
+        "sodium": 850,
+        "caffeine": null
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-6ba66e1da02a",
+      "brand": "메가MGC커피",
+      "productName": "치즈 품은 감자빵",
+      "aliases": [
+        "메가MGC커피 치즈 품은 감자빵",
+        "치즈 품은 감자빵",
+        "치즈품은감자빵",
+        "Cheese-stuffed potato bread"
+      ],
+      "category": "메가MGC커피/푸드",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=1&menu_category1=2&menu_category2=2&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 312,
+        "carb": null,
+        "sugar": 5,
+        "protein": 12,
+        "fat": null,
+        "saturatedFat": 4,
+        "transFat": null,
+        "sodium": 559,
+        "caffeine": null
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-3efd0d59f386",
+      "brand": "메가MGC커피",
+      "productName": "엠지씨네 메가칩",
+      "aliases": [
+        "메가MGC커피 엠지씨네 메가칩",
+        "엠지씨네 메가칩",
+        "엠지씨네메가칩",
+        "MGC Buckwheat chips"
+      ],
+      "category": "메가MGC커피/푸드",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=1&menu_category1=2&menu_category2=2&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 210,
+        "carb": null,
+        "sugar": 1,
+        "protein": 2,
+        "fat": null,
+        "saturatedFat": 5,
+        "transFat": null,
+        "sodium": 223,
+        "caffeine": null
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-a95c48ee5720",
+      "brand": "메가MGC커피",
+      "productName": "초코스모어쿠키",
+      "aliases": [
+        "메가MGC커피 초코스모어쿠키",
+        "초코스모어쿠키",
+        "Chocolate S'mores Cookie"
+      ],
+      "category": "메가MGC커피/푸드",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=1&menu_category1=2&menu_category2=2&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 575,
+        "carb": null,
+        "sugar": 34,
+        "protein": 10,
+        "fat": null,
+        "saturatedFat": 15,
+        "transFat": null,
+        "sodium": 590,
+        "caffeine": null
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-6bf3effee878",
+      "brand": "메가MGC커피",
+      "productName": "와앙메리칸 뽀득 핫도그",
+      "aliases": [
+        "메가MGC커피 와앙메리칸 뽀득 핫도그",
+        "와앙메리칸 뽀득 핫도그",
+        "와앙메리칸뽀득핫도그",
+        "Big American Hot Dog"
+      ],
+      "category": "메가MGC커피/푸드",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=1&menu_category1=2&menu_category2=2&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 424,
+        "carb": null,
+        "sugar": 6,
+        "protein": 15,
+        "fat": null,
+        "saturatedFat": 8,
+        "transFat": null,
+        "sodium": 870,
+        "caffeine": null
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-6f775474fdc4",
+      "brand": "메가MGC커피",
+      "productName": "햄앤치즈샌드위치",
+      "aliases": [
+        "메가MGC커피 햄앤치즈샌드위치",
+        "햄앤치즈샌드위치",
+        "Ham & Cheese Sandwich"
+      ],
+      "category": "메가MGC커피/푸드",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=2&menu_category1=2&menu_category2=2&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 215,
+        "carb": null,
+        "sugar": 5,
+        "protein": 7,
+        "fat": null,
+        "saturatedFat": 5,
+        "transFat": null,
+        "sodium": 360,
+        "caffeine": null
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-3bf5059a355e",
+      "brand": "메가MGC커피",
+      "productName": "바질 치폴레치킨 치아바타",
+      "aliases": [
+        "메가MGC커피 바질 치폴레치킨 치아바타",
+        "바질 치폴레치킨 치아바타",
+        "바질치폴레치킨치아바타",
+        "Basil Chipotle Chicken Ciabatta"
+      ],
+      "category": "메가MGC커피/푸드",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=2&menu_category1=2&menu_category2=2&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 435,
+        "carb": null,
+        "sugar": 4,
+        "protein": 18,
+        "fat": null,
+        "saturatedFat": 7,
+        "transFat": null,
+        "sodium": 1215,
+        "caffeine": null
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-df4b9c6eecc6",
+      "brand": "메가MGC커피",
+      "productName": "핫 치킨&딥치즈 치아바타",
+      "aliases": [
+        "메가MGC커피 핫 치킨&딥치즈 치아바타",
+        "핫 치킨&딥치즈 치아바타",
+        "핫치킨&딥치즈치아바타",
+        "Hot chicken & deep cheese ciabatta"
+      ],
+      "category": "메가MGC커피/푸드",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=2&menu_category1=2&menu_category2=2&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 567,
+        "carb": null,
+        "sugar": 10,
+        "protein": 22,
+        "fat": null,
+        "saturatedFat": 27,
+        "transFat": null,
+        "sodium": 1581,
+        "caffeine": null
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-c83364f14a9e",
+      "brand": "메가MGC커피",
+      "productName": "버터버터 뜯어먹는 식빵",
+      "aliases": [
+        "메가MGC커피 버터버터 뜯어먹는 식빵",
+        "버터버터 뜯어먹는 식빵",
+        "버터버터뜯어먹는식빵",
+        "Butter Butter Danish Bread"
+      ],
+      "category": "메가MGC커피/푸드",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=2&menu_category1=2&menu_category2=2&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": null,
+        "carb": null,
+        "sugar": 5,
+        "protein": 4,
+        "fat": null,
+        "saturatedFat": 7,
+        "transFat": null,
+        "sodium": 290,
+        "caffeine": null
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-e8aa0fa485e9",
+      "brand": "메가MGC커피",
+      "productName": "버터버터소금빵",
+      "aliases": [
+        "메가MGC커피 버터버터소금빵",
+        "버터버터소금빵",
+        "Salty Butter Roll"
+      ],
+      "category": "메가MGC커피/푸드",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=2&menu_category1=2&menu_category2=2&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 336,
+        "carb": null,
+        "sugar": 1,
+        "protein": 5,
+        "fat": null,
+        "saturatedFat": 12,
+        "transFat": null,
+        "sodium": 417,
+        "caffeine": null
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-c6c496a097a2",
+      "brand": "메가MGC커피",
+      "productName": "초코젤라또크로플",
+      "aliases": [
+        "메가MGC커피 초코젤라또크로플",
+        "초코젤라또크로플",
+        "Croffle with chocolate gelato"
+      ],
+      "category": "메가MGC커피/푸드",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=2&menu_category1=2&menu_category2=2&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": null,
+        "carb": null,
+        "sugar": 11,
+        "protein": 7,
+        "fat": null,
+        "saturatedFat": 11,
+        "transFat": null,
+        "sodium": 327,
+        "caffeine": null
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-7a0f74c7e611",
+      "brand": "메가MGC커피",
+      "productName": "마카다미아 쿠키",
+      "aliases": [
+        "메가MGC커피 마카다미아 쿠키",
+        "마카다미아 쿠키",
+        "마카다미아쿠키",
+        "Macadamia Cookie"
+      ],
+      "category": "메가MGC커피/푸드",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=2&menu_category1=2&menu_category2=2&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 318,
+        "carb": null,
+        "sugar": 26,
+        "protein": 5,
+        "fat": null,
+        "saturatedFat": 4.9,
+        "transFat": null,
+        "sodium": 198,
+        "caffeine": null
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-016ed29aa4e7",
+      "brand": "메가MGC커피",
+      "productName": "초콜릿칩 쿠키",
+      "aliases": [
+        "메가MGC커피 초콜릿칩 쿠키",
+        "초콜릿칩 쿠키",
+        "초콜릿칩쿠키",
+        "Chocolate Chip Cookie"
+      ],
+      "category": "메가MGC커피/푸드",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=2&menu_category1=2&menu_category2=2&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 319,
+        "carb": null,
+        "sugar": 23,
+        "protein": 3,
+        "fat": null,
+        "saturatedFat": 6,
+        "transFat": null,
+        "sodium": 247,
+        "caffeine": null
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-b52d2a90e7b4",
+      "brand": "메가MGC커피",
+      "productName": "플레인크로플",
+      "aliases": [
+        "메가MGC커피 플레인크로플",
+        "플레인크로플",
+        "Plain Croffle"
+      ],
+      "category": "메가MGC커피/푸드",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=2&menu_category1=2&menu_category2=2&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 252.2,
+        "carb": null,
+        "sugar": 7.1,
+        "protein": 5,
+        "fat": null,
+        "saturatedFat": 8.4,
+        "transFat": null,
+        "sodium": 252.4,
+        "caffeine": null
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-27d5984ad5f8",
+      "brand": "메가MGC커피",
+      "productName": "크로크무슈",
+      "aliases": [
+        "메가MGC커피 크로크무슈",
+        "크로크무슈",
+        "Croque Monsieur"
+      ],
+      "category": "메가MGC커피/푸드",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=2&menu_category1=2&menu_category2=2&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 364,
+        "carb": null,
+        "sugar": 4,
+        "protein": 16,
+        "fat": null,
+        "saturatedFat": 9,
+        "transFat": null,
+        "sodium": 719,
+        "caffeine": null
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-a27db187b905",
+      "brand": "메가MGC커피",
+      "productName": "치즈 케익",
+      "aliases": [
+        "메가MGC커피 치즈 케익",
+        "치즈 케익",
+        "치즈케익",
+        "Cheese Cake"
+      ],
+      "category": "메가MGC커피/푸드",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=2&menu_category1=2&menu_category2=2&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 334,
+        "carb": null,
+        "sugar": 14,
+        "protein": 6,
+        "fat": null,
+        "saturatedFat": 15,
+        "transFat": null,
+        "sodium": 223,
+        "caffeine": null
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-c75274f099e6",
+      "brand": "메가MGC커피",
+      "productName": "초코무스 케익",
+      "aliases": [
+        "메가MGC커피 초코무스 케익",
+        "초코무스 케익",
+        "초코무스케익",
+        "Chocolate Mousse Cake"
+      ],
+      "category": "메가MGC커피/푸드",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=2&menu_category1=2&menu_category2=2&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 341,
+        "carb": null,
+        "sugar": 24,
+        "protein": 4,
+        "fat": null,
+        "saturatedFat": 14,
+        "transFat": null,
+        "sodium": 68,
+        "caffeine": null
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-0973b429dcc8",
+      "brand": "메가MGC커피",
+      "productName": "티라미수 케익",
+      "aliases": [
+        "메가MGC커피 티라미수 케익",
+        "티라미수 케익",
+        "티라미수케익",
+        "Tiramisu Cake"
+      ],
+      "category": "메가MGC커피/푸드",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=2&menu_category1=2&menu_category2=2&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 368,
+        "carb": null,
+        "sugar": 20,
+        "protein": 6,
+        "fat": null,
+        "saturatedFat": 17,
+        "transFat": null,
+        "sodium": 213,
+        "caffeine": null
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-3676079af7d0",
+      "brand": "메가MGC커피",
+      "productName": "허니브레드",
+      "aliases": [
+        "메가MGC커피 허니브레드",
+        "허니브레드",
+        "Honey Bread"
+      ],
+      "category": "메가MGC커피/푸드",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=2&menu_category1=2&menu_category2=2&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 799,
+        "carb": null,
+        "sugar": 25,
+        "protein": 15,
+        "fat": null,
+        "saturatedFat": 21,
+        "transFat": null,
+        "sodium": 972,
+        "caffeine": null
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-5e860ef38a72",
+      "brand": "메가MGC커피",
+      "productName": "감자빵",
+      "aliases": [
+        "메가MGC커피 감자빵",
+        "감자빵",
+        "Potato Bread"
+      ],
+      "category": "메가MGC커피/푸드",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=2&menu_category1=2&menu_category2=2&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 315,
+        "carb": null,
+        "sugar": 15,
+        "protein": 4,
+        "fat": null,
+        "saturatedFat": 5,
+        "transFat": null,
+        "sodium": 240,
+        "caffeine": null
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-d0658af61b47",
+      "brand": "메가MGC커피",
+      "productName": "딸기요거트 마카롱",
+      "aliases": [
+        "메가MGC커피 딸기요거트 마카롱",
+        "딸기요거트 마카롱",
+        "딸기요거트마카롱",
+        "Strawberry Yogurt Macaron"
+      ],
+      "category": "메가MGC커피/푸드",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=2&menu_category1=2&menu_category2=2&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 235,
+        "carb": null,
+        "sugar": 14,
+        "protein": 3,
+        "fat": null,
+        "saturatedFat": 7,
+        "transFat": null,
+        "sodium": 45,
+        "caffeine": null
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-ae5519fb68d1",
+      "brand": "메가MGC커피",
+      "productName": "메가초코 마카롱",
+      "aliases": [
+        "메가MGC커피 메가초코 마카롱",
+        "메가초코 마카롱",
+        "메가초코마카롱",
+        "Chocolate Macaron"
+      ],
+      "category": "메가MGC커피/푸드",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=2&menu_category1=2&menu_category2=2&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 235,
+        "carb": null,
+        "sugar": 18,
+        "protein": 60,
+        "fat": null,
+        "saturatedFat": 8,
+        "transFat": null,
+        "sodium": 46,
+        "caffeine": null
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-67c7e5417216",
+      "brand": "메가MGC커피",
+      "productName": "유니콘프라페 마카롱",
+      "aliases": [
+        "메가MGC커피 유니콘프라페 마카롱",
+        "유니콘프라페 마카롱",
+        "유니콘프라페마카롱",
+        "Unicorn Frappe Macaron"
+      ],
+      "category": "메가MGC커피/푸드",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=2&menu_category1=2&menu_category2=2&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [],
+      "nutrients": {
+        "calories": 205,
+        "carb": null,
+        "sugar": 16,
+        "protein": 3,
+        "fat": null,
+        "saturatedFat": 3,
+        "transFat": null,
+        "sodium": 55,
+        "caffeine": null
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
+    },
+    {
+      "id": "megamgc-d583e6a7757d",
+      "brand": "메가MGC커피",
+      "productName": "호빵맨 초코 케이크&스퀴시 키링 세트",
+      "aliases": [
+        "메가MGC커피 호빵맨 초코 케이크&스퀴시 키링 세트",
+        "호빵맨 초코 케이크&스퀴시 키링 세트",
+        "호빵맨초코케이크&스퀴시키링세트",
+        "ANPANMAN Choco cake & Squish keyring set"
+      ],
+      "category": "메가MGC커피/푸드",
+      "servingSize": "1회 제공량",
+      "servingGram": null,
+      "sourceType": "official_nutrition_page",
+      "sourceLabel": "메가MGC커피 공식 홈페이지 메뉴 영양정보",
+      "sourceUrl": "https://www.mega-mgccoffee.com/menu/menu.php?page=2&menu_category1=2&menu_category2=2&category=&list_checkbox_all=all",
+      "verifiedAt": "2026-11-28",
+      "allergens": [],
+      "additiveWatch": [
+        "포화지방"
+      ],
+      "nutrients": {
+        "calories": 1679,
+        "carb": null,
+        "sugar": 137,
+        "protein": 14,
+        "fat": null,
+        "saturatedFat": 74,
+        "transFat": null,
+        "sodium": 1019,
+        "caffeine": null
+      },
+      "reviewNote": "메가MGC커피 공식 홈페이지 메뉴 상세(모달)의 영양정보를 그대로 저장했습니다. 표에 없는 항목은 null입니다."
     }
   ]
 }
